@@ -1,0 +1,618 @@
+/* ============================================================
+   Patlytics Competitive Intelligence — App Logic
+   Renders the mock dataset (js/data.js) into the dashboard shell.
+   No frameworks/build step — plain DOM rendering by design, so the
+   whole app can run from a single static file server.
+   ============================================================ */
+(function () {
+  "use strict";
+
+  const DATA = window.PATLYTICS_DATA;
+  const { HIGHLIGHTS, COMPETITORS, NEW_ENTRANTS, WEBINARS, ANCHOR_DATE, EARLIEST_DATE } = DATA;
+
+  const COMPETITORS_SORTED = [...COMPETITORS].sort((a, b) => a.rank - b.rank);
+
+  const state = {
+    activeTab: "home",
+    range: "day", // day | week | month
+    asOf: ANCHOR_DATE,
+    webinarFilter: "upcoming", // upcoming | past | all
+  };
+
+  /* ---------------- date helpers ---------------- */
+  function parseDate(s) { return new Date(s + "T12:00:00Z"); }
+  function toISO(dt) { return dt.toISOString().slice(0, 10); }
+  function addDays(s, n) { const dt = parseDate(s); dt.setUTCDate(dt.getUTCDate() + n); return toISO(dt); }
+  function clamp(dateStr) {
+    if (dateStr > ANCHOR_DATE) return ANCHOR_DATE;
+    if (dateStr < EARLIEST_DATE) return EARLIEST_DATE;
+    return dateStr;
+  }
+  function fmt(dateStr, opts) {
+    return parseDate(dateStr).toLocaleDateString("en-US", opts || { month: "short", day: "numeric", year: "numeric" });
+  }
+  function rangeSpanDays() { return state.range === "day" ? 1 : state.range === "week" ? 7 : 30; }
+  function windowStart() { return addDays(state.asOf, -(rangeSpanDays() - 1)); }
+  function inWindow(dateStr) { return dateStr >= windowStart() && dateStr <= state.asOf; }
+
+  /* ---------------- icon helpers ---------------- */
+  const CATEGORY_ICON = {
+    Partnership: "ph:handshake",
+    Funding: "ph:coins",
+    Product: "ph:rocket-launch",
+    Hiring: "ph:briefcase",
+    Market: "ph:gavel",
+    Marketing: "ph:megaphone",
+    Webinar: "ph:calendar-blank",
+    Sales: "ph:chart-line-up",
+    Event: "ph:confetti",
+    Content: "ph:article",
+    Corporate: "ph:buildings",
+  };
+  function categoryIcon(cat) { return CATEGORY_ICON[cat] || "ph:newspaper"; }
+
+  function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  /* ================= SIDEBAR ================= */
+  function renderSidebar() {
+    const nav = document.getElementById("sidebar-nav");
+    let html = "";
+
+    html += `<div class="nav-section-label">Overview</div>`;
+    html += navItemHtml("general", "ph:squares-four", "Daily Brief");
+
+    html += `<div class="nav-section-label">Competitors <span style="opacity:.6">(by correlation)</span></div>`;
+    COMPETITORS_SORTED.forEach((c) => {
+      const dot = c.tier.startsWith("Tier 1") ? "t1" : c.tier.startsWith("Tier 2") ? "t2" : "t3";
+      html += navItemHtml(c.id, null, c.name, dot);
+    });
+
+    html += `<div class="nav-section-label">Market Watch</div>`;
+    html += navItemHtml("entrants", "ph:compass", "New Market Entrants", null, NEW_ENTRANTS.length);
+    html += navItemHtml("webinars", "ph:calendar-blank", "Webinars", null, upcomingWebinarCount());
+
+    nav.innerHTML = html;
+
+    nav.querySelectorAll(".nav-item").forEach((btn) => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+    });
+
+    document.getElementById("sidebar-last-updated").textContent = `Preview data · as of ${fmt(ANCHOR_DATE)}`;
+  }
+
+  function navItemHtml(tabId, icon, label, tierDot, badgeCount) {
+    const iconHtml = icon
+      ? `<iconify-icon icon="${icon}" aria-hidden="true"></iconify-icon>`
+      : `<span class="tier-dot ${tierDot}" aria-hidden="true"></span>`;
+    const badge = badgeCount != null ? `<span class="nav-item-badge">${badgeCount}</span>` : "";
+    return `<button type="button" class="nav-item" data-tab="${tabId}" role="tab" aria-selected="false">
+      ${iconHtml}<span class="nav-item-label">${escapeHtml(label)}</span>${badge}
+    </button>`;
+  }
+
+  function upcomingWebinarCount() {
+    return WEBINARS.filter((w) => w.date >= ANCHOR_DATE).length;
+  }
+
+  /* ================= TAB SWITCHING ================= */
+  function switchTab(tabId) {
+    state.activeTab = tabId;
+    document.querySelectorAll(".nav-item").forEach((btn) => {
+      const active = btn.dataset.tab === tabId;
+      btn.classList.toggle("active", active);
+      btn.setAttribute("aria-selected", String(active));
+    });
+    renderTopbar();
+    renderActiveTab();
+  }
+
+  function renderTopbar() {
+    const eyebrow = document.getElementById("topbar-eyebrow");
+    const title = document.getElementById("topbar-title");
+    const rangeToggle = document.getElementById("range-toggle");
+    const dateNav = document.getElementById("date-nav");
+
+    if (state.activeTab === "home") {
+      eyebrow.innerHTML = `<iconify-icon icon="ph:house"></iconify-icon> Overview`;
+      title.textContent = "Welcome to Patlytics Intel";
+      rangeToggle.style.display = "none";
+      dateNav.style.display = "none";
+    } else if (state.activeTab === "general") {
+      eyebrow.innerHTML = `<iconify-icon icon="ph:squares-four"></iconify-icon> Daily Brief`;
+      title.textContent = "General Highlights";
+      rangeToggle.style.display = "";
+      dateNav.style.display = "";
+    } else if (state.activeTab === "entrants") {
+      eyebrow.innerHTML = `<iconify-icon icon="ph:compass"></iconify-icon> Market Watch`;
+      title.textContent = "New Market Entrants";
+      rangeToggle.style.display = "none";
+      dateNav.style.display = "";
+    } else if (state.activeTab === "webinars") {
+      eyebrow.innerHTML = `<iconify-icon icon="ph:calendar-blank"></iconify-icon> Events`;
+      title.textContent = "Webinars";
+      rangeToggle.style.display = "none";
+      dateNav.style.display = "none";
+    } else {
+      const c = COMPETITORS.find((x) => x.id === state.activeTab);
+      eyebrow.innerHTML = `<iconify-icon icon="ph:buildings"></iconify-icon> ${escapeHtml(c.tier)}`;
+      title.textContent = c.name;
+      rangeToggle.style.display = "";
+      dateNav.style.display = "";
+    }
+    updateDateNavLabel();
+  }
+
+  function updateDateNavLabel() {
+    const label = document.getElementById("date-nav-label");
+    if (state.range === "day") {
+      label.textContent = state.asOf === ANCHOR_DATE ? `Today · ${fmt(state.asOf)}` : fmt(state.asOf, { month: "short", day: "numeric", year: "numeric", weekday: "short" });
+    } else if (state.range === "week") {
+      label.textContent = `Week of ${fmt(windowStart(), { month: "short", day: "numeric" })} – ${fmt(state.asOf, { month: "short", day: "numeric", year: "numeric" })}`;
+    } else {
+      label.textContent = `${fmt(windowStart(), { month: "short", day: "numeric" })} – ${fmt(state.asOf, { month: "short", day: "numeric", year: "numeric" })}`;
+    }
+    document.getElementById("date-prev").disabled = windowStart() <= EARLIEST_DATE && state.asOf <= EARLIEST_DATE;
+    document.getElementById("date-next").disabled = state.asOf >= ANCHOR_DATE;
+  }
+
+  function renderActiveTab() {
+    const root = document.getElementById("tab-panels");
+    if (state.activeTab === "home") root.innerHTML = renderHome();
+    else if (state.activeTab === "general") root.innerHTML = renderGeneral();
+    else if (state.activeTab === "entrants") root.innerHTML = renderEntrants();
+    else if (state.activeTab === "webinars") root.innerHTML = renderWebinars();
+    else root.innerHTML = renderCompetitor(state.activeTab);
+
+    wireWebinarToolbar();
+    root.querySelectorAll(".feature-card[data-tab]").forEach((btn) => {
+      btn.addEventListener("click", () => switchTab(btn.dataset.tab));
+    });
+  }
+
+  /* ================= HOME / OVERVIEW ================= */
+  function renderHome() {
+    let html = sampleBanner();
+
+    html += `<div class="card home-hero">
+      <div class="home-hero-eyebrow"><iconify-icon icon="ph:sparkle"></iconify-icon>Competitive Intelligence, in one place</div>
+      <h1>Everything worth knowing about the AI-patent &amp; AI-legal competitive landscape.</h1>
+      <p>This dashboard pulls together daily competitor activity, hiring signals, marketing moves, new market entrants, and industry webinars — ranked by how much each item actually matters to Patlytics, not just how recent it is. Use the sidebar to jump into a company, or the search bar to find anything across every section and past date.</p>
+    </div>`;
+
+    html += `<div class="home-section-title"><iconify-icon icon="ph:squares-four"></iconify-icon>What's on this dashboard</div>`;
+    html += `<div class="feature-grid">
+      ${featureCardHtml("general", "ph:newspaper", "Daily Brief", "The day's biggest industry and competitor news, ranked by priority and correlation to Patlytics.", "See what's happening today")}
+      ${featureCardHtml(COMPETITORS_SORTED[0].id, "ph:buildings", "Competitors", `${COMPETITORS.length} companies, ordered by how directly they compete with Patlytics. Each profile covers company info, daily/weekly activity, hiring, and marketing.`, "Browse competitor profiles")}
+      ${featureCardHtml("entrants", "ph:compass", "New Market Entrants", "Newly-funded startups entering the AI-patent space — who's backing them, who they're hiring, and how much of a threat they are.", "See who's entering the market")}
+      ${featureCardHtml("webinars", "ph:calendar-blank", "Webinars", "Upcoming and past industry &amp; competitor webinars, filterable by date.", "View upcoming webinars")}
+    </div>`;
+
+    html += `<div class="home-section-title"><iconify-icon icon="ph:lightbulb"></iconify-icon>How to use this dashboard</div>`;
+    html += `<div class="card howto-list">
+      <div class="howto-item"><iconify-icon icon="ph:magnifying-glass"></iconify-icon><div><div class="howto-title">Search everything</div><div class="howto-desc">The sidebar search bar (press <strong>/</strong> to focus it) searches highlights, every competitor's activity, new entrants, and webinars at once.</div></div></div>
+      <div class="howto-item"><iconify-icon icon="ph:calendar-dots"></iconify-icon><div><div class="howto-title">Look back in time</div><div class="howto-desc">Use the Day / Week / Month toggle and the date arrows at the top of most tabs to pull up briefs from previous days, weeks, or months.</div></div></div>
+      <div class="howto-item"><iconify-icon icon="ph:arrow-up-right"></iconify-icon><div><div class="howto-title">Jump to the source</div><div class="howto-desc">Any card with an arrow icon links out to its real source, careers page, or registration page in a new tab.</div></div></div>
+      <div class="howto-item"><iconify-icon icon="ph:sort-ascending"></iconify-icon><div><div class="howto-title">Ranked by correlation</div><div class="howto-desc">Competitors and new entrants are both ordered by how directly they threaten Patlytics.</div></div></div>
+    </div>`;
+
+    return html;
+  }
+
+  function featureCardHtml(tabId, icon, title, desc, cta) {
+    return `<button type="button" class="card feature-card" data-tab="${tabId}">
+      <div class="feature-card-icon"><iconify-icon icon="${icon}"></iconify-icon></div>
+      <div>
+        <div class="feature-card-title">${escapeHtml(title)}</div>
+        <div class="feature-card-desc">${desc}</div>
+        <div class="feature-card-meta">${escapeHtml(cta)} →</div>
+      </div>
+    </button>`;
+  }
+
+  /* ================= GENERAL TAB ================= */
+  function renderGeneral() {
+    const items = HIGHLIGHTS.filter((h) => inWindow(h.date)).sort((a, b) => {
+      const order = { critical: 0, high: 1, medium: 2, low: 3 };
+      if (order[a.priority] !== order[b.priority]) return order[a.priority] - order[b.priority];
+      return b.date.localeCompare(a.date);
+    });
+
+    const counts = { critical: 0, high: 0, medium: 0, low: 0 };
+    items.forEach((i) => counts[i.priority]++);
+
+    let html = sampleBanner();
+    html += `<div class="section-heading">
+      <iconify-icon icon="ph:newspaper"></iconify-icon>
+      <h2>Top Industry &amp; Competitor News</h2>
+      <span class="count-chip">${items.length}</span>
+    </div>
+    <p class="section-sub">Ranked by priority — how significant the news is and its correlation to Patlytics — then recency. Showing the ${state.range === "day" ? "selected day" : state.range === "week" ? "selected week" : "selected month"}.</p>`;
+
+    if (!items.length) {
+      html += emptyState("No highlights in this window in the preview dataset. Try widening the range or moving to a different date.");
+    } else {
+      items.forEach((h) => { html += highlightCardHtml(h); });
+    }
+    return html;
+  }
+
+  function highlightCardHtml(h) {
+    return `<div class="card highlight-card${h.url ? " has-arrow-link" : ""}" data-search-anchor="${h.id}">
+      <div class="priority-rail ${h.priority}"></div>
+      <div class="highlight-body">
+        <div class="highlight-meta-row">
+          <span class="badge ${h.priority}">${h.priority}</span>
+          <span class="tag-chip"><iconify-icon icon="${categoryIcon(h.category)}" style="vertical-align:-2px; margin-right:3px;"></iconify-icon>${escapeHtml(h.category)}</span>
+          <span class="tag-chip">${fmt(h.date, { month: "short", day: "numeric" })}</span>
+        </div>
+        <div class="highlight-title">${escapeHtml(h.title)}</div>
+        <div class="highlight-summary">${escapeHtml(h.summary)}</div>
+        <div class="highlight-why"><iconify-icon icon="ph:target" style="vertical-align:-3px; margin-right:4px;"></iconify-icon>Why it matters to Patlytics: ${escapeHtml(h.whyItMatters)}</div>
+        <div class="highlight-footer">
+          <span class="companies">${h.companies.map((c) => `<span class="tag-chip">${escapeHtml(c)}</span>`).join("")}</span>
+          <span>·</span>
+          <span>${escapeHtml(h.source)}</span>
+        </div>
+      </div>
+      ${arrowLink(h.url, "Open source for: " + h.title)}
+    </div>`;
+  }
+
+  /* ================= COMPETITOR TAB ================= */
+  function renderCompetitor(id) {
+    const c = COMPETITORS.find((x) => x.id === id);
+    const tierClass = c.tier.startsWith("Tier 1") ? "tier1" : c.tier.startsWith("Tier 2") ? "tier2" : "tier3";
+
+    let html = sampleBanner();
+
+    html += `<div class="card company-header-card">
+      <div class="company-header-top">
+        <div class="company-avatar">${escapeHtml(c.initials)}</div>
+        <div class="company-header-titles">
+          <h2>${escapeHtml(c.name)}${c.linkedin ? `<a class="company-linkedin-link" href="${escapeHtml(c.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>` : ""}</h2>
+          <div class="company-tagline">${escapeHtml(c.tagline)}</div>
+        </div>
+        <span class="tier-badge ${tierClass}">${escapeHtml(c.tier)}</span>
+      </div>
+      <p class="company-description">${escapeHtml(c.description)}</p>
+      <div class="company-meta-grid">
+        <div class="meta-cell"><div class="meta-label">Employees</div><div class="meta-value">${escapeHtml(c.employeeCount)}</div></div>
+        <div class="meta-cell"><div class="meta-label">Founded</div><div class="meta-value">${escapeHtml(c.founded)}</div></div>
+        <div class="meta-cell"><div class="meta-label">Headquarters</div><div class="meta-value">${escapeHtml(c.hq)}</div></div>
+        <div class="meta-cell"><div class="meta-label">Website</div><div class="meta-value"><a href="${escapeHtml(c.websiteUrl || "#")}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.website)}</a></div></div>
+      </div>
+      <div class="founder-strip">
+        ${c.founders.map((f) => `<div class="founder-row">
+          <iconify-icon icon="ph:graduation-cap"></iconify-icon>
+          <div>
+            <div><span class="founder-name">${escapeHtml(f.name)}</span> <span class="founder-title">— ${escapeHtml(f.title)}</span></div>
+            <div class="founder-note">${escapeHtml(f.note)}</div>
+          </div>
+        </div>`).join("")}
+      </div>
+    </div>`;
+
+    // Today
+    const todayItems = state.asOf === ANCHOR_DATE ? c.todayActivity : [];
+    html += `<div class="section-heading"><iconify-icon icon="ph:sun"></iconify-icon><h2>Important Activity Today</h2><span class="count-chip">${todayItems.length}</span></div>`;
+    html += todayItems.length
+      ? todayItems.map((a) => activityItemHtml(a, a.time)).join("")
+      : emptyState(`No significant ${escapeHtml(c.name)} activity recorded for today in the preview dataset.`);
+
+    // Week / range
+    const rangeLabel = state.range === "month" ? "This Month" : state.range === "week" ? "This Week" : "The Last 7 Days";
+    const weekItems = c.weekActivity.filter((a) => inWindow(a.date) || (state.range === "day" && a.date >= addDays(state.asOf, -6) && a.date <= state.asOf))
+      .sort((a, b) => b.date.localeCompare(a.date));
+    html += `<div class="section-heading"><iconify-icon icon="ph:calendar-dots"></iconify-icon><h2>Important Activity — ${rangeLabel}</h2><span class="count-chip">${weekItems.length}</span></div>`;
+    html += weekItems.length
+      ? weekItems.map((a) => activityItemHtml(a, fmt(a.date, { month: "short", day: "numeric" }))).join("")
+      : emptyState(`No additional ${escapeHtml(c.name)} activity in this window in the preview dataset.`);
+
+    // Hiring
+    html += `<div class="section-heading"><iconify-icon icon="ph:briefcase"></iconify-icon><h2>Hiring &amp; Headcount Signals</h2></div>`;
+    html += `<div class="hiring-stats-row">
+      <div class="card stat-card"><div class="stat-value">${c.hiring.openRoles != null ? c.hiring.openRoles : "—"}</div><div class="stat-label">Open Roles</div></div>
+      <div class="card stat-card"><div class="stat-value">${c.hiring.newRolesToday.length}</div><div class="stat-label">Opened Today</div></div>
+      <div class="card stat-card"><div class="stat-value">${c.hiring.recentHires.length}</div><div class="stat-label">Recent New Hires</div></div>
+    </div>`;
+
+    html += `<div class="two-col">
+      <div>
+        <h3 style="font-size:13px; margin-bottom:8px; color:var(--text-secondary);">Roles Opened Today</h3>
+        ${c.hiring.newRolesToday.length ? `<div class="role-pill-list">${c.hiring.newRolesToday.map((r) => `<a class="role-pill role-pill-link" href="${escapeHtml(c.careersUrl || "#")}" target="_blank" rel="noopener noreferrer" title="View open roles at ${escapeHtml(c.name)}"><span>${escapeHtml(r.title)} <span style="color:var(--text-muted); font-size:11.5px;">— ${escapeHtml(r.dept)}, ${escapeHtml(r.location)}</span></span><iconify-icon icon="ph:arrow-square-out" class="role-pill-arrow"></iconify-icon></a>`).join("")}</div>` : emptyState("No roles opened today.")}
+
+        <h3 style="font-size:13px; margin:18px 0 8px; color:var(--text-secondary);">Most Prominent Roles Hiring For</h3>
+        <div class="role-pill-list">${c.hiring.topRoles.map((r) => `<a class="role-pill role-pill-link" href="${escapeHtml(c.careersUrl || "#")}" target="_blank" rel="noopener noreferrer" title="View open roles at ${escapeHtml(c.name)}"><span>${escapeHtml(r.title)}</span><span style="display:flex; align-items:center; gap:8px;"><span class="count">${r.count} open</span><iconify-icon icon="ph:arrow-square-out" class="role-pill-arrow"></iconify-icon></span></a>`).join("") || emptyState("No open roles.")}</div>
+      </div>
+      <div>
+        <h3 style="font-size:13px; margin-bottom:8px; color:var(--text-secondary);">New Hires</h3>
+        <div class="card">
+          ${c.hiring.recentHires.length ? c.hiring.recentHires.map((h) => `<div class="hire-row">
+            <div class="hire-avatar">${escapeHtml(h.name.split(" ").map((n) => n[0]).join("").slice(0,2))}</div>
+            <div class="hire-info">
+              <div class="hire-name">${escapeHtml(h.name)}</div>
+              <div class="hire-role">${escapeHtml(h.role)}</div>
+              <div class="hire-from">${escapeHtml(h.from)}</div>
+            </div>
+            <div class="hire-date">${fmt(h.date, { month: "short", day: "numeric" })}</div>
+          </div>`).join("") : `<div style="padding:16px;">${emptyState("Work in progress.")}</div>`}
+        </div>
+      </div>
+    </div>`;
+
+    // Marketing
+    html += `<div class="section-heading"><iconify-icon icon="ph:megaphone"></iconify-icon><h2>Notable Marketing Activity</h2></div>`;
+    html += c.marketing.length
+      ? c.marketing.map((m) => `<div class="card activity-item${m.url ? " has-arrow-link" : ""}">
+          <div class="activity-icon"><iconify-icon icon="ph:megaphone"></iconify-icon></div>
+          <div class="activity-body">
+            <div class="activity-top-row"><span class="activity-title">${escapeHtml(m.title)}</span><span class="tag-chip">${escapeHtml(m.channel)}</span><span class="activity-time">${fmt(m.date, { month: "short", day: "numeric" })}</span></div>
+            <div class="activity-text">${escapeHtml(m.body)}</div>
+          </div>
+          ${arrowLink(m.url, "Open source for: " + m.title)}
+        </div>`).join("")
+      : emptyState("No notable marketing activity recorded for this company yet.");
+
+    return html;
+  }
+
+  function activityItemHtml(a, timeLabel) {
+    return `<div class="card activity-item${a.url ? " has-arrow-link" : ""}">
+      <div class="activity-icon"><iconify-icon icon="${categoryIcon(a.tag)}"></iconify-icon></div>
+      <div class="activity-body">
+        <div class="activity-top-row">
+          <span class="activity-title">${escapeHtml(a.title)}</span>
+          <span class="tag-chip">${escapeHtml(a.tag)}</span>
+          <span class="activity-time">${escapeHtml(timeLabel)}</span>
+        </div>
+        <div class="activity-text">${escapeHtml(a.body)}</div>
+      </div>
+      ${arrowLink(a.url, "Open source for: " + a.title)}
+    </div>`;
+  }
+
+  /* ================= NEW MARKET ENTRANTS ================= */
+  function renderEntrants() {
+    const threatOrder = { high: 0, medium: 1, low: 2 };
+    const items = [...NEW_ENTRANTS].filter((e) => e.date <= state.asOf).sort((a, b) => threatOrder[a.threat] - threatOrder[b.threat] || b.date.localeCompare(a.date));
+
+    let html = sampleBanner(true);
+    html += `<div class="section-heading"><iconify-icon icon="ph:compass"></iconify-icon><h2>New Market Entrants</h2><span class="count-chip">${items.length}</span></div>
+    <p class="section-sub">Sourced from VC portfolio pages (Y Combinator, a16z, and similar), founder LinkedIn activity, and launch posts. Ordered by estimated threat to Patlytics.</p>`;
+
+    if (!items.length) return html + emptyState("No new entrants identified as of this date in the preview dataset.");
+
+    items.forEach((e) => {
+      const linkUrl = e.website || e.linkedin;
+      const linkLabel = e.website ? "Visit website" : "Visit LinkedIn";
+      const openRolesLabel = e.hiring.openRoles != null ? `${e.hiring.openRoles} open roles` : "Open roles not yet verified";
+      html += `<div class="card entrant-card${e.sourceUrl ? " has-arrow-link" : ""}">
+        <div class="entrant-top">
+          <div class="entrant-name-row">
+            <span class="entrant-name">${escapeHtml(e.name)}</span>
+            ${linkUrl ? `<a class="inline-link-icon" href="${escapeHtml(linkUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(e.name)} — ${linkLabel}" title="${escapeHtml(linkLabel)}"><iconify-icon icon="ph:arrow-square-out" aria-hidden="true"></iconify-icon></a>` : ""}
+          </div>
+          <span class="threat-badge ${e.threat}">${e.threat} threat</span>
+        </div>
+        <div class="entrant-tagline">${escapeHtml(e.tagline)}</div>
+        <div class="entrant-meta-row">
+          <div class="mini-meta"><span class="mini-label">Backing</span>${escapeHtml(e.backing)}</div>
+          <div class="mini-meta"><span class="mini-label">Stage</span>${escapeHtml(e.stage)}</div>
+          <div class="mini-meta"><span class="mini-label">Identified</span>${fmt(e.date, { month: "short", day: "numeric" })}</div>
+        </div>
+        <div class="entrant-desc">${escapeHtml(e.description)}</div>
+        <div class="entrant-founders">
+          ${e.foundingTeam.map((f) => `<div class="ef-row"><strong>${escapeHtml(f.name)}</strong> — <span>${escapeHtml(f.background)}</span></div>`).join("")}
+        </div>
+        <div class="entrant-hiring">
+          <strong>${openRolesLabel}</strong> · Focus: ${escapeHtml(e.hiring.focus)}<br/>
+          Hiring profile: ${escapeHtml(e.hiring.hiringProfile)}
+        </div>
+        ${arrowLink(e.sourceUrl, "Open source: " + (e.source || e.name))}
+      </div>`;
+    });
+    return html;
+  }
+
+  /* ================= WEBINARS ================= */
+  function renderWebinars() {
+    let html = sampleBanner(true);
+    html += `<div class="section-heading"><iconify-icon icon="ph:calendar-blank"></iconify-icon><h2>Industry &amp; Competitor Webinars</h2></div>
+    <div class="webinar-toolbar">
+      <div class="filter-pill-group" id="webinar-filter-group">
+        <button type="button" data-filter="upcoming" class="${state.webinarFilter === "upcoming" ? "active" : ""}">Upcoming</button>
+        <button type="button" data-filter="past" class="${state.webinarFilter === "past" ? "active" : ""}">Past</button>
+        <button type="button" data-filter="all" class="${state.webinarFilter === "all" ? "active" : ""}">All</button>
+      </div>
+      <div class="date-range-inputs">
+        <iconify-icon icon="ph:funnel"></iconify-icon> Filter by date:
+        <input type="date" id="webinar-from" min="${EARLIEST_DATE}" />
+        <span>to</span>
+        <input type="date" id="webinar-to" />
+      </div>
+    </div>
+    <div id="webinar-list"></div>`;
+    return html;
+  }
+
+  function computeWebinarList() {
+    const fromEl = document.getElementById("webinar-from");
+    const toEl = document.getElementById("webinar-to");
+    const from = fromEl && fromEl.value;
+    const to = toEl && toEl.value;
+
+    let items = [...WEBINARS];
+    if (state.webinarFilter === "upcoming") items = items.filter((w) => w.date >= ANCHOR_DATE);
+    else if (state.webinarFilter === "past") items = items.filter((w) => w.date < ANCHOR_DATE);
+    if (from) items = items.filter((w) => w.date >= from);
+    if (to) items = items.filter((w) => w.date <= to);
+
+    items.sort((a, b) => (state.webinarFilter === "past" ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date)));
+    return items;
+  }
+
+  function renderWebinarList() {
+    const list = document.getElementById("webinar-list");
+    if (!list) return;
+    const items = computeWebinarList();
+    if (!items.length) { list.innerHTML = emptyState("No webinars match this filter in the preview dataset."); return; }
+
+    const relevanceBadge = { high: "critical", medium: "high", low: "low" };
+    list.innerHTML = items.map((w) => `<div class="card webinar-card${w.url ? " has-arrow-link" : ""}">
+      <div class="webinar-date-block">
+        <div class="wd-month">${fmt(w.date, { month: "short" })}</div>
+        <div class="wd-day">${parseDate(w.date).getUTCDate()}</div>
+      </div>
+      <div class="webinar-info">
+        <div class="webinar-title-row">
+          <span class="webinar-title">${escapeHtml(w.title)}</span>
+          <span class="badge ${relevanceBadge[w.relevance]}">${w.relevance} relevance</span>
+        </div>
+        <div class="webinar-host">Hosted by ${escapeHtml(w.host)} · ${escapeHtml(w.format)}</div>
+        <div class="webinar-desc">${escapeHtml(w.description)}</div>
+        <div class="webinar-tags">${w.tags.map((t) => `<span class="tag-chip">${escapeHtml(t)}</span>`).join("")}</div>
+      </div>
+      <div class="webinar-time-format">${escapeHtml(w.time)}</div>
+      ${arrowLink(w.url, "Open registration / host page for: " + w.title)}
+    </div>`).join("");
+  }
+
+  function wireWebinarToolbar() {
+    if (state.activeTab !== "webinars") return;
+    renderWebinarList();
+    document.querySelectorAll("#webinar-filter-group button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.webinarFilter = btn.dataset.filter;
+        document.querySelectorAll("#webinar-filter-group button").forEach((b) => b.classList.toggle("active", b === btn));
+        renderWebinarList();
+      });
+    });
+    ["webinar-from", "webinar-to"].forEach((id) => {
+      document.getElementById(id).addEventListener("change", renderWebinarList);
+    });
+  }
+
+  /* ================= SHARED PARTIALS ================= */
+  function sampleBanner(short) {
+    return `<div class="sample-banner">
+      <iconify-icon icon="ph:flask"></iconify-icon>
+      <span><strong>Preview mode.</strong> ${short ? "Sample data — " : "This dashboard is showing sample data for UI review — "}the live scraping and aggregation pipeline is not yet connected.</span>
+    </div>`;
+  }
+  function arrowLink(url, label) {
+    if (!url) return "";
+    return `<a class="card-arrow-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || "Open source in a new tab")}" title="${escapeHtml(label || "Open source")}">
+      <iconify-icon icon="ph:arrow-up-right" aria-hidden="true"></iconify-icon>
+    </a>`;
+  }
+  function externalLinkIcon(url, label) {
+    if (!url) return "";
+    return `<a class="inline-link-icon" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || "Open in a new tab")}" title="${escapeHtml(label || "Open in a new tab")}">
+      <iconify-icon icon="ph:arrow-square-out" aria-hidden="true"></iconify-icon>
+    </a>`;
+  }
+  function emptyState(text) {
+    return `<div class="empty-state"><iconify-icon icon="ph:tray" style="font-size:20px; display:block; margin:0 auto 6px;"></iconify-icon>${escapeHtml(text)}</div>`;
+  }
+
+  /* ================= DATE NAV / RANGE TOGGLE ================= */
+  function wireTopbarControls() {
+    document.getElementById("date-prev").addEventListener("click", () => {
+      state.asOf = clamp(addDays(state.asOf, -rangeSpanDays()));
+      updateDateNavLabel();
+      renderActiveTab();
+    });
+    document.getElementById("date-next").addEventListener("click", () => {
+      state.asOf = clamp(addDays(state.asOf, rangeSpanDays()));
+      updateDateNavLabel();
+      renderActiveTab();
+    });
+    document.querySelectorAll("#range-toggle button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.range = btn.dataset.range;
+        document.querySelectorAll("#range-toggle button").forEach((b) => b.classList.toggle("active", b === btn));
+        updateDateNavLabel();
+        renderActiveTab();
+      });
+    });
+  }
+
+  /* ================= GLOBAL SEARCH ================= */
+  function buildSearchIndex() {
+    const idx = [];
+    HIGHLIGHTS.forEach((h) => idx.push({ group: "Daily Brief", tab: "general", title: h.title, meta: `${h.category} · ${fmt(h.date, { month: "short", day: "numeric" })}`, text: `${h.title} ${h.summary} ${h.whyItMatters}`, asOf: h.date }));
+    COMPETITORS.forEach((c) => {
+      idx.push({ group: "Competitors", tab: c.id, title: c.name, meta: c.tier, text: `${c.name} ${c.description} ${c.tagline}`, asOf: ANCHOR_DATE });
+      [...c.todayActivity, ...c.weekActivity].forEach((a) => idx.push({ group: "Competitors", tab: c.id, title: `${c.name}: ${a.title}`, meta: a.tag, text: `${a.title} ${a.body}`, asOf: a.date || ANCHOR_DATE }));
+      c.marketing.forEach((m) => idx.push({ group: "Competitors", tab: c.id, title: `${c.name}: ${m.title}`, meta: "Marketing", text: `${m.title} ${m.body}`, asOf: m.date }));
+    });
+    NEW_ENTRANTS.forEach((e) => idx.push({ group: "New Market Entrants", tab: "entrants", title: e.name, meta: e.backing, text: `${e.name} ${e.tagline} ${e.description}`, asOf: e.date }));
+    WEBINARS.forEach((w) => idx.push({ group: "Webinars", tab: "webinars", title: w.title, meta: `${w.host} · ${fmt(w.date, { month: "short", day: "numeric" })}`, text: `${w.title} ${w.description} ${w.host}`, asOf: w.date }));
+    return idx;
+  }
+
+  function wireSearch() {
+    const index = buildSearchIndex();
+    const input = document.getElementById("global-search");
+    const resultsBox = document.getElementById("search-results");
+
+    function runSearch() {
+      const q = input.value.trim().toLowerCase();
+      if (!q) { resultsBox.classList.add("hidden"); resultsBox.innerHTML = ""; return; }
+      const matches = index.filter((item) => item.text.toLowerCase().includes(q)).slice(0, 40);
+
+      if (!matches.length) {
+        resultsBox.innerHTML = `<div class="search-empty">No results for "${escapeHtml(input.value)}"</div>`;
+        resultsBox.classList.remove("hidden");
+        return;
+      }
+      const groups = {};
+      matches.forEach((m) => { (groups[m.group] = groups[m.group] || []).push(m); });
+
+      let html = "";
+      Object.keys(groups).forEach((g) => {
+        html += `<div class="search-result-group-label">${escapeHtml(g)}</div>`;
+        groups[g].slice(0, 6).forEach((m) => {
+          html += `<button type="button" class="search-result-item" data-tab="${m.tab}" data-asof="${m.asOf}">
+            <span class="sr-title">${escapeHtml(m.title)}</span>
+            <span class="sr-meta">${escapeHtml(m.meta)}</span>
+          </button>`;
+        });
+      });
+      resultsBox.innerHTML = html;
+      resultsBox.classList.remove("hidden");
+
+      resultsBox.querySelectorAll(".search-result-item").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (btn.dataset.asof) state.asOf = clamp(btn.dataset.asof);
+          switchTab(btn.dataset.tab);
+          resultsBox.classList.add("hidden");
+          input.value = "";
+        });
+      });
+    }
+
+    input.addEventListener("input", runSearch);
+    input.addEventListener("keydown", (e) => { if (e.key === "Escape") { resultsBox.classList.add("hidden"); input.blur(); } });
+    document.addEventListener("click", (e) => { if (!e.target.closest(".sidebar-search")) resultsBox.classList.add("hidden"); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/" && document.activeElement !== input && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        input.focus();
+      }
+    });
+  }
+
+  /* ================= INIT ================= */
+  function init() {
+    renderSidebar();
+    wireTopbarControls();
+    wireSearch();
+    document.getElementById("logo-home-btn").addEventListener("click", () => switchTab("home"));
+    switchTab("home");
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Patlytics Intel — Competitive Intelligence Brief</title>
+<link rel="icon" type="image/jpeg" href="assets/img/patlytics-favicon.jpeg" />
+<link rel="stylesheet" href="css/styles.css" />
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ===================== EMPLOYEE ACCESS GATE ===================== -->
+<!-- Client-side only: deters casual visitors, does not secure the -->
+<!-- underlying static files. See js/auth-gate.js for details/limits. -->
+<div id="auth-gate" class="auth-gate">
+  <form id="auth-gate-form" class="auth-gate-card" autocomplete="off">
+    <img src="assets/img/patlytics-logo.jpg" alt="Patlytics logo" class="auth-gate-logo" />
+    <h1>Employees Only</h1>
+    <p>This is an internal Patlytics tool. Enter the shared access password to continue.</p>
+    <label for="auth-gate-input" class="visually-hidden">Password</label>
+    <input type="password" id="auth-gate-input" placeholder="Password" autocomplete="off" />
+    <button type="submit" class="auth-gate-submit">Unlock</button>
+    <div id="auth-gate-error" class="auth-gate-error" role="alert" aria-live="assertive"></div>
+  </form>
+</div>
+
+<div class="app-shell" id="app-shell">
+
+  <!-- ===================== SIDEBAR ===================== -->
+  <nav class="sidebar" aria-label="Primary navigation">
+    <div class="sidebar-brand">
+      <button type="button" class="brand-logo-btn" id="logo-home-btn" aria-label="Go to overview">
+        <img src="assets/img/patlytics-logo-white.png" alt="Patlytics logo" class="brand-logo-img" />
+      </button>
+    </div>
+    <div class="sidebar-brand-row">
+      <div class="sidebar-brand-text">
+        <strong>Competitive Intel</strong>
+        <span class="brand-sub">Daily brief &amp; monitoring</span>
+      </div>
+    </div>
+
+    <div class="sidebar-search">
+      <label for="global-search" class="visually-hidden">Search the competitive intelligence brief</label>
+      <div class="search-field">
+        <iconify-icon icon="ph:magnifying-glass" aria-hidden="true"></iconify-icon>
+        <input type="search" id="global-search" placeholder="Search everything…" autocomplete="off" />
+        <span class="search-kbd">/</span>
+      </div>
+      <div id="search-results" class="search-results hidden" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <div class="sidebar-nav" id="sidebar-nav">
+      <!-- populated by app.js -->
+    </div>
+
+    <div class="sidebar-footer">
+      <strong id="sidebar-last-updated">Preview data</strong>
+      <span>Sample dataset for UI review. Live scraping pipeline not yet connected.</span>
+    </div>
+  </nav>
+
+  <!-- ===================== MAIN ===================== -->
+  <div class="main">
+    <header class="topbar">
+      <div class="topbar-title-wrap">
+        <span class="topbar-eyebrow" id="topbar-eyebrow">
+          <iconify-icon icon="ph:squares-four" aria-hidden="true"></iconify-icon>
+          Daily Brief
+        </span>
+        <h1 class="topbar-title" id="topbar-title">General Highlights</h1>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+        <span class="preview-badge">
+          <iconify-icon icon="ph:flask" aria-hidden="true"></iconify-icon>
+          Preview · Sample Data
+        </span>
+
+        <div class="range-toggle" id="range-toggle" role="group" aria-label="Time range">
+          <button type="button" data-range="day" class="active">Day</button>
+          <button type="button" data-range="week">Week</button>
+          <button type="button" data-range="month">Month</button>
+        </div>
+
+        <div class="date-nav" id="date-nav" role="group" aria-label="Browse by date">
+          <button type="button" class="icon-btn" id="date-prev" aria-label="Previous period">
+            <iconify-icon icon="ph:caret-left"></iconify-icon>
+          </button>
+          <span class="date-nav-label" id="date-nav-label">Today · Aug 25, 2026</span>
+          <button type="button" class="icon-btn" id="date-next" aria-label="Next period">
+            <iconify-icon icon="ph:caret-right"></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="content" id="main-content">
+      <div id="sample-banner-slot"></div>
+      <div id="tab-panels"><!-- populated by app.js --></div>
+    </main>
+  </div>
+</div>
+
+<script src="js/auth-gate.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
