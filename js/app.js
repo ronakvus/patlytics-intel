@@ -585,8 +585,10 @@
     const index = buildSearchIndex();
     const input = document.getElementById("global-search");
     const resultsBox = document.getElementById("search-results");
+    const clearBtn = document.getElementById("search-clear-btn");
 
     function runSearch() {
+      clearBtn.classList.toggle("hidden", input.value.length === 0);
       const q = input.value.trim().toLowerCase();
       if (!q) { resultsBox.classList.add("hidden"); resultsBox.innerHTML = ""; return; }
       const matches = index.filter((item) => item.text.toLowerCase().includes(q)).slice(0, 40);
@@ -624,6 +626,11 @@
 
     input.addEventListener("input", runSearch);
     input.addEventListener("keydown", (e) => { if (e.key === "Escape") { resultsBox.classList.add("hidden"); input.blur(); } });
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      runSearch();
+      input.focus();
+    });
     document.addEventListener("click", (e) => { if (!e.target.closest(".sidebar-search")) resultsBox.classList.add("hidden"); });
     document.addEventListener("keydown", (e) => {
       if (e.key === "/" && document.activeElement !== input && !["INPUT", "TEXTAREA"].includes(document.activeElement.tagName)) {

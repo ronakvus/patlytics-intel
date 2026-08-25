@@ -210,6 +210,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
   font-family: inherit; font-size: 13.5px; width: 100%;
 }
 .search-field input::placeholder { color: var(--text-on-dark-muted); }
+.search-field input::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
+.search-clear-btn {
+  background: none; border: none; padding: 3px; margin: 0; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--brand-bright); border-radius: 5px; line-height: 0;
+}
+.search-clear-btn.hidden { display: none; }
+.search-clear-btn:hover { background: rgba(87, 221, 48, 0.15); }
+.search-clear-btn iconify-icon { color: var(--brand-bright); font-size: 15px; font-weight: 400; }
 .search-kbd {
   font-size: 10.5px; color: var(--text-on-dark-muted);
   border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 1px 5px;
