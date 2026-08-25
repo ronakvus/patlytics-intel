@@ -402,9 +402,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 .company-header-card { padding: 22px 24px; margin-bottom: 22px; }
 .company-header-top { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 14px; flex-wrap: wrap; }
 .company-avatar {
-  width: 52px; height: 52px; border-radius: 14px; background: var(--brand-forest-700);
-  color: #fff; display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 17px; flex-shrink: 0;
+  width: 52px; height: 52px; border-radius: 14px; background: #fff;
+  border: 1px solid var(--border); color: var(--text-primary);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 17px; flex-shrink: 0; overflow: hidden;
+}
+.company-avatar img { width: 100%; height: 100%; object-fit: contain; padding: 7px; }
+.company-avatar .avatar-fallback {
+  width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+  background: var(--brand-forest-700); color: #fff;
 }
 .company-header-titles { flex: 1; min-width: 200px; }
 .company-header-titles h2 { font-size: 20px; margin-bottom: 3px; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }

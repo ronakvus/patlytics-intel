@@ -55,6 +55,19 @@
     return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
+  // Real company logo, keyed off the company's own domain via unavatar.io
+  // (aggregates favicons/logos across several public sources). Falls back
+  // to the initials avatar automatically (onerror) if none is found —
+  // fallback=false makes it 404 instead of returning a generic placeholder.
+  function companyAvatarHtml(website, initials, name) {
+    const domain = (website || "").split("/")[0];
+    const logoUrl = domain ? `https://unavatar.io/${encodeURIComponent(domain)}?fallback=false` : "";
+    return `<div class="company-avatar">
+      ${logoUrl ? `<img src="${logoUrl}" alt="${escapeHtml(name)} logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ""}
+      <span class="avatar-fallback" style="${logoUrl ? "display:none;" : "display:flex;"}">${escapeHtml(initials)}</span>
+    </div>`;
+  }
+
   /* ================= SIDEBAR ================= */
   function renderSidebar() {
     const nav = document.getElementById("sidebar-nav");
@@ -169,6 +182,22 @@
     root.querySelectorAll(".feature-card[data-tab]").forEach((btn) => {
       btn.addEventListener("click", () => switchTab(btn.dataset.tab));
     });
+    watchAvatarLoad(root.querySelector(".company-avatar img"));
+  }
+
+  // Defensive fallback: if a logo request hangs (slow/unreliable network)
+  // rather than firing a normal error event, don't leave a blank box —
+  // swap to the initials after a short grace period.
+  function watchAvatarLoad(img) {
+    if (!img) return;
+    setTimeout(() => {
+      if (!img.isConnected) return;
+      if (!img.complete || img.naturalWidth === 0) {
+        img.style.display = "none";
+        const fallback = img.nextElementSibling;
+        if (fallback) fallback.style.display = "flex";
+      }
+    }, 3500);
   }
 
   /* ================= HOME / OVERVIEW ================= */
@@ -269,7 +298,7 @@
 
     html += `<div class="card company-header-card">
       <div class="company-header-top">
-        <div class="company-avatar">${escapeHtml(c.initials)}</div>
+        ${companyAvatarHtml(c.website, c.initials, c.name)}
         <div class="company-header-titles">
           <h2>${escapeHtml(c.name)}${c.linkedin ? `<a class="company-linkedin-link" href="${escapeHtml(c.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>` : ""}</h2>
           <div class="company-tagline">${escapeHtml(c.tagline)}</div>
