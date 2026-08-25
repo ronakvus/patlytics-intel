@@ -34,15 +34,15 @@ const HIGHLIGHTS = [
     date: d(-1),
     priority: "critical",
     category: "Partnership",
-    title: "Thomson Reuters and Solve Intelligence announce strategic partnership",
+    title: "Solve Intelligence and Thomson Reuters partnership now confirmed by both companies",
     summary:
-      "Thomson Reuters is integrating Solve Intelligence's AI drafting and prosecution copilot into its IP workflow suite, pairing Reuters' Practical Law / Westlaw IP content and firm-side distribution with Solve's generative drafting engine.",
+      "Solve Intelligence co-founder Chris Parsonson and the company's own LinkedIn page have publicly confirmed a partnership with Thomson Reuters. Thomson Reuters Ventures is also a confirmed investor in Solve Intelligence (Series A April 2025; increased its stake in Solve's ~$40M Series B, Dec 2025). Exact commercial terms/scope of the partnership are not yet detailed in public sources.",
     whyItMatters:
-      "This is the single biggest competitive signal of the quarter. It gives a direct, well-funded competitor an enterprise distribution channel into exactly the law-firm and corporate IP-counsel accounts Patlytics is targeting. Expect Solve to lean on this in every enterprise sales conversation for the next 6–12 months.",
+      "This upgrades what was previously an unconfirmed rumor to a real, company-confirmed relationship. It gives a direct, well-funded competitor an enterprise distribution/investor relationship with exactly the legal-data incumbent whose law-firm and corporate IP-counsel channels Patlytics competes for. Expect Solve to lean on this in enterprise sales conversations.",
     companies: ["Solve Intelligence"],
-    source: "Reported partnership — not yet independently confirmed by our search pass",
+    source: "Solve Intelligence / Chris Parsonson (LinkedIn)",
     sourceType: "press-release",
-    url: "https://ipwatchdog.com/",
+    url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-is-partnering-with-activity-7497654008715661312-sC4_",
   },
   {
     id: "hl-2",
@@ -314,6 +314,21 @@ const HIGHLIGHTS = [
     sourceType: "news",
     url: "https://www.law360.com/ip/articles/1810349/ipwe-seeks-ch-7-liquidation-after-ch-11-financing-loss",
   },
+  {
+    id: "hl-20",
+    date: d(0),
+    priority: "high",
+    category: "Product",
+    title: "Google Cloud launches \"Gemini Enterprise for Legal\"",
+    summary:
+      "Google Cloud unveiled a purpose-built, industry-specific version of Gemini Enterprise for law firms and corporate legal departments, in preview, with legal-specific \"skills\" (citation verification, contract lifecycle management, brief drafting, DSAR execution, regulation monitoring) and connectors into existing DMS/e-discovery/research systems. Cleary Gottlieb, Freshfields, Weil, and Williams & Connolly are named launch firms.",
+    whyItMatters:
+      "A hyperscaler entering legal AI natively at the platform level — not as a point solution — is a structural signal for every legal/IP AI vendor, including patent-specific tools that may eventually need to interoperate with (or compete against) Gemini Enterprise's legal skills.",
+    companies: ["Industry-wide"],
+    source: "Artificial Lawyer, Law.com (American Lawyer / Legaltech News)",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -360,9 +375,9 @@ const COMPETITORS = [
       {
         time: "9:14 AM",
         tag: "Partnership",
-        title: "Thomson Reuters partnership goes live",
-        body: "Reported integration announcement with Thomson Reuters distributing Solve's drafting copilot through Practical Law / Westlaw IP channels. See General Highlights — this specific item could not be independently confirmed in our search pass.",
-        url: null,
+        title: "Thomson Reuters partnership confirmed by both companies",
+        body: "Solve Intelligence and Thomson Reuters have both publicly confirmed a partnership (founder + company LinkedIn posts). Thomson Reuters Ventures is also a confirmed investor. See General Highlights — exact commercial terms/scope are not yet publicly detailed.",
+        url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-is-partnering-with-activity-7497654008715661312-sC4_",
       },
     ],
     weekActivity: [
@@ -453,6 +468,13 @@ const COMPETITORS = [
       },
     ],
     weekActivity: [
+      {
+        date: d(-1),
+        tag: "Content",
+        title: "Published R&D patent-landscape analysis on direct air capture",
+        body: "PatSnap Research published \"Direct Air Capture Energy Integration Patents: Leaders & Filing Trends 2026,\" analyzing 732 patent records across 100 companies.",
+        url: "https://www.patsnap.com/resources/blog/rd-blog/direct-air-capture-energy-integration-patent-data/",
+      },
       {
         date: d(-2),
         tag: "Sales",
@@ -1120,6 +1142,13 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/wearelegora",
     weekActivity: [
       {
+        date: "2026-08-17",
+        tag: "Product",
+        title: "Announced integration with Box",
+        body: "Integration agreement with content-management platform Box, in beta this quarter.",
+        url: "https://www.globallegalpost.com/news/legora-announces-integration-agreement-with-content-management-intelligence-platform-box-1821553996",
+      },
+      {
         date: "2026-08-13",
         tag: "Funding",
         title: "Reportedly in talks to raise at a $10B valuation",
@@ -1230,17 +1259,28 @@ COMPETITORS.push(
       },
     ],
   }),
-  stubCompetitor({
-    id: "draftwise",
-    name: "DraftWise",
-    rank: 33,
-    tier: "Tier 3 — Adjacent",
-    initials: "DW",
-    tagline: "AI contract drafting and negotiation using firm knowledge.",
-    description: "DraftWise uses a law firm's own historical documents to power AI-assisted contract drafting and negotiation — a broader legal-AI adjacent player.",
-    website: "draftwise.com",
-    linkedin: "https://www.linkedin.com/company/draftwise-ai",
-  }),
+  {
+    ...stubCompetitor({
+      id: "draftwise",
+      name: "DraftWise",
+      rank: 33,
+      tier: "Tier 3 — Adjacent",
+      initials: "DW",
+      tagline: "AI contract drafting and negotiation using firm knowledge.",
+      description: "DraftWise uses a law firm's own historical documents to power AI-assisted contract drafting and negotiation — a broader legal-AI adjacent player.",
+      website: "draftwise.com",
+      linkedin: "https://www.linkedin.com/company/draftwise-ai",
+    }),
+    weekActivity: [
+      {
+        date: "2026-08-24",
+        tag: "Product",
+        title: "Launched \"Legal Ontology\" framework",
+        body: "A framework meant to capture the judgment layer behind law-firm documents — modeling relationships/decisions rather than just document text.",
+        url: "https://www.artificiallawyer.com/2026/08/24/draftwise-launches-legal-ontology-to-capture-the-judgment-layer/",
+      },
+    ],
+  },
   stubCompetitor({
     id: "genie-ai",
     name: "Genie AI",
@@ -1426,6 +1466,31 @@ const NEW_ENTRANTS = [
     date: "2026-08-05",
     source: "Artificial Lawyer, Tech.eu, EU-Startups",
     sourceUrl: "https://www.artificiallawyer.com/2026/08/05/aavalynx-raises-1-5m-pre-seed-for-litigation-insights/",
+  },
+  {
+    id: "lightbringer",
+    name: "Lightbringer",
+    threat: "medium",
+    backing: "$10M Series A (~€8.6M) co-led by 6 Degrees Capital and Newion",
+    stage: "Series A",
+    tagline: "AI-native, full-service patent provider — AI paired with in-house patent attorneys.",
+    website: "https://lightbringer.com",
+    linkedin: null,
+    description:
+      "Malmö, Sweden-based Lightbringer pairs AI with in-house patent attorneys to offer a full-service patent process (idea capture through drafting, prosecution/office actions, and portfolio management), aimed at startups and scale-ups. Raised a $10M Series A in mid-June 2026 (co-led by 6 Degrees Capital and Newion, with existing investors Luminar Ventures and Alliance VC); press reports cite 300% YoY revenue growth in Q2 2026 and plans to expand into the US market.",
+    foundingTeam: [
+      { name: "Dominic Davies", background: "Co-Founder & CEO. Former patent attorney." },
+      { name: "Ola Wassvik", background: "Co-Founder." },
+      { name: "Markus Andreasson", background: "Co-Founder." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet verified — careers page not yet scraped",
+      hiringProfile: "Not yet verified.",
+    },
+    date: "2026-06-16",
+    source: "ArcticStartup, EU-Startups, Global Legal Post, Tech Funding News",
+    sourceUrl: "https://www.eu-startups.com/2026/06/swedish-ai-patent-platform-lightbringer-raises-e8-6-million-to-take-on-big-law-and-replace-existing-patent-firms",
   },
 ];
 
