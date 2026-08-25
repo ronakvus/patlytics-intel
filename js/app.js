@@ -55,16 +55,15 @@
     return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   }
 
-  // Real company logo, keyed off the company's own domain via unavatar.io
-  // (aggregates favicons/logos across several public sources). Falls back
-  // to the initials avatar automatically (onerror) if none is found —
-  // fallback=false makes it 404 instead of returning a generic placeholder.
-  function companyAvatarHtml(website, initials, name) {
-    const domain = (website || "").split("/")[0];
-    const logoUrl = domain ? `https://unavatar.io/${encodeURIComponent(domain)}?fallback=false` : "";
+  // Real company logo, cached locally at assets/logos/{id}.png (fetched
+  // once from each company's own site, not a rate-limited third-party API
+  // at render time). Falls back to the initials avatar automatically
+  // (onerror) if a given id has no cached logo file yet.
+  function companyAvatarHtml(id, initials, name) {
+    const logoUrl = `assets/logos/${id}.png`;
     return `<div class="company-avatar">
-      ${logoUrl ? `<img src="${logoUrl}" alt="${escapeHtml(name)} logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />` : ""}
-      <span class="avatar-fallback" style="${logoUrl ? "display:none;" : "display:flex;"}">${escapeHtml(initials)}</span>
+      <img src="${logoUrl}" alt="${escapeHtml(name)} logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <span class="avatar-fallback" style="display:none;">${escapeHtml(initials)}</span>
     </div>`;
   }
 
@@ -298,7 +297,7 @@
 
     html += `<div class="card company-header-card">
       <div class="company-header-top">
-        ${companyAvatarHtml(c.website, c.initials, c.name)}
+        ${companyAvatarHtml(c.id, c.initials, c.name)}
         <div class="company-header-titles">
           <h2>${escapeHtml(c.name)}${c.linkedin ? `<a class="company-linkedin-link" href="${escapeHtml(c.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>` : ""}</h2>
           <div class="company-tagline">${escapeHtml(c.tagline)}</div>
