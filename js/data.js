@@ -15,7 +15,7 @@
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
 const ANCHOR_DATE = "2026-08-25";
-const EARLIEST_DATE = "2026-08-05"; // oldest date the mock archive covers
+const EARLIEST_DATE = "2026-08-04"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -163,6 +163,156 @@ const HIGHLIGHTS = [
     source: "PR Newswire",
     sourceType: "funding",
     url: "https://www.prnewswire.com/news-releases/fearn-raises-5-5-million-seed-to-end-the-two-tier-patent-system-302796012.html",
+  },
+  {
+    id: "hl-10",
+    date: "2026-08-18",
+    priority: "high",
+    category: "Product",
+    title: "NLPatent rebrands to Clerq, launches agentic end-to-end patent-work platform",
+    summary:
+      "NLPatent rebranded to Clerq and unveiled a new agentic AI platform spanning triage assessments through full patentability reports, alongside new partnerships with RPX Corporation and Park IP and a newly hired Director of IP Strategy.",
+    whyItMatters:
+      "A direct Tier 2 overlap competitor just repositioned itself as an end-to-end agentic patent workflow platform rather than a narrower semantic-search tool — worth re-evaluating how it's pitched against Patlytics going forward.",
+    companies: ["NLPatent"],
+    source: "IPWatchdog, Law360 Pulse, SiliconANGLE, BetaKit",
+    sourceType: "product",
+    url: "https://ipwatchdog.com/press/nlpatent-rebrands-to-clerq-unveils-the-next-generation-of-ip-intelligence-built-to-execute-patent-work-end-to-end/",
+  },
+  {
+    id: "hl-11",
+    date: "2026-08-13",
+    priority: "high",
+    category: "Market",
+    title: "Questel confirms data breach after vishing attack; ShinyHunters claims ~21M records exfiltrated",
+    summary:
+      "Questel confirmed attackers accessed part of its Microsoft 365 environment via a voice-phishing (vishing) attack on a Sales SharePoint site. The ShinyHunters group listed Questel SAS on its leak site, claiming roughly 21M records and 147GB of internal files. Questel has notified France's CNIL and filed criminal complaints.",
+    whyItMatters:
+      "A trust/security signal worth having ready for competitive sales conversations against a Tier 2 overlap competitor — customer data exposure at a rival IP platform is a legitimate differentiator to raise if prospects bring it up.",
+    companies: ["Questel"],
+    source: "GalaxyWarden, sqmagazine.co.uk, Breachsense",
+    sourceType: "news",
+    url: "https://www.galaxywarden.com/blog/breach/questel-sas-shinyhunters-2026-08",
+  },
+  {
+    id: "hl-12",
+    date: "2026-08-04",
+    priority: "medium",
+    category: "Partnership",
+    title: "Anaqua acquires Unified Patents to add litigation-risk mitigation",
+    summary:
+      "Anaqua acquired Unified Patents, adding IP-litigation-risk mitigation capabilities to its IP lifecycle-management platform for corporate and law-firm IP departments.",
+    whyItMatters:
+      "Anaqua is broadening from pure IP operations/docketing into litigation-risk analytics — narrowing the gap with platforms that already combine portfolio management and risk intelligence.",
+    companies: ["Anaqua"],
+    source: "GlobeNewswire, Law.com",
+    sourceType: "press-release",
+    url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/Anaqua-Acquires-Unified-Patents-to-Help-Organizations-Protect-Against-Rising-Intellectual-Property-Litigation-Risk.html",
+  },
+  {
+    id: "hl-13",
+    date: "2026-08-20",
+    priority: "medium",
+    category: "Product",
+    title: "Thomson Reuters launches next-generation agentic CoCounsel Legal",
+    summary:
+      "Thomson Reuters shipped general availability of a 'next generation' agentic CoCounsel Legal (Westlaw Brief Builder, Workspaces, a Word-integrated Drafting Agent, Tabular Analysis), alongside its own proprietary LLM ('Thomson') and an expanded CoCounsel Legal MCP integration with Anthropic's Claude.",
+    whyItMatters:
+      "Directly relevant given Thomson Reuters' reported partnership push with Solve Intelligence (see above) — TR is visibly accelerating agentic AI investment across its legal/IP stack, reinforcing the distribution threat.",
+    companies: ["Casetext (CoCounsel)"],
+    source: "Thomson Reuters press release",
+    sourceType: "product",
+    url: "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-launches-next-generation-of-cocounsel-legal-the-ai-ecosystem-built-for-legal-professionals",
+  },
+  {
+    id: "hl-14",
+    date: "2026-08-18",
+    priority: "low",
+    category: "Product",
+    title: "Harvey launches 'Harvey II' with persistent cross-app Memory",
+    summary:
+      "Harvey launched its next-generation platform centered on a persistent 'Memory' feature that learns individual lawyer/client preferences across Harvey, Word, Outlook, and its agents.",
+    whyItMatters:
+      "Harvey remains the generalist-AI comparison point sales reps hear most often; this keeps its platform story current even though it stays shallow on patent-specific depth.",
+    companies: ["Harvey"],
+    source: "Artificial Lawyer",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/08/18/next-gen-harvey-ii-launches-with-memory-at-its-core/",
+  },
+  {
+    id: "hl-15",
+    date: "2026-08-07",
+    priority: "low",
+    category: "Funding",
+    title: "Harvey reportedly in talks to raise ~$500M at a $15.5B valuation",
+    summary:
+      "Harvey is reportedly in talks to raise roughly $500M led by Lightspeed at a $15.5B valuation, up from $11B in March 2026; Goldman Sachs Alternatives and J.P. Morgan Growth Equity Partners reportedly invested in late July.",
+    whyItMatters:
+      "Reported, not yet a confirmed closed round — but continued capital concentration in generalist legal AI keeps Harvey well funded for downmarket/vertical expansion.",
+    companies: ["Harvey"],
+    source: "SiliconANGLE",
+    sourceType: "funding",
+    url: "https://siliconangle.com/2026/08/07/legal-ai-startup-harvey-reportedly-raising-500m-15-5b-valuation/",
+  },
+  {
+    id: "hl-16",
+    date: "2026-08-13",
+    priority: "low",
+    category: "Funding",
+    title: "Legora reportedly in talks to raise at a $10B valuation",
+    summary:
+      "Legora (formerly Leya) is reportedly in talks to raise at roughly $10B, nearly double its $5.6B Series D valuation from March 2026.",
+    whyItMatters:
+      "Another data point on how much capital is flowing into generalist legal AI broadly — worth tracking for budget-competition purposes even though Legora isn't patent-specific.",
+    companies: ["Legora"],
+    source: "Sifted",
+    sourceType: "funding",
+    url: "https://sifted.eu/articles/legora-in-talks-to-raise-at-a-10bn-valuation-according-to-reports",
+  },
+  {
+    id: "hl-17",
+    date: "2026-08-24",
+    priority: "low",
+    category: "Funding",
+    title: "Newcode raises $13.5M Series A for in-house law-firm AI deployment",
+    summary:
+      "Newcode (Oslo/Dublin) raised a $13.5M Series A led by OnDean Forward (Relativity founder Andrew Sieja's fund), with participation from Relativity's Rel Labs and The LegalTech Fund, for its configurable AI harness for law-firm document analysis, review, and enterprise search.",
+    whyItMatters:
+      "A newly funded, general legal-AI entrant — not patent-specific, but worth tracking for budget overlap. See New Market Entrants for the full profile.",
+    companies: ["Newcode"],
+    source: "Law.com Legaltech News, Artificial Lawyer",
+    sourceType: "funding",
+    url: "https://www.law.com/legaltechnews/2026/08/24/legal-ai-startup-newcode-announces-135m-series-a-round-with-investment-from-relativity/",
+  },
+  {
+    id: "hl-18",
+    date: "2026-08-25",
+    priority: "medium",
+    category: "Market",
+    title: "Robin AI confirmed wound down; engineering team acqui-hired by Microsoft",
+    summary:
+      "After a planned $50M raise fell through in October 2025, Robin AI laid off roughly a third of staff and sought a buyer. Its managed-services arm was acquired by Scissero in December 2025, and Microsoft absorbed its engineering team in January 2026 to bolster Word's legal-AI features.",
+    whyItMatters:
+      "Corrects a previously stale 'active adjacent competitor' listing — Robin AI is effectively no longer operating as an independent company. Verified today via multiple independent outlets.",
+    companies: ["Robin AI"],
+    source: "Legal Cheek, Artificial Lawyer, nonbillable.co.uk",
+    sourceType: "news",
+    url: "https://www.legalcheek.com/2025/10/uk-lawtech-business-seeks-buyer-following-38-million-fundraising-setback/",
+  },
+  {
+    id: "hl-19",
+    date: "2026-08-25",
+    priority: "low",
+    category: "Market",
+    title: "IPwe confirmed defunct following 2024 bankruptcy liquidation",
+    summary:
+      "IPwe filed for Chapter 11 bankruptcy in Delaware in January 2024 and later converted to Chapter 7 liquidation after its bankruptcy financing fell through. The company is no longer operating.",
+    whyItMatters:
+      "Corrects a previously stale 'active adjacent competitor' listing. Verified today via Law360's court coverage.",
+    companies: ["IPwe"],
+    source: "Law360",
+    sourceType: "news",
+    url: "https://www.law360.com/ip/articles/1810349/ipwe-seeks-ch-7-liquidation-after-ch-11-financing-loss",
   },
 ];
 
@@ -489,8 +639,23 @@ const COMPETITORS = [
         note: "Placeholder — bio pending verification via scraping pipeline.",
       },
     ],
-    todayActivity: [],
+    todayActivity: [
+      {
+        time: "12:00 PM ET",
+        tag: "Marketing",
+        title: "Hosting live webinar: 'AI for Lean IP Teams'",
+        body: "Live session on helping lean IP teams do more with less while empowering junior staff using AI.",
+        url: "https://ipwatchdog.com/event/webinar-anaqua-2026-08-25-ai-for-lean-ip-teams/",
+      },
+    ],
     weekActivity: [
+      {
+        date: "2026-08-04",
+        tag: "Corporate",
+        title: "Acquired Unified Patents",
+        body: "Anaqua acquired Unified Patents to add IP-litigation-risk mitigation capabilities to its lifecycle-management platform. See General Highlights.",
+        url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/Anaqua-Acquires-Unified-Patents-to-Help-Organizations-Protect-Against-Rising-Intellectual-Property-Litigation-Risk.html",
+      },
       {
         date: d(-4),
         tag: "Marketing",
@@ -546,11 +711,11 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
-        date: d(-5),
+        date: "2026-08-18",
         tag: "Webinar",
-        title: "Announced webinar: AI Patent Landscaping for Semiconductor Portfolios",
-        body: "Vertical-specific session targeting semiconductor IP teams. See General Highlights and the Webinars tab.",
-        url: siteUrl("lexisnexisip.com"),
+        title: "Hosted webinar: AI-Powered Patent Landscaping",
+        body: "Live session on AI-driven landscaping methodology for patent portfolios. See the Webinars tab.",
+        url: "https://ipwatchdog.com/event/webinar-lexisnexis-2026-08-18-ai-powered-patent-landscaping/",
       },
     ],
     hiring: {
@@ -564,11 +729,11 @@ const COMPETITORS = [
     },
     marketing: [
       {
-        title: "Vertical webinar push into semiconductors",
-        body: "Applied-science team running a dedicated session for semiconductor IP portfolios — direct overlap with our vertical expansion.",
+        title: "AI-Powered Patent Landscaping webinar",
+        body: "Live webinar on AI-driven landscaping methodology for patent portfolios, listed via IPWatchdog's events partner program.",
         channel: "Webinar",
-        date: d(-5),
-        url: siteUrl("lexisnexisip.com"),
+        date: "2026-08-18",
+        url: "https://ipwatchdog.com/event/webinar-lexisnexis-2026-08-18-ai-powered-patent-landscaping/",
       },
     ],
   },
@@ -611,11 +776,11 @@ const COMPETITORS = [
     rank: 24,
     tier: "Tier 3 — Adjacent",
     initials: "IW",
-    tagline: "AI and blockchain-based patent data and marketplace platform.",
+    tagline: "AI and blockchain-based patent data and marketplace platform. DEFUNCT — see note.",
     description:
-      "IPwe combines AI-driven patent data normalization with a blockchain-based patent registry and marketplace concept, targeting patent monetization and portfolio valuation use cases more than core search/drafting workflows.",
-    employeeCount: "~60 (est.)",
-    founded: "2017",
+      "IPwe combined AI-driven patent data normalization with a blockchain-based patent registry and marketplace concept, targeting patent monetization and portfolio valuation use cases. IPwe filed for Chapter 11 bankruptcy in Delaware in January 2024 and later converted to Chapter 7 liquidation after its bankruptcy financing fell through — the company is confirmed no longer operating (verified 2026-08-25, see General Highlights).",
+    employeeCount: "0 — company liquidated (Chapter 7, 2024)",
+    founded: "2017 (ceased operations 2024)",
     hq: "New York, NY",
     website: "ipwe.com",
     websiteUrl: siteUrl("ipwe.com"),
@@ -648,7 +813,10 @@ const COMPETITORS = [
 // activity, hiring counts, and founder bios have not been scraped yet for
 // these, so those fields are intentionally left as "not yet verified"
 // rather than guessed.
-function stubCompetitor({ id, name, rank, tier, initials, tagline, description, website, linkedin }) {
+function stubCompetitor({
+  id, name, rank, tier, initials, tagline, description, website, linkedin,
+  employeeCount, founded, hq, founders, todayActivity, weekActivity, hiring, marketing,
+}) {
   return {
     id,
     name,
@@ -657,20 +825,20 @@ function stubCompetitor({ id, name, rank, tier, initials, tagline, description, 
     initials,
     tagline,
     description,
-    employeeCount: "Not yet verified — pending scrape",
-    founded: "Not yet verified",
-    hq: "Not yet verified — pending scrape",
+    employeeCount: employeeCount || "Not yet verified — pending scrape",
+    founded: founded || "Not yet verified",
+    hq: hq || "Not yet verified — pending scrape",
     website,
     websiteUrl: siteUrl(website),
     careersUrl: siteUrl(website) + "/careers",
     linkedin,
-    founders: [
+    founders: founders || [
       { name: "Not yet verified", title: "Founder/CEO", note: "Placeholder — pending verification via scraping pipeline." },
     ],
-    todayActivity: [],
-    weekActivity: [],
-    hiring: { openRoles: null, newRolesToday: [], recentHires: [], topRoles: [] },
-    marketing: [],
+    todayActivity: todayActivity || [],
+    weekActivity: weekActivity || [],
+    hiring: hiring || { openRoles: null, newRolesToday: [], recentHires: [], topRoles: [] },
+    marketing: marketing || [],
   };
 }
 
@@ -682,7 +850,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "DI",
     tagline: "AI patent drafting and prosecution platform.",
-    description: "Repeatedly identified inside Patlytics' own competitive-analysis tracking as the closest direct competitor — an AI drafting and prosecution platform with significant product overlap. Highest-priority watch-list entry.",
+    description: "Repeatedly identified inside Patlytics' own competitive-analysis tracking as the closest direct competitor — an AI drafting and prosecution platform with significant product overlap. Highest-priority watch-list entry. Acquired German AI patent-drafting tool PatentMaker in June 2026 to build out European coverage, and exhibited at PATINFO 2026 (Ilmenau) on prior art search, Markush drafting, and office-action response.",
     website: "deepip.ai",
     linkedin: "https://www.linkedin.com/company/deep-ip",
   }),
@@ -704,9 +872,27 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "AN",
     tagline: "AI operating system for patent prosecution and portfolio management.",
-    description: "UK-based Ankar AI is building an AI-driven operating system spanning patent prosecution and portfolio management workflows.",
+    description: "UK-based Ankar AI is building an AI-driven operating system spanning patent prosecution and portfolio management workflows. Raised a $20M Series A led by Atomico in December 2025 (total raised ~$24M).",
     website: "ankar.ai",
     linkedin: "https://www.linkedin.com/company/ankar-ai",
+    weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Hiring",
+        title: "Actively hiring across product, sales, and patent engineering",
+        body: "Live openings observed today via public job postings, including Senior Product Engineer, Product Manager, Account Executive, Patent Product Engineer, and a Founder's Associate (Growth, Hiring & Ops) role — consistent with post-Series A scale-up.",
+        url: "https://uk.linkedin.com/jobs/view/senior-product-engineer-at-ankar-4411350945",
+      },
+    ],
+    marketing: [
+      {
+        title: "Hosting webinar: 'AI in Patent Practice — Change Management for Successful Adoption'",
+        body: "Upcoming live webinar (Sept 10, 2026) aimed at IP teams navigating AI adoption change management. See the Webinars tab.",
+        channel: "Webinar",
+        date: "2026-08-25",
+        url: "https://ipwatchdog.com/ankar-ai-september-10-2026/",
+      },
+    ],
   }),
   stubCompetitor({
     id: "edge",
@@ -715,7 +901,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "ED",
     tagline: "AI patent drafting (\"Ingenia\") and trademark clearance.",
-    description: "Edge offers AI patent drafting under its \"Ingenia\" product alongside trademark-clearance tooling, giving it a foothold in both patent and trademark AI workflows.",
+    description: "Edge offers AI patent drafting under its \"Ingenia\" product alongside trademark-clearance tooling, giving it a foothold in both patent and trademark AI workflows. Launched Certus, described as \"the world's first AI agent for trademark law\" (automated clearance search and filing), in April 2026.",
     website: "withedge.com",
     linkedin: "https://www.linkedin.com/company/workwithedge",
   }),
@@ -726,7 +912,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "PA",
     tagline: "AI infringement detection via claim-to-code mapping.",
-    description: "Patented.ai focuses on infringement analysis, mapping patent claims directly to product code/implementation to generate infringement evidence — tracked with its own dedicated page in Patlytics' internal competitor analysis.",
+    description: "Patented.ai focuses on infringement analysis, mapping patent claims directly to product code/implementation to generate infringement evidence — tracked with its own dedicated page in Patlytics' internal competitor analysis. Recent release notes describe a \"Parallel AI Processor\" (claimed 50-75x speed-up via parallel claim-term extraction), a \"Secure Viewer\" with proactive result notifications and PDF export, and workspace-based team collaboration with corporate auth (exact publish date not stated on the release-notes page).",
     website: "patented.ai",
     linkedin: "https://www.linkedin.com/company/patented",
   }),
@@ -737,20 +923,37 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "XL",
     tagline: "AI patent search, drafting-assist, and monetization platform.",
-    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics.",
+    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group, a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up (exact dates not independently pinned down in this pass).",
     website: "xlscout.ai",
     linkedin: "https://www.linkedin.com/company/xlscout-ai",
   }),
   stubCompetitor({
     id: "nlpatent",
-    name: "NLPatent",
+    name: "NLPatent (rebranded to Clerq)",
     rank: 12,
     tier: "Tier 2 — Strong Overlap",
-    initials: "NL",
-    tagline: "LLM-based semantic prior-art search.",
-    description: "NLPatent offers large-language-model-based semantic search over prior art, competing on the same natural-language search use case as Patlytics.",
+    initials: "CQ",
+    tagline: "Rebranded as Clerq — agentic AI platform for end-to-end patent work.",
+    description:
+      "NLPatent rebranded to Clerq on 2026-08-18, launching an agentic AI platform spanning triage assessments through full patentability reports (moving beyond its original LLM-based semantic prior-art search positioning), alongside new partnerships with RPX Corporation and Park IP and a newly hired Director of IP Strategy. See General Highlights.",
     website: "nlpatent.com",
     linkedin: "https://www.linkedin.com/company/nlpatent",
+    weekActivity: [
+      {
+        date: "2026-08-18",
+        tag: "Product",
+        title: "Rebranded to Clerq, launched agentic patent-work platform",
+        body: "New agentic platform covers triage assessments through full patentability reports; announced partnerships with RPX Corporation and Park IP.",
+        url: "https://ipwatchdog.com/press/nlpatent-rebrands-to-clerq-unveils-the-next-generation-of-ip-intelligence-built-to-execute-patent-work-end-to-end/",
+      },
+      {
+        date: "2026-08-18",
+        tag: "Hiring",
+        title: "Hired a Director of IP Strategy",
+        body: "New senior IP-strategy hire announced alongside the Clerq rebrand and platform launch.",
+        url: "https://www.law360.com/pulse/articles/2512374/nlpatent-rebrands-to-clerq-hires-director-of-ip-strategy",
+      },
+    ],
   }),
   stubCompetitor({
     id: "patentpal",
@@ -803,9 +1006,18 @@ COMPETITORS.push(
     tier: "Tier 2 — Strong Overlap",
     initials: "QU",
     tagline: "Global IP management and Orbit Intelligence analytics.",
-    description: "Questel is a global IP management provider whose Orbit Intelligence product competes on patent analytics and search, similar in scope to Clarivate's IP offering.",
+    description: "Questel is a global IP management provider whose Orbit Intelligence product competes on patent analytics and search, similar in scope to Clarivate's IP offering. Confirmed a data breach in August 2026 — see this week's activity.",
     website: "questel.com",
     linkedin: "https://www.linkedin.com/company/questel",
+    weekActivity: [
+      {
+        date: "2026-08-13",
+        tag: "Market",
+        title: "Confirmed data breach after vishing attack",
+        body: "Attackers accessed part of Questel's Microsoft 365 environment via a voice-phishing attack on a Sales SharePoint site; ShinyHunters claims ~21M records / 147GB exfiltrated. Questel notified France's CNIL and filed criminal complaints. See General Highlights.",
+        url: "https://www.galaxywarden.com/blog/breach/questel-sas-shinyhunters-2026-08",
+      },
+    ],
   }),
   stubCompetitor({
     id: "juristat",
@@ -828,6 +1040,15 @@ COMPETITORS.push(
     description: "Patent Bots combines rules-based and AI tooling for patent drafting, proofreading, and examiner statistics.",
     website: "patentbots.com",
     linkedin: "https://www.linkedin.com/company/patent-bots",
+    weekActivity: [
+      {
+        date: "2026-08-10",
+        tag: "Product",
+        title: "Shipped 'Gen AI Chat' for office-action response drafting",
+        body: "New chat feature automatically pulls the relevant office action, spec, and prior art to guide OA response drafting. (Exact publish date approximate — company blog is dated August 2026.)",
+        url: "https://blog.patentbots.com/2026/08/new-in-patent-bots-gen-ai-chat-now.html",
+      },
+    ],
   }),
   stubCompetitor({
     id: "alt-legal",
@@ -836,9 +1057,18 @@ COMPETITORS.push(
     tier: "Tier 2 — Strong Overlap",
     initials: "AL",
     tagline: "AI-assisted IP and trademark docketing.",
-    description: "Alt Legal provides AI-assisted docketing software for IP and trademark portfolios, overlapping with Patlytics primarily on the operations/docketing side.",
+    description: "Alt Legal provides AI-assisted docketing software for IP and trademark portfolios, overlapping with Patlytics primarily on the operations/docketing side. Acquired UK-based WebTMS in April 2026 to add global IP portfolio management.",
     website: "altlegal.com",
     linkedin: "https://www.linkedin.com/company/alt-legal-ip-management-software",
+    weekActivity: [
+      {
+        date: "2026-08-20",
+        tag: "Marketing",
+        title: "Published brand-monitoring content on ICANN's 2026 New gTLD Program",
+        body: "Blog content on how ICANN's 2026 New gTLD Program expansion affects brand monitoring, alongside a hosted webinar on trademark management software selection featuring Warner Music Group's Sofya Nadgorny.",
+        url: "https://www.altlegal.com/blog/2026gtlds/",
+      },
+    ],
   }),
   stubCompetitor({
     id: "pqai",
@@ -861,6 +1091,22 @@ COMPETITORS.push(
     description: "Harvey provides generalist domain-specific AI for AmLaw firms and professional services. Internally, Patlytics reps treat Harvey as a 'generalist AI' wedge competitor — the pitch being that Patlytics offers real IP-specific depth where Harvey is broad but shallow on patents.",
     website: "harvey.ai",
     linkedin: "https://www.linkedin.com/company/harvey-ai",
+    weekActivity: [
+      {
+        date: "2026-08-18",
+        tag: "Product",
+        title: "Launched 'Harvey II' with persistent cross-app Memory",
+        body: "New platform centered on a Memory feature that learns individual lawyer/client preferences across Harvey, Word, Outlook, and its agents. See General Highlights.",
+        url: "https://www.artificiallawyer.com/2026/08/18/next-gen-harvey-ii-launches-with-memory-at-its-core/",
+      },
+      {
+        date: "2026-08-07",
+        tag: "Funding",
+        title: "Reportedly in talks to raise ~$500M at a $15.5B valuation",
+        body: "Reported round led by Lightspeed, up from an $11B valuation in March 2026; Goldman Sachs Alternatives and J.P. Morgan Growth Equity Partners reportedly invested in late July. Not yet a confirmed closed round.",
+        url: "https://siliconangle.com/2026/08/07/legal-ai-startup-harvey-reportedly-raising-500m-15-5b-valuation/",
+      },
+    ],
   }),
   stubCompetitor({
     id: "legora",
@@ -868,10 +1114,19 @@ COMPETITORS.push(
     rank: 26,
     tier: "Tier 3 — Adjacent",
     initials: "LG",
-    tagline: "Collaborative generative AI for lawyers (review, drafting, research).",
-    description: "Legora offers collaborative generative AI for legal review, drafting, and research. Like Harvey, it's used internally as a generalist-AI comparison point in sales conversations rather than a head-to-head IP competitor.",
+    tagline: "Collaborative generative AI for lawyers (review, drafting, research). Formerly branded 'Leya'.",
+    description: "Legora offers collaborative generative AI for legal review, drafting, and research. Like Harvey, it's used internally as a generalist-AI comparison point in sales conversations rather than a head-to-head IP competitor. Note: this company was formerly branded 'Leya' (rebranded 2025) — see the separate Leya entry in this list, kept for historical continuity.",
     website: "legora.com",
     linkedin: "https://www.linkedin.com/company/wearelegora",
+    weekActivity: [
+      {
+        date: "2026-08-13",
+        tag: "Funding",
+        title: "Reportedly in talks to raise at a $10B valuation",
+        body: "Nearly double its $5.6B Series D valuation from March 2026. Not yet a confirmed closed round. See General Highlights.",
+        url: "https://sifted.eu/articles/legora-in-talks-to-raise-at-a-10bn-valuation-according-to-reports",
+      },
+    ],
   }),
   stubCompetitor({
     id: "spellbook",
@@ -883,6 +1138,15 @@ COMPETITORS.push(
     description: "Spellbook provides AI-assisted contract review and drafting directly inside Microsoft Word, primarily for transactional/commercial legal work rather than patents.",
     website: "spellbook.legal",
     linkedin: "https://www.linkedin.com/company/spellbookai",
+    weekActivity: [
+      {
+        date: "2026-08-15",
+        tag: "Partnership",
+        title: "Named exclusive AI drafting/review provider for the Canadian Bar Association",
+        body: "Two-year deal covers the CBA's 40,000+ member base. Also secured $40M in debt financing from RBCx for acquisitions and reports being on track for $100M ARR in 2026. (Exact announcement date approximate — not stated precisely in source.)",
+        url: "https://betakit.com/on-track-to-hit-100-million-usd-arr-spellbook-partners-with-canadian-bar-association/",
+      },
+    ],
   }),
   stubCompetitor({
     id: "robin-ai",
@@ -890,8 +1154,8 @@ COMPETITORS.push(
     rank: 28,
     tier: "Tier 3 — Adjacent",
     initials: "RA",
-    tagline: "AI contract copilot for review and negotiation.",
-    description: "Robin AI offers an AI copilot for contract review and negotiation, adjacent to Patlytics primarily as a broader legal-AI budget competitor rather than a direct patent-tech rival.",
+    tagline: "AI contract copilot for review and negotiation. WOUND DOWN — see note.",
+    description: "Robin AI offered an AI copilot for contract review and negotiation. After a planned $50M raise fell through in October 2025, the company laid off roughly a third of staff and sought a buyer; its managed-services arm was acquired by Scissero in December 2025, and Microsoft absorbed its engineering team in January 2026 to bolster Word's legal-AI features. Confirmed no longer operating as an independent company (verified 2026-08-25, see General Highlights).",
     website: "robinai.com",
     linkedin: "https://www.linkedin.com/company/robinai",
   }),
@@ -901,8 +1165,8 @@ COMPETITORS.push(
     rank: 29,
     tier: "Tier 3 — Adjacent",
     initials: "LY",
-    tagline: "Generative AI for legal workflows (Nordics/Europe).",
-    description: "Leya provides generative AI tooling across general legal workflows, primarily in the Nordics/European market.",
+    tagline: "Generative AI for legal workflows (Nordics/Europe). Rebranded as Legora in 2025 — kept here for historical continuity only.",
+    description: "Leya provided generative AI tooling across general legal workflows, primarily in the Nordics/European market. The company rebranded to 'Legora' in 2025; all current activity, funding, and product news is tracked under the Legora entry in this list, not here.",
     website: "leyalaw.com",
     linkedin: "https://www.linkedin.com/company/leyalaw",
   }),
@@ -913,9 +1177,18 @@ COMPETITORS.push(
     tier: "Tier 3 — Adjacent",
     initials: "CC",
     tagline: "AI legal assistant, now part of Thomson Reuters.",
-    description: "Casetext's CoCounsel AI legal assistant was acquired by Thomson Reuters and is now distributed as part of its broader legal AI suite — relevant to watch given Thomson Reuters' expanding legal-AI partnership activity.",
+    description: "Casetext's CoCounsel AI legal assistant was acquired by Thomson Reuters and is now distributed as part of its broader legal AI suite — relevant to watch given Thomson Reuters' expanding legal-AI partnership activity (see General Highlights re: the reported Solve Intelligence partnership).",
     website: "legal.thomsonreuters.com",
     linkedin: "https://www.linkedin.com/company/casetext",
+    weekActivity: [
+      {
+        date: "2026-08-20",
+        tag: "Product",
+        title: "Launched next-generation agentic CoCounsel Legal",
+        body: "General availability of Westlaw Brief Builder, Workspaces, a Word-integrated Drafting Agent, and Tabular Analysis, alongside Thomson Reuters' own proprietary LLM ('Thomson') and an expanded MCP integration with Anthropic's Claude.",
+        url: "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-launches-next-generation-of-cocounsel-legal-the-ai-ecosystem-built-for-legal-professionals",
+      },
+    ],
   }),
   stubCompetitor({
     id: "ironclad",
@@ -927,6 +1200,15 @@ COMPETITORS.push(
     description: "Ironclad provides AI-powered contract lifecycle management software, adjacent to Patlytics mainly as a broader legal-tech budget line item.",
     website: "ironcladapp.com",
     linkedin: "https://www.linkedin.com/company/ironclad-inc-",
+    weekActivity: [
+      {
+        date: "2026-08-05",
+        tag: "Product",
+        title: "Launched AI agents for procurement teams",
+        body: "New agents handle obligation tracking, precedent-based redlining, and enhanced SAP integration for procurement teams. See General Highlights.",
+        url: "https://www.prnewswire.com/news-releases/ironclad-launches-ai-agents-to-help-procurement-teams-save-money-move-faster-and-manage-risk-302843168.html",
+      },
+    ],
   }),
   stubCompetitor({
     id: "linksquares",
@@ -938,6 +1220,15 @@ COMPETITORS.push(
     description: "LinkSquares offers AI-powered contract lifecycle management under its LinkAI branding, competing in the broader legal-AI category.",
     website: "linksquares.com",
     linkedin: "https://www.linkedin.com/company/linksquares",
+    weekActivity: [
+      {
+        date: "2026-08-19",
+        tag: "Hiring",
+        title: "Named Lyle McCutcheon-Schour SVP of Revenue",
+        body: "New SVP of Revenue hire announced to drive agentic CLM growth; also appeared on the 2026 Inc. 5000 list on Aug 11, 2026.",
+        url: "https://www.streetinsider.com/PRNewswire/LinkSquares+Names+Lyle+McCutcheon-Schour+SVP+of+Revenue+to+Drive+Agentic+CLM+Growth/26948572.html",
+      },
+    ],
   }),
   stubCompetitor({
     id: "draftwise",
@@ -971,6 +1262,18 @@ COMPETITORS.push(
     description: "Eve provides an AI legal assistant built specifically for plaintiff-side law firms, a niche broader-legal-AI adjacent player.",
     website: "eve.legal",
     linkedin: "https://www.linkedin.com/company/eve-legal",
+  }),
+  stubCompetitor({
+    id: "park-ip",
+    name: "Park IP (Legal Studio)",
+    rank: 36,
+    tier: "Tier 3 — Adjacent",
+    initials: "PI",
+    tagline: "AI-powered global patent filing and translation workflow platform.",
+    description:
+      "Park IP (a Welo Global/Welocalize brand) is an established global patent-translation and IP-filing services provider serving Am Law 100 and Fortune 500 IP departments. It launched 'Legal Studio,' an AI-powered platform combining automation, AI quality control, and analytics across patent filing workflows in 180+ jurisdictions — an incumbent moving AI tooling into patent-adjacent workflow territory with existing enterprise distribution. Newly identified in this sweep; added 2026-08-25.",
+    website: "parkip.com",
+    linkedin: null,
   })
 );
 
@@ -1077,100 +1380,159 @@ const NEW_ENTRANTS = [
     source: "Crunchbase, LegalTech.ca",
     sourceUrl: "https://legaltech.ca/2026/05/28/yc-toronto-startup-patents-revenue-ai-toolkit/",
   },
+  {
+    id: "newcode-ai",
+    name: "Newcode",
+    threat: "low",
+    backing: "$13.5M Series A led by OnDean Forward (Relativity founder Andrew Sieja's fund), w/ Rel Labs & The LegalTech Fund",
+    stage: "Series A",
+    tagline: "Configurable AI harness for law firms — document analysis, review, translation, enterprise search.",
+    website: "https://newcode.ai",
+    linkedin: null,
+    description:
+      "Oslo/Dublin-based Newcode builds a configurable AI harness that law firms deploy in-house for document analysis, review, translation, and enterprise search. Not patent-specific — a general legal-AI adjacent entrant included for completeness. Brings total 2026 funding to roughly $20M after a $6.5M round in March.",
+    foundingTeam: [
+      { name: "Maged Helmy", background: "Founder. PhD in AI, University of Oslo; Associate Professor. Background pending fuller independent verification beyond trade-press bios." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet verified — careers page not yet scraped",
+      hiringProfile: "Not yet verified.",
+    },
+    date: "2026-08-24",
+    source: "Law.com Legaltech News, Artificial Lawyer",
+    sourceUrl: "https://www.law.com/legaltechnews/2026/08/24/legal-ai-startup-newcode-announces-135m-series-a-round-with-investment-from-relativity/",
+  },
+  {
+    id: "aavalynx",
+    name: "Aavalynx",
+    threat: "low",
+    backing: "£1.5M (~$1.9M) pre-seed led by Omega Ventures, w/ Two Ravens",
+    stage: "Pre-seed",
+    tagline: "AI \"case intelligence\" platform (\"Sisu\") for litigation and dispute portfolio risk analysis.",
+    website: "https://aavalynx.ai",
+    linkedin: null,
+    description:
+      "London-based Aavalynx (product name 'Sisu') applies AI to help corporate legal teams analyze litigation and dispute portfolio risk. Adjacent to litigation-analytics players rather than core patent search/drafting — included for completeness.",
+    foundingTeam: [
+      { name: "Hanna Roos", background: "Co-Founder & CEO. Former disputes lawyer at Freshfields, Latham & Watkins, and Quinn Emanuel; also founded boutique firm Aavagard." },
+      { name: "Lauri Hyry", background: "Co-Founder. Mathematics/entrepreneurship background." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet verified — careers page not yet scraped",
+      hiringProfile: "Not yet verified.",
+    },
+    date: "2026-08-05",
+    source: "Artificial Lawyer, Tech.eu, EU-Startups",
+    sourceUrl: "https://www.artificiallawyer.com/2026/08/05/aavalynx-raises-1-5m-pre-seed-for-litigation-insights/",
+  },
 ];
 
 /* ---------------- Webinars ---------------- */
-// Listings below are sample/illustrative placeholders standing in for a
-// live webinar-scraping feed. Where the host maps to a real company we
-// already track, its "arrow" link points at that company's real site;
-// otherwise there is no live registration link yet, so none is shown.
+// Verified via each host's own events/webinar pages and the IPWatchdog
+// events-listing partner program (2026-08-25 research pass). Every entry
+// below has a real, working source URL — no placeholder/sample listings.
 const WEBINARS = [
   {
     id: "wb-1",
-    title: "AI Patent Landscaping for Semiconductor Portfolios",
-    host: "LexisNexis Cipher (sample listing)",
-    date: d(6),
-    time: "10:00 AM PT",
+    title: "AI-Powered Patent Landscaping",
+    host: "LexisNexis Cipher",
+    date: "2026-08-18",
+    time: "See registration page",
     format: "Live webinar",
     relevance: "high",
     description:
-      "Vertical-specific session on landscaping methodology for semiconductor patent portfolios — direct audience overlap with our semiconductor push.",
-    tags: ["Semiconductors", "Landscaping", "Competitor-hosted"],
-    url: siteUrl("lexisnexisip.com"),
+      "Session on AI-driven landscaping methodology for patent portfolios, listed via IPWatchdog's events partner program.",
+    tags: ["Landscaping", "Competitor-hosted"],
+    url: "https://ipwatchdog.com/event/webinar-lexisnexis-2026-08-18-ai-powered-patent-landscaping/",
   },
   {
     id: "wb-2",
-    title: "Practical Guide to AI-Assisted Inventorship Disclosure",
-    host: "IP Strategy Network (sample)",
-    date: d(2),
-    time: "1:00 PM ET",
+    title: "AI for Lean IP Teams — Doing More with Less While Empowering the Next Generation",
+    host: "Anaqua",
+    date: "2026-08-25",
+    time: "12:00 PM ET",
     format: "Live webinar",
     relevance: "high",
     description:
-      "Panel covering the new USPTO guidance on disclosure requirements when generative AI tools are used during drafting or ideation.",
-    tags: ["Regulatory", "USPTO", "AI Drafting"],
-    url: null,
+      "Live session (today) on helping lean IP teams adopt AI while empowering junior staff, without adding headcount.",
+    tags: ["Competitor-hosted", "AI Adoption"],
+    url: "https://ipwatchdog.com/event/webinar-anaqua-2026-08-25-ai-for-lean-ip-teams/",
   },
   {
     id: "wb-3",
-    title: "Modernizing Legacy IP Data Infrastructure",
-    host: "Clarivate (sample listing)",
-    date: d(-5),
-    time: "11:00 AM ET",
-    format: "Recorded / on-demand",
+    title: "Patent Forecasting and Budgeting",
+    host: "Juristat",
+    date: "2026-08-11",
+    time: "See registration page",
+    format: "Live webinar",
     relevance: "medium",
-    description:
-      "Multi-part series aimed at large legacy accounts evaluating whether to modernize in place or switch platforms.",
-    tags: ["Competitor-hosted", "Enterprise"],
-    url: "https://clarivate.com/intellectual-property/",
+    description: "Session on using AI-driven prosecution analytics to forecast patent budgets and timelines.",
+    tags: ["Competitor-hosted", "Analytics"],
+    url: "https://ipwatchdog.com/event/webinar-juristat-2026-08-11-patent-forecasting-and-budgeting/",
   },
   {
     id: "wb-4",
-    title: "Benchmarking IP Department Budgets in 2026",
-    host: "Anaqua (sample listing)",
-    date: d(-4),
-    time: "9:00 AM PT",
-    format: "Recorded / on-demand",
-    relevance: "medium",
-    description: "Walkthrough of Anaqua's annual budget-allocation survey report for in-house IP departments.",
-    tags: ["Competitor-hosted", "Benchmarking"],
-    url: siteUrl("anaqua.com"),
+    title: "AI Capabilities and the Future in Life Sciences Patent Practice",
+    host: "Solve Intelligence",
+    date: "2026-08-27",
+    time: "See registration page",
+    format: "Live webinar",
+    relevance: "high",
+    description:
+      "Covers new sequence-handling/data-import features for life sciences patent drafting and claim charts.",
+    tags: ["Competitor-hosted", "Life Sciences", "AI Drafting"],
+    url: "https://ipwatchdog.com/solve-intelligence-august-27-2026/",
   },
   {
     id: "wb-5",
-    title: "Freedom-to-Operate Search in the Age of Embeddings",
-    host: "PatentTech Forum (sample)",
-    date: d(10),
-    time: "8:00 AM PT",
+    title: "Building an IPO-Ready Patent Strategy",
+    host: "Tradespace",
+    date: "2026-09-01",
+    time: "See registration page",
     format: "Live webinar",
-    relevance: "high",
-    description: "Technical session comparing classification-based vs. embedding-based FTO search methodology.",
-    tags: ["Search Technology", "FTO"],
-    url: null,
+    relevance: "medium",
+    description: "Session on structuring a defensible patent strategy ahead of an IPO.",
+    tags: ["Patent Strategy"],
+    url: "https://ipwatchdog.com/event/webinar-tradespace-2026-09-01-building-an-ipo-ready-patent-strategy/",
   },
   {
     id: "wb-6",
-    title: "Licensing & Royalty Benchmarking Roundtable",
-    host: "ktMINE (sample listing)",
-    date: d(14),
+    title: "Before the Draft — Deciding What Is Worth Patenting in the AI Era",
+    host: "IP.com",
+    date: "2026-09-03",
     time: "12:00 PM ET",
     format: "Live webinar",
-    relevance: "low",
-    description: "Roundtable discussion on royalty-rate benchmarking trends across licensing-heavy industries.",
-    tags: ["Licensing", "Valuation"],
-    url: siteUrl("ktmine.com"),
+    relevance: "high",
+    description: "Session on patentability triage decisions in an era of AI-assisted invention and drafting.",
+    tags: ["AI Drafting", "Patentability"],
+    url: "https://ipwatchdog.com/event/webinar-ip-com-2026-09-03-before-the-draft/",
   },
   {
     id: "wb-7",
-    title: "Generative Drafting Workflows for In-House Counsel",
-    host: "Solve Intelligence (sample listing)",
-    date: d(4),
-    time: "2:00 PM ET",
+    title: "AI in Patent Practice — Change Management for Successful Adoption",
+    host: "Ankar AI",
+    date: "2026-09-10",
+    time: "12:00 PM ET",
     format: "Live webinar",
     relevance: "high",
-    description: "Product-led session walking through end-to-end drafting workflows aimed at in-house IP counsel.",
-    tags: ["Competitor-hosted", "AI Drafting"],
-    url: siteUrl("solveintelligence.com"),
+    description:
+      "Direct Tier 1 competitor-hosted session on change management for AI adoption in patent prosecution and portfolio workflows.",
+    tags: ["Competitor-hosted", "AI Adoption"],
+    url: "https://ipwatchdog.com/ankar-ai-september-10-2026/",
+  },
+  {
+    id: "wb-8",
+    title: "AI & IP USA",
+    host: "WIPR / Newton Media",
+    date: "2026-10-06",
+    time: "In-person, New York",
+    format: "Conference",
+    relevance: "medium",
+    description: "Two-day industry conference on AI's impact across IP strategy, prosecution, and enforcement.",
+    tags: ["Conference", "Industry Event"],
+    url: "https://events.newton.media/AI-and-IP-USA/home",
   },
 ];
 
