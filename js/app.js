@@ -799,11 +799,13 @@
             const isPending = !!fc.pendingFeatureRequests[f.id];
             const researchError = fc.pendingFeatureErrors[f.id];
             return `<tr${isPending ? ' class="fc-row-pending"' : ""}>
-          <td class="fc-feature-name">
-            <span>${escapeHtml(f.name)}</span>
-            ${isPending ? `<span class="fc-researching-badge"><iconify-icon icon="ph:spinner-gap" class="fc-spin"></iconify-icon> Researching…</span>` : ""}
-            ${researchError ? `<span class="fc-research-error" title="${escapeHtml(researchError)}"><iconify-icon icon="ph:warning"></iconify-icon></span>` : ""}
-            ${isCustom ? `<button type="button" class="fc-remove-row" data-feature="${f.id}" aria-label="Remove feature"><iconify-icon icon="ph:x"></iconify-icon></button>` : ""}
+          <td class="fc-feature-cell">
+            <div class="fc-feature-name">
+              <span>${escapeHtml(f.name)}</span>
+              ${isPending ? `<span class="fc-researching-badge"><iconify-icon icon="ph:spinner-gap" class="fc-spin"></iconify-icon> Researching…</span>` : ""}
+              ${researchError ? `<span class="fc-research-error" title="${escapeHtml(researchError)}"><iconify-icon icon="ph:warning"></iconify-icon></span>` : ""}
+              ${isCustom ? `<button type="button" class="fc-remove-row" data-feature="${f.id}" aria-label="Remove feature"><iconify-icon icon="ph:x"></iconify-icon></button>` : ""}
+            </div>
           </td>
           ${companies
             .map((c) => {
