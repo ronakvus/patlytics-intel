@@ -645,7 +645,7 @@
         <div class="fc-review-meta">
           <span class="tag-chip">${escapeHtml(review.platform)}</span>
           <span class="fc-review-author">${escapeHtml(review.author)}</span>
-          <span class="fc-review-date">${escapeHtml(review.date)}</span>
+          ${review.date ? `<span class="fc-review-date">${escapeHtml(review.date)}</span>` : ""}
           ${fcSentimentBadgeHtml(review.sentiment)}
         </div>
         <div class="fc-review-text">${escapeHtml(review.text)}</div>

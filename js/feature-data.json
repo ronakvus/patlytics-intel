@@ -1109,100 +1109,271 @@
   ],
   "FEATURE_REVIEWS": {
     "solve-intelligence": {
-      "claim-charting": [
+      "office-action-response": [
         {
           "platform": "G2",
-          "author": "Patent Attorney, Mid-size Firm",
-          "date": "2026-07-14",
-          "text": "The claim charting is genuinely fast once you've mapped the claim elements — cut a task that used to take an associate a full day down to about an hour of review.",
-          "sourceUrl": "https://www.g2.com/",
+          "author": "Jonah P., Patent Agent, Small-Business",
+          "date": "2026-01-13",
+          "text": "Solve Intelligence takes in unstructured data such as public prior art, internal specifications, inventors' notes, and drawings... Solve takes in office actions, parses them, and gives immediate comparison between claims, rejections, and examiner's reasoning... Solve does 20+ hours of application drafting work and 5+ hours of office action handling work each in less than 1 hour.",
+          "sourceUrl": "https://www.g2.com/products/solve-intelligence-patent-copilot/reviews",
           "sentiment": "positive"
         },
         {
-          "platform": "Reddit r/patentlaw",
-          "author": "u/claims_examiner_throwaway",
-          "date": "2026-06-02",
-          "text": "Solve's chart output is good for a first pass, but I still had to manually fix a couple of citation mappings that were close but not quite right.",
-          "sourceUrl": "https://www.reddit.com/",
-          "sentiment": "mixed"
+          "platform": "G2",
+          "author": "Rohan W., Small-Business",
+          "date": "2026-02-26",
+          "text": "On the prosecution side, it really gets to the point of the examiner's objections and helps in devising a way past them.",
+          "sourceUrl": "https://www.g2.com/products/solve-intelligence-patent-copilot/reviews",
+          "sentiment": "positive"
         }
       ],
-      "office-action-response": [
+      "prior-art-search": [
         {
-          "platform": "Capterra",
-          "author": "IP Paralegal",
-          "date": "2026-05-20",
-          "text": "The v2 office-action drafting update is a real improvement — the claim-amendment suggestions actually track the examiner's rejection language now.",
-          "sourceUrl": "https://www.capterra.com/",
-          "sentiment": "positive"
+          "platform": "G2",
+          "author": "Rohan W., Small-Business",
+          "date": "2026-02-26",
+          "text": "...a tool to identify differences from prior art and potential inventive step issues could also be beneficial. (Listed by the reviewer as a missing capability they'd like to see.)",
+          "sourceUrl": "https://www.g2.com/products/solve-intelligence-patent-copilot/reviews",
+          "sentiment": "negative"
         }
       ]
     },
     "patsnap": {
-      "prior-art-search": [
-        {
-          "platform": "G2",
-          "author": "R&D Program Manager",
-          "date": "2026-06-28",
-          "text": "Search coverage is huge — great for landscaping. It's less good at surfacing the one obscure reference you actually needed for a novelty opinion.",
-          "sourceUrl": "https://www.g2.com/",
-          "sentiment": "mixed"
-        }
-      ],
       "portfolio-analytics": [
         {
-          "platform": "TrustRadius",
-          "author": "Director of IP Operations",
-          "date": "2026-04-11",
-          "text": "The portfolio dashboards are the reason we kept renewing — good for board-level reporting on filing trends across business units.",
-          "sourceUrl": "https://www.trustradius.com/",
+          "platform": "Trustpilot",
+          "author": "Astrid Bakker",
+          "date": "2022-07-22",
+          "text": "PatSnap provides an excellent patent search functionality with visual and analytical overviews of IP portfolios.",
+          "sourceUrl": "https://www.trustpilot.com/review/www.patsnap.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Chih-Yuan T., Head of Computational Group, Pharmaceuticals",
+          "date": "2021-07",
+          "text": "...their proprietary analysis module that can map out the landscape of industrials that have patents relevant to the queries.",
+          "sourceUrl": "https://www.capterra.com/p/173713/PatSnap/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Connie S., Paralegal, Medical Devices",
+          "date": "2021-08",
+          "text": "Setting up customized searches/reports and information for looking at various IP landscapes of competitors.",
+          "sourceUrl": "https://www.capterra.com/p/173713/PatSnap/reviews/",
           "sentiment": "positive"
         }
       ]
     },
-    "iprally": {
+    "xlscout": {
       "prior-art-search": [
         {
-          "platform": "LinkedIn",
-          "author": "Patent Search Specialist",
-          "date": "2026-07-02",
-          "text": "The graph-based approach actually found prior art our classification-code search missed on two separate projects this quarter. Worth the switch.",
-          "sourceUrl": "https://www.linkedin.com/",
+          "platform": "Capterra",
+          "author": "Patrick A., IP Analyst, Information Services",
+          "date": "2022-11-21",
+          "text": "Quick Invalidity and Novelty Reports & easy to use Patent Categorizer (AI based Taxonomy). Amazing experience with 24/7 customer support. (Cons: limitations in creating Taxonomy should be improved.)",
+          "sourceUrl": "https://www.capterra.com/p/275543/Techscaper/reviews/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "questel": {
+      "prior-art-search": [
+        {
+          "platform": "Capterra",
+          "author": "Ritesh M., Senior IP Scientist / Patent Portfolio Mgmt Lead, Chemicals",
+          "date": "2021-06-18",
+          "text": "Mostly using this software for patent searches related to patentability, invalidity and FTO. Also for patent analytics. Ease of use, user friendly, great patent coverage, highlighting options, great analytics options. (Cons: limited export options beyond 1000 records, occasionally slow.)",
+          "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Capterra",
+          "author": "Ritesh M., Senior IP Scientist / Patent Portfolio Mgmt Lead, Chemicals",
+          "date": "2021-06-18",
+          "text": "Mostly using this software for patent searches related to patentability, invalidity and FTO. Also for patent analytics. Ease of use, user friendly, great patent coverage, highlighting options, great analytics options. (Cons: limited export options beyond 1000 records, occasionally slow.)",
+          "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Géraldine L., Competitive Intelligence Officer, Farming",
+          "date": "2021-06-16",
+          "text": "I have a good experience. The database is complete, data is quickly found. The different charts and visualization options are really a plus. The accuracy of the information (statuses, families) and ease of data access stand out.",
+          "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
           "sentiment": "positive"
         }
       ],
       "fto-analysis": [
         {
-          "platform": "Reddit r/IPLaw",
-          "author": "u/fto_grind",
-          "date": "2026-05-30",
-          "text": "Good for FTO first passes but you still need a human to sanity-check claim scope on anything with means-plus-function language.",
-          "sourceUrl": "https://www.reddit.com/",
-          "sentiment": "mixed"
+          "platform": "Capterra",
+          "author": "Ritesh M., Senior IP Scientist / Patent Portfolio Mgmt Lead, Chemicals",
+          "date": "2021-06-18",
+          "text": "Mostly using this software for patent searches related to patentability, invalidity and FTO. Also for patent analytics. Ease of use, user friendly, great patent coverage, highlighting options, great analytics options. (Cons: limited export options beyond 1000 records, occasionally slow.)",
+          "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
+          "sentiment": "positive"
         }
       ]
     },
-    "deepip": {
-      "claim-charting": [
+    "juristat": {
+      "portfolio-analytics": [
         {
           "platform": "G2",
-          "author": "In-house Patent Counsel",
-          "date": "2026-06-19",
-          "text": "It's fine for internal review but the output isn't polished enough to hand to opposing counsel or a court without reformatting.",
-          "sourceUrl": "https://www.g2.com/",
-          "sentiment": "mixed"
+          "author": "William D., Partner, Law Practice (Mid-Market)",
+          "date": "2017-05-10",
+          "text": "User-friendly platform providing invaluable information for firm marketing efforts. The ability to filter results in several areas, including filing and disposition date as well as art unit, is really helpful in evaluating performance metrics. Quick and accurate compilation and display of prosecution results.",
+          "sourceUrl": "https://www.g2.com/products/juristat/reviews",
+          "sentiment": "positive"
         }
       ]
     },
-    "xlscout": {
-      "claim-charting": [
+    "alt-legal": {
+      "portfolio-analytics": [
         {
-          "platform": "TrustRadius",
-          "author": "Licensing Manager",
-          "date": "2026-03-22",
-          "text": "We use this mainly for building licensing packages — the claim charts are geared toward monetization conversations, not litigation-grade detail.",
-          "sourceUrl": "https://www.trustradius.com/",
+          "platform": "Capterra",
+          "author": "Marcy S., Founding Partner, Law Practice",
+          "date": "2018-05-10",
+          "text": "Alt Legal is the most intuitive IP software I have used in my decade of IP experience at both big and small firms. The Alt Legal team is extremely responsive... the reporting functions are exceptional for sharing portfolio status reports with clients.",
+          "sourceUrl": "https://www.capterra.com/p/139508/Alt-Legal/reviews/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "patseer": {
+      "fto-analysis": [
+        {
+          "platform": "Capterra",
+          "author": "Alexander G., Patent Searcher, Legal Services",
+          "date": "2019-10",
+          "text": "The system includes work flow tools which allow effective processing of the most demanding projects like complex FTOs or advanced portfolio analysis.",
+          "sourceUrl": "https://www.capterra.com/p/190006/PatSeer/reviews/",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Capterra",
+          "author": "Alexander G., Patent Searcher, Legal Services",
+          "date": "2019-10",
+          "text": "Statistics, AI and traditional searching are well integrated in a single package.",
+          "sourceUrl": "https://www.capterra.com/p/190006/PatSeer/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra / GetApp",
+          "author": "Lisa D., Associate Director Patent Search & Analytics, Biotechnology",
+          "date": "2019-09-18",
+          "text": "While the analytics section was good, the graphs produced were not the best and data had to be downloaded to another visualization software for presentations.",
+          "sourceUrl": "https://www.capterra.com/p/190006/PatSeer/reviews/",
           "sentiment": "mixed"
+        }
+      ],
+      "prior-art-search": [
+        {
+          "platform": "G2",
+          "author": "Carlo S., CFO and Head of IP",
+          "date": "2019-10-01",
+          "text": "I look for prior art to manage both new patent filing or to look for potential invalidation in the context of patent litigations.",
+          "sourceUrl": "https://www.g2.com/products/patseer/reviews",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "patently": {
+      "fto-analysis": [
+        {
+          "platform": "Trustpilot",
+          "author": "Joshua Dalby",
+          "date": "2024-10-09",
+          "text": "Great, intuitive and efficient tool -- used for freedom-to-operate searches as part of my regular workflow.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        }
+      ],
+      "prior-art-search": [
+        {
+          "platform": "Trustpilot",
+          "author": "Carl",
+          "date": "2024-05-01",
+          "text": "AI powered vector search -- part of my daily prior-art and portfolio document review.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Trustpilot",
+          "author": "Jon Hauser",
+          "date": "2024-04-26",
+          "text": "Vector Search allows free-form text searching... completely blows old fashioned keyword/abstract searching out of the water.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Trustpilot",
+          "author": "Luke",
+          "date": "2024-04-19",
+          "text": "A Game-Changer in Patent Searching -- described in the context of novelty-search/FTO workflow.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Trustpilot",
+          "author": "Charlie, European patent attorney",
+          "date": "2024-04-30",
+          "text": "Precisely where and how we've identified certain patents -- used daily for prior-art search.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Trustpilot",
+          "author": "Stephen Scott",
+          "date": "2024-06-20",
+          "text": "I was able to use C-Tree to visualise the entire portfolio in an instant, and gain an understanding of the family structure.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        }
+      ],
+      "office-action-response": [
+        {
+          "platform": "Trustpilot",
+          "author": "Tom",
+          "date": "2026-01-23",
+          "text": "Patently's Shape (prosecution) and Create (drafting) are exceptional. The chat function is a powerful tool that helps me rapidly improve drafts and responses.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "ip-author": {
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "John Miller, Global Intellectual Property Leader, Chevron Oronite",
+          "text": "What used to take days of manual prior art searching can now be done in minutes. IP Author identifies highly relevant references quickly and transparently, helping us reach patentability decisions faster and with confidence.",
+          "sourceUrl": "https://ipauthor.com/ai-office-action-responses/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "powerpatent": {
+      "office-action-response": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "David Chen, Esq., IP Partner, West Coast IP Law",
+          "text": "OfficeAction AI has cut my Office Action response time in half. The AI-generated arguments are impressively on-point, and I can focus more on strategy rather than routine drafting.",
+          "sourceUrl": "https://powerpatent.com/office-action",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Michael Rodriguez, Managing Partner, Innovation Legal Group",
+          "text": "Our firm has seen a 40% reduction in time spent on Office Action responses. The collaboration features make it easy for partners to review associate work, and clients love the faster turnaround times.",
+          "sourceUrl": "https://powerpatent.com/office-action",
+          "sentiment": "positive"
         }
       ]
     }
