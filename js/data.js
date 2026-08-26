@@ -306,13 +306,58 @@ const HIGHLIGHTS = [
     category: "Product",
     title: "Google Cloud launches \"Gemini Enterprise for Legal\"",
     summary:
-      "Google Cloud unveiled a purpose-built, industry-specific version of Gemini Enterprise for law firms and corporate legal departments, in preview, with legal-specific \"skills\" (citation verification, contract lifecycle management, brief drafting, DSAR execution, regulation monitoring) and connectors into existing DMS/e-discovery/research systems. Cleary Gottlieb, Freshfields, Weil, and Williams & Connolly are named launch firms.",
+      "Google Cloud unveiled a purpose-built, industry-specific version of Gemini Enterprise for law firms and corporate legal departments, in preview, with legal-specific \"skills\" (citation verification, contract lifecycle management, brief drafting, DSAR execution, regulation monitoring) and connectors into existing DMS/e-discovery/research systems. Cleary Gottlieb, Freshfields, Weil, and Williams & Connolly are named launch firms, with Harvey, Legora, Solve Intelligence, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments named as launch software-connector partners.",
     whyItMatters:
-      "A hyperscaler entering legal AI natively at the platform level — not as a point solution — is a structural signal for every legal/IP AI vendor, including patent-specific tools that may eventually need to interoperate with (or compete against) Gemini Enterprise's legal skills.",
-    companies: ["Industry-wide"],
-    source: "Artificial Lawyer, Law.com (American Lawyer / Legaltech News)",
+      "A hyperscaler entering legal AI natively at the platform level — not as a point solution — is a structural signal for every legal/IP AI vendor, including patent-specific tools that may eventually need to interoperate with (or compete against) Gemini Enterprise's legal skills. Notably, Solve Intelligence — a Tier 1 direct competitor — is itself named as a launch connector partner alongside Harvey and Legora.",
+    companies: ["Industry-wide", "Harvey", "Legora", "Solve Intelligence"],
+    source: "Artificial Lawyer, Law.com (American Lawyer / Legaltech News), Google Cloud, Legora newsroom",
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+  },
+  {
+    id: "hl-21",
+    date: "2026-08-24",
+    priority: "high",
+    category: "Product",
+    title: "Thomson Reuters debuts its own proprietary LLM, \"Thomson,\" inside CoCounsel",
+    summary:
+      "Thomson Reuters announced \"Thomson,\" its first proprietary large language model, trained in-house (reportedly a ~$40M investment) on Westlaw, Practical Law, and other proprietary content. It initially powers CoCounsel Legal's tabular-analysis feature, with Thomson Reuters claiming frontier-comparable performance at lower cost and full ownership rather than dependence on a third-party model provider.",
+    whyItMatters:
+      "A major incumbent moving to reduce dependence on third-party foundation models is directly relevant to every vendor in this space, including how Patlytics thinks about its own model-sourcing strategy — and reinforces Thomson Reuters' broader push (see the Solve Intelligence partnership above) to control more of the legal-AI stack itself.",
+    companies: ["Casetext (CoCounsel)"],
+    source: "PR Newswire, Artificial Lawyer",
+    sourceType: "product",
+    url: "https://www.prnewswire.com/news-releases/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model-302857499.html",
+  },
+  {
+    id: "hl-22",
+    date: "2026-08-24",
+    priority: "medium",
+    category: "Product",
+    title: "DraftWise launches \"Legal Ontology\" to structure firm-wide legal judgment",
+    summary:
+      "DraftWise announced a \"Legal Ontology\" capability that structures the knowledge and lawyer judgment embedded in the relationships across a law firm's documents, positioned as an accessible alternative to firms building bespoke in-house infrastructure. DraftWise frames the move as a response to client demand following Kirkland & Ellis's reported in-house AI build with Palantir.",
+    whyItMatters:
+      "A direct AI-legal-drafting competitor differentiating on a knowledge/judgment layer rather than pure document generation — a positioning angle worth watching as Patlytics considers its own data-model story.",
+    companies: ["DraftWise"],
+    source: "Artificial Lawyer",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/08/24/draftwise-launches-legal-ontology-to-capture-the-judgment-layer/",
+  },
+  {
+    id: "hl-23",
+    date: "2026-08-25",
+    priority: "medium",
+    category: "Partnership",
+    title: "Cypris launches \"Cypris Q for Microsoft Copilot\"",
+    summary:
+      "Cypris announced Cypris Q for Microsoft Copilot, giving enterprise R&D and innovation teams direct access to Cypris's intelligence and research agents (prior art research, technology scouting, landscape analysis, competitive intelligence) from inside Microsoft Copilot, using an agent-to-agent architecture over MCP.",
+    whyItMatters:
+      "A distribution move that puts a patent/innovation-intelligence competitor directly inside a ubiquitous enterprise workflow tool — worth tracking as a go-to-market pattern other search/analytics competitors may follow.",
+    companies: ["Cypris"],
+    source: "PR Newswire",
+    sourceType: "product",
+    url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
   },
 ];
 
@@ -366,6 +411,13 @@ const COMPETITORS = [
       },
     ],
     weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
+        body: "Google Cloud named Solve Intelligence (alongside Harvey, Legora, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments) as a launch software-connector partner for its new industry-specific Gemini Enterprise for Legal platform. See General Highlights.",
+        url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+      },
       {
         date: "2026-08-22",
         tag: "Product",
@@ -1204,6 +1256,13 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/alt-legal-ip-management-software",
     weekActivity: [
       {
+        date: "2026-08-25",
+        tag: "Content",
+        title: "Published \"I ♥ Trademarks\" newsletter, Issue #493",
+        body: "Regular weekly trademark-industry newsletter covering third-party trademark case news; routine recurring content rather than an Alt Legal product/business announcement.",
+        url: "https://www.altlegal.com/blog/i-%E2%99%A1-trademarks-newsletter-issue-493/",
+      },
+      {
         date: "2026-08-20",
         tag: "Marketing",
         title: "Published brand-monitoring content on ICANN's 2026 New gTLD Program",
@@ -1230,6 +1289,33 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/pqai",
   }),
   stubCompetitor({
+    id: "ip-copilot",
+    name: "IP Copilot",
+    rank: 21.5,
+    tier: "Tier 2 — Strong Overlap",
+    initials: "PC",
+    tagline: "AI-native idea capture, prior-art search, and invention-disclosure platform.",
+    description: "IP Copilot is an AI-powered idea-management platform for in-house IP teams and law firms, integrating with Slack/Jira to surface potentially patentable ideas from everyday work conversations, then using AI to help build invention disclosures and run prior-art search. Newly identified via the IPWatchdog webinar-sponsor listing sweep (webinar scheduled 2026-09-08); not previously tracked in this dataset.",
+    employeeCount: "Not yet verified — pending scrape",
+    founded: "2023",
+    hq: "Columbia, TN",
+    founders: [
+      { name: "Austin Walters", title: "Co-Founder & CEO", note: "Formerly at Capital One; founding team are former Capital One engineers." },
+      { name: "Jason Harrier", title: "Co-Founder", note: "Background details not independently verified." },
+    ],
+    website: "ipcopilot.ai",
+    linkedin: "https://www.linkedin.com/company/ip-copilot",
+    weekActivity: [
+      {
+        date: "2026-08-26",
+        tag: "Corporate",
+        title: "Raised $4.2M seed led by Salesforce Ventures and Preface Ventures",
+        body: "Seed round (with participation from NextGen Ventures and Notation) to build out AI-driven invention discovery, invention-disclosure drafting, and prior-art search for enterprise IP teams. Round reported by VentureBeat; exact close date varies slightly across trackers (Crunchbase lists 2024-12-12).",
+        url: "https://venturebeat.com/ai/ip-copilot-wants-to-use-ai-to-turn-your-slack-messages-into-patents",
+      },
+    ],
+  }),
+  stubCompetitor({
     id: "harvey",
     name: "Harvey",
     rank: 25,
@@ -1247,6 +1333,20 @@ COMPETITORS.push(
     website: "harvey.ai",
     linkedin: "https://www.linkedin.com/company/harvey-ai",
     weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
+        body: "Google Cloud named Harvey (alongside Legora, Solve Intelligence, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments) as a launch software-connector partner for its new industry-specific Gemini Enterprise for Legal platform. See General Highlights.",
+        url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+      },
+      {
+        date: "2026-08-19",
+        tag: "Sales",
+        title: "German firm HEUKING expands Harvey to all professional groups firm-wide",
+        body: "HEUKING, which began piloting Harvey in 2024, is expanding access to all professional groups (not just legal staff) after demand exceeded its original user quota, primarily using Harvey's Assistant, Vault, and Workflow Agents.",
+        url: "https://www.harvey.ai/blog/heuking-expands-use-of-harvey-to-all-professional-groups-at-the-firm",
+      },
       {
         date: "2026-08-18",
         tag: "Product",
@@ -1282,6 +1382,20 @@ COMPETITORS.push(
     website: "legora.com",
     linkedin: "https://www.linkedin.com/company/wearelegora",
     weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
+        body: "Legora is a launch integration partner for Google Cloud's new Gemini Enterprise for Legal; via a beta MCP connection, mutual customers can query Legora's legal intelligence from inside Gemini Enterprise with cited answers linking back to Legora. See General Highlights.",
+        url: "https://legora.com/newsroom/legora-joins-google-cloud%E2%80%99s-gemini-enterprise-for-legal-launch-as-a-legal-ai-partner",
+      },
+      {
+        date: "2026-08-25",
+        tag: "Event",
+        title: "CEO keynotes ILTACON 2026 mainstage",
+        body: "Max Junestrand presented on ILTACON's mainstage on \"Why Legal Teams are Choosing Legora's Agentic Operating System,\" joined by Hogan Lovells' Mark Brennan, covering product updates and customer growth.",
+        url: "https://legora.com/iltacon",
+      },
       {
         date: "2026-08-17",
         tag: "Product",
@@ -1323,6 +1437,13 @@ COMPETITORS.push(
         title: "Named exclusive AI drafting/review provider for the Canadian Bar Association",
         body: "Two-year deal covers the CBA's 40,000+ member base. Also secured $40M in debt financing from RBCx for acquisitions and reports being on track for $100M ARR in 2026. (Exact announcement date approximate — not stated precisely in source.)",
         url: "https://betakit.com/on-track-to-hit-100-million-usd-arr-spellbook-partners-with-canadian-bar-association/",
+      },
+      {
+        date: "2026-08-13",
+        tag: "Product",
+        title: "Added AI Document Editor to Spellbook Associate",
+        body: "New Word-style formatting/editing surface built directly into the Associate agent product, letting lawyers redline, comment, and finalize documents without switching apps. (Date approximate — reported \"ahead of ILTACON\", exact day not independently confirmed.)",
+        url: "https://spellbook.com/blog/introducing-spellbooks-ai-document-editor",
       },
     ],
   }),
@@ -1382,6 +1503,13 @@ COMPETITORS.push(
     website: "legal.thomsonreuters.com",
     linkedin: "https://www.linkedin.com/company/casetext",
     weekActivity: [
+      {
+        date: "2026-08-24",
+        tag: "Product",
+        title: "Debuts proprietary in-house LLM \"Thomson\" inside CoCounsel",
+        body: "Thomson Reuters announced \"Thomson,\" its first proprietary large language model (trained in-house, reportedly a ~$40M investment) on Westlaw/Practical Law and other proprietary content; it initially powers CoCounsel Legal's tabular-analysis feature. See General Highlights.",
+        url: "https://www.prnewswire.com/news-releases/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model-302857499.html",
+      },
       {
         date: "2026-08-20",
         tag: "Product",
@@ -1614,6 +1742,15 @@ COMPETITORS.push(
     ],
     website: "cypris.ai",
     linkedin: "https://www.linkedin.com/company/cyprisai",
+    weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Launched \"Cypris Q for Microsoft Copilot\"",
+        body: "Gives enterprise R&D and innovation teams direct access to Cypris's intelligence/research agents (prior art research, technology scouting, landscape analysis, competitive intelligence) from inside Microsoft Copilot, via agent-to-agent architecture over MCP. See General Highlights.",
+        url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
+      },
+    ],
   })
 );
 
@@ -1634,7 +1771,7 @@ const NEW_ENTRANTS = [
     website: "https://stilta.com",
     linkedin: null,
     description:
-      "Stockholm-based Stilta builds agentic AI for IP work, starting with patent litigation — every output is source-backed and auditable. Already used by multiple AmLaw 100 firms and Fortune 500 in-house IP teams within months of its December 2025 founding.",
+      "Stockholm-based Stilta builds agentic AI for IP work, starting with patent litigation — every output is source-backed and auditable. Already used by multiple AmLaw 100 firms and Fortune 500 in-house IP teams within months of its December 2025 founding; TechCrunch names Roche, Alfa Laval, and Maersk among its early customers.",
     foundingTeam: [
       { name: "Oskar Block", background: "CEO. Previously McKinsey, Goldman Sachs, and Swedish unicorns." },
       { name: "3 additional co-founders", background: "Also former McKinsey/QuantumBlack engineers (names pending verification)." },
@@ -1861,6 +1998,42 @@ const WEBINARS = [
       "Direct Tier 1 competitor-hosted session on change management for AI adoption in patent prosecution and portfolio workflows.",
     tags: ["Competitor-hosted", "AI Adoption"],
     url: "https://ipwatchdog.com/ankar-ai-september-10-2026/",
+  },
+  {
+    id: "wb-9",
+    title: "Sponsored by IP Copilot",
+    host: "IP Copilot",
+    date: "2026-09-08",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "medium",
+    description: "IPWatchdog-hosted session sponsored by IP Copilot; topic and speakers not yet announced on the registration page as of this refresh.",
+    tags: ["Competitor-hosted"],
+    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-09-08/",
+  },
+  {
+    id: "wb-10",
+    title: "Sponsored by Lighthouse IP",
+    host: "Lighthouse IP",
+    date: "2026-09-15",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "low",
+    description: "IPWatchdog-hosted session sponsored by Lighthouse IP, a global patent/trademark/design data provider; topic and speakers not yet announced on the registration page as of this refresh.",
+    tags: ["Data Provider"],
+    url: "https://ipwatchdog.com/event/webinar-lighthouse-ip-2026-09-15/",
+  },
+  {
+    id: "wb-11",
+    title: "Women's IP Forum 2026 (Third Annual)",
+    host: "IPWatchdog",
+    date: "2026-09-23",
+    time: "In-person, Ashburn, VA (through Sept 25)",
+    format: "Conference",
+    relevance: "medium",
+    description: "Three-day, all-women-speaker industry event covering current IP topics, mixing rising-star and senior ('Masters Level') practitioners across panels.",
+    tags: ["Conference", "Industry Event"],
+    url: "https://ipwatchdog.com/event/womens-ip-forum-2026/",
   },
   {
     id: "wb-8",
