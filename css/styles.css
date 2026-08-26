@@ -638,29 +638,38 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
   border: none; border-radius: var(--radius-sm); padding: 8px 14px; font-size: 12.5px; font-weight: 700;
 }
 .fc-toolbar-btn:hover { background: var(--brand-forest-600); }
+.fc-toolbar-note {
+  display: inline-flex; align-items: center; gap: 5px; font-size: 11.5px; color: var(--text-muted);
+  font-style: italic; max-width: 320px;
+}
+.fc-toolbar-note iconify-icon { flex-shrink: 0; font-size: 14px; }
 
 .fc-table-wrap {
   overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius-md);
   background: var(--surface); position: relative; margin-bottom: 8px;
 }
-.fc-table { border-collapse: collapse; width: 100%; min-width: 640px; }
+/* table-layout:fixed + border-collapse:separate (not collapse) keeps the
+   header and body columns pixel-aligned — border-collapse + sticky cells
+   is a well-known cross-browser bug where the header detaches from the
+   body's column grid, which is what caused the misalignment. Sticky
+   isn't needed here anyway since this wrapper has no fixed height. */
+.fc-table { border-collapse: separate; border-spacing: 0; width: 100%; min-width: 640px; table-layout: fixed; }
 .fc-table th, .fc-table td { border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); }
 .fc-table th:last-child, .fc-table td:last-child { border-right: none; }
 .fc-table thead th {
   background: var(--surface-alt); padding: 10px 12px; text-align: center; vertical-align: middle;
-  position: sticky; top: 0; z-index: 2;
+  border-top: 1px solid var(--border);
 }
-.fc-feature-col { text-align: left !important; min-width: 220px; }
-.fc-company-col { min-width: 140px; }
-.fc-company-header-inner { display: flex; align-items: center; justify-content: center; gap: 6px; position: relative; }
-.fc-company-header { display: flex; align-items: center; justify-content: center; }
-.fc-wordmark-img { max-height: 22px; max-width: 120px; object-fit: contain; }
-.fc-wordmark-text { font-size: 13px; font-weight: 700; color: var(--text-primary); white-space: nowrap; }
+.fc-feature-col { text-align: left !important; width: 240px; }
+.fc-company-col { width: 150px; }
+.fc-company-header-inner { display: flex; align-items: center; justify-content: center; gap: 6px; }
+.fc-company-header { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.fc-wordmark-img { max-height: 22px; max-width: 100px; object-fit: contain; }
+.fc-wordmark-text { font-size: 13px; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .fc-remove-col, .fc-remove-row {
   background: none; border: none; color: var(--text-muted); padding: 2px; border-radius: 4px;
   display: inline-flex; flex-shrink: 0;
 }
-.fc-remove-col { position: absolute; right: -4px; top: -14px; font-size: 11px; }
 .fc-remove-col:hover, .fc-remove-row:hover { color: var(--priority-critical); background: var(--priority-critical-bg); }
 
 .fc-feature-name {

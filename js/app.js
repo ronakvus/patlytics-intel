@@ -686,6 +686,7 @@
       <div class="fc-toolbar-group">
         <input type="text" id="fc-new-feature-input" placeholder="Add a feature to compare…" maxlength="80" />
         <button type="button" id="fc-add-feature-btn" class="fc-toolbar-btn"><iconify-icon icon="ph:plus"></iconify-icon> Add Feature</button>
+        <span class="fc-toolbar-note"><iconify-icon icon="ph:info"></iconify-icon> New features start as "unknown" for every company — there's no live research pipeline wired to this yet, see the note below the matrix.</span>
       </div>
       <div class="fc-toolbar-group">
         <select id="fc-add-company-select">
