@@ -383,8 +383,8 @@
       "name": "Office Action Response Drafting",
       "support": {
         "patlytics": {
-          "status": "partial",
-          "detail": "Supports drafting assistance for office-action responses today; full end-to-end automated response generation is on the near-term roadmap, not yet shipped."
+          "status": "yes",
+          "detail": "Office Action module: practitioner selects a response strategy per rejection, then the system auto-generates and applies the amendment (redlining, formatting, citation verification) directly in the editor, ready for review -- the same \"generates a draft response\" bar used for DeepIP, Harvey, and XLSCOUT on this row. Attorney review before filing, same as every other tool tracked here."
         },
         "solve-intelligence": {
           "status": "yes",
