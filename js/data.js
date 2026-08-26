@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-08-25";
-const EARLIEST_DATE = "2026-08-04"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-08-26";
+const EARLIEST_DATE = "2026-08-05"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -31,7 +31,7 @@ function siteUrl(domain) {
 const HIGHLIGHTS = [
   {
     id: "hl-1",
-    date: d(-1),
+    date: "2026-08-24",
     priority: "critical",
     category: "Partnership",
     title: "Solve Intelligence and Thomson Reuters partnership now confirmed by both companies",
@@ -46,7 +46,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-2",
-    date: d(-1),
+    date: "2026-08-24",
     priority: "high",
     category: "Funding",
     title: "IPRally closes extended seed round led by European deep-tech investors",
@@ -61,7 +61,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-3",
-    date: d(0),
+    date: "2026-08-25",
     priority: "high",
     category: "Product",
     title: "PatSnap ships 'Insights Copilot', a conversational layer over its analytics suite",
@@ -76,7 +76,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-4",
-    date: d(0),
+    date: "2026-08-25",
     priority: "medium",
     category: "Hiring",
     title: "Clarivate posts VP of AI Product Strategy role reporting into IP leadership",
@@ -91,7 +91,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-5",
-    date: d(-2),
+    date: "2026-08-23",
     priority: "medium",
     category: "Market",
     title: "USPTO updates guidance on AI-assisted inventorship disclosure",
@@ -106,7 +106,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-6",
-    date: d(-3),
+    date: "2026-08-22",
     priority: "high",
     category: "Funding",
     title: "Stilta raises $10.5M seed led by a16z for agentic patent litigation AI",
@@ -121,7 +121,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-7",
-    date: d(-4),
+    date: "2026-08-21",
     priority: "low",
     category: "Marketing",
     title: "Anaqua publishes benchmark report on IP department budget allocation",
@@ -136,7 +136,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-8",
-    date: d(-5),
+    date: "2026-08-20",
     priority: "low",
     category: "Webinar",
     title: "LexisNexis Cipher to host webinar on AI patent landscaping for semiconductor portfolios",
@@ -151,7 +151,7 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-9",
-    date: d(-6),
+    date: "2026-08-19",
     priority: "high",
     category: "Funding",
     title: "Fearn raises $5.5M seed led by Kindred Ventures for AI-native patent drafting",
@@ -193,21 +193,6 @@ const HIGHLIGHTS = [
     source: "GalaxyWarden, sqmagazine.co.uk, Breachsense",
     sourceType: "news",
     url: "https://www.galaxywarden.com/blog/breach/questel-sas-shinyhunters-2026-08",
-  },
-  {
-    id: "hl-12",
-    date: "2026-08-04",
-    priority: "medium",
-    category: "Partnership",
-    title: "Anaqua acquires Unified Patents to add litigation-risk mitigation",
-    summary:
-      "Anaqua acquired Unified Patents, adding IP-litigation-risk mitigation capabilities to its IP lifecycle-management platform for corporate and law-firm IP departments.",
-    whyItMatters:
-      "Anaqua is broadening from pure IP operations/docketing into litigation-risk analytics — narrowing the gap with platforms that already combine portfolio management and risk intelligence.",
-    companies: ["Anaqua"],
-    source: "GlobeNewswire, Law.com",
-    sourceType: "press-release",
-    url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/Anaqua-Acquires-Unified-Patents-to-Help-Organizations-Protect-Against-Rising-Intellectual-Property-Litigation-Risk.html",
   },
   {
     id: "hl-13",
@@ -316,18 +301,63 @@ const HIGHLIGHTS = [
   },
   {
     id: "hl-20",
-    date: d(0),
+    date: "2026-08-25",
     priority: "high",
     category: "Product",
     title: "Google Cloud launches \"Gemini Enterprise for Legal\"",
     summary:
-      "Google Cloud unveiled a purpose-built, industry-specific version of Gemini Enterprise for law firms and corporate legal departments, in preview, with legal-specific \"skills\" (citation verification, contract lifecycle management, brief drafting, DSAR execution, regulation monitoring) and connectors into existing DMS/e-discovery/research systems. Cleary Gottlieb, Freshfields, Weil, and Williams & Connolly are named launch firms.",
+      "Google Cloud unveiled a purpose-built, industry-specific version of Gemini Enterprise for law firms and corporate legal departments, in preview, with legal-specific \"skills\" (citation verification, contract lifecycle management, brief drafting, DSAR execution, regulation monitoring) and connectors into existing DMS/e-discovery/research systems. Cleary Gottlieb, Freshfields, Weil, and Williams & Connolly are named launch firms, with Harvey, Legora, Solve Intelligence, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments named as launch software-connector partners.",
     whyItMatters:
-      "A hyperscaler entering legal AI natively at the platform level — not as a point solution — is a structural signal for every legal/IP AI vendor, including patent-specific tools that may eventually need to interoperate with (or compete against) Gemini Enterprise's legal skills.",
-    companies: ["Industry-wide"],
-    source: "Artificial Lawyer, Law.com (American Lawyer / Legaltech News)",
+      "A hyperscaler entering legal AI natively at the platform level — not as a point solution — is a structural signal for every legal/IP AI vendor, including patent-specific tools that may eventually need to interoperate with (or compete against) Gemini Enterprise's legal skills. Notably, Solve Intelligence — a Tier 1 direct competitor — is itself named as a launch connector partner alongside Harvey and Legora.",
+    companies: ["Industry-wide", "Harvey", "Legora", "Solve Intelligence"],
+    source: "Artificial Lawyer, Law.com (American Lawyer / Legaltech News), Google Cloud, Legora newsroom",
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+  },
+  {
+    id: "hl-21",
+    date: "2026-08-24",
+    priority: "high",
+    category: "Product",
+    title: "Thomson Reuters debuts its own proprietary LLM, \"Thomson,\" inside CoCounsel",
+    summary:
+      "Thomson Reuters announced \"Thomson,\" its first proprietary large language model, trained in-house (reportedly a ~$40M investment) on Westlaw, Practical Law, and other proprietary content. It initially powers CoCounsel Legal's tabular-analysis feature, with Thomson Reuters claiming frontier-comparable performance at lower cost and full ownership rather than dependence on a third-party model provider.",
+    whyItMatters:
+      "A major incumbent moving to reduce dependence on third-party foundation models is directly relevant to every vendor in this space, including how Patlytics thinks about its own model-sourcing strategy — and reinforces Thomson Reuters' broader push (see the Solve Intelligence partnership above) to control more of the legal-AI stack itself.",
+    companies: ["Casetext (CoCounsel)"],
+    source: "PR Newswire, Artificial Lawyer",
+    sourceType: "product",
+    url: "https://www.prnewswire.com/news-releases/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model-302857499.html",
+  },
+  {
+    id: "hl-22",
+    date: "2026-08-24",
+    priority: "medium",
+    category: "Product",
+    title: "DraftWise launches \"Legal Ontology\" to structure firm-wide legal judgment",
+    summary:
+      "DraftWise announced a \"Legal Ontology\" capability that structures the knowledge and lawyer judgment embedded in the relationships across a law firm's documents, positioned as an accessible alternative to firms building bespoke in-house infrastructure. DraftWise frames the move as a response to client demand following Kirkland & Ellis's reported in-house AI build with Palantir.",
+    whyItMatters:
+      "A direct AI-legal-drafting competitor differentiating on a knowledge/judgment layer rather than pure document generation — a positioning angle worth watching as Patlytics considers its own data-model story.",
+    companies: ["DraftWise"],
+    source: "Artificial Lawyer",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/08/24/draftwise-launches-legal-ontology-to-capture-the-judgment-layer/",
+  },
+  {
+    id: "hl-23",
+    date: "2026-08-25",
+    priority: "medium",
+    category: "Partnership",
+    title: "Cypris launches \"Cypris Q for Microsoft Copilot\"",
+    summary:
+      "Cypris announced Cypris Q for Microsoft Copilot, giving enterprise R&D and innovation teams direct access to Cypris's intelligence and research agents (prior art research, technology scouting, landscape analysis, competitive intelligence) from inside Microsoft Copilot, using an agent-to-agent architecture over MCP.",
+    whyItMatters:
+      "A distribution move that puts a patent/innovation-intelligence competitor directly inside a ubiquitous enterprise workflow tool — worth tracking as a go-to-market pattern other search/analytics competitors may follow.",
+    companies: ["Cypris"],
+    source: "PR Newswire",
+    sourceType: "product",
+    url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
   },
 ];
 
@@ -382,21 +412,28 @@ const COMPETITORS = [
     ],
     weekActivity: [
       {
-        date: d(-3),
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
+        body: "Google Cloud named Solve Intelligence (alongside Harvey, Legora, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments) as a launch software-connector partner for its new industry-specific Gemini Enterprise for Legal platform. See General Highlights.",
+        url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+      },
+      {
+        date: "2026-08-22",
         tag: "Product",
         title: "Shipped office-action response drafting v2",
         body: "Rolled out an updated model for drafting office-action responses with claim-amendment suggestions inline.",
         url: siteUrl("solveintelligence.com"),
       },
       {
-        date: d(-4),
+        date: "2026-08-21",
         tag: "Content",
         title: "Published benchmark comparing drafting speed vs. traditional workflows",
         body: "Marketing report claiming ~40% reduction in first-draft turnaround time, widely shared by patent attorneys on LinkedIn.",
         url: siteUrl("solveintelligence.com"),
       },
       {
-        date: d(-6),
+        date: "2026-08-19",
         tag: "Hiring",
         title: "Opened first Solutions Engineering role",
         body: "Signals a push toward more hands-on enterprise/firm onboarding rather than pure self-serve.",
@@ -409,8 +446,8 @@ const COMPETITORS = [
         { title: "Enterprise Account Executive", dept: "Sales", location: "Remote (US)" },
       ],
       recentHires: [
-        { name: "Sample Hire A", role: "Head of Partnerships", from: "Prior role: BigLaw-adjacent legal tech (sample)", date: d(-2) },
-        { name: "Sample Hire B", role: "Senior ML Engineer", from: "Prior role: large-model applied research (sample)", date: d(-5) },
+        { name: "Sample Hire A", role: "Head of Partnerships", from: "Prior role: BigLaw-adjacent legal tech (sample)", date: "2026-08-23" },
+        { name: "Sample Hire B", role: "Senior ML Engineer", from: "Prior role: large-model applied research (sample)", date: "2026-08-20" },
       ],
       topRoles: [
         { title: "Software Engineer, Full-Stack", count: 4 },
@@ -423,14 +460,14 @@ const COMPETITORS = [
         title: "“Drafting at the speed of thought” LinkedIn campaign",
         body: "Short-form video series featuring attorneys narrating drafting workflows in real time; strong engagement from IP counsel audience.",
         channel: "LinkedIn",
-        date: d(-2),
+        date: "2026-08-23",
         url: "https://uk.linkedin.com/company/solve-intelligence",
       },
       {
         title: "Sponsored AIPLA newsletter placement",
         body: "Recurring sponsor slot in a widely-read patent bar newsletter, reinforcing top-of-funnel brand presence with attorneys.",
         channel: "Newsletter",
-        date: d(-6),
+        date: "2026-08-19",
         url: siteUrl("solveintelligence.com"),
       },
     ],
@@ -469,21 +506,21 @@ const COMPETITORS = [
     ],
     weekActivity: [
       {
-        date: d(-1),
+        date: "2026-08-24",
         tag: "Content",
         title: "Published R&D patent-landscape analysis on direct air capture",
         body: "PatSnap Research published \"Direct Air Capture Energy Integration Patents: Leaders & Filing Trends 2026,\" analyzing 732 patent records across 100 companies.",
         url: "https://www.patsnap.com/resources/blog/rd-blog/direct-air-capture-energy-integration-patent-data/",
       },
       {
-        date: d(-2),
+        date: "2026-08-23",
         tag: "Sales",
         title: "Announced renewal of a large pharma enterprise account",
         body: "Case study published highlighting multi-year renewal with a top-20 pharma IP department.",
         url: siteUrl("patsnap.com"),
       },
       {
-        date: d(-5),
+        date: "2026-08-20",
         tag: "Event",
         title: "Exhibited at INTA Annual Meeting",
         body: "Large booth presence with live product demos of the new copilot feature.",
@@ -497,7 +534,7 @@ const COMPETITORS = [
         { title: "Data Engineer", dept: "Engineering", location: "Singapore" },
       ],
       recentHires: [
-        { name: "Sample Hire C", role: "VP, Product (AI)", from: "Prior role: enterprise SaaS analytics (sample)", date: d(-3) },
+        { name: "Sample Hire C", role: "VP, Product (AI)", from: "Prior role: enterprise SaaS analytics (sample)", date: "2026-08-22" },
       ],
       topRoles: [
         { title: "Account Executive", count: 9 },
@@ -510,7 +547,7 @@ const COMPETITORS = [
         title: "“State of Patent Analytics 2026” gated report",
         body: "Large lead-gen content push distributed via LinkedIn ads targeting in-house IP counsel and R&D leaders.",
         channel: "LinkedIn Ads",
-        date: d(-1),
+        date: "2026-08-24",
         url: siteUrl("patsnap.com"),
       },
     ],
@@ -541,14 +578,14 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
-        date: d(-1),
+        date: "2026-08-24",
         tag: "Funding",
         title: "Closed extended seed round for US expansion",
         body: "Round earmarked for opening a US commercial presence and localized go-to-market. See General Highlights.",
         url: siteUrl("iprally.com") + "/news",
       },
       {
-        date: d(-4),
+        date: "2026-08-21",
         tag: "Hiring",
         title: "Opened first US-based sales role",
         body: "First indication of direct US account coverage rather than partner-led sales.",
@@ -559,7 +596,7 @@ const COMPETITORS = [
       openRoles: 8,
       newRolesToday: [],
       recentHires: [
-        { name: "Sample Hire D", role: "Head of US Expansion", from: "Prior role: EU-to-US SaaS GTM (sample)", date: d(-4) },
+        { name: "Sample Hire D", role: "Head of US Expansion", from: "Prior role: EU-to-US SaaS GTM (sample)", date: "2026-08-21" },
       ],
       topRoles: [
         { title: "Search/ML Research Engineer", count: 3 },
@@ -571,7 +608,7 @@ const COMPETITORS = [
         title: "Technical blog: “Why embeddings beat classification codes”",
         body: "Deep technical post aimed at patent search professionals, positioning against classification-code-based search (a subtle jab at legacy platforms).",
         channel: "Company Blog",
-        date: d(-3),
+        date: "2026-08-22",
         url: siteUrl("iprally.com"),
       },
     ],
@@ -610,7 +647,7 @@ const COMPETITORS = [
     ],
     weekActivity: [
       {
-        date: d(-3),
+        date: "2026-08-22",
         tag: "Corporate",
         title: "Clarivate earnings call referenced AI investment across IP segment",
         body: "Leadership called out AI feature velocity in the IP Solutions segment as a retention priority for FY26.",
@@ -633,7 +670,7 @@ const COMPETITORS = [
         title: "Webinar series: “Modernizing Legacy IP Data Infrastructure”",
         body: "Multi-part webinar aimed at retaining large legacy accounts considering newer AI-native tools.",
         channel: "Webinar",
-        date: d(-5),
+        date: "2026-08-20",
         url: "https://clarivate.com/intellectual-property/",
       },
     ],
@@ -672,14 +709,7 @@ const COMPETITORS = [
     ],
     weekActivity: [
       {
-        date: "2026-08-04",
-        tag: "Corporate",
-        title: "Acquired Unified Patents",
-        body: "Anaqua acquired Unified Patents to add IP-litigation-risk mitigation capabilities to its lifecycle-management platform. See General Highlights.",
-        url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/Anaqua-Acquires-Unified-Patents-to-Help-Organizations-Protect-Against-Rising-Intellectual-Property-Litigation-Risk.html",
-      },
-      {
-        date: d(-4),
+        date: "2026-08-21",
         tag: "Marketing",
         title: "Published annual IP department budget benchmark report",
         body: "Survey-based report widely shared organically by in-house IP counsel on LinkedIn. See General Highlights.",
@@ -690,7 +720,7 @@ const COMPETITORS = [
       openRoles: 19,
       newRolesToday: [],
       recentHires: [
-        { name: "Sample Hire E", role: "Director, Analytics Product", from: "Prior role: legal-ops analytics (sample)", date: d(-6) },
+        { name: "Sample Hire E", role: "Director, Analytics Product", from: "Prior role: legal-ops analytics (sample)", date: "2026-08-19" },
       ],
       topRoles: [
         { title: "Implementation Consultant", count: 6 },
@@ -702,7 +732,7 @@ const COMPETITORS = [
         title: "“IP Ops Benchmark 2026” report",
         body: "Annual survey report driving strong organic LinkedIn distribution among in-house counsel.",
         channel: "Content / Organic Social",
-        date: d(-4),
+        date: "2026-08-21",
         url: siteUrl("anaqua.com"),
       },
     ],
@@ -733,7 +763,7 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
-        date: d(-2),
+        date: "2026-08-23",
         tag: "Product",
         title: "Combined patent datasets and software solutions under one platform",
         body: "LexisNexis IP Solutions announced combining its best-in-class patent datasets and software into a unified analytics offering.",
@@ -777,7 +807,7 @@ const COMPETITORS = [
         date: "2026-08-18",
         tag: "Webinar",
         title: "Hosted webinar: AI-Powered Patent Landscaping",
-        body: "Live session on AI-driven landscaping methodology for patent portfolios. See the Webinars tab.",
+        body: "Live session on AI-driven landscaping methodology for patent portfolios.",
         url: "https://ipwatchdog.com/event/webinar-lexisnexis-2026-08-18-ai-powered-patent-landscaping/",
       },
     ],
@@ -1226,6 +1256,13 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/alt-legal-ip-management-software",
     weekActivity: [
       {
+        date: "2026-08-25",
+        tag: "Content",
+        title: "Published \"I ♥ Trademarks\" newsletter, Issue #493",
+        body: "Regular weekly trademark-industry newsletter covering third-party trademark case news; routine recurring content rather than an Alt Legal product/business announcement.",
+        url: "https://www.altlegal.com/blog/i-%E2%99%A1-trademarks-newsletter-issue-493/",
+      },
+      {
         date: "2026-08-20",
         tag: "Marketing",
         title: "Published brand-monitoring content on ICANN's 2026 New gTLD Program",
@@ -1252,6 +1289,33 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/pqai",
   }),
   stubCompetitor({
+    id: "ip-copilot",
+    name: "IP Copilot",
+    rank: 21.5,
+    tier: "Tier 2 — Strong Overlap",
+    initials: "PC",
+    tagline: "AI-native idea capture, prior-art search, and invention-disclosure platform.",
+    description: "IP Copilot is an AI-powered idea-management platform for in-house IP teams and law firms, integrating with Slack/Jira to surface potentially patentable ideas from everyday work conversations, then using AI to help build invention disclosures and run prior-art search. Newly identified via the IPWatchdog webinar-sponsor listing sweep (webinar scheduled 2026-09-08); not previously tracked in this dataset.",
+    employeeCount: "Not yet verified — pending scrape",
+    founded: "2023",
+    hq: "Columbia, TN",
+    founders: [
+      { name: "Austin Walters", title: "Co-Founder & CEO", note: "Formerly at Capital One; founding team are former Capital One engineers." },
+      { name: "Jason Harrier", title: "Co-Founder", note: "Background details not independently verified." },
+    ],
+    website: "ipcopilot.ai",
+    linkedin: "https://www.linkedin.com/company/ip-copilot",
+    weekActivity: [
+      {
+        date: "2026-08-26",
+        tag: "Corporate",
+        title: "Raised $4.2M seed led by Salesforce Ventures and Preface Ventures",
+        body: "Seed round (with participation from NextGen Ventures and Notation) to build out AI-driven invention discovery, invention-disclosure drafting, and prior-art search for enterprise IP teams. Round reported by VentureBeat; exact close date varies slightly across trackers (Crunchbase lists 2024-12-12).",
+        url: "https://venturebeat.com/ai/ip-copilot-wants-to-use-ai-to-turn-your-slack-messages-into-patents",
+      },
+    ],
+  }),
+  stubCompetitor({
     id: "harvey",
     name: "Harvey",
     rank: 25,
@@ -1269,6 +1333,20 @@ COMPETITORS.push(
     website: "harvey.ai",
     linkedin: "https://www.linkedin.com/company/harvey-ai",
     weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
+        body: "Google Cloud named Harvey (alongside Legora, Solve Intelligence, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments) as a launch software-connector partner for its new industry-specific Gemini Enterprise for Legal platform. See General Highlights.",
+        url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+      },
+      {
+        date: "2026-08-19",
+        tag: "Sales",
+        title: "German firm HEUKING expands Harvey to all professional groups firm-wide",
+        body: "HEUKING, which began piloting Harvey in 2024, is expanding access to all professional groups (not just legal staff) after demand exceeded its original user quota, primarily using Harvey's Assistant, Vault, and Workflow Agents.",
+        url: "https://www.harvey.ai/blog/heuking-expands-use-of-harvey-to-all-professional-groups-at-the-firm",
+      },
       {
         date: "2026-08-18",
         tag: "Product",
@@ -1304,6 +1382,20 @@ COMPETITORS.push(
     website: "legora.com",
     linkedin: "https://www.linkedin.com/company/wearelegora",
     weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
+        body: "Legora is a launch integration partner for Google Cloud's new Gemini Enterprise for Legal; via a beta MCP connection, mutual customers can query Legora's legal intelligence from inside Gemini Enterprise with cited answers linking back to Legora. See General Highlights.",
+        url: "https://legora.com/newsroom/legora-joins-google-cloud%E2%80%99s-gemini-enterprise-for-legal-launch-as-a-legal-ai-partner",
+      },
+      {
+        date: "2026-08-25",
+        tag: "Event",
+        title: "CEO keynotes ILTACON 2026 mainstage",
+        body: "Max Junestrand presented on ILTACON's mainstage on \"Why Legal Teams are Choosing Legora's Agentic Operating System,\" joined by Hogan Lovells' Mark Brennan, covering product updates and customer growth.",
+        url: "https://legora.com/iltacon",
+      },
       {
         date: "2026-08-17",
         tag: "Product",
@@ -1345,6 +1437,13 @@ COMPETITORS.push(
         title: "Named exclusive AI drafting/review provider for the Canadian Bar Association",
         body: "Two-year deal covers the CBA's 40,000+ member base. Also secured $40M in debt financing from RBCx for acquisitions and reports being on track for $100M ARR in 2026. (Exact announcement date approximate — not stated precisely in source.)",
         url: "https://betakit.com/on-track-to-hit-100-million-usd-arr-spellbook-partners-with-canadian-bar-association/",
+      },
+      {
+        date: "2026-08-13",
+        tag: "Product",
+        title: "Added AI Document Editor to Spellbook Associate",
+        body: "New Word-style formatting/editing surface built directly into the Associate agent product, letting lawyers redline, comment, and finalize documents without switching apps. (Date approximate — reported \"ahead of ILTACON\", exact day not independently confirmed.)",
+        url: "https://spellbook.com/blog/introducing-spellbooks-ai-document-editor",
       },
     ],
   }),
@@ -1404,6 +1503,13 @@ COMPETITORS.push(
     website: "legal.thomsonreuters.com",
     linkedin: "https://www.linkedin.com/company/casetext",
     weekActivity: [
+      {
+        date: "2026-08-24",
+        tag: "Product",
+        title: "Debuts proprietary in-house LLM \"Thomson\" inside CoCounsel",
+        body: "Thomson Reuters announced \"Thomson,\" its first proprietary large language model (trained in-house, reportedly a ~$40M investment) on Westlaw/Practical Law and other proprietary content; it initially powers CoCounsel Legal's tabular-analysis feature. See General Highlights.",
+        url: "https://www.prnewswire.com/news-releases/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model-302857499.html",
+      },
       {
         date: "2026-08-20",
         tag: "Product",
@@ -1636,6 +1742,15 @@ COMPETITORS.push(
     ],
     website: "cypris.ai",
     linkedin: "https://www.linkedin.com/company/cyprisai",
+    weekActivity: [
+      {
+        date: "2026-08-25",
+        tag: "Partnership",
+        title: "Launched \"Cypris Q for Microsoft Copilot\"",
+        body: "Gives enterprise R&D and innovation teams direct access to Cypris's intelligence/research agents (prior art research, technology scouting, landscape analysis, competitive intelligence) from inside Microsoft Copilot, via agent-to-agent architecture over MCP. See General Highlights.",
+        url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
+      },
+    ],
   })
 );
 
@@ -1656,7 +1771,7 @@ const NEW_ENTRANTS = [
     website: "https://stilta.com",
     linkedin: null,
     description:
-      "Stockholm-based Stilta builds agentic AI for IP work, starting with patent litigation — every output is source-backed and auditable. Already used by multiple AmLaw 100 firms and Fortune 500 in-house IP teams within months of its December 2025 founding.",
+      "Stockholm-based Stilta builds agentic AI for IP work, starting with patent litigation — every output is source-backed and auditable. Already used by multiple AmLaw 100 firms and Fortune 500 in-house IP teams within months of its December 2025 founding; TechCrunch names Roche, Alfa Laval, and Maersk among its early customers.",
     foundingTeam: [
       { name: "Oskar Block", background: "CEO. Previously McKinsey, Goldman Sachs, and Swedish unicorns." },
       { name: "3 additional co-founders", background: "Also former McKinsey/QuantumBlack engineers (names pending verification)." },
@@ -1666,7 +1781,7 @@ const NEW_ENTRANTS = [
       focus: "Not yet verified — careers page not yet scraped",
       hiringProfile: "Not yet verified.",
     },
-    date: d(-6),
+    date: "2026-08-19",
     source: "TechCrunch, LawNext",
     sourceUrl: "https://techcrunch.com/2026/05/19/legal-tech-announced-stilta-announces-10m-seed-backed-by-yc-and-a16z-months-after-launch/",
   },
@@ -1690,7 +1805,7 @@ const NEW_ENTRANTS = [
       focus: "Not yet verified — careers page not yet scraped",
       hiringProfile: "Not yet verified.",
     },
-    date: d(-9),
+    date: "2026-08-16",
     source: "Artificial Lawyer, IPWatchdog",
     sourceUrl: "https://www.artificiallawyer.com/2025/02/06/yc-backed-ai-raises-6-5m-launches-ai-agent-for-patent-work/",
   },
@@ -1714,7 +1829,7 @@ const NEW_ENTRANTS = [
       focus: "Not yet verified — careers page not yet scraped",
       hiringProfile: "Not yet verified.",
     },
-    date: d(-15),
+    date: "2026-08-10",
     source: "PR Newswire, Law.com",
     sourceUrl: "https://www.prnewswire.com/news-releases/fearn-raises-5-5-million-seed-to-end-the-two-tier-patent-system-302796012.html",
   },
@@ -1738,7 +1853,7 @@ const NEW_ENTRANTS = [
       focus: "Not yet verified — careers page not yet scraped",
       hiringProfile: "Not yet verified.",
     },
-    date: d(-18),
+    date: "2026-08-07",
     source: "Crunchbase, LegalTech.ca",
     sourceUrl: "https://legaltech.ca/2026/05/28/yc-toronto-startup-patents-revenue-ai-toolkit/",
   },
@@ -1822,19 +1937,6 @@ const NEW_ENTRANTS = [
 // below has a real, working source URL — no placeholder/sample listings.
 const WEBINARS = [
   {
-    id: "wb-1",
-    title: "AI-Powered Patent Landscaping",
-    host: "LexisNexis Cipher",
-    date: "2026-08-18",
-    time: "See registration page",
-    format: "Live webinar",
-    relevance: "high",
-    description:
-      "Session on AI-driven landscaping methodology for patent portfolios, listed via IPWatchdog's events partner program.",
-    tags: ["Landscaping", "Competitor-hosted"],
-    url: "https://ipwatchdog.com/event/webinar-lexisnexis-2026-08-18-ai-powered-patent-landscaping/",
-  },
-  {
     id: "wb-2",
     title: "AI for Lean IP Teams — Doing More with Less While Empowering the Next Generation",
     host: "Anaqua",
@@ -1843,21 +1945,9 @@ const WEBINARS = [
     format: "Live webinar",
     relevance: "high",
     description:
-      "Live session (today) on helping lean IP teams adopt AI while empowering junior staff, without adding headcount.",
+      "Session on helping lean IP teams adopt AI while empowering junior staff, without adding headcount.",
     tags: ["Competitor-hosted", "AI Adoption"],
     url: "https://ipwatchdog.com/event/webinar-anaqua-2026-08-25-ai-for-lean-ip-teams/",
-  },
-  {
-    id: "wb-3",
-    title: "Patent Forecasting and Budgeting",
-    host: "Juristat",
-    date: "2026-08-11",
-    time: "See registration page",
-    format: "Live webinar",
-    relevance: "medium",
-    description: "Session on using AI-driven prosecution analytics to forecast patent budgets and timelines.",
-    tags: ["Competitor-hosted", "Analytics"],
-    url: "https://ipwatchdog.com/event/webinar-juristat-2026-08-11-patent-forecasting-and-budgeting/",
   },
   {
     id: "wb-4",
@@ -1908,6 +1998,42 @@ const WEBINARS = [
       "Direct Tier 1 competitor-hosted session on change management for AI adoption in patent prosecution and portfolio workflows.",
     tags: ["Competitor-hosted", "AI Adoption"],
     url: "https://ipwatchdog.com/ankar-ai-september-10-2026/",
+  },
+  {
+    id: "wb-9",
+    title: "Sponsored by IP Copilot",
+    host: "IP Copilot",
+    date: "2026-09-08",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "medium",
+    description: "IPWatchdog-hosted session sponsored by IP Copilot; topic and speakers not yet announced on the registration page as of this refresh.",
+    tags: ["Competitor-hosted"],
+    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-09-08/",
+  },
+  {
+    id: "wb-10",
+    title: "Sponsored by Lighthouse IP",
+    host: "Lighthouse IP",
+    date: "2026-09-15",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "low",
+    description: "IPWatchdog-hosted session sponsored by Lighthouse IP, a global patent/trademark/design data provider; topic and speakers not yet announced on the registration page as of this refresh.",
+    tags: ["Data Provider"],
+    url: "https://ipwatchdog.com/event/webinar-lighthouse-ip-2026-09-15/",
+  },
+  {
+    id: "wb-11",
+    title: "Women's IP Forum 2026 (Third Annual)",
+    host: "IPWatchdog",
+    date: "2026-09-23",
+    time: "In-person, Ashburn, VA (through Sept 25)",
+    format: "Conference",
+    relevance: "medium",
+    description: "Three-day, all-women-speaker industry event covering current IP topics, mixing rising-star and senior ('Masters Level') practitioners across panels.",
+    tags: ["Conference", "Industry Event"],
+    url: "https://ipwatchdog.com/event/womens-ip-forum-2026/",
   },
   {
     id: "wb-8",
