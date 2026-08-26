@@ -10,8 +10,30 @@
   const DATA = window.PATLYTICS_DATA;
   const { HIGHLIGHTS, COMPETITORS, NEW_ENTRANTS, WEBINARS, ANCHOR_DATE, EARLIEST_DATE } = DATA;
 
-  const FEATURE_DATA = window.PATLYTICS_FEATURE_DATA;
-  const { DEFAULT_COMPARISON_COMPANY_IDS, PATLYTICS_PSEUDO_COMPANY, FEATURE_ROWS, FEATURE_REVIEWS } = FEATURE_DATA;
+  // Feature Comparison data is fetched as plain JSON (not a <script> global)
+  // so the backend (a Cloudflare Worker, once deployed) can safely rewrite
+  // it with JSON.parse/stringify instead of regex-editing JS source — that
+  // matters because a wrong cell in this matrix can mislead the whole
+  // company, so the write path needs to be as low-risk as the data itself.
+  // Populated by init() before first render; see FEATURE_DATA_URL below.
+  const FEATURE_DATA_URL = "js/feature-data.json";
+  let FEATURE_ROWS = [];
+  let FEATURE_REVIEWS = {};
+  let DEFAULT_COMPARISON_COMPANY_IDS = [];
+  let PATLYTICS_PSEUDO_COMPANY = { id: "patlytics", name: "Patlytics", initials: "PA", isSelf: true };
+
+  // Optional Cloudflare Worker backend for Feature Clarification chat and
+  // live feature research. Fill these in after deploying worker/worker.js
+  // (see worker/worker.js's header comment). Left blank, the Feature
+  // Comparison tab keeps working exactly as before: a local, rule-based
+  // chat answer and "unknown" for newly-added features until a human sets
+  // them manually. FC_ACCESS_KEY is an abuse deterrent only, not a real
+  // secret — it's visible here in plain page source either way. The real
+  // cost control is a spend cap on the Anthropic API key, set in the
+  // Anthropic Console, not this value.
+  const FC_WORKER_BASE_URL = ""; // e.g. "https://patlytics-feature-worker.<you>.workers.dev"
+  const FC_ACCESS_KEY = "";
+  function fcBackendConfigured() { return !!FC_WORKER_BASE_URL; }
 
   const COMPETITORS_SORTED = [...COMPETITORS].sort((a, b) => a.rank - b.rank);
 
@@ -21,11 +43,15 @@
     asOf: ANCHOR_DATE,
     webinarFilter: "upcoming", // upcoming | past | all
     fc: {
-      companyIds: [...DEFAULT_COMPARISON_COMPANY_IDS],
+      companyIds: [],
       customFeatures: [], // { id, name }
       overrides: {}, // `${companyId}::${featureId}` -> "yes"|"no"|"partial"|"unknown"
       review: { companyId: "solve-intelligence", featureId: "claim-charting" },
       chat: [], // { role: "user"|"assistant", text }
+      chatBusy: false, // true while a backend chat request is in flight
+      pendingFeatureRequests: {}, // featureId -> true while a backend research job is in flight
+      pendingFeatureErrors: {}, // featureId -> error message, if a research job failed
+      researchedSupport: {}, // featureId -> { companyId: { status, detail } }, filled in by the backend
     },
   };
 
@@ -549,7 +575,10 @@
   }
 
   function fcAllFeatures() {
-    return [...FEATURE_ROWS, ...state.fc.customFeatures.map((f) => ({ id: f.id, name: f.name, support: {} }))];
+    return [
+      ...FEATURE_ROWS,
+      ...state.fc.customFeatures.map((f) => ({ id: f.id, name: f.name, support: state.fc.researchedSupport[f.id] || {} })),
+    ];
   }
 
   function fcStatus(companyId, feature) {
@@ -671,6 +700,55 @@
     return `On "${feature.name}":\n\n${a.name}: ${fcDetail(a.id, feature)}\n\n${b.name}: ${fcDetail(b.id, feature)}`;
   }
 
+  // Calls the Cloudflare Worker's /api/chat (see worker/worker.js). Falls
+  // back to the local rule-based answer if no backend is configured, or
+  // if the call fails for any reason — the tab should never go silent.
+  async function fcAskBackendOrLocal(question) {
+    if (!fcBackendConfigured()) return fcAnswerQuestion(question);
+    try {
+      const res = await fetch(`${FC_WORKER_BASE_URL}/api/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Access-Key": FC_ACCESS_KEY },
+        body: JSON.stringify({ question }),
+      });
+      if (!res.ok) throw new Error(`Worker responded ${res.status}`);
+      const data = await res.json();
+      if (!data.answer) throw new Error("Worker returned no answer");
+      return data.answer;
+    } catch (e) {
+      console.error("Feature Clarification backend call failed, falling back to local answer:", e);
+      return fcAnswerQuestion(question) + "\n\n(Note: the AI clarification backend didn't respond, so this is the local, matrix-only answer.)";
+    }
+  }
+
+  // Calls the Cloudflare Worker's /api/research-feature, which uses Claude
+  // with live web search to check whether each company supports a newly
+  // added feature, then commits the result back to feature-data.json.
+  // Only ever invoked for genuinely new custom features — never touches
+  // the 6 pre-researched rows shipped with the dashboard.
+  async function fcResearchFeatureViaBackend(featureId, featureName, companyIds) {
+    state.fc.pendingFeatureRequests[featureId] = true;
+    delete state.fc.pendingFeatureErrors[featureId];
+    renderActiveTab();
+    try {
+      const res = await fetch(`${FC_WORKER_BASE_URL}/api/research-feature`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-Access-Key": FC_ACCESS_KEY },
+        body: JSON.stringify({ featureName, companyIds }),
+      });
+      if (!res.ok) throw new Error(`Worker responded ${res.status}`);
+      const data = await res.json();
+      if (!data.results) throw new Error("Worker returned no results");
+      state.fc.researchedSupport[featureId] = data.results;
+    } catch (e) {
+      console.error("Feature research backend call failed:", e);
+      state.fc.pendingFeatureErrors[featureId] = "Live research didn't complete — set statuses manually below, or try re-adding the feature.";
+    } finally {
+      delete state.fc.pendingFeatureRequests[featureId];
+      renderActiveTab();
+    }
+  }
+
   function renderFeatureComparison() {
     const fc = state.fc;
     const features = fcAllFeatures();
@@ -686,7 +764,11 @@
       <div class="fc-toolbar-group">
         <input type="text" id="fc-new-feature-input" placeholder="Add a feature to compare…" maxlength="80" />
         <button type="button" id="fc-add-feature-btn" class="fc-toolbar-btn"><iconify-icon icon="ph:plus"></iconify-icon> Add Feature</button>
-        <span class="fc-toolbar-note"><iconify-icon icon="ph:info"></iconify-icon> New features start as "unknown" for every company — there's no live research pipeline wired to this yet, see the note below the matrix.</span>
+        <span class="fc-toolbar-note"><iconify-icon icon="ph:info"></iconify-icon> ${
+          fcBackendConfigured()
+            ? "Adding a feature kicks off a live research pass across the companies in your comparison — this can take up to a few minutes, during which the row shows a researching spinner."
+            : "New features start as \"unknown\" for every company. Live research isn't connected yet (no backend deployed) — set statuses manually by clicking each cell."
+        }</span>
       </div>
       <div class="fc-toolbar-group">
         <select id="fc-add-company-select">
@@ -714,13 +796,22 @@
         ${features
           .map((f) => {
             const isCustom = fc.customFeatures.some((cf) => cf.id === f.id);
-            return `<tr>
+            const isPending = !!fc.pendingFeatureRequests[f.id];
+            const researchError = fc.pendingFeatureErrors[f.id];
+            return `<tr${isPending ? ' class="fc-row-pending"' : ""}>
           <td class="fc-feature-name">
             <span>${escapeHtml(f.name)}</span>
+            ${isPending ? `<span class="fc-researching-badge"><iconify-icon icon="ph:spinner-gap" class="fc-spin"></iconify-icon> Researching…</span>` : ""}
+            ${researchError ? `<span class="fc-research-error" title="${escapeHtml(researchError)}"><iconify-icon icon="ph:warning"></iconify-icon></span>` : ""}
             ${isCustom ? `<button type="button" class="fc-remove-row" data-feature="${f.id}" aria-label="Remove feature"><iconify-icon icon="ph:x"></iconify-icon></button>` : ""}
           </td>
           ${companies
             .map((c) => {
+              if (isPending) {
+                return `<td class="fc-cell fc-status-pending" tabindex="-1" aria-label="${escapeHtml(c.name)} — ${escapeHtml(f.name)}: research in progress">
+                <iconify-icon icon="ph:spinner-gap" class="fc-icon fc-spin"></iconify-icon>
+              </td>`;
+              }
               const status = fcStatus(c.id, f);
               const detail = fcDetail(c.id, f);
               return `<td class="fc-cell fc-status-${status}" data-company="${c.id}" data-feature="${f.id}" data-detail="${escapeHtml(detail)}" data-company-name="${escapeHtml(c.name)}" data-feature-name="${escapeHtml(f.name)}" tabindex="0" role="button" aria-label="${escapeHtml(c.name)} — ${escapeHtml(f.name)}: ${escapeHtml(status)}. Click to change.">
@@ -742,14 +833,19 @@
     </div>`;
 
     html += `<div class="section-heading"><iconify-icon icon="ph:chat-circle-text"></iconify-icon><h2>Feature Clarification</h2></div>
-    <p class="section-sub">Ask how a specific feature compares across companies — e.g. “How does Patlytics' claim charting differ from PatSnap's?” Answers come from the comparison matrix above, not a live model.</p>
+    <p class="section-sub">Ask how a specific feature compares across companies — e.g. “How does Patlytics' claim charting differ from PatSnap's?” ${
+      fcBackendConfigured()
+        ? "Answers come from an AI assistant grounded in the verified matrix data — it'll ask a follow-up if your question is too broad."
+        : "Answers come from the comparison matrix above using local matching — no AI backend is connected yet."
+    }</p>
     <div class="card fc-chat">
       <div class="fc-chat-messages" id="fc-chat-messages">
         ${fc.chat.length ? fc.chat.map(fcChatBubbleHtml).join("") : `<div class="fc-chat-empty">Ask about one of the tracked features above to get started.</div>`}
+        ${fc.chatBusy ? `<div class="fc-chat-row fc-chat-row-assistant"><div class="fc-chat-bubble fc-chat-bubble-assistant fc-chat-bubble-thinking"><iconify-icon icon="ph:spinner-gap" class="fc-spin"></iconify-icon> Thinking…</div></div>` : ""}
       </div>
       <form id="fc-chat-form" class="fc-chat-form">
-        <input type="text" id="fc-chat-input" placeholder="Ask about a feature…" autocomplete="off" />
-        <button type="submit" aria-label="Send"><iconify-icon icon="ph:paper-plane-right"></iconify-icon></button>
+        <input type="text" id="fc-chat-input" placeholder="Ask about a feature…" autocomplete="off" ${fc.chatBusy ? "disabled" : ""} />
+        <button type="submit" aria-label="Send" ${fc.chatBusy ? "disabled" : ""}><iconify-icon icon="ph:paper-plane-right"></iconify-icon></button>
       </form>
     </div>`;
 
@@ -759,7 +855,7 @@
     const reviewFeature = features.find((f) => f.id === fc.review.featureId);
 
     html += `<div class="section-heading"><iconify-icon icon="ph:chats-circle"></iconify-icon><h2>Feature Reviews</h2><span class="count-chip">${reviews.length}</span></div>
-    <p class="section-sub">What people are saying about a specific company's feature, in a message-style feed. Click a review to open its original source. The live review scraper isn't built yet — this is a sample dataset.</p>
+    <p class="section-sub">What people are saying about a specific company's feature, in a message-style feed. Click a review to open its original source. The daily research routine scrapes for new reviews once a day; this list only ever contains reviews with a real, working source link.</p>
     <div class="fc-review-controls">
       <select id="fc-review-company-select">
         ${reviewCompanyOptions.map((c) => `<option value="${c.id}" ${c.id === fc.review.companyId ? "selected" : ""}>${escapeHtml(c.name)}</option>`).join("")}
@@ -785,6 +881,9 @@
       if (!name) return;
       const id = "custom-" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "-" + Date.now().toString(36);
       state.fc.customFeatures.push({ id, name });
+      if (fcBackendConfigured()) {
+        fcResearchFeatureViaBackend(id, name, [...state.fc.companyIds]);
+      }
       renderActiveTab();
     }
     addFeatureBtn.addEventListener("click", addFeature);
@@ -795,7 +894,11 @@
     document.querySelectorAll(".fc-remove-row").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        state.fc.customFeatures = state.fc.customFeatures.filter((f) => f.id !== btn.dataset.feature);
+        const fid = btn.dataset.feature;
+        state.fc.customFeatures = state.fc.customFeatures.filter((f) => f.id !== fid);
+        delete state.fc.researchedSupport[fid];
+        delete state.fc.pendingFeatureRequests[fid];
+        delete state.fc.pendingFeatureErrors[fid];
         renderActiveTab();
       });
     });
@@ -842,15 +945,23 @@
 
     const chatForm = document.getElementById("fc-chat-form");
     const chatInput = document.getElementById("fc-chat-input");
-    chatForm.addEventListener("submit", (e) => {
+    chatForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const q = chatInput.value.trim();
-      if (!q) return;
+      if (!q || state.fc.chatBusy) return;
       state.fc.chat.push({ role: "user", text: q });
-      state.fc.chat.push({ role: "assistant", text: fcAnswerQuestion(q) });
+      state.fc.chatBusy = true;
       renderActiveTab();
-      const msgs = document.getElementById("fc-chat-messages");
-      if (msgs) msgs.scrollTop = msgs.scrollHeight;
+      const scrollToBottom = () => {
+        const msgs = document.getElementById("fc-chat-messages");
+        if (msgs) msgs.scrollTop = msgs.scrollHeight;
+      };
+      scrollToBottom();
+      const answer = await fcAskBackendOrLocal(q);
+      state.fc.chat.push({ role: "assistant", text: answer });
+      state.fc.chatBusy = false;
+      renderActiveTab();
+      scrollToBottom();
       const freshInput = document.getElementById("fc-chat-input");
       if (freshInput) freshInput.focus();
     });
@@ -986,7 +1097,26 @@
   }
 
   /* ================= INIT ================= */
-  function init() {
+  async function loadFeatureData() {
+    try {
+      const res = await fetch(FEATURE_DATA_URL, { cache: "no-store" });
+      if (!res.ok) throw new Error(`${res.status}`);
+      const json = await res.json();
+      FEATURE_ROWS = json.FEATURE_ROWS || [];
+      FEATURE_REVIEWS = json.FEATURE_REVIEWS || {};
+      DEFAULT_COMPARISON_COMPANY_IDS = json.DEFAULT_COMPARISON_COMPANY_IDS || ["patlytics"];
+      PATLYTICS_PSEUDO_COMPANY = json.PATLYTICS_PSEUDO_COMPANY || PATLYTICS_PSEUDO_COMPANY;
+    } catch (e) {
+      // Non-fatal: the rest of the dashboard still works, the Feature
+      // Comparison tab just renders empty until this file is reachable.
+      console.error("Could not load feature-data.json:", e);
+      DEFAULT_COMPARISON_COMPANY_IDS = ["patlytics"];
+    }
+    state.fc.companyIds = [...DEFAULT_COMPARISON_COMPANY_IDS];
+  }
+
+  async function init() {
+    await loadFeatureData();
     renderSidebar();
     wireTopbarControls();
     wireSearch();

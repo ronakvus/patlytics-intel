@@ -1,0 +1,1201 @@
+{
+  "DEFAULT_COMPARISON_COMPANY_IDS": [
+    "patlytics",
+    "solve-intelligence",
+    "deepip",
+    "patsnap",
+    "iprally",
+    "xlscout"
+  ],
+  "PATLYTICS_PSEUDO_COMPANY": {
+    "id": "patlytics",
+    "name": "Patlytics",
+    "initials": "PA",
+    "isSelf": true
+  },
+  "FEATURE_ROWS": [
+    {
+      "id": "claim-charting",
+      "name": "AI Claim Charting",
+      "support": {
+        "patlytics": {
+          "status": "yes",
+          "detail": "Auto-generates claim charts directly from claim language against a selected reference set, with inline citation highlighting and exportable tables."
+        },
+        "solve-intelligence": {
+          "status": "yes",
+          "detail": "Lists \"Claim charting\" and \"Invalidity chart generation\" as named capabilities, and added a dedicated \"Charts\" product for infringement/invalidity claim charts."
+        },
+        "patsnap": {
+          "status": "yes",
+          "detail": "Eureka platform includes a named \"Essentiality Claim Chart\" agent and demonstrates AI-generated element-by-element claim charts."
+        },
+        "iprally": {
+          "status": "no",
+          "detail": "Product pages cover search, review, and monitoring only; no claim-charting tool was found."
+        },
+        "clarivate-innography": {
+          "status": "unknown",
+          "detail": "No dedicated claim-charting product page found; only general commentary about AI being useful for claim-chart mapping, without naming a specific Clarivate feature."
+        },
+        "anaqua": {
+          "status": "partial",
+          "detail": "AI-enhanced claim charting is only available via the just-announced (Aug 2026) Unified Patents acquisition and is not yet confirmed as a shipped, integrated feature."
+        },
+        "lexisnexis-ip": {
+          "status": "no",
+          "detail": "PatentOptimizer's claim tooling handles proofreading and consistency checking, not AI mapping of claims to prior-art passages."
+        },
+        "cipher": {
+          "status": "no",
+          "detail": "Cipher's own product page covers only classification and clustering; no claim-charting feature is mentioned."
+        },
+        "juristat": {
+          "status": "no",
+          "detail": "Product pages list office action strategy briefs, IDS, OAR, and analytics dashboards, but never mention claim charts."
+        },
+        "patent-bots": {
+          "status": "partial",
+          "detail": "Auto-generates a claim-chart table with a row for each claim limitation, but per the company's own description it's an empty table for manual completion, not AI-mapped content."
+        },
+        "alt-legal": {
+          "status": "no",
+          "detail": "Features page lists docketing, TEAS filing tools, watch services, and reporting only; no claim charting is offered."
+        },
+        "pqai": {
+          "status": "no",
+          "detail": "The tools page (search, concept extractor, keyword suggester, CPC lookup) has no claim-charting feature."
+        },
+        "ip-copilot": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site; the product is idea capture, search, and disclosure drafting focused."
+        },
+        "harvey": {
+          "status": "yes",
+          "detail": "Company blog describes a workflow that maps each claim element to specific features of an accused product in a structured chart, as a configurable workflow on Harvey's general legal-AI platform rather than a dedicated patent product."
+        },
+        "legora": {
+          "status": "no",
+          "detail": "Site lists practice areas as M&A, Litigation, Banking, Tax, and Insurance only; there is no IP or patent practice area on the site."
+        },
+        "spellbook": {
+          "status": "no",
+          "detail": "The company's own IP-law article says it doesn't specialize in summarizing technical descriptions, claims, or diagrams, and recommends other vendors for that work."
+        },
+        "robin-ai": {
+          "status": "unknown",
+          "detail": "Robin AI is effectively defunct: it failed to close a funding round in late 2025, laid off roughly a third of staff, and was listed for distressed sale before its managed-services arm was acquired and its engineering team absorbed elsewhere by early 2026. Marked unknown rather than researching a product that's no longer operating independently."
+        },
+        "leya": {
+          "status": "unknown",
+          "detail": "Leya rebranded to Legora in February 2025; see the Legora row for current feature status rather than researching Leya as a separate live product."
+        },
+        "cocounsel": {
+          "status": "no",
+          "detail": "CoCounsel's document features are general contract drafting, review, and analysis grounded in Practical Law/Westlaw; there's no patent claim-to-reference mapping."
+        },
+        "ironclad": {
+          "status": "no",
+          "detail": "Ironclad is a contract-lifecycle-management platform (generative drafting, clause extraction, redlining) for commercial contracts; no patent claim-chart feature was found."
+        },
+        "linksquares": {
+          "status": "no",
+          "detail": "LinkSquares Analyze extracts clauses and dates from commercial contracts; there's no patent claim-charting feature."
+        },
+        "draftwise": {
+          "status": "no",
+          "detail": "DraftWise is a contract drafting and negotiation tool built on a firm's own precedent and playbooks; no patent claim-chart feature was found."
+        },
+        "genie-ai": {
+          "status": "no",
+          "detail": "Genie AI's drafting tools target contract clause generation and redlining, not patent claim charts."
+        },
+        "ktmine": {
+          "status": "unknown",
+          "detail": "No claim-charting product was found across its Benchmark, Profiles, Search, Commercialization, or Royalty Rates apps, or in its support docs."
+        },
+        "ipwe": {
+          "status": "unknown",
+          "detail": "No mention found in press coverage or search snippets, and the company's own site could not be reached directly (persistent DNS failure) to confirm either way."
+        },
+        "deepip": {
+          "status": "yes",
+          "detail": "Its Invalidity Search product generates claim charts that map product or claim features directly to relevant prior-art text."
+        },
+        "junior": {
+          "status": "partial",
+          "detail": "Marketing copy references claim charting and examiner analytics as part of the suite, but the dedicated product walkthrough only shows claim drafting tools (claim tree, dependency tracking); a dedicated claim-charting page couldn't be confirmed."
+        },
+        "ankar-ai": {
+          "status": "yes",
+          "detail": "A dedicated Claim Charts product produces structured claim charts across prosecution, litigation, and post-grant proceedings."
+        },
+        "edge": {
+          "status": "no",
+          "detail": "Its product lines are Ingenia (patent drafting/figures) and Certus (trademark clearance); no claim-charting feature was found."
+        },
+        "patented-ai": {
+          "status": "yes",
+          "detail": "A \"Source Code Claim Mapping\" feature precisely identifies source code that reads on the claim elements of a target patent, with high-fidelity visual claim mapping — though scoped specifically to source code rather than general documents."
+        },
+        "xlscout": {
+          "status": "yes",
+          "detail": "A dedicated \"ClaimChart LLM\" auto-generates claim and evidence-of-use charts, and an \"Invalidator LLM\" generates invalidity claim charts."
+        },
+        "nlpatent": {
+          "status": "yes",
+          "detail": "An \"Agents\" workflow explicitly generates a claim chart mapping every claim element to prior art (product now branded Clerq)."
+        },
+        "patentpal": {
+          "status": "no",
+          "detail": "The product generates specs, flowcharts, and diagrams from claims, but no claim-to-reference-document mapping feature was found."
+        },
+        "amplified-ai": {
+          "status": "partial",
+          "detail": "Automated claim mapping identifies relevant portions of prior-art documents for specific claims, which overlaps this feature, but no dedicated formatted claim-chart output was confirmed."
+        },
+        "iprova": {
+          "status": "yes",
+          "detail": "A dedicated \"Claims Charting\" product maps patent claims against 3GPP technical specifications, though scoped to standards/SEP analysis rather than general infringement charting."
+        },
+        "minesoft": {
+          "status": "partial",
+          "detail": "PatBase has a claim-chart grid feature comparing claims against scope concepts or tech categories, plus a generative-AI claims-comparison tool, but this compares claims across patents rather than mapping elements to a specific reference document."
+        },
+        "questel": {
+          "status": "yes",
+          "detail": "A dedicated page describes patent mapping and claim analysis with AI that compares extracted claim features against prior-art references."
+        },
+        "eve-legal": {
+          "status": "no",
+          "detail": "The site describes only intake, medical chronologies, demand letters, and discovery for plaintiff litigation (PI, employment, med-mal, SSDI, workers' comp) — no patent or IP functionality at all."
+        },
+        "park-ip": {
+          "status": "no",
+          "detail": "Its Legal Studio platform covers filing and translation workflow only."
+        },
+        "patseer": {
+          "status": "yes",
+          "detail": "A dedicated feature lets users input a claim and instantly generate a structured claim chart that semantically maps each element to disclosures in selected prior-art documents."
+        },
+        "patently": {
+          "status": "yes",
+          "detail": "A \"Mine\" module maps patents against standards and other technical documentation for claim charting at a scale and detail not previously possible, per the company's own description."
+        },
+        "ip-author": {
+          "status": "partial",
+          "detail": "An \"Evidence of Use Assistant\" is listed in the product navigation and typically maps claims to product evidence for infringement or licensing purposes, but no page confirms it fits general claim-to-reference-document mapping."
+        },
+        "powerpatent": {
+          "status": "no",
+          "detail": "The homepage lists graphical claim drafting and section-112 diagnostics — drafting and QA, not chart-to-reference mapping; no claim-charting page was found."
+        },
+        "cypris": {
+          "status": "partial",
+          "detail": "Can run claim-level comparisons and surface prior art, but there's no evidence of a formatted claim-chart output mapping elements to a specific reference document."
+        }
+      }
+    },
+    {
+      "id": "prior-art-search",
+      "name": "Prior Art / Novelty Search",
+      "support": {
+        "patlytics": {
+          "status": "yes",
+          "detail": "Natural-language and structured search across prior art with semantic ranking, not just keyword/classification matching."
+        },
+        "solve-intelligence": {
+          "status": "yes",
+          "detail": "Semantic prior-art search across 170M+ patent publications in 107 jurisdictions, integrated into the drafting workflow."
+        },
+        "patsnap": {
+          "status": "yes",
+          "detail": "Eureka has a named \"Novelty Search\" agent plus a dedicated free AI prior-art search product."
+        },
+        "iprally": {
+          "status": "yes",
+          "detail": "Core product is a graph-AI trained on examiner citations, with a dedicated novelty/patentability search use case and an agent that automates novelty search into a report."
+        },
+        "clarivate-innography": {
+          "status": "yes",
+          "detail": "Derwent patent search services explicitly cover semantic prior-art search and patentability comparison against global patent and non-patent literature."
+        },
+        "anaqua": {
+          "status": "yes",
+          "detail": "AcclaimIP, Anaqua's search/analytics product, is a dedicated prior-art and patent search tool."
+        },
+        "lexisnexis-ip": {
+          "status": "unknown",
+          "detail": "PatentSight+ and IPlytics are positioned around analytics rather than search; no dedicated AI/semantic prior-art search product page was found."
+        },
+        "cipher": {
+          "status": "no",
+          "detail": "Not present on Cipher's product page; Cipher is a classification/benchmarking tool, not a search tool."
+        },
+        "juristat": {
+          "status": "no",
+          "detail": "No prior-art search tool was found; the platform is built on USPTO prosecution data, not literature or novelty search."
+        },
+        "patent-bots": {
+          "status": "no",
+          "detail": "Office Action Explorer only displays prior art already cited in an office action for review; it isn't a search tool for finding new prior art."
+        },
+        "alt-legal": {
+          "status": "no",
+          "detail": "No search or novelty tool was found; the product is IP docketing and deadline management, not substantive patent analysis."
+        },
+        "pqai": {
+          "status": "yes",
+          "detail": "Core product is natural-language, semantic search over patents and literature specifically marketed for novelty checks."
+        },
+        "ip-copilot": {
+          "status": "yes",
+          "detail": "Explicitly offers prior-art search for novelty, FTO, invalidity, and infringement across 120M+ documents plus the web."
+        },
+        "harvey": {
+          "status": "yes",
+          "detail": "Blog posts describe generating invalidity contentions from prior art on a limitation-by-limitation basis, plus prior-art landscape mapping against draft claims."
+        },
+        "legora": {
+          "status": "no",
+          "detail": "No patent or IP search feature was found."
+        },
+        "spellbook": {
+          "status": "no",
+          "detail": "The same article recommends third-party tools for prior-art search, confirming Spellbook itself doesn't offer it."
+        },
+        "robin-ai": {
+          "status": "unknown",
+          "detail": "Robin AI is effectively defunct: it failed to close a funding round in late 2025, laid off roughly a third of staff, and was listed for distressed sale before its managed-services arm was acquired and its engineering team absorbed elsewhere by early 2026. Marked unknown rather than researching a product that's no longer operating independently."
+        },
+        "leya": {
+          "status": "unknown",
+          "detail": "Leya rebranded to Legora in February 2025; see the Legora row for current feature status rather than researching Leya as a separate live product."
+        },
+        "cocounsel": {
+          "status": "no",
+          "detail": "Search covers legal research (case law/Westlaw), not patent prior art or novelty."
+        },
+        "ironclad": {
+          "status": "no",
+          "detail": "No patent search capability was found; the product's scope is contract lifecycle management."
+        },
+        "linksquares": {
+          "status": "no",
+          "detail": "No patent prior-art search feature was found; product search is scoped to the company's own contract repository."
+        },
+        "draftwise": {
+          "status": "no",
+          "detail": "Its \"deep research\" feature searches a firm's own contract and precedent repository, not patent prior art."
+        },
+        "genie-ai": {
+          "status": "no",
+          "detail": "The site offers IP-related contract templates (e.g., a patent licence agreement), which is template drafting, not a prior-art or novelty search tool."
+        },
+        "ktmine": {
+          "status": "partial",
+          "detail": "A \"Chat with Patents\" AI feature explicitly offers to accelerate prior-art analysis and assess novelty, but it reads as a Q&A/summarization tool over patent text rather than a confirmed full semantic prior-art discovery search."
+        },
+        "ipwe": {
+          "status": "partial",
+          "detail": "Press describes an AI \"Validity Score\" that scans prior art to gauge invalidation risk as part of asset valuation, but this is framed around valuation risk rather than a standalone novelty-search tool; the site could not be reached to verify further."
+        },
+        "deepip": {
+          "status": "yes",
+          "detail": "An AI Patentability product scans global patent and non-patent literature with semantic search and transparent citations."
+        },
+        "junior": {
+          "status": "partial",
+          "detail": "Marketing copy mentions prior art search, and product pages describe automatic prior-art extraction tied to office-action work, but there's no standalone novelty-search product confirmed."
+        },
+        "ankar-ai": {
+          "status": "partial",
+          "detail": "A Research Intelligence product searches across patents and non-patent literature, but it's positioned as competitor/trend monitoring rather than a dedicated novelty or patentability search tool; a separate Idea Generation feature does mention assessing patentability."
+        },
+        "edge": {
+          "status": "no",
+          "detail": "Not found; the Certus search product is for trademark clearance, not patent prior art."
+        },
+        "patented-ai": {
+          "status": "no",
+          "detail": "No prior-art or novelty search product was found; core products are IP commercialization, source code analysis, IP valuation, and IP licensing."
+        },
+        "xlscout": {
+          "status": "yes",
+          "detail": "A \"Novelty Checker LLM\" performs AI-driven prior-art searches."
+        },
+        "nlpatent": {
+          "status": "yes",
+          "detail": "Core AI search product plus rapid patentability reports with cited prior art."
+        },
+        "patentpal": {
+          "status": "no",
+          "detail": "No search or novelty feature was found in any product description; its \"Invent\" tool generates provisional drafts from a description rather than searching prior art."
+        },
+        "amplified-ai": {
+          "status": "yes",
+          "detail": "Core product is concept-based AI search over 140M+ patents, not keyword matching."
+        },
+        "iprova": {
+          "status": "unknown",
+          "detail": "The core product (Invention Studio) is invention generation, not search; no dedicated prior-art or novelty search tool was found despite searching."
+        },
+        "minesoft": {
+          "status": "yes",
+          "detail": "Natural-language AI search plus an \"Invalidity Screening\" feature to surface prior art examiners may have missed."
+        },
+        "questel": {
+          "status": "yes",
+          "detail": "Orbit Intelligence's core function, with coverage of over 99.7% of world patent offices."
+        },
+        "eve-legal": {
+          "status": "no",
+          "detail": "Legal research on the platform is case-law based, not patent search."
+        },
+        "park-ip": {
+          "status": "no",
+          "detail": "Not offered; the platform's scope is translation and filing tracking."
+        },
+        "patseer": {
+          "status": "yes",
+          "detail": "Core AI/semantic search plus dedicated similarity and invalidity-review tools support prior-art and novelty work."
+        },
+        "patently": {
+          "status": "yes",
+          "detail": "A \"Search\" module provides semantic/vector AI search, and a \"Rate\" module supports novelty-focused projects."
+        },
+        "ip-author": {
+          "status": "yes",
+          "detail": "A dedicated page describes AI prior-art search across 100+ jurisdictions with similarity scoring and novelty summaries."
+        },
+        "powerpatent": {
+          "status": "yes",
+          "detail": "AI-driven prior-art search covers patents plus non-patent literature such as product pages, code repositories, and papers."
+        },
+        "cypris": {
+          "status": "yes",
+          "detail": "Natural-language and semantic search, citation analysis, and claim-level comparison across 180M+ patents and literature."
+        }
+      }
+    },
+    {
+      "id": "office-action-response",
+      "name": "Office Action Response Drafting",
+      "support": {
+        "patlytics": {
+          "status": "partial",
+          "detail": "Supports drafting assistance for office-action responses today; full end-to-end automated response generation is on the near-term roadmap, not yet shipped."
+        },
+        "solve-intelligence": {
+          "status": "yes",
+          "detail": "Explicitly lists office action response and amendment drafting, plus office action analysis, as named product capabilities."
+        },
+        "patsnap": {
+          "status": "yes",
+          "detail": "Eureka includes a named \"Office Action Response\" agent that analyzes rejections and drafts responses/amendments."
+        },
+        "iprally": {
+          "status": "no",
+          "detail": "Not mentioned on any product or use-case page; IPRally is positioned around search, not drafting."
+        },
+        "clarivate-innography": {
+          "status": "unknown",
+          "detail": "No product page or press coverage found naming an AI office-action drafting tool."
+        },
+        "anaqua": {
+          "status": "no",
+          "detail": "Attorney Workspace tracks office actions administratively (docketing/deadlines); no evidence of AI-generated response drafting was found."
+        },
+        "lexisnexis-ip": {
+          "status": "partial",
+          "detail": "PatentOptimizer automates error-checking and IDS generation, and a \"PTAB Argument Finder\" surfaces winning arguments, but there's no evidence of full AI-drafted response text."
+        },
+        "cipher": {
+          "status": "no",
+          "detail": "Not mentioned on Cipher's product page."
+        },
+        "juristat": {
+          "status": "partial",
+          "detail": "Office Action Response auto-generates response shells with USPTO data pre-filled and assembles a packet, but the site itself says users must add their own arguments — substantive drafting is still human-written."
+        },
+        "patent-bots": {
+          "status": "yes",
+          "detail": "A generative-AI chat feature now guides office-action response drafting, per the company's own product update."
+        },
+        "alt-legal": {
+          "status": "no",
+          "detail": "No drafting feature was found on the features page or in any product listing."
+        },
+        "pqai": {
+          "status": "no",
+          "detail": "No drafting tool was found; PQAI is search/API only."
+        },
+        "ip-copilot": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site; no office-action drafting service is described."
+        },
+        "harvey": {
+          "status": "yes",
+          "detail": "An \"Analyzing Patent Office Actions\" workflow generates potential response strategies for each rejection type (101/102/103/112)."
+        },
+        "legora": {
+          "status": "no",
+          "detail": "No patent-specific drafting feature was found."
+        },
+        "spellbook": {
+          "status": "no",
+          "detail": "Not offered; Spellbook is a contract drafting and review tool."
+        },
+        "robin-ai": {
+          "status": "unknown",
+          "detail": "Robin AI is effectively defunct: it failed to close a funding round in late 2025, laid off roughly a third of staff, and was listed for distressed sale before its managed-services arm was acquired and its engineering team absorbed elsewhere by early 2026. Marked unknown rather than researching a product that's no longer operating independently."
+        },
+        "leya": {
+          "status": "unknown",
+          "detail": "Leya rebranded to Legora in February 2025; see the Legora row for current feature status rather than researching Leya as a separate live product."
+        },
+        "cocounsel": {
+          "status": "no",
+          "detail": "No mention of patent-office rejection drafting; the product is general legal drafting, contract-focused."
+        },
+        "ironclad": {
+          "status": "no",
+          "detail": "Not found; no patent-prosecution functionality is referenced anywhere in product materials."
+        },
+        "linksquares": {
+          "status": "no",
+          "detail": "Not found in any product materials."
+        },
+        "draftwise": {
+          "status": "no",
+          "detail": "No patent-prosecution capability was found; searches for DraftWise plus office action, PTAB, or prior art returned nothing product-specific."
+        },
+        "genie-ai": {
+          "status": "no",
+          "detail": "No evidence found; the product is contract-template and drafting focused, not patent prosecution."
+        },
+        "ktmine": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site; the product suite is licensing and royalty-data focused."
+        },
+        "ipwe": {
+          "status": "no",
+          "detail": "No evidence found in press coverage or search snippets; the company's own site could not be reached to fully confirm."
+        },
+        "deepip": {
+          "status": "yes",
+          "detail": "A dedicated Patent Prosecution product ranks examiner objections, suggests AI arguments, and drafts responses."
+        },
+        "junior": {
+          "status": "yes",
+          "detail": "A dedicated Office Action Response Assistant drafts AI-powered responses using firm templates and history, plus amendment generation for 101/102/103/112 rejections."
+        },
+        "ankar-ai": {
+          "status": "yes",
+          "detail": "A dedicated Office Action Responses product pulls prosecution history, surfaces amendment and argument options, and drafts responses in the firm's style."
+        },
+        "edge": {
+          "status": "no",
+          "detail": "Not found on the site; scope is patent drafting (claims, descriptions, figures) and disclosure intake."
+        },
+        "patented-ai": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site; the product is litigation and monetization focused, not prosecution."
+        },
+        "xlscout": {
+          "status": "yes",
+          "detail": "Company content states office-action responses begin with a verified first draft generated by analyzing the rejections."
+        },
+        "nlpatent": {
+          "status": "no",
+          "detail": "The only related feature found is monitoring new filings and office actions; no drafting capability was located."
+        },
+        "patentpal": {
+          "status": "no",
+          "detail": "An independent comparison explicitly states the product lacks tools for specifications and office-action responses."
+        },
+        "amplified-ai": {
+          "status": "no",
+          "detail": "Has an examiner-rejection-prediction feature that forecasts issues pre-filing, but this predicts rather than drafts responses — no drafting feature was found."
+        },
+        "iprova": {
+          "status": "unknown",
+          "detail": "No mention was found on the pages reviewed; the main product page was blocked, so this is genuinely unverifiable rather than a negative finding."
+        },
+        "minesoft": {
+          "status": "no",
+          "detail": "PatDocs only provides automated alerts for office-action and file-history changes — monitoring, not drafting."
+        },
+        "questel": {
+          "status": "yes",
+          "detail": "A dedicated page describes an AI copilot (\"Qthena\") that drafts office-action responses and suggests arguments and claim amendments."
+        },
+        "eve-legal": {
+          "status": "no",
+          "detail": "No patent-office workflow exists on the platform."
+        },
+        "park-ip": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site."
+        },
+        "patseer": {
+          "status": "no",
+          "detail": "A targeted site search found only general blog commentary on office-action strategy, no dedicated product feature."
+        },
+        "patently": {
+          "status": "unknown",
+          "detail": "A \"Shape\" module vaguely references prosecution workflows, but no page names office-action drafting specifically, so this couldn't be confirmed."
+        },
+        "ip-author": {
+          "status": "yes",
+          "detail": "A dedicated page describes summarizing examiner rejections, detecting 112/102/103 issues, and drafting responses."
+        },
+        "powerpatent": {
+          "status": "yes",
+          "detail": "A dedicated \"OfficeAction AI\" product analyzes rejections (101/102/103/112), drafts a USPTO-compliant response, and offers a Word plugin."
+        },
+        "cypris": {
+          "status": "no",
+          "detail": "No prosecution or office-action feature was found; the platform is R&D-intelligence focused, not patent-office prosecution."
+        }
+      }
+    },
+    {
+      "id": "portfolio-analytics",
+      "name": "Portfolio Analytics & Dashboards",
+      "support": {
+        "patlytics": {
+          "status": "yes",
+          "detail": "Portfolio-level dashboards covering filing trends, technology clustering, and competitive benchmarking."
+        },
+        "solve-intelligence": {
+          "status": "partial",
+          "detail": "Markets general \"portfolio management & analysis\" language, but no evidence of dedicated filing-trend, tech-clustering, or benchmarking dashboards."
+        },
+        "patsnap": {
+          "status": "yes",
+          "detail": "Dedicated analytics product covering filing-trend insights, custom technology reports, and competitive tracking."
+        },
+        "iprally": {
+          "status": "partial",
+          "detail": "Mentions custom AI classifiers and patent statistics, but no dedicated portfolio dashboard (filing trends/benchmarking) was found."
+        },
+        "clarivate-innography": {
+          "status": "yes",
+          "detail": "Derwent Patent Analytics (formerly Innography) offers customizable dashboards, PortfolioIQ, filing-trend and technology-category analysis, and an AI classifier for benchmarking."
+        },
+        "anaqua": {
+          "status": "yes",
+          "detail": "AQX Hyperview dashboards provide portfolio metrics (IP spend, grants/abandonments) and broader reporting/analytics."
+        },
+        "lexisnexis-ip": {
+          "status": "yes",
+          "detail": "PatentSight+ is a core portfolio-benchmarking and analytics product with AI-generated custom workbooks and charts."
+        },
+        "cipher": {
+          "status": "yes",
+          "detail": "Core product auto-clusters portfolios, maps them against competitor portfolios, and benchmarks spend/technology area across 70+ landscape reports."
+        },
+        "juristat": {
+          "status": "yes",
+          "detail": "Dedicated portfolio management dashboard, patent landscape, and competitor comparison tools benchmark filings, technology areas, and competitors."
+        },
+        "patent-bots": {
+          "status": "partial",
+          "detail": "PatentLink gives portfolio-wide quality dashboards (prosecution duration, claim count/length, examiner history), but no filing-trend, technology-clustering, or competitive-benchmarking views were found."
+        },
+        "alt-legal": {
+          "status": "no",
+          "detail": "\"Quick Docket Reports\" and dashboards cover deadlines and status, not portfolio makeup, filing trends, or competitive benchmarking."
+        },
+        "pqai": {
+          "status": "no",
+          "detail": "No portfolio dashboard features were found on the tools page."
+        },
+        "ip-copilot": {
+          "status": "yes",
+          "detail": "Markets running an entire portfolio from one connected system, surfacing asset value and spotting expansion opportunities and weak spots."
+        },
+        "harvey": {
+          "status": "partial",
+          "detail": "Blog content mentions querying a patent portfolio by technology area, claim scope, and filing date, but this is a prompted, general-purpose document workflow rather than a dedicated analytics dashboard product."
+        },
+        "legora": {
+          "status": "no",
+          "detail": "Listed features are Tabular Review, Workflows, and Legal Research, none of them patent-specific."
+        },
+        "spellbook": {
+          "status": "no",
+          "detail": "Not offered; no portfolio analytics feature was found."
+        },
+        "robin-ai": {
+          "status": "unknown",
+          "detail": "Robin AI is effectively defunct: it failed to close a funding round in late 2025, laid off roughly a third of staff, and was listed for distressed sale before its managed-services arm was acquired and its engineering team absorbed elsewhere by early 2026. Marked unknown rather than researching a product that's no longer operating independently."
+        },
+        "leya": {
+          "status": "unknown",
+          "detail": "Leya rebranded to Legora in February 2025; see the Legora row for current feature status rather than researching Leya as a separate live product."
+        },
+        "cocounsel": {
+          "status": "no",
+          "detail": "CoCounsel offers a usage-analytics dashboard tracking product adoption and engagement, not patent-portfolio analytics."
+        },
+        "ironclad": {
+          "status": "partial",
+          "detail": "Has contract-portfolio analytics and reporting for visibility, but this is scoped to commercial contracts, not patents."
+        },
+        "linksquares": {
+          "status": "partial",
+          "detail": "Has analytics dashboards for contract volume, workload, and portfolio insights, but scoped to commercial contracts, not patent portfolios."
+        },
+        "draftwise": {
+          "status": "unknown",
+          "detail": "No dashboard or analytics feature was surfaced in searches; product pages emphasize drafting and review rather than reporting, but there wasn't enough evidence either way."
+        },
+        "genie-ai": {
+          "status": "unknown",
+          "detail": "No analytics or dashboard feature surfaced in search results at all; not enough information to rule it out."
+        },
+        "ktmine": {
+          "status": "partial",
+          "detail": "The Profiles App gives visibility into other companies' IP and transaction portfolios for competitive intelligence, but it isn't built for analyzing one's own portfolio's filing trends or tech clustering."
+        },
+        "ipwe": {
+          "status": "yes",
+          "detail": "The SIAM platform provides real-time financial benchmarks on a patent-by-patent and portfolio basis alongside competitor and peer portfolio metrics, per press coverage and an indexed product page."
+        },
+        "deepip": {
+          "status": "yes",
+          "detail": "A dedicated Patent Portfolio Intelligence product provides filing-trend charts, technology and jurisdiction breakdowns, and AI-driven technology clustering."
+        },
+        "junior": {
+          "status": "no",
+          "detail": "Not mentioned on its how-it-works or AI-tools pages; the product is drafting and prosecution focused."
+        },
+        "ankar-ai": {
+          "status": "no",
+          "detail": "No dedicated portfolio-analytics or dashboard product was found among its Idea Generation, Drafting, Prosecution, and Protection categories."
+        },
+        "edge": {
+          "status": "no",
+          "detail": "Not found; there is no dashboard or analytics product on the site."
+        },
+        "patented-ai": {
+          "status": "partial",
+          "detail": "An IP Valuation product offers portfolio-level and patent-level risk analysis, but this is valuation/risk scoring rather than filing-trend or tech-clustering dashboards."
+        },
+        "xlscout": {
+          "status": "yes",
+          "detail": "A \"TechScaper LLM\" interactive dashboard shows filing trends, assignee concentration, and competitive benchmarking."
+        },
+        "nlpatent": {
+          "status": "partial",
+          "detail": "An \"Intelligence\" module turns patent data into charts, maps, and alerts, but there's no confirmed technology clustering or competitive benchmarking specifically."
+        },
+        "patentpal": {
+          "status": "no",
+          "detail": "No mention anywhere in product descriptions; it's a single-application drafting tool, not a portfolio tool."
+        },
+        "amplified-ai": {
+          "status": "unknown",
+          "detail": "Site mentions guided workflows for disclosures, invalidity, and monitoring, but no dashboard or analytics page could be located."
+        },
+        "iprova": {
+          "status": "unknown",
+          "detail": "The site references maximizing patentable subject matter, but no analytics dashboard product was found."
+        },
+        "minesoft": {
+          "status": "yes",
+          "detail": "PatBase Analytics V3 offers interactive dashboards for competitor tracking, trend identification, and portfolio comparison."
+        },
+        "questel": {
+          "status": "yes",
+          "detail": "A \"Technology Landscape\" dashboard provides filing trends, assignee/company benchmarking, and drill-down graphs."
+        },
+        "eve-legal": {
+          "status": "no",
+          "detail": "\"Firm analytics\" refers to revenue and case metrics, not patents."
+        },
+        "park-ip": {
+          "status": "partial",
+          "detail": "Offers real-time status visibility, which is filing/deadline tracking rather than analytics on portfolio makeup or trends."
+        },
+        "patseer": {
+          "status": "yes",
+          "detail": "Offers classification heatmaps, longitudinal filing charts, AI clustering by classification/inventor, and patent ranking scores."
+        },
+        "patently": {
+          "status": "partial",
+          "detail": "Has renewal/maintenance-window dashboards and SEP essentiality analytics, but no confirmed filing-trend, tech-clustering, or competitive-benchmarking dashboard."
+        },
+        "ip-author": {
+          "status": "no",
+          "detail": "No dashboard or analytics module was found on the site or in the feature list."
+        },
+        "powerpatent": {
+          "status": "no",
+          "detail": "Only a blog post on portfolio value was found; no dashboard product exists."
+        },
+        "cypris": {
+          "status": "yes",
+          "detail": "Dedicated \"AI Dashboard\" / \"Innovation Dashboard\" products provide landscape analysis, competitive positioning maps, and filing-trend tracking."
+        }
+      }
+    },
+    {
+      "id": "fto-analysis",
+      "name": "Freedom-to-Operate (FTO) Analysis",
+      "support": {
+        "patlytics": {
+          "status": "yes",
+          "detail": "Structured FTO workflows that combine search results with claim-scope risk flags for a target product/technology."
+        },
+        "solve-intelligence": {
+          "status": "yes",
+          "detail": "Lists freedom-to-operate risk reviews as a named product capability."
+        },
+        "patsnap": {
+          "status": "yes",
+          "detail": "Eureka includes named \"FTO Search\" and \"Design FTO Search\" agents."
+        },
+        "iprally": {
+          "status": "yes",
+          "detail": "Explicitly names \"Freedom to Operate\" searches, with its graph AI described as handling claim-focused FTO searches."
+        },
+        "clarivate-innography": {
+          "status": "yes",
+          "detail": "Patent search services page explicitly lists freedom-to-operate searches as a named service."
+        },
+        "anaqua": {
+          "status": "yes",
+          "detail": "AcclaimIP is described as used for determining patentability, freedom to operate, and assessing the competitive patent landscape."
+        },
+        "lexisnexis-ip": {
+          "status": "unknown",
+          "detail": "No dedicated FTO-named workflow was found on the site during this search."
+        },
+        "cipher": {
+          "status": "no",
+          "detail": "Not mentioned on Cipher's product page."
+        },
+        "juristat": {
+          "status": "no",
+          "detail": "No FTO or clearance-search product or page was found anywhere on the site."
+        },
+        "patent-bots": {
+          "status": "no",
+          "detail": "No FTO or clearance workflow was found on any feature page or blog post."
+        },
+        "alt-legal": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site."
+        },
+        "pqai": {
+          "status": "no",
+          "detail": "No dedicated FTO workflow was found; the search tool is positioned for novelty/prior-art work, not clearance."
+        },
+        "ip-copilot": {
+          "status": "yes",
+          "detail": "FTO search is explicitly listed as one of its named prior-art search types, framed as understanding product risk before launch."
+        },
+        "harvey": {
+          "status": "partial",
+          "detail": "Blog content mentions freedom-to-operate assessment via claim-to-product comparison, but as an application of Harvey's general platform rather than a named, dedicated FTO product."
+        },
+        "legora": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site."
+        },
+        "spellbook": {
+          "status": "no",
+          "detail": "Not offered."
+        },
+        "robin-ai": {
+          "status": "unknown",
+          "detail": "Robin AI is effectively defunct: it failed to close a funding round in late 2025, laid off roughly a third of staff, and was listed for distressed sale before its managed-services arm was acquired and its engineering team absorbed elsewhere by early 2026. Marked unknown rather than researching a product that's no longer operating independently."
+        },
+        "leya": {
+          "status": "unknown",
+          "detail": "Leya rebranded to Legora in February 2025; see the Legora row for current feature status rather than researching Leya as a separate live product."
+        },
+        "cocounsel": {
+          "status": "no",
+          "detail": "No dedicated FTO or clearance workflow was found on Thomson Reuters' CoCounsel pages."
+        },
+        "ironclad": {
+          "status": "no",
+          "detail": "No FTO or clearance workflow was found."
+        },
+        "linksquares": {
+          "status": "no",
+          "detail": "No FTO or clearance workflow was found; direct searches for LinkSquares plus FTO/PTAB/IPR returned no company-specific hits."
+        },
+        "draftwise": {
+          "status": "no",
+          "detail": "Not found."
+        },
+        "genie-ai": {
+          "status": "no",
+          "detail": "Not found; direct searches for Genie AI plus FTO/PTAB/prior art returned only generic industry background, nothing product-specific."
+        },
+        "ktmine": {
+          "status": "no",
+          "detail": "No dedicated FTO workflow was found after searching the product pages and site navigation."
+        },
+        "ipwe": {
+          "status": "partial",
+          "detail": "A \"Smart Pools\" feature grants members freedom to operate via patent licensing pools, which is a licensing structure rather than a dedicated FTO clearance-search workflow."
+        },
+        "deepip": {
+          "status": "yes",
+          "detail": "A dedicated FTO Analysis product automates global patent search, feature extraction, claim comparison, and blocking-patent risk scoring."
+        },
+        "junior": {
+          "status": "no",
+          "detail": "No mention found on any page reviewed."
+        },
+        "ankar-ai": {
+          "status": "no",
+          "detail": "Not found as a named product; its Protection/Monitoring category covers infringement-signal detection, not FTO clearance search."
+        },
+        "edge": {
+          "status": "no",
+          "detail": "Not found; the only \"clearance\" product, Certus, is for trademarks, not patents or FTO."
+        },
+        "patented-ai": {
+          "status": "no",
+          "detail": "No dedicated FTO product was found; the site is oriented toward monetization, licensing, and enforcement rather than clearance for one's own products."
+        },
+        "xlscout": {
+          "status": "yes",
+          "detail": "A dedicated FTO module generates FTO reports with claim-feature and gap analysis."
+        },
+        "nlpatent": {
+          "status": "no",
+          "detail": "Independent press coverage explicitly reports that FTO (and invalidity) workflows are on the company's roadmap, not yet shipped as of August 2026."
+        },
+        "patentpal": {
+          "status": "no",
+          "detail": "No evidence found in any source searched."
+        },
+        "amplified-ai": {
+          "status": "partial",
+          "detail": "Marketing copy lists FTO as a use case, but no dedicated named FTO workflow or module page was found — it appears to be general search applied to FTO."
+        },
+        "iprova": {
+          "status": "unknown",
+          "detail": "No evidence found in any source searched."
+        },
+        "minesoft": {
+          "status": "yes",
+          "detail": "Has a dedicated FTO search workflow with dead/alive status tags and educational content on FTO searching."
+        },
+        "questel": {
+          "status": "yes",
+          "detail": "An explicit workflow compares extracted claim features with prior-art references or checks freedom to operate."
+        },
+        "eve-legal": {
+          "status": "no",
+          "detail": "Not a patent product."
+        },
+        "park-ip": {
+          "status": "no",
+          "detail": "Not offered."
+        },
+        "patseer": {
+          "status": "yes",
+          "detail": "Has dedicated, named pages for freedom-to-operate search, infringement analysis, and clearance search, including an AI-FTO workflow."
+        },
+        "patently": {
+          "status": "yes",
+          "detail": "The \"Rate\" module explicitly lists FTO as a supported named project type."
+        },
+        "ip-author": {
+          "status": "no",
+          "detail": "No dedicated FTO page or mention was found."
+        },
+        "powerpatent": {
+          "status": "partial",
+          "detail": "Offered as an attorney-guided service combining software with human experts, plus educational content, but no confirmed self-serve dedicated FTO product page."
+        },
+        "cypris": {
+          "status": "partial",
+          "detail": "Named as one of several professional databases usable for FTO in an educational guide, with risk-scoring and claim-coverage features, but no dedicated in-product FTO page was found."
+        }
+      }
+    },
+    {
+      "id": "ptab-litigation-support",
+      "name": "IPR / PTAB Litigation Support",
+      "support": {
+        "patlytics": {
+          "status": "partial",
+          "detail": "Search and claim-charting tools are usable for IPR petition prep today; a dedicated PTAB-specific workflow is not yet a named product module."
+        },
+        "solve-intelligence": {
+          "status": "partial",
+          "detail": "Offers invalidity chart generation and general litigation support, but no page names a dedicated IPR/PTAB workflow specifically."
+        },
+        "patsnap": {
+          "status": "partial",
+          "detail": "Claim-chart data is marketed as usable for IPR and infringement analysis, and Eureka publishes PTAB commentary, but there's no dedicated named IPR/PTAB litigation workflow product."
+        },
+        "iprally": {
+          "status": "no",
+          "detail": "No mention of IPR or PTAB anywhere on the product, features, or use-case pages checked."
+        },
+        "clarivate-innography": {
+          "status": "partial",
+          "detail": "Darts-IP is marketed for preparing invalidity actions using global litigation case data, but no explicit IPR/PTAB charting workflow was confirmed."
+        },
+        "anaqua": {
+          "status": "partial",
+          "detail": "The August 2026 Unified Patents acquisition targets litigation risk, but as a very recent deal its IPR/PTAB workflow integration hasn't been independently confirmed yet."
+        },
+        "lexisnexis-ip": {
+          "status": "partial",
+          "detail": "PTAB Argument Finder targets ex parte prosecution appeals rather than IPR invalidity charting; a separate \"Disputes\" dataset covers PTAB case data as litigation analytics, not an active charting/drafting workflow."
+        },
+        "cipher": {
+          "status": "no",
+          "detail": "Not mentioned on Cipher's product page; litigation/PTAB dispute data appears to live in a separate LexisNexis \"Disputes\" product."
+        },
+        "juristat": {
+          "status": "partial",
+          "detail": "Offers a \"PTAB Expert Search\" tool to find expert witnesses for IPR/CBM/PGR cases, which is real but is expert-recruiting rather than invalidity search/charting."
+        },
+        "patent-bots": {
+          "status": "no",
+          "detail": "Examiner Stats covers ex parte appeal/PTAB outcome statistics tied to prosecution, not a dedicated IPR/PTAB invalidity search-and-chart workflow."
+        },
+        "alt-legal": {
+          "status": "no",
+          "detail": "Not mentioned; Alt Legal is explicitly a docketing/deadline platform, primarily trademark-focused with patent docketing as an add-on."
+        },
+        "pqai": {
+          "status": "no",
+          "detail": "No litigation or PTAB feature was found. PQAI is a free, open-source nonprofit research project rather than a commercial vendor, so its scope is intentionally narrow."
+        },
+        "ip-copilot": {
+          "status": "no",
+          "detail": "Not mentioned anywhere on the site; no IPR, PTAB, or litigation-support capability is described."
+        },
+        "harvey": {
+          "status": "partial",
+          "detail": "Blog content mentions IPR/PGR brief preparation as a use case, but again as a general-platform application rather than a distinct, named IPR/PTAB product line."
+        },
+        "legora": {
+          "status": "no",
+          "detail": "Not mentioned anywhere; an independent review confirms Legora's practice areas exclude IP."
+        },
+        "spellbook": {
+          "status": "no",
+          "detail": "Not offered; Spellbook's IP-related function is limited to drafting and reviewing IP licensing and ownership contract clauses."
+        },
+        "robin-ai": {
+          "status": "unknown",
+          "detail": "Robin AI is effectively defunct: it failed to close a funding round in late 2025, laid off roughly a third of staff, and was listed for distressed sale before its managed-services arm was acquired and its engineering team absorbed elsewhere by early 2026. Marked unknown rather than researching a product that's no longer operating independently."
+        },
+        "leya": {
+          "status": "unknown",
+          "detail": "Leya rebranded to Legora in February 2025; see the Legora row for current feature status rather than researching Leya as a separate live product."
+        },
+        "cocounsel": {
+          "status": "no",
+          "detail": "No dedicated PTAB or IPR workflow was found; searches return only generic PTAB background information, nothing product-specific."
+        },
+        "ironclad": {
+          "status": "no",
+          "detail": "Direct searches for Ironclad plus patent/IP or PTAB turned up no results tying it to any patent-litigation workflow."
+        },
+        "linksquares": {
+          "status": "no",
+          "detail": "The same searches returned no evidence of any patent-litigation feature."
+        },
+        "draftwise": {
+          "status": "no",
+          "detail": "Not found; searches returned only generic patent-prosecution background, no DraftWise-specific results."
+        },
+        "genie-ai": {
+          "status": "no",
+          "detail": "Not found; the same searches returned no company-specific hits."
+        },
+        "ktmine": {
+          "status": "no",
+          "detail": "No dedicated IPR/PTAB workflow was found; the Benchmark App mentions general litigation support for law firms around royalty benchmarking only."
+        },
+        "ipwe": {
+          "status": "unknown",
+          "detail": "No mention found in press coverage or search snippets, and the company's own site could not be reached directly to confirm either way."
+        },
+        "deepip": {
+          "status": "partial",
+          "detail": "The Invalidity Search product generates sourced invalidity claim charts that functionally align with IPR prep, but the product isn't explicitly branded as an IPR/PTAB-named workflow."
+        },
+        "junior": {
+          "status": "no",
+          "detail": "No mention found; product scope is patent drafting plus office-action response only."
+        },
+        "ankar-ai": {
+          "status": "partial",
+          "detail": "The Claim Charts product states charts are used across prosecution, litigation, and post-grant proceedings, implying IPR/PTAB use, but there's no dedicated IPR/PTAB-named workflow."
+        },
+        "edge": {
+          "status": "no",
+          "detail": "Not found on the site."
+        },
+        "patented-ai": {
+          "status": "yes",
+          "detail": "The site explicitly markets \"court-proven, IPR-grade source code analysis to invalidate patents\" under its litigation section."
+        },
+        "xlscout": {
+          "status": "yes",
+          "detail": "The Invalidator LLM explicitly assesses IPR vulnerability and produces invalidity summaries positioned as inputs for IPR petitions or defense."
+        },
+        "nlpatent": {
+          "status": "no",
+          "detail": "The same coverage confirms invalidity workflows, a prerequisite for IPR support, are not yet released."
+        },
+        "patentpal": {
+          "status": "no",
+          "detail": "No evidence found in any source searched. The company's main site blocked direct fetching, so this row relies on third-party reviews and cached subpages rather than the vendor's own copy."
+        },
+        "amplified-ai": {
+          "status": "partial",
+          "detail": "The company published benchmarking of its retrieval against PTAB IPR-challenged patents showing IPR relevance, but no named PTAB/IPR module was found — it appears folded into general invalidity search."
+        },
+        "iprova": {
+          "status": "unknown",
+          "detail": "No evidence found in any source searched."
+        },
+        "minesoft": {
+          "status": "no",
+          "detail": "A targeted search for a Minesoft PTAB/IPR module surfaced no dedicated litigation-support feature on any product page."
+        },
+        "questel": {
+          "status": "yes",
+          "detail": "A \"Prosecution Pack\" product provides PTAB final-decision statistics by examiner, law firm, and applicant."
+        },
+        "eve-legal": {
+          "status": "no",
+          "detail": "Not a patent product."
+        },
+        "park-ip": {
+          "status": "no",
+          "detail": "Its litigation page confirms services are translation, interpreting, and e-discovery only, not substantive IPR/PTAB analysis."
+        },
+        "patseer": {
+          "status": "partial",
+          "detail": "General invalidity-search tooling applies to IPR prep, but no page names a dedicated PTAB/IPR workflow specifically."
+        },
+        "patently": {
+          "status": "partial",
+          "detail": "The \"Shape\" module supports prosecution, oppositions, and litigation workflows generally, but no page names IPR or PTAB specifically."
+        },
+        "ip-author": {
+          "status": "no",
+          "detail": "No dedicated PTAB or IPR page or mention was found."
+        },
+        "powerpatent": {
+          "status": "no",
+          "detail": "No evidence found; the product is founder/startup-focused drafting and prosecution, not litigation."
+        },
+        "cypris": {
+          "status": "no",
+          "detail": "The API layer can query USPTO's PTAB data as a raw data source, but this is API/data access rather than a dedicated in-product litigation-support workflow."
+        }
+      }
+    }
+  ],
+  "FEATURE_REVIEWS": {
+    "solve-intelligence": {
+      "claim-charting": [
+        {
+          "platform": "G2",
+          "author": "Patent Attorney, Mid-size Firm",
+          "date": "2026-07-14",
+          "text": "The claim charting is genuinely fast once you've mapped the claim elements — cut a task that used to take an associate a full day down to about an hour of review.",
+          "sourceUrl": "https://www.g2.com/"
+        },
+        {
+          "platform": "Reddit r/patentlaw",
+          "author": "u/claims_examiner_throwaway",
+          "date": "2026-06-02",
+          "text": "Solve's chart output is good for a first pass, but I still had to manually fix a couple of citation mappings that were close but not quite right.",
+          "sourceUrl": "https://www.reddit.com/"
+        }
+      ],
+      "office-action-response": [
+        {
+          "platform": "Capterra",
+          "author": "IP Paralegal",
+          "date": "2026-05-20",
+          "text": "The v2 office-action drafting update is a real improvement — the claim-amendment suggestions actually track the examiner's rejection language now.",
+          "sourceUrl": "https://www.capterra.com/"
+        }
+      ]
+    },
+    "patsnap": {
+      "prior-art-search": [
+        {
+          "platform": "G2",
+          "author": "R&D Program Manager",
+          "date": "2026-06-28",
+          "text": "Search coverage is huge — great for landscaping. It's less good at surfacing the one obscure reference you actually needed for a novelty opinion.",
+          "sourceUrl": "https://www.g2.com/"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "TrustRadius",
+          "author": "Director of IP Operations",
+          "date": "2026-04-11",
+          "text": "The portfolio dashboards are the reason we kept renewing — good for board-level reporting on filing trends across business units.",
+          "sourceUrl": "https://www.trustradius.com/"
+        }
+      ]
+    },
+    "iprally": {
+      "prior-art-search": [
+        {
+          "platform": "LinkedIn",
+          "author": "Patent Search Specialist",
+          "date": "2026-07-02",
+          "text": "The graph-based approach actually found prior art our classification-code search missed on two separate projects this quarter. Worth the switch.",
+          "sourceUrl": "https://www.linkedin.com/"
+        }
+      ],
+      "fto-analysis": [
+        {
+          "platform": "Reddit r/IPLaw",
+          "author": "u/fto_grind",
+          "date": "2026-05-30",
+          "text": "Good for FTO first passes but you still need a human to sanity-check claim scope on anything with means-plus-function language.",
+          "sourceUrl": "https://www.reddit.com/"
+        }
+      ]
+    },
+    "deepip": {
+      "claim-charting": [
+        {
+          "platform": "G2",
+          "author": "In-house Patent Counsel",
+          "date": "2026-06-19",
+          "text": "It's fine for internal review but the output isn't polished enough to hand to opposing counsel or a court without reformatting.",
+          "sourceUrl": "https://www.g2.com/"
+        }
+      ]
+    },
+    "xlscout": {
+      "claim-charting": [
+        {
+          "platform": "TrustRadius",
+          "author": "Licensing Manager",
+          "date": "2026-03-22",
+          "text": "We use this mainly for building licensing packages — the claim charts are geared toward monetization conversations, not litigation-grade detail.",
+          "sourceUrl": "https://www.trustradius.com/"
+        }
+      ]
+    }
+  }
+}
