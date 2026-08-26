@@ -843,10 +843,10 @@
     </div>`;
 
     html += `<div class="section-heading"><iconify-icon icon="ph:chat-circle-text"></iconify-icon><h2>Feature Clarification</h2></div>
-    <p class="section-sub">Ask how a specific feature compares across companies — e.g. “How does Patlytics' claim charting differ from PatSnap's?” ${
+    <p class="section-sub">Ask how a specific feature compares across companies — e.g. “How does Patlytics' claim charting differ from PatSnap's?”${
       fcBackendConfigured()
-        ? "Answers come from an AI assistant grounded in the verified matrix data — it'll ask a follow-up if your question is too broad."
-        : "Answers come from the comparison matrix above using local matching — no AI backend is connected yet."
+        ? " Answers come from an AI assistant grounded in the verified matrix data — it'll ask a follow-up if your question is too broad."
+        : ""
     }</p>
     <div class="card fc-chat">
       <div class="fc-chat-messages" id="fc-chat-messages">
