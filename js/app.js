@@ -46,7 +46,7 @@
       companyIds: [],
       customFeatures: [], // { id, name }
       overrides: {}, // `${companyId}::${featureId}` -> "yes"|"no"|"partial"|"unknown"
-      review: { companyId: "solve-intelligence", featureId: "claim-charting" },
+      review: { companyId: "solve-intelligence", featureId: "claim-charting", sentimentFilter: "all" },
       chat: [], // { role: "user"|"assistant", text }
       chatBusy: false, // true while a backend chat request is in flight
       pendingFeatureRequests: {}, // featureId -> true while a backend research job is in flight
@@ -631,6 +631,13 @@
     </div>`;
   }
 
+  const FC_SENTIMENT_ICON = { positive: "ph:thumbs-up", negative: "ph:thumbs-down", mixed: "ph:minus-circle" };
+  function fcSentimentBadgeHtml(sentiment) {
+    if (!sentiment) return "";
+    const icon = FC_SENTIMENT_ICON[sentiment] || "ph:circle";
+    return `<span class="fc-sentiment-badge fc-sentiment-${escapeHtml(sentiment)}"><iconify-icon icon="${icon}"></iconify-icon> ${escapeHtml(sentiment)}</span>`;
+  }
+
   function fcReviewBubbleHtml(review) {
     return `<a class="fc-review-bubble" href="${escapeHtml(review.sourceUrl)}" target="_blank" rel="noopener noreferrer">
       <div class="fc-review-avatar"><iconify-icon icon="ph:chat-circle-dots"></iconify-icon></div>
@@ -639,6 +646,7 @@
           <span class="tag-chip">${escapeHtml(review.platform)}</span>
           <span class="fc-review-author">${escapeHtml(review.author)}</span>
           <span class="fc-review-date">${escapeHtml(review.date)}</span>
+          ${fcSentimentBadgeHtml(review.sentiment)}
         </div>
         <div class="fc-review-text">${escapeHtml(review.text)}</div>
         <div class="fc-review-source-hint"><iconify-icon icon="ph:arrow-square-out"></iconify-icon> Open source on ${escapeHtml(review.platform)}</div>
@@ -852,9 +860,13 @@
     </div>`;
 
     const reviewCompanyOptions = COMPETITORS_SORTED;
-    const reviews = (FEATURE_REVIEWS[fc.review.companyId] && FEATURE_REVIEWS[fc.review.companyId][fc.review.featureId]) || [];
+    const allReviewsForSelection = (FEATURE_REVIEWS[fc.review.companyId] && FEATURE_REVIEWS[fc.review.companyId][fc.review.featureId]) || [];
+    const sentimentFilter = fc.review.sentimentFilter || "all";
+    const reviews = sentimentFilter === "all" ? allReviewsForSelection : allReviewsForSelection.filter((r) => r.sentiment === sentimentFilter);
     const reviewCompany = fcGetCompany(fc.review.companyId);
     const reviewFeature = features.find((f) => f.id === fc.review.featureId);
+    const sentimentCounts = { positive: 0, negative: 0, mixed: 0 };
+    allReviewsForSelection.forEach((r) => { if (sentimentCounts[r.sentiment] !== undefined) sentimentCounts[r.sentiment]++; });
 
     html += `<div class="section-heading"><iconify-icon icon="ph:chats-circle"></iconify-icon><h2>Feature Reviews</h2><span class="count-chip">${reviews.length}</span></div>
     <p class="section-sub">What people are saying about a specific company's feature, in a message-style feed. Click a review to open its original source. The daily research routine scrapes for new reviews once a day; this list only ever contains reviews with a real, working source link.</p>
@@ -865,9 +877,23 @@
       <select id="fc-review-feature-select">
         ${features.map((f) => `<option value="${f.id}" ${f.id === fc.review.featureId ? "selected" : ""}>${escapeHtml(f.name)}</option>`).join("")}
       </select>
+      <div class="fc-sentiment-filter" role="group" aria-label="Filter reviews by sentiment">
+        <button type="button" data-sentiment="all" class="${sentimentFilter === "all" ? "active" : ""}">All (${allReviewsForSelection.length})</button>
+        <button type="button" data-sentiment="positive" class="${sentimentFilter === "positive" ? "active" : ""}"><iconify-icon icon="ph:thumbs-up"></iconify-icon> Positive (${sentimentCounts.positive})</button>
+        <button type="button" data-sentiment="negative" class="${sentimentFilter === "negative" ? "active" : ""}"><iconify-icon icon="ph:thumbs-down"></iconify-icon> Negative (${sentimentCounts.negative})</button>
+        <button type="button" data-sentiment="mixed" class="${sentimentFilter === "mixed" ? "active" : ""}"><iconify-icon icon="ph:minus-circle"></iconify-icon> Mixed (${sentimentCounts.mixed})</button>
+      </div>
     </div>
     <div class="fc-review-list">
-      ${reviews.length ? reviews.map(fcReviewBubbleHtml).join("") : emptyState(`No sample reviews yet for "${reviewFeature ? reviewFeature.name : ""}" at ${reviewCompany ? reviewCompany.name : "this company"}.`)}
+      ${
+        reviews.length
+          ? reviews.map(fcReviewBubbleHtml).join("")
+          : emptyState(
+              allReviewsForSelection.length
+                ? `No ${sentimentFilter} reviews for "${reviewFeature ? reviewFeature.name : ""}" at ${reviewCompany ? reviewCompany.name : "this company"} -- try a different filter.`
+                : `No reviews found yet for "${reviewFeature ? reviewFeature.name : ""}" at ${reviewCompany ? reviewCompany.name : "this company"}. The daily routine keeps searching -- most niche features genuinely have thin public review coverage.`
+            )
+      }
     </div>`;
 
     return html;
@@ -977,6 +1003,12 @@
     reviewFeatureSelect.addEventListener("change", () => {
       state.fc.review.featureId = reviewFeatureSelect.value;
       renderActiveTab();
+    });
+    document.querySelectorAll(".fc-sentiment-filter button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.fc.review.sentimentFilter = btn.dataset.sentiment;
+        renderActiveTab();
+      });
     });
   }
 

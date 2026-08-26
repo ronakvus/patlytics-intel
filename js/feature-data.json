@@ -1115,14 +1115,16 @@
           "author": "Patent Attorney, Mid-size Firm",
           "date": "2026-07-14",
           "text": "The claim charting is genuinely fast once you've mapped the claim elements — cut a task that used to take an associate a full day down to about an hour of review.",
-          "sourceUrl": "https://www.g2.com/"
+          "sourceUrl": "https://www.g2.com/",
+          "sentiment": "positive"
         },
         {
           "platform": "Reddit r/patentlaw",
           "author": "u/claims_examiner_throwaway",
           "date": "2026-06-02",
           "text": "Solve's chart output is good for a first pass, but I still had to manually fix a couple of citation mappings that were close but not quite right.",
-          "sourceUrl": "https://www.reddit.com/"
+          "sourceUrl": "https://www.reddit.com/",
+          "sentiment": "mixed"
         }
       ],
       "office-action-response": [
@@ -1131,7 +1133,8 @@
           "author": "IP Paralegal",
           "date": "2026-05-20",
           "text": "The v2 office-action drafting update is a real improvement — the claim-amendment suggestions actually track the examiner's rejection language now.",
-          "sourceUrl": "https://www.capterra.com/"
+          "sourceUrl": "https://www.capterra.com/",
+          "sentiment": "positive"
         }
       ]
     },
@@ -1142,7 +1145,8 @@
           "author": "R&D Program Manager",
           "date": "2026-06-28",
           "text": "Search coverage is huge — great for landscaping. It's less good at surfacing the one obscure reference you actually needed for a novelty opinion.",
-          "sourceUrl": "https://www.g2.com/"
+          "sourceUrl": "https://www.g2.com/",
+          "sentiment": "mixed"
         }
       ],
       "portfolio-analytics": [
@@ -1151,7 +1155,8 @@
           "author": "Director of IP Operations",
           "date": "2026-04-11",
           "text": "The portfolio dashboards are the reason we kept renewing — good for board-level reporting on filing trends across business units.",
-          "sourceUrl": "https://www.trustradius.com/"
+          "sourceUrl": "https://www.trustradius.com/",
+          "sentiment": "positive"
         }
       ]
     },
@@ -1162,7 +1167,8 @@
           "author": "Patent Search Specialist",
           "date": "2026-07-02",
           "text": "The graph-based approach actually found prior art our classification-code search missed on two separate projects this quarter. Worth the switch.",
-          "sourceUrl": "https://www.linkedin.com/"
+          "sourceUrl": "https://www.linkedin.com/",
+          "sentiment": "positive"
         }
       ],
       "fto-analysis": [
@@ -1171,7 +1177,8 @@
           "author": "u/fto_grind",
           "date": "2026-05-30",
           "text": "Good for FTO first passes but you still need a human to sanity-check claim scope on anything with means-plus-function language.",
-          "sourceUrl": "https://www.reddit.com/"
+          "sourceUrl": "https://www.reddit.com/",
+          "sentiment": "mixed"
         }
       ]
     },
@@ -1182,7 +1189,8 @@
           "author": "In-house Patent Counsel",
           "date": "2026-06-19",
           "text": "It's fine for internal review but the output isn't polished enough to hand to opposing counsel or a court without reformatting.",
-          "sourceUrl": "https://www.g2.com/"
+          "sourceUrl": "https://www.g2.com/",
+          "sentiment": "mixed"
         }
       ]
     },
@@ -1193,7 +1201,8 @@
           "author": "Licensing Manager",
           "date": "2026-03-22",
           "text": "We use this mainly for building licensing packages — the claim charts are geared toward monetization conversations, not litigation-grade detail.",
-          "sourceUrl": "https://www.trustradius.com/"
+          "sourceUrl": "https://www.trustradius.com/",
+          "sentiment": "mixed"
         }
       ]
     }

@@ -759,3 +759,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, [tabindex]:focus-vis
 .fc-review-date { font-size: 11px; color: var(--text-muted); }
 .fc-review-text { font-size: 13px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 6px; }
 .fc-review-source-hint { font-size: 11.5px; color: var(--brand-emerald); font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+.fc-sentiment-filter { display: flex; gap: 4px; margin-left: auto; }
+.fc-sentiment-filter button {
+  display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--border-strong);
+  background: var(--surface); color: var(--text-secondary); border-radius: var(--radius-sm);
+  padding: 8px 10px; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: background .12s, color .12s;
+}
+.fc-sentiment-filter button:hover { background: var(--surface-alt); }
+.fc-sentiment-filter button.active { background: var(--brand-forest-700); color: #fff; border-color: var(--brand-forest-700); }
+.fc-sentiment-filter iconify-icon { font-size: 14px; }
+
+.fc-sentiment-badge {
+  display: inline-flex; align-items: center; gap: 3px; font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .02em; padding: 2px 6px; border-radius: 999px;
+}
+.fc-sentiment-badge iconify-icon { font-size: 11px; }
+.fc-sentiment-positive { background: var(--priority-medium-bg); color: var(--priority-medium); }
+.fc-sentiment-negative { background: var(--priority-critical-bg); color: var(--priority-critical); }
+.fc-sentiment-mixed { background: var(--priority-high-bg); color: var(--priority-high); }
