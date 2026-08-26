@@ -110,7 +110,7 @@
 
     html += `<div class="nav-section-label">Overview</div>`;
     html += navItemHtml("general", "ph:squares-four", "Daily Brief");
-    html += navItemHtml("feature-comparison", "ph:columns", "Feature Comparison");
+    html += navItemHtml("feature-comparison", "lucide:git-compare", "Feature Comparison");
 
     html += `<div class="nav-section-label">Competitors <span style="opacity:.6">(by correlation)</span></div>`;
     COMPETITORS_SORTED.forEach((c) => {
@@ -184,7 +184,7 @@
       rangeToggle.style.display = "none";
       dateNav.style.display = "none";
     } else if (state.activeTab === "feature-comparison") {
-      eyebrow.innerHTML = `<iconify-icon icon="ph:columns"></iconify-icon> Overview`;
+      eyebrow.innerHTML = `<iconify-icon icon="lucide:git-compare"></iconify-icon> Overview`;
       title.textContent = "Feature Comparison";
       rangeToggle.style.display = "none";
       dateNav.style.display = "none";
@@ -757,7 +757,7 @@
 
     let html = sampleBanner();
 
-    html += `<div class="section-heading"><iconify-icon icon="ph:columns"></iconify-icon><h2>Feature Comparison Builder</h2></div>
+    html += `<div class="section-heading"><iconify-icon icon="lucide:git-compare"></iconify-icon><h2>Feature Comparison Builder</h2></div>
     <p class="section-sub">Build a side-by-side feature matrix across Patlytics and any tracked competitor. Add a feature, add a company, click a cell to set its status, and hover a cell for the detail behind it.</p>`;
 
     html += `<div class="card fc-toolbar">
