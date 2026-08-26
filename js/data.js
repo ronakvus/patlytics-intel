@@ -15,7 +15,7 @@
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
 const ANCHOR_DATE = "2026-08-26";
-const EARLIEST_DATE = "2026-08-05"; // rolling ~21-day archive window
+const EARLIEST_DATE = "2026-08-04"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -359,6 +359,51 @@ const HIGHLIGHTS = [
     sourceType: "product",
     url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
   },
+  {
+    id: "hl-24",
+    date: "2026-08-04",
+    priority: "high",
+    category: "Corporate",
+    title: "Anaqua acquires Unified Patents",
+    summary:
+      "Anaqua confirmed the acquisition of Unified Patents, a company known for challenging weak patents and running the PATROLL/PEARL prior-art tools, in a deal with undisclosed financial terms. Anaqua frames the move as helping IP organizations protect against rising patent-litigation risk; Unified Patents' own materials describe it continuing to operate with independent decision-making post-acquisition.",
+    whyItMatters:
+      "A Tier 2 strong-overlap competitor just added AI-enhanced claim-charting and litigation-risk capability (via Unified's live PEARL tool) through acquisition rather than in-house build — worth watching for how quickly it's actually integrated into Anaqua's own product line versus staying a separately-branded service.",
+    companies: ["Anaqua"],
+    source: "GlobeNewswire, Law.com Legaltech News, Bloomberg Law, MLex",
+    sourceType: "news",
+    url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/anaqua-acquires-unified-patents-to-help-organizations-protect-against-rising-intellectual-property-litigation-risk.html",
+  },
+  {
+    id: "hl-25",
+    date: "2026-08-10",
+    priority: "medium",
+    category: "Market",
+    title: "LexisNexis takes three products offline after suspicious third-party server activity",
+    summary:
+      "LexisNexis took three products offline after detecting \"unusual activity\" on third-party servers. Coverage does not specify whether any IP Solutions products (PatentSight, IPlytics, Cipher) were among the affected three — this is a separate incident from Questel's confirmed vishing-driven breach earlier in August.",
+    whyItMatters:
+      "A second IP-adjacent data-security incident within the same month, at a different major incumbent (RELX/LexisNexis) — another data point worth having ready in competitive sales conversations, though less specifically confirmed than the Questel breach.",
+    companies: ["LexisNexis IP Solutions"],
+    source: "Legal IT Insider, The Register",
+    sourceType: "news",
+    url: "https://legaltechnology.com/lexisnexis-takes-three-products-offline-after-unusual-activity-on-third-party-servers/",
+  },
+  {
+    id: "hl-26",
+    date: "2026-08-25",
+    priority: "medium",
+    category: "Product",
+    title: "Bloomberg Law unveils \"BLAW AI\" and new Workspaces/agents at ILTACON 2026",
+    summary:
+      "Bloomberg Law introduced BLAW AI, a conversational AI experience delivering cited, grounded analysis from Bloomberg Law content, plus collaborative \"Workspaces,\" guided AI agents for repeatable tasks, and AI-powered \"Watchlists\" for monitoring clients/matters/industries — announced at ILTACON 2026 (Nashville).",
+    whyItMatters:
+      "Not patent-specific, but another large legal-data incumbent shipping AI-native research and monitoring tooling raises the baseline expectation for what \"AI-powered IP/legal monitoring\" looks like — relevant context alongside Thomson Reuters' and Google's moves this same week.",
+    companies: ["Industry-wide"],
+    source: "PR Newswire, Bloomberg Law Pro",
+    sourceType: "product",
+    url: "https://www.prnewswire.com/news-releases/bloomberg-law-unveils-new-ai-powered-legal-intelligence-experience-at-iltacon-2026-302856497.html",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -683,7 +728,7 @@ const COMPETITORS = [
     initials: "AQ",
     tagline: "End-to-end IP management software for corporate and law-firm IP departments.",
     description:
-      "Anaqua provides IP lifecycle management software — docketing, portfolio management, renewals, and increasingly analytics — for corporate IP departments and law firms. Overlaps with Patlytics primarily where IP operations and analytics intersect rather than on core AI search/drafting.",
+      "Anaqua provides IP lifecycle management software — docketing, portfolio management, renewals, and increasingly analytics — for corporate IP departments and law firms. Overlaps with Patlytics primarily where IP operations and analytics intersect rather than on core AI search/drafting. Acquired Unified Patents on 2026-08-04 (financial terms undisclosed), adding AI-enhanced claim-charting/litigation-risk capability via Unified's PEARL tool — Unified's own materials describe it continuing to operate with independent decision-making post-acquisition.",
     employeeCount: "~700 (est.)",
     founded: "2004",
     hq: "Boston, MA",
@@ -693,9 +738,9 @@ const COMPETITORS = [
     linkedin: "https://www.linkedin.com/company/anaqua",
     founders: [
       {
-        name: "Sample Founder Profile",
-        title: "Founder & Executive Chairman",
-        note: "Placeholder — bio pending verification via scraping pipeline.",
+        name: "Gerard Borin",
+        title: "Founder",
+        note: "Credited as founding Anaqua in 2004, commercializing IP-management software originally built by IP practitioners from Ford and British American Tobacco. Current CEO is Justin P. Crotty (since April 2025, succeeding Bob Romeo) — no source confirms an 'Executive Chairman' title for either. (Verified via GlobeNewswire, Law.com, Crunchbase.)",
       },
     ],
     todayActivity: [
@@ -714,6 +759,13 @@ const COMPETITORS = [
         title: "Published annual IP department budget benchmark report",
         body: "Survey-based report widely shared organically by in-house IP counsel on LinkedIn. See General Highlights.",
         url: siteUrl("anaqua.com"),
+      },
+      {
+        date: "2026-08-04",
+        tag: "Corporate",
+        title: "Acquired Unified Patents",
+        body: "Acquired Unified Patents (financial terms undisclosed) to help IP organizations protect against rising patent-litigation risk, adding AI-enhanced claim-charting via Unified's live PEARL tool. See General Highlights.",
+        url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/anaqua-acquires-unified-patents-to-help-organizations-protect-against-rising-intellectual-property-litigation-risk.html",
       },
     ],
     hiring: {
@@ -769,6 +821,13 @@ const COMPETITORS = [
         body: "LexisNexis IP Solutions announced combining its best-in-class patent datasets and software into a unified analytics offering.",
         url: "https://www.lexisnexisip.com/resources/lexisnexis-combines-best-in-class-patent-datasets-and-software-solutions-boosting-innovation-analytics-to-a-new-level/",
       },
+      {
+        date: "2026-08-10",
+        tag: "Market",
+        title: "LexisNexis took three products offline after suspicious third-party server activity",
+        body: "Parent company LexisNexis took three products offline after detecting unusual activity on third-party servers. Coverage does not specify whether any IP Solutions product was among the three affected — a separate incident from Questel's confirmed vishing breach. See General Highlights.",
+        url: "https://legaltechnology.com/lexisnexis-takes-three-products-offline-after-unusual-activity-on-third-party-servers/",
+      },
     ],
     hiring: {
       openRoles: null,
@@ -786,7 +845,7 @@ const COMPETITORS = [
     initials: "CI",
     tagline: "AI-driven IP intelligence and visualization for technical due diligence.",
     description:
-      "Cipher focuses on applied-science-heavy patent landscaping and visualization, often used for technical due diligence and R&D strategy rather than pure legal workflows. Cipher was acquired by RELX (LexisNexis' parent company) in 2023 and now operates as LexisNexis Cipher, giving it access to LexisNexis' broader IP data and distribution.",
+      "Cipher focuses on applied-science-heavy patent landscaping and visualization, often used for technical due diligence and R&D strategy rather than pure legal workflows. Originally founded as Aistemos in 2013 before rebranding to Cipher, the company was acquired by RELX (LexisNexis' parent company) in 2023 and now operates as LexisNexis Cipher, giving it access to LexisNexis' broader IP data and distribution.",
     employeeCount: "~120 (est.)",
     founded: "2013 (acquired by RELX/LexisNexis, 2023)",
     hq: "Paris, France",
@@ -796,9 +855,14 @@ const COMPETITORS = [
     linkedin: "https://www.linkedin.com/company/cipher-strategicpatentintelligence",
     founders: [
       {
-        name: "Sample Founder Profile",
-        title: "Co-Founder (pre-acquisition)",
-        note: "Placeholder — bio pending verification via scraping pipeline.",
+        name: "Nigel Swycher",
+        title: "Co-Founder & CEO (pre-acquisition)",
+        note: "Co-founded the company as Aistemos in 2013; previously headed the IP practice at law firm Slaughter and May. (Verified via CBInsights, Craft.co.)",
+      },
+      {
+        name: "Steve Harris",
+        title: "Co-Founder & CTO (pre-acquisition)",
+        note: "Co-founded Aistemos alongside Swycher in 2013. (Verified via CBInsights, Craft.co.)",
       },
     ],
     todayActivity: [],
@@ -848,9 +912,9 @@ const COMPETITORS = [
     linkedin: "https://www.linkedin.com/company/ktmine",
     founders: [
       {
-        name: "Sample Founder Profile",
-        title: "Founder & CEO",
-        note: "Placeholder — bio pending verification via scraping pipeline.",
+        name: "David R. Jarczyk",
+        title: "Founder",
+        note: "Founded ktMine and served as CEO 2008-2018; left for a partner role at KPMG, then returned to ktMine in Nov 2023 as Director of Strategic Partnerships (not CEO currently). Current CEO leadership attribution has one source (TheOrg, citing L. Michael Taylor as 'Co-Founder & CEO') that isn't corroborated elsewhere — treated cautiously. (Verified via Crunchbase, StreetInsider, Newswire.com.)",
       },
     ],
     todayActivity: [],
@@ -1121,7 +1185,7 @@ COMPETITORS.push(
     initials: "AA",
     tagline: "AI-powered prior-art and patent search.",
     description: "Amplified AI provides AI-driven prior-art and patent search tooling for patent professionals.",
-        employeeCount: "Not verified — no employee count found via LinkedIn/Crunchbase",
+        employeeCount: "~8 (PitchBook)",
     founded: "2017 (concept); platform publicly launched 2020",
     hq: "San Francisco, CA",
     founders: [
@@ -1295,7 +1359,7 @@ COMPETITORS.push(
     tier: "Tier 2 — Strong Overlap",
     initials: "PC",
     tagline: "AI-native idea capture, prior-art search, and invention-disclosure platform.",
-    description: "IP Copilot is an AI-powered idea-management platform for in-house IP teams and law firms, integrating with Slack/Jira to surface potentially patentable ideas from everyday work conversations, then using AI to help build invention disclosures and run prior-art search. Newly identified via the IPWatchdog webinar-sponsor listing sweep (webinar scheduled 2026-09-08); not previously tracked in this dataset.",
+    description: "IP Copilot is an AI-powered idea-management platform for in-house IP teams and law firms, integrating with Slack/Jira to surface potentially patentable ideas from everyday work conversations, then using AI to help build invention disclosures and run prior-art search. Newly identified via the IPWatchdog webinar-sponsor listing sweep (webinar scheduled 2026-09-08); not previously tracked in this dataset. Raised a ~$5.6M seed (Salesforce Ventures, Preface Ventures, NextGen Venture Partners, Notation Capital) that closed around September 2024 — corrected 2026-08-26 after the previously-recorded $4.2M figure and 'today' framing were found to be inaccurate; sources (Signalbase, Fundz, Fundraise Insider, Tracxn) consistently show ~$5.6M-$5.68M closing Sept 2024, not a new/current-dated round.",
     employeeCount: "Not yet verified — pending scrape",
     founded: "2023",
     hq: "Columbia, TN",
@@ -1305,15 +1369,6 @@ COMPETITORS.push(
     ],
     website: "ipcopilot.ai",
     linkedin: "https://www.linkedin.com/company/ip-copilot",
-    weekActivity: [
-      {
-        date: "2026-08-26",
-        tag: "Corporate",
-        title: "Raised $4.2M seed led by Salesforce Ventures and Preface Ventures",
-        body: "Seed round (with participation from NextGen Ventures and Notation) to build out AI-driven invention discovery, invention-disclosure drafting, and prior-art search for enterprise IP teams. Round reported by VentureBeat; exact close date varies slightly across trackers (Crunchbase lists 2024-12-12).",
-        url: "https://venturebeat.com/ai/ip-copilot-wants-to-use-ai-to-turn-your-slack-messages-into-patents",
-      },
-    ],
   }),
   stubCompetitor({
     id: "harvey",
@@ -1687,6 +1742,7 @@ COMPETITORS.push(
     founders: [
       { name: "Jerome Spaargaren", title: "Co-Founder", note: "Patent attorney/litigator." },
       { name: "Heather McCann", title: "Co-Founder", note: "Patent attorney/litigator." },
+      { name: "Andrew Samm", title: "Co-Founder", note: "Background details not independently verified beyond Crunchbase/TechRound listing him as a co-founder." },
     ],
     website: "patently.com",
     linkedin: "https://www.linkedin.com/company/patently",

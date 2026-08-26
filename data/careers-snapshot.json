@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "note": "Day-over-day open-roles snapshot for the daily research routine's hiring-signal diff. First seeded 2026-08-26 from WebSearch-snippet coverage of public careers/ATS pages (WebFetch was network-blocked for research agents this session, so several companies below are genuinely incomplete rather than confirmed-zero — see per-company notes). Entries omitted entirely (rather than given an empty roleTitles list) mean no reliable title data was obtainable this pass, not that zero roles are open. Compare tomorrow's scrape against each company's roleTitles array to find newly-opened roles, then overwrite that company's entry with the new full list and date."
+  },
+  "solve-intelligence": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Growth Marketer / GTM", "Motion Designer", "Sales Development / GTM", "Account Executive / GTM", "Growth Engineer", "Infrastructure Engineer"],
+    "note": "Partial — aggregator/search-snippet coverage only, live Ashby board (jobs.ashbyhq.com/solveintelligence) not directly fetchable this session."
+  },
+  "patsnap": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Senior Account Executive (San Antonio, TX)", "Sales Development Representative — Life Science Graduates", "Senior AI Engineer", "Senior Site Reliability Engineer", "Associate Account Manager", "Data Engineer", "Sales Manager", "Global Content Marketing Manager", "Small Molecule Data Analyst", "AI Fullstack Engineer", "Head of Legal"],
+    "note": "Partial — via Lever board search-indexing (jobs.lever.co/patsnap), not a direct live fetch."
+  },
+  "iprally": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Solution Consultant"],
+    "note": "Confirmed live posting only; a Product Designer role seen elsewhere may be stale (~May 2026)."
+  },
+  "deepip": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Founding Partnerships Lead", "Business Development Representative – North America", "People Partner – US", "Account Executive – UK/Nordics", "Account Executive – EU", "Business Development Representative – Europe", "Business Development Representative – DACH", "People Partner – FR", "Head of Success & Solution Europe", "Patent Solution Engineer", "Product Designer", "Finance Manager"],
+    "note": "Via careers.deepip.ai search-indexed subpages."
+  },
+  "ankar-ai": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Founder's Associate (Growth, Hiring & Ops)", "Patent Product Engineer", "Senior Product Engineer", "Product Manager", "Account Executive"],
+    "note": "Ashby board at jobs.ashbyhq.com/ankar; direct posting URLs confirmed for Founder's Associate and Patent Product Engineer."
+  },
+  "cypris": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Business Development Representative", "Associate Research Analyst", "Full Stack Engineer", "Account Executive"],
+    "note": "Workable board (apply.workable.com/cypris-1/); currency of each title not individually confirmed."
+  },
+  "iprova": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Invention Engineer", "Senior Front End Developer", "Lead Full Stack Engineer", "Senior Full Stack Engineer", "Senior Invention Developer"],
+    "note": "Confirmed live postings with direct URLs at iprova.com/career/."
+  },
+  "patent-bots": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Python Software Developer", "Product Specialist", "Senior Full-Stack Developer (Python/Flask)"],
+    "note": "Confirmed at patentbots.com/careers plus LinkedIn/IPWatchdog coverage of the Product Specialist role."
+  },
+  "alt-legal": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Trademark Docketing Specialist", "Trademark Paralegal"],
+    "note": "Via ZipRecruiter/Justia job listings."
+  },
+  "anaqua": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Director, Corporate Development", "Sales Manager (London)", "Docketing Specialist", "Director, Human Resources (Gurugram)", "Account Executive (Boston)"],
+    "note": "Via LinkedIn Jobs search snippets; a headline '~1,000 worldwide' aggregator figure looked like an artifact and was excluded."
+  },
+  "harvey": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Senior/Staff Software Engineer, OfficeJS", "Staff Software Engineer, Platform", "Staff Applied AI Engineer", "Software Engineer, Machine Learning", "Software Engineer, AI Infrastructure", "Software Engineer, AI Platform", "Legal Engineer", "Legal Engineer – Product Specialist", "Software Engineer, New Grad"],
+    "note": "Partial index only (Ashby board ~363 roles per aggregator, not individually enumerable this session)."
+  },
+  "legora": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Lead Legal Engineer", "Legal Data Strategy Director", "Legal Counsel – Commercial", "Legal Engineer", "Legal Engineer Associate", "BDR Manager (London)", "SMB Account Executive", "Endpoint Engineer", "Global Services Solutions Expert"],
+    "note": "Partial index only (~134 roles per Glassdoor aggregate)."
+  },
+  "spellbook": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Account Executive", "Enterprise Account Executive", "Sales Manager, Commercial In-House", "Customer Success Manager", "Forward Deployed Engineer", "Product Lead", "Revenue Operations Lead", "Office Manager & Executive Assistant"],
+    "note": "Confirmed Ashby board (jobs.ashbyhq.com/spellbook.legal) postings, not necessarily exhaustive."
+  },
+  "ironclad": {
+    "asOf": "2026-08-26",
+    "roleTitles": ["Staff Data Scientist", "Strategic Account Executive (EMEA)", "Senior Software Engineer", "Sales Representative"],
+    "note": "Partial (~33-34 open US roles per aggregator)."
+  }
+}
