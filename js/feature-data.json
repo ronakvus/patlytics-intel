@@ -1163,6 +1163,56 @@
           "text": "Setting up customized searches/reports and information for looking at various IP landscapes of competitors.",
           "sourceUrl": "https://www.capterra.com/p/173713/PatSnap/reviews/",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Software Advice",
+          "author": "Verified Reviewer, Research industry",
+          "date": "2019-02",
+          "text": "The maps connecting inventors, owners, and cited IP are very useful. I use PatSnap for company research too, as you can see visualizations of the company's types of IP owned.",
+          "sourceUrl": "https://www.softwareadvice.com/intellectual-property-manageme/patsnap-profile/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Trustpilot",
+          "author": "Li",
+          "date": "2022-07-20",
+          "text": "PatSnap did an excellent job extracting the information in an efficient and accurate way, and provided a whole picture of the IP status of the relevant technology, which gave guidance on the direction of R&D work.",
+          "sourceUrl": "https://www.trustpilot.com/review/www.patsnap.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Gartner Peer Insights",
+          "author": "Senior Analyst, Services company ($50M-$1B)",
+          "date": "2023-04-14",
+          "text": "Patsnap intelligence (primarily Patsnap analytics) is an integral part of my day to day work in IP industry -- it offers a wide variety of options like Patsnap discovery, chemical searches, along with the regular patent analytics.",
+          "sourceUrl": "https://www.gartner.com/reviews/product/patsnap-patent-analytics",
+          "sentiment": "positive"
+        }
+      ],
+      "prior-art-search": [
+        {
+          "platform": "Software Advice",
+          "author": "Verified Reviewer, Research industry",
+          "date": "2019-02",
+          "text": "PatSnap has extremely useful and versatile methods for searching. Their semantic search changed my whole patent search process.",
+          "sourceUrl": "https://www.softwareadvice.com/intellectual-property-manageme/patsnap-profile/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Trustpilot",
+          "author": "Yan",
+          "date": "2022-07-20",
+          "text": "I have about a half year experience with PatSnap and familiar with its \"Field\", \"Semantic\", and \"Classification\" search.",
+          "sourceUrl": "https://www.trustpilot.com/review/www.patsnap.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Trustpilot",
+          "author": "Jimmy.jiang",
+          "date": "2022-02-08",
+          "text": "PatSnap's semantic search has been a high value-add because it allows an engineer who's not technically trained in patent processes to perform a level of initial exploration.",
+          "sourceUrl": "https://www.trustpilot.com/review/www.patsnap.com",
+          "sentiment": "positive"
         }
       ]
     },
@@ -1174,6 +1224,29 @@
           "date": "2022-11-21",
           "text": "Quick Invalidity and Novelty Reports & easy to use Patent Categorizer (AI based Taxonomy). Amazing experience with 24/7 customer support. (Cons: limitations in creating Taxonomy should be improved.)",
           "sourceUrl": "https://www.capterra.com/p/275543/Techscaper/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Patent Attorney, US Law Firm",
+          "text": "Used a lot of automated prior art searching tools, XLSCOUT is on top of my list.",
+          "sourceUrl": "https://xlscout.ai/about-xlscout/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "IP Manager, Machinery Manufacturing Company",
+          "text": "This tool goes one step ahead and identifies what are the concepts there and what next can be done.",
+          "sourceUrl": "https://xlscout.ai/about-xlscout/",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Senior Manager-IP, Industrial Automation Industry",
+          "text": "Enhancing patent portfolio becomes very fast using this tool.",
+          "sourceUrl": "https://xlscout.ai/about-xlscout/",
           "sentiment": "positive"
         }
       ]
@@ -1288,7 +1361,7 @@
           "platform": "Trustpilot",
           "author": "Joshua Dalby",
           "date": "2024-10-09",
-          "text": "Great, intuitive and efficient tool -- used for freedom-to-operate searches as part of my regular workflow.",
+          "text": "We have used this tool within Ricardo for several landscape and freedom-to-operate searches. The tool is very intuitive, needing minimal training or guidance to get started. The layout and filtering options make reviewing the results very easy and the option to collaborate with colleagues is valuable. The C-tree is also an excellent and unique feature.",
           "sourceUrl": "https://www.trustpilot.com/review/patently.com",
           "sentiment": "positive"
         }
@@ -1298,7 +1371,7 @@
           "platform": "Trustpilot",
           "author": "Carl",
           "date": "2024-05-01",
-          "text": "AI powered vector search -- part of my daily prior-art and portfolio document review.",
+          "text": "Patently is a patent portfolio analysis software tool that I have been using most days for the past few years. From simple tasks such as finding priority applications and continuations/divisionals, to searching and analysing prior art documents, it's a product that really can do it all. Patently has relaunched with some new features including an AI powered vector search -- I can describe the type of patents I am looking for using natural language, and Patently returns a set of relevant documents for review.",
           "sourceUrl": "https://www.trustpilot.com/review/patently.com",
           "sentiment": "positive"
         },
@@ -1314,7 +1387,7 @@
           "platform": "Trustpilot",
           "author": "Luke",
           "date": "2024-04-19",
-          "text": "A Game-Changer in Patent Searching -- described in the context of novelty-search/FTO workflow.",
+          "text": "The introduction of the new vector search feature is nothing short of remarkable, delivering pinpoint accuracy in results. A must-have tool for any patent professional or company wanting to perform any number of tasks from novelty searching and analysis through FTOs.",
           "sourceUrl": "https://www.trustpilot.com/review/patently.com",
           "sentiment": "positive"
         },
@@ -1323,6 +1396,14 @@
           "author": "Charlie, European patent attorney",
           "date": "2024-04-30",
           "text": "Precisely where and how we've identified certain patents -- used daily for prior-art search.",
+          "sourceUrl": "https://www.trustpilot.com/review/patently.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Trustpilot",
+          "author": "John",
+          "date": "2024-05-20",
+          "text": "Vector patent search found some incredible results.",
           "sourceUrl": "https://www.trustpilot.com/review/patently.com",
           "sentiment": "positive"
         }
@@ -1356,6 +1437,13 @@
           "text": "What used to take days of manual prior art searching can now be done in minutes. IP Author identifies highly relevant references quickly and transparently, helping us reach patentability decisions faster and with confidence.",
           "sourceUrl": "https://ipauthor.com/ai-office-action-responses/",
           "sentiment": "positive"
+        },
+        {
+          "platform": "AIPLA (professional publication)",
+          "author": "Henry H. Perritt, Jr., Professor of Law Emeritus, Chicago-Kent College of Law",
+          "text": "The system displays prior art search results with a graph rating similarity, along with brief paragraphs summarizing points of similarity and difference, all downloadable in .docx format -- a considerable advantage.",
+          "sourceUrl": "https://www.aipla.org/list/innovate-articles/ai-aids-for-patent-prosecution---product-review",
+          "sentiment": "positive"
         }
       ]
     },
@@ -1373,6 +1461,248 @@
           "author": "Michael Rodriguez, Managing Partner, Innovation Legal Group",
           "text": "Our firm has seen a 40% reduction in time spent on Office Action responses. The collaboration features make it easy for partners to review associate work, and clients love the faster turnaround times.",
           "sourceUrl": "https://powerpatent.com/office-action",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "anaqua": {
+      "portfolio-analytics": [
+        {
+          "platform": "Capterra",
+          "author": "Senior Software Engineer, Computer Software",
+          "date": "2020-06-16",
+          "text": "I like that I can see the progress of my patents as they move from disclosure to approved. I like the graphs of the different phases each patent is in.",
+          "sourceUrl": "https://www.capterra.com/p/80394/ANAQUA/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "SoftwareFinder",
+          "author": "Legal Services, 11-50 employees",
+          "date": "2021-11",
+          "text": "It offers a lot of customizability for creating reports and the layout is really good, it helps me review large portfolios quickly.",
+          "sourceUrl": "https://softwarefinder.com/legal/anaqua/reviews",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "ankar-ai": {
+      "fto-analysis": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Boris Welzer, Director IP, Nexans",
+          "text": "I have been looking for this infringement detection tool for 15 years.",
+          "sourceUrl": "https://ankar.ai/blog/inside-ankar-how-we-designed-ai-tools-that-empower-patent-professionals",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "amplified-ai": {
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Sylwia Jacobsen, Patent Analyst, Laudea GmbH",
+          "text": "I was able to quickly find the most relevant prior art in Amplified. I verified this after spending significantly more time in our standard patent search database.",
+          "sourceUrl": "https://www.amplified.ai/how-it-works/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Fumihiko Matsumoto, Patent Attorney, Matsumoto Patent Office",
+          "text": "Amplified is easy to use for attorneys and engineers. In under an hour we can find prior art.",
+          "sourceUrl": "https://www.amplified.ai/how-it-works/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "ironclad": {
+      "portfolio-analytics": [
+        {
+          "platform": "Capterra",
+          "author": "Jenna R., Paralegal, Gambling & Casinos",
+          "text": "The dashboard shows the exact stage the workflow is in.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Legal Operations Specialist, Computer Software",
+          "text": "I wish there were Dashboard filters. For example, currently I can sort my active contracts, but I can't filter them.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "mixed"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Legal Operations Coordinator, Retail",
+          "text": "The report system adds a true value in helping the firms/company to increase efficiency.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Brizl P., IT, Marketing and Advertising",
+          "text": "The reporting has allowed me to concentrate on other crucial tasks.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Jacob B., Contracts Manager, Computer Software",
+          "text": "The reporting features are excellent but ultimately focused on overall company performance and tracking of document types rather than individual user performance.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "mixed"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Stephenie C., Senior Legal Operations Analyst, IT Services",
+          "text": "Metrics are still being built in the product that meet the needs of executives.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "mixed"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Deepak D., Functional Consultant, Legal Services",
+          "text": "Reports are easy to understand.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Vendor Compliance Coordinator, Retail",
+          "date": "2021-02-27",
+          "text": "You cannot easily download a report of all workflows into a Google Sheet.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "negative"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Sr. Marketing Associate, Financial Services",
+          "date": "2022-01-26",
+          "text": "I wish there was more visibility between team members.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "mixed"
+        },
+        {
+          "platform": "Software Advice",
+          "author": "David E.",
+          "date": "2020-10",
+          "text": "Ability for ad hoc approvals, better reporting/analytics, and additional conditional formatting [would improve the product].",
+          "sourceUrl": "https://www.softwareadvice.com/cms/ironclad-profile/reviews/",
+          "sentiment": "mixed"
+        },
+        {
+          "platform": "Software Advice",
+          "author": "Lisa P., Director of Contracts",
+          "date": "2018-12-07",
+          "text": "More functionality in the search and reporting category [would improve the product].",
+          "sourceUrl": "https://www.softwareadvice.com/cms/ironclad-profile/reviews/",
+          "sentiment": "mixed"
+        }
+      ]
+    },
+    "linksquares": {
+      "portfolio-analytics": [
+        {
+          "platform": "G2",
+          "author": "Marc J., Director of Legal Operations",
+          "date": "2019-06-06",
+          "text": "Run needed reports resulting in happier employees and internal/external clients.",
+          "sourceUrl": "https://www.g2.com/products/linksquares/reviews",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "G2",
+          "author": "Neta H., Senior Corporate Counsel",
+          "date": "2019-03-22",
+          "text": "Ability to run reports and track agreement status (renewal, term, etc). Reports could be a little easier to pull.",
+          "sourceUrl": "https://www.g2.com/products/linksquares/reviews",
+          "sentiment": "mixed"
+        },
+        {
+          "platform": "G2",
+          "author": "Julia T., Attorney",
+          "date": "2019-04-04",
+          "text": "Ability to run reports, proximity search and find things quickly.",
+          "sourceUrl": "https://www.g2.com/products/linksquares/reviews",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "G2",
+          "author": "VR, Senior Corporate Paralegal, Financial Services",
+          "date": "2019-03-25",
+          "text": "Running reports with Smart Values in mind does not give us confidence.",
+          "sourceUrl": "https://www.g2.com/products/linksquares/reviews",
+          "sentiment": "negative"
+        },
+        {
+          "platform": "G2",
+          "author": "Hayley M., Director, Legal Operations",
+          "date": "2026-04-14",
+          "text": "Meeting document management, reporting, and negotiation needs.",
+          "sourceUrl": "https://www.g2.com/products/linksquares/reviews",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Craig R.",
+          "date": "2024-03",
+          "text": "Single point of truth for all contracts. Easy and super quick uploading and AI analyzing.",
+          "sourceUrl": "https://www.capterra.com/p/174081/LinkSquares/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "LinkedIn",
+          "author": "Ari Buchler",
+          "date": "2025-06",
+          "text": "Integrating legal and contract operations into the broader universe of global ops is long overdue. Until now, executives did not have enough visibility to ask more than \"Is the contract signed?\"",
+          "sourceUrl": "https://www.linkedin.com/posts/biju-muduli_legaltech-executiveinsights-clm-activity-7344032046853300225-9sLy",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "LinkedIn",
+          "author": "Chat Metrics",
+          "date": "2025-06",
+          "text": "Sounds like a game changer for C-level leaders.",
+          "sourceUrl": "https://www.linkedin.com/posts/biju-muduli_legaltech-executiveinsights-clm-activity-7344032046853300225-9sLy",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "pqai": {
+      "prior-art-search": [
+        {
+          "platform": "Hacker News",
+          "author": "ZgordanVV",
+          "date": "2026-04",
+          "text": "Every existing tool either requires Boolean search expertise (Espacenet, Google Patents), costs hundreds per month (PatSnap, IPRally), covers US patents only (PQAI), or bundles the search into a full $5,000 filing workflow (SenseIP). Nobody offers a simple pay-per-search plain-English report.",
+          "sourceUrl": "https://news.ycombinator.com/item?id=47832082",
+          "sentiment": "mixed"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Thomas Sutterlin",
+          "text": "PQAI suggests appropriate classes based on a text, which is extremely helpful and time-saving.",
+          "sourceUrl": "https://projectpq.ai/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Tobias King",
+          "text": "It is by far the easiest and most effective way to quickly track down relevant IP utilising natural language queries.",
+          "sourceUrl": "https://projectpq.ai/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Joan M. Brennan, Brennan Innovators LLC",
+          "text": "The tool serves up information on patents and their applications, white papers, and other publications, too.",
+          "sourceUrl": "https://projectpq.ai/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Daniel Stoll",
+          "text": "Response times are really good, and the API has a nice developer experience.",
+          "sourceUrl": "https://projectpq.ai/",
           "sentiment": "positive"
         }
       ]
