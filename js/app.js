@@ -10,6 +10,9 @@
   const DATA = window.PATLYTICS_DATA;
   const { HIGHLIGHTS, COMPETITORS, NEW_ENTRANTS, WEBINARS, ANCHOR_DATE, EARLIEST_DATE } = DATA;
 
+  const FEATURE_DATA = window.PATLYTICS_FEATURE_DATA;
+  const { DEFAULT_COMPARISON_COMPANY_IDS, PATLYTICS_PSEUDO_COMPANY, FEATURE_ROWS, FEATURE_REVIEWS } = FEATURE_DATA;
+
   const COMPETITORS_SORTED = [...COMPETITORS].sort((a, b) => a.rank - b.rank);
 
   const state = {
@@ -17,6 +20,13 @@
     range: "day", // day | week | month
     asOf: ANCHOR_DATE,
     webinarFilter: "upcoming", // upcoming | past | all
+    fc: {
+      companyIds: [...DEFAULT_COMPARISON_COMPANY_IDS],
+      customFeatures: [], // { id, name }
+      overrides: {}, // `${companyId}::${featureId}` -> "yes"|"no"|"partial"|"unknown"
+      review: { companyId: "solve-intelligence", featureId: "claim-charting" },
+      chat: [], // { role: "user"|"assistant", text }
+    },
   };
 
   /* ---------------- date helpers ---------------- */
@@ -74,6 +84,7 @@
 
     html += `<div class="nav-section-label">Overview</div>`;
     html += navItemHtml("general", "ph:squares-four", "Daily Brief");
+    html += navItemHtml("feature-comparison", "ph:columns", "Feature Comparison");
 
     html += `<div class="nav-section-label">Competitors <span style="opacity:.6">(by correlation)</span></div>`;
     COMPETITORS_SORTED.forEach((c) => {
@@ -146,6 +157,11 @@
       title.textContent = "Webinars";
       rangeToggle.style.display = "none";
       dateNav.style.display = "none";
+    } else if (state.activeTab === "feature-comparison") {
+      eyebrow.innerHTML = `<iconify-icon icon="ph:columns"></iconify-icon> Overview`;
+      title.textContent = "Feature Comparison";
+      rangeToggle.style.display = "none";
+      dateNav.style.display = "none";
     } else {
       const c = COMPETITORS.find((x) => x.id === state.activeTab);
       eyebrow.innerHTML = `<iconify-icon icon="ph:buildings"></iconify-icon> ${escapeHtml(c.tier)}`;
@@ -175,9 +191,11 @@
     else if (state.activeTab === "general") root.innerHTML = renderGeneral();
     else if (state.activeTab === "entrants") root.innerHTML = renderEntrants();
     else if (state.activeTab === "webinars") root.innerHTML = renderWebinars();
+    else if (state.activeTab === "feature-comparison") root.innerHTML = renderFeatureComparison();
     else root.innerHTML = renderCompetitor(state.activeTab);
 
     wireWebinarToolbar();
+    wireFeatureComparison();
     root.querySelectorAll(".feature-card[data-tab]").forEach((btn) => {
       btn.addEventListener("click", () => switchTab(btn.dataset.tab));
     });
@@ -519,6 +537,332 @@
     });
     ["webinar-from", "webinar-to"].forEach((id) => {
       document.getElementById(id).addEventListener("change", renderWebinarList);
+    });
+  }
+
+  /* ================= FEATURE COMPARISON ================= */
+  const FC_STATUS_CYCLE = ["yes", "no", "partial", "unknown"];
+
+  function fcGetCompany(id) {
+    if (id === "patlytics") return PATLYTICS_PSEUDO_COMPANY;
+    return COMPETITORS.find((c) => c.id === id);
+  }
+
+  function fcAllFeatures() {
+    return [...FEATURE_ROWS, ...state.fc.customFeatures.map((f) => ({ id: f.id, name: f.name, support: {} }))];
+  }
+
+  function fcStatus(companyId, feature) {
+    const key = `${companyId}::${feature.id}`;
+    if (state.fc.overrides[key]) return state.fc.overrides[key];
+    const s = feature.support && feature.support[companyId];
+    return s ? s.status : "unknown";
+  }
+
+  function fcDetail(companyId, feature) {
+    const s = feature.support && feature.support[companyId];
+    if (s) return s.detail;
+    const company = fcGetCompany(companyId);
+    return `No detail recorded yet for ${company ? company.name : "this company"} on "${feature.name}". Click the cell to set a status.`;
+  }
+
+  function fcStatusIcon(status) {
+    if (status === "yes") return '<iconify-icon icon="ph:check-bold" class="fc-icon"></iconify-icon>';
+    if (status === "no") return '<iconify-icon icon="ph:x-bold" class="fc-icon"></iconify-icon>';
+    if (status === "partial") return '<iconify-icon icon="ph:minus" class="fc-icon"></iconify-icon>';
+    return '<iconify-icon icon="ph:question" class="fc-icon"></iconify-icon>';
+  }
+
+  function fcCycleStatus(companyId, featureId) {
+    const feature = fcAllFeatures().find((f) => f.id === featureId);
+    if (!feature) return;
+    const key = `${companyId}::${featureId}`;
+    const current = fcStatus(companyId, feature);
+    const next = FC_STATUS_CYCLE[(FC_STATUS_CYCLE.indexOf(current) + 1) % FC_STATUS_CYCLE.length];
+    state.fc.overrides[key] = next;
+    renderActiveTab();
+  }
+
+  // No wordmark-logo scraper exists yet (by design — not built in this
+  // pass). This tries a local wordmark asset first so real logos can be
+  // dropped in later with no code change, and falls back to the
+  // company's full name rendered as text — never the small square
+  // favicon used elsewhere in the app.
+  function fcCompanyHeaderHtml(company) {
+    return `<div class="fc-company-header">
+      <img src="assets/logos-full/${company.id}.png" alt="${escapeHtml(company.name)}" class="fc-wordmark-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+      <div class="fc-wordmark-text" style="display:none;">${escapeHtml(company.name)}</div>
+    </div>`;
+  }
+
+  function fcChatBubbleHtml(msg) {
+    const escaped = escapeHtml(msg.text).replace(/\n/g, "<br>");
+    return `<div class="fc-chat-row fc-chat-row-${msg.role}">
+      <div class="fc-chat-bubble fc-chat-bubble-${msg.role}">${escaped}</div>
+    </div>`;
+  }
+
+  function fcReviewBubbleHtml(review) {
+    return `<a class="fc-review-bubble" href="${escapeHtml(review.sourceUrl)}" target="_blank" rel="noopener noreferrer">
+      <div class="fc-review-avatar"><iconify-icon icon="ph:chat-circle-dots"></iconify-icon></div>
+      <div class="fc-review-body">
+        <div class="fc-review-meta">
+          <span class="tag-chip">${escapeHtml(review.platform)}</span>
+          <span class="fc-review-author">${escapeHtml(review.author)}</span>
+          <span class="fc-review-date">${escapeHtml(review.date)}</span>
+        </div>
+        <div class="fc-review-text">${escapeHtml(review.text)}</div>
+        <div class="fc-review-source-hint"><iconify-icon icon="ph:arrow-square-out"></iconify-icon> Open source on ${escapeHtml(review.platform)}</div>
+      </div>
+    </a>`;
+  }
+
+  const FC_FEATURE_KEYWORDS = {
+    "claim-charting": ["claim chart", "claim-chart"],
+    "prior-art-search": ["prior art", "novelty search"],
+    "office-action-response": ["office action", "oa response"],
+    "portfolio-analytics": ["portfolio analytic", "portfolio dashboard"],
+    "fto-analysis": ["freedom to operate", "fto analysis", " fto "],
+    "ptab-litigation-support": ["ptab", "ipr petition", "inter partes review", "litigation support"],
+  };
+
+  function fcFindMentionedCompanies(text) {
+    const lower = text.toLowerCase();
+    const all = [PATLYTICS_PSEUDO_COMPANY, ...COMPETITORS];
+    return all.filter((c) => lower.includes(c.name.toLowerCase()) || lower.includes(c.id.replace(/-/g, " ")));
+  }
+
+  function fcFindMentionedFeature(text) {
+    const lower = ` ${text.toLowerCase()} `;
+    const features = fcAllFeatures();
+    for (const f of features) {
+      if (lower.includes(f.name.toLowerCase())) return f;
+      const kws = FC_FEATURE_KEYWORDS[f.id];
+      if (kws && kws.some((k) => lower.includes(k))) return f;
+    }
+    return null;
+  }
+
+  function fcAnswerQuestion(question) {
+    const feature = fcFindMentionedFeature(question);
+    let companies = fcFindMentionedCompanies(question);
+
+    if (!feature) {
+      const names = FEATURE_ROWS.map((f) => `"${f.name}"`).join(", ");
+      return `I can only compare features that are on the board above. Try asking about one of: ${names}.`;
+    }
+    if (companies.length === 0) {
+      const rows = state.fc.companyIds
+        .map((id) => {
+          const c = fcGetCompany(id);
+          return c ? `${c.name}: ${fcStatus(id, feature)}` : null;
+        })
+        .filter(Boolean);
+      return `Here's where "${feature.name}" stands across the companies currently in your comparison —\n${rows.join("\n")}\n\nAsk about two specific companies (e.g. "Patlytics vs PatSnap") for the fuller explanation behind each status.`;
+    }
+    if (companies.length === 1) {
+      companies = companies[0].id === "patlytics" ? [PATLYTICS_PSEUDO_COMPANY] : [PATLYTICS_PSEUDO_COMPANY, companies[0]];
+    }
+    if (companies.length === 1) {
+      const c = companies[0];
+      return `${c.name} on "${feature.name}": ${fcDetail(c.id, feature)}`;
+    }
+    const [a, b] = companies;
+    return `On "${feature.name}":\n\n${a.name}: ${fcDetail(a.id, feature)}\n\n${b.name}: ${fcDetail(b.id, feature)}`;
+  }
+
+  function renderFeatureComparison() {
+    const fc = state.fc;
+    const features = fcAllFeatures();
+    const companies = fc.companyIds.map(fcGetCompany).filter(Boolean);
+    const availableToAdd = [PATLYTICS_PSEUDO_COMPANY, ...COMPETITORS_SORTED].filter((c) => !fc.companyIds.includes(c.id));
+
+    let html = sampleBanner();
+
+    html += `<div class="section-heading"><iconify-icon icon="ph:columns"></iconify-icon><h2>Feature Comparison Builder</h2></div>
+    <p class="section-sub">Build a side-by-side feature matrix across Patlytics and any tracked competitor. Add a feature, add a company, click a cell to set its status, and hover a cell for the detail behind it.</p>`;
+
+    html += `<div class="card fc-toolbar">
+      <div class="fc-toolbar-group">
+        <input type="text" id="fc-new-feature-input" placeholder="Add a feature to compare…" maxlength="80" />
+        <button type="button" id="fc-add-feature-btn" class="fc-toolbar-btn"><iconify-icon icon="ph:plus"></iconify-icon> Add Feature</button>
+      </div>
+      <div class="fc-toolbar-group">
+        <select id="fc-add-company-select">
+          <option value="">+ Add a company to compare…</option>
+          ${availableToAdd.map((c) => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join("")}
+        </select>
+      </div>
+    </div>`;
+
+    html += `<div class="fc-table-wrap"><table class="fc-table">
+      <thead><tr>
+        <th class="fc-feature-col">Feature</th>
+        ${companies
+          .map(
+            (c) => `<th class="fc-company-col">
+          <div class="fc-company-header-inner">
+            ${fcCompanyHeaderHtml(c)}
+            ${c.isSelf ? "" : `<button type="button" class="fc-remove-col" data-company="${c.id}" aria-label="Remove ${escapeHtml(c.name)} from comparison"><iconify-icon icon="ph:x"></iconify-icon></button>`}
+          </div>
+        </th>`
+          )
+          .join("")}
+      </tr></thead>
+      <tbody>
+        ${features
+          .map((f) => {
+            const isCustom = fc.customFeatures.some((cf) => cf.id === f.id);
+            return `<tr>
+          <td class="fc-feature-name">
+            <span>${escapeHtml(f.name)}</span>
+            ${isCustom ? `<button type="button" class="fc-remove-row" data-feature="${f.id}" aria-label="Remove feature"><iconify-icon icon="ph:x"></iconify-icon></button>` : ""}
+          </td>
+          ${companies
+            .map((c) => {
+              const status = fcStatus(c.id, f);
+              const detail = fcDetail(c.id, f);
+              return `<td class="fc-cell fc-status-${status}" data-company="${c.id}" data-feature="${f.id}" data-detail="${escapeHtml(detail)}" data-company-name="${escapeHtml(c.name)}" data-feature-name="${escapeHtml(f.name)}" tabindex="0" role="button" aria-label="${escapeHtml(c.name)} — ${escapeHtml(f.name)}: ${escapeHtml(status)}. Click to change.">
+              ${fcStatusIcon(status)}
+            </td>`;
+            })
+            .join("")}
+        </tr>`;
+          })
+          .join("")}
+      </tbody>
+    </table></div>
+    <div id="fc-tooltip" class="fc-tooltip hidden"></div>
+    <div class="fc-legend">
+      <span><iconify-icon icon="ph:check-bold"></iconify-icon> Supported</span>
+      <span><iconify-icon icon="ph:minus"></iconify-icon> Partial</span>
+      <span><iconify-icon icon="ph:x-bold"></iconify-icon> Not supported</span>
+      <span><iconify-icon icon="ph:question"></iconify-icon> Unknown — click to set</span>
+    </div>`;
+
+    html += `<div class="section-heading"><iconify-icon icon="ph:chat-circle-text"></iconify-icon><h2>Feature Clarification</h2></div>
+    <p class="section-sub">Ask how a specific feature compares across companies — e.g. “How does Patlytics' claim charting differ from PatSnap's?” Answers come from the comparison matrix above, not a live model.</p>
+    <div class="card fc-chat">
+      <div class="fc-chat-messages" id="fc-chat-messages">
+        ${fc.chat.length ? fc.chat.map(fcChatBubbleHtml).join("") : `<div class="fc-chat-empty">Ask about one of the tracked features above to get started.</div>`}
+      </div>
+      <form id="fc-chat-form" class="fc-chat-form">
+        <input type="text" id="fc-chat-input" placeholder="Ask about a feature…" autocomplete="off" />
+        <button type="submit" aria-label="Send"><iconify-icon icon="ph:paper-plane-right"></iconify-icon></button>
+      </form>
+    </div>`;
+
+    const reviewCompanyOptions = COMPETITORS_SORTED;
+    const reviews = (FEATURE_REVIEWS[fc.review.companyId] && FEATURE_REVIEWS[fc.review.companyId][fc.review.featureId]) || [];
+    const reviewCompany = fcGetCompany(fc.review.companyId);
+    const reviewFeature = features.find((f) => f.id === fc.review.featureId);
+
+    html += `<div class="section-heading"><iconify-icon icon="ph:chats-circle"></iconify-icon><h2>Feature Reviews</h2><span class="count-chip">${reviews.length}</span></div>
+    <p class="section-sub">What people are saying about a specific company's feature, in a message-style feed. Click a review to open its original source. The live review scraper isn't built yet — this is a sample dataset.</p>
+    <div class="fc-review-controls">
+      <select id="fc-review-company-select">
+        ${reviewCompanyOptions.map((c) => `<option value="${c.id}" ${c.id === fc.review.companyId ? "selected" : ""}>${escapeHtml(c.name)}</option>`).join("")}
+      </select>
+      <select id="fc-review-feature-select">
+        ${features.map((f) => `<option value="${f.id}" ${f.id === fc.review.featureId ? "selected" : ""}>${escapeHtml(f.name)}</option>`).join("")}
+      </select>
+    </div>
+    <div class="fc-review-list">
+      ${reviews.length ? reviews.map(fcReviewBubbleHtml).join("") : emptyState(`No sample reviews yet for "${reviewFeature ? reviewFeature.name : ""}" at ${reviewCompany ? reviewCompany.name : "this company"}.`)}
+    </div>`;
+
+    return html;
+  }
+
+  function wireFeatureComparison() {
+    if (state.activeTab !== "feature-comparison") return;
+
+    const addFeatureBtn = document.getElementById("fc-add-feature-btn");
+    const addFeatureInput = document.getElementById("fc-new-feature-input");
+    function addFeature() {
+      const name = addFeatureInput.value.trim();
+      if (!name) return;
+      const id = "custom-" + name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") + "-" + Date.now().toString(36);
+      state.fc.customFeatures.push({ id, name });
+      renderActiveTab();
+    }
+    addFeatureBtn.addEventListener("click", addFeature);
+    addFeatureInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") { e.preventDefault(); addFeature(); }
+    });
+
+    document.querySelectorAll(".fc-remove-row").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        state.fc.customFeatures = state.fc.customFeatures.filter((f) => f.id !== btn.dataset.feature);
+        renderActiveTab();
+      });
+    });
+
+    const addCompanySelect = document.getElementById("fc-add-company-select");
+    addCompanySelect.addEventListener("change", () => {
+      const id = addCompanySelect.value;
+      if (id && !state.fc.companyIds.includes(id)) {
+        state.fc.companyIds.push(id);
+        renderActiveTab();
+      }
+    });
+
+    document.querySelectorAll(".fc-remove-col").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        state.fc.companyIds = state.fc.companyIds.filter((id) => id !== btn.dataset.company);
+        renderActiveTab();
+      });
+    });
+
+    document.querySelectorAll(".fc-cell").forEach((cell) => {
+      cell.addEventListener("click", () => fcCycleStatus(cell.dataset.company, cell.dataset.feature));
+      cell.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fcCycleStatus(cell.dataset.company, cell.dataset.feature); }
+      });
+    });
+
+    const tooltip = document.getElementById("fc-tooltip");
+    const tableWrap = document.querySelector(".fc-table-wrap");
+    document.querySelectorAll(".fc-cell").forEach((cell) => {
+      cell.addEventListener("mouseenter", () => {
+        tooltip.innerHTML = `<strong>${escapeHtml(cell.dataset.companyName)}</strong> — ${escapeHtml(cell.dataset.featureName)}<br>${escapeHtml(cell.dataset.detail)}`;
+        const rect = cell.getBoundingClientRect();
+        const wrapRect = tableWrap.getBoundingClientRect();
+        tooltip.style.left = Math.max(8, rect.left - wrapRect.left + rect.width / 2 - 130) + "px";
+        tooltip.style.top = rect.top - wrapRect.top + rect.height + 8 + tableWrap.scrollTop + "px";
+        tooltip.classList.remove("hidden");
+      });
+      cell.addEventListener("mouseleave", () => tooltip.classList.add("hidden"));
+      cell.addEventListener("focus", () => cell.dispatchEvent(new Event("mouseenter")));
+      cell.addEventListener("blur", () => tooltip.classList.add("hidden"));
+    });
+
+    const chatForm = document.getElementById("fc-chat-form");
+    const chatInput = document.getElementById("fc-chat-input");
+    chatForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const q = chatInput.value.trim();
+      if (!q) return;
+      state.fc.chat.push({ role: "user", text: q });
+      state.fc.chat.push({ role: "assistant", text: fcAnswerQuestion(q) });
+      renderActiveTab();
+      const msgs = document.getElementById("fc-chat-messages");
+      if (msgs) msgs.scrollTop = msgs.scrollHeight;
+      const freshInput = document.getElementById("fc-chat-input");
+      if (freshInput) freshInput.focus();
+    });
+
+    const reviewCompanySelect = document.getElementById("fc-review-company-select");
+    const reviewFeatureSelect = document.getElementById("fc-review-feature-select");
+    reviewCompanySelect.addEventListener("change", () => {
+      state.fc.review.companyId = reviewCompanySelect.value;
+      renderActiveTab();
+    });
+    reviewFeatureSelect.addEventListener("change", () => {
+      state.fc.review.featureId = reviewFeatureSelect.value;
+      renderActiveTab();
     });
   }
 
