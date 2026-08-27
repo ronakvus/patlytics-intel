@@ -136,7 +136,7 @@
       btn.addEventListener("click", () => switchTab(btn.dataset.tab));
     });
 
-    document.getElementById("sidebar-last-updated").textContent = `Preview data · as of ${fmt(ANCHOR_DATE)}`;
+    document.getElementById("sidebar-last-updated").textContent = `Last updated · ${fmt(ANCHOR_DATE)}`;
   }
 
   function navItemHtml(tabId, icon, label, tierDot, badgeCount) {
@@ -253,7 +253,7 @@
 
   /* ================= HOME / OVERVIEW ================= */
   function renderHome() {
-    let html = sampleBanner();
+    let html = "";
 
     html += `<div class="card home-hero">
       <div class="home-hero-eyebrow"><iconify-icon icon="ph:sparkle"></iconify-icon>Competitive Intelligence, in one place</div>
@@ -302,7 +302,7 @@
     const counts = { critical: 0, high: 0, medium: 0, low: 0 };
     items.forEach((i) => counts[i.priority]++);
 
-    let html = sampleBanner();
+    let html = "";
     html += `<div class="section-heading">
       <iconify-icon icon="ph:newspaper"></iconify-icon>
       <h2>Top Industry &amp; Competitor News</h2>
@@ -311,7 +311,7 @@
     <p class="section-sub">Ranked by priority — how significant the news is and its correlation to Patlytics — then recency. Showing the ${state.range === "day" ? "selected day" : state.range === "week" ? "selected week" : "selected month"}.</p>`;
 
     if (!items.length) {
-      html += emptyState("No highlights in this window in the preview dataset. Try widening the range or moving to a different date.");
+      html += emptyState("No highlights in this window. Try widening the range or moving to a different date.");
     } else {
       items.forEach((h) => { html += highlightCardHtml(h); });
     }
@@ -345,7 +345,7 @@
     const c = COMPETITORS.find((x) => x.id === id);
     const tierClass = c.tier.startsWith("Tier 1") ? "tier1" : c.tier.startsWith("Tier 2") ? "tier2" : "tier3";
 
-    let html = sampleBanner();
+    let html = "";
 
     html += `<div class="card company-header-card">
       <div class="company-header-top">
@@ -379,7 +379,7 @@
     html += `<div class="section-heading"><iconify-icon icon="ph:sun"></iconify-icon><h2>Important Activity Today</h2><span class="count-chip">${todayItems.length}</span></div>`;
     html += todayItems.length
       ? todayItems.map((a) => activityItemHtml(a, a.time)).join("")
-      : emptyState(`No significant ${escapeHtml(c.name)} activity recorded for today in the preview dataset.`);
+      : emptyState(`No significant ${escapeHtml(c.name)} activity recorded for today.`);
 
     // Week / range
     const rangeLabel = state.range === "month" ? "This Month" : state.range === "week" ? "This Week" : "The Last 7 Days";
@@ -388,7 +388,7 @@
     html += `<div class="section-heading"><iconify-icon icon="ph:calendar-dots"></iconify-icon><h2>Important Activity — ${rangeLabel}</h2><span class="count-chip">${weekItems.length}</span></div>`;
     html += weekItems.length
       ? weekItems.map((a) => activityItemHtml(a, fmt(a.date, { month: "short", day: "numeric" }))).join("")
-      : emptyState(`No additional ${escapeHtml(c.name)} activity in this window in the preview dataset.`);
+      : emptyState(`No additional ${escapeHtml(c.name)} activity in this window.`);
 
     // Hiring
     html += `<div class="section-heading"><iconify-icon icon="ph:briefcase"></iconify-icon><h2>Hiring &amp; Headcount Signals</h2></div>`;
@@ -458,11 +458,11 @@
     const threatOrder = { high: 0, medium: 1, low: 2 };
     const items = [...NEW_ENTRANTS].filter((e) => e.date <= state.asOf).sort((a, b) => threatOrder[a.threat] - threatOrder[b.threat] || b.date.localeCompare(a.date));
 
-    let html = sampleBanner(true);
+    let html = "";
     html += `<div class="section-heading"><iconify-icon icon="ph:compass"></iconify-icon><h2>New Market Entrants</h2><span class="count-chip">${items.length}</span></div>
     <p class="section-sub">Sourced from VC portfolio pages (Y Combinator, a16z, and similar), founder LinkedIn activity, and launch posts. Ordered by estimated threat to Patlytics.</p>`;
 
-    if (!items.length) return html + emptyState("No new entrants identified as of this date in the preview dataset.");
+    if (!items.length) return html + emptyState("No new entrants identified as of this date.");
 
     items.forEach((e) => {
       const linkUrl = e.website || e.linkedin;
@@ -498,7 +498,7 @@
 
   /* ================= WEBINARS ================= */
   function renderWebinars() {
-    let html = sampleBanner(true);
+    let html = "";
     html += `<div class="section-heading"><iconify-icon icon="ph:calendar-blank"></iconify-icon><h2>Industry &amp; Competitor Webinars</h2></div>
     <div class="webinar-toolbar">
       <div class="filter-pill-group" id="webinar-filter-group">
@@ -537,7 +537,7 @@
     const list = document.getElementById("webinar-list");
     if (!list) return;
     const items = computeWebinarList();
-    if (!items.length) { list.innerHTML = emptyState("No webinars match this filter in the preview dataset."); return; }
+    if (!items.length) { list.innerHTML = emptyState("No webinars match this filter."); return; }
 
     const relevanceBadge = { high: "critical", medium: "high", low: "low" };
     list.innerHTML = items.map((w) => `<div class="card webinar-card${w.url ? " has-arrow-link" : ""}">
@@ -771,7 +771,7 @@
     const companies = fc.companyIds.map(fcGetCompany).filter(Boolean);
     const availableToAdd = [PATLYTICS_PSEUDO_COMPANY, ...COMPETITORS_SORTED].filter((c) => !fc.companyIds.includes(c.id));
 
-    let html = sampleBanner();
+    let html = "";
 
     html += `<div class="section-heading"><iconify-icon icon="lucide:git-compare"></iconify-icon><h2>Feature Comparison Builder</h2></div>
     <p class="section-sub">Build a side-by-side feature matrix across Patlytics and any tracked competitor. Add a feature, add a company, click a cell to set its status, and hover a cell for the detail behind it.</p>`;
@@ -1021,12 +1021,6 @@
   }
 
   /* ================= SHARED PARTIALS ================= */
-  function sampleBanner(short) {
-    return `<div class="sample-banner">
-      <iconify-icon icon="ph:flask"></iconify-icon>
-      <span><strong>Preview mode.</strong> ${short ? "Sample data — " : "This dashboard is showing sample data for UI review — "}the live scraping and aggregation pipeline is not yet connected.</span>
-    </div>`;
-  }
   function arrowLink(url, label) {
     if (!url) return "";
     return `<a class="card-arrow-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || "Open source in a new tab")}" title="${escapeHtml(label || "Open source")}">

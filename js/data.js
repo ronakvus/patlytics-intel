@@ -45,51 +45,6 @@ const HIGHLIGHTS = [
     url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-is-partnering-with-activity-7497654008715661312-sC4_",
   },
   {
-    id: "hl-2",
-    date: "2026-08-24",
-    priority: "high",
-    category: "Funding",
-    title: "IPRally closes extended seed round led by European deep-tech investors",
-    summary:
-      "IPRally raised an extension to its seed round to accelerate its graph-based prior-art search engine and expand go-to-market into the US, its first real push outside the Nordics/EU. (Editorial note, 2026-08-27: this specific round could not be independently corroborated against public funding databases this pass — the only confirmed rounds found are a €2.4M seed and a €10M Series A, closed March 2023. Treating as unconfirmed pending further verification.)",
-    whyItMatters:
-      "IPRally's search technology is architecturally closest to Patlytics' own approach (embedding + graph retrieval over prior art). A US expansion puts them in direct account contention for the first time.",
-    companies: ["IPRally"],
-    source: "IPRally newsroom (sample framing — see company site for actual funding history)",
-    sourceType: "news",
-    url: "https://www.iprally.com/news",
-  },
-  {
-    id: "hl-3",
-    date: "2026-08-25",
-    priority: "high",
-    category: "Product",
-    title: "PatSnap ships 'Insights Copilot', a conversational layer over its analytics suite",
-    summary:
-      "PatSnap's new copilot lets users ask natural-language questions over its existing patent analytics and landscape datasets, generating charts and competitive landscape summaries on demand.",
-    whyItMatters:
-      "This narrows the perceived gap between PatSnap's legacy analytics platform and Patlytics' natural-language-native product. Sales should expect prospects to ask 'how is this different from PatSnap Copilot.'",
-    companies: ["PatSnap"],
-    source: "PatSnap product blog (sample framing)",
-    sourceType: "product",
-    url: "https://www.patsnap.com",
-  },
-  {
-    id: "hl-4",
-    date: "2026-08-25",
-    priority: "medium",
-    category: "Hiring",
-    title: "Clarivate posts VP of AI Product Strategy role reporting into IP leadership",
-    summary:
-      "The role description references building 'agentic patent research workflows,' signaling Clarivate intends to modernize its IP intelligence platforms rather than sunset them.",
-    whyItMatters:
-      "A sign the largest incumbent in the space is investing rather than retreating. Worth tracking who fills this seat — likely a strong proxy for Clarivate's AI roadmap and urgency.",
-    companies: ["Clarivate (Innography)"],
-    source: "LinkedIn Jobs (sample framing)",
-    sourceType: "hiring",
-    url: "https://clarivate.com/intellectual-property/",
-  },
-  {
     id: "hl-5",
     date: "2026-08-23",
     priority: "medium",
@@ -103,51 +58,6 @@ const HIGHLIGHTS = [
     source: "USPTO.gov",
     sourceType: "regulatory",
     url: "https://www.uspto.gov/about-us/news-updates",
-  },
-  {
-    id: "hl-6",
-    date: "2026-08-22",
-    priority: "high",
-    category: "Funding",
-    title: "Stilta raises $10.5M seed led by a16z for agentic patent litigation AI",
-    summary:
-      "Stockholm-based Stilta (YC W26), founded by four former McKinsey/QuantumBlack engineers, closed a $10.5M seed round led by Andreessen Horowitz to build source-backed, auditable agentic AI for patent litigation and invalidity work. Already used by multiple AmLaw 100 firms within months of launch.",
-    whyItMatters:
-      "A very well-capitalized, fast-moving new entrant with immediate BigLaw traction — see the New Market Entrants tab for the full profile.",
-    companies: ["Stilta"],
-    source: "TechCrunch",
-    sourceType: "funding",
-    url: "https://techcrunch.com/2026/05/19/legal-tech-announced-stilta-announces-10m-seed-backed-by-yc-and-a16z-months-after-launch/",
-  },
-  {
-    id: "hl-7",
-    date: "2026-08-21",
-    priority: "low",
-    category: "Marketing",
-    title: "Anaqua publishes benchmark report on IP department budget allocation",
-    summary:
-      "Annual survey-based report positions Anaqua as the thought leader on IP operations spend; report is being widely shared by in-house IP counsel on LinkedIn.",
-    whyItMatters:
-      "Good content-marketing pattern to study, even though Anaqua is only an adjacent competitor. The distribution (in-house counsel sharing organically) is the notable part.",
-    companies: ["Anaqua"],
-    source: "Anaqua Research (sample framing)",
-    sourceType: "marketing",
-    url: "https://anaqua.com",
-  },
-  {
-    id: "hl-8",
-    date: "2026-08-20",
-    priority: "low",
-    category: "Webinar",
-    title: "LexisNexis Cipher to host webinar on AI patent landscaping for semiconductor portfolios",
-    summary:
-      "Cipher — acquired by RELX/LexisNexis in 2023 — is running a vertical-specific session aimed at semiconductor IP teams, a segment Patlytics has been expanding into.",
-    whyItMatters:
-      "Direct audience overlap with our semiconductor vertical push. Consider having someone from the team attend.",
-    companies: ["Cipher"],
-    source: "Cipher events page (sample framing)",
-    sourceType: "webinar",
-    url: "https://www.lexisnexisip.com",
   },
   {
     id: "hl-9",
@@ -268,36 +178,6 @@ const HIGHLIGHTS = [
     source: "Law.com Legaltech News, Artificial Lawyer",
     sourceType: "funding",
     url: "https://www.law.com/legaltechnews/2026/08/24/legal-ai-startup-newcode-announces-135m-series-a-round-with-investment-from-relativity/",
-  },
-  {
-    id: "hl-18",
-    date: "2026-08-25",
-    priority: "medium",
-    category: "Market",
-    title: "Robin AI confirmed wound down; engineering team acqui-hired by Microsoft",
-    summary:
-      "After a planned $50M raise fell through in October 2025, Robin AI laid off roughly a third of staff and sought a buyer. Its managed-services arm was acquired by Scissero in December 2025, and Microsoft absorbed its engineering team in January 2026 to bolster Word's legal-AI features.",
-    whyItMatters:
-      "Corrects a previously stale 'active adjacent competitor' listing — Robin AI is effectively no longer operating as an independent company. Verified today via multiple independent outlets.",
-    companies: ["Robin AI"],
-    source: "Legal Cheek, Artificial Lawyer, nonbillable.co.uk",
-    sourceType: "news",
-    url: "https://www.legalcheek.com/2025/10/uk-lawtech-business-seeks-buyer-following-38-million-fundraising-setback/",
-  },
-  {
-    id: "hl-19",
-    date: "2026-08-25",
-    priority: "low",
-    category: "Market",
-    title: "IPwe confirmed defunct following 2024 bankruptcy liquidation",
-    summary:
-      "IPwe filed for Chapter 11 bankruptcy in Delaware in January 2024 and later converted to Chapter 7 liquidation after its bankruptcy financing fell through. The company is no longer operating.",
-    whyItMatters:
-      "Corrects a previously stale 'active adjacent competitor' listing. Verified today via Law360's court coverage.",
-    companies: ["IPwe"],
-    source: "Law360",
-    sourceType: "news",
-    url: "https://www.law360.com/ip/articles/1810349/ipwe-seeks-ch-7-liquidation-after-ch-11-financing-loss",
   },
   {
     id: "hl-20",
@@ -499,10 +379,7 @@ const COMPETITORS = [
         { title: "Founding Events Lead", dept: "Marketing", location: "Remote" },
         { title: "IT & Security Engineer", dept: "IT", location: "Remote" },
       ],
-      recentHires: [
-        { name: "Sample Hire A", role: "Head of Partnerships", from: "Prior role: BigLaw-adjacent legal tech (sample)", date: "2026-08-23" },
-        { name: "Sample Hire B", role: "Senior ML Engineer", from: "Prior role: large-model applied research (sample)", date: "2026-08-20" },
-      ],
+      recentHires: [],
       topRoles: [
         { title: "Software Engineer, Full-Stack", count: 4 },
         { title: "Enterprise Account Executive", count: 3 },
@@ -594,9 +471,7 @@ const COMPETITORS = [
         { title: "Solutions Consultant, EMEA", dept: "Customer Success", location: "London, UK" },
         { title: "Data Engineer", dept: "Engineering", location: "Singapore" },
       ],
-      recentHires: [
-        { name: "Sample Hire C", role: "VP, Product (AI)", from: "Prior role: enterprise SaaS analytics (sample)", date: "2026-08-22" },
-      ],
+      recentHires: [],
       topRoles: [
         { title: "Account Executive", count: 9 },
         { title: "Data/ML Engineer", count: 6 },
@@ -668,9 +543,7 @@ const COMPETITORS = [
     hiring: {
       openRoles: 8,
       newRolesToday: [],
-      recentHires: [
-        { name: "Sample Hire D", role: "Head of US Expansion", from: "Prior role: EU-to-US SaaS GTM (sample)", date: "2026-08-21" },
-      ],
+      recentHires: [],
       topRoles: [
         { title: "Search/ML Research Engineer", count: 3 },
         { title: "Account Executive (US)", count: 2 },
@@ -799,9 +672,7 @@ const COMPETITORS = [
     hiring: {
       openRoles: 19,
       newRolesToday: [],
-      recentHires: [
-        { name: "Sample Hire E", role: "Director, Analytics Product", from: "Prior role: legal-ops analytics (sample)", date: "2026-08-19" },
-      ],
+      recentHires: [],
       topRoles: [
         { title: "Implementation Consultant", count: 6 },
         { title: "Account Manager", count: 4 },
