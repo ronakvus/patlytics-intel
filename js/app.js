@@ -68,7 +68,15 @@
     return parseDate(dateStr).toLocaleDateString("en-US", opts || { month: "short", day: "numeric", year: "numeric" });
   }
   function rangeSpanDays() { return state.range === "day" ? 1 : state.range === "week" ? 7 : 30; }
-  function windowStart() { return addDays(state.asOf, -(rangeSpanDays() - 1)); }
+  // The filtering window is intentionally wider than the day-by-day nav step for
+  // "day" view: real news is dated the day it actually happened, not the day it's
+  // viewed, so an exact-date-only window would go empty on any day nothing broke on
+  // that literal calendar date. Widening "day" to a trailing 3-calendar-day window
+  // (today plus the 2 days before) keeps the Daily Brief non-empty on a normal day
+  // while nav arrows still step one day at a time (see rangeSpanDays(), used for
+  // state.asOf stepping).
+  function windowSpanDays() { return state.range === "day" ? 3 : rangeSpanDays(); }
+  function windowStart() { return addDays(state.asOf, -(windowSpanDays() - 1)); }
   function inWindow(dateStr) { return dateStr >= windowStart() && dateStr <= state.asOf; }
 
   /* ---------------- icon helpers ---------------- */
