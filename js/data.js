@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-08-26";
-const EARLIEST_DATE = "2026-08-04"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-08-27";
+const EARLIEST_DATE = "2026-08-06"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -51,7 +51,7 @@ const HIGHLIGHTS = [
     category: "Funding",
     title: "IPRally closes extended seed round led by European deep-tech investors",
     summary:
-      "IPRally raised an extension to its seed round to accelerate its graph-based prior-art search engine and expand go-to-market into the US, its first real push outside the Nordics/EU.",
+      "IPRally raised an extension to its seed round to accelerate its graph-based prior-art search engine and expand go-to-market into the US, its first real push outside the Nordics/EU. (Editorial note, 2026-08-27: this specific round could not be independently corroborated against public funding databases this pass — the only confirmed rounds found are a €2.4M seed and a €10M Series A, closed March 2023. Treating as unconfirmed pending further verification.)",
     whyItMatters:
       "IPRally's search technology is architecturally closest to Patlytics' own approach (embedding + graph retrieval over prior art). A US expansion puts them in direct account contention for the first time.",
     companies: ["IPRally"],
@@ -360,21 +360,6 @@ const HIGHLIGHTS = [
     url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
   },
   {
-    id: "hl-24",
-    date: "2026-08-04",
-    priority: "high",
-    category: "Corporate",
-    title: "Anaqua acquires Unified Patents",
-    summary:
-      "Anaqua confirmed the acquisition of Unified Patents, a company known for challenging weak patents and running the PATROLL/PEARL prior-art tools, in a deal with undisclosed financial terms. Anaqua frames the move as helping IP organizations protect against rising patent-litigation risk; Unified Patents' own materials describe it continuing to operate with independent decision-making post-acquisition.",
-    whyItMatters:
-      "A Tier 2 strong-overlap competitor just added AI-enhanced claim-charting and litigation-risk capability (via Unified's live PEARL tool) through acquisition rather than in-house build — worth watching for how quickly it's actually integrated into Anaqua's own product line versus staying a separately-branded service.",
-    companies: ["Anaqua"],
-    source: "GlobeNewswire, Law.com Legaltech News, Bloomberg Law, MLex",
-    sourceType: "news",
-    url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/anaqua-acquires-unified-patents-to-help-organizations-protect-against-rising-intellectual-property-litigation-risk.html",
-  },
-  {
     id: "hl-25",
     date: "2026-08-10",
     priority: "medium",
@@ -404,6 +389,21 @@ const HIGHLIGHTS = [
     sourceType: "product",
     url: "https://www.prnewswire.com/news-releases/bloomberg-law-unveils-new-ai-powered-legal-intelligence-experience-at-iltacon-2026-302856497.html",
   },
+  {
+    id: "hl-27",
+    date: "2026-08-24",
+    priority: "high",
+    category: "Product",
+    title: "LexisNexis unveils \"Legal Intelligence Engine,\" rebuilding Lexis+ AI around dynamic agentic orchestration",
+    summary:
+      "LexisNexis announced a new orchestration \"harness\" — the Legal Intelligence Engine — underlying Lexis+ with Protégé, which dynamically selects and coordinates AI models, agents, skills, and content sources from a plain-language task description rather than routing through predefined workflows, aiming to carry context from early strategy through research, drafting, and review in one session.",
+    whyItMatters:
+      "A third major incumbent (after Thomson Reuters' agentic CoCounsel push and Google's Gemini Enterprise for Legal, both already tracked) converging on the same 'one agentic harness, many skills' architecture in the same week — a structural pattern worth flagging to product/strategy, and directly relevant to LexisNexis IP Solutions and Cipher, both tracked competitors under the same parent.",
+    companies: ["LexisNexis IP Solutions", "Cipher"],
+    source: "Artificial Lawyer, LawNext, GlobeNewswire",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/08/24/lexis-rolls-out-legal-intelligence-engine-agentic-capabilities/",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -421,7 +421,7 @@ const COMPETITORS = [
     initials: "SI",
     tagline: "AI copilot for patent drafting, prosecution, and portfolio management.",
     description:
-      "Solve Intelligence builds an AI-native workspace for patent attorneys and agents, covering claim drafting, office-action response drafting, and prosecution docketing. Its core wedge is generative drafting assistance embedded directly into attorneys' existing workflows, and it has moved quickly from a drafting tool into a broader prosecution platform, including the 2026 acquisition of ClaimWise to deepen European litigation/opposition coverage.",
+      "Solve Intelligence builds an AI-native workspace for patent attorneys and agents, covering claim drafting, office-action response drafting, and prosecution docketing. Its core wedge is generative drafting assistance embedded directly into attorneys' existing workflows, and it has moved quickly from a drafting tool into a broader prosecution platform, including the 2026 acquisition of ClaimWise to deepen European litigation/opposition coverage. Closed a $40M Series B in December 2025 (Visionaries Club-led, with 20VC, Microsoft M12, and Thomson Reuters Ventures — total funding ~$55M) and simultaneously launched \"Charts,\" a litigation/IP-analysis product for invalidity charts, SEP charts, FTO/clearance analysis, and infringement mapping. Now states usage by 700+ IP teams across 6 continents, including 30% of the Vault 30 IP firms and 21% of AmLaw 100 firms.",
     employeeCount: "~90 (est.)",
     founded: "2023",
     hq: "San Francisco, CA",
@@ -443,7 +443,7 @@ const COMPETITORS = [
       {
         name: "Angus Parsonson",
         title: "Co-Founder & CTO",
-        note: "Background details pending further verification.",
+        note: "MEng in Computer Science, University of Bristol (GCHQ cyber-security scholarship); previously at Qualcomm, then a Quantitative Developer at Coremont LLP (a Brevan Howard spin-off) building a greenfield trade-processing platform. Brother of co-founder Chris Parsonson. (Verified via LinkedIn/Crunchbase, 2026-08-27.)",
       },
     ],
     todayActivity: [
@@ -484,11 +484,20 @@ const COMPETITORS = [
         body: "Signals a push toward more hands-on enterprise/firm onboarding rather than pure self-serve.",
         url: siteUrl("solveintelligence.com") + "/careers",
       },
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Opened a Patent Litigator role in London",
+        body: "New role builds out patent-litigation capability on the legal team, directly tied to the new \"Charts\" litigation-support product (invalidity/SEP/FTO/infringement charts).",
+        url: "https://jobs.ashbyhq.com/solveintelligence/b35c17cf-dd4e-4a00-8a6d-d78abcb4af81",
+      },
     ],
     hiring: {
-      openRoles: 14,
+      openRoles: 17,
       newRolesToday: [
-        { title: "Enterprise Account Executive", dept: "Sales", location: "Remote (US)" },
+        { title: "Patent Litigator", dept: "Legal", location: "London, UK" },
+        { title: "Founding Events Lead", dept: "Marketing", location: "Remote" },
+        { title: "IT & Security Engineer", dept: "IT", location: "Remote" },
       ],
       recentHires: [
         { name: "Sample Hire A", role: "Head of Partnerships", from: "Prior role: BigLaw-adjacent legal tech (sample)", date: "2026-08-23" },
@@ -525,8 +534,8 @@ const COMPETITORS = [
     initials: "PS",
     tagline: "Global patent analytics and IP intelligence platform.",
     description:
-      "PatSnap is an established IP intelligence platform offering patent search, analytics, landscaping, and competitive monitoring across a large global dataset. It has recently pushed into generative AI features layered on top of its existing analytics core, competing for the same 'ask questions of your patent data' use case Patlytics targets natively.",
-    employeeCount: "~800 (est.)",
+      "PatSnap is an established IP intelligence platform offering patent search, analytics, landscaping, and competitive monitoring across a large global dataset. It has recently pushed into generative AI features layered on top of its existing analytics core, competing for the same 'ask questions of your patent data' use case Patlytics targets natively. PatSnap confidentially filed for a dual Hong Kong/Singapore IPO around mid-2026 (reported $300-400M target, investors including SoftBank, Tencent, and Sequoia Capital), signaling a scale-up push toward a liquidity event that could accelerate its AI-analytics roadmap and M&A appetite.",
+    employeeCount: "~570-580 (Revelio Labs/Tracxn/LeadIQ, 2026)",
     founded: "2007",
     hq: "Singapore / London",
     website: "patsnap.com",
@@ -535,9 +544,9 @@ const COMPETITORS = [
     linkedin: "https://www.linkedin.com/company/patsnap",
     founders: [
       {
-        name: "Sample Founder Profile",
-        title: "Co-Founder & CEO",
-        note: "Placeholder — bio pending verification via scraping pipeline.",
+        name: "Jeffrey Tiong",
+        title: "Founder & CEO",
+        note: "Founded PatSnap in 2007 from a S$55,000 Singaporean student grant; BEng Biomedical Engineering, National University of Singapore; conceived the idea as a Wharton exchange student after witnessing a $1M patent acquisition. Named a Top 50 SaaS CEO (2020) and won EY Entrepreneur of the Year (Singapore, 2018). (Verified via CNBC, PatSnap press blog, Crunchbase, 2026-08-27.)",
       },
     ],
     todayActivity: [
@@ -550,6 +559,13 @@ const COMPETITORS = [
       },
     ],
     weekActivity: [
+      {
+        date: "2026-08-06",
+        tag: "Partnership",
+        title: "Strategic data partnership with Evolvus",
+        body: "Expands PatSnap Bio's coverage of ADCs, peptides, protein degraders, and chemically modified nucleotide sequences via Evolvus's curated \"ConnectorBase\" dataset (modification locations, linker details, patent-family associations, structured bioactivity data) — strengthens PatSnap's biopharma-vertical data moat.",
+        url: "https://www.patsnap.com/resources/blog/press_release/patsnap-and-evolvus-announce-strategic-data-partnership-to-expand-curated-modality-intelligence-for-biopharma-rd-and-ip-teams/",
+      },
       {
         date: "2026-08-24",
         tag: "Content",
@@ -605,7 +621,7 @@ const COMPETITORS = [
     initials: "IR",
     tagline: "AI-native graph search engine for prior art and freedom-to-operate.",
     description:
-      "IPRally built a graph-embedding based search engine specifically for prior-art and freedom-to-operate search, arguing traditional keyword/classification search misses semantically relevant results. Historically focused on the Nordics/EU market, now expanding into the US.",
+      "IPRally built a graph-embedding based search engine specifically for prior-art and freedom-to-operate search, arguing traditional keyword/classification search misses semantically relevant results. Historically focused on the Nordics/EU market, now expanding into the US. Has since reorganized its product around three pillars — Search, Intelligence, and a new \"Protection\" pillar aimed at making patent drafting prior-art-aware from the first sentence — and launched \"Smart Search,\" accepting mixed text/image/PDF/Office-document input. Ranked #26 on Deloitte's Technology Fast 50 Finland list (second consecutive year) and was selected by Canada's Global Innovation Cluster for Advanced Manufacturing to power a Patent Search Adoption Tool pilot program; also holds ISO 27001 certification.",
     employeeCount: "~45 (est.)",
     founded: "2018",
     hq: "Helsinki, Finland",
@@ -615,9 +631,14 @@ const COMPETITORS = [
     linkedin: "https://fi.linkedin.com/company/iprally",
     founders: [
       {
-        name: "Sample Founder Profile",
-        title: "Co-Founder & CTO",
-        note: "Placeholder — technical background pending verification via scraping pipeline.",
+        name: "Sakari Arvela",
+        title: "CEO & Co-Founder",
+        note: "Patent attorney with 15 years' experience prior to co-founding IPRally in April 2018. (Verified via TechCrunch, IPRally 'About Us', 2026-08-27.)",
+      },
+      {
+        name: "Juho Kallio",
+        title: "Co-Founder (original CTO)",
+        note: "Co-founded IPRally in 2018; the company's current site lists Antti Tarvainen as CTO, suggesting a possible leadership change since founding not yet fully confirmed. (Verified via TechCrunch, Tracxn, 2026-08-27.)",
       },
     ],
     todayActivity: [],
@@ -626,7 +647,7 @@ const COMPETITORS = [
         date: "2026-08-24",
         tag: "Funding",
         title: "Closed extended seed round for US expansion",
-        body: "Round earmarked for opening a US commercial presence and localized go-to-market. See General Highlights.",
+        body: "Round earmarked for opening a US commercial presence and localized go-to-market. See General Highlights. (Editorial note, 2026-08-27: could not be independently corroborated against public funding databases this pass — treating as unconfirmed pending further verification.)",
         url: siteUrl("iprally.com") + "/news",
       },
       {
@@ -635,6 +656,13 @@ const COMPETITORS = [
         title: "Opened first US-based sales role",
         body: "First indication of direct US account coverage rather than partner-led sales.",
         url: siteUrl("iprally.com") + "/careers",
+      },
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Opened Senior/Junior Account Executive roles across Europe",
+        body: "Multi-seat sales opening across European locations, signaling a broader GTM push alongside the existing US expansion effort.",
+        url: "https://apply.workable.com/iprally/j/9D29F42F4B/",
       },
     ],
     hiring: {
@@ -666,7 +694,7 @@ const COMPETITORS = [
     initials: "CL",
     tagline: "Large incumbent IP intelligence suite under the Clarivate umbrella.",
     description:
-      "Clarivate's IP Solutions division (which absorbed the Innography patent-analytics platform) is a long-standing patent analytics and portfolio management suite serving large enterprise and law-firm accounts, now unified under the 'IPOne' AI-enabled IP intelligence ecosystem. Recent signals suggest Clarivate is investing in AI-native features rather than treating the platform as legacy.",
+      "Clarivate's IP Solutions division (which absorbed the Innography patent-analytics platform) is a long-standing patent analytics and portfolio management suite serving large enterprise and law-firm accounts, now unified under the 'IPOne' AI-enabled IP intelligence ecosystem. Recent signals suggest Clarivate is investing in AI-native features rather than treating the platform as legacy. In July 2026, parent company Clarivate agreed to divest its Life Sciences & Healthcare segment to Altaris for ~$600M, repositioning itself as a subscription-first company focused on Academia & Government and Intellectual Property — sharpening strategic focus on the IP Solutions unit that houses Innography.",
     employeeCount: "Clarivate: ~9,000 (IP Solutions unit est. ~150)",
     founded: "Innography: 2006 (acquired by Clarivate 2021)",
     hq: "Philadelphia, PA (Clarivate global HQ: London, UK)",
@@ -728,7 +756,7 @@ const COMPETITORS = [
     initials: "AQ",
     tagline: "End-to-end IP management software for corporate and law-firm IP departments.",
     description:
-      "Anaqua provides IP lifecycle management software — docketing, portfolio management, renewals, and increasingly analytics — for corporate IP departments and law firms. Overlaps with Patlytics primarily where IP operations and analytics intersect rather than on core AI search/drafting. Acquired Unified Patents on 2026-08-04 (financial terms undisclosed), adding AI-enhanced claim-charting/litigation-risk capability via Unified's PEARL tool — Unified's own materials describe it continuing to operate with independent decision-making post-acquisition.",
+      "Anaqua provides IP lifecycle management software — docketing, portfolio management, renewals, and increasingly analytics — for corporate IP departments and law firms. Overlaps with Patlytics primarily where IP operations and analytics intersect rather than on core AI search/drafting. Acquired Unified Patents on 2026-08-04 (financial terms undisclosed), adding AI-enhanced claim-charting/litigation-risk capability via Unified's PEARL tool — Unified's own materials describe it continuing to operate with independent decision-making post-acquisition. Post-acquisition, Unified Patents co-founder/CEO Kevin Jakel took on a newly created \"Chief Intellectual Property Strategist\" role at Anaqua. Also recently announced Innomotics (a Siemens spin-off) as a new enterprise customer for global IP management.",
     employeeCount: "~700 (est.)",
     founded: "2004",
     hq: "Boston, MA",
@@ -822,6 +850,13 @@ const COMPETITORS = [
         url: "https://www.lexisnexisip.com/resources/lexisnexis-combines-best-in-class-patent-datasets-and-software-solutions-boosting-innovation-analytics-to-a-new-level/",
       },
       {
+        date: "2026-08-27",
+        tag: "Product",
+        title: "IPlytics rolls out the \"Ultimate Owner Concept\"",
+        body: "A way of mapping standard-essential-patent (SEP) ownership up through parent companies, subsidiaries, and joint ventures for licensing/negotiation purposes — a capability previously exclusive to PatentSight+ now extended to IPlytics.",
+        url: "https://www.lexisnexisip.com/resources/empowering-sep-analysts-with-insights-unveiling-the-ultimate-owner-concept-in-lexisnexis-iplytics/",
+      },
+      {
         date: "2026-08-10",
         tag: "Market",
         title: "LexisNexis took three products offline after suspicious third-party server activity",
@@ -848,7 +883,7 @@ const COMPETITORS = [
       "Cipher focuses on applied-science-heavy patent landscaping and visualization, often used for technical due diligence and R&D strategy rather than pure legal workflows. Originally founded as Aistemos in 2013 before rebranding to Cipher, the company was acquired by RELX (LexisNexis' parent company) in 2023 and now operates as LexisNexis Cipher, giving it access to LexisNexis' broader IP data and distribution.",
     employeeCount: "~120 (est.)",
     founded: "2013 (acquired by RELX/LexisNexis, 2023)",
-    hq: "Paris, France",
+    hq: "London, UK (per ZoomInfo/Datanyze/CBInsights/Tracxn — Aistemos' historical HQ; possibly conflated with LexisNexis IP's separate Paris office in earlier data)",
     website: "lexisnexisip.com",
     websiteUrl: siteUrl("lexisnexisip.com"),
     careersUrl: "https://www.lexisnexis.com/en-us/careers.page",
@@ -903,7 +938,7 @@ const COMPETITORS = [
     tagline: "IP and royalty rate benchmarking data intelligence.",
     description:
       "ktMINE specializes in licensing and royalty-rate benchmarking data alongside patent data services, serving valuation, licensing, and transfer-pricing use cases. Overlap with Patlytics is narrow but relevant for valuation-adjacent enterprise deals.",
-    employeeCount: "~90 (est.)",
+    employeeCount: "~20-50 (LinkedIn band 11-50; aggregator estimates ~18-24, 2026) — the prior ~90 estimate appears overstated",
     founded: "2010",
     hq: "Chicago, IL",
     website: "ktmine.com",
@@ -1007,8 +1042,8 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "DI",
     tagline: "AI patent drafting and prosecution platform.",
-    description: "Repeatedly identified inside Patlytics' own competitive-analysis tracking as the closest direct competitor — an AI drafting and prosecution platform with significant product overlap. Highest-priority watch-list entry. Acquired German AI patent-drafting tool PatentMaker in June 2026 to build out European coverage, and exhibited at PATINFO 2026 (Ilmenau) on prior art search, Markush drafting, and office-action response.",
-        employeeCount: "~51-200 per LinkedIn; other trackers cite 45-71",
+    description: "Repeatedly identified inside Patlytics' own competitive-analysis tracking as the closest direct competitor — an AI drafting and prosecution platform with significant product overlap. Highest-priority watch-list entry. Acquired German AI patent-drafting tool PatentMaker in June 2026 to build out European coverage, and exhibited at PATINFO 2026 (Ilmenau, June 10-12, 2026) on prior art search, Markush drafting, and office-action response.",
+        employeeCount: "~71 (PitchBook/Tracxn, as of 2026-05-31)",
     founded: "2023",
     hq: "Brooklyn, NY (also maintains a Paris office)",
     founders: [
@@ -1017,6 +1052,15 @@ COMPETITORS.push(
     ],
     website: "deepip.ai",
     linkedin: "https://www.linkedin.com/company/deep-ip",
+    weekActivity: [
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Opened a Customer Success Manager role",
+        body: "New CS role surfaced on DeepIP's careers board, beyond the previously-tracked Patent Solution Engineer opening.",
+        url: siteUrl("deepip.ai") + "/careers",
+      },
+    ],
   }),
   stubCompetitor({
     id: "junior",
@@ -1027,8 +1071,8 @@ COMPETITORS.push(
     tagline: "AI-native patent drafting inside Microsoft Word.",
     description: "Atlanta-based Junior builds AI-native patent drafting tooling that works directly inside Microsoft Word, targeting the same drafting workflow Patlytics and Solve Intelligence compete for.",
         employeeCount: "11-50 per LinkedIn",
-    founded: "2025 per LinkedIn (conflicts with earlier press coverage describing an active Atlanta-based startup — not fully reconciled)",
-    hq: "Mountain View, CA per LinkedIn; press coverage (Hypepotamus) describes it as Atlanta-based — conflicting sources, not resolved",
+    founded: "2025 (corroborated by Dealroom.co and Hypepotamus; no press coverage found placing founding earlier)",
+    hq: "Atlanta, GA (per Dealroom.co and Hypepotamus press coverage, and CEO Yuri Eliezer's Atlanta-based Founders Legal practice; LinkedIn's 'Mountain View, CA' field appears stale)",
     founders: [
       { name: "Yuri Eliezer", title: "Co-Founder & CEO", note: "Also a founding patent attorney at Founders Legal; JD, Georgia State University College of Law; undergrad at Georgia Tech." },
     ],
@@ -1078,7 +1122,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "ED",
     tagline: "AI patent drafting (\"Ingenia\") and trademark clearance.",
-    description: "Edge offers AI patent drafting under its \"Ingenia\" product alongside trademark-clearance tooling, giving it a foothold in both patent and trademark AI workflows. Launched Certus, described as \"the world's first AI agent for trademark law\" (automated clearance search and filing), in April 2026.",
+    description: "Edge offers AI patent drafting under its \"Ingenia\" product alongside trademark-clearance tooling, giving it a foothold in both patent and trademark AI workflows. Launched Certus, described as \"the world's first AI agent for trademark law\" (automated clearance search and filing), in April 2026. Recognized by CIOReview as \"Top AI-Powered Patent Assistant Solution 2026.\"",
         employeeCount: "LinkedIn lists 2-10 — likely stale given $37.4M raised across 5 rounds; not independently verified",
     founded: "2020",
     hq: "San Francisco, CA",
@@ -1088,6 +1132,15 @@ COMPETITORS.push(
     ],
     website: "withedge.com",
     linkedin: "https://www.linkedin.com/company/workwithedge",
+    weekActivity: [
+      {
+        date: "2026-08-20",
+        tag: "Event",
+        title: "CEO presents Certus AI trademark agent at INTA 2026",
+        body: "Edge CEO Evan Zimmerman presented Certus (Edge's AI agent for trademark clearance search and filing) as a 2026 INTA Annual Meeting exhibitor.",
+        url: "https://www.facebook.com/GoINTA/posts/edge-is-a-2026-annual-meeting-exhibitor-here-edge-ceo-evan-zimmerman-presents-ed/1395643495929484/",
+      },
+    ],
   }),
   stubCompetitor({
     id: "patented-ai",
@@ -1096,7 +1149,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "PA",
     tagline: "AI infringement detection via claim-to-code mapping.",
-    description: "Patented.ai focuses on infringement analysis, mapping patent claims directly to product code/implementation to generate infringement evidence — tracked with its own dedicated page in Patlytics' internal competitor analysis. Recent release notes describe a \"Parallel AI Processor\" (claimed 50-75x speed-up via parallel claim-term extraction), a \"Secure Viewer\" with proactive result notifications and PDF export, and workspace-based team collaboration with corporate auth (exact publish date not stated on the release-notes page).",
+    description: "Patented.ai focuses on infringement analysis, mapping patent claims directly to product code/implementation to generate infringement evidence — tracked with its own dedicated page in Patlytics' internal competitor analysis. Recent release notes describe a \"Parallel AI Processor\" (claimed 50-75x speed-up via parallel claim-term extraction), a \"Secure Viewer\" with proactive result notifications and PDF export, and workspace-based team collaboration with corporate auth (exact publish date not stated on the release-notes page). Its LinkedIn page is now branded \"Patented.ai (by Reasoner)\" — founder Wayne Chang's other venture, Reasoner (a neurosymbolic-AI company), appears to now be the named parent/affiliated entity, with Patented.ai serving as its IP-domain pilot implementation (exact date of this change not confirmed).",
         employeeCount: "2-10 per LinkedIn",
     founded: "2023",
     hq: "Santa Monica, CA per company site (LinkedIn lists Delaware, likely the incorporation state)",
@@ -1113,7 +1166,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "XL",
     tagline: "AI patent search, drafting-assist, and monetization platform.",
-    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group, a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up (exact dates not independently pinned down in this pass).",
+    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group, a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up (exact dates not independently pinned down in this pass). Released \"ParaEmbed 2.0,\" a follow-up proprietary patent/technology-data embedding model, on 2026-01-28.",
         employeeCount: "~51-200 per LinkedIn",
     founded: "Not fully verified — legal entity incorporated 2012 in Chandigarh, India; platform reportedly relaunched under the XLSCOUT name around 2020",
     hq: "Toronto, Ontario, Canada (primary); also maintains a Chandigarh, India office",
@@ -1124,6 +1177,15 @@ COMPETITORS.push(
     ],
     website: "xlscout.ai",
     linkedin: "https://www.linkedin.com/company/xlscout-ai",
+    weekActivity: [
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Open Product Lead and R&D Manager roles",
+        body: "Careers hub shows continued platform/product investment via a Product Lead and an R&D Manager opening, alongside Data Scientist and Marketing/BD roles.",
+        url: "https://xlscout.ai/careers/",
+      },
+    ],
   }),
   stubCompetitor({
     id: "nlpatent",
@@ -1133,7 +1195,7 @@ COMPETITORS.push(
     initials: "CQ",
     tagline: "Rebranded as Clerq — agentic AI platform for end-to-end patent work.",
     description:
-      "NLPatent rebranded to Clerq on 2026-08-18, launching an agentic AI platform spanning triage assessments through full patentability reports (moving beyond its original LLM-based semantic prior-art search positioning), alongside new partnerships with RPX Corporation and Park IP and a newly hired Director of IP Strategy. See General Highlights.",
+      "NLPatent rebranded to Clerq on 2026-08-18, launching an agentic AI platform spanning triage assessments through full patentability reports (moving beyond its original LLM-based semantic prior-art search positioning), alongside new partnerships with RPX Corporation and Park IP and a newly hired Director of IP Strategy, Michael Chernoff (ex-Murgitroyd, former USPTO examiner). See General Highlights. Reported as venture-backed with a ~$3M round led by Draper Associates and Mighty Capital (year of round not independently confirmed).",
         employeeCount: "~25 (est.)",
     founded: "2021",
     hq: "Toronto, Canada",
@@ -1167,7 +1229,7 @@ COMPETITORS.push(
     tier: "Tier 2 — Strong Overlap",
     initials: "PP",
     tagline: "Generative AI patent drafting, including figures and specifications.",
-    description: "PatentPal automates generation of patent drafting elements including figures and specifications using generative AI.",
+    description: "PatentPal automates generation of patent drafting elements including figures and specifications using generative AI. A small, bootstrapped-scale operation — ~$290K total raised per Crunchbase; its careers page currently shows no open positions and accepts only unsolicited applications.",
         employeeCount: "2-5 (small team, per Latka)",
     founded: "2018",
     hq: "Foster City, CA",
@@ -1184,14 +1246,14 @@ COMPETITORS.push(
     tier: "Tier 2 — Strong Overlap",
     initials: "AA",
     tagline: "AI-powered prior-art and patent search.",
-    description: "Amplified AI provides AI-driven prior-art and patent search tooling for patent professionals.",
-        employeeCount: "~8 (PitchBook)",
+    description: "Amplified AI provides AI-driven prior-art and patent search tooling for patent professionals. Has hosted its own \"Conference on AI and IP\" in Tokyo (2nd annual edition, 2026-03-18) and published blog content arguing that MCPs (Model Context Protocols) are critical infrastructure for gluing together fragmented IP tooling.",
+        employeeCount: "~8 (PitchBook; ~7-person team per Latka)",
     founded: "2017 (concept); platform publicly launched 2020",
     hq: "San Francisco, CA",
     founders: [
-      { name: "Sam Davis", title: "CEO", note: "Background details not independently verified." },
+      { name: "Sam Davis", title: "CEO", note: "BA in Music and East Asian Studies, William & Mary (2010); studied Japanese at Keio University; completed YC Startup School (2017). Previously Director of Business Development and other roles at patent search/analytics firm Landon IP. (Verified via LinkedIn/theorg/Crunchbase aggregation, 2026-08-27.)" },
       { name: "Chris Grainger", title: "CTO", note: "The patent-search concept grew out of his PhD econometrics research." },
-      { name: "Yasu Oikawa", title: "COO", note: "Background details not independently verified." },
+      { name: "Yasu Oikawa", title: "COO", note: "PhD Physics, Tohoku University (2019); MSc Material Science, Tokyo Institute of Technology; BSc Physics, Keio University. Previously Project Assistant Professor at Tohoku University and Technical Leader at Landon IP. (Verified via LinkedIn, 2026-08-27.)" },
     ],
     website: "amplified.ai",
     linkedin: "https://www.linkedin.com/company/amplified-ai",
@@ -1203,7 +1265,7 @@ COMPETITORS.push(
     tier: "Tier 2 — Strong Overlap",
     initials: "IP",
     tagline: "AI-driven invention generation for R&D and IP teams.",
-    description: "Iprova uses AI to help R&D and IP teams generate and identify patentable inventions earlier in the innovation cycle — adjacent to Patlytics' search/analytics focus.",
+    description: "Iprova uses AI to help R&D and IP teams generate and identify patentable inventions earlier in the innovation cycle — adjacent to Patlytics' search/analytics focus. Hosted the \"AI-Assisted Invention Summit 2026\" at IMD (Lausanne, 2026-05-19) with Microsoft, IBM, Sony AI, and Dassault Systèmes, previewing \"Invention Voyager\" (a Microsoft collaboration) and a new \"Claims Charting\" capability scoped to patent portfolios. Published a January 2026 update to its white paper on AI, invention, and patentability reflecting the latest USPTO guidance.",
         employeeCount: "~29-31 (LinkedIn/PitchBook/Tracxn)",
     founded: "2010",
     hq: "Lausanne, Switzerland",
@@ -1212,6 +1274,15 @@ COMPETITORS.push(
     ],
     website: "iprova.com",
     linkedin: "https://www.linkedin.com/company/iprova",
+    weekActivity: [
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Opened AI Product Engineer, Business Development, and Marketing roles",
+        body: "Three roles newly surfaced beyond the previously-tracked engineering openings: AI Product Engineer, Business Development Manager, and Digital Marketing and Growth Manager (all UK-based).",
+        url: "https://www.iprova.com/career/ai-product-engineer/",
+      },
+    ],
   }),
   stubCompetitor({
     id: "minesoft",
@@ -1243,11 +1314,18 @@ COMPETITORS.push(
     founded: "1978 (as a France Télécom/Orange subsidiary; IP-focused from 2001)",
     hq: "Paris, France",
     founders: [
-      { name: "N/A — originated as a telecom subsidiary", title: "Business origin", note: "Current CEO Charles Besson (since 2002) is not documented as the company's founder." },
+      { name: "N/A — originated as a telecom subsidiary", title: "Business origin", note: "Frédéric Beylier became CEO on 2026-03-25, succeeding 25-year CEO Charles Besson (who remains a significant shareholder and moved to the Supervisory Board); Beylier was previously CEO of Flowbird Group. Neither is documented as the company's founder. (Verified via Business Wire/IPWatchdog, 2026-08-27.)" },
     ],
     website: "questel.com",
     linkedin: "https://www.linkedin.com/company/questel",
     weekActivity: [
+      {
+        date: "2026-06-30",
+        tag: "Partnership",
+        title: "Partners with PioneerIP on AI-powered patent-to-product mapping",
+        body: "Combines Questel's patent-data infrastructure with PioneerIP's AI to help IP teams connect patents to commercialized products for licensing, enforcement, and portfolio-strategy workflows.",
+        url: "https://ipwatchdog.com/press/questel-and-pioneerip-partner-to-bring-ai-powered-patent-to-product-mapping-to-ip-teams/",
+      },
       {
         date: "2026-08-13",
         tag: "Market",
@@ -1298,6 +1376,13 @@ COMPETITORS.push(
         title: "Shipped 'Gen AI Chat' for office-action response drafting",
         body: "New chat feature automatically pulls the relevant office action, spec, and prior art to guide OA response drafting. (Exact publish date approximate — company blog is dated August 2026.)",
         url: "https://blog.patentbots.com/2026/08/new-in-patent-bots-gen-ai-chat-now.html",
+      },
+      {
+        date: "2026-08-27",
+        tag: "Marketing",
+        title: "Caldwell ranked among top 5 firms in Patent Bots' 2026 Patent Quality Rankings",
+        body: "A law firm's placement in Patent Bots' own 2026 Patent Quality Rankings is being used as a marketing/case-study proof point — a content pattern worth tracking.",
+        url: "https://caldwelllaw.com/news/caldwell-ranked-top-5-patent-bots-2026-patent-quality/",
       },
     ],
   }),
@@ -1360,7 +1445,7 @@ COMPETITORS.push(
     initials: "PC",
     tagline: "AI-native idea capture, prior-art search, and invention-disclosure platform.",
     description: "IP Copilot is an AI-powered idea-management platform for in-house IP teams and law firms, integrating with Slack/Jira to surface potentially patentable ideas from everyday work conversations, then using AI to help build invention disclosures and run prior-art search. Newly identified via the IPWatchdog webinar-sponsor listing sweep (webinar scheduled 2026-09-08); not previously tracked in this dataset. Raised a ~$5.6M seed (Salesforce Ventures, Preface Ventures, NextGen Venture Partners, Notation Capital) that closed around September 2024 — corrected 2026-08-26 after the previously-recorded $4.2M figure and 'today' framing were found to be inaccurate; sources (Signalbase, Fundz, Fundraise Insider, Tracxn) consistently show ~$5.6M-$5.68M closing Sept 2024, not a new/current-dated round.",
-    employeeCount: "Not yet verified — pending scrape",
+    employeeCount: "~9 (CBInsights, 2026-08-27)",
     founded: "2023",
     hq: "Columbia, TN",
     founders: [
@@ -1401,6 +1486,20 @@ COMPETITORS.push(
         title: "German firm HEUKING expands Harvey to all professional groups firm-wide",
         body: "HEUKING, which began piloting Harvey in 2024, is expanding access to all professional groups (not just legal staff) after demand exceeded its original user quota, primarily using Harvey's Assistant, Vault, and Workflow Agents.",
         url: "https://www.harvey.ai/blog/heuking-expands-use-of-harvey-to-all-professional-groups-at-the-firm",
+      },
+      {
+        date: "2026-08-19",
+        tag: "Partnership",
+        title: "Taps DeepL as enterprise translation engine",
+        body: "DeepL is now embedded directly in the Harvey platform, supporting 100+ languages and expected to handle over a third of Harvey's total document-translation volume, across a platform Harvey says serves 200,000+ lawyers at 2,400+ organizations in 70 countries — reinforcing Harvey's generalist, breadth-first platform strategy.",
+        url: "https://www.prnewswire.com/news-releases/harvey-taps-deepl-to-power-legal-grade-ai-translation-for-global-law-firms-and-legal-teams-302854446.html",
+      },
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Opens Senior Privacy and AI Counsel and Business Development Lead, Cloud & AI roles",
+        body: "New senior roles surfaced beyond the prior careers snapshot, alongside a Sr. AI Enablement Engineer opening — part of a large (~363 role) Ashby board.",
+        url: "https://jobs.ashbyhq.com/harvey/42f38d0c-b931-4edb-b988-a6c6e89f7701",
       },
       {
         date: "2026-08-18",
@@ -1452,6 +1551,13 @@ COMPETITORS.push(
         url: "https://legora.com/iltacon",
       },
       {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Ashby board shows 278 open roles across 19 cities",
+        body: "Up sharply from a ~134-role estimate captured previously — a notable simultaneous product, GTM, and legal-ops scale-up signal. New titles spotted include Senior Product Marketing Manager (Partnerships and Core Product) and Legal Engineer - Tax.",
+        url: "https://jobs.ashbyhq.com/legora",
+      },
+      {
         date: "2026-08-17",
         tag: "Product",
         title: "Announced integration with Box",
@@ -1475,13 +1581,13 @@ COMPETITORS.push(
     initials: "SB",
     tagline: "AI contract review and drafting inside Microsoft Word.",
     description: "Spellbook provides AI-assisted contract review and drafting directly inside Microsoft Word, primarily for transactional/commercial legal work rather than patents.",
-        employeeCount: "~46 (2026)",
+        employeeCount: "~150-160 (Tracxn, as of 2026-02-28; the prior ~46 estimate appears understated)",
     founded: "2018 (product launched 2022)",
     hq: "Toronto, Canada",
     founders: [
-      { name: "Scott Stevenson", title: "Co-Founder & CEO", note: "Background details not independently verified." },
-      { name: "Daniel Di Maria", title: "Co-Founder & CRO", note: "Background details not independently verified." },
-      { name: "Matt Mayers", title: "Co-Founder & Chief Experience Officer", note: "Background details not independently verified." },
+      { name: "Scott Stevenson", title: "Co-Founder & CEO", note: "BEng, Memorial University of Newfoundland; Computer Systems Group Student at the National Research Council, then Project Engineer at Genesis; founded Mune; Team Lead Software Developer then Director of Engineering at Nocland before co-founding Spellbook. (Verified via Crunchbase, Inovia Capital, focusedchaos.co, 2026-08-27.)" },
+      { name: "Daniel Di Maria", title: "Co-Founder & CRO", note: "Studied Philosophy at University of Guelph; JD, Western University; articling student at John Wenus Law Office; earlier roles at The Table Mountain Curing Company, Shapiro Real Estate and Business Lawyers, and The Spanning Tree Group. Now based in Miami, FL, remote from Spellbook's Toronto base. (Verified via Crunchbase/Inovia, 2026-08-27.)" },
+      { name: "Matt Mayers", title: "Co-Founder & Chief Experience Officer", note: "Mechanical Engineering degree, McGill University (McGill Robotics); prior roles at FitSkin, Feedback App, Consulting Engineering Services, and Prismland Toys. (Verified via Crunchbase/Inovia/The Org, 2026-08-27.)" },
     ],
     website: "spellbook.legal",
     linkedin: "https://www.linkedin.com/company/spellbookai",
@@ -1499,6 +1605,13 @@ COMPETITORS.push(
         title: "Added AI Document Editor to Spellbook Associate",
         body: "New Word-style formatting/editing surface built directly into the Associate agent product, letting lawyers redline, comment, and finalize documents without switching apps. (Date approximate — reported \"ahead of ILTACON\", exact day not independently confirmed.)",
         url: "https://spellbook.com/blog/introducing-spellbooks-ai-document-editor",
+      },
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Hiring mix shifts toward engineering/product roles",
+        body: "New Ashby-board titles (Senior Data Engineer, Backend/AI Systems Engineer, Senior Product Manager - Enterprise) surfaced alongside the previously-known sales/CS roles — signaling platform build-out, not just GTM scaling.",
+        url: "https://jobs.ashbyhq.com/spellbook.legal/638c8845-6bc9-4767-a0a6-386ccbf5f8c5",
       },
     ],
   }),
@@ -1569,8 +1682,15 @@ COMPETITORS.push(
         date: "2026-08-20",
         tag: "Product",
         title: "Launched next-generation agentic CoCounsel Legal",
-        body: "General availability of Westlaw Brief Builder, Workspaces, a Word-integrated Drafting Agent, and Tabular Analysis, alongside Thomson Reuters' own proprietary LLM ('Thomson') and an expanded MCP integration with Anthropic's Claude.",
+        body: "General availability of Westlaw Brief Builder, Workspaces, a Word-integrated Drafting Agent, and Tabular Analysis, alongside Thomson Reuters' own proprietary LLM ('Thomson') and an expanded MCP integration with Anthropic's Claude. Confirmed rebuilt on Anthropic's Claude Agent SDK — described in trade coverage as the biggest rework of the product since Thomson Reuters bought Casetext in 2023.",
         url: "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-launches-next-generation-of-cocounsel-legal-the-ai-ecosystem-built-for-legal-professionals",
+      },
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Dedicated \"CoCounsel Forward Deployed Engineering\" hiring track",
+        body: "Thomson Reuters is running a named FDE org for CoCounsel with multiple open roles (Senior/Staff Software Engineer - AI, AI Solutions Engineer), implying investment in white-glove enterprise rollout.",
+        url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Software-Engineer---AI--CoCounsel-FDE_JREQ200170",
       },
     ],
   }),
@@ -1581,7 +1701,7 @@ COMPETITORS.push(
     tier: "Tier 3 — Adjacent",
     initials: "IC",
     tagline: "AI-powered contract lifecycle management.",
-    description: "Ironclad provides AI-powered contract lifecycle management software, adjacent to Patlytics mainly as a broader legal-tech budget line item.",
+    description: "Ironclad provides AI-powered contract lifecycle management software, adjacent to Patlytics mainly as a broader legal-tech budget line item. Valued at ~$3.2B (per its $150M Series E, Jan 2022); Sacra estimates ARR of ~$200M as of January 2026 (~34% YoY growth, ~1,000 customers) — a third-party analyst estimate, not company-disclosed.",
         employeeCount: "~800 (estimates range 763-866 across data providers)",
     founded: "2014",
     hq: "San Francisco, CA",
@@ -1622,8 +1742,8 @@ COMPETITORS.push(
       {
         date: "2026-08-19",
         tag: "Hiring",
-        title: "Named Lyle McCutcheon-Schour SVP of Revenue",
-        body: "New SVP of Revenue hire announced to drive agentic CLM growth; also appeared on the 2026 Inc. 5000 list on Aug 11, 2026.",
+        title: "Promotes Lyle McCutcheon-Schour to SVP of Revenue",
+        body: "Internal promotion (not an external hire) to drive agentic CLM growth — McCutcheon-Schour has spent over a decade at LinkSquares in customer-facing roles, most recently VP of Account Management. LinkSquares also appeared on the 2026 Inc. 5000 list (#2532, 6th consecutive year) on Aug 11, 2026.",
         url: "https://www.streetinsider.com/PRNewswire/LinkSquares+Names+Lyle+McCutcheon-Schour+SVP+of+Revenue+to+Drive+Agentic+CLM+Growth/26948572.html",
       },
     ],
@@ -1663,7 +1783,7 @@ COMPETITORS.push(
     tier: "Tier 3 — Adjacent",
     initials: "GA",
     tagline: "AI legal contract drafting and templates.",
-    description: "Genie AI provides AI-assisted legal contract drafting and template generation for a broad legal audience.",
+    description: "Genie AI provides AI-assisted legal contract drafting and template generation for a broad legal audience. Raised a $17.8M Series A led by GV (Google Ventures) with Khosla Ventures participating, taking total funding above $20M (exact close date not independently confirmed this pass).",
         employeeCount: "11-50",
     founded: "2017",
     hq: "Cambridge / London, England",
@@ -1681,7 +1801,7 @@ COMPETITORS.push(
     tier: "Tier 3 — Adjacent",
     initials: "EV",
     tagline: "AI legal assistant for plaintiff firms.",
-    description: "Eve provides an AI legal assistant built specifically for plaintiff-side law firms, a niche broader-legal-AI adjacent player.",
+    description: "Eve provides an AI legal assistant built specifically for plaintiff-side law firms, a niche broader-legal-AI adjacent player. Raised a $103M Series B (Spark Capital-led, with a16z, Lightspeed, and Menlo Ventures) at a valuation above $1B, following a $47M Series A (a16z-led) in January 2025. Launched \"EveOS,\" an AI-native operating system spanning intake through resolution, on 2026-06-11 — its largest platform expansion to date. Now supports 450+ plaintiff firms and 200,000+ active matters.",
         employeeCount: "~314 (as of June 2026)",
     founded: "2023",
     hq: "San Francisco, CA",
@@ -1701,8 +1821,8 @@ COMPETITORS.push(
     initials: "PI",
     tagline: "AI-powered global patent filing and translation workflow platform.",
     description:
-      "Park IP (a Welo Global/Welocalize brand) is an established global patent-translation and IP-filing services provider serving Am Law 100 and Fortune 500 IP departments. It launched 'Legal Studio,' an AI-powered platform combining automation, AI quality control, and analytics across patent filing workflows in 180+ jurisdictions — an incumbent moving AI tooling into patent-adjacent workflow territory with existing enterprise distribution. Newly identified in this sweep; added 2026-08-25.",
-        employeeCount: "Not verified — no reliable current headcount found",
+      "Park IP (a Welo Global/Welocalize brand) is an established global patent-translation and IP-filing services provider serving Am Law 100 and Fortune 500 IP departments. It launched 'Legal Studio,' an AI-powered platform combining automation, AI quality control, and analytics across patent filing workflows in 180+ jurisdictions — an incumbent moving AI tooling into patent-adjacent workflow territory with existing enterprise distribution. Newly identified in this sweep; added 2026-08-25. Legal Studio was recognized in the 2026 AI Breakthrough Awards; Park IP publishes a recurring \"Prior Art\" newsletter (Vol. 1, July 2026) on patent/IP workflow topics.",
+        employeeCount: "Not verified — no reliable current headcount found (Park IP itself does not disclose headcount separately; parent Welocalize/Welo Global's size is not a valid proxy for this brand alone)",
     founded: "1997 (as Park IP Translations; acquired by Welocalize in 2012; now a client-facing brand of Welo Global)",
     hq: "New York, NY",
     founders: [
@@ -1718,8 +1838,8 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "PT",
     tagline: "AI-driven patent search, analytics, and landscaping platform.",
-    description: "PatSeer, built by Gridlogics, is a long-established AI-driven patent search and analytics platform covering 165M+ patents across 108+ countries, used by 8,000+ IP professionals. Comparable in scale and positioning to PatSnap/Minesoft — a notable direct competitor. Identified via gap-check research; added 2026-08-25.",
-        employeeCount: "~114-116 (LinkedIn/Tracxn band: 51-200)",
+    description: "PatSeer, built by Gridlogics, is a long-established AI-driven patent search and analytics platform covering 165M+ patents across 108+ countries, used by 8,000+ IP professionals. Comparable in scale and positioning to PatSnap/Minesoft — a notable direct competitor. Identified via gap-check research; added 2026-08-25. Recent \"What's New\" updates include full-screen \"Smart Drawings,\" the ability to limit search results by an AI Relevance Score, and an exportable \"AI Summary\" field. Scheduled a \"PatSeer Connect\" event in Bengaluru for 2026-09-11 to showcase its \"PatAssist\" AI assistant.",
+        employeeCount: "115 (Tracxn, as of 2026-04-30)",
     founded: "Gridlogics Technologies founded 2004; PatSeer product launched ~2012-2013 (sources conflict on exact year)",
     hq: "Pune, Maharashtra, India",
     founders: [
