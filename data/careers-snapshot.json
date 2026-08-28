@@ -1,110 +1,190 @@
 {
   "_meta": {
-    "note": "Day-over-day open-roles snapshot for the daily research routine's hiring-signal diff. First seeded 2026-08-26 from WebSearch-snippet coverage of public careers/ATS pages (WebFetch was network-blocked for research agents this session, so several companies below are genuinely incomplete rather than confirmed-zero — see per-company notes). Entries omitted entirely (rather than given an empty roleTitles list) mean no reliable title data was obtainable this pass, not that zero roles are open. Compare tomorrow's scrape against each company's roleTitles array to find newly-opened roles, then overwrite that company's entry with the new full list and date. Updated 2026-08-27: WebFetch/curl to nearly all external domains was blocked outright this session (environment egress policy, not domain-specific) and WebSearch hit a shared 200-call session cap, so this pass again rests on search-snippet aggregator/ATS-index coverage rather than direct page fetches. Updated 2026-08-28: same two constraints held again this session — WebFetch/curl returned a hard 403 policy denial from the network egress proxy for every external domain tried (confirmed independently via the proxy's own status endpoint), and WebSearch is shared across all concurrently-running research agents in a session, so the 200-call cap was reached partway through several agents' sweeps (Juristat, PatSeer, Patently, and part of Park IP/Anaqua/LexisNexis IP/Cipher/ktMINE/IPwe got zero or partial coverage this pass — genuinely un-researched, not confirmed-quiet). New first-capture entries added for Junior, LinkSquares, DraftWise, and Eve."
+    "note": "Day-over-day open-roles snapshot for the daily research routine's hiring-signal diff. First seeded 2026-08-26. Updated 2026-08-27 and again 2026-08-28 (12:19 UTC pass): WebFetch/curl were blocked or partial in earlier sessions, so several companies rested on search-snippet coverage rather than direct fetches. Updated 2026-08-28 (~21:00 UTC pass, this update): WebFetch and WebSearch both worked normally this session (no proxy blocking) — most companies were re-verified via direct careers-page/Ashby-API fetches. Found and corrected a real data bug: the 'junior' entry previously pointed to an unrelated company's Ashby board (a different startup also named 'Junior', an AI investment-research tool) instead of junior.law's real careers page — corrected below. New first-capture entries added for clarivate-innography, ktmine, edge, nlpatent, patentpal, amplified-ai, juristat, pqai, ip-copilot, genie-ai (several confirmed genuinely zero open roles, not merely unscraped). lexisnexis-ip, cipher, park-ip, patseer, patently, ip-author, powerpatent, minesoft remain un-enumerable (JS-rendered ATS boards or 404s on every careers-page fetch attempted) and are intentionally omitted rather than guessed."
   },
   "solve-intelligence": {
     "asOf": "2026-08-28",
     "roleTitles": ["Growth Marketer / GTM", "Motion Designer", "Sales Development / GTM", "Account Executive / GTM", "Growth Engineer", "Infrastructure Engineer", "Patent Litigator", "Founding Events Lead", "IT & Security Engineer", "AI Engineer", "Full-Stack Engineer (Back-End Leaning)", "Legal Counsel"],
-    "note": "Ashby board (jobs.ashbyhq.com/solveintelligence), aggregator-reported at ~17 total open roles. Spot-reconfirmed live (AI Engineer, Legal Counsel postings still resolve) — full 17-role list not individually re-enumerated this pass; no new titles found."
+    "note": "Reconfirmed 2026-08-28 ~21:00 UTC pass; no new titles beyond baseline."
   },
   "patsnap": {
     "asOf": "2026-08-28",
     "roleTitles": ["Senior Account Executive (San Antonio, TX)", "Sales Development Representative — Life Science Graduates", "Senior AI Engineer", "Senior Site Reliability Engineer", "Associate Account Manager", "Data Engineer", "Sales Manager", "Global Content Marketing Manager", "Small Molecule Data Analyst", "AI Fullstack Engineer", "Head of Legal"],
-    "note": "Reconfirmed via Lever board search-indexing (jobs.lever.co/patsnap); no new titles surfaced beyond this list."
+    "note": "Reconfirmed 2026-08-28 ~21:00 UTC pass via Lever board; no new titles found."
   },
   "iprally": {
     "asOf": "2026-08-28",
     "roleTitles": ["Solution Consultant", "Account Executive, Senior (Europe)", "Account Executive, Junior (Europe)"],
-    "note": "Reconfirmed at iprally.com/careers, mirrored on Workable and Teamtailor. No new titles found this pass."
+    "note": "Reconfirmed 2026-08-28 ~21:00 UTC pass at iprally.com/careers; no new titles found."
+  },
+  "clarivate-innography": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Vice President, Product Marketing (IP)", "IP Admin Senior Analyst (Patent Paralegal/Docketing)", "IP Admin Senior Analyst (Patent Docketing)", "IP Admin Senior Analyst (Patent Paralegal)", "PCT Patent Analyst (Contract) - Computing/Electronics/Physics", "Patent Classification Specialist - Computer Science", "Patent Classifier (Life Sciences)", "VP, AI Product Strategy"],
+    "note": "First capture, 2026-08-28. Via careers.clarivate.com / Workday IP-Services job pages. Posting dates not individually confirmed — offered as a baseline for future diffing, not as confirmed new-today roles."
+  },
+  "anaqua": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Director, Corporate Development", "Sales Manager (London)", "Docketing Specialist", "Director, Human Resources (Gurugram)", "Account Executive (Boston)", "AQS Client Success Consultant", "Solutions Consultant", "Associate Data Scientist", "Senior Technical Consultant", "Quality Management Specialist (Gurugram)", "Technical Consultant — Japanese Speaking (Gurugram)", "IP Law Specialist (Gurugram)", "Specialist - Data Enrichment (Gurugram)", "Expert ReactJS Developer (Hyderabad)", "Product Owner (Hyderabad)", "Engineering Team Manager (Hyderabad)", "Product Support Engineer - Integration AQX (Hyderabad)", "QA Automation Engineer (Hyderabad)", "Senior Java Developer (Hyderabad)", "Scraper Developer, Online Brand Protection (Hyderabad)", "Senior Platform Engineer — Infrastructure & DevOps (Hyderabad)", "Senior Platform Engineer — Java + GCP (Hyderabad)"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass: merged the prior US/UK-weighted LinkedIn/BuiltIn baseline with a newly-found batch of ~13 India (Hyderabad/Gurugram) postings via Indeed. The India batch likely reflects a different geographic slice of Anaqua's requisitions rather than a confirmed same-day diff, so no items were logged as 'opened today' from this batch — offered as a fuller baseline for tomorrow's diff instead."
+  },
+  "lexisnexis-ip": {
+    "asOf": "2026-08-27",
+    "roleTitles": [],
+    "note": "Un-enumerable: shares RELX's Workday portal (relx.wd3.myworkdayjobs.com/LexisNexisLegal), which renders as a JS-only shell not readable via WebFetch or search snippets. Genuinely could not obtain title-level data after repeated attempts across two sessions."
+  },
+  "cipher": {
+    "asOf": "2026-08-27",
+    "roleTitles": [],
+    "note": "Un-enumerable: shares the same RELX/LexisNexis Workday portal as lexisnexis-ip (JS-only shell). Stored data.js topRoles (Patent Analyst (Semiconductor) x2, Data Scientist x2) could not be independently reconfirmed or refuted."
+  },
+  "ktmine": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. ktmine.com/careers is a static culture page with no listed openings and an unreachable 'view openings' link; LinkedIn Jobs search returned only unrelated literal-mining-industry jobs. Genuinely no listings surfaced after real effort, not merely unconfirmed."
+  },
+  "ipwe": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "Company confirmed defunct (Chapter 7 liquidation, 2024); ipwe.com does not resolve. No open roles — correcting the previously-stored openRoles:3/topRoles figure, which was stale/inherited from before the liquidation was confirmed."
   },
   "deepip": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Founding Partnerships Lead", "Business Development Representative – North America", "People Partner – US", "Account Executive – UK/Nordics", "Account Executive – EU", "Business Development Representative – Europe", "Business Development Representative – DACH", "People Partner – FR", "Head of Success & Solution Europe", "Patent Solution Engineer", "Product Designer", "Finance Manager", "Customer Success Manager", "Fullstack Software Engineer", "AI Software Engineer", "Lead AI Software Engineer", "Head of Marketing – US"],
-    "note": "Via careers.deepip.ai search-indexed subpages; aggregator reports ~19 open roles total. Fullstack Software Engineer, AI Software Engineer, Lead AI Software Engineer, and Head of Marketing – US are newly surfaced vs. the prior snapshot (Head of Marketing – US added as a Hiring activity item, with a direct posting URL)."
+    "roleTitles": ["Founding Partnerships Lead", "Business Development Representative – North America", "People Partner – US", "Account Executive – UK/Nordics", "Account Executive – EU", "Business Development Representative – Europe", "Business Development Representative – DACH", "People Partner – FR", "Head of Success & Solution Europe", "Patent Solution Engineer", "Product Designer", "Finance Manager", "Customer Success Manager", "Fullstack Software Engineer", "AI Software Engineer", "Lead AI Software Engineer", "Head of Marketing – US", "Product Marketing Manager"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass: Product Marketing Manager newly surfaced vs. the 12:19 UTC baseline (17 titles); no confirmed posting date, so logged as 'newly surfaced vs. snapshot' rather than a dated press item."
   },
   "junior": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Full Stack Engineer"],
-    "note": "First capture — previously had no tracked public hiring pipeline. Ashby board (jobs.ashbyhq.com/junior) confirmed with one live posting; board not fully enumerable this pass, so this list may be incomplete rather than the company's only open role."
+    "roleTitles": ["Solutions Engineer (Remote)", "AI Engineer (Remote)", "Account Manager (Remote)"],
+    "note": "CORRECTED 2026-08-28 ~21:00 UTC pass: the prior snapshot's single 'Full Stack Engineer' / Ashby-board entry pointed to an unrelated company also named 'Junior' (an AI investment-research startup), not junior.law (the patent-drafting company tracked here). junior.law's real careers page (junior.law/careers/, no ATS) lists these 3 roles, all posted 2025-11-19 — none are newly opened."
   },
   "ankar-ai": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Founder's Associate (Growth, Hiring & Ops)", "Patent Product Engineer", "Senior Product Engineer", "Product Manager", "Account Executive", "Senior Software Engineer", "Software Engineer", "Founding Account Executive – US"],
-    "note": "Ashby board at jobs.ashbyhq.com/ankar. Senior Software Engineer, Software Engineer, and Founding Account Executive – US are newly surfaced vs. the prior snapshot (Founding Account Executive – US added as a Hiring activity item)."
+    "roleTitles": ["Senior Product Engineer", "Talent Partner", "Patent Product Engineer", "GTM, Strategy & Delivery", "Account Executive", "Product Manager", "US Sales Lead", "Founding Account Executive - US", "Finance Partner", "Product Engineer", "Product Marketing Manager"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass via Ashby posting API (exact publishedAt timestamps). Talent Partner published 2026-08-27T11:15:31Z — genuinely new vs. the 12:19 UTC baseline. Founder's Associate (Growth, Hiring & Ops) and the old generic Senior/Software Engineer titles no longer appear live."
   },
-  "cypris": {
+  "edge": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Business Development Representative", "Associate Research Analyst", "Full Stack Engineer", "Account Executive"],
-    "note": "Reconfirmed via Workable board (apply.workable.com/cypris-1/) and Cypris's own X/Twitter; no new titles found."
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. withedge.com has no careers/jobs page; no open Edge roles found via LinkedIn/Indeed. Consistent with its ~2-person team (per Edge's own YC profile)."
   },
-  "iprova": {
-    "asOf": "2026-08-27",
-    "roleTitles": ["Invention Engineer", "Senior Front End Developer", "Lead Full Stack Engineer", "Senior Full Stack Engineer", "Senior Invention Developer", "AI Product Engineer", "Business Development Manager", "Digital Marketing and Growth Manager"],
-    "note": "Not re-scraped 2026-08-28 (careers page fetch blocked; search snippets did not surface new titles, but this is not a confirmed re-verification)."
-  },
-  "patent-bots": {
+  "patented-ai": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Python Software Developer", "Product Specialist", "Senior Full-Stack Developer (Python/Flask)", "Marketing Manager"],
-    "note": "Confirmed at patentbots.com/careers/marketing-manager plus LinkedIn/Built In coverage. Marketing Manager is newly surfaced vs. the prior snapshot (added as a Hiring activity item)."
-  },
-  "alt-legal": {
-    "asOf": "2026-08-28",
-    "roleTitles": ["Trademark Docketing Specialist", "Trademark Paralegal"],
-    "note": "Reconfirmed via ZipRecruiter/Justia job listings; no new titles found."
-  },
-  "anaqua": {
-    "asOf": "2026-08-27",
-    "roleTitles": ["Director, Corporate Development", "Sales Manager (London)", "Docketing Specialist", "Director, Human Resources (Gurugram)", "Account Executive (Boston)", "AQS Client Success Consultant", "Solutions Consultant", "Associate Data Scientist", "Senior Technical Consultant"],
-    "note": "Not re-scraped 2026-08-28 (session WebSearch budget was exhausted before this company was reached). Via LinkedIn/Built In aggregation; no posted dates visible."
-  },
-  "harvey": {
-    "asOf": "2026-08-28",
-    "roleTitles": ["Senior/Staff Software Engineer, OfficeJS", "Staff Software Engineer, Platform", "Staff Applied AI Engineer", "Software Engineer, Machine Learning", "Software Engineer, AI Infrastructure", "Software Engineer, AI Platform", "Legal Engineer", "Legal Engineer – Product Specialist", "Software Engineer, New Grad", "Growth Engineer", "Sr. AI Enablement Engineer", "User Operations Manager – US", "Senior Software Engineer – Core Infrastructure", "Senior Privacy and AI Counsel", "Compensation Business Partner – GTM", "Applied Legal Researcher", "Business Development Lead – Cloud & AI", "Senior Accountant"],
-    "note": "Partial index only (Ashby board ~363 roles per aggregator, not individually enumerable this session). Senior Accountant is newly surfaced vs. the prior snapshot; posting date not confirmed, not added as a dated activity item this pass."
-  },
-  "legora": {
-    "asOf": "2026-08-28",
-    "roleTitles": ["Lead Legal Engineer", "Legal Data Strategy Director", "Legal Counsel – Commercial", "Legal Engineer", "Legal Engineer Associate", "BDR Manager (London)", "SMB Account Executive", "Endpoint Engineer", "Global Services Solutions Expert", "Senior Product Marketing Manager – Partnerships", "Senior Product Marketing Manager – Core Product", "Legal Engineer – Tax", "Engagement Manager, Enterprise", "GTM Solutions, Practice Lead"],
-    "note": "Partial index only — a jobs aggregator (JobPin) shows 278 open roles across 19 cities. Engagement Manager, Enterprise and GTM Solutions, Practice Lead are newly surfaced vs. the prior snapshot; posting dates not confirmed."
-  },
-  "spellbook": {
-    "asOf": "2026-08-28",
-    "roleTitles": ["Account Executive", "Enterprise Account Executive", "Sales Manager, Commercial In-House", "Customer Success Manager", "Forward Deployed Engineer", "Product Lead", "Revenue Operations Lead", "Office Manager & Executive Assistant", "Senior Data Engineer", "Backend / AI Systems Engineer", "Software Engineer", "Senior Product Manager – Enterprise", "Sales Manager – Account Management", "Brand Designer", "Social Media Lead"],
-    "note": "Confirmed Ashby board (jobs.ashbyhq.com/spellbook.com). Social Media Lead is newly surfaced vs. the prior snapshot; department/location/posting-date not confirmed."
-  },
-  "ironclad": {
-    "asOf": "2026-08-28",
-    "roleTitles": ["Staff Data Scientist", "Strategic Account Executive (EMEA)", "Senior Software Engineer", "Sales Representative", "Product Manager", "Staff Product Manager", "UX Researcher", "Product Designer", "Product Operations Manager", "Senior Software Engineer, AI", "Legal Engineer / Implementation Engineer"],
-    "note": "Aggregator-reported ~33 open US roles. Product Manager, Staff Product Manager, UX Researcher, Product Designer, Product Operations Manager, Senior Software Engineer AI, and Legal Engineer / Implementation Engineer are newly surfaced vs. the prior snapshot (via YC Work at a Startup mirrors) — some YC-mirrored listings may be stale/already filled, so treat as directional rather than confirmed-live; no confirmed posting dates, not added as dated activity items this pass."
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. No careers/jobs page found on patented.ai; no open roles found via LinkedIn search."
   },
   "xlscout": {
     "asOf": "2026-08-28",
     "roleTitles": ["Product Lead", "R&D Manager"],
-    "note": "Reconfirmed via xlscout.ai/careers/ search-indexed postings; no new titles found. Aggregators also reference Data Scientist and Marketing/BD roles without confirmed individual titles/URLs."
+    "note": "Reconfirmed 2026-08-28 ~21:00 UTC pass via xlscout.ai/careers/; no new titles found. Aggregators also reference Data Scientist/Marketing-BD roles without confirmed individual postings."
+  },
+  "nlpatent": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. Built In Toronto's NLPatent/Clerq jobs page explicitly shows 'No jobs to discover at this time'; no Ashby/Lever/Greenhouse board found."
+  },
+  "patentpal": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. thepatentpal.com/jobs confirms no open roles; accepts only unsolicited applications."
+  },
+  "amplified-ai": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. No careers page found; wellfound.com listing returned 403; LinkedIn/Indeed searches surfaced only unrelated companies also named 'Amplified'/'AmplifAI'. Treated as no open roles discoverable, not confirmed zero."
+  },
+  "iprova": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Product Delivery Lead (Software Engineering)", "Office Manager (with Finance Skills)", "DevOps & Security Engineer", "Senior Full Stack Engineer", "Invention Engineer", "Business Development Manager"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass: significant turnover vs. the 08-27 baseline (Senior Front End Developer, Lead Full Stack Engineer, Senior Invention Developer, AI Product Engineer, Digital Marketing and Growth Manager no longer showing; Product Delivery Lead, DevOps & Security Engineer, and Office Manager newly appeared). A separate search also found an active 'Lead Full Stack Engineer' posting not shown on the main listing fetch, so this list may be incomplete."
+  },
+  "minesoft": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture attempt, 2026-08-28 — minesoft.com/careers 404'd; WebSearch surfaced only generic Indeed/Glassdoor landing pages with no specific titles. Genuinely could not locate a current role list after real effort."
   },
   "questel": {
     "asOf": "2026-08-28",
     "roleTitles": ["Patent Administrator (Ljubljana, Slovenia)", "SaaS Patent Solutions Expert (France/Germany)", "Key Account Manager – Executive IP", "Key Account Manager – Law Firms-Patents", "Key Account Manager – IP Translation & Filing", "Account Executive (UK)", "Chartered Trade Mark Attorney (UK)"],
-    "note": "Via LinkedIn job-board snippets; the five Key Account Manager/Account Executive/Chartered Trade Mark Attorney titles are newly surfaced but undated/unconfirmed-currency — offered for diffing only, not confirmed new-today. questel.com/careers itself could not be directly fetched to verify."
+    "note": "Carried forward unchanged 2026-08-28 ~21:00 UTC pass — questel.com/careers returned HTTP 402 (paywalled), Glassdoor returned 403; no confirmed newly-opened role this cycle."
+  },
+  "juristat": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. juristat.com/careers explicitly states 'There are no current openings.'"
+  },
+  "patent-bots": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Python Software Developer", "Product Specialist", "Senior Full-Stack Developer (Python/Flask)", "Marketing Manager"],
+    "note": "Carried forward unchanged from the 12:19 UTC baseline. A 2026-08-28 ~21:00 UTC re-fetch of patentbots.com/careers looked truncated/unreliable (showed only 2 of the 4 known-live titles while a since-confirmed-live posting, Marketing Manager, still resolved directly) — flagged for a cleaner re-scrape next pass rather than acting on the incomplete fetch."
+  },
+  "alt-legal": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Data Migration and Onboarding Specialist", "Trademark Docketing Specialist", "Customer Success Manager", "Operations Associate"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass via alt-legal.breezy.hr: Data Migration and Onboarding Specialist, Customer Success Manager, and Operations Associate newly surfaced vs. the 12:19 UTC baseline; Trademark Paralegal no longer appears on the live board."
+  },
+  "pqai": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. Confirmed no dedicated careers/jobs page — nonprofit open-source project; contributions solicited via GitHub, not formal hiring."
+  },
+  "ip-copilot": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. No careers/jobs page found on ipcopilot.ai; no Ashby/Greenhouse/Lever/Workable board found via search. Appears to be a company with no public hiring pipeline currently."
+  },
+  "harvey": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Senior/Staff Software Engineer, OfficeJS", "Staff Software Engineer, Platform", "Staff Applied AI Engineer", "Software Engineer, Machine Learning", "Software Engineer, AI Infrastructure", "Software Engineer, AI Platform", "Legal Engineer", "Legal Engineer – Product Specialist", "Software Engineer, New Grad", "Growth Engineer", "Sr. AI Enablement Engineer", "User Operations Manager – US", "Senior Software Engineer – Core Infrastructure", "Senior Privacy and AI Counsel", "Compensation Business Partner – GTM", "Applied Legal Researcher", "Business Development Lead – Cloud & AI", "Senior Accountant"],
+    "note": "Reconfirmed 2026-08-28 ~21:00 UTC pass via search-snippet cross-check (Ashby board is JS-rendered); no titles beyond baseline confirmed as newly opened."
+  },
+  "legora": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Lead Legal Engineer", "Legal Data Strategy Director", "Legal Counsel – Commercial", "Legal Engineer", "Legal Engineer Associate", "BDR Manager (London)", "SMB Account Executive", "Endpoint Engineer", "Global Services Solutions Expert", "Senior Product Marketing Manager – Partnerships", "Senior Product Marketing Manager – Core Product", "Legal Engineer – Tax", "Engagement Manager, Enterprise", "GTM Solutions, Practice Lead", "Director, Talent Acquisition, GTM", "Talent Partner, GTM", "SMB Engagement Manager", "GTM Manager Enterprise"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass: Director, Talent Acquisition, GTM and Talent Partner, GTM newly surfaced via careers.legora.com/jobs — a dedicated GTM talent-acquisition hiring push beyond the prior baseline."
+  },
+  "spellbook": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Account Executive", "Enterprise Account Executive", "Sales Manager, Commercial In-House", "Customer Success Manager", "Forward Deployed Engineer", "Product Lead", "Revenue Operations Lead", "Office Manager & Executive Assistant", "Senior Data Engineer", "Backend / AI Systems Engineer", "Software Engineer", "Senior Product Manager – Enterprise", "Sales Manager – Account Management", "Brand Designer", "Social Media Lead"],
+    "note": "Reconfirmed 2026-08-28 ~21:00 UTC pass; no titles beyond baseline confirmed as newly opened (Ashby board is JS-rendered)."
+  },
+  "robin-ai": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "Wound down as an independent company — hiring tracking not applicable."
   },
   "cocounsel": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Senior Software Engineer - AI, CoCounsel FDE", "Staff Software Engineer / Architect - AI, CoCounsel FDE", "Software Engineer - AI (Legal) - CoCounsel Forward Deployed Engineering", "AI Solutions Engineer, CoCounsel Innovation & Custom Delivery"],
-    "note": "Reconfirmed via Thomson Reuters Workday listings; no new titles found in this 'CoCounsel FDE' hiring track (not a full diff of TR's broader careers site)."
+    "roleTitles": ["Senior Software Engineer - AI, CoCounsel FDE", "Staff Software Engineer / Architect - AI, CoCounsel FDE", "Software Engineer - AI (Legal) - CoCounsel Forward Deployed Engineering", "AI Solutions Engineer, CoCounsel Innovation & Custom Delivery", "Associate Attorney Product Specialist (CoCounsel, Trust & Reliability Team)"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass: Associate Attorney Product Specialist newly surfaced (via themuse.com mirror of Thomson Reuters' Workday board) — this is a sub-slice of TR's much larger careers site, not a full diff."
+  },
+  "ironclad": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Staff Data Scientist", "Strategic Account Executive (EMEA)", "Senior Software Engineer", "Sales Representative", "Product Manager", "Staff Product Manager", "UX Researcher", "Product Designer", "Product Operations Manager", "Senior Software Engineer, AI", "Legal Engineer / Implementation Engineer"],
+    "note": "Reconfirmed 2026-08-28 ~21:00 UTC pass via Glassdoor (~33 US openings); no titles beyond baseline confirmed as newly opened."
   },
   "linksquares": {
-    "asOf": "2026-08-28",
+    "asOf": "2026-08-27",
     "roleTitles": ["Software Engineer", "Account Executive / Mid-Market Account Executive", "Customer Success Manager", "Account Manager", "Sales Development Representative", "Implementation Consultant"],
-    "note": "First capture. Via Glassdoor/Indeed/BuiltIn aggregation (~5-6 open roles reported, Boston/hybrid); individual posting dates not confirmed."
+    "note": "Not re-scraped 2026-08-28 (linksquares.com/careers/open-positions/ rendered only a nav shell to WebFetch); Glassdoor/Indeed aggregate to ~5-6 open roles, consistent with this baseline."
   },
   "draftwise": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Director of Sales – Mid Law", "Director, Talent Acquisition", "Front End Software Engineer", "Senior Enterprise Solutions Architect"],
-    "note": "First capture. Via draftwise.com/careers mirrored on Y Combinator/Earlybird job-board listings; the Senior Enterprise Solutions Architect listing was flagged 'no longer accepting applications' by one mirror and may already be closed."
+    "roleTitles": ["Business Development Representative", "Director, Talent Acquisition", "Senior Back End Software Engineer (Remote, Canada)", "Senior Back End Software Engineer (Remote, US)", "Senior Customer Success Manager (London, UK)", "Senior Customer Success Manager (New York, NY)", "Senior Enterprise Solutions Engineer", "Senior Front End Software Engineer (Remote, Canada)", "Senior Front End Software Engineer (Remote, US)", "Strategic Business Development Lead"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass via direct draftwise.com/careers fetch: Strategic Business Development Lead, Senior Enterprise Solutions Engineer, and Business Development Representative newly surfaced vs. the 12:19 UTC baseline; Director of Sales – Mid Law and Senior Enterprise Solutions Architect no longer appear (likely filled, or the Architect title was renamed)."
   },
   "eve-legal": {
     "asOf": "2026-08-28",
-    "roleTitles": ["Senior Manager, Customer Success Operations", "Full Stack Growth Engineer", "Technical Support Specialist", "Sales Leadership (over Account Executives)", "Inside Sales Representative", "Enterprise Customer Success Manager", "Deal Desk Lead", "Marketing Strategy & Operations Manager", "AI Outcomes Manager"],
-    "note": "First capture. Via eve.legal/careers mirrored on BuiltIn/RemoteRocketship; individual posting dates not confirmed."
+    "roleTitles": ["Enterprise Customer Success Manager", "Legal AI Architect", "Legal Implementation Consultant, Central/East", "Engineering Leader - Product Engineering", "Machine Learning Engineer", "Platform Engineer", "Platform Engineering Leader", "Product Engineer", "Software Engineer, Full Stack - GTM", "Deal Desk Operations Analyst", "Strategic Finance Lead - Product", "Strategic Finance, Sales Compensation Lead", "AI Search & Content Growth Marketer", "Demand Generation Specialist", "Director of Social & Organic Marketing", "Performance Marketing Manager", "Senior Product Marketing Manager", "Recruiting Coordinator, Engineering", "Vice President, People", "Growth & Monetization Analyst", "Lead Product Manager", "Senior Growth Product Manager", "Staff Designer"],
+    "note": "Updated 2026-08-28 ~21:00 UTC pass via direct Greenhouse board fetch (job-boards.greenhouse.io/eve): a much larger, current picture (35 open roles across 8 departments) than the prior 9-role indirect-mirror baseline — near-simultaneous hiring across nearly every department, consistent with post-$103M-Series-B/EveOS-launch growth. VP People, Engineering Leader – Product Engineering, and Platform Engineering Leader are the most senior newly-surfaced roles. Sales department (11 roles) titles were not individually broken out by the fetch and are omitted from this list rather than guessed."
+  },
+  "genie-ai": {
+    "asOf": "2026-08-28",
+    "roleTitles": [],
+    "note": "First capture, 2026-08-28. careers.genieai.co explicitly states 'No matching jobs' — confirmed zero open roles."
+  },
+  "cypris": {
+    "asOf": "2026-08-28",
+    "roleTitles": ["Business Development Representative", "Associate Research Analyst", "Full Stack Engineer", "Account Executive"],
+    "note": "Carried forward unchanged — apply.workable.com/cypris-1/ did not render listing content to WebFetch this pass; not independently reconfirmed."
   }
 }

@@ -269,6 +269,21 @@ const HIGHLIGHTS = [
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/08/24/lexis-rolls-out-legal-intelligence-engine-agentic-capabilities/",
   },
+  {
+    id: "hl-28",
+    date: "2026-08-28",
+    priority: "medium",
+    category: "Market",
+    title: "USPTO issues its first AI-hallucination discipline order involving citations to a patent's own intrinsic record",
+    summary:
+      "The USPTO's Office of Enrollment and Discipline publicly reprimanded patent attorney Brian E. Mitchell for submitting a generative-AI-drafted joint claim construction chart (in Magpul Industries Corp. v. Mission First Tactical Group, Inc.) containing citations to the specification, figures, and prosecution history that were fabricated or misattributed. The order found violations of four professional-conduct rules and is the first time OED has treated hallucinated citations to a patent's own intrinsic evidence — not just case law — as an ethics violation.",
+    whyItMatters:
+      "A direct regulatory-enforcement signal for every AI-assisted patent drafting/analysis vendor, including Patlytics — it establishes hallucinated intrinsic-record citations as explicit USPTO discipline bait, reinforcing citation-verifiable, source-grounded output as a compliance requirement rather than a nice-to-have. Directly relevant alongside the Aug 23 USPTO AI-inventorship-disclosure guidance item above.",
+    companies: ["Industry-wide"],
+    source: "IPWatchdog",
+    sourceType: "news",
+    url: "https://ipwatchdog.com/2026/08/28/uspto-issues-its-first-ai-predicated-discipline-order-involving-hallucinated-cites-to-intrinsic-record/",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -550,7 +565,7 @@ const COMPETITORS = [
     initials: "CL",
     tagline: "Large incumbent IP intelligence suite under the Clarivate umbrella.",
     description:
-      "Clarivate's IP Solutions division (which absorbed the Innography patent-analytics platform) is a long-standing patent analytics and portfolio management suite serving large enterprise and law-firm accounts, now unified under the 'IPOne' AI-enabled IP intelligence ecosystem. Recent signals suggest Clarivate is investing in AI-native features rather than treating the platform as legacy. In July 2026, parent company Clarivate agreed to divest its Life Sciences & Healthcare segment to Altaris for ~$600M, repositioning itself as a subscription-first company focused on Academia & Government and Intellectual Property — sharpening strategic focus on the IP Solutions unit that houses Innography.",
+      "Clarivate's IP Solutions division (which absorbed the Innography patent-analytics platform, now rebranded \"Derwent Patent Analytics (formerly Innography)\" per current product pages) is a long-standing patent analytics and portfolio management suite serving large enterprise and law-firm accounts, now unified under the 'IPOne' AI-enabled IP intelligence ecosystem. Recent signals suggest Clarivate is investing in AI-native features rather than treating the platform as legacy. In July 2026, parent company Clarivate agreed to divest its Life Sciences & Healthcare segment to Altaris for ~$600M, repositioning itself as a subscription-first company focused on Academia & Government and Intellectual Property — sharpening strategic focus on the IP Solutions unit that houses Innography.",
     employeeCount: "Clarivate: ~9,000 (IP Solutions unit est. ~150)",
     founded: "Innography: 2006 (acquired by Clarivate 2021)",
     hq: "Philadelphia, PA (Clarivate global HQ: London, UK)",
@@ -575,11 +590,11 @@ const COMPETITORS = [
         url: "https://clarivate.com/careers/",
       },
       {
-        date: "2026-08-22",
+        date: "2026-08-07",
         tag: "Corporate",
-        title: "Clarivate earnings call referenced AI investment across IP segment",
-        body: "Leadership called out AI feature velocity in the IP Solutions segment as a retention priority for FY26.",
-        url: "https://clarivate.com/intellectual-property/",
+        title: "Q2 2026 earnings call referenced AI investment across IP segment, including an \"IP-1\" unified platform",
+        body: "Leadership called out AI feature velocity in the IP Solutions segment as a retention priority for FY26 and referenced an in-development \"IP-1\" unified agentic-AI platform spanning patent and trademark intelligence; the IP segment was described as having returned to recurring flat growth. (Date corrected 2026-08-28 — the stored 8/22 dating did not match Clarivate's actual Q2 2026 earnings call date.)",
+        url: "https://www.fool.com/earnings/call-transcripts/2026/08/07/clarivate-clvt-q2-2026-earnings-call-transcript/",
       },
     ],
     hiring: {
@@ -831,18 +846,23 @@ const COMPETITORS = [
     linkedin: "https://www.linkedin.com/company/ipwe-com",
     founders: [
       {
-        name: "Sample Founder Profile",
-        title: "Co-Founder & CEO",
-        note: "Placeholder — bio pending verification via scraping pipeline.",
+        name: "Erich Spangenberg",
+        title: "Founder & CEO",
+        note: "Previously founder/CEO of patent-monetization firm IPNAV and of nXn Partners (predictive analytics). (Verified via IBM case study, IPwe/Medium interview series, IPWatchdog people profile, 2026-08-28.)",
+      },
+      {
+        name: "Brian Berman",
+        title: "Co-Founder",
+        note: "Former USPTO patent examiner; background working with global patent owners and national patent offices. (Verified via press/company bios referencing the IPwe founding team, 2026-08-28.)",
       },
     ],
     todayActivity: [],
     weekActivity: [],
     hiring: {
-      openRoles: 3,
+      openRoles: 0,
       newRolesToday: [],
       recentHires: [],
-      topRoles: [{ title: "Business Development Manager", count: 1 }],
+      topRoles: [],
     },
     marketing: [],
   },
@@ -918,10 +938,20 @@ COMPETITORS.push(
         body: "New senior go-to-market hire based in Brooklyn, NY — a notable US marketing-leadership signal beyond DeepIP's existing BD/sales/CS postings.",
         url: "https://careers.deepip.ai/jobs/7442469-head-of-marketing-us",
       },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened a Product Marketing Manager role",
+        body: "New Product-department opening (Brooklyn, NY / Paris, hybrid) covering competitive battlecards, sales enablement, and content — newly surfaced vs. this morning's careers-snapshot baseline.",
+        url: "https://careers.deepip.ai/jobs/8088309-product-marketing-manager",
+      },
     ],
     hiring: {
       openRoles: 19,
-      newRolesToday: [{ title: "Head of Marketing – US", dept: "Marketing", location: "Brooklyn, NY" }],
+      newRolesToday: [
+        { title: "Head of Marketing – US", dept: "Marketing", location: "Brooklyn, NY" },
+        { title: "Product Marketing Manager", dept: "Product", location: "Brooklyn, NY / Paris (Hybrid)" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Business Development Representative", count: 3 },
@@ -945,20 +975,16 @@ COMPETITORS.push(
     ],
     website: "junior.law",
     linkedin: "https://www.linkedin.com/company/junior-ai-drafting",
-    weekActivity: [
-      {
-        date: "2026-08-28",
-        tag: "Hiring",
-        title: "First public job posting: Full Stack Engineer",
-        body: "First careers-board posting identified for Junior (previously had no tracked public hiring pipeline) — an early engineering hire signal for a small, recently-founded team.",
-        url: "https://jobs.ashbyhq.com/junior/f743f052-2885-43b1-b517-4cc58f5e65f1",
-      },
-    ],
+    weekActivity: [],
     hiring: {
-      openRoles: 1,
-      newRolesToday: [{ title: "Full Stack Engineer", dept: "Engineering", location: "Not specified" }],
+      openRoles: 3,
+      newRolesToday: [],
       recentHires: [],
-      topRoles: [],
+      topRoles: [
+        { title: "Solutions Engineer (Remote)", count: 1 },
+        { title: "AI Engineer (Remote)", count: 1 },
+        { title: "Account Manager (Remote)", count: 1 },
+      ],
     },
   }),
   stubCompetitor({
@@ -993,10 +1019,20 @@ COMPETITORS.push(
         body: "New US-based go-to-market opening, alongside newly-surfaced Senior Software Engineer and Software Engineer postings — signals a push into US sales coverage on top of the existing European hiring.",
         url: "https://jobs.ashbyhq.com/ankar",
       },
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Opened a Talent Partner role (People & Operations, London)",
+        body: "New People/Ops posting confirmed via the Ashby posting API's publish timestamp (2026-08-27) — continued post-Series A team-building on the ops/talent side alongside the GTM hiring push.",
+        url: "https://jobs.ashbyhq.com/ankar/0b0a4fcd-b80f-48e1-b6c6-aba31a144d25",
+      },
     ],
     hiring: {
-      openRoles: 8,
-      newRolesToday: [{ title: "Founding Account Executive – US", dept: "Sales", location: "United States" }],
+      openRoles: 11,
+      newRolesToday: [
+        { title: "Founding Account Executive – US", dept: "Sales", location: "United States" },
+        { title: "Talent Partner", dept: "People & Operations", location: "London, UK" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Senior Product Engineer", count: 2 },
@@ -1020,7 +1056,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "ED",
     tagline: "AI patent drafting (\"Ingenia\") and trademark clearance.",
-    description: "Edge offers AI patent drafting under its \"Ingenia\" product alongside trademark-clearance tooling, giving it a foothold in both patent and trademark AI workflows. Launched Certus, described as \"the world's first AI agent for trademark law\" (automated clearance search and filing), in April 2026. Recognized by CIOReview as \"Top AI-Powered Patent Assistant Solution 2026.\"",
+    description: "Edge offers AI patent drafting under its \"Ingenia\" product alongside trademark-clearance tooling, giving it a foothold in both patent and trademark AI workflows. Launched Certus, described as \"the world's first AI agent for trademark law\" (automated clearance search and filing), in April 2026. Recognized by CIOReview as \"Top AI-Powered Patent Assistant Solution 2026.\" Also a Y Combinator company (Winter 2023 batch) per its own YC profile — not previously reflected here; its $500K seed also lists Y Combinator and Plug and Play Ventures as investors.",
         employeeCount: "LinkedIn lists 2-10 — likely stale given $37.4M raised across 5 rounds; not independently verified",
     founded: "2020",
     hq: "San Francisco, CA",
@@ -1066,7 +1102,7 @@ COMPETITORS.push(
     tagline: "AI patent search, drafting-assist, and monetization platform.",
     description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group, a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up (exact dates not independently pinned down in this pass). Released \"ParaEmbed 2.0,\" a follow-up proprietary patent/technology-data embedding model, on 2026-01-28.",
         employeeCount: "~51-200 per LinkedIn",
-    founded: "Not fully verified — legal entity incorporated 2012 in Chandigarh, India; platform reportedly relaunched under the XLSCOUT name around 2020",
+    founded: "Legal entity (originally \"Xlpat Tt Consultants Private Limited\") incorporated 2012-06-26 in Chandigarh, India (CIN U74140CH2012PTC033885); platform reportedly relaunched under the XLSCOUT name around 2020 — exact rebrand year not independently confirmed",
     hq: "Toronto, Ontario, Canada (primary); also maintains a Chandigarh, India office",
     founders: [
       { name: "Jitin Talwar", title: "Co-Founder", note: "Background details not independently verified." },
@@ -1180,7 +1216,28 @@ COMPETITORS.push(
         body: "Three roles newly surfaced beyond the previously-tracked engineering openings: AI Product Engineer, Business Development Manager, and Digital Marketing and Growth Manager (all UK-based).",
         url: "https://www.iprova.com/career/ai-product-engineer/",
       },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened Product Delivery Lead, DevOps & Security Engineer, and Office Manager roles",
+        body: "Significant careers-page turnover vs. the prior snapshot: three new titles appeared (Product Delivery Lead, DevOps & Security Engineer, Office Manager with Finance Skills) while several prior postings (Senior Front End Developer, Lead Full Stack Engineer, Senior Invention Developer, AI Product Engineer, Digital Marketing and Growth Manager) no longer show live.",
+        url: "https://www.iprova.com/career/product-delivery-lead/",
+      },
     ],
+    hiring: {
+      openRoles: 6,
+      newRolesToday: [
+        { title: "Product Delivery Lead (Software Engineering)", dept: "Engineering", location: "London or Cambridge, UK (hybrid)" },
+        { title: "DevOps & Security Engineer", dept: "Engineering", location: "London, UK (hybrid)" },
+        { title: "Office Manager (with Finance Skills)", dept: "Operations", location: "Cambridge, UK" },
+      ],
+      recentHires: [],
+      topRoles: [
+        { title: "Senior Full Stack Engineer", count: 1 },
+        { title: "Invention Engineer", count: 1 },
+        { title: "Business Development Manager", count: 1 },
+      ],
+    },
   }),
   stubCompetitor({
     id: "minesoft",
@@ -1246,7 +1303,7 @@ COMPETITORS.push(
     hq: "Webster Groves / St. Louis, MO",
     founders: [
       { name: "Robert Ward", title: "Co-Founder", note: "Previously a Computer Engineer at Beck Automation (industrial controls, real-time C/C++)." },
-      { name: "Drew Winship", title: "Co-Founder", note: "Background details not independently verified." },
+      { name: "Drew Winship", title: "Co-Founder", note: "JD, Washington University in St. Louis School of Law (2009); BA Economics/Political Science, University of Washington (2006); four years as a corporate litigator in St. Louis (incl. Brown & James, P.C.) before co-founding Juristat in 2012 out of a St. Louis Startup Weekend; also co-founded the GlobalHack hackathon nonprofit. (Verified via Crunchbase, Silicon Prairie News, 2026-08-28.)" },
     ],
     website: "juristat.com",
     linkedin: "https://www.linkedin.com/company/juristat",
@@ -1289,6 +1346,13 @@ COMPETITORS.push(
         body: "Newly-opened role reporting directly to the founder/CEO — not present in the prior careers snapshot, a notable addition for a company this small.",
         url: "https://www.patentbots.com/careers/marketing-manager",
       },
+      {
+        date: "2026-08-28",
+        tag: "Webinar",
+        title: "Published webinar recap: Gen AI Chat for OA Response Drafting",
+        body: "Recorded webinar walking through the Gen AI Chat feature (shipped 2026-08-20) for office-action response drafting — follow-on content marketing for the recently-launched capability.",
+        url: "https://blog.patentbots.com/2026/08/webinar-gen-ai-chat-for-oa-response.html",
+      },
     ],
     hiring: {
       openRoles: 4,
@@ -1329,7 +1393,38 @@ COMPETITORS.push(
         body: "Blog content on how ICANN's 2026 New gTLD Program expansion affects brand monitoring, alongside a hosted webinar on trademark management software selection featuring Warner Music Group's Sofya Nadgorny.",
         url: "https://www.altlegal.com/blog/2026gtlds/",
       },
+      {
+        date: "2026-08-27",
+        tag: "Content",
+        title: "Webinar/blog: \"Show Me the Money: Demystifying Profitability for Law Firms\"",
+        body: "Routine recurring content on law-firm profitability drivers (distributions, hiring, pricing, planning, marketing) — not a product or business announcement.",
+        url: "https://www.altlegal.com/blog/firm-profits/",
+      },
+      {
+        date: "2026-08-28",
+        tag: "Content",
+        title: "TMAE Summit Roundtables recap: bringing trademark work in-house",
+        body: "Latest installment of a recurring roundtable-recap series, this one covering tools for moving trademark work in-house.",
+        url: "https://www.altlegal.com/blog/tmaes-roundtables-inhouse/",
+      },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened Data Migration and Onboarding Specialist, Customer Success Manager, and Operations Associate roles",
+        body: "Three roles newly surfaced on Alt Legal's Breezy HR board vs. the prior snapshot; the previously-tracked \"Trademark Paralegal\" opening no longer appears live.",
+        url: "https://alt-legal.breezy.hr/",
+      },
     ],
+    hiring: {
+      openRoles: 4,
+      newRolesToday: [
+        { title: "Data Migration and Onboarding Specialist", dept: "Operations", location: "Remote (Philippines)" },
+        { title: "Customer Success Manager", dept: "Success", location: "Remote (US)" },
+        { title: "Operations Associate", dept: "Operations", location: "Remote (US)" },
+      ],
+      recentHires: [],
+      topRoles: [{ title: "Trademark Docketing Specialist", count: 1 }],
+    },
   }),
   stubCompetitor({
     id: "pqai",
@@ -1361,7 +1456,7 @@ COMPETITORS.push(
     hq: "Columbia, TN",
     founders: [
       { name: "Austin Walters", title: "Co-Founder & CEO", note: "Formerly at Capital One; founding team are former Capital One engineers." },
-      { name: "Jason Harrier", title: "Co-Founder", note: "Background details not independently verified." },
+      { name: "Jason Harrier", title: "Co-Founder & General Counsel", note: "Previously Chief Patent Counsel at Capital One (built its patent portfolio) and Plaid's first dedicated IP counsel. (Verified via Salesforce Ventures' \"IP Copilot Co-Founders\" profile, IPWatchdog people page, 2026-08-28.)" },
     ],
     website: "ipcopilot.ai",
     linkedin: "https://www.linkedin.com/company/ip-copilot",
@@ -1390,6 +1485,20 @@ COMPETITORS.push(
         title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
         body: "Google Cloud named Harvey (alongside Legora, Solve Intelligence, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments) as a launch software-connector partner for its new industry-specific Gemini Enterprise for Legal platform. See General Highlights.",
         url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
+      },
+      {
+        date: "2026-08-27",
+        tag: "Sales",
+        title: "IP-focused AmLaw firm Finnegan deploys Harvey to its legal professionals",
+        body: "Finnegan, Henderson, Farabow, Garrett & Dunner — a major patent-prosecution/litigation firm — rolled out Harvey to its legal professionals, a notable data point on Harvey's generalist AI creeping into IP-adjacent accounts.",
+        url: "https://www.harvey.ai/en-US/blog/finnegan-deploys-harvey-to-its-legal-professionals",
+      },
+      {
+        date: "2026-08-25",
+        tag: "Sales",
+        title: "AmLaw firm FBT Gibbons deploys Harvey firmwide",
+        body: "Additional firmwide AmLaw deployment announced the same week as the Google Cloud Gemini Enterprise for Legal launch-partner news.",
+        url: "https://www.harvey.ai/newsroom",
       },
       {
         date: "2026-08-19",
@@ -1467,6 +1576,27 @@ COMPETITORS.push(
         title: "Ashby board shows 278 open roles across 19 cities",
         body: "Up sharply from a ~134-role estimate captured previously — a notable simultaneous product, GTM, and legal-ops scale-up signal. New titles spotted include Senior Product Marketing Manager (Partnerships and Core Product) and Legal Engineer - Tax.",
         url: "https://jobs.ashbyhq.com/legora",
+      },
+      {
+        date: "2026-08-26",
+        tag: "Partnership",
+        title: "Deepens NetDocuments partnership with a new MCP connection",
+        body: "Extended its existing NetDocuments integration (original ndConnect partnership dates to July 2025) with a new MCP-based connection letting mutual customers pull governed NetDocuments files directly into Legora workflows.",
+        url: "https://legora.com/newsroom/legora-netdocuments-secure-seamless-ai-powered-legal-work",
+      },
+      {
+        date: "2026-08-25",
+        tag: "Marketing",
+        title: "Announces brand partnership with Venus Williams",
+        body: "Consumer-facing brand/marketing partnership announced the same week as the Google Cloud Gemini Enterprise and ILTACON news.",
+        url: "https://legora.com/newsroom",
+      },
+      {
+        date: "2026-08-27",
+        tag: "Hiring",
+        title: "Opens two senior GTM talent-acquisition roles",
+        body: "Director, Talent Acquisition (GTM) and Talent Partner (GTM) roles newly surfaced beyond the previously-tracked 278-open-roles/19-city figure — a dedicated push to staff up GTM recruiting itself.",
+        url: "https://careers.legora.com/jobs",
       },
       {
         date: "2026-08-17",
@@ -1603,6 +1733,13 @@ COMPETITORS.push(
         body: "Thomson Reuters is running a named FDE org for CoCounsel with multiple open roles (Senior/Staff Software Engineer - AI, AI Solutions Engineer), implying investment in white-glove enterprise rollout.",
         url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Senior-Software-Engineer---AI--CoCounsel-FDE_JREQ200170",
       },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened an Associate Attorney Product Specialist role (CoCounsel, Trust & Reliability)",
+        body: "New posting on the CoCounsel product-management side, beyond the previously-tracked FDE engineering track.",
+        url: "https://www.themuse.com/jobs/thomsonreuters/associate-attorney-product-specialist-cocounsel",
+      },
     ],
   }),
   stubCompetitor({
@@ -1666,7 +1803,7 @@ COMPETITORS.push(
     tier: "Tier 3 — Adjacent",
     initials: "DW",
     tagline: "AI contract drafting and negotiation using firm knowledge.",
-    description: "DraftWise uses a law firm's own historical documents to power AI-assisted contract drafting and negotiation — a broader legal-AI adjacent player.",
+    description: "DraftWise uses a law firm's own historical documents to power AI-assisted contract drafting and negotiation — a broader legal-AI adjacent player. Promoted Josh Sandman (previously Head of Sales since 2024, credited with helping grow revenue 6x) to Chief Sales Officer on 2026-07-21 (verified via ITNewsOnline, 2026-08-28).",
     employeeCount: "71 (as of May 2026)",
     founded: "2020",
     hq: "New York, NY",
@@ -1685,7 +1822,28 @@ COMPETITORS.push(
         body: "A framework meant to capture the judgment layer behind law-firm documents — modeling relationships/decisions rather than just document text.",
         url: "https://www.artificiallawyer.com/2026/08/24/draftwise-launches-legal-ontology-to-capture-the-judgment-layer/",
       },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened Strategic Business Development Lead, Senior Enterprise Solutions Engineer, and BDR roles",
+        body: "Three roles newly surfaced on DraftWise's careers page vs. the prior snapshot; \"Director of Sales – Mid Law\" and \"Senior Enterprise Solutions Architect\" no longer appear live (likely filled, or the Architect title was renamed).",
+        url: "https://www.draftwise.com/careers",
+      },
     ],
+    hiring: {
+      openRoles: 10,
+      newRolesToday: [
+        { title: "Strategic Business Development Lead", dept: "Business Development", location: "New York / Remote (US)" },
+        { title: "Senior Enterprise Solutions Engineer", dept: "Solutions/Sales Engineering", location: "Remote (US, CA)" },
+        { title: "Business Development Representative", dept: "Sales/Business Development", location: "New York, NY (Hybrid)" },
+      ],
+      recentHires: [],
+      topRoles: [
+        { title: "Senior Back End Software Engineer", count: 2 },
+        { title: "Senior Front End Software Engineer", count: 2 },
+        { title: "Senior Customer Success Manager", count: 2 },
+      ],
+    },
   }),
   stubCompetitor({
     id: "genie-ai",
@@ -1704,6 +1862,7 @@ COMPETITORS.push(
     ],
     website: "genieai.co",
     linkedin: "https://www.linkedin.com/company/genie-ai",
+    hiring: { openRoles: 0, newRolesToday: [], recentHires: [], topRoles: [] },
   }),
   stubCompetitor({
     id: "eve-legal",
@@ -1712,7 +1871,7 @@ COMPETITORS.push(
     tier: "Tier 3 — Adjacent",
     initials: "EV",
     tagline: "AI legal assistant for plaintiff firms.",
-    description: "Eve provides an AI legal assistant built specifically for plaintiff-side law firms, a niche broader-legal-AI adjacent player. Raised a $103M Series B (Spark Capital-led, with a16z, Lightspeed, and Menlo Ventures) at a valuation above $1B, following a $47M Series A (a16z-led) in January 2025. Launched \"EveOS,\" an AI-native operating system spanning intake through resolution, on 2026-06-11 — its largest platform expansion to date. Now supports 450+ plaintiff firms and 200,000+ active matters.",
+    description: "Eve provides an AI legal assistant built specifically for plaintiff-side law firms, a niche broader-legal-AI adjacent player. Raised a $103M Series B (Spark Capital-led, with a16z, Lightspeed, and Menlo Ventures) at a valuation above $1B, following a $47M Series A (a16z-led) in January 2025. Launched \"EveOS,\" an AI-native operating system spanning intake through resolution, on 2026-06-11 — its largest platform expansion to date. Now supports 450+ plaintiff firms and 200,000+ active matters. Sued for patent infringement by AI.Law around 2026-06-17/18 (N.D. Cal.), alleging Eve's document-generation platform (operating as \"Butler Labs, dba Eve Legal\") infringes U.S. Patent No. 12,461,932; AI.Law says it notified Eve of the alleged infringement in May-June 2026 before filing. (Verified via ABA Journal, Law360, Lawyer Monthly, 2026-08-28.)",
         employeeCount: "~314 (as of June 2026)",
     founded: "2023",
     hq: "San Francisco, CA",
@@ -1723,6 +1882,29 @@ COMPETITORS.push(
     ],
     website: "eve.legal",
     linkedin: "https://www.linkedin.com/company/eve-legal",
+    weekActivity: [
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Hiring surge: 35 open roles across 8 departments",
+        body: "A direct careers-board fetch found a much larger, current picture than the prior 9-role indirect-mirror baseline — near-simultaneous hiring across nearly every department (Sales 11, Marketing 5, Engineering 6, Customer Success 3, Finance 3, Product 3, People 2, Product Design 1), consistent with the post-$103M-Series-B/EveOS-launch growth phase.",
+        url: "https://job-boards.greenhouse.io/eve",
+      },
+    ],
+    hiring: {
+      openRoles: 35,
+      newRolesToday: [
+        { title: "Vice President, People", dept: "People", location: "San Mateo, CA (Hybrid)" },
+        { title: "Engineering Leader – Product Engineering", dept: "Engineering", location: "San Francisco/San Mateo, CA (Hybrid)" },
+        { title: "Platform Engineering Leader", dept: "Engineering", location: "San Francisco/San Mateo, CA (Hybrid)" },
+      ],
+      recentHires: [],
+      topRoles: [
+        { title: "Sales (Account Executive / SDR / leadership mix)", count: 11 },
+        { title: "Marketing", count: 5 },
+        { title: "Engineering", count: 6 },
+      ],
+    },
   }),
   stubCompetitor({
     id: "park-ip",
@@ -1733,7 +1915,7 @@ COMPETITORS.push(
     tagline: "AI-powered global patent filing and translation workflow platform.",
     description:
       "Park IP (a Welo Global/Welocalize brand) is an established global patent-translation and IP-filing services provider serving Am Law 100 and Fortune 500 IP departments. It launched 'Legal Studio,' an AI-powered platform combining automation, AI quality control, and analytics across patent filing workflows in 180+ jurisdictions — an incumbent moving AI tooling into patent-adjacent workflow territory with existing enterprise distribution. Newly identified in this sweep; added 2026-08-25. Legal Studio was recognized in the 2026 AI Breakthrough Awards; Park IP publishes a recurring \"Prior Art\" newsletter (Vol. 1, July 2026) on patent/IP workflow topics.",
-        employeeCount: "Not verified — no reliable current headcount found (Park IP itself does not disclose headcount separately; parent Welocalize/Welo Global's size is not a valid proxy for this brand alone)",
+        employeeCount: "LinkedIn's \"Park IP, a Welo Global company\" page lists 1,001-5,000 — but this appears to be the broader Welo Global/Welocalize brand page rather than a Park-IP-only figure; other aggregators (Datanyze ~2,200, PitchBook ~500, Crunchbase 251-500) are similarly parent-conflated, so standalone headcount remains unverified",
     founded: "1997 (as Park IP Translations; acquired by Welocalize in 2012; now a client-facing brand of Welo Global)",
     hq: "New York, NY",
     founders: [
@@ -1862,12 +2044,14 @@ const NEW_ENTRANTS = [
       "Stockholm-based Stilta builds agentic AI for IP work, starting with patent litigation — every output is source-backed and auditable. Already used by multiple AmLaw 100 firms and Fortune 500 in-house IP teams within months of its December 2025 founding; TechCrunch names Roche, Alfa Laval, and Maersk among its early customers.",
     foundingTeam: [
       { name: "Oskar Block", background: "CEO. Previously McKinsey, Goldman Sachs, and Swedish unicorns." },
-      { name: "3 additional co-founders", background: "Also former McKinsey/QuantumBlack engineers (names pending verification)." },
+      { name: "Oscar Adamsson", background: "Founder/CPO. Competitive-mathematician background; previously built products at a unicorn and worked with 50+ CEOs at McKinsey on Sweden's innovation agenda; degrees from Chalmers, UC Berkeley, and Bocconi." },
+      { name: "Tobias Estreen", background: "Founder. Led AI projects at QuantumBlack and Netlight; physics/ML background (KTH, KU Leuven); second-time founder." },
+      { name: "Petrus Werner", background: "Founder/CTO. Scaled AI systems at QuantumBlack and AWS for 5 years." },
     ],
     hiring: {
-      openRoles: null,
-      focus: "Not yet verified — careers page not yet scraped",
-      hiringProfile: "Not yet verified.",
+      openRoles: 3,
+      focus: "Founding Patent Engineer, Founding GTM, and Founding Engineer roles (New York / Stockholm).",
+      hiringProfile: "Early-stage founding-level hires across engineering and GTM; per Stilta's own YC jobs page.",
     },
     date: "2026-08-19",
     source: "TechCrunch, LawNext",
@@ -1885,8 +2069,8 @@ const NEW_ENTRANTS = [
     description:
       "San Francisco-based &AI built Andy, an AI agent for patent attorneys handling prior art search, claim chart drafting, and office-action responses. Early large-firm customers report 70-90% time savings on claim-chart work.",
     foundingTeam: [
-      { name: "Caleb Harris", background: "Co-Founder. MIT. Previously a technical advisor to law firms on patent issues." },
-      { name: "Herbert Turner", background: "Co-Founder. MIT." },
+      { name: "Caleb Harris", background: "Co-Founder & CEO. MIT. Previously a technical advisor to law firms on patent issues." },
+      { name: "Herbert \"Herbie\" Turner", background: "Co-Founder & CTO. Studied Aero/Astro and Computer Science at MIT; worked on autonomous surface vehicles and applied ML research; fine-tuned LLMs at Google; was a founding engineer at Kino AI before &AI." },
     ],
     hiring: {
       openRoles: null,
@@ -1937,9 +2121,9 @@ const NEW_ENTRANTS = [
       { name: "Andreas Stroe", background: "Co-Founder. Former Philips research engineer, named inventor on multiple patents." },
     ],
     hiring: {
-      openRoles: null,
-      focus: "Not yet verified — careers page not yet scraped",
-      hiringProfile: "Not yet verified.",
+      openRoles: 0,
+      focus: "None currently — YC's own jobs page for Patent Watch confirms no roles posted on the YC platform.",
+      hiringProfile: "Not yet hiring publicly (verified 2026-08-28).",
     },
     date: "2026-08-07",
     source: "Crunchbase, LegalTech.ca",
@@ -1960,9 +2144,9 @@ const NEW_ENTRANTS = [
       { name: "Maged Helmy", background: "Founder. PhD in AI, University of Oslo; Associate Professor. Background pending fuller independent verification beyond trade-press bios." },
     ],
     hiring: {
-      openRoles: null,
-      focus: "Not yet verified — careers page not yet scraped",
-      hiringProfile: "Not yet verified.",
+      openRoles: 0,
+      focus: "None currently — newcode.ai/careers (via apply.workable.com/newcode/) lists no open postings.",
+      hiringProfile: "Not yet hiring publicly (verified 2026-08-28).",
     },
     date: "2026-08-24",
     source: "Law.com Legaltech News, Artificial Lawyer",
@@ -2025,19 +2209,6 @@ const NEW_ENTRANTS = [
 // below has a real, working source URL — no placeholder/sample listings.
 const WEBINARS = [
   {
-    id: "wb-2",
-    title: "AI for Lean IP Teams — Doing More with Less While Empowering the Next Generation",
-    host: "Anaqua",
-    date: "2026-08-25",
-    time: "12:00 PM ET",
-    format: "Live webinar",
-    relevance: "high",
-    description:
-      "Session on helping lean IP teams adopt AI while empowering junior staff, without adding headcount.",
-    tags: ["Competitor-hosted", "AI Adoption"],
-    url: "https://ipwatchdog.com/event/webinar-anaqua-2026-08-25-ai-for-lean-ip-teams/",
-  },
-  {
     id: "wb-4",
     title: "AI Capabilities and the Future in Life Sciences Patent Practice",
     host: "Solve Intelligence",
@@ -2089,27 +2260,27 @@ const WEBINARS = [
   },
   {
     id: "wb-9",
-    title: "Sponsored by IP Copilot",
+    title: "AI-Assisted Patent Pruning – Deciding What to Keep with Precision",
     host: "IP Copilot",
     date: "2026-09-08",
     time: "12:00 PM ET",
     format: "Live webinar",
     relevance: "medium",
-    description: "IPWatchdog-hosted session sponsored by IP Copilot; topic and speakers not yet announced on the registration page as of this refresh.",
+    description: "IPWatchdog-hosted session, now with a published topic: how AI-powered analysis can help organizations evaluate patent portfolios systematically — assessing assets by legal status, maintenance cost, and business alignment to make defensible keep/abandon decisions.",
     tags: ["Competitor-hosted"],
-    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-09-08/",
+    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-09-08-ai-assisted-patent-pruning/",
   },
   {
     id: "wb-10",
-    title: "Sponsored by Lighthouse IP",
+    title: "Reducing AI Hallucinations – Why Reliable IP Workflows Begin with Better Data",
     host: "Lighthouse IP",
     date: "2026-09-15",
     time: "12:00 PM ET",
     format: "Live webinar",
     relevance: "low",
-    description: "IPWatchdog-hosted session sponsored by Lighthouse IP, a global patent/trademark/design data provider; topic and speakers not yet announced on the registration page as of this refresh.",
+    description: "IPWatchdog-hosted session sponsored by Lighthouse IP, a global patent/trademark/design data provider, now with a published topic: combining general-purpose LLMs with curated datasets, plus data infrastructure/governance, to reduce hallucinations in AI-assisted IP analysis.",
     tags: ["Data Provider"],
-    url: "https://ipwatchdog.com/event/webinar-lighthouse-ip-2026-09-15/",
+    url: "https://ipwatchdog.com/event/webinar-lighthouse-ip-2026-09-15-reducing-ai-hallucinations/",
   },
   {
     id: "wb-11",
