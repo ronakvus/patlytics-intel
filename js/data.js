@@ -571,7 +571,7 @@ const COMPETITORS = [
     hq: "Philadelphia, PA (Clarivate global HQ: London, UK)",
     website: "clarivate.com/intellectual-property",
     websiteUrl: "https://clarivate.com/intellectual-property/",
-    careersUrl: "https://clarivate.com/careers/",
+    careersUrl: "https://careers.clarivate.com/",
     linkedin: "https://www.linkedin.com/company/clarivate",
     founders: [
       {
@@ -587,7 +587,7 @@ const COMPETITORS = [
         tag: "Hiring",
         title: "Posted VP of AI Product Strategy role",
         body: "Role reports into IP Solutions leadership and references 'agentic patent research workflows.'",
-        url: "https://clarivate.com/careers/",
+        url: "https://careers.clarivate.com/c/product-strategy-jobs",
       },
       {
         date: "2026-08-07",
@@ -1596,7 +1596,7 @@ COMPETITORS.push(
         tag: "Hiring",
         title: "Opens two senior GTM talent-acquisition roles",
         body: "Director, Talent Acquisition (GTM) and Talent Partner (GTM) roles newly surfaced beyond the previously-tracked 278-open-roles/19-city figure — a dedicated push to staff up GTM recruiting itself.",
-        url: "https://careers.legora.com/jobs",
+        url: "https://jobs.ashbyhq.com/legora/eff6b912-3662-4c92-8417-77587b1baf49",
       },
       {
         date: "2026-08-17",
