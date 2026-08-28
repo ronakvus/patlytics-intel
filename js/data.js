@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-08-27";
-const EARLIEST_DATE = "2026-08-06"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-08-28";
+const EARLIEST_DATE = "2026-08-08"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -133,21 +133,6 @@ const HIGHLIGHTS = [
     source: "Artificial Lawyer",
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/08/18/next-gen-harvey-ii-launches-with-memory-at-its-core/",
-  },
-  {
-    id: "hl-15",
-    date: "2026-08-07",
-    priority: "low",
-    category: "Funding",
-    title: "Harvey reportedly in talks to raise ~$500M at a $15.5B valuation",
-    summary:
-      "Harvey is reportedly in talks to raise roughly $500M led by Lightspeed at a $15.5B valuation, up from $11B in March 2026; Goldman Sachs Alternatives and J.P. Morgan Growth Equity Partners reportedly invested in late July.",
-    whyItMatters:
-      "Reported, not yet a confirmed closed round — but continued capital concentration in generalist legal AI keeps Harvey well funded for downmarket/vertical expansion.",
-    companies: ["Harvey"],
-    source: "SiliconANGLE",
-    sourceType: "funding",
-    url: "https://siliconangle.com/2026/08/07/legal-ai-startup-harvey-reportedly-raising-500m-15-5b-valuation/",
   },
   {
     id: "hl-16",
@@ -301,7 +286,7 @@ const COMPETITORS = [
     initials: "SI",
     tagline: "AI copilot for patent drafting, prosecution, and portfolio management.",
     description:
-      "Solve Intelligence builds an AI-native workspace for patent attorneys and agents, covering claim drafting, office-action response drafting, and prosecution docketing. Its core wedge is generative drafting assistance embedded directly into attorneys' existing workflows, and it has moved quickly from a drafting tool into a broader prosecution platform, including the 2026 acquisition of ClaimWise to deepen European litigation/opposition coverage. Closed a $40M Series B in December 2025 (Visionaries Club-led, with 20VC, Microsoft M12, and Thomson Reuters Ventures — total funding ~$55M) and simultaneously launched \"Charts,\" a litigation/IP-analysis product for invalidity charts, SEP charts, FTO/clearance analysis, and infringement mapping. Now states usage by 700+ IP teams across 6 continents, including 30% of the Vault 30 IP firms and 21% of AmLaw 100 firms.",
+      "Solve Intelligence builds an AI-native workspace for patent attorneys and agents, covering claim drafting, office-action response drafting, and prosecution docketing. Its core wedge is generative drafting assistance embedded directly into attorneys' existing workflows, and it has moved quickly from a drafting tool into a broader prosecution platform via two 2026 acquisitions: Munich-based AI patent-litigation startup Palito.ai (closed 2026-04-02, opening a Solve Intelligence Munich office) and, later the same year, ClaimWise, to deepen European litigation/opposition coverage — press coverage of the ClaimWise deal explicitly called it Solve's \"second acquisition this year.\" (Palito.ai deal verified via Law.com/Legaltech News, Law360, and Dealroom, 2026-08-28.) Closed a $40M Series B in December 2025 (Visionaries Club-led, with 20VC, Microsoft M12, and Thomson Reuters Ventures — total funding ~$55M) and simultaneously launched \"Charts,\" a litigation/IP-analysis product for invalidity charts, SEP charts, FTO/clearance analysis, and infringement mapping. Now states usage by 700+ IP teams across 6 continents, including 30% of the Vault 30 IP firms and 21% of AmLaw 100 firms.",
     employeeCount: "~90 (est.)",
     founded: "2023",
     hq: "San Francisco, CA",
@@ -326,16 +311,15 @@ const COMPETITORS = [
         note: "MEng in Computer Science, University of Bristol (GCHQ cyber-security scholarship); previously at Qualcomm, then a Quantitative Developer at Coremont LLP (a Brevan Howard spin-off) building a greenfield trade-processing platform. Brother of co-founder Chris Parsonson. (Verified via LinkedIn/Crunchbase, 2026-08-27.)",
       },
     ],
-    todayActivity: [
+    todayActivity: [],
+    weekActivity: [
       {
-        time: "9:14 AM",
+        date: "2026-08-24",
         tag: "Partnership",
         title: "Thomson Reuters partnership confirmed by both companies",
         body: "Solve Intelligence and Thomson Reuters have both publicly confirmed a partnership (founder + company LinkedIn posts). Thomson Reuters Ventures is also a confirmed investor. See General Highlights — exact commercial terms/scope are not yet publicly detailed.",
         url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-is-partnering-with-activity-7497654008715661312-sC4_",
       },
-    ],
-    weekActivity: [
       {
         date: "2026-08-25",
         tag: "Partnership",
@@ -426,16 +410,15 @@ const COMPETITORS = [
         note: "Founded PatSnap in 2007 from a S$55,000 Singaporean student grant; BEng Biomedical Engineering, National University of Singapore; conceived the idea as a Wharton exchange student after witnessing a $1M patent acquisition. Named a Top 50 SaaS CEO (2020) and won EY Entrepreneur of the Year (Singapore, 2018). (Verified via CNBC, PatSnap press blog, Crunchbase, 2026-08-27.)",
       },
     ],
-    todayActivity: [
+    todayActivity: [],
+    weekActivity: [
       {
-        time: "7:40 AM",
+        date: "2026-08-27",
         tag: "Product",
         title: "Launched “Insights Copilot” conversational analytics layer",
-        body: "New natural-language query layer sits on top of PatSnap's existing landscape and analytics datasets. See General Highlights.",
+        body: "New natural-language query layer sits on top of PatSnap's existing landscape and analytics datasets.",
         url: siteUrl("patsnap.com"),
       },
-    ],
-    weekActivity: [
       {
         date: "2026-08-06",
         tag: "Partnership",
@@ -582,16 +565,15 @@ const COMPETITORS = [
         note: "Operates as a business unit inside Clarivate (NYSE: CLVT); tracked at leadership/org level rather than founder level.",
       },
     ],
-    todayActivity: [
+    todayActivity: [],
+    weekActivity: [
       {
-        time: "11:02 AM",
+        date: "2026-08-27",
         tag: "Hiring",
         title: "Posted VP of AI Product Strategy role",
-        body: "Role reports into IP Solutions leadership and references 'agentic patent research workflows.' See General Highlights.",
+        body: "Role reports into IP Solutions leadership and references 'agentic patent research workflows.'",
         url: "https://clarivate.com/careers/",
       },
-    ],
-    weekActivity: [
       {
         date: "2026-08-22",
         tag: "Corporate",
@@ -602,11 +584,10 @@ const COMPETITORS = [
     ],
     hiring: {
       openRoles: 22,
-      newRolesToday: [
-        { title: "VP, AI Product Strategy", dept: "Product", location: "Remote (US)" },
-      ],
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
+        { title: "VP, AI Product Strategy", count: 1 },
         { title: "Product Manager, AI", count: 3 },
         { title: "Enterprise Account Manager", count: 5 },
       ],
@@ -644,15 +625,7 @@ const COMPETITORS = [
         note: "Credited as founding Anaqua in 2004, commercializing IP-management software originally built by IP practitioners from Ford and British American Tobacco. Current CEO is Justin P. Crotty (since April 2025, succeeding Bob Romeo) — no source confirms an 'Executive Chairman' title for either. (Verified via GlobeNewswire, Law.com, Crunchbase.)",
       },
     ],
-    todayActivity: [
-      {
-        time: "12:00 PM ET",
-        tag: "Marketing",
-        title: "Hosting live webinar: 'AI for Lean IP Teams'",
-        body: "Live session on helping lean IP teams do more with less while empowering junior staff using AI.",
-        url: "https://ipwatchdog.com/event/webinar-anaqua-2026-08-25-ai-for-lean-ip-teams/",
-      },
-    ],
+    todayActivity: [],
     weekActivity: [
       {
         date: "2026-08-21",
@@ -685,6 +658,13 @@ const COMPETITORS = [
         channel: "Content / Organic Social",
         date: "2026-08-21",
         url: siteUrl("anaqua.com"),
+      },
+      {
+        title: "Hosted webinar: 'AI for Lean IP Teams'",
+        body: "Live session on helping lean IP teams do more with less while empowering junior staff using AI.",
+        channel: "Webinar",
+        date: "2026-08-25",
+        url: "https://ipwatchdog.com/event/webinar-anaqua-2026-08-25-ai-for-lean-ip-teams/",
       },
     ],
   },
@@ -931,7 +911,23 @@ COMPETITORS.push(
         body: "New CS role surfaced on DeepIP's careers board, beyond the previously-tracked Patent Solution Engineer opening.",
         url: siteUrl("deepip.ai") + "/careers",
       },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened a Head of Marketing – US role",
+        body: "New senior go-to-market hire based in Brooklyn, NY — a notable US marketing-leadership signal beyond DeepIP's existing BD/sales/CS postings.",
+        url: "https://careers.deepip.ai/jobs/7442469-head-of-marketing-us",
+      },
     ],
+    hiring: {
+      openRoles: 19,
+      newRolesToday: [{ title: "Head of Marketing – US", dept: "Marketing", location: "Brooklyn, NY" }],
+      recentHires: [],
+      topRoles: [
+        { title: "Business Development Representative", count: 3 },
+        { title: "Account Executive", count: 2 },
+      ],
+    },
   }),
   stubCompetitor({
     id: "junior",
@@ -949,6 +945,21 @@ COMPETITORS.push(
     ],
     website: "junior.law",
     linkedin: "https://www.linkedin.com/company/junior-ai-drafting",
+    weekActivity: [
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "First public job posting: Full Stack Engineer",
+        body: "First careers-board posting identified for Junior (previously had no tracked public hiring pipeline) — an early engineering hire signal for a small, recently-founded team.",
+        url: "https://jobs.ashbyhq.com/junior/f743f052-2885-43b1-b517-4cc58f5e65f1",
+      },
+    ],
+    hiring: {
+      openRoles: 1,
+      newRolesToday: [{ title: "Full Stack Engineer", dept: "Engineering", location: "Not specified" }],
+      recentHires: [],
+      topRoles: [],
+    },
   }),
   stubCompetitor({
     id: "ankar-ai",
@@ -975,7 +986,23 @@ COMPETITORS.push(
         body: "Live openings observed today via public job postings, including Senior Product Engineer, Product Manager, Account Executive, Patent Product Engineer, and a Founder's Associate (Growth, Hiring & Ops) role — consistent with post-Series A scale-up.",
         url: "https://uk.linkedin.com/jobs/view/senior-product-engineer-at-ankar-4411350945",
       },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened a Founding Account Executive – US role",
+        body: "New US-based go-to-market opening, alongside newly-surfaced Senior Software Engineer and Software Engineer postings — signals a push into US sales coverage on top of the existing European hiring.",
+        url: "https://jobs.ashbyhq.com/ankar",
+      },
     ],
+    hiring: {
+      openRoles: 8,
+      newRolesToday: [{ title: "Founding Account Executive – US", dept: "Sales", location: "United States" }],
+      recentHires: [],
+      topRoles: [
+        { title: "Senior Product Engineer", count: 2 },
+        { title: "Software Engineer", count: 2 },
+      ],
+    },
     marketing: [
       {
         title: "Hosting webinar: 'AI in Patent Practice — Change Management for Successful Adoption'",
@@ -1255,7 +1282,20 @@ COMPETITORS.push(
         body: "A law firm's placement in Patent Bots' own 2026 Patent Quality Rankings is being used as a marketing/case-study proof point — a content pattern worth tracking.",
         url: "https://caldwelllaw.com/news/caldwell-ranked-top-5-patent-bots-2026-patent-quality/",
       },
+      {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Opened a Marketing Manager role",
+        body: "Newly-opened role reporting directly to the founder/CEO — not present in the prior careers snapshot, a notable addition for a company this small.",
+        url: "https://www.patentbots.com/careers/marketing-manager",
+      },
     ],
+    hiring: {
+      openRoles: 4,
+      newRolesToday: [{ title: "Marketing Manager", dept: "Marketing", location: "Remote" }],
+      recentHires: [],
+      topRoles: [{ title: "Software Developer (Python)", count: 1 }],
+    },
   }),
   stubCompetitor({
     id: "alt-legal",
@@ -1750,7 +1790,8 @@ COMPETITORS.push(
     founded: "Dolcera founded 2004; IP Author is a later product line",
     hq: "San Mateo, CA (also Hyderabad, India office)",
     founders: [
-      { name: "Lakshmikant Goenka", title: "Founder & Managing Director", note: "B.S. in Chemistry; MBA from MDI Gurgaon; previously in sales/product roles at Pidilite Industries and United Chemie. One source separately lists a 'Samir Raiyani' as CEO — not independently corroborated." },
+      { name: "Lakshmikant Goenka", title: "Founder & Managing Director", note: "B.S. in Chemistry; MBA from MDI Gurgaon; previously in sales/product roles at Pidilite Industries and United Chemie." },
+      { name: "Samir Raiyani", title: "CEO", note: "MS Computer Science, Stanford; founded healthcare startup MediSpark (acquired by iScribe); previously Director at SAP Research, Palo Alto. Corroborated by Crunchbase, IPWatchdog's people page, and a KMWorld speaker bio (2026-08-28) — likely leads the IP Author product line while Goenka remains Dolcera's founder/MD; not confirmed whether the two titles are formally distinct." },
     ],
     website: "ipauthor.com",
     linkedin: "https://www.linkedin.com/company/dolcera",
