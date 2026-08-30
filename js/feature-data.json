@@ -1109,6 +1109,24 @@
   ],
   "FEATURE_REVIEWS": {
     "solve-intelligence": {
+      "claim-charting": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Raye Daugherty, Partner, Quarles",
+          "text": "I was impressed with Solve's ability to compare the claims of a hundred patents against six competitor products and generate claim charts with publicly available evidence of infringement.",
+          "sourceUrl": "https://www.solveintelligence.com/",
+          "sentiment": "positive"
+        }
+      ],
+      "fto-analysis": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Nicholas Schmidbauer, Partner, Quarles",
+          "text": "Solve is providing the ability to give a robust analysis to clear products, in a way that allows me to give security to the client, and also allows me to do my job a lot better.",
+          "sourceUrl": "https://www.solveintelligence.com/",
+          "sentiment": "positive"
+        }
+      ],
       "office-action-response": [
         {
           "platform": "G2",
@@ -1135,6 +1153,176 @@
           "text": "...a tool to identify differences from prior art and potential inventive step issues could also be beneficial. (Listed by the reviewer as a missing capability they'd like to see.)",
           "sourceUrl": "https://www.g2.com/products/solve-intelligence-patent-copilot/reviews",
           "sentiment": "negative"
+        }
+      ]
+    },
+    "deepip": {
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Tom Tassignon, European Patent Attorney, Head of IP Personal Health and Philips Brand Protection, Royal Philips",
+          "text": "In the sphere of novelty searches, finding out whether certain invention is patentable or not. Whereas before, this was a skill specifically for IP analyst where they had to build a complex query to find out novelty of an invention. Now with generative AI tools, it becomes much more available also to IP councils.",
+          "sourceUrl": "https://www.deepip.ai/blog/ai-in-house-ip-workflows-philips",
+          "sentiment": "positive"
+        }
+      ],
+      "office-action-response": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Tom Tassignon, European Patent Attorney, Head of IP Personal Health and Philips Brand Protection, Royal Philips",
+          "text": "An analysis of an office action from a patent office, if the tool delivers you already an analysis of the office action and whereas before you may have immediately outsourced that office action, now you use the tool to get a quick understanding of the office action.",
+          "sourceUrl": "https://www.deepip.ai/blog/ai-in-house-ip-workflows-philips",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "ip-copilot": {
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Daniel S. Block, Director, Sterne Kessler",
+          "date": "2025-09-04",
+          "text": "When every hour counts, waiting days for search results just isn't an option. This solution delivers the precision we need—and fast—so we can stay ahead in high-stakes litigation.",
+          "sourceUrl": "https://www.sternekessler.com/news-insights/news/case-study-sterne-kessler-ip-copilots-ai-powered-prior-art-search-collaboration/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "iprally": {
+      "claim-charting": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Gil Perlberg, Founder, IP Development Strategist, Perl IP Consulting",
+          "text": "A table has a flat top and four legs. Those are the old features. But say it has one wheel and three rubber feet. That combination is a new feature, the thing that solves a problem. Everything shows up on the feature chart. But if nobody else has combined those features, that new combination is where the differentiation is. Once you know how to read the graph, it comes out at you.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-perl-ip-uses-iprally-to-give-startups-a-clear-read-on-their-ip-in-hours",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Liz Oates, European Patent Attorney, Unilever",
+          "text": "The first time I used it, it produced a novelty chart in around ten minutes. That was a genuine wow moment.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-unilever-uses-iprally-to-streamline-patent-intelligence-and-bring-r-d-closer-to-ip",
+          "sentiment": "positive"
+        }
+      ],
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Thomas Freitag, IP Business Partner, Melexis",
+          "text": "When we get an invention disclosure from our development team, the overall question is: is this patentable or not? Our claim language can be pasted directly into IPRally to find the relevant prior art to answer that question.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-melexis-use-iprally-to-reduce-their-time-spent-on-patentability-studies-by-75",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Oskar Christensen, Patent Engineer, DeLaval",
+          "text": "IPRally is great at finding hidden prior art, like documents that are misclassified, poorly translated or use an odd terminology.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-delaval-use-iprally-to-find-prior-art-that-conventional-methods-miss",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Brendan Sever, Assistant Managing Director, Global Prior Art",
+          "text": "We've seen major advancements in patent search and classification software recently, with a wide range of solutions varying in performance. Some are fast and efficient at retrieving information but often sacrifice accuracy – especially if you're trying to classify an entire universe of patents. For our needs, IPRally's classifier is a perfect fit. It offers high accuracy and approximates a manual review while accelerating the process, so we can focus on diving into the findings and getting creative with our analysis.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-global-prior-art-use-iprally-to-classify-vast-and-complex-patent-landscapes",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Kate Buddle, Patent Information Analyst, Unilever",
+          "text": "Before we had this, the scientists would get an email with the weekly alerts and each person would look through everything themselves. Now they can come in and just view the records tagged to their area. It has grown from there and now they're using that data in their competitor analysis.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-unilever-uses-iprally-to-streamline-patent-intelligence-and-bring-r-d-closer-to-ip",
+          "sentiment": "positive"
+        }
+      ],
+      "fto-analysis": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Vinzenz Frauchiger, Patent Expert, Ypsomed",
+          "text": "Our prior art searches related to FTO investigations have improved drastically with IPRally. It's safe to say that IPRally has reduced the time we spend on prior art searches by well over 50%. Usually, we get almost every important hit within the top 200 search results. A broad initial query in our boolean tool would generate about 80% noise, and that's certainly not the case with IPRally.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-ypsomed-spends-50-less-time-on-fto-studies-thanks-to-iprally",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jeremy Kriegel, Partner, Marshall, Gerstein &amp; Borun LLP",
+          "text": "We also do some FTO searches and I think what's nice is that IPRally starts out-performing some of the outsourcing that we do there. We are able to do more of that in-house.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-marshall-ip-use-iprally-to-help-their-clients-make-better-business-decisions",
+          "sentiment": "positive"
+        }
+      ],
+      "ptab-litigation-support": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Naseem Nazemi, Counsel, RPX Corporation",
+          "text": "IPRally has enabled our patent analysis team to work much more effectively and efficiently. One way we indirectly measure the effectiveness of our searches is to note when RPX-surfaced prior art is used in petitions for inter partes review by third parties. This indicates the high quality of art found by RPX patent analysts. In comparing similar-length time periods before and after we started utilizing IPRally, the percentage of RPX-surfaced prior art appearing in IPR petitions has increased from 30% to 42%. When you factor in the efficiency gains – that our average time per patent for finding that prior art had decreased by 1.5 hours – the results are actually quite amazing.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-rpx-uses-iprally-to-provide-stronger-patent-risk-management-for-their-membership-base",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jeremy Kriegel, Partner, Marshall, Gerstein &amp; Borun LLP",
+          "text": "What intrigued me about the IPRally approach was that it was promised to be intuitive, that the results would be easy to digest and that the results would be better. And on all those three promises, IPRally delivered. I would say that our hits are a lot closer to the bullseye more often than not. My clients have found that we're unearthing really strong prior art that puts them in a better position to make their business decisions, and that's what we're here to do.",
+          "sourceUrl": "https://www.iprally.com/case-studies/how-marshall-ip-use-iprally-to-help-their-clients-make-better-business-decisions",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "cipher": {
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Erik Oliver, COO, Richardson Oliver Insights LLC",
+          "text": "Classification is a fantastic tool for understanding the patent landscape or analyzing a portfolio. Classification combines expertise in both IP and data science to enable solutions to strategic problems patent owners face with quick and accurate results.",
+          "sourceUrl": "https://www.lexisnexisip.com/solutions/ip-analytics-and-intelligence/cipher-classification/why-cipher/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jeremiah Chan, Director and Associate General Counsel, Meta",
+          "text": "With improvements in AI technology and other analytics platforms like LexisNexis Cipher, today we are able to understand the numbers of patents that are relevant to certain technology areas at a push of a button.",
+          "sourceUrl": "https://www.lexisnexisip.com/solutions/ip-analytics-and-intelligence/cipher-classification/cipher-platform/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "clarivate-innography": {
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Susan Johnson, Patent Agent and IP Researcher, Boston Scientific",
+          "text": "I've tried other AI powered patent search tools, and Derwent AI Search is hands down the best. With other patent search tools, you often need to review up to 50 or even 200 results to find the most relevant records. With Derwent AI Search, the most relevant records are at the top of the list, which helps me save a lot of time when evaluating patentability.",
+          "sourceUrl": "https://clarivate.com/intellectual-property/derwent/patent-search/",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Dr. Patrick Heckeler, Associate Patent Attorney, Bardehle Pagenberg",
+          "text": "Making information accessible and understandable via fresh visual formats can help to facilitate important conversations to support client decision making. Just a couple of clicks in Derwent Patent Analytics can take a complicated dataset and bring it to life.",
+          "sourceUrl": "https://clarivate.com/intellectual-property/derwent/patent-analytics/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Joe Kucera, Director of IP Strategy, Pure Storage",
+          "text": "Derwent Patent Analytics and IPfolio allow us to take business insights and competitive intelligence, feed that into our IP management tool, and allow us to make very strategic decisions on how we manage our patent portfolio.",
+          "sourceUrl": "https://clarivate.com/intellectual-property/derwent/patent-analytics/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "harvey": {
+      "office-action-response": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jeffrey Hernandez-Escobar, Of Counsel at Estrella",
+          "text": "Harvey significantly reduces the time it takes to analyze Office Actions and synthesize case law. It lets us move quickly from analysis to strategy, while keeping full control over legal judgment and the final work product.",
+          "sourceUrl": "https://www.harvey.ai/blog/harvey-in-practice-how-intellectual-property-teams-use-harvey",
+          "sentiment": "positive"
         }
       ]
     },
