@@ -14,7 +14,7 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-08-29";
+const ANCHOR_DATE = "2026-08-30";
 const EARLIEST_DATE = "2026-08-09"; // rolling ~21-day archive window
 
 function d(offsetDays) {
@@ -389,6 +389,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-08-28",
+        tag: "Content",
+        title: "Published \"How to Prepare an EPO Opposition With AI: Part I\"",
+        body: "Solve Intelligence's blog published a worked EPO-opposition walkthrough (using patent EP 3 076 804 B1 as the example) showing AI building a validity chart across novelty, inventive step, added matter, and sufficiency, with attorney judgment retained for claim construction and evidence strategy.",
+        url: "https://www.solveintelligence.com/blog/post/how-to-prepare-an-epo-opposition-with-ai-solve-intelligence",
+      },
+      {
         date: "2026-08-27",
         tag: "Webinar",
         title: "Sponsored IPWatchdog webinar on AI in life sciences patent practice",
@@ -439,11 +446,12 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: 8,
+      openRoles: 15,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Software Engineer, Full-Stack", count: 2 },
+        { title: "Customer Support Specialist", count: 2 },
         { title: "Account Executive / GTM", count: 1 },
         { title: "AI Engineer", count: 1 },
       ],
@@ -586,6 +594,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-08-30",
+        tag: "Hiring",
+        title: "Hiring pipeline drops to zero — only an \"Open Application\" listing remains",
+        body: "IPRally's Workable feed (apply.workable.com/iprally) now confirms 0 open roles as of today; all three previously-tracked postings (Financial Manager, Customer Success Manager, NLP Engineer) now redirect to a \"not found\" page. The company appears to be migrating its ATS to Teamtailor, where only a generic Open Application listing is currently live — a notable hiring-contraction signal for a company this size.",
+        url: "https://apply.workable.com/iprally/",
+      },
+      {
         date: "2026-08-29",
         tag: "Hiring",
         title: "Opened Financial Manager, Customer Success (Germany), and NLP Engineer roles",
@@ -615,17 +630,10 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: 6,
-      newRolesToday: [
-        { title: "Financial Manager - Future CFO", dept: "Finance", location: "Finland" },
-        { title: "Customer Success Manager", dept: "Customer Success", location: "Germany" },
-        { title: "Software Engineer (NLP)", dept: "Engineering", location: "Finland" },
-      ],
+      openRoles: 0,
+      newRolesToday: [],
       recentHires: [],
-      topRoles: [
-        { title: "Account Executive (Europe, Senior & Junior)", count: 2 },
-        { title: "Software Engineer (NLP)", count: 1 },
-      ],
+      topRoles: [],
     },
     marketing: [
       {
@@ -663,6 +671,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-08-30",
+        tag: "Hiring",
+        title: "Last remaining IP-tagged role (VP, Product Marketing) now filled — IP hiring board at zero",
+        body: "Confirmed directly on careers.clarivate.com: the Vice President, Product Marketing (IP) posting (JREQ136006) now returns \"the job you are trying to apply for has been filled,\" and the site's own IP-Laws job category search returns no results. Clarivate's IP-tagged hiring board has gone from 1 open role yesterday to 0 today.",
+        url: "https://careers.clarivate.com/c/ip-laws-jobs",
+      },
+      {
         date: "2026-08-29",
         tag: "Hiring",
         title: "IP hiring board narrows to a single open role (VP, Product Marketing)",
@@ -678,10 +693,10 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: 1,
+      openRoles: 0,
       newRolesToday: [],
       recentHires: [],
-      topRoles: [{ title: "Vice President, Product Marketing (IP)", count: 1 }],
+      topRoles: [],
     },
     marketing: [
       {
@@ -1454,10 +1469,10 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/patent-bots",
     weekActivity: [
       {
-        date: "2026-08-10",
+        date: "2026-08-20",
         tag: "Product",
         title: "Shipped 'Gen AI Chat' for office-action response drafting",
-        body: "New chat feature automatically pulls the relevant office action, spec, and prior art to guide OA response drafting. (Exact publish date approximate — company blog is dated August 2026.)",
+        body: "New chat feature automatically pulls the relevant office action, spec, and prior art to guide OA response drafting. (Date corrected 2026-08-30 — confirmed via direct fetch of the blog post's own publish date, August 20, 2026, not the previously-recorded approximate Aug 10.)",
         url: "https://blog.patentbots.com/2026/08/new-in-patent-bots-gen-ai-chat-now.html",
       },
       {
@@ -1707,6 +1722,13 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/wearelegora",
     weekActivity: [
       {
+        date: "2026-08-28",
+        tag: "Hiring",
+        title: "Ashby board adds four new postings, including a People Tech Manager role",
+        body: "New titles confirmed via the Ashby posting API's publishedAt field (2026-08-28): Senior Web Designer (Marketing, Stockholm HQ), Engagement Manager - Strategic Accounts (London), Engagement Manager - Mid-Market Corporates (London), and People Tech Manager (People, New York City).",
+        url: "https://jobs.ashbyhq.com/legora",
+      },
+      {
         date: "2026-08-29",
         tag: "Hiring",
         title: "Corrected careers URL — real ATS is jobs.ashbyhq.com/legora, not careers.legora.com",
@@ -1773,9 +1795,9 @@ COMPETITORS.push(
     hiring: {
       openRoles: 280,
       newRolesToday: [
-        { title: "Senior Engagement Manager", dept: "Engagement", location: "London" },
-        { title: "Legal Counsel - Commercial", dept: "Legal", location: "Stockholm HQ" },
-        { title: "GTM Team Lead - Paris", dept: "Go To Market (GTM)", location: "Paris" },
+        { title: "Senior Web Designer", dept: "Marketing", location: "Stockholm HQ" },
+        { title: "Engagement Manager - Strategic Accounts", dept: "Engagement", location: "London" },
+        { title: "People Tech Manager", dept: "People", location: "New York City" },
       ],
       recentHires: [],
       topRoles: [
@@ -2059,6 +2081,13 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/draftwise-ai",
     weekActivity: [
       {
+        date: "2026-08-28",
+        tag: "Content",
+        title: "Publishes own ILTACON 2026 recap: \"From Groundwork to Proof\"",
+        body: "DraftWise's own blog published \"Key Takeaways from ILTACON 2026: From Groundwork to Proof,\" covering five priorities for law-firm AI infrastructure (structured/connected data, change management before tool selection, matching tools to workflows, AI-agent governance, and measurable evaluation plans before rollout), referencing NetDocuments, Epiq, Harvey, and Syllo alongside quotes from CEO James Ding.",
+        url: "https://www.draftwise.com/blog/key-takeaways-from-iltacon-2026-from-groundwork-to-proof",
+      },
+      {
         date: "2026-08-27",
         tag: "Content",
         title: "Publishes ILTACON 2026 takeaways; CEO quoted on AI measurement",
@@ -2215,6 +2244,27 @@ COMPETITORS.push(
     ],
     website: "patseer.com",
     linkedin: "https://www.linkedin.com/company/patseer-technologies",
+    weekActivity: [
+      {
+        date: "2026-08-30",
+        tag: "Hiring",
+        title: "Careers page reveals 4 open roles, previously untracked",
+        body: "PatSeer's real careers page (a \"Job Vacancies\" dropdown inside its application-form popup, previously missed) lists 4 open roles: Dot Net Developer (3 openings), Business Development Executive – US Shift, Graphic Designer, and Data Processing (Patent Background).",
+        url: "https://www.patseer.com/careers/",
+      },
+    ],
+    hiring: {
+      openRoles: 6,
+      newRolesToday: [
+        { title: "Business Development Executive – US Shift", dept: "Sales", location: "Pune, India" },
+      ],
+      recentHires: [],
+      topRoles: [
+        { title: "Dot Net Developer", count: 3 },
+        { title: "Graphic Designer", count: 1 },
+        { title: "Data Processing (Patent Background)", count: 1 },
+      ],
+    },
   }),
   stubCompetitor({
     id: "patently",
@@ -2247,8 +2297,9 @@ COMPETITORS.push(
     founded: "Dolcera founded 2004; IP Author is a later product line",
     hq: "San Mateo, CA (also Hyderabad, India office)",
     founders: [
-      { name: "Lakshmikant Goenka", title: "Founder & Managing Director", note: "B.S. in Chemistry; MBA from MDI Gurgaon; previously in sales/product roles at Pidilite Industries and United Chemie." },
-      { name: "Samir Raiyani", title: "CEO", note: "MS Computer Science, Stanford; founded healthcare startup MediSpark (acquired by iScribe); previously Director at SAP Research, Palo Alto. Corroborated by Crunchbase, IPWatchdog's people page, and a KMWorld speaker bio (2026-08-28) — likely leads the IP Author product line while Goenka remains Dolcera's founder/MD; not confirmed whether the two titles are formally distinct." },
+      { name: "Lakshmikant Goenka", title: "Founder & Managing Director (Dolcera and IP Author)", note: "B.S. in Chemistry; MBA from MDI Gurgaon; previously in sales/product roles at Pidilite Industries and United Chemie." },
+      { name: "Samir Raiyani", title: "Founder & CEO (Dolcera)", note: "MS Computer Science, Stanford; founded healthcare startup MediSpark (acquired by iScribe); previously Director at SAP Research, Palo Alto. Corroborated by Crunchbase, IPWatchdog's people page, and a KMWorld speaker bio — Raiyani is CEO of parent company Dolcera while Goenka holds Founder & MD of both Dolcera and the IP Author product line specifically (per Crunchbase's separate 'Founder & MD @ IP Author' listing for Goenka). (Confirmed 2026-08-30.)" },
+      { name: "Eduard Rozenberg", title: "CTO, Founder & Managing Director (Dolcera)", note: "Third co-founder of Dolcera, corroborated independently by Crunchbase, ZoomInfo, and RocketReach. Newly added to this dataset 2026-08-30 — a gap in the prior founders list." },
     ],
     website: "ipauthor.com",
     careersUrl: "https://ipauthor.com/career/",
@@ -2312,6 +2363,13 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/cyprisai",
     weekActivity: [
       {
+        date: "2026-08-30",
+        tag: "Hiring",
+        title: "Careers list turns over: adds a Senior Software Engineer role, drops two prior openings",
+        body: "Cypris's real careers section (inline on cypris.ai/about-us, linking out to Wellfound — cypris.ai/careers itself 404s) now lists Senior Software Engineer and Customer Success Representative as new openings alongside the previously-tracked Account Executive role; Business Development Representative and Associate Research Analyst no longer appear live.",
+        url: "https://cypris.ai/about-us",
+      },
+      {
         date: "2026-08-25",
         tag: "Partnership",
         title: "Launched \"Cypris Q for Microsoft Copilot\"",
@@ -2319,6 +2377,15 @@ COMPETITORS.push(
         url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
       },
     ],
+    hiring: {
+      openRoles: 3,
+      newRolesToday: [
+        { title: "Senior Software Engineer", dept: "Engineering", location: "New York, NY" },
+        { title: "Customer Success Representative", dept: "Customer Success", location: "New York, NY" },
+      ],
+      recentHires: [],
+      topRoles: [{ title: "Account Executive", count: 1 }],
+    },
   })
 );
 
@@ -2371,9 +2438,9 @@ const NEW_ENTRANTS = [
       { name: "Herbert \"Herbie\" Turner", background: "Co-Founder & CTO. Studied Aero/Astro and Computer Science at MIT; worked on autonomous surface vehicles and applied ML research; fine-tuned LLMs at Google; was a founding engineer at Kino AI before &AI." },
     ],
     hiring: {
-      openRoles: null,
-      focus: "Not yet verified — careers page not yet scraped",
-      hiringProfile: "Not yet verified.",
+      openRoles: 0,
+      focus: "No public careers page found — checked tryandai.com and its /company page directly (2026-08-30), no jobs/careers link or ATS reference present.",
+      hiringProfile: "Not visibly hiring publicly as of 2026-08-30.",
     },
     date: "2026-08-16",
     source: "Artificial Lawyer, IPWatchdog",
@@ -2395,9 +2462,9 @@ const NEW_ENTRANTS = [
       { name: "Angela Gao", background: "Co-Founder & CTO. PhD, Caltech. Previously developed AI models at Google Research." },
     ],
     hiring: {
-      openRoles: null,
-      focus: "Not yet verified — careers page not yet scraped",
-      hiringProfile: "Not yet verified.",
+      openRoles: 4,
+      focus: "Member of Technical Staff (Infra), Member of Technical Staff (Backend), Member of Technical Staff (AI Research), and Member of Patent Staff — all San Francisco, full-time (confirmed via fearn.ai/about#careers, 2026-08-30).",
+      hiringProfile: "Actively hiring across engineering/infra/AI research plus a dedicated patent-staff role.",
     },
     date: "2026-08-10",
     source: "PR Newswire, Law.com",
@@ -2466,9 +2533,9 @@ const NEW_ENTRANTS = [
       { name: "Lauri Hyry", background: "Co-Founder. Mathematics/entrepreneurship background." },
     ],
     hiring: {
-      openRoles: null,
-      focus: "Not yet verified — careers page not yet scraped",
-      hiringProfile: "Not yet verified.",
+      openRoles: 0,
+      focus: "No public careers page found — checked aavalynx.ai and its /about page directly (2026-08-30), no jobs/careers link or ATS reference present.",
+      hiringProfile: "Not visibly hiring publicly as of 2026-08-30.",
     },
     date: "2026-08-05",
     source: "Artificial Lawyer, Tech.eu, EU-Startups",
@@ -2491,9 +2558,9 @@ const NEW_ENTRANTS = [
       { name: "Markus Andreasson", background: "Co-Founder." },
     ],
     hiring: {
-      openRoles: null,
-      focus: "Not yet verified — careers page not yet scraped",
-      hiringProfile: "Not yet verified.",
+      openRoles: 4,
+      focus: "Ecosystem Business Development Manager – North America (Sales, US/Bay Area or East Coast), Product Manager (Patent Automation, Malmö), Software Engineer – AI (Patent Automation, Malmö/Hybrid), and Software Engineer – Product (Patent Automation, Malmö) — confirmed via lightbringer.com/about/career, 2026-08-30.",
+      hiringProfile: "Actively hiring across GTM/product/engineering, primarily Malmö-based with one North America sales role.",
     },
     date: "2026-06-16",
     source: "ArcticStartup, EU-Startups, Global Legal Post, Tech Funding News",
@@ -2506,19 +2573,6 @@ const NEW_ENTRANTS = [
 // events-listing partner program (2026-08-25 research pass). Every entry
 // below has a real, working source URL — no placeholder/sample listings.
 const WEBINARS = [
-  {
-    id: "wb-4",
-    title: "AI Capabilities and the Future in Life Sciences Patent Practice",
-    host: "Solve Intelligence",
-    date: "2026-08-27",
-    time: "See registration page",
-    format: "Live webinar",
-    relevance: "high",
-    description:
-      "Covers new sequence-handling/data-import features for life sciences patent drafting and claim charts.",
-    tags: ["Competitor-hosted", "Life Sciences", "AI Drafting"],
-    url: "https://ipwatchdog.com/solve-intelligence-august-27-2026/",
-  },
   {
     id: "wb-5",
     title: "Building an IPO-Ready Patent Strategy",
@@ -2603,6 +2657,54 @@ const WEBINARS = [
     description: "Two-day industry conference on AI's impact across IP strategy, prosecution, and enforcement.",
     tags: ["Conference", "Industry Event"],
     url: "https://events.newton.media/AI-and-IP-USA/home",
+  },
+  {
+    id: "wb-12",
+    title: "AI for Patent Litigation – Connecting Assertion Intelligence with Prior Art Analysis",
+    host: "Clerq (formerly NLPatent) & RPX",
+    date: "2026-09-16",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "high",
+    description: "Panel with RPX, Clerq, and outside counsel from Finnegan on connecting litigation-assertion intelligence (RPX Empower) with prior-art analysis (Clerq) workflows.",
+    tags: ["Competitor-hosted", "Litigation"],
+    url: "https://ipwatchdog.com/event/webinar-clerq-rpx-2026-09-16-ai-for-patent-litigation/",
+  },
+  {
+    id: "wb-13",
+    title: "The Invisible Checklist – What Makes IP Teams Say Yes to AI",
+    host: "Patently",
+    date: "2026-09-17",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "high",
+    description: "Direct Tier 1 competitor-hosted session on the adoption criteria (trust, liability, auditability) IP teams use to say yes to an AI tool, including a Patently platform demo.",
+    tags: ["Competitor-hosted", "AI Adoption"],
+    url: "https://ipwatchdog.com/event/webinar-patently-2026-09-17-the-invisible-checklist/",
+  },
+  {
+    id: "wb-14",
+    title: "How I Prompt AI (CLE Webinar)",
+    host: "Junior",
+    date: "2026-09-29",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "high",
+    description: "Direct Tier 1 competitor-hosted CLE session on AI prompting technique for patent practice; topic details still forthcoming per the listing. A second run of the same session is scheduled for 2026-10-15.",
+    tags: ["Competitor-hosted"],
+    url: "https://ipwatchdog.com/event/webinar-junior-2026-09-29/",
+  },
+  {
+    id: "wb-15",
+    title: "IP Copilot webinar (topic TBD)",
+    host: "IP Copilot",
+    date: "2026-10-13",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "medium",
+    description: "Competitor-hosted IPWatchdog session; topic details not yet published by the listing.",
+    tags: ["Competitor-hosted"],
+    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-10-13/",
   },
 ];
 
