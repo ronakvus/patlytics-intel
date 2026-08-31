@@ -654,7 +654,7 @@ const COMPETITORS = [
         tag: "Corporate",
         title: "Acquired Unified Patents",
         body: "Acquired Unified Patents (financial terms undisclosed) to help IP organizations protect against rising patent-litigation risk, adding AI-enhanced claim-charting via Unified's live PEARL tool. See General Highlights.",
-        url: "https://www.globenewswire.com/news-release/2026/08/04/3338375/0/en/anaqua-acquires-unified-patents-to-help-organizations-protect-against-rising-intellectual-property-litigation-risk.html",
+        url: "https://www.anaqua.com/resource/anaqua-acquires-unified-patents-to-help-organizations-protect-against-rising-intellectual-property-litigation-risk/",
       },
     ],
     hiring: {
@@ -697,7 +697,7 @@ const COMPETITORS = [
     hq: "Darmstadt, Germany (PatentSight); Berlin, Germany (IPlytics); LexisNexis IP global HQ: Dayton, OH",
     website: "lexisnexisip.com",
     websiteUrl: siteUrl("lexisnexisip.com"),
-    careersUrl: "https://www.lexisnexis.com/en-us/careers.page",
+    careersUrl: "https://www.lexisnexisip.com/careers/",
     linkedin: "https://www.linkedin.com/company/lexisnexisip",
     founders: [
       {
@@ -752,7 +752,7 @@ const COMPETITORS = [
     hq: "London, UK (per ZoomInfo/Datanyze/CBInsights/Tracxn — Aistemos' historical HQ; possibly conflated with LexisNexis IP's separate Paris office in earlier data)",
     website: "lexisnexisip.com",
     websiteUrl: siteUrl("lexisnexisip.com"),
-    careersUrl: "https://www.lexisnexis.com/en-us/careers.page",
+    careersUrl: "https://www.lexisnexisip.com/careers/",
     linkedin: "https://www.linkedin.com/company/cipher-strategicpatentintelligence",
     founders: [
       {
