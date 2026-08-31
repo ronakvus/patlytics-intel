@@ -452,8 +452,8 @@ const COMPETITORS = [
       topRoles: [
         { title: "Software Engineer, Full-Stack", count: 2 },
         { title: "Customer Support Specialist", count: 2 },
-        { title: "Account Executive / GTM", count: 1 },
-        { title: "AI Engineer", count: 1 },
+        { title: "Account Executive / GTM", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/510cafb8-922a-45fd-8340-6aa89191ea47" },
+        { title: "AI Engineer", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/972bab7a-a285-4d22-af00-9ff9d3e41776" },
       ],
     },
     marketing: [
@@ -851,7 +851,7 @@ const COMPETITORS = [
       recentHires: [],
       topRoles: [
         { title: "Enterprise Account Manager, Intellectual Property Solutions", count: 2 },
-        { title: "Data Scientist III (Protégé / PatentSight+)", count: 1 },
+        { title: "Data Scientist III (Protégé / PatentSight+)", count: 1, url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/United-Kingdom/Data-Scientist-III_R114916-2" },
       ],
     },
     marketing: [],
@@ -1098,7 +1098,7 @@ COMPETITORS.push(
       recentHires: [],
       topRoles: [
         { title: "Account Executive", count: 2 },
-        { title: "Business Development Representative", count: 1 },
+        { title: "Business Development Representative", count: 1, url: "https://careers.deepip.ai/jobs/7655432-business-development-representative-north-america" },
       ],
     },
   }),
@@ -1125,9 +1125,9 @@ COMPETITORS.push(
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "Solutions Engineer (Remote)", count: 1 },
-        { title: "AI Engineer (Remote)", count: 1 },
-        { title: "Account Manager (Remote)", count: 1 },
+        { title: "Solutions Engineer (Remote)", count: 1, url: "https://junior.law/opportunities-at-junior-solutions-engineer-remote/" },
+        { title: "AI Engineer (Remote)", count: 1, url: "https://junior.law/opportunities-at-junior-ai-engineer-remote/" },
+        { title: "Account Manager (Remote)", count: 1, url: "https://junior.law/opportunities-at-junior-account-manager-remote/" },
       ],
     },
   }),
@@ -1177,9 +1177,9 @@ COMPETITORS.push(
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "Senior Product Engineer", count: 1 },
-        { title: "Patent Product Engineer", count: 1 },
-        { title: "Founding Account Executive - US", count: 1 },
+        { title: "Senior Product Engineer", count: 1, url: "https://jobs.ashbyhq.com/ankar/9bccbebb-3a1a-480a-a71a-03d08d0c714d" },
+        { title: "Patent Product Engineer", count: 1, url: "https://jobs.ashbyhq.com/ankar/37144139-21dc-4a75-8436-1b931491af4c" },
+        { title: "Founding Account Executive - US", count: 1, url: "https://jobs.ashbyhq.com/ankar/067b4911-307c-4497-8d97-ba37c2d8014f" },
       ],
     },
     marketing: [
@@ -1384,15 +1384,15 @@ COMPETITORS.push(
     hiring: {
       openRoles: 6,
       newRolesToday: [
-        { title: "Product Delivery Lead (Software Engineering)", dept: "Engineering", location: "London or Cambridge, UK (hybrid)" },
-        { title: "DevOps & Security Engineer", dept: "Engineering", location: "London, UK (hybrid)" },
-        { title: "Office Manager (with Finance Skills)", dept: "Operations", location: "Cambridge, UK" },
+        { title: "Product Delivery Lead (Software Engineering)", dept: "Engineering", location: "London or Cambridge, UK (hybrid)", url: "https://www.iprova.com/career/product-delivery-lead-software-engineering/" },
+        { title: "DevOps & Security Engineer", dept: "Engineering", location: "London, UK (hybrid)", url: "https://www.iprova.com/career/devops-security-engineer/" },
+        { title: "Office Manager (with Finance Skills)", dept: "Operations", location: "Cambridge, UK", url: "https://www.iprova.com/career/office-manager-with-finance-skills-2/" },
       ],
       recentHires: [],
       topRoles: [
-        { title: "Senior Full Stack Engineer", count: 1 },
-        { title: "Invention Engineer", count: 1 },
-        { title: "Business Development Manager", count: 1 },
+        { title: "Senior Full Stack Engineer", count: 1, url: "https://www.iprova.com/career/senior-full-stack-engineer/" },
+        { title: "Invention Engineer", count: 1, url: "https://www.iprova.com/career/invention-engineer/" },
+        { title: "Business Development Manager", count: 1, url: "https://www.iprova.com/career/business-development-manager/" },
       ],
     },
   }),
@@ -1590,9 +1590,9 @@ COMPETITORS.push(
     hiring: {
       openRoles: 4,
       newRolesToday: [
-        { title: "Data Migration and Onboarding Specialist", dept: "Operations", location: "Remote (Philippines)" },
-        { title: "Customer Success Manager", dept: "Success", location: "Remote (US)" },
-        { title: "Operations Associate", dept: "Operations", location: "Remote (US)" },
+        { title: "Data Migration and Onboarding Specialist", dept: "Operations", location: "Remote (Philippines)", url: "https://alt-legal.breezy.hr/p/2cc745ec3a62-data-migration-and-onboarding-specialist-at-alt-legal-remote" },
+        { title: "Customer Success Manager", dept: "Success", location: "Remote (US)", url: "https://alt-legal.breezy.hr/p/33b788b22d82-customer-success-manager" },
+        { title: "Operations Associate", dept: "Operations", location: "Remote (US)", url: "https://alt-legal.breezy.hr/p/9e8be090952c-operations-associate" },
       ],
       recentHires: [],
       topRoles: [{ title: "Trademark Docketing Specialist", count: 1 }],
@@ -1753,7 +1753,7 @@ COMPETITORS.push(
       newRolesToday: [
         { title: "Senior Business Recruiter, GTM", dept: "Recruiting", location: "New York" },
         { title: "Sr. Systems Engineer, Client Engineering", dept: "IT", location: "San Francisco" },
-        { title: "Technical Account Manager, EMEA", dept: "Customer Success", location: "London" },
+        { title: "Technical Account Manager, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/harvey/78c71402-02bf-4533-99c6-10c1bad10b02" },
       ],
       recentHires: [],
       topRoles: [
@@ -1886,7 +1886,7 @@ COMPETITORS.push(
       openRoles: 281,
       newRolesToday: [
         { title: "Senior Product Designer", dept: "Product", location: "Stockholm HQ", url: "https://jobs.ashbyhq.com/legora/89073502-e8e3-49d9-ba4b-5642ef1a933d" },
-        { title: "Head of Legal Engineering - Mexico", dept: "Legal Engineering", location: "Mexico City" },
+        { title: "Head of Legal Engineering - Mexico", dept: "Legal Engineering", location: "Mexico City", url: "https://jobs.ashbyhq.com/legora/7d42ddb8-0703-4a64-8fe3-8d9010bbd1b5" },
       ],
       recentHires: [],
       topRoles: [
@@ -1943,8 +1943,8 @@ COMPETITORS.push(
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "Senior Software Engineer, Platform & Infrastructure", count: 1 },
-        { title: "Senior Backend / AI Systems Engineer", count: 1 },
+        { title: "Senior Software Engineer, Platform & Infrastructure", count: 1, url: "https://jobs.ashbyhq.com/spellbook.com/22a80c7b-2e4d-4f89-834d-db7d3387a5c8" },
+        { title: "Senior Backend / AI Systems Engineer", count: 1, url: "https://jobs.ashbyhq.com/spellbook.com/9cb21ddb-472c-4048-915f-ffd87bb39cdf" },
         { title: "Customer Success Manager (various regions)", count: 3 },
       ],
     },
@@ -2054,7 +2054,7 @@ COMPETITORS.push(
     hiring: {
       openRoles: 8,
       newRolesToday: [
-        { title: "Lead Software Engineer – CoCounsel Legal Desktop App", dept: "Engineering", location: "Zug, Switzerland" },
+        { title: "Lead Software Engineer – CoCounsel Legal Desktop App", dept: "Engineering", location: "Zug, Switzerland", url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Switzerland-Zug-Zug/Lead-Software-Engineer---CoCounsel-Legal-Desktop-App-_JREQ202263" },
       ],
       recentHires: [],
       topRoles: [
@@ -2100,8 +2100,8 @@ COMPETITORS.push(
     hiring: {
       openRoles: 28,
       newRolesToday: [
-        { title: "Staff/Senior Staff Software Engineer, Agentic Search", dept: "Engineering, Product & Design", location: "San Francisco" },
-        { title: "Senior Staff Product Manager, Workflow Efficiency", dept: "Engineering, Product & Design", location: "San Francisco" },
+        { title: "Staff/Senior Staff Software Engineer, Agentic Search", dept: "Engineering, Product & Design", location: "San Francisco", url: "https://jobs.ashbyhq.com/ironcladhq/4be2d35a-9aa0-415c-ba13-30da080158ad" },
+        { title: "Senior Staff Product Manager, Workflow Efficiency", dept: "Engineering, Product & Design", location: "San Francisco", url: "https://jobs.ashbyhq.com/ironcladhq/eca48af4-57f1-47f9-8462-8835ffb8050a" },
       ],
       recentHires: [],
       topRoles: [
@@ -2199,9 +2199,9 @@ COMPETITORS.push(
     hiring: {
       openRoles: 10,
       newRolesToday: [
-        { title: "Strategic Business Development Lead", dept: "Business Development", location: "New York / Remote (US)" },
-        { title: "Senior Enterprise Solutions Engineer", dept: "Solutions/Sales Engineering", location: "Remote (US, CA)" },
-        { title: "Business Development Representative", dept: "Sales/Business Development", location: "New York, NY (Hybrid)" },
+        { title: "Strategic Business Development Lead", dept: "Business Development", location: "New York / Remote (US)", url: "https://app.dover.com/apply/4c478554-4606-49ab-8897-413f3ce35b74/93fbe347-7627-43fd-a97f-04a9dc7b0f19/?rs=15190316" },
+        { title: "Senior Enterprise Solutions Engineer", dept: "Solutions/Sales Engineering", location: "Remote (US, CA)", url: "https://app.dover.com/apply/DraftWise/92ffa49f-0beb-40c9-8dd4-fd2c64c23e41/?rs=76643084" },
+        { title: "Business Development Representative", dept: "Sales/Business Development", location: "New York, NY (Hybrid)", url: "https://app.dover.com/apply/draftwise/2c8784e9-ceb4-490c-9671-0543724c8647" },
       ],
       recentHires: [],
       topRoles: [
@@ -2269,9 +2269,9 @@ COMPETITORS.push(
     hiring: {
       openRoles: 35,
       newRolesToday: [
-        { title: "Strategic Account Executive", dept: "Sales", location: "Remote - US" },
-        { title: "Recruiting Coordinator, Engineering", dept: "People", location: "San Francisco (Hybrid)" },
-        { title: "Growth Sales Manager, East", dept: "Sales", location: "Remote - US" },
+        { title: "Strategic Account Executive", dept: "Sales", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4204363009" },
+        { title: "Recruiting Coordinator, Engineering", dept: "People", location: "San Francisco (Hybrid)", url: "https://job-boards.greenhouse.io/eve/jobs/4323681009" },
+        { title: "Growth Sales Manager, East", dept: "Sales", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4383914009" },
       ],
       recentHires: [],
       topRoles: [
@@ -2311,7 +2311,7 @@ COMPETITORS.push(
     hiring: {
       openRoles: 3,
       newRolesToday: [
-        { title: "Brazilian Portuguese Patent Language Lead", dept: "Production", location: "Barcelona, Spain" },
+        { title: "Brazilian Portuguese Patent Language Lead", dept: "Production", location: "Barcelona, Spain", url: "https://jobs.lever.co/weloglobal/41e24db7-d93a-4b83-b551-9daa47c75155" },
       ],
       recentHires: [],
       topRoles: [{ title: "Patent Language Lead (various languages)", count: 2 }],
@@ -2407,14 +2407,14 @@ COMPETITORS.push(
     hiring: {
       openRoles: 9,
       newRolesToday: [
-        { title: "Senior NLP & Generative AI Engineer", dept: "Engineering", location: "Hyderabad, India" },
-        { title: "Senior Search Engineer", dept: "Engineering", location: "Hyderabad, India" },
-        { title: "Senior Product Manager", dept: "Product", location: "Hyderabad, India" },
+        { title: "Senior NLP & Generative AI Engineer", dept: "Engineering", location: "Hyderabad, India", url: "https://ipauthor.com/senior-nlp-generative-ai-engineer-deep-search-rag-llm-systems/" },
+        { title: "Senior Search Engineer", dept: "Engineering", location: "Hyderabad, India", url: "https://ipauthor.com/senior-search-engineer-hybrid-search-gen-ai-solr-elastic-search/" },
+        { title: "Senior Product Manager", dept: "Product", location: "Hyderabad, India", url: "https://ipauthor.com/senior-product-manager-india-core-product-dev-team/" },
       ],
       recentHires: [],
       topRoles: [
-        { title: "Senior Full-Stack Engineering Lead", count: 1 },
-        { title: "Product Manager", count: 1 },
+        { title: "Senior Full-Stack Engineering Lead", count: 1, url: "https://ipauthor.com/senior-full-stack-engineering-lead-reactjs-python-llm-product-development/" },
+        { title: "Product Manager", count: 1, url: "https://ipauthor.com/product-manager/" },
       ],
     },
   }),
