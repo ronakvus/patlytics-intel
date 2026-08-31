@@ -193,6 +193,10 @@
         "cypris": {
           "status": "yes",
           "detail": "The IP solutions page explicitly lists \"AI-powered claim analysis and side-by-side comparison\" and \"claim-level comparison and mapping\" as platform capabilities."
+        },
+        "pioneerip": {
+          "status": "partial",
+          "detail": "PioneerIP's 'Claim Optimizer' evaluates draft claim amendments against market products, and 'Infringement Search' maps a patent's claims to potentially infringing products - but the company's own site doesn't describe a formal element-by-element claim-chart deliverable, so this reads as related-but-narrower than a dedicated claim-charting feature."
         }
       }
     },
@@ -375,6 +379,10 @@
         "cypris": {
           "status": "yes",
           "detail": "Natural-language and semantic search, citation analysis, and claim-level comparison across 180M+ patents and literature."
+        },
+        "pioneerip": {
+          "status": "yes",
+          "detail": "'Validity Search' (beta) is explicitly described as finding prior art for validity assessment; 'Patentability Search' (beta) tests draft claims against prior art before filing."
         }
       }
     },
@@ -557,6 +565,10 @@
         "cypris": {
           "status": "no",
           "detail": "No prosecution or office-action feature was found; the platform is R&D-intelligence focused, not patent-office prosecution."
+        },
+        "pioneerip": {
+          "status": "no",
+          "detail": "PioneerIP's own site lists five tools (Infringement Search, Portfolio Analysis, Claim Optimizer, Validity Search, Patentability Search) - none address office-action response drafting."
         }
       }
     },
@@ -739,6 +751,10 @@
         "cypris": {
           "status": "yes",
           "detail": "Dedicated \"AI Dashboard\" / \"Innovation Dashboard\" products provide landscape analysis, competitive positioning maps, and filing-trend tracking."
+        },
+        "pioneerip": {
+          "status": "yes",
+          "detail": "'Portfolio Analysis' explicitly ranks companies by infringement probability across a patent portfolio."
         }
       }
     },
@@ -921,6 +937,10 @@
         "cypris": {
           "status": "yes",
           "detail": "The IP solutions page dedicates a section to FTO with \"automated reporting for prior art, FTO, and landscape analysis,\" and an embedded case study shows Cypris generating per-patent FTO risk ratings."
+        },
+        "pioneerip": {
+          "status": "unknown",
+          "detail": "No dedicated freedom-to-operate product was found on PioneerIP's site - its Infringement Search tool works in the opposite direction (finding others potentially infringing a given patent, not clearing your own product against others' patents), so this isn't confirmed either way."
         }
       }
     },
@@ -1103,6 +1123,10 @@
         "cypris": {
           "status": "no",
           "detail": "No PTAB, IPR, or litigation feature was found anywhere on cypris.ai, including the MCP integration page; a previously-cited claim about API access to raw PTAB data could not be re-confirmed this session."
+        },
+        "pioneerip": {
+          "status": "unknown",
+          "detail": "No PTAB/IPR-specific feature was found or ruled out on PioneerIP's site this session."
         }
       }
     }
