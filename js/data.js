@@ -846,7 +846,7 @@ const COMPETITORS = [
     hiring: {
       openRoles: 6,
       newRolesToday: [
-        { title: "Data Discovery and Enrichment Expert – SEP Intelligence Lead", dept: "IP Solutions / IPlytics", location: "Farringdon, UK" },
+        { title: "Data Discovery and Enrichment Expert – SEP Intelligence Lead", dept: "IP Solutions / IPlytics", location: "Farringdon, UK", url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/Farringdon/Data-Discovery-and-Enrichment-Expert---SEP-Intelligence-Lead_R117089" },
       ],
       recentHires: [],
       topRoles: [
@@ -1093,7 +1093,7 @@ COMPETITORS.push(
     hiring: {
       openRoles: 5,
       newRolesToday: [
-        { title: "Founding Account Executive - DACH", dept: "Sales", location: "Paris (Fully Remote)" },
+        { title: "Founding Account Executive - DACH", dept: "Sales", location: "Paris (Fully Remote)", url: "https://careers.deepip.ai/jobs/7323608-founding-account-executive-dach" },
       ],
       recentHires: [],
       topRoles: [
@@ -1885,7 +1885,7 @@ COMPETITORS.push(
     hiring: {
       openRoles: 281,
       newRolesToday: [
-        { title: "Senior Product Designer", dept: "Product", location: "Stockholm HQ" },
+        { title: "Senior Product Designer", dept: "Product", location: "Stockholm HQ", url: "https://jobs.ashbyhq.com/legora/89073502-e8e3-49d9-ba4b-5642ef1a933d" },
         { title: "Head of Legal Engineering - Mexico", dept: "Legal Engineering", location: "Mexico City" },
       ],
       recentHires: [],
