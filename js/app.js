@@ -456,11 +456,11 @@
   /* ================= NEW MARKET ENTRANTS ================= */
   function renderEntrants() {
     const threatOrder = { high: 0, medium: 1, low: 2 };
-    const items = [...NEW_ENTRANTS].filter((e) => e.date <= state.asOf).sort((a, b) => threatOrder[a.threat] - threatOrder[b.threat] || b.date.localeCompare(a.date));
+    const items = [...NEW_ENTRANTS].filter((e) => e.date <= state.asOf).sort((a, b) => b.date.localeCompare(a.date) || threatOrder[a.threat] - threatOrder[b.threat]);
 
     let html = "";
     html += `<div class="section-heading"><iconify-icon icon="ph:compass"></iconify-icon><h2>New Market Entrants</h2><span class="count-chip">${items.length}</span></div>
-    <p class="section-sub">Sourced from VC portfolio pages (Y Combinator, a16z, and similar), founder LinkedIn activity, and launch posts. Ordered by estimated threat to Patlytics.</p>`;
+    <p class="section-sub">Sourced from VC portfolio pages (Y Combinator, a16z, and similar), founder LinkedIn activity, and launch posts. Ordered by when each was identified, most recent first.</p>`;
 
     if (!items.length) return html + emptyState("No new entrants identified as of this date.");
 
