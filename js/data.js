@@ -1024,7 +1024,12 @@ function stubCompetitor({
     hq: hq || "Not yet verified — pending scrape",
     website,
     websiteUrl: siteUrl(website),
-    careersUrl: careersUrl || (siteUrl(website) + "/careers"),
+    // No guessed "/careers" path here: an unverified pattern-matched path 404s far
+    // more often than it resolves (confirmed 2026-08-31 -- see URL INTEGRITY rule in
+    // Patty's prompt). The plain homepage is a worse deep link but a far more
+    // reliable one; every competitor should really have an explicit, verified
+    // careersUrl instead of relying on this fallback at all.
+    careersUrl: careersUrl || siteUrl(website),
     linkedin,
     founders: founders || [
       { name: "Not yet verified", title: "Founder/CEO", note: "Placeholder — pending verification via scraping pipeline." },
@@ -1053,6 +1058,7 @@ COMPETITORS.push(
       { name: "Édouard d'Archimbaud", title: "Co-Founder & CTO", note: "Previously co-founded Kili Technology alongside Leduc." },
     ],
     website: "deepip.ai",
+    careersUrl: "https://careers.deepip.ai",
     linkedin: "https://www.linkedin.com/company/deep-ip",
     weekActivity: [
       {
@@ -1111,6 +1117,7 @@ COMPETITORS.push(
       { name: "Yuri Eliezer", title: "Co-Founder & CEO", note: "Also a founding patent attorney at Founders Legal; JD, Georgia State University College of Law; undergrad at Georgia Tech." },
     ],
     website: "junior.law",
+    careersUrl: "https://junior.law/careers",
     linkedin: "https://www.linkedin.com/company/junior-ai-drafting",
     weekActivity: [],
     hiring: {
@@ -1140,6 +1147,7 @@ COMPETITORS.push(
       { name: "Wiem Gharbi", title: "CTO", note: "Previously worked on ML applications at Palantir." },
     ],
     website: "ankar.ai",
+    careersUrl: "https://jobs.ashbyhq.com/ankar",
     linkedin: "https://www.linkedin.com/company/ankar-ai",
     weekActivity: [
       {
@@ -1200,6 +1208,7 @@ COMPETITORS.push(
       { name: "Len Boyette", title: "Co-Founder", note: "Background in software engineering, cybersecurity, and cloud infrastructure." },
     ],
     website: "withedge.com",
+    careersUrl: "https://withedge.com",
     linkedin: "https://www.linkedin.com/company/workwithedge",
     weekActivity: [
       {
@@ -1226,6 +1235,7 @@ COMPETITORS.push(
       { name: "Wayne Chang", title: "Founder & CEO", note: "Previously co-founded Crashlytics (mobile crash-reporting; acquired by Twitter, 2013); named to Forbes' Top 50 Angel Investors." },
     ],
     website: "patented.ai",
+    careersUrl: "https://patented.ai",
     linkedin: "https://www.linkedin.com/company/patented",
   }),
   stubCompetitor({
@@ -1245,6 +1255,7 @@ COMPETITORS.push(
       { name: "Sandeep Agarwal", title: "CEO (since 2023)", note: "MBA in International Management, University of Dallas (2000); spent roughly a decade at Adeia/Xperi/Tessera as VP of patent acquisitions, portfolio development, and licensing support; earlier CEO/President of IP services firm Clairvolex and worked at IPValue Management on patent monetization; named to the IAM Strategy 300 Global Leaders list. (Verified via XLSCOUT's CEO-appointment press release and LinkedIn-indexed coverage, 2026-08-29.)" },
     ],
     website: "xlscout.ai",
+    careersUrl: "https://xlscout.ai/careers/",
     linkedin: "https://www.linkedin.com/company/xlscout-ai",
     weekActivity: [
       {
@@ -1273,6 +1284,7 @@ COMPETITORS.push(
       { name: "James Stonehill", title: "Co-Founder & CTO", note: "Studied at the University of Exeter; previously Engineering Lead / Senior Software Engineer at Onfido, Software Engineer at AlphaSights, and Associate Technical Consultant at Acceleration; also independently founded Stonehill Apps Ltd. (Verified via LinkedIn, Crunchbase, The Org, 2026-08-29.)" },
     ],
     website: "clerq-ip.com",
+    careersUrl: "https://clerq-ip.com/careers",
     linkedin: "https://www.linkedin.com/company/nlpatent",
     weekActivity: [
       {
@@ -1313,6 +1325,7 @@ COMPETITORS.push(
       { name: "Jack Xu", title: "Founder & CEO", note: "JD, Harvard Law School; prior experience as a patent attorney; background in computer science." },
     ],
     website: "patentpal.com",
+    careersUrl: "https://patentpal.com",
     linkedin: "https://www.linkedin.com/company/patentpal",
   }),
   stubCompetitor({
@@ -1332,6 +1345,7 @@ COMPETITORS.push(
       { name: "Yasu Oikawa", title: "COO", note: "PhD Physics, Tohoku University (2019); MSc Material Science, Tokyo Institute of Technology; BSc Physics, Keio University. Previously Project Assistant Professor at Tohoku University and Technical Leader at Landon IP. (Verified via LinkedIn, 2026-08-27.)" },
     ],
     website: "amplified.ai",
+    careersUrl: "https://amplified.ai",
     linkedin: "https://www.linkedin.com/company/amplified-ai",
   }),
   stubCompetitor({
@@ -1349,6 +1363,7 @@ COMPETITORS.push(
       { name: "Julian Nolan", title: "Founder & CEO", note: "B.Eng Electronic Engineering (Univ. of Essex); MSc Artificial Neural Networks; previously at National Instruments, LSI, EMI Music Central Research Labs, and VP Licensing at Honeywell." },
     ],
     website: "iprova.com",
+    careersUrl: "https://www.iprova.com/careers/",
     linkedin: "https://www.linkedin.com/company/iprova",
     weekActivity: [
       {
@@ -1397,6 +1412,7 @@ COMPETITORS.push(
       { name: "Ophir Daniel", title: "Co-Founder", note: "Began career in Israel's electronics/aviation industry, then worked as a web-based software developer for German and US corporations in the early internet era, before co-founding Minesoft with Chapman-Daniel in 1996. (Verified via minesoft.com bio pages, 2026-08-29.)" },
     ],
     website: "minesoft.com",
+    careersUrl: "https://minesoft.com",
     linkedin: "https://www.linkedin.com/company/minesoft-ltd",
   }),
   stubCompetitor({
@@ -1414,6 +1430,7 @@ COMPETITORS.push(
       { name: "N/A — originated as a telecom subsidiary", title: "Business origin", note: "Frédéric Beylier became CEO on 2026-03-25, succeeding 25-year CEO Charles Besson (who remains a significant shareholder and moved to the Supervisory Board); Beylier was previously CEO of Flowbird Group. Neither is documented as the company's founder. (Verified via Business Wire/IPWatchdog, 2026-08-27.)" },
     ],
     website: "questel.com",
+    careersUrl: "https://www.questel.com",
     linkedin: "https://www.linkedin.com/company/questel",
     weekActivity: [
       {
@@ -1458,6 +1475,7 @@ COMPETITORS.push(
       { name: "Drew Winship", title: "Co-Founder", note: "JD, Washington University in St. Louis School of Law (2009); BA Economics/Political Science, University of Washington (2006); four years as a corporate litigator in St. Louis (incl. Brown & James, P.C.) before co-founding Juristat in 2012 out of a St. Louis Startup Weekend; also co-founded the GlobalHack hackathon nonprofit. (Verified via Crunchbase, Silicon Prairie News, 2026-08-28.)" },
     ],
     website: "juristat.com",
+    careersUrl: "https://juristat.com/careers",
     linkedin: "https://www.linkedin.com/company/juristat",
   }),
   stubCompetitor({
@@ -1475,6 +1493,7 @@ COMPETITORS.push(
       { name: "Jeff O'Neill", title: "Founder & CEO", note: "Patent attorney; former in-house patent counsel at Amazon, associate at Wolf Greenfield, and clerk for the First Circuit Court of Appeals." },
     ],
     website: "patentbots.com",
+    careersUrl: "https://patentbots.com/careers",
     linkedin: "https://www.linkedin.com/company/patent-bots",
     weekActivity: [
       {
@@ -1529,6 +1548,7 @@ COMPETITORS.push(
       { name: "Gabe Kneisley", title: "Co-Founder & Head of Product", note: "Background as a product/interaction designer." },
     ],
     website: "altlegal.com",
+    careersUrl: "https://alt-legal.breezy.hr/",
     linkedin: "https://www.linkedin.com/company/alt-legal-ip-management-software",
     weekActivity: [
       {
@@ -1593,6 +1613,7 @@ COMPETITORS.push(
       { name: "Sam Zellner", title: "Project Lead", note: "Former AT&T IP executive with 200+ patents; PQAI is an MIT-licensed open-source project initiated by AT&T's IP organization, not a founder-led startup." },
     ],
     website: "projectpq.ai",
+    careersUrl: "https://projectpq.ai",
     linkedin: "https://www.linkedin.com/company/pqai",
   }),
   stubCompetitor({
@@ -1613,6 +1634,7 @@ COMPETITORS.push(
       { name: "Grant Eden", title: "Founding Senior Software Engineer", note: "Listed on IPWatchdog's IP Copilot partner page as a founding team member. (Verified 2026-08-31.)" },
     ],
     website: "ipcopilot.ai",
+    careersUrl: "https://ipcopilot.ai",
     linkedin: "https://www.linkedin.com/company/ip-copilot",
   }),
   stubCompetitor({
@@ -1631,6 +1653,7 @@ COMPETITORS.push(
       { name: "Gabriel Pereyra", title: "Co-Founder & President", note: "CS degree, USC; Google Brain resident, then research scientist at DeepMind, then ML engineer at Meta." },
     ],
     website: "harvey.ai",
+    careersUrl: "https://jobs.ashbyhq.com/harvey",
     linkedin: "https://www.linkedin.com/company/harvey-ai",
     weekActivity: [
       {
@@ -1938,6 +1961,7 @@ COMPETITORS.push(
     founded: "2019 (ceased independent operation 2025-2026)",
     hq: "London, UK (historical)",
     website: "robinai.com",
+    careersUrl: "https://robinai.com",
     linkedin: "https://www.linkedin.com/company/robinai",
     founders: [
       { name: "Richard Robinson", title: "Co-Founder", note: "Formerly a lawyer at Clifford Chance." },
@@ -1956,6 +1980,7 @@ COMPETITORS.push(
     founded: "2019 (rebranded to Legora, February 2025)",
     hq: "Stockholm, Sweden",
     website: "leyalaw.com",
+    careersUrl: "https://leya.law",
     linkedin: "https://www.linkedin.com/company/leyalaw",
     founders: [
       { name: "Max Junestrand", title: "Co-Founder & CEO", note: "BSc Economics (Stockholm School of Economics); MSc Computer Science/ML (KTH); prior venture capital experience." },
@@ -1980,6 +2005,7 @@ COMPETITORS.push(
       { name: "Laura Safdie", title: "Co-Founder", note: "Background details not independently verified." },
     ],
     website: "legal.thomsonreuters.com",
+    careersUrl: "https://careers.thomsonreuters.com/",
     linkedin: "https://www.linkedin.com/company/casetext",
     weekActivity: [
       {
@@ -2100,6 +2126,7 @@ COMPETITORS.push(
       { name: "Chris Combs", title: "Co-Founder", note: "Background details not independently verified." },
     ],
     website: "linksquares.com",
+    careersUrl: "https://linksquares.com/careers",
     linkedin: "https://www.linkedin.com/company/linksquares",
     weekActivity: [
       {
@@ -2137,6 +2164,7 @@ COMPETITORS.push(
       { name: "Ozan Yalti", title: "Co-Founder", note: "Stanford Law graduate; practiced at Clifford Chance." },
     ],
     website: "draftwise.com",
+    careersUrl: "https://www.draftwise.com/careers",
     linkedin: "https://www.linkedin.com/company/draftwise-ai",
     weekActivity: [
       {
@@ -2199,6 +2227,7 @@ COMPETITORS.push(
       { name: "Nitish Mutha", title: "Co-Founder & CTO", note: "Met Faruq as UCL machine-learning master's classmates." },
     ],
     website: "genieai.co",
+    careersUrl: "https://genieai.co/careers",
     linkedin: "https://www.linkedin.com/company/genie-ai",
     hiring: { openRoles: 0, newRolesToday: [], recentHires: [], topRoles: [] },
   }),
@@ -2219,6 +2248,7 @@ COMPETITORS.push(
       { name: "Matt Noe", title: "Co-Founder & Chief Product Officer", note: "Led Rubrik's machine-learning products before co-founding Eve; a founding engineer at Rubrik who has spent the last decade building AI products. (Verified via eve.legal/company and TechCrunch, 2026-08-29.)" },
     ],
     website: "eve.legal",
+    careersUrl: "https://job-boards.greenhouse.io/eve",
     linkedin: "https://www.linkedin.com/company/eve-legal",
     weekActivity: [
       {
@@ -2302,6 +2332,7 @@ COMPETITORS.push(
       { name: "Manish Sinha", title: "Founder & CTO", note: "Previously at Hughes Software Systems." },
     ],
     website: "patseer.com",
+    careersUrl: "https://www.patseer.com/careers/",
     linkedin: "https://www.linkedin.com/company/patseer-technologies",
     weekActivity: [
       {
@@ -2342,6 +2373,7 @@ COMPETITORS.push(
       { name: "Andrew Samm", title: "Co-Founder & Director of Customer Success", note: "Attorney-at-law with 15+ years of experience in the IP space; currently leads Customer Success at Patently. (Verified via LinkedIn and Crunchbase, 2026-08-29.)" },
     ],
     website: "patently.com",
+    careersUrl: "https://www.patently.com",
     linkedin: "https://www.linkedin.com/company/patently",
   }),
   stubCompetitor({
@@ -2401,6 +2433,7 @@ COMPETITORS.push(
       { name: "Bao Tran", title: "Founder & CEO", note: "Patent attorney practicing since 1987; JD, University of Houston Law Center; MBA, Columbia University; BSEE, Rice University; also Managing Partner at patent law firm PatentPC, licensed in CA/NV/TX and before the USPTO. Built patent portfolios for Shutterfly and NEC Research, and is credited with architecting the Invisalign (Align Technology) patent portfolio. (Verified via Crunchbase, Justia Lawyer Directory, 2026-08-29.)" },
     ],
     website: "powerpatent.com",
+    careersUrl: "https://powerpatent.com",
     linkedin: "https://www.linkedin.com/company/powerpatent-inc-",
   }),
   stubCompetitor({
@@ -2419,6 +2452,7 @@ COMPETITORS.push(
       { name: "Amir Achourie", title: "Co-Founder & Chief Revenue Officer", note: "BA in Business Economics, Middlesex University (UK); prior roles include Sales Executive at Currys plc, Account Executive at Informa, VP Sales at FactoryFour, and Regional Sales Manager at Splunk — 15+ years building GTM in the IP/R&D-intelligence space across North America and EMEA. (Verified via LinkedIn, Crunchbase, Tracxn, 2026-08-29.)" },
     ],
     website: "cypris.ai",
+    careersUrl: "https://cypris.ai/about-us",
     linkedin: "https://www.linkedin.com/company/cyprisai",
     weekActivity: [
       {

@@ -23,15 +23,35 @@ confirmed against anaqua.com while building this script. curl's TLS/HTTP
 behavior is what Patty's own research agents already rely on elsewhere, so
 this keeps the check consistent with what actually works in that environment.
 
-Known limitations:
+Known limitations (confirmed 2026-08-31 while auditing careersUrl fields --
+see js/data.js's stubCompetitor() for the incident this was built in response
+to):
 - linkedin.com returns a blanket 404 to any non-browser client regardless of
   whether the page is real (confirmed against a known-valid company page),
   so LinkedIn URLs are skipped rather than risk a false "broken" verdict.
-- This only checks HTTP status codes, not page content, so it cannot catch
-  a "soft" dead link that returns 200 but silently redirects to an unrelated
-  generic page (some ATS/job boards do this once a posting closes). It
-  reliably catches hard failures (404s, DNS errors, timeouts), which covers
-  the vast majority of link rot -- but isn't a total content guarantee.
+- A page's HTTP status alone isn't proof of real content. Two failure modes
+  this script CANNOT catch:
+    1. A single-page app that returns 200 for every path, including ones
+       that don't exist, rendering a client-side "not found" message (IP
+       Copilot's careers page did exactly this).
+    2. A dead path that 301/307-redirects to a real, unrelated page instead
+       of erroring (two defunct companies' "/careers" both redirected
+       cleanly to their plain homepage).
+  A tempting fix -- grep the response body for "page not found" style
+  phrases -- was tried and reverted: it produced false positives on pages
+  already manually confirmed real (genieai.co/careers, linksquares.com/
+  careers), because that exact phrasing showed up in unrelated analytics/
+  tracking boilerplate JS shipped on every page of those sites, not in
+  visible page content. Distinguishing that from a real not-found message
+  would need actual rendered-DOM text extraction, which a curl-based script
+  can't do. A false BROKEN verdict is worse than a missed one -- it would
+  make the daily routine "fix" links that already work -- so don't
+  reintroduce a body-text heuristic without confirming it doesn't do that
+  across a range of real sites first.
+  Treat a clean "0 broken" result as "no hard failures found," not "every
+  link's content was verified" -- spot-checking actual content (WebFetch/
+  reading the page) during normal research is what catches this class of
+  soft failure, not this script.
 """
 import re
 import subprocess
