@@ -32,7 +32,7 @@
         },
         "iprally": {
           "status": "yes",
-          "detail": "Launched a standalone \"Invalidity Agent\" (2026-08-13): enter a granted patent, pick claims to target, and it runs a multi-pass search across 130M+ patents, charts each claim against prior art, and produces an interactive, exportable feature chart — no longer just embedded in the novelty-search workflow."
+          "detail": "Launched a standalone \"Invalidity Agent\" (2026-08-13): enter a granted patent, pick claims to target, and it runs a multi-pass search across 130M+ patents, charts each claim against prior art, and produces an interactive, exportable feature chart \u2014 no longer just embedded in the novelty-search workflow."
         },
         "clarivate-innography": {
           "status": "unknown",
@@ -168,7 +168,7 @@
         },
         "eve-legal": {
           "status": "no",
-          "detail": "The site describes only intake, medical chronologies, demand letters, and discovery for plaintiff litigation (PI, employment, med-mal, SSDI, workers' comp) — no patent or IP functionality at all."
+          "detail": "The site describes only intake, medical chronologies, demand letters, and discovery for plaintiff litigation (PI, employment, med-mal, SSDI, workers' comp) \u2014 no patent or IP functionality at all."
         },
         "park-ip": {
           "status": "no",
@@ -188,7 +188,7 @@
         },
         "powerpatent": {
           "status": "no",
-          "detail": "The homepage lists graphical claim drafting and section-112 diagnostics — drafting and QA, not chart-to-reference mapping; no claim-charting page was found."
+          "detail": "The homepage lists graphical claim drafting and section-112 diagnostics \u2014 drafting and QA, not chart-to-reference mapping; no claim-charting page was found."
         },
         "cypris": {
           "status": "yes",
@@ -424,7 +424,7 @@
         },
         "juristat": {
           "status": "partial",
-          "detail": "Office Action Response auto-generates response shells with USPTO data pre-filled and assembles a packet, but the site itself says users must add their own arguments — substantive drafting is still human-written."
+          "detail": "Office Action Response auto-generates response shells with USPTO data pre-filled and assembles a packet, but the site itself says users must add their own arguments \u2014 substantive drafting is still human-written."
         },
         "patent-bots": {
           "status": "yes",
@@ -532,7 +532,7 @@
         },
         "minesoft": {
           "status": "no",
-          "detail": "PatDocs only provides automated alerts for office-action and file-history changes — monitoring, not drafting."
+          "detail": "PatDocs only provides automated alerts for office-action and file-history changes \u2014 monitoring, not drafting."
         },
         "questel": {
           "status": "yes",
@@ -896,7 +896,7 @@
         },
         "amplified-ai": {
           "status": "partial",
-          "detail": "Marketing copy lists FTO as a use case, but no dedicated named FTO workflow or module page was found — it appears to be general search applied to FTO."
+          "detail": "Marketing copy lists FTO as a use case, but no dedicated named FTO workflow or module page was found \u2014 it appears to be general search applied to FTO."
         },
         "iprova": {
           "status": "no",
@@ -962,7 +962,7 @@
         },
         "iprally": {
           "status": "yes",
-          "detail": "The new \"Invalidity Agent\" (2026-08-13) writes a jurisdiction-styled invalidity report (EPO problem-solution / USPTO §102-§103) against a granted patent's claims, directly supporting IPR/PTAB petition prep — upgraded from a search-only \"Patent Invalidity Search\" use case."
+          "detail": "The new \"Invalidity Agent\" (2026-08-13) writes a jurisdiction-styled invalidity report (EPO problem-solution / USPTO \u00a7102-\u00a7103) against a granted patent's claims, directly supporting IPR/PTAB petition prep \u2014 upgraded from a search-only \"Patent Invalidity Search\" use case."
         },
         "clarivate-innography": {
           "status": "partial",
@@ -1082,7 +1082,7 @@
         },
         "amplified-ai": {
           "status": "partial",
-          "detail": "The company published benchmarking of its retrieval against PTAB IPR-challenged patents showing IPR relevance, but no named PTAB/IPR module was found — it appears folded into general invalidity search."
+          "detail": "The company published benchmarking of its retrieval against PTAB IPR-challenged patents showing IPR relevance, but no named PTAB/IPR module was found \u2014 it appears folded into general invalidity search."
         },
         "iprova": {
           "status": "no",
@@ -1206,7 +1206,7 @@
           "platform": "Vendor Testimonial",
           "author": "Daniel S. Block, Director, Sterne Kessler",
           "date": "2025-09-04",
-          "text": "When every hour counts, waiting days for search results just isn't an option. This solution delivers the precision we need—and fast—so we can stay ahead in high-stakes litigation.",
+          "text": "When every hour counts, waiting days for search results just isn't an option. This solution delivers the precision we need\u2014and fast\u2014so we can stay ahead in high-stakes litigation.",
           "sourceUrl": "https://www.sternekessler.com/news-insights/news/case-study-sterne-kessler-ip-copilots-ai-powered-prior-art-search-collaboration/",
           "sentiment": "positive"
         }
@@ -1249,7 +1249,7 @@
         {
           "platform": "Vendor Testimonial",
           "author": "Brendan Sever, Assistant Managing Director, Global Prior Art",
-          "text": "We've seen major advancements in patent search and classification software recently, with a wide range of solutions varying in performance. Some are fast and efficient at retrieving information but often sacrifice accuracy – especially if you're trying to classify an entire universe of patents. For our needs, IPRally's classifier is a perfect fit. It offers high accuracy and approximates a manual review while accelerating the process, so we can focus on diving into the findings and getting creative with our analysis.",
+          "text": "We've seen major advancements in patent search and classification software recently, with a wide range of solutions varying in performance. Some are fast and efficient at retrieving information but often sacrifice accuracy \u2013 especially if you're trying to classify an entire universe of patents. For our needs, IPRally's classifier is a perfect fit. It offers high accuracy and approximates a manual review while accelerating the process, so we can focus on diving into the findings and getting creative with our analysis.",
           "sourceUrl": "https://www.iprally.com/case-studies/how-global-prior-art-use-iprally-to-classify-vast-and-complex-patent-landscapes",
           "sentiment": "positive"
         },
@@ -1281,7 +1281,7 @@
         {
           "platform": "Vendor Testimonial",
           "author": "Naseem Nazemi, Counsel, RPX Corporation",
-          "text": "IPRally has enabled our patent analysis team to work much more effectively and efficiently. One way we indirectly measure the effectiveness of our searches is to note when RPX-surfaced prior art is used in petitions for inter partes review by third parties. This indicates the high quality of art found by RPX patent analysts. In comparing similar-length time periods before and after we started utilizing IPRally, the percentage of RPX-surfaced prior art appearing in IPR petitions has increased from 30% to 42%. When you factor in the efficiency gains – that our average time per patent for finding that prior art had decreased by 1.5 hours – the results are actually quite amazing.",
+          "text": "IPRally has enabled our patent analysis team to work much more effectively and efficiently. One way we indirectly measure the effectiveness of our searches is to note when RPX-surfaced prior art is used in petitions for inter partes review by third parties. This indicates the high quality of art found by RPX patent analysts. In comparing similar-length time periods before and after we started utilizing IPRally, the percentage of RPX-surfaced prior art appearing in IPR petitions has increased from 30% to 42%. When you factor in the efficiency gains \u2013 that our average time per patent for finding that prior art had decreased by 1.5 hours \u2013 the results are actually quite amazing.",
           "sourceUrl": "https://www.iprally.com/case-studies/how-rpx-uses-iprally-to-provide-stronger-patent-risk-management-for-their-membership-base",
           "sentiment": "positive"
         },
@@ -1485,7 +1485,7 @@
         },
         {
           "platform": "Capterra",
-          "author": "Géraldine L., Competitive Intelligence Officer, Farming",
+          "author": "G\u00e9raldine L., Competitive Intelligence Officer, Farming",
           "date": "2021-06-16",
           "text": "I have a good experience. The database is complete, data is quickly found. The different charts and visualization options are really a plus. The accuracy of the information (statuses, families) and ease of data access stand out.",
           "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
@@ -1817,6 +1817,24 @@
           "text": "More functionality in the search and reporting category [would improve the product].",
           "sourceUrl": "https://www.softwareadvice.com/cms/ironclad-profile/reviews/",
           "sentiment": "mixed"
+        }
+      ],
+      "general": [
+        {
+          "platform": "Capterra",
+          "author": "Janapher S., Bilingual Customer Service Representative, Insurance (1-2 years using the product)",
+          "date": "2026-07-15",
+          "text": "Ironclad provides a streamlined way to create, review, approve, and manage contracts in one centralized platform. The platform simplifies the entire contract lifecycle by combining document creation, approvals, electronic signatures, and secure document management in one place.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Jennifer N., HR Assistant Manager, Consumer Services (6-12 months using the product)",
+          "date": "2026-08-31",
+          "text": "Intuitive Workflow Builder: Designing conditional logic for approvals requires no coding skills. ... High Enterprise Cost: Customized tier pricing and implementation fees make it hard to scale.",
+          "sourceUrl": "https://www.capterra.com/p/162319/Ironclad/reviews/",
+          "sentiment": "positive"
         }
       ]
     },
