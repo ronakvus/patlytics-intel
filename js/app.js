@@ -47,7 +47,7 @@
       companyIds: [],
       customFeatures: [], // { id, name }
       overrides: {}, // `${companyId}::${featureId}` -> "yes"|"no"|"partial"|"unknown"
-      review: { companyId: "solve-intelligence", featureId: "claim-charting", sentimentFilter: "all" },
+      review: { companyId: "solve-intelligence", featureId: "general", sentimentFilter: "all" },
       chat: [], // { role: "user"|"assistant", text }
       chatBusy: false, // true while a backend chat request is in flight
       pendingFeatureRequests: {}, // featureId -> true while a backend research job is in flight
@@ -972,21 +972,42 @@
     </div>`;
 
     const reviewCompanyOptions = COMPETITORS_SORTED;
-    const allReviewsForSelection = (FEATURE_REVIEWS[fc.review.companyId] && FEATURE_REVIEWS[fc.review.companyId][fc.review.featureId]) || [];
+    const isGeneralReview = fc.review.featureId === "general";
+    let allReviewsForSelection = (FEATURE_REVIEWS[fc.review.companyId] && FEATURE_REVIEWS[fc.review.companyId][fc.review.featureId]) || [];
+    if (isGeneralReview) {
+      // "General" is scraped broadly from review sites (G2 and similar) rather than
+      // tied to one tracked feature, so it's scoped to the last ~2 months to stay
+      // current -- unlike per-feature reviews below, which show everything ever
+      // found since niche-feature coverage is already thin. A review with no
+      // parseable date is kept rather than dropped (better an undated real review
+      // than silently hiding it over a missing field).
+      const cutoff = addDays(ANCHOR_DATE, -60);
+      allReviewsForSelection = allReviewsForSelection
+        .filter((r) => !r.date || r.date >= cutoff)
+        .slice()
+        .sort((a, b) => {
+          if (!a.date && !b.date) return 0;
+          if (!a.date) return 1;
+          if (!b.date) return -1;
+          return b.date.localeCompare(a.date);
+        });
+    }
     const sentimentFilter = fc.review.sentimentFilter || "all";
     const reviews = sentimentFilter === "all" ? allReviewsForSelection : allReviewsForSelection.filter((r) => r.sentiment === sentimentFilter);
     const reviewCompany = fcGetCompany(fc.review.companyId);
     const reviewFeature = features.find((f) => f.id === fc.review.featureId);
+    const reviewFeatureName = isGeneralReview ? "General" : (reviewFeature ? reviewFeature.name : "");
     const sentimentCounts = { positive: 0, negative: 0, mixed: 0 };
     allReviewsForSelection.forEach((r) => { if (sentimentCounts[r.sentiment] !== undefined) sentimentCounts[r.sentiment]++; });
 
     html += `<div class="section-heading"><iconify-icon icon="ph:chats-circle"></iconify-icon><h2>Feature Reviews</h2><span class="count-chip">${reviews.length}</span></div>
-    <p class="section-sub">What people are saying about a specific company's feature, in a message-style feed. Click a review to open its original source. The daily research routine scrapes for new reviews once a day; this list only ever contains reviews with a real, working source link.</p>
+    <p class="section-sub">What people are saying about a specific company's feature, in a message-style feed. Click a review to open its original source. "General" shows overall reviews from sites like G2 from the last 2 months; other features show every review ever found for that feature. The daily research routine scrapes for new reviews; this list only ever contains reviews with a real, working source link.</p>
     <div class="fc-review-controls">
       <select id="fc-review-company-select">
         ${reviewCompanyOptions.map((c) => `<option value="${c.id}" ${c.id === fc.review.companyId ? "selected" : ""}>${escapeHtml(c.name)}</option>`).join("")}
       </select>
       <select id="fc-review-feature-select">
+        <option value="general" ${isGeneralReview ? "selected" : ""}>General</option>
         ${features.map((f) => `<option value="${f.id}" ${f.id === fc.review.featureId ? "selected" : ""}>${escapeHtml(f.name)}</option>`).join("")}
       </select>
       <div class="fc-sentiment-filter" role="group" aria-label="Filter reviews by sentiment">
@@ -1002,8 +1023,10 @@
           ? reviews.map(fcReviewBubbleHtml).join("")
           : emptyState(
               allReviewsForSelection.length
-                ? `No ${sentimentFilter} reviews for "${reviewFeature ? reviewFeature.name : ""}" at ${reviewCompany ? reviewCompany.name : "this company"} -- try a different filter.`
-                : `No reviews found yet for "${reviewFeature ? reviewFeature.name : ""}" at ${reviewCompany ? reviewCompany.name : "this company"}. The daily routine keeps searching -- most niche features genuinely have thin public review coverage.`
+                ? `No ${sentimentFilter} reviews for "${reviewFeatureName}" at ${reviewCompany ? reviewCompany.name : "this company"} -- try a different filter.`
+                : isGeneralReview
+                ? `No general reviews found from the last 2 months for ${reviewCompany ? reviewCompany.name : "this company"}. The daily routine keeps searching -- try a different company or check back later.`
+                : `No reviews found yet for "${reviewFeatureName}" at ${reviewCompany ? reviewCompany.name : "this company"}. The daily routine keeps searching -- most niche features genuinely have thin public review coverage.`
             )
       }
     </div>`;
