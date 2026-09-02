@@ -1348,6 +1348,40 @@
           "sourceUrl": "https://www.harvey.ai/blog/harvey-in-practice-how-intellectual-property-teams-use-harvey",
           "sentiment": "positive"
         }
+      ],
+      "general": [
+        {
+          "platform": "G2",
+          "author": "Abdalla F., Project Coordinator, Electrical/Electronic Manufacturing, Mid-Market (51-1000 emp.)",
+          "date": "2026-08-27",
+          "text": "I use Harvey AI for contract review and analysis, key data extraction, and legal research. I like how fast it can go through complex documents and pull out the important details, saving me a ton of time on contracts... I appreciate how easy it is to interact with Harvey AI and ask follow-up questions. It provides clear, structured insights, making the review process much more efficient.",
+          "sourceUrl": "https://www.g2.com/products/harvey-ai/reviews",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "G2",
+          "author": "Tharun P., Civil Executive, Mid-Market (51-1000 emp.)",
+          "date": "2026-08-27",
+          "text": "I mainly use Harvey AI to speed up my research work, drafting, and for contract analysis. It saves huge time for me, especially in research work as it cuts contracts and due diligence... I like the ability to handle a huge amount of documents for analysis without missing accuracy. I love its workflow automation, which allows building custom, automated logic for repeatable tasks like motion drafting.",
+          "sourceUrl": "https://www.g2.com/products/harvey-ai/reviews",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "G2",
+          "author": "LOKESH G., Engineer, Information Technology and Services, Small-Business (50 or fewer emp.)",
+          "date": "2026-08-20",
+          "text": "Harvey AI is that it is purpose-built for legal work rather than being a generic AI assistant. It can help with legal research, document review, drafting, and complex workflows while grounding its outputs in relevant sources and firm-specific knowledge. This makes it particularly useful for reducing repetitive legal work while allowing professionals to focus more on higher-value analysis and judgment.",
+          "sourceUrl": "https://www.g2.com/products/harvey-ai/reviews",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "G2",
+          "author": "Shikha S., Legal Document Review Specialist, Legal Services, Mid-Market (51-1000 emp.)",
+          "date": "2026-08-12",
+          "text": "Contract review is where it's earned its keep \u2014 I run agreements through it and get flagged clauses and risk points back fast, with little editing needed afterward. It plugs right into Word and Outlook, so it fits into tools I'm already using daily instead of forcing a separate workflow. The interface is clean too, and setup was smooth from day one. The time saved on first-pass review alone has made it worth the cost.",
+          "sourceUrl": "https://www.g2.com/products/harvey-ai/reviews",
+          "sentiment": "positive"
+        }
       ]
     },
     "patsnap": {
