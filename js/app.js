@@ -8,7 +8,7 @@
   "use strict";
 
   const DATA = window.PATLYTICS_DATA;
-  const { HIGHLIGHTS, COMPETITORS, NEW_ENTRANTS, WEBINARS, ANCHOR_DATE, EARLIEST_DATE } = DATA;
+  const { HIGHLIGHTS, COMPETITORS, NEW_ENTRANTS, WEBINARS, BLOGS, ANCHOR_DATE, EARLIEST_DATE } = DATA;
 
   // Feature Comparison data is fetched as plain JSON (not a <script> global)
   // so the backend (a Cloudflare Worker, once deployed) can safely rewrite
@@ -129,6 +129,7 @@
     html += `<div class="nav-section-label">Market Watch</div>`;
     html += navItemHtml("entrants", "ph:compass", "New Market Entrants", null, NEW_ENTRANTS.length);
     html += navItemHtml("webinars", "ph:calendar-blank", "Webinars", null, upcomingWebinarCount());
+    html += navItemHtml("blogs", "ph:article", "Blogs", null, BLOGS.length);
 
     nav.innerHTML = html;
 
@@ -191,6 +192,11 @@
       title.textContent = "Webinars";
       rangeToggle.style.display = "none";
       dateNav.style.display = "none";
+    } else if (state.activeTab === "blogs") {
+      eyebrow.innerHTML = `<iconify-icon icon="ph:article"></iconify-icon> Market Watch`;
+      title.textContent = "Blogs";
+      rangeToggle.style.display = "none";
+      dateNav.style.display = "none";
     } else if (state.activeTab === "feature-comparison") {
       eyebrow.innerHTML = `<iconify-icon icon="lucide:git-compare"></iconify-icon> Overview`;
       title.textContent = "Feature Comparison";
@@ -225,10 +231,12 @@
     else if (state.activeTab === "general") root.innerHTML = renderGeneral();
     else if (state.activeTab === "entrants") root.innerHTML = renderEntrants();
     else if (state.activeTab === "webinars") root.innerHTML = renderWebinars();
+    else if (state.activeTab === "blogs") root.innerHTML = renderBlogs();
     else if (state.activeTab === "feature-comparison") root.innerHTML = renderFeatureComparison();
     else root.innerHTML = renderCompetitor(state.activeTab);
 
     wireWebinarToolbar();
+    wireBlogToolbar();
     wireFeatureComparison();
     root.querySelectorAll(".feature-card[data-tab]").forEach((btn) => {
       btn.addEventListener("click", () => switchTab(btn.dataset.tab));
@@ -258,7 +266,7 @@
     html += `<div class="card home-hero">
       <div class="home-hero-eyebrow"><iconify-icon icon="ph:sparkle"></iconify-icon>Competitive Intelligence, in one place</div>
       <h1>Everything worth knowing about the AI-patent &amp; AI-legal competitive landscape.</h1>
-      <p>This dashboard pulls together daily competitor activity, hiring signals, marketing moves, new market entrants, and industry webinars — ranked by how much each item actually matters to Patlytics, not just how recent it is. Use the sidebar to jump into a company, or the search bar to find anything across every section and past date.</p>
+      <p>This dashboard pulls together daily competitor activity, hiring signals, marketing moves, new market entrants, industry webinars, and competitor &amp; industry blogs — ranked by how much each item actually matters to Patlytics, not just how recent it is. Use the sidebar to jump into a company, or the search bar to find anything across every section and past date.</p>
     </div>`;
 
     html += `<div class="home-section-title"><iconify-icon icon="ph:squares-four"></iconify-icon>What's on this dashboard</div>`;
@@ -267,11 +275,12 @@
       ${featureCardHtml(COMPETITORS_SORTED[0].id, "ph:buildings", "Competitors", `${COMPETITORS.length} companies, ordered by how directly they compete with Patlytics. Each profile covers company info, daily/weekly activity, hiring, and marketing.`, "Browse competitor profiles")}
       ${featureCardHtml("entrants", "ph:compass", "New Market Entrants", "Newly-funded startups entering the AI-patent space — who's backing them, who they're hiring, and how much of a threat they are.", "See who's entering the market")}
       ${featureCardHtml("webinars", "ph:calendar-blank", "Webinars", "Upcoming and past industry &amp; competitor webinars, filterable by date.", "View upcoming webinars")}
+      ${featureCardHtml("blogs", "ph:article", "Blogs", "Competitor and industry blog posts, filterable by company and date, ranked by relevance to Patlytics.", "Read competitor & industry blogs")}
     </div>`;
 
     html += `<div class="home-section-title"><iconify-icon icon="ph:lightbulb"></iconify-icon>How to use this dashboard</div>`;
     html += `<div class="card howto-list">
-      <div class="howto-item"><iconify-icon icon="ph:magnifying-glass"></iconify-icon><div><div class="howto-title">Search everything</div><div class="howto-desc">The sidebar search bar (press <strong>/</strong> to focus it) searches highlights, every competitor's activity, new entrants, and webinars at once.</div></div></div>
+      <div class="howto-item"><iconify-icon icon="ph:magnifying-glass"></iconify-icon><div><div class="howto-title">Search everything</div><div class="howto-desc">The sidebar search bar (press <strong>/</strong> to focus it) searches highlights, every competitor's activity, new entrants, webinars, and blogs at once.</div></div></div>
       <div class="howto-item"><iconify-icon icon="ph:calendar-dots"></iconify-icon><div><div class="howto-title">Look back in time</div><div class="howto-desc">Use the Day / Week / Month toggle and the date arrows at the top of most tabs to pull up briefs from previous days, weeks, or months.</div></div></div>
       <div class="howto-item"><iconify-icon icon="ph:arrow-up-right"></iconify-icon><div><div class="howto-title">Jump to the source</div><div class="howto-desc">Any card with an arrow icon links out to its real source, careers page, or registration page in a new tab.</div></div></div>
       <div class="howto-item"><iconify-icon icon="ph:sort-ascending"></iconify-icon><div><div class="howto-title">Ranked by correlation</div><div class="howto-desc">Competitors and new entrants are both ordered by how directly they threaten Patlytics.</div></div></div>
@@ -571,6 +580,79 @@
     });
     ["webinar-from", "webinar-to"].forEach((id) => {
       document.getElementById(id).addEventListener("change", renderWebinarList);
+    });
+  }
+
+  /* ================= BLOGS ================= */
+  function renderBlogs() {
+    let html = "";
+    html += `<div class="section-heading"><iconify-icon icon="ph:article"></iconify-icon><h2>Competitor &amp; Industry Blogs</h2><span class="count-chip">${BLOGS.length}</span></div>
+    <p class="section-sub">Blog posts from tracked competitors and industry trade press, ranked by relevance to Patlytics — most relevant first.</p>
+    <div class="webinar-toolbar">
+      <select id="blog-company-filter" class="blog-company-select">
+        <option value="all">All companies</option>
+        <option value="industry">Industry / other sources</option>
+        ${COMPETITORS_SORTED.map((c) => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join("")}
+      </select>
+      <div class="date-range-inputs">
+        <iconify-icon icon="ph:funnel"></iconify-icon> Filter by date:
+        <input type="date" id="blog-from" min="${EARLIEST_DATE}" />
+        <span>to</span>
+        <input type="date" id="blog-to" />
+      </div>
+    </div>
+    <div id="blog-list"></div>`;
+    return html;
+  }
+
+  function computeBlogList() {
+    const companySel = document.getElementById("blog-company-filter");
+    const fromEl = document.getElementById("blog-from");
+    const toEl = document.getElementById("blog-to");
+    const company = companySel && companySel.value;
+    const from = fromEl && fromEl.value;
+    const to = toEl && toEl.value;
+
+    let items = [...BLOGS];
+    if (company && company !== "all") items = items.filter((b) => b.companyId === company);
+    if (from) items = items.filter((b) => b.date >= from);
+    if (to) items = items.filter((b) => b.date <= to);
+
+    const order = { critical: 0, high: 1, medium: 2, low: 3 };
+    items.sort((a, b) => (order[a.relevance] - order[b.relevance]) || b.date.localeCompare(a.date));
+    return items;
+  }
+
+  function renderBlogList() {
+    const list = document.getElementById("blog-list");
+    if (!list) return;
+    const items = computeBlogList();
+    if (!items.length) { list.innerHTML = emptyState("No blogs match this filter."); return; }
+
+    list.innerHTML = items.map((b) => {
+      const company = b.companyId !== "industry" ? COMPETITORS.find((c) => c.id === b.companyId) : null;
+      const sourceLabel = company ? `${company.name} (blog)` : `${b.source} · Industry`;
+      return `<div class="card blog-card${b.url ? " has-arrow-link" : ""}">
+        <div class="blog-info">
+          <div class="blog-title-row">
+            <span class="blog-headline">${escapeHtml(b.headline)}</span>
+            <span class="badge ${b.relevance}">${b.relevance} relevance</span>
+          </div>
+          <div class="blog-source">${escapeHtml(sourceLabel)} · ${fmt(b.date, { month: "short", day: "numeric", year: "numeric" })}</div>
+          <div class="blog-desc">${escapeHtml(b.description)}</div>
+          <div class="blog-tags">${(b.tags || []).map((t) => `<span class="tag-chip">${escapeHtml(t)}</span>`).join("")}</div>
+        </div>
+        ${arrowLink(b.url, "Read full post: " + b.headline)}
+      </div>`;
+    }).join("");
+  }
+
+  function wireBlogToolbar() {
+    if (state.activeTab !== "blogs") return;
+    renderBlogList();
+    document.getElementById("blog-company-filter").addEventListener("change", renderBlogList);
+    ["blog-from", "blog-to"].forEach((id) => {
+      document.getElementById(id).addEventListener("change", renderBlogList);
     });
   }
 
@@ -1070,6 +1152,7 @@
     });
     NEW_ENTRANTS.forEach((e) => idx.push({ group: "New Market Entrants", tab: "entrants", title: e.name, meta: e.backing, text: `${e.name} ${e.tagline} ${e.description}`, asOf: e.date }));
     WEBINARS.forEach((w) => idx.push({ group: "Webinars", tab: "webinars", title: w.title, meta: `${w.host} · ${fmt(w.date, { month: "short", day: "numeric" })}`, text: `${w.title} ${w.description} ${w.host}`, asOf: w.date }));
+    BLOGS.forEach((b) => idx.push({ group: "Blogs", tab: "blogs", title: b.headline, meta: `${b.source} · ${fmt(b.date, { month: "short", day: "numeric" })}`, text: `${b.headline} ${b.description} ${b.source}`, asOf: b.date }));
     return idx;
   }
 
