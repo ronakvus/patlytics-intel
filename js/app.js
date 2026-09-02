@@ -42,6 +42,7 @@
     range: "day", // day | week | month
     asOf: ANCHOR_DATE,
     webinarFilter: "upcoming", // upcoming | past | all
+    blogRelevanceFilter: "all", // all | critical | high | medium | low
     fc: {
       companyIds: [],
       customFeatures: [], // { id, name }
@@ -584,21 +585,34 @@
   }
 
   /* ================= BLOGS ================= */
+  // Defaults to a trailing 7-calendar-day window (today plus the 6 days
+  // before) so the tab opens with a manageable, current-feeling feed; the
+  // date inputs themselves are unrestricted so a user can widen the range
+  // to browse the full archive.
+  function blogDefaultFrom() { return addDays(ANCHOR_DATE, -6); }
+
   function renderBlogs() {
     let html = "";
     html += `<div class="section-heading"><iconify-icon icon="ph:article"></iconify-icon><h2>Competitor &amp; Industry Blogs</h2><span class="count-chip">${BLOGS.length}</span></div>
-    <p class="section-sub">Blog posts from tracked competitors and industry trade press, ranked by relevance to Patlytics — most relevant first.</p>
+    <p class="section-sub">Blog posts from tracked competitors and industry trade press, ranked by relevance to Patlytics — most relevant first. Shows the last 7 days by default; widen the date range to browse further back.</p>
     <div class="webinar-toolbar">
       <select id="blog-company-filter" class="blog-company-select">
         <option value="all">All companies</option>
         <option value="industry">Industry / other sources</option>
         ${COMPETITORS_SORTED.map((c) => `<option value="${c.id}">${escapeHtml(c.name)}</option>`).join("")}
       </select>
+      <div class="filter-pill-group" id="blog-relevance-group">
+        <button type="button" data-relevance="all" class="${state.blogRelevanceFilter === "all" ? "active" : ""}">All</button>
+        <button type="button" data-relevance="critical" class="${state.blogRelevanceFilter === "critical" ? "active" : ""}">Critical</button>
+        <button type="button" data-relevance="high" class="${state.blogRelevanceFilter === "high" ? "active" : ""}">High</button>
+        <button type="button" data-relevance="medium" class="${state.blogRelevanceFilter === "medium" ? "active" : ""}">Medium</button>
+        <button type="button" data-relevance="low" class="${state.blogRelevanceFilter === "low" ? "active" : ""}">Low</button>
+      </div>
       <div class="date-range-inputs">
         <iconify-icon icon="ph:funnel"></iconify-icon> Filter by date:
-        <input type="date" id="blog-from" min="${EARLIEST_DATE}" />
+        <input type="date" id="blog-from" value="${blogDefaultFrom()}" />
         <span>to</span>
-        <input type="date" id="blog-to" />
+        <input type="date" id="blog-to" value="${ANCHOR_DATE}" />
       </div>
     </div>
     <div id="blog-list"></div>`;
@@ -615,6 +629,7 @@
 
     let items = [...BLOGS];
     if (company && company !== "all") items = items.filter((b) => b.companyId === company);
+    if (state.blogRelevanceFilter !== "all") items = items.filter((b) => b.relevance === state.blogRelevanceFilter);
     if (from) items = items.filter((b) => b.date >= from);
     if (to) items = items.filter((b) => b.date <= to);
 
@@ -651,6 +666,13 @@
     if (state.activeTab !== "blogs") return;
     renderBlogList();
     document.getElementById("blog-company-filter").addEventListener("change", renderBlogList);
+    document.querySelectorAll("#blog-relevance-group button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.blogRelevanceFilter = btn.dataset.relevance;
+        document.querySelectorAll("#blog-relevance-group button").forEach((b) => b.classList.toggle("active", b === btn));
+        renderBlogList();
+      });
+    });
     ["blog-from", "blog-to"].forEach((id) => {
       document.getElementById(id).addEventListener("change", renderBlogList);
     });
