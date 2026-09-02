@@ -31,8 +31,8 @@
           "detail": "Eureka platform includes a named \"Essentiality Claim Chart\" agent and demonstrates AI-generated element-by-element claim charts."
         },
         "iprally": {
-          "status": "partial",
-          "detail": "IPRally's Agent produces an interactive feature chart with relevant prior art mapped to each claim, but it's embedded in the novelty-search workflow rather than offered as a standalone claim-charting tool spanning invalidity/infringement/SEP contexts like some competitors."
+          "status": "yes",
+          "detail": "Launched a standalone \"Invalidity Agent\" (2026-08-13): enter a granted patent, pick claims to target, and it runs a multi-pass search across 130M+ patents, charts each claim against prior art, and produces an interactive, exportable feature chart — no longer just embedded in the novelty-search workflow."
         },
         "clarivate-innography": {
           "status": "unknown",
@@ -961,8 +961,8 @@
           "detail": "Claim-chart data is marketed as usable for IPR and infringement analysis, and Eureka publishes PTAB commentary, but there's no dedicated named IPR/PTAB litigation workflow product."
         },
         "iprally": {
-          "status": "partial",
-          "detail": "A dedicated \"Patent Invalidity Search\" use case finds invalidating art for specific publications to challenge chosen claims, directly relevant to building an IPR petition, but it produces search results rather than a chart and no page names a dedicated IPR/PTAB workflow."
+          "status": "yes",
+          "detail": "The new \"Invalidity Agent\" (2026-08-13) writes a jurisdiction-styled invalidity report (EPO problem-solution / USPTO §102-§103) against a granted patent's claims, directly supporting IPR/PTAB petition prep — upgraded from a search-only \"Patent Invalidity Search\" use case."
         },
         "clarivate-innography": {
           "status": "partial",
