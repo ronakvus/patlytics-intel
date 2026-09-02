@@ -1513,6 +1513,15 @@
           "sourceUrl": "https://www.g2.com/products/juristat/reviews",
           "sentiment": "positive"
         }
+      ],
+      "office-action-response": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Ray Millien, CEO, Harness IP",
+          "text": "It's definitely saved from 30 to 60 minutes on average, per case. That time savings definitely is easily quantifiable and evident from the beginning.",
+          "sourceUrl": "https://juristat.com/products/office-action-response",
+          "sentiment": "positive"
+        }
       ]
     },
     "alt-legal": {
@@ -1915,6 +1924,122 @@
           "author": "Daniel Stoll",
           "text": "Response times are really good, and the API has a nice developer experience.",
           "sourceUrl": "https://projectpq.ai/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "pioneerip": {
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "AmLaw 200 Partner",
+          "text": "Your system found competitors I wasn't aware of. If something is out there, it will find it.",
+          "sourceUrl": "https://www.pioneerip.com/news/claim-charts-keep-getting-better",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Guy Levi, Founder, The IP Law Office of Guy Levi LLC",
+          "text": "At last, a market evidence based tool to make decisions on IP portfolio management.",
+          "sourceUrl": "https://www.pioneerip.com/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "lexisnexis-ip": {
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Beat Weibel, Chief IP Counsel, Siemens",
+          "text": "PatentSight+ is quite a good match for Siemens. It allows us to track patent quality over time compared to our competition, taking changes such as acquisitions and divestitures into account. And the indices used to measure quality take into consideration differences in markets such as the U.S., Germany and China.",
+          "sourceUrl": "https://www.lexisnexisip.com/solutions/ip-analytics-and-intelligence/patentsight/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Silvia Szep, Ph.D., Intellectual Capital and IP Strategy Manager",
+          "text": "PatentSight+ provides a great visualization and landscape tool showing with all the patent details. It provides insight into competitors impact and IP strategy, it is a must use tool for IP strategy development.",
+          "sourceUrl": "https://www.lexisnexisip.com/solutions/ip-analytics-and-intelligence/patentsight/",
+          "sentiment": "positive"
+        }
+      ],
+      "office-action-response": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Ben Hoopes, Senior Patent Counsel, Fortune 100 Global Technology Company",
+          "date": "2022-08-24",
+          "text": "For every examiner, PatentAdvisor tells us the frequency at which they have these different grounds for rejection at the different phases. That's very useful.",
+          "sourceUrl": "https://www.lexisnexisip.com/resources/how-an-in-house-attorney-makes-informed-decisions-using-lexisnexis-patentadvisor/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "minesoft": {
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jacob Ward, Owner/Founder, Ward Law Office LLC",
+          "text": "I think it has increased productivity because of the ability to perform searches very efficiently and to provide search results in ways that we can quickly incorporate into our reporting and advice that we provide to clients.",
+          "sourceUrl": "https://minesoft.com/case-studies/ward-law-office-llc/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Dr. Ali Berkin, Associate, Haug Partners LLP",
+          "text": "PatBase is a great platform; the functionality and cost are superior to other databases, and the structure searching is a powerful tool.",
+          "sourceUrl": "https://minesoft.com/case-studies/haug-partners-llc/",
+          "sentiment": "positive"
+        }
+      ],
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Ian Harrier, Legal & IP Director, Enveda",
+          "text": "The platform is intuitive, easy to use, & highly functional, creating a very low barrier to entry that's enabled more of our scientists & IP-adjacent team members to run their own searches & analytic projects with confidence.",
+          "sourceUrl": "https://minesoft.com/",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "nlpatent": {
+      "claim-charting": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Alejandro Piquer, Intellectual Property Counsel, HP Inc.",
+          "text": "The chart shows me, feature by feature, what's disclosed and where - with the passages to back up every conclusion drawn. That level of analysis used to be assembled by hand, reference by reference - putting together an evidence-based complete assessment used to take me a long time.",
+          "sourceUrl": "https://clerq-ip.com/case-studies/hp",
+          "sentiment": "positive"
+        }
+      ],
+      "prior-art-search": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Bryan Meyer, Partner, Shook Hardy & Bacon LLP",
+          "text": "Clerq has gone from helping me search to doing the work under my direction. What comes back minutes later reads like an expert did it.",
+          "sourceUrl": "https://clerq-ip.com/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Roshan Mansinghani, Assistant General Counsel, Unified Patents",
+          "text": "Oftentimes, we have an idea of what we're looking for and while we have used other tools, the most recent version of [Clerq] has proved to be quite effective in finding specific concepts.",
+          "sourceUrl": "https://clerq-ip.com/case-studies/unified-patents-llc",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Kelsey Diffley, Licensing Specialist, University of Georgia Innovation Gateway",
+          "text": "Clerq made it possible for me to deliver strong patentability searches without spending weeks learning Boolean logic. It helped me move faster, feel confident in the quality of my analysis, and contribute across technology areas outside my academic background.",
+          "sourceUrl": "https://clerq-ip.com/case-studies/university-of-georgia",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Dr. Matt Barton, Partner, Forresters IP LLP",
+          "text": "Since using Clerq, we regularly find new and highly relevant prior art that proves to be very useful in attacking patents in oppositions, without having to do external searching.",
+          "sourceUrl": "https://clerq-ip.com/case-studies/forresters-ip",
           "sentiment": "positive"
         }
       ]
