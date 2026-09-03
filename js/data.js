@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-02";
-const EARLIEST_DATE = "2026-08-12"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-03";
+const EARLIEST_DATE = "2026-08-13"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -418,6 +418,21 @@ const HIGHLIGHTS = [
     source: "Artificial Lawyer",
     sourceType: "news",
     url: "https://www.artificiallawyer.com/2026/09/02/15-of-large-firm-lawyers-now-dependent-on-ai/",
+  },
+  {
+    id: "hl-39",
+    date: "2026-09-01",
+    priority: "medium",
+    category: "Product",
+    title: "Harvey launches \"Horizon Scanning\" for AI-driven regulatory/legislative monitoring",
+    summary:
+      "Harvey shipped a new feature letting teams describe what to track in plain language; Harvey then builds a scan drawing on 12,000+ sources across 100+ jurisdictions and surfaces prioritized, actionable alerts inside the platform, rather than the fragmented alerts typical of legacy monitoring tools.",
+    whyItMatters:
+      "A generalist-AI comparison point (Harvey) shipping AI-driven monitoring/analytics at scale raises the baseline for what \"AI-powered legal/IP monitoring\" looks like — relevant context for Patlytics' own analytics and alerting roadmap even though Harvey's version isn't patent-specific.",
+    companies: ["Harvey"],
+    source: "Harvey",
+    sourceType: "product",
+    url: "https://www.harvey.ai/blog/horizon-scanning-in-harvey",
   },
 ];
 
@@ -1189,16 +1204,28 @@ COMPETITORS.push(
         body: "The Teamtailor feed (careers.deepip.ai/jobs.json) briefly showed this role live again today (original posting date 2026-04-24) before its listing page returned to HTTP 410 Gone within the same day — treated as still closed rather than a confirmed new opening given the flip-flop.",
         url: "https://careers.deepip.ai",
       },
+      {
+        date: "2026-09-01",
+        tag: "Webinar",
+        title: "Hosting \"Markush claims and AI: What changes, and what doesn't\" webinar (Sept 8)",
+        body: "DeepIP is co-hosting a free webinar with The Patent Lawyer magazine on how AI changes (and doesn't change) Markush claim drafting practice; registration open now for the 2026-09-08 session.",
+        url: "https://hubs.la/Q04vbG5c0",
+      },
+      {
+        date: "2026-09-03",
+        tag: "Hiring",
+        title: "\"Account Executive - EU\" role closed",
+        body: "DeepIP's Teamtailor board (careers.deepip.ai/jobs.json) no longer lists the Account Executive - EU posting as of today, dropping the open-roles count from 5 to 4; the remaining live roles are Founding Account Executive - DACH, Head of Marketing - US, Product Marketing Manager, and Business Development Representative - North America.",
+        url: "https://careers.deepip.ai",
+      },
     ],
     hiring: {
-      openRoles: 5,
-      newRolesToday: [
-        { title: "Founding Account Executive - DACH", dept: "Sales", location: "Paris (Fully Remote)", url: "https://careers.deepip.ai/jobs/7323608-founding-account-executive-dach" },
-      ],
+      openRoles: 4,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "Account Executive", count: 2 },
-        { title: "Business Development Representative", count: 1, url: "https://careers.deepip.ai/jobs/7655432-business-development-representative-north-america" },
+        { title: "Founding Account Executive - DACH", count: 1, url: "https://careers.deepip.ai/jobs/7323608-founding-account-executive-dach" },
+        { title: "Business Development Representative - North America", count: 1, url: "https://careers.deepip.ai/jobs/7655432-business-development-representative-north-america" },
       ],
     },
   }),
@@ -1359,7 +1386,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "XL",
     tagline: "AI patent search, drafting-assist, and monetization platform.",
-    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group, a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up (exact dates not independently pinned down in this pass). Released \"ParaEmbed 2.0,\" a follow-up proprietary patent/technology-data embedding model, on 2026-01-28.",
+    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group, a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up (exact dates not independently pinned down in this pass). Released \"ParaEmbed 2.0,\" a follow-up proprietary patent/technology-data embedding model, via a Hugging Face Expert Support collaboration in mid-2024 (corrected 2026-09-03 — an earlier pass had misdated this release to 2026-01-28; the Hugging Face case-study post is dated June 25, 2024).",
         employeeCount: "~51-200 per LinkedIn",
     founded: "Legal entity (originally \"Xlpat Tt Consultants Private Limited\") incorporated 2012-06-26 in Chandigarh, India (CIN U74140CH2012PTC033885); platform reportedly relaunched under the XLSCOUT name around 2020 — exact rebrand year not independently confirmed",
     hq: "Toronto, Ontario, Canada (primary); also maintains a Chandigarh, India office",
@@ -1689,6 +1716,13 @@ COMPETITORS.push(
         body: "Recorded webinar walking through the Gen AI Chat feature (shipped 2026-08-20) for office-action response drafting — follow-on content marketing for the recently-launched capability.",
         url: "https://blog.patentbots.com/2026/08/webinar-gen-ai-chat-for-oa-response.html",
       },
+      {
+        date: "2026-09-02",
+        tag: "Marketing",
+        title: "Published 2026 Patent Bots Patent Speed Rankings (second annual)",
+        body: "Analyzed 709 U.S. patent law firms with 50+ issued patents on speed-to-issuance and related metrics (extensions/patent, office actions/patent, RCEs/patent); Porus IP LLC topped the overall Speed Score (100.0) — same lead-gen content pattern as the recent Patent Quality Rankings placement.",
+        url: "https://blog.patentbots.com/2026/09/2026-patent-bots-patent-speed-rankings.html",
+      },
     ],
     hiring: {
       openRoles: 2,
@@ -1750,6 +1784,13 @@ COMPETITORS.push(
         title: "Opened Data Migration and Onboarding Specialist, Customer Success Manager, and Operations Associate roles",
         body: "Three roles newly surfaced on Alt Legal's Breezy HR board vs. the prior snapshot; the previously-tracked \"Trademark Paralegal\" opening no longer appears live.",
         url: "https://alt-legal.breezy.hr/",
+      },
+      {
+        date: "2026-09-01",
+        tag: "Content",
+        title: "Published \"I ♥ Trademarks\" newsletter, Issue #494",
+        body: "Regular weekly trademark-industry newsletter covering third-party trademark case news; routine recurring content rather than an Alt Legal product/business announcement.",
+        url: "https://www.altlegal.com/blog/i-%E2%99%A1-trademarks-newsletter-issue-494/",
       },
     ],
     hiring: {
@@ -1821,6 +1862,20 @@ COMPETITORS.push(
     careersUrl: "https://jobs.ashbyhq.com/harvey",
     linkedin: "https://www.linkedin.com/company/harvey-ai",
     weekActivity: [
+      {
+        date: "2026-09-01",
+        tag: "Product",
+        title: "Introducing Horizon Scanning",
+        body: "New regulatory/legislative monitoring feature: teams describe what to track in plain language and Harvey builds a scan drawing on 12,000+ sources across 100+ jurisdictions, surfacing prioritized, actionable alerts inside the Harvey platform rather than fragmented alerts from legacy monitoring tools.",
+        url: "https://www.harvey.ai/blog/horizon-scanning-in-harvey",
+      },
+      {
+        date: "2026-09-01",
+        tag: "Product",
+        title: "\"Fable 5.1, Now Live in Harvey\"",
+        body: "Harvey customers opted into its \"Fable 5\" track now get access to Fable 5.1 (Anthropic's newest model), pitched as stronger on complex, document-heavy litigation analysis using roughly half the output tokens at comparable quality, with U.S.-only data processing and a time-bound zero-data-retention exemption.",
+        url: "https://www.harvey.ai/blog/fable-5-1-in-harvey",
+      },
       {
         date: "2026-09-02",
         tag: "Sales",
@@ -1933,13 +1988,21 @@ COMPETITORS.push(
         body: "Harvey's Ashby careers board under-renders to standard page fetches; querying the Ashby posting API directly surfaces 350 live postings across 219 unique titles, spanning GTM, Legal Engineering, and core AI/infrastructure engineering roles globally — a much larger hiring footprint than previously tracked.",
         url: "https://jobs.ashbyhq.com/harvey",
       },
+      {
+        date: "2026-09-02",
+        tag: "Hiring",
+        title: "Opens Staff Security Software Engineer, IAM and Software Engineer, Security roles",
+        body: "Two new security-engineering postings surfaced via the Ashby posting API's publishedAt field (San Francisco), alongside a new Director Global Benefits opening (NYC/SF/Chicago/Dallas/Remote) and a Scaled Customer Success Manager, EMEA role (London) — board now at 332 live postings across 209 unique titles, down from 350/219, with 13 other titles closing since.",
+        url: "https://jobs.ashbyhq.com/harvey/d2624850-8dd4-4eb4-b5dc-f386b715a26f",
+      },
     ],
     hiring: {
-      openRoles: 219,
+      openRoles: 209,
       newRolesToday: [
-        { title: "Senior Business Recruiter, GTM", dept: "Recruiting", location: "New York" },
-        { title: "Sr. Systems Engineer, Client Engineering", dept: "IT", location: "San Francisco" },
-        { title: "Technical Account Manager, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/harvey/78c71402-02bf-4533-99c6-10c1bad10b02" },
+        { title: "Staff Security Software Engineer, IAM", dept: "Security", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/d16bd223-cb68-46f3-8bf6-41267b9770cb" },
+        { title: "Software Engineer, Security", dept: "Security", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/d2624850-8dd4-4eb4-b5dc-f386b715a26f" },
+        { title: "Director Global Benefits", dept: "People", location: "Remote", url: "https://jobs.ashbyhq.com/harvey/fea3ab0e-d5f0-4f89-9ac2-9b4a1f851ee7" },
+        { title: "Scaled Customer Success Manager, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/harvey/9b76c7e3-4c05-47c6-852c-60b6e1e2ef16" },
       ],
       recentHires: [],
       topRoles: [
@@ -1969,6 +2032,20 @@ COMPETITORS.push(
     careersUrl: "https://jobs.ashbyhq.com/legora",
     linkedin: "https://www.linkedin.com/company/wearelegora",
     weekActivity: [
+      {
+        date: "2026-09-03",
+        tag: "Hiring",
+        title: "Opens six new NYC engineering roles",
+        body: "Ashby posting-API publishedAt shows 6 new titles all posted today, all New York City: Staff Software Engineer, Staff Site Reliability Engineer, Senior Software Engineer, Senior Site Reliability Engineer, Engineering Manager, and Senior Platform Engineer — a concentrated NYC engineering-hub build-out.",
+        url: "https://jobs.ashbyhq.com/legora/a7d29888-3159-4651-915a-d1a4814d1916",
+      },
+      {
+        date: "2026-09-02",
+        tag: "Hiring",
+        title: "Opens Business Development Representative role in Singapore",
+        body: "New APAC BDR posting confirmed via Ashby posting-API publishedAt — first Singapore BDR seat spotted.",
+        url: "https://jobs.ashbyhq.com/legora/704826df-c148-4a56-895d-138f8ec3e619",
+      },
       {
         date: "2026-09-01",
         tag: "Hiring",
@@ -2090,10 +2167,10 @@ COMPETITORS.push(
       },
     ],
     hiring: {
-      openRoles: 281,
+      openRoles: 276,
       newRolesToday: [
-        { title: "Enterprise Account Executive - Korea", dept: "GTM", location: "Seoul", url: "https://jobs.ashbyhq.com/legora/5492a77a-9cb4-4a24-9a36-21118e01b0fe" },
-        { title: "People Operations Specialist", dept: "People", location: "New York City", url: "https://jobs.ashbyhq.com/legora/92cfb2b8-c681-4372-880b-ce5f423c6d99" },
+        { title: "Staff Software Engineer", dept: "Engineering", location: "New York City", url: "https://jobs.ashbyhq.com/legora/a7d29888-3159-4651-915a-d1a4814d1916" },
+        { title: "Business Development Representative - Singapore", dept: "GTM", location: "Singapore", url: "https://jobs.ashbyhq.com/legora/704826df-c148-4a56-895d-138f8ec3e619" },
       ],
       recentHires: [],
       topRoles: [
@@ -2209,7 +2286,7 @@ COMPETITORS.push(
     founders: [
       { name: "Jake Heller", title: "Co-Founder & CEO", note: "Stanford JD '10. Casetext was acquired by Thomson Reuters for $650M, closed Aug 2023." },
       { name: "Pablo Arredondo", title: "Co-Founder", note: "Stanford JD '05." },
-      { name: "Laura Safdie", title: "Co-Founder", note: "Background details not independently verified." },
+      { name: "Laura Safdie", title: "Co-Founder", note: "Yale JD (managing editor, Yale Law Journal); clerked for Judge Paul Engelmayer (SDNY); practiced at Simpson Thacher & Bartlett and the U.S. Senate Judiciary Committee before co-founding Casetext as COO & General Counsel; now Head of Innovation for Legal at Thomson Reuters. (Verified via Law.com and Seyfarth Shaw profiles, 2026-09-03.)" },
     ],
     website: "legal.thomsonreuters.com",
     careersUrl: "https://careers.thomsonreuters.com/",
@@ -2264,11 +2341,26 @@ COMPETITORS.push(
         body: "A fresh scan of Thomson Reuters' Workday board finds both previously-tracked 'Principal Engineer, CoCounsel' postings (including the Security & Compliance variant) no longer live — down to 7 unique CoCounsel-titled roles across 8 postings, including a newly-noticed second 'Lead Software Engineer – CoCounsel Legal Desktop App' posting in Eagan, MN alongside the existing Zug, Switzerland one.",
         url: "https://careers.thomsonreuters.com/",
       },
+      {
+        date: "2026-09-02",
+        tag: "Hiring",
+        title: "Opens Staff Software Engineer / Architect – AI, CoCounsel FDE role",
+        body: "New Frisco, TX posting confirmed via Thomson Reuters' Workday CXS API — brings the live CoCounsel-titled roster to 9 unique titles across 10 postings.",
+        url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Frisco-Texas/Staff-Software-Engineer---Architect---AI--CoCounsel-FDE_JREQ200171",
+      },
+      {
+        date: "2026-09-03",
+        tag: "Hiring",
+        title: "Opens Implementation Consultant – Legal AI Solutions (CoCounsel) role in Gdańsk, Poland",
+        body: "New posting confirmed via the Workday CXS API — first CoCounsel-tagged implementation-consultant seat spotted in Poland, a new EMEA delivery location for the CoCounsel org.",
+        url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Poland-Gdansk/Implementation-Consultant---Legal-AI-Solutions--CoCounsel-_JREQ195875",
+      },
     ],
     hiring: {
-      openRoles: 8,
+      openRoles: 9,
       newRolesToday: [
-        { title: "Lead Software Engineer – CoCounsel Legal Desktop App", dept: "Engineering", location: "Zug, Switzerland", url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Switzerland-Zug-Zug/Lead-Software-Engineer---CoCounsel-Legal-Desktop-App-_JREQ202263" },
+        { title: "Staff Software Engineer / Architect - AI, CoCounsel FDE", dept: "Engineering", location: "Frisco, TX", url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Frisco-Texas/Staff-Software-Engineer---Architect---AI--CoCounsel-FDE_JREQ200171" },
+        { title: "Implementation Consultant - Legal AI Solutions (CoCounsel)", dept: "Customer Success", location: "Gdańsk, Poland", url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Poland-Gdansk/Implementation-Consultant---Legal-AI-Solutions--CoCounsel-_JREQ195875" },
       ],
       recentHires: [],
       topRoles: [
@@ -2324,12 +2416,19 @@ COMPETITORS.push(
         body: "A fresh Ashby posting-API fetch no longer shows this title live — filled or closed. Board drops from 30 to 29 live postings.",
         url: "https://jobs.ashbyhq.com/ironcladhq",
       },
+      {
+        date: "2026-09-02",
+        tag: "Hiring",
+        title: "Opens Technical Adoption Architect, EMEA and Customer Account Executive (NYC) roles",
+        body: "Two new postings confirmed via the Ashby posting API's publishedAt field: Technical Adoption Architect, EMEA (London) and Customer Account Executive (New York City) — board now at 31 live postings, up from 29.",
+        url: "https://jobs.ashbyhq.com/ironcladhq/071cd0d3-18fb-4de0-a45b-0a6d3fe76c54",
+      },
     ],
     hiring: {
-      openRoles: 29,
+      openRoles: 31,
       newRolesToday: [
-        { title: "Senior Director, Global Sales Strategy and Operations", dept: "GTM Operations", location: "San Francisco", url: "https://jobs.ashbyhq.com/ironcladhq/22380e0c-4eb9-4334-aa18-73cea7944239" },
-        { title: "Director, GTM Engineering & Systems Architecture", dept: "GTM Operations", location: "San Francisco", url: "https://jobs.ashbyhq.com/ironcladhq/070ff029-9740-4898-a233-a4f0d4e659b3" },
+        { title: "Technical Adoption Architect, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/ironcladhq/071cd0d3-18fb-4de0-a45b-0a6d3fe76c54" },
+        { title: "Customer Account Executive", dept: "Sales", location: "New York City", url: "https://jobs.ashbyhq.com/ironcladhq/e1a2ef4b-0659-42dd-818e-3433b707a01b" },
       ],
       recentHires: [],
       topRoles: [
@@ -2350,8 +2449,8 @@ COMPETITORS.push(
     founded: "2015",
     hq: "Boston, MA",
     founders: [
-      { name: "Vishal Sunak", title: "Co-Founder (board member)", note: "Background details not independently verified." },
-      { name: "Chris Combs", title: "Co-Founder", note: "Background details not independently verified." },
+      { name: "Vishal Sunak", title: "Co-Founder (board member)", note: "Previously held ops/product roles at Backupify and InsightSquared; named EY Entrepreneur of the Year (2021) and Boston Business Journal 40-Under-40 (2022); stepped down from day-to-day CEO duties Feb 2025 (remains founding board member/advisor). (Verified via PR Newswire/Morningstar and LinkSquares' own blog, 2026-09-03.)" },
+      { name: "Chris Combs", title: "Co-Founder", note: "Former Chief Business Officer; became interim CEO at the Feb 2025 leadership transition (LinkSquares has since appointed Bill Hewitt as interim CEO, effective March 10, 2026). (Verified via PR Newswire, 2026-09-03.)" },
     ],
     website: "linksquares.com",
     careersUrl: "https://linksquares.com/careers",
@@ -2395,6 +2494,13 @@ COMPETITORS.push(
     careersUrl: "https://www.draftwise.com/careers",
     linkedin: "https://www.linkedin.com/company/draftwise-ai",
     weekActivity: [
+      {
+        date: "2026-09-01",
+        tag: "Content",
+        title: "Publishes August \"Your Briefing: What's Happening in Legal AI Right Now\"",
+        body: "DraftWise's recurring monthly legal-AI news briefing, covering Google's Gemini Enterprise for Legal (4 BigLaw launch partners), the NYC Bar's new AI framework for transactional lawyers, and rising in-house AI adoption. General legal-AI roundup, not patent/IP-specific.",
+        url: "https://www.draftwise.com/blog/your-briefing-whats-happening-in-legal-ai-right-now-august-2026",
+      },
       {
         date: "2026-08-28",
         tag: "Content",
@@ -2673,6 +2779,9 @@ COMPETITORS.push(
       topRoles: [
         { title: "Senior Full-Stack Engineering Lead", count: 1, url: "https://ipauthor.com/senior-full-stack-engineering-lead-reactjs-python-llm-product-development/" },
         { title: "Product Manager", count: 1, url: "https://ipauthor.com/product-manager/" },
+        { title: "Prompt Engineer", count: 1, url: "https://ipauthor.com/prompt-engineer/" },
+        { title: "Customer Success Manager", count: 1, url: "https://ipauthor.com/customer-success-manager/" },
+        { title: "HR Manager", count: 1, url: "https://ipauthor.com/hr-manager-talent-acquisition/" },
       ],
     },
   }),
@@ -3016,6 +3125,30 @@ const NEW_ENTRANTS = [
     source: "Tech.eu, HTGF, FinSMEs",
     sourceUrl: "https://tech.eu/2026/06/23/jupus-raises-eur13m-to-power-the-next-generation-of-ai-driven-law-firms/",
   },
+  {
+    id: "aloi",
+    name: "Aloi",
+    threat: "low",
+    backing: "$7M raised (Aug 2026), following an earlier ~$3.5M round in 2025; named angels incl. Klarna co-founder Victor Jacobsson, Kry co-founder Fredrik Jung Abbou, Launcher founder Erik Engellau, Voi founder Fredrik Hjelm; Series A planned late 2026",
+    stage: "Seed",
+    tagline: "\"Institutional knowledge, activated\" — a decision-intelligence platform for law firms.",
+    website: "https://www.aloi.law/",
+    linkedin: "https://www.linkedin.com/company/aloi-law/",
+    description:
+      "Stockholm-based Aloi builds a \"Judgment Graph\" capturing firm-wide legal reasoning and decision patterns (precedents, clause variants, risk assessments) so lawyers can query how similar matters were handled previously, integrating via API/MCP into existing DMS. Not patent-specific, but directly parallels DraftWise's newly-launched 'Legal Ontology' (see General Highlights, 2026-08-24) — a second 'judgment layer' competitor worth watching if it moves toward IP-specific data. Clients include Nordic firms Roschier, Avance, and Wiersholm; expanding to Germany, the Netherlands, UK, Spain, Portugal, and the US.",
+    foundingTeam: [
+      { name: "Johan Häger", background: "CEO & Co-Founder. Previously in private legal practice." },
+      { name: "Kamil Saykali", background: "CTO & Co-Founder." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet independently verified.",
+      hiringProfile: "Not yet independently verified.",
+    },
+    date: "2026-08-11",
+    source: "Artificial Lawyer",
+    sourceUrl: "https://www.artificiallawyer.com/2026/08/11/aloi-raises-7m-for-organisational-judgment-ceo-interview/",
+  },
 ];
 
 /* ---------------- Webinars ---------------- */
@@ -3180,6 +3313,18 @@ const WEBINARS = [
     tags: ["Competitor-hosted"],
     url: "https://ipwatchdog.com/event/webinar-junior-2026-11-12/",
   },
+  {
+    id: "wb-19",
+    title: "AI and the Future of Patent Practice",
+    host: "Ankar AI",
+    date: "2026-11-23",
+    time: "2:05 PM CET",
+    format: "Conference talk, IP Service World 2026 (Munich, through Nov 24)",
+    relevance: "medium",
+    description: "Direct Tier 1 competitor-hosted conference lecture by Ankar AI's Wiem Gharbi on IP Service World's Patent & IP Strategy Days track.",
+    tags: ["Competitor-hosted", "Conference"],
+    url: "https://www.ipserviceworld.com/company/ankar-ai.html",
+  },
 ];
 
 // companyId is either one of COMPETITORS' ids (company-authored content) or
@@ -3239,28 +3384,6 @@ const BLOGS = [
     relevance: "critical",
     tags: ["Strategy", "AI Agents"],
     url: "https://iprally.com/news/when-systems-start-talking-iprallys-journey-toward-a-virtual-ip-department",
-  },
-  {
-    id: "blog-6",
-    headline: "Search, Intelligence, Protection: The Three Pillars of IPRally's Next Chapter",
-    description: "IPRally is reorganizing its product strategy around three pillars—Search, Intelligence, and Protection—adding a drafting-support pillar intended to make patent drafting \"prior-art aware\" from the first sentence.",
-    companyId: "iprally",
-    source: "IPRally",
-    date: "2026-07-16",
-    relevance: "high",
-    tags: ["Product Strategy", "AI Drafting"],
-    url: "https://iprally.com/news/search-intelligence-protection-the-three-pillars-of-iprallys-next-chapter",
-  },
-  {
-    id: "blog-7",
-    headline: "NGen Selects IPRally to Bring AI-Native Patent Intelligence to Canada's Advanced Manufacturers",
-    description: "Canada's Global Innovation Cluster for Advanced Manufacturing (NGen) chose IPRally to power a patent search adoption pilot program for NGen-funded manufacturing companies after evaluating tools on functionality, usability, and cost.",
-    companyId: "iprally",
-    source: "IPRally",
-    date: "2026-07-14",
-    relevance: "medium",
-    tags: ["Customer Win", "Partnership"],
-    url: "https://iprally.com/news/ngen-selects-iprally-to-bring-ai-native-patent-intelligence-to-canadas-advanced-manufacturers",
   },
   {
     id: "blog-8",
@@ -3646,6 +3769,83 @@ const BLOGS = [
     relevance: "high",
     tags: ["M&A", "Legal Tech", "Consolidation"],
     url: "https://www.artificiallawyer.com/2026/08/05/is-this-the-great-legal-tech-consolidation/",
+  },
+  {
+    id: "blog-43",
+    headline: "2026 Patent Bots Patent Speed Rankings",
+    description: "Patent Bots' second annual analysis of 709 U.S. patent law firms with 50+ issued patents, ranking them on speed-to-issuance and related metrics (extensions/patent, office actions/patent, RCEs/patent); Porus IP LLC topped the overall Speed Score.",
+    companyId: "patent-bots",
+    source: "Patent Bots",
+    date: "2026-09-02",
+    relevance: "medium",
+    tags: ["Industry Benchmark", "Marketing"],
+    url: "https://blog.patentbots.com/2026/09/2026-patent-bots-patent-speed-rankings.html",
+  },
+  {
+    id: "blog-44",
+    headline: "Introducing Horizon Scanning",
+    description: "Harvey launched a regulatory/legislative monitoring feature: teams describe what to track in plain language and Harvey builds a scan across 12,000+ sources in 100+ jurisdictions, surfacing prioritized alerts inside the platform.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-01",
+    relevance: "critical",
+    tags: ["Product Launch", "AI Monitoring"],
+    url: "https://www.harvey.ai/blog/horizon-scanning-in-harvey",
+  },
+  {
+    id: "blog-45",
+    headline: "Fable 5.1, Now Live in Harvey",
+    description: "Harvey customers on its \"Fable 5\" track can now use Fable 5.1 (Anthropic's newest model), which Harvey positions as stronger on complex, document-heavy litigation analysis while using roughly half the output tokens at comparable quality.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-01",
+    relevance: "high",
+    tags: ["Model Upgrade", "Product Launch"],
+    url: "https://www.harvey.ai/blog/fable-5-1-in-harvey",
+  },
+  {
+    id: "blog-46",
+    headline: "Your Briefing: What's Happening in Legal AI Right Now (August 2026)",
+    description: "DraftWise's recurring monthly legal-AI news roundup, covering Google's Gemini Enterprise for Legal, the NYC Bar's new AI framework for transactional lawyers, and rising in-house AI adoption. General legal-AI content, not patent-specific.",
+    companyId: "draftwise",
+    source: "DraftWise",
+    date: "2026-09-01",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Industry Trend"],
+    url: "https://www.draftwise.com/blog/your-briefing-whats-happening-in-legal-ai-right-now-august-2026",
+  },
+  {
+    id: "blog-47",
+    headline: "1/4 of Young People Use AI For Their Legal Needs",
+    description: "A UK survey (Justice charity + Administrative Fairness Lab, 3,200+ respondents) found 26% of 18-24 year-olds have used AI for a legal problem vs. 10% of 55-64 year-olds, alongside concerns about reliability for vulnerable users.",
+    companyId: "industry",
+    source: "Artificial Lawyer",
+    date: "2026-09-01",
+    relevance: "medium",
+    tags: ["AI Adoption", "Consumer Legal AI"],
+    url: "https://www.artificiallawyer.com/2026/09/01/1-4-of-young-people-use-ai-for-their-legal-needs/",
+  },
+  {
+    id: "blog-48",
+    headline: "Filevine Takes On Shepard's and KeyCite With Its Own AI Case Law Citator and Hallucination Checker",
+    description: "Filevine launched an AI-native citator and hallucination/brief-checker inside its LOIS platform, claiming parity or better performance than Westlaw KeyCite/Lexis Shepard's on detecting silent negative case-law treatment.",
+    companyId: "industry",
+    source: "LawNext (LawSites)",
+    date: "2026-09-02",
+    relevance: "medium",
+    tags: ["Product Launch", "Hallucination/Citation Verification"],
+    url: "https://www.lawnext.com/2026/09/filevine-takes-on-shepards-and-keycite-with-its-own-ai-case-law-citator-and-hallucination-checker.html",
+  },
+  {
+    id: "blog-49",
+    headline: "Descrybe Brings Legal Research and Intelligence to Microsoft 365 Copilot",
+    description: "Descrybe's Legal Engine is now available inside Microsoft 365 Copilot as one of six new \"Legal Services\" offerings there, letting users move from legal research to Word work product in one workflow.",
+    companyId: "industry",
+    source: "LawNext (LawSites)",
+    date: "2026-09-03",
+    relevance: "medium",
+    tags: ["Distribution", "Microsoft Copilot"],
+    url: "https://www.lawnext.com/2026/09/descrybe-brings-legal-research-and-intelligence-to-microsoft-365-copilot.html",
   },
 ];
 
