@@ -104,9 +104,13 @@
   // once from each company's own site, not a rate-limited third-party API
   // at render time). Falls back to the initials avatar automatically
   // (onerror) if a given id has no cached logo file yet.
-  function companyAvatarHtml(id, initials, name) {
+  function companyAvatarHtml(id, initials, name, logoBg) {
     const logoUrl = `assets/logos/${id}.png`;
-    return `<div class="company-avatar">
+    // logoBg: for logos that are themselves a filled square icon (not a mark on
+    // transparent/white), matches the frame's background to the icon's own
+    // color so there's no visible white ring around it.
+    const bgStyle = logoBg ? ` style="background:${escapeHtml(logoBg)};"` : "";
+    return `<div class="company-avatar"${bgStyle}>
       <img src="${logoUrl}" alt="${escapeHtml(name)} logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
       <span class="avatar-fallback" style="display:none;">${escapeHtml(initials)}</span>
     </div>`;
@@ -359,7 +363,7 @@
 
     html += `<div class="card company-header-card">
       <div class="company-header-top">
-        ${companyAvatarHtml(c.id, c.initials, c.name)}
+        ${companyAvatarHtml(c.id, c.initials, c.name, c.logoBg)}
         <div class="company-header-titles">
           <h2>${escapeHtml(c.name)}${c.linkedin ? `<a class="company-linkedin-link" href="${escapeHtml(c.linkedin)}" target="_blank" rel="noopener noreferrer">LinkedIn</a>` : ""}</h2>
           <div class="company-tagline">${escapeHtml(c.tagline)}</div>

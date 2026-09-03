@@ -565,6 +565,7 @@ const COMPETITORS = [
   },
   {
     id: "patsnap",
+    logoBg: "#0ccc78",
     name: "PatSnap",
     rank: 3,
     tier: "Tier 1 — Direct Competitor",
@@ -649,6 +650,7 @@ const COMPETITORS = [
   },
   {
     id: "iprally",
+    logoBg: "#0c1cac",
     name: "IPRally",
     rank: 5,
     tier: "Tier 1 — Direct Competitor",
@@ -1023,6 +1025,7 @@ const COMPETITORS = [
   },
   {
     id: "ktmine",
+    logoBg: "#a40000",
     name: "ktMINE",
     rank: 23,
     tier: "Tier 3 — Adjacent",
@@ -1117,7 +1120,7 @@ const COMPETITORS = [
 // rather than guessed.
 function stubCompetitor({
   id, name, rank, tier, initials, tagline, description, website, linkedin,
-  employeeCount, founded, hq, founders, todayActivity, weekActivity, hiring, marketing, careersUrl,
+  employeeCount, founded, hq, founders, todayActivity, weekActivity, hiring, marketing, careersUrl, logoBg,
 }) {
   return {
     id,
@@ -1127,6 +1130,12 @@ function stubCompetitor({
     initials,
     tagline,
     description,
+    // Optional: real cached logo's own solid background color (e.g. "#0fcc7a"),
+    // for logos that are themselves a filled square icon rather than a mark on
+    // transparent/white -- lets the avatar frame match instead of showing a
+    // visible white ring around the icon. Leave unset for transparent/white-
+    // background logos; the frame's default white already matches those.
+    logoBg,
     employeeCount: employeeCount || "Not yet verified — pending scrape",
     founded: founded || "Not yet verified",
     hq: hq || "Not yet verified — pending scrape",
@@ -1152,6 +1161,7 @@ function stubCompetitor({
 COMPETITORS.push(
   stubCompetitor({
     id: "deepip",
+    logoBg: "#302ce0",
     name: "DeepIP",
     rank: 1,
     tier: "Tier 1 — Direct Competitor",
@@ -1231,6 +1241,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "junior",
+    logoBg: "#bc9844",
     name: "Junior",
     rank: 6,
     tier: "Tier 1 — Direct Competitor",
@@ -1526,6 +1537,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "iprova",
+    logoBg: "#142044",
     name: "Iprova",
     rank: 15,
     tier: "Tier 2 — Strong Overlap",
@@ -1593,6 +1605,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "questel",
+    logoBg: "#10285c",
     name: "Questel",
     rank: 17,
     tier: "Tier 2 — Strong Overlap",
@@ -1637,6 +1650,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "juristat",
+    logoBg: "#1c2c60",
     name: "Juristat",
     rank: 18,
     tier: "Tier 2 — Strong Overlap",
@@ -1672,6 +1686,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "patent-bots",
+    logoBg: "#cccccc",
     name: "Patent Bots",
     rank: 19,
     tier: "Tier 2 — Strong Overlap",
@@ -1733,6 +1748,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "alt-legal",
+    logoBg: "#009884",
     name: "Alt Legal",
     rank: 20,
     tier: "Tier 2 — Strong Overlap",
@@ -1824,6 +1840,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "ip-copilot",
+    logoBg: "#101010",
     name: "IP Copilot",
     rank: 21.5,
     tier: "Tier 2 — Strong Overlap",
@@ -1845,6 +1862,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "harvey",
+    logoBg: "#0c0c0c",
     name: "Harvey",
     rank: 25,
     tier: "Tier 3 — Adjacent",
@@ -2182,6 +2200,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "spellbook",
+    logoBg: "#101418",
     name: "Spellbook",
     rank: 27,
     tier: "Tier 3 — Adjacent",
@@ -2476,6 +2495,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "draftwise",
+    logoBg: "#102014",
     name: "DraftWise",
     rank: 33,
     tier: "Tier 3 — Adjacent",
@@ -2715,6 +2735,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "patently",
+    logoBg: "#184444",
     name: "Patently",
     rank: 9.5,
     tier: "Tier 1 — Direct Competitor",
@@ -2735,6 +2756,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "ip-author",
+    logoBg: "#000000",
     name: "IP Author (by Dolcera)",
     rank: 9.6,
     tier: "Tier 1 — Direct Competitor",
@@ -2805,6 +2827,7 @@ COMPETITORS.push(
   }),
   stubCompetitor({
     id: "cypris",
+    logoBg: "#101c28",
     name: "Cypris",
     rank: 15.5,
     tier: "Tier 2 — Strong Overlap",
