@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-03";
-const EARLIEST_DATE = "2026-08-13"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-04";
+const EARLIEST_DATE = "2026-08-14"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -90,21 +90,6 @@ const HIGHLIGHTS = [
     url: "https://ipwatchdog.com/press/nlpatent-rebrands-to-clerq-unveils-the-next-generation-of-ip-intelligence-built-to-execute-patent-work-end-to-end/",
   },
   {
-    id: "hl-11",
-    date: "2026-08-13",
-    priority: "high",
-    category: "Market",
-    title: "Questel confirms data breach after vishing attack; ShinyHunters claims ~21M records exfiltrated",
-    summary:
-      "Questel confirmed attackers accessed part of its Microsoft 365 environment via a voice-phishing (vishing) attack on a Sales SharePoint site. The ShinyHunters group listed Questel SAS on its leak site, claiming roughly 21M records and 147GB of internal files. Questel has notified France's CNIL and filed criminal complaints.",
-    whyItMatters:
-      "A trust/security signal worth having ready for competitive sales conversations against a Tier 2 overlap competitor — customer data exposure at a rival IP platform is a legitimate differentiator to raise if prospects bring it up.",
-    companies: ["Questel"],
-    source: "GalaxyWarden, sqmagazine.co.uk, Breachsense",
-    sourceType: "news",
-    url: "https://www.galaxywarden.com/blog/breach/questel-sas-shinyhunters-2026-08",
-  },
-  {
     id: "hl-13",
     date: "2026-08-20",
     priority: "medium",
@@ -133,21 +118,6 @@ const HIGHLIGHTS = [
     source: "Artificial Lawyer",
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/08/18/next-gen-harvey-ii-launches-with-memory-at-its-core/",
-  },
-  {
-    id: "hl-16",
-    date: "2026-08-13",
-    priority: "low",
-    category: "Funding",
-    title: "Legora reportedly in talks to raise at a $10B valuation",
-    summary:
-      "Legora (formerly Leya) is reportedly in talks to raise at roughly $10B, nearly double its $5.6B Series D valuation from March 2026.",
-    whyItMatters:
-      "Another data point on how much capital is flowing into generalist legal AI broadly — worth tracking for budget-competition purposes even though Legora isn't patent-specific.",
-    companies: ["Legora"],
-    source: "Sifted",
-    sourceType: "funding",
-    url: "https://sifted.eu/articles/legora-in-talks-to-raise-at-a-10bn-valuation-according-to-reports",
   },
   {
     id: "hl-17",
@@ -434,6 +404,36 @@ const HIGHLIGHTS = [
     sourceType: "product",
     url: "https://www.harvey.ai/blog/horizon-scanning-in-harvey",
   },
+  {
+    id: "hl-40",
+    date: "2026-09-02",
+    priority: "high",
+    category: "Market",
+    title: "California passes SB 574, first-in-nation AI disclosure/verification rules for lawyers",
+    summary:
+      "California's legislature passed SB 574 on 2026-08-31, now headed to Governor Newsom (decision deadline 2026-10-12). The bill would require lawyers to disclose AI use in court filings, independently verify AI-generated citations, bar feeding confidential client data into generative AI tools, and prohibit delegating the practice of law to AI.",
+    whyItMatters:
+      "A first-in-the-nation statutory AI-disclosure/verification regime for attorneys is a bellwether for compliance expectations that could extend to AI-assisted patent prosecution and drafting tools nationally, including Patlytics' own citation-grounding and verification story.",
+    companies: ["Industry-wide"],
+    source: "JD Journal, Farella Braun + Martel",
+    sourceType: "regulatory",
+    url: "https://www.jdjournal.com/2026/09/02/california-passes-ai-rules-for-lawyers/",
+  },
+  {
+    id: "hl-41",
+    date: "2026-09-02",
+    priority: "medium",
+    category: "Market",
+    title: "House Judiciary IP Subcommittee hears testimony on renewing USPTO fee-setting authority",
+    summary:
+      "The House Judiciary Committee's IP Subcommittee held a hearing on renewing the USPTO's fee-setting authority, currently extended only through 2026-12-11 via a continuing resolution passed 2026-09-01. Witnesses (including former USPTO directors David Kappos and Teresa Rea) broadly favored renewal, with debate centered on the renewal term length and new PTAB procedural guardrails.",
+    whyItMatters:
+      "USPTO fee-setting stability underpins prosecution costs and pendency for every patent applicant Patlytics' customers represent — a funding lapse or contentious renewal fight is worth tracking for downstream effects on customer budgets and filing volume.",
+    companies: ["Industry-wide"],
+    source: "Patently-O, IPWatchdog",
+    sourceType: "regulatory",
+    url: "https://patentlyo.com/patent/2026/09/strings-attached-the-house-hearing-on-renewing-uspto-fee-setting-authority.html",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -534,16 +534,22 @@ const COMPETITORS = [
         body: "Signals a push toward more hands-on enterprise/firm onboarding rather than pure self-serve.",
         url: siteUrl("solveintelligence.com") + "/careers",
       },
+      {
+        date: "2026-09-04",
+        tag: "Hiring",
+        title: "Ashby board narrows to 8 live postings, down from 15",
+        body: "A fresh Ashby posting-API fetch confirms only 8 roles remain live (Sales Development/GTM, Events Lead, Account Executive/GTM, Legal and Product Engineer, Full-Stack Engineer, Infrastructure Engineer, AI Engineer, and Motion Designer — all London-based) — several previously-tracked engineering/support roles have closed or been filled since the prior snapshot.",
+        url: "https://jobs.ashbyhq.com/solveintelligence",
+      },
     ],
     hiring: {
-      openRoles: 15,
+      openRoles: 8,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "Software Engineer, Full-Stack", count: 2 },
-        { title: "Customer Support Specialist", count: 2 },
         { title: "Account Executive / GTM", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/510cafb8-922a-45fd-8340-6aa89191ea47" },
         { title: "AI Engineer", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/972bab7a-a285-4d22-af00-9ff9d3e41776" },
+        { title: "Full-Stack Engineer (Front-End Leaning)", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/6afb92df-d600-4f59-b679-f026bbdc9e37" },
       ],
     },
     marketing: [
@@ -784,16 +790,24 @@ const COMPETITORS = [
         body: "Leadership called out AI feature velocity in the IP Solutions segment as a retention priority for FY26 and referenced an in-development \"IP-1\" unified agentic-AI platform spanning patent and trademark intelligence; the IP segment was described as having returned to recurring flat growth. (Date corrected 2026-08-28 — the stored 8/22 dating did not match Clarivate's actual Q2 2026 earnings call date.)",
         url: "https://www.fool.com/earnings/call-transcripts/2026/08/07/clarivate-clvt-q2-2026-earnings-call-transcript/",
       },
+      {
+        date: "2026-09-04",
+        tag: "Hiring",
+        title: "Baseline correction: 26 live IP-services roles found via direct Workday API query",
+        body: "Querying Clarivate's underlying Workday CXS API directly (job-family-group \"Intellectual Property Services\") — rather than page-scraping the Phenom-hosted careers site, which under-rendered the true count — surfaces 26 currently open roles spanning Noida, Belgrade, Ann Arbor, Seoul, and Tokyo. This is a scraping-method correction, not a claim that 16 roles opened today; the prior 10-role figure reflected an incomplete capture.",
+        url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
+      },
     ],
     hiring: {
-      openRoles: 10,
+      openRoles: 26,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "IP Admin Senior Analyst (Patent Docketing/Paralegal)", count: 3 },
+        { title: "IP Admin Senior Analyst / Analyst (Noida, Belgrade)", count: 6 },
         { title: "PCT Patent Analyst (Contract)", count: 2 },
         { title: "Patent Classifier", count: 1, url: "https://careers.clarivate.com/job/JREQ136336" },
         { title: "IP Renewals SME (Korea)", count: 1, url: "https://careers.clarivate.com/job/JREQ136256" },
+        { title: "Senior Director, IP Service Operations", count: 1, url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/Senior-Director--IP--Service-Operations_JREQ135705-1" },
       ],
     },
     marketing: [
@@ -859,9 +873,16 @@ const COMPETITORS = [
         body: "Anaqua's actual live careers system is hosted on BambooHR (anaqua.com/careers 404s); querying it directly finds 23 currently open roles, none in the US or UK — concentrated instead in Tokyo, Gurugram/Hyderabad (India), Pau (France), and Perth (Australia). BambooHR's feed doesn't expose individual posting dates, so no specific new-vs-yesterday roles are confirmed this pass.",
         url: "https://anaqua.bamboohr.com/careers",
       },
+      {
+        date: "2026-09-04",
+        tag: "Hiring",
+        title: "BambooHR board drops to 20 open roles, down from 21",
+        body: "Re-confirmed via anaqua.bamboohr.com/careers/list — one previously-tracked posting is no longer live; the rest of the roster (concentrated in Tokyo, Gurugram/Hyderabad, Pau, and Perth) is unchanged.",
+        url: "https://anaqua.bamboohr.com/careers",
+      },
     ],
     hiring: {
-      openRoles: 21,
+      openRoles: 20,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -953,14 +974,17 @@ const COMPETITORS = [
         body: "Querying RELX's Workday jobs API with a wider search term, then checking each posting's own description for LNIP/PatentSight/IPlytics affiliation, surfaced 10 more genuinely LexisNexis IP Solutions-affiliated postings beyond the 6 previously tracked — including three freshly posted 2026-08-28 (Senior Cloud & AI Security Enablement Engineer, Scrum Master, Site Reliability Engineer); the other seven (incl. a Sr Director, Platform Engineering role) are older listings the narrower search simply missed. Total live LNIP-affiliated open roles now stands at 16, up from 6.",
         url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/Farringdon/Senior-Cloud---AI-Security-Enablement-Engineer_R116469",
       },
+      {
+        date: "2026-09-04",
+        tag: "Hiring",
+        title: "Re-query of the shared RELX Workday tenant returns 19 IP-tagged results",
+        body: "LexisNexis IP has no isolated job-family facet in the underlying RELX Workday CXS API; a free-text \"Intellectual Property\" search across the whole LexisNexis Legal & Professional tenant returns 19 results (up from 16-17), though some (e.g. general Legal Counsel or Scrum Master postings) appear only loosely IP-affiliated. Treating this as a noisier re-capture of the same board rather than confirmed net-new openings.",
+        url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal",
+      },
     ],
     hiring: {
-      openRoles: 16,
-      newRolesToday: [
-        { title: "Senior Cloud & AI Security Enablement Engineer", dept: "IP Solutions", location: "Farringdon, UK", url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/Farringdon/Senior-Cloud---AI-Security-Enablement-Engineer_R116469" },
-        { title: "Scrum Master", dept: "IP Solutions", location: "Cape Town, South Africa", url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/Cape-Town/Scrum-Master_R117540" },
-        { title: "Site Reliability Engineer", dept: "IP Solutions", location: "South Africa", url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/South-Africa/Site-Reliability-Engineer_R116329" },
-      ],
+      openRoles: 19,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Enterprise Account Manager, Intellectual Property Solutions", count: 2 },
@@ -1571,11 +1595,7 @@ COMPETITORS.push(
     ],
     hiring: {
       openRoles: 6,
-      newRolesToday: [
-        { title: "Product Delivery Lead (Software Engineering)", dept: "Engineering", location: "London or Cambridge, UK (hybrid)", url: "https://www.iprova.com/career/product-delivery-lead-software-engineering/" },
-        { title: "DevOps & Security Engineer", dept: "Engineering", location: "London, UK (hybrid)", url: "https://www.iprova.com/career/devops-security-engineer/" },
-        { title: "Office Manager (with Finance Skills)", dept: "Operations", location: "Cambridge, UK", url: "https://www.iprova.com/career/office-manager-with-finance-skills-2/" },
-      ],
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Full Stack Engineer", count: 1, url: "https://www.iprova.com/career/senior-full-stack-engineer/" },
@@ -1811,11 +1831,7 @@ COMPETITORS.push(
     ],
     hiring: {
       openRoles: 4,
-      newRolesToday: [
-        { title: "Data Migration and Onboarding Specialist", dept: "Operations", location: "Remote (Philippines)", url: "https://alt-legal.breezy.hr/p/2cc745ec3a62-data-migration-and-onboarding-specialist-at-alt-legal-remote" },
-        { title: "Customer Success Manager", dept: "Success", location: "Remote (US)", url: "https://alt-legal.breezy.hr/p/33b788b22d82-customer-success-manager" },
-        { title: "Operations Associate", dept: "Operations", location: "Remote (US)", url: "https://alt-legal.breezy.hr/p/9e8be090952c-operations-associate" },
-      ],
+      newRolesToday: [],
       recentHires: [],
       topRoles: [{ title: "Trademark Docketing Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/9fe3efd9ca1e-trademark-docketing-specialist" }],
     },
@@ -2013,15 +2029,17 @@ COMPETITORS.push(
         body: "Two new security-engineering postings surfaced via the Ashby posting API's publishedAt field (San Francisco), alongside a new Director Global Benefits opening (NYC/SF/Chicago/Dallas/Remote) and a Scaled Customer Success Manager, EMEA role (London) — board now at 332 live postings across 209 unique titles, down from 350/219, with 13 other titles closing since.",
         url: "https://jobs.ashbyhq.com/harvey/d2624850-8dd4-4eb4-b5dc-f386b715a26f",
       },
+      {
+        date: "2026-09-03",
+        tag: "Hiring",
+        title: "Opens three new Enterprise Account Executive roles (DC public sector, Munich)",
+        body: "Ashby posting-API publishedAt confirms three new Enterprise AE postings: Public Sector (Federal) and Public Sector (State & Local), both Washington DC, plus Mid Market — Munich — a notable push into US federal/state public-sector sales alongside continued European GTM expansion. Board now at 339 live postings, re-confirmed via a direct full API pull (up from the 332 last recorded — some of the increase reflects a more complete API capture rather than same-day growth alone).",
+        url: "https://jobs.ashbyhq.com/harvey/6c95865e-0803-47c2-889d-103afa385b53",
+      },
     ],
     hiring: {
-      openRoles: 209,
-      newRolesToday: [
-        { title: "Staff Security Software Engineer, IAM", dept: "Security", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/d16bd223-cb68-46f3-8bf6-41267b9770cb" },
-        { title: "Software Engineer, Security", dept: "Security", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/d2624850-8dd4-4eb4-b5dc-f386b715a26f" },
-        { title: "Director Global Benefits", dept: "People", location: "Remote", url: "https://jobs.ashbyhq.com/harvey/fea3ab0e-d5f0-4f89-9ac2-9b4a1f851ee7" },
-        { title: "Scaled Customer Success Manager, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/harvey/9b76c7e3-4c05-47c6-852c-60b6e1e2ef16" },
-      ],
+      openRoles: 339,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Legal Engineer (various specialties)", count: 12 },
@@ -2185,11 +2203,8 @@ COMPETITORS.push(
       },
     ],
     hiring: {
-      openRoles: 276,
-      newRolesToday: [
-        { title: "Staff Software Engineer", dept: "Engineering", location: "New York City", url: "https://jobs.ashbyhq.com/legora/a7d29888-3159-4651-915a-d1a4814d1916" },
-        { title: "Business Development Representative - Singapore", dept: "GTM", location: "Singapore", url: "https://jobs.ashbyhq.com/legora/704826df-c148-4a56-895d-138f8ec3e619" },
-      ],
+      openRoles: 282,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Engagement Manager (various regions)", count: 15 },
@@ -2376,11 +2391,8 @@ COMPETITORS.push(
       },
     ],
     hiring: {
-      openRoles: 9,
-      newRolesToday: [
-        { title: "Staff Software Engineer / Architect - AI, CoCounsel FDE", dept: "Engineering", location: "Frisco, TX", url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Frisco-Texas/Staff-Software-Engineer---Architect---AI--CoCounsel-FDE_JREQ200171" },
-        { title: "Implementation Consultant - Legal AI Solutions (CoCounsel)", dept: "Customer Success", location: "Gdańsk, Poland", url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/Poland-Gdansk/Implementation-Consultant---Legal-AI-Solutions--CoCounsel-_JREQ195875" },
-      ],
+      openRoles: 10,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Software Engineer - AI, CoCounsel FDE (various)", count: 3 },
@@ -2442,13 +2454,17 @@ COMPETITORS.push(
         body: "Two new postings confirmed via the Ashby posting API's publishedAt field: Technical Adoption Architect, EMEA (London) and Customer Account Executive (New York City) — board now at 31 live postings, up from 29.",
         url: "https://jobs.ashbyhq.com/ironcladhq/071cd0d3-18fb-4de0-a45b-0a6d3fe76c54",
       },
+      {
+        date: "2026-09-03",
+        tag: "Hiring",
+        title: "Opens Staff Product Manager role",
+        body: "New Staff Product Manager posting (San Francisco) confirmed via the Ashby posting API's publishedAt field — board now at 32 live postings, up from 31.",
+        url: "https://jobs.ashbyhq.com/ironcladhq/68707bad-12b4-4d3d-b482-343400afa9a7",
+      },
     ],
     hiring: {
-      openRoles: 31,
-      newRolesToday: [
-        { title: "Technical Adoption Architect, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/ironcladhq/071cd0d3-18fb-4de0-a45b-0a6d3fe76c54" },
-        { title: "Customer Account Executive", dept: "Sales", location: "New York City", url: "https://jobs.ashbyhq.com/ironcladhq/e1a2ef4b-0659-42dd-818e-3433b707a01b" },
-      ],
+      openRoles: 32,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Staff Software Engineer (various)", count: 4 },
@@ -2481,6 +2497,13 @@ COMPETITORS.push(
         title: "Promotes Lyle McCutcheon-Schour to SVP of Revenue",
         body: "Internal promotion (not an external hire) to drive agentic CLM growth — McCutcheon-Schour has spent over a decade at LinkSquares in customer-facing roles, most recently VP of Account Management. LinkSquares also appeared on the 2026 Inc. 5000 list (#2532, 6th consecutive year) on Aug 11, 2026.",
         url: "https://www.streetinsider.com/PRNewswire/LinkSquares+Names+Lyle+McCutcheon-Schour+SVP+of+Revenue+to+Drive+Agentic+CLM+Growth/26948572.html",
+      },
+      {
+        date: "2026-09-04",
+        tag: "Hiring",
+        title: "Real ATS identified: Greenhouse board (token \"linksquaresinc\"), still 5 open roles",
+        body: "linksquares.com/careers/open-positions renders its listings via an embedded Greenhouse job board (token \"linksquaresinc\", not \"linksquares\") rather than static HTML — confirmed by querying boards-api.greenhouse.io directly. Role count is unchanged at 5; treating this as a scraping-method fix, not new openings.",
+        url: "https://linksquares.com/careers/open-positions/",
       },
     ],
     hiring: {
@@ -2552,11 +2575,7 @@ COMPETITORS.push(
     ],
     hiring: {
       openRoles: 10,
-      newRolesToday: [
-        { title: "Strategic Business Development Lead", dept: "Business Development", location: "New York / Remote (US)", url: "https://app.dover.com/apply/4c478554-4606-49ab-8897-413f3ce35b74/93fbe347-7627-43fd-a97f-04a9dc7b0f19/?rs=15190316" },
-        { title: "Senior Enterprise Solutions Engineer", dept: "Solutions/Sales Engineering", location: "Remote (US, CA)", url: "https://app.dover.com/apply/DraftWise/92ffa49f-0beb-40c9-8dd4-fd2c64c23e41/?rs=76643084" },
-        { title: "Business Development Representative", dept: "Sales/Business Development", location: "New York, NY (Hybrid)", url: "https://app.dover.com/apply/draftwise/2c8784e9-ceb4-490c-9671-0543724c8647" },
-      ],
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Back End Software Engineer", count: 2 },
@@ -2636,12 +2655,8 @@ COMPETITORS.push(
       },
     ],
     hiring: {
-      openRoles: 36,
-      newRolesToday: [
-        { title: "Staff Designer, Growth & Monetization", dept: "Product Design", location: "San Mateo, CA (Hybrid)", url: "https://job-boards.greenhouse.io/eve/jobs/4374633009" },
-        { title: "Strategic Account Executive", dept: "Sales", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4204363009" },
-        { title: "Recruiting Coordinator, Engineering", dept: "People", location: "San Francisco (Hybrid)", url: "https://job-boards.greenhouse.io/eve/jobs/4323681009" },
-      ],
+      openRoles: 35,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Sales (Account Executive / SDR / leadership mix)", count: 11 },
@@ -2727,10 +2742,8 @@ COMPETITORS.push(
       },
     ],
     hiring: {
-      openRoles: 6,
-      newRolesToday: [
-        { title: "Business Development Executive – US Shift", dept: "Sales", location: "Pune, India" },
-      ],
+      openRoles: 4,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Dot Net Developer", count: 3 },
@@ -2798,11 +2811,7 @@ COMPETITORS.push(
     ],
     hiring: {
       openRoles: 9,
-      newRolesToday: [
-        { title: "Senior NLP & Generative AI Engineer", dept: "Engineering", location: "Hyderabad, India", url: "https://ipauthor.com/senior-nlp-generative-ai-engineer-deep-search-rag-llm-systems/" },
-        { title: "Senior Search Engineer", dept: "Engineering", location: "Hyderabad, India", url: "https://ipauthor.com/senior-search-engineer-hybrid-search-gen-ai-solr-elastic-search/" },
-        { title: "Senior Product Manager", dept: "Product", location: "Hyderabad, India", url: "https://ipauthor.com/senior-product-manager-india-core-product-dev-team/" },
-      ],
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Full-Stack Engineering Lead", count: 1, url: "https://ipauthor.com/senior-full-stack-engineering-lead-reactjs-python-llm-product-development/" },
@@ -2875,10 +2884,7 @@ COMPETITORS.push(
     ],
     hiring: {
       openRoles: 3,
-      newRolesToday: [
-        { title: "Senior Software Engineer", dept: "Engineering", location: "New York, NY" },
-        { title: "Customer Success Representative", dept: "Customer Success", location: "New York, NY" },
-      ],
+      newRolesToday: [],
       recentHires: [],
       topRoles: [{ title: "Account Executive", count: 1 }],
     },
@@ -3177,6 +3183,54 @@ const NEW_ENTRANTS = [
     date: "2026-08-11",
     source: "Artificial Lawyer",
     sourceUrl: "https://www.artificiallawyer.com/2026/08/11/aloi-raises-7m-for-organisational-judgment-ceo-interview/",
+  },
+  {
+    id: "sandstone",
+    name: "Sandstone",
+    threat: "low",
+    backing: "$30M Series A led by Lightspeed Venture Partners (June 2026), following a $10M Sequoia-led seed (January 2026)",
+    stage: "Series A",
+    tagline: "AI-native platform turning institutional knowledge into agentic workflows for in-house legal teams.",
+    website: "https://sandstone.com",
+    linkedin: null,
+    description:
+      "Sandstone lets in-house legal teams deploy AI agents that continuously learn from interactions to build dynamic playbooks, automating intake, triage, and workflows across tools like Slack, Salesforce, and email. Not patent-specific — a general legal-AI adjacent entrant included for completeness given broader legal-AI budget overlap.",
+    foundingTeam: [
+      { name: "Nick Fleisher", background: "Co-Founder. McKinsey alumnus." },
+      { name: "Jarryd Strydom", background: "Co-Founder. Attorney and McKinsey alumnus." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet independently verified.",
+      hiringProfile: "Not yet independently verified.",
+    },
+    date: "2026-09-04",
+    source: "TechCrunch, Sequoia Capital",
+    sourceUrl: "https://techcrunch.com/2026/06/09/sandstone-raises-30m-to-bring-ai-to-in-house-legal-teams/",
+  },
+  {
+    id: "perceptron-ml",
+    name: "Perceptron ML",
+    threat: "low",
+    backing: "Y Combinator (Summer 2026 batch)",
+    stage: "Pre-seed/Seed",
+    tagline: "Custom, privately-deployed AI for law firms — timekeeping, intake, research, discovery, and drafting.",
+    website: "https://perceptronml.com",
+    linkedin: null,
+    description:
+      "Perceptron ML builds firm-specific AI deployments for law firms, including a grounding engine that verifies facts against primary sources, spanning timekeeping, intake, research, discovery, and drafting workflows. Not patent-specific — a general legal-AI entrant identified via YC's Summer 2026 batch, included for completeness given broader legal-AI budget overlap.",
+    foundingTeam: [
+      { name: "Michael Marcotte", background: "Founder & CEO. Previously AI Research at NVIDIA." },
+      { name: "Peyton Marcotte", background: "Founder & CTO. Previously founded PMARC, a NASA-supported spaceflight research project." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet independently verified.",
+      hiringProfile: "Not yet independently verified.",
+    },
+    date: "2026-09-04",
+    source: "Y Combinator, Artificial Lawyer",
+    sourceUrl: "https://www.ycombinator.com/companies/perceptron-ml",
   },
 ];
 
@@ -3875,6 +3929,72 @@ const BLOGS = [
     relevance: "medium",
     tags: ["Distribution", "Microsoft Copilot"],
     url: "https://www.lawnext.com/2026/09/descrybe-brings-legal-research-and-intelligence-to-microsoft-365-copilot.html",
+  },
+  {
+    id: "blog-50",
+    headline: "Eve Legal Strikes Back, Seeking to Invalidate AI.Law's AI Document-Drafting Patent",
+    description: "Eve (Butler Labs) filed a motion to dismiss AI.Law Corp.'s infringement suit, arguing AI.Law's patent on using AI to draft/format legal documents claims an unpatentable abstract idea under the Alice framework.",
+    companyId: "eve-legal",
+    source: "USA Herald",
+    date: "2026-08-31",
+    relevance: "critical",
+    tags: ["Litigation", "Patent Validity"],
+    url: "https://usaherald.com/eve-legal-strikes-back-seeking-to-invalidate-ai-laws-ai-document-drafting-patent/",
+  },
+  {
+    id: "blog-51",
+    headline: "Building the Judgment Layer with Legal AI — Aloi",
+    description: "Artificial Lawyer profiled Aloi CEO Johan Häger on the startup's \"Judgment Graph\" technology, which captures firmwide decision patterns and precedent from past matters to support junior lawyers and commoditize routine legal work.",
+    companyId: "industry",
+    source: "Artificial Lawyer",
+    date: "2026-09-03",
+    relevance: "medium",
+    tags: ["Thought Leadership", "New Entrant"],
+    url: "https://www.artificiallawyer.com/2026/09/03/building-the-judgment-layer-with-legal-ai-aloi/",
+  },
+  {
+    id: "blog-52",
+    headline: "Harvey Partners With Everlaw to Power Evidence-Backed Legal Work",
+    description: "Harvey announced an MCP-based integration with Everlaw bringing case chronologies, deposition analysis, and early case assessment into Harvey's platform, part of a broader four-way partnership with Everlaw, Google, and Microsoft first announced in late August.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-03",
+    relevance: "low",
+    tags: ["Partnership", "Litigation"],
+    url: "https://www.everlaw.com/blog/ai-and-law/harvey-everlaw-integration-massive-scale/",
+  },
+  {
+    id: "blog-53",
+    headline: "Reclaim Your AI Sovereignty and Your Ethical Walls",
+    description: "DraftWise argues law firms should keep their own permission model and ontology as the source of truth for AI governance rather than depend on vendor-specific lock-in as AI tooling proliferates.",
+    companyId: "draftwise",
+    source: "DraftWise",
+    date: "2026-09-03",
+    relevance: "low",
+    tags: ["Thought Leadership", "AI Governance"],
+    url: "https://www.draftwise.com/blog/reclaim-your-ai-sovereignty-and-your-ethical-walls",
+  },
+  {
+    id: "blog-54",
+    headline: "Legora Reviews Financial Statements With OpenAI's GPT-6 Astra",
+    description: "As part of OpenAI's GPT-6 Astra launch, a case study showed Legora using the model to review 41 financial documents and correctly flag all four planted errors, reporting roughly a 40% workflow-time improvement.",
+    companyId: "legora",
+    source: "OpenAI",
+    date: "2026-09-03",
+    relevance: "low",
+    tags: ["Model Integration", "Case Study"],
+    url: "https://blockchain.news/news/legora-gpt6-astra-financial-review",
+  },
+  {
+    id: "blog-55",
+    headline: "New Anaqua Report Reveals Surge in AI Semiconductor Patent Filings",
+    description: "Anaqua's 2026 Semiconductor Industry Patent Report analyzed over 713,000 semiconductor patent filings, finding AI-semiconductor-intersection patents grew 114% over five years versus 78% for semiconductor patents overall — roughly 40% faster.",
+    companyId: "anaqua",
+    source: "Anaqua",
+    date: "2026-09-01",
+    relevance: "high",
+    tags: ["Patent Landscape", "AI Patents", "Analytics"],
+    url: "https://www.globenewswire.com/news-release/2026/09/01/3354190/0/en/new-anaqua-report-reveals-surge-in-ai-semiconductor-patent-filings.html",
   },
 ];
 
