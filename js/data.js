@@ -2683,14 +2683,20 @@ COMPETITORS.push(
         body: "Confirmed via the Lever board (jobs.lever.co/weloglobal, filtered to Park IP): the French Patent Language Lead posting tracked since 2026-08-31 is no longer live — filled or closed. Open roles drop from 3 to 2.",
         url: "https://jobs.lever.co/weloglobal?department=Park%20IP",
       },
+      {
+        date: "2026-09-04",
+        tag: "Hiring",
+        title: "Early Careers Business Development Specialist role closes",
+        body: "Re-confirmed via the Lever board: the previously-tracked Early Careers Business Development Specialist posting no longer resolves (HTTP 404). Only the Brazilian Portuguese Patent Language Lead role remains live — open roles drop from 2 to 1.",
+        url: "https://jobs.lever.co/weloglobal?department=Park%20IP",
+      },
     ],
     hiring: {
-      openRoles: 2,
+      openRoles: 1,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Brazilian Portuguese Patent Language Lead", count: 1, url: "https://jobs.lever.co/weloglobal/41e24db7-d93a-4b83-b551-9daa47c75155" },
-        { title: "Early Careers Business Development Specialist", count: 1, url: "https://jobs.lever.co/weloglobal/b636cdf0-426e-455f-91de-a0972944b860" },
       ],
     },
   }),
