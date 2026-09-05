@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "note": "Day-over-day open-roles snapshot for the daily research routine's hiring-signal diff. First seeded 2026-08-26; updated multiple times 2026-08-27/28. Updated 2026-08-29 (this pass): full sweep across all 41 tracked competitors via 5 parallel research passes. Notable ATS/URL fixes this pass: ip-author's real careers page is ipauthor.com/career/ (singular, not /careers which 404s) - now enumerable, 9 roles found. anaqua's real ATS is anaqua.bamboohr.com/careers (not anaqua.com/careers) - 23 roles found, now concentrated in Japan/India/France/Australia with zero US/UK postings, a materially different picture from the prior snapshot. lexisnexis-ip and cipher's shared RELX Workday JS-shell was cracked by querying the underlying relx.wd3.myworkdayjobs.com CXS JSON API directly - lexisnexis-ip is now enumerable (6 roles); cipher has no distinct hiring pipeline (rebranded to 'LexisNexis Classification', hiring folded into lexisnexis-ip). legora's real ATS is jobs.ashbyhq.com/legora (careers.legora.com/jobs does not resolve - confirmed dead). spellbook's site and Ashby board moved from spellbook.legal to spellbook.com. ironclad's real ATS is jobs.ashbyhq.com/ironcladhq (found via raw-HTML Ashby-embed grep; Glassdoor was the prior fallback source). park-ip's real ATS is the shared Welo Global Lever board filtered by department (jobs.lever.co/weloglobal?department=Park%20IP) - first capture, 3 roles. harvey and legora's Ashby boards under-render to standard page fetches; querying the Ashby posting API directly revealed far larger true role counts (harvey: 219 unique titles / 350 postings; legora: 280 postings) than the boards show via normal fetch - both recorded here as the true current baseline. clarivate-innography's IP-tagged roles collapsed from 8 to 1 (VP, Product Marketing) - the other 7 are now filled/closed (HTTP 410). patent-bots' board consolidated from 4 to 2 roles. questel and cypris entries were partially reconfirmed (some prior titles could not be re-verified this pass and were dropped rather than guessed). patentpal not re-scraped this pass (thepatentpal.com returned HTTP 503 throughout the session) - prior snapshot retained unchanged. Updated 2026-08-30 (this pass): full sweep across all tracked competitors via 7 parallel research passes. Real diffs found: solve-intelligence's Ashby board actually carries 15 live titles (not 8) though none newly posted in the last 48h, so the baseline is corrected but no Hiring highlight was added. iprally's hiring pipeline has collapsed to zero (Workable feed confirms 0 openings; ATS may be migrating to Teamtailor, which shows only a generic Open Application listing). clarivate-innography's last remaining IP-tagged role (VP, Product Marketing) is now filled - IP hiring board is at zero. legora added 4 new postings (Senior Web Designer, Engagement Manager - Strategic Accounts, Engagement Manager - Mid-Market Corporates, People Tech Manager), confirmed via the Ashby posting API's publishedAt field (2026-08-28). patseer's real careers page (patseer.com/careers/, a form-popup dropdown) was previously missed and actually lists 4 open roles. cypris's role list turned over: Senior Software Engineer and Customer Success Representative are new (via cypris.ai/about-us / Wellfound), while Business Development Representative and Associate Research Analyst no longer appear. ironclad, cocounsel, linksquares, park-ip, and patsnap's ATS/careers pages could not be reliably re-verified this pass (JS-rendered Ashby/Workday/Lever shells, or a patsnap.com/careers 404 suggesting an ATS migration) - their prior snapshots were retained unchanged rather than guessed. Updated 2026-08-31 (this pass): full sweep across all 44 tracked competitors (43 existing + newly-added pioneerip) via 7 parallel research passes, verified largely via direct ATS/API queries (Ashby posting API, Greenhouse API, Lever API, Workday CXS API, BambooHR API) rather than scraped HTML. Real diffs found: legora added 2 new Ashby postings dated 2026-08-31 itself (Senior Product Designer; Head of Legal Engineering - Mexico), bringing it to 281 postings/220 unique titles. patsnap's entire external hiring pipeline is now broken/empty across every channel checked (own site 404, Workable API zero jobs, Lever API zero jobs) - retired the stale 14-title baseline. ktmine's careers page now shows zero live listings (previously tracked at 4; could not be reconfirmed as still open). cocounsel corrected to 9 distinct live postings (not 8) via the Workday API - one mislabeled title fixed, one previously-uncounted distinct 'Principal Engineer, CoCounsel (Security & Compliance)' posting added. ip-copilot: found a new Gusto ATS board but it's Cloudflare-blocked, roles remain un-enumerated. nlpatent/Clerq: confirmed site migrated to clerq-ip.com; its Ashby board exists but the posting-API endpoint returned no data this pass. New competitor pioneerip added (first capture) - no careers page found. All other companies (solve-intelligence, iprally, clarivate-innography, anaqua, lexisnexis-ip, cipher, ipwe, deepip, junior, ankar-ai, edge, patented-ai, xlscout, amplified-ai, iprova, minesoft, questel, juristat, patent-bots, alt-legal, pqai, harvey, spellbook, robin-ai, ironclad, linksquares, draftwise, eve-legal, genie-ai, cypris, patseer, patently, ip-author, powerpatent, park-ip) were re-verified via live ATS/API queries and found unchanged from the prior baseline - no guessed diffs recorded. Updated 2026-09-01 (this pass): full sweep across all 44 tracked competitors via 7 parallel research passes (6 competitor batches + 1 industry/entrants/webinars pass), using direct ATS/API queries (Ashby posting-api, Greenhouse boards-api, Lever postings-api, BambooHR careers/list, RELX Workday CXS jobs-api, Workable widget-api, WP Job Manager AJAX) wherever available rather than scraped HTML. Real diffs found: lexisnexis-ip's LNIP-affiliated role count corrected from 6 to 16 (10 previously-missed postings surfaced by a broader Workday search, 3 of them freshly posted 08-28). ankar-ai corrected 8->11 (3 previously-missed live postings). deepip 5->6 (Head of People Associate reappeared). anaqua 23->22 (one Assistant/e Administratif/ve variant closed). ironclad 28->30 (2 new postings, 08-31). legora's Ashby board added 6 more confirmed-fresh postings (08-31/09-01) on top of its existing large baseline. xlscout's pipeline confirmed at zero (both previously-tracked roles closed, verified via its own WP Job Manager AJAX endpoint). nlpatent/Clerq: real ATS corrected to Workable (not Ashby as previously assumed) -- 1 live role found. park-ip 3->2 (French Patent Language Lead closed). questel's discrepancy between the stored snapshot and a secondary source (Built In) remains unresolved (site itself blocked automated access again) -- prior snapshot retained rather than guessed. All other companies (solve-intelligence, patsnap, iprally, clarivate-innography, cipher, ktmine, ipwe, junior, edge, patented-ai, patentpal, amplified-ai, iprova, minesoft, juristat, alt-legal, pqai, ip-copilot, harvey, spellbook, robin-ai, leya, cocounsel, linksquares, draftwise, genie-ai, eve-legal, patseer, patently, ip-author, powerpatent, cypris, pioneerip) were re-verified via live ATS/API queries and found unchanged from the prior baseline. Updated 2026-09-02 (this pass): full sweep across all 44 tracked competitors (43 existing + jupus counted as a new entrant, not a competitor) via 6 parallel competitor-batch research passes + 1 industry/entrants/webinars pass. Real diffs found: clarivate-innography's separate 'Intellectual Property Services' careers category (previously untracked) surfaced 10 live roles, correcting the 'IP hiring board at zero' framing which only reflected the narrower 'IP Laws' category. anaqua 22->21 (Consultant, IP Services CX Japan closed). ankar-ai 11->8 (Finance Partner, Product Engineer, Product Marketing Manager all closed since yesterday). nlpatent/Clerq's sole live role closed -- board now empty (1->0). cocounsel 9->7 unique titles (both Principal Engineer, CoCounsel postings closed; a second Lead Software Engineer - CoCounsel Legal Desktop App posting noticed in Eagan, MN). ironclad 30->29 (Talent and Performance Senior Manager closed). eve-legal 35->36 (Staff Designer, Growth & Monetization newly live). ip-copilot's live Gusto board URL corrected, still Cloudflare-blocked. harvey's Ashby board now 339 postings/212 titles (down from 350/219) -- one genuinely new title (Software Engineer, Security, published 09-01) confirmed live; full list not re-transcribed here per its own size, see data.js weekActivity for the diff. legora added a Malmö-based Senior Platform Engineer posting (09-02, newest on its board) -- a new location for an existing title, not a new title; full list not re-captured given board size (278 postings/217 titles). patent-bots' 'Principal Software Developer' backfilled with its confirmed live URL in data.js (no title change). All other companies (solve-intelligence, patsnap, iprally, cipher, ktmine, ipwe, deepip, junior, edge, patented-ai, xlscout, patentpal, amplified-ai, iprova, minesoft, questel, juristat, alt-legal, pqai, spellbook, robin-ai, leya, linksquares, draftwise, genie-ai, park-ip, patseer, patently, ip-author, powerpatent, cypris, pioneerip, lexisnexis-ip) were re-verified via live ATS/API queries and found unchanged from the prior baseline -- no guessed diffs recorded. Schema updated 2026-09-02: added a 'method' field per company (e.g. ashby-api, greenhouse-api, html-scrape) to detect when a company's verification method changes -- see Patty's prompt's new 'HIRING SIGNAL INTEGRITY' rules for why this matters (baseline resets on method change must not be reported as roles opened 'today'). Updated 2026-09-03 (this pass): full sweep across all 44 tracked competitors via 5 parallel competitor-batch research passes + 1 industry/entrants/webinars pass. Real diffs found: deepip 4->5->4 ('Account Executive - EU' closed). ankar-ai's board flickered back to 11 postings (Finance Partner/Product Engineer/Product Marketing Manager, recorded closed 09-02, are live again) -- treated as unstable data, not asserted either direction. lexisnexis-ip found one previously-missed 'Senior Software Engineer II' (Cape Town) posting -- 30+ days old per Workday, so recorded as newly-discovered rather than newly-opened (no opened-today item added); 'AI Architect (UK)' possibly closed, unconfirmed. harvey's Ashby board now 332 postings/209 titles (down from 350/219) -- 4 genuinely new titles added (Staff Security Software Engineer IAM; Software Engineer, Security; Director Global Benefits; Scaled Customer Success Manager EMEA), 13 stale titles removed. legora added one new title (Business Development Representative - Singapore); 6 additional NYC postings today are existing titles in a new location, not new titles -- board now 276/215 (down from 281/220). cocounsel added 2 new CoCounsel-titled postings (Frisco AI Architect FDE; Gdansk Implementation Consultant) -- 9 unique titles/10 postings, up from 7/8. ironclad added 2 new postings (Technical Adoption Architect EMEA; Customer Account Executive NYC) -- 31 live postings, up from 29. ip-author: 3 existing titles (Prompt Engineer, Customer Success Manager, HR Manager) backfilled with confirmed live per-role URLs in data.js; no title-count change. Could not be reliably re-verified this pass (asOf left unchanged, prior baseline retained): edge, amplified-ai, patentpal (503), questel (Cloudflare-blocked), ip-copilot (Cloudflare-blocked), linksquares (client-side rendered). All other 30 companies (solve-intelligence, patsnap, iprally, clarivate-innography, anaqua, cipher, ktmine, ipwe, junior, patented-ai, xlscout, nlpatent, iprova, minesoft, juristat, patent-bots, alt-legal, pqai, spellbook, robin-ai, leya, genie-ai, eve-legal, park-ip, patseer, patently, ip-author, powerpatent, cypris, pioneerip) were re-verified via live ATS/API/page queries and found unchanged from the prior baseline -- no guessed diffs recorded. Updated 2026-09-04 (this pass): full sweep across all 44 tracked competitors via 5 parallel competitor-batch research passes + 1 industry/entrants/webinars pass. Real diffs found: solve-intelligence's Ashby board narrowed to 8 live postings (down from 15). clarivate-innography baseline-reset via a direct Workday CXS API query (job-family-group \"Intellectual Property Services\") to 26 roles, up from 10 -- a scraping-method correction, not 16 roles opened today. anaqua 21->20 (Quality Management Specialist closed). lexisnexis-ip re-captured at 19 via a noisier free-text search (no isolated IP facet exists in the RELX Workday tenant) -- treated cautiously, not asserted as net-new. harvey added 3 new Enterprise AE titles (Public Sector Federal/State&Local DC, Mid Market Munich) -- 339 live postings, up from 332. legora re-confirmed at 282 postings, no specific new title identified this pass. ironclad added 1 new title (Staff Product Manager, SF) -- 32 postings, up from 31. linksquares BASELINE RESET (method change): real ATS is a Greenhouse board (token \"linksquaresinc\"), not static HTML -- role count unchanged at 5. eve-legal 36->35 (Demand Generation Specialist closed). park-ip 2->1 (Early Careers Business Development Specialist closed). ankar-ai reconfirmed at 8 (resolves the 09-03 flicker back to 11 as stale/transient). nlpatent/Clerq: confirmed correct Workable slug is \"clerq\". patentpal: site recovered from intermittent 503s, now consistently reachable (still 0 roles). questel remains Cloudflare-blocked for a third consecutive pass -- asOf intentionally left unbumped at 2026-09-02 per the no-guessed-recency rule. All other companies (patsnap, iprally, cipher, ktmine, ipwe, deepip, junior, edge, patented-ai, xlscout, iprova, minesoft, juristat, patent-bots, alt-legal, pqai, ip-copilot, spellbook, robin-ai, cocounsel, draftwise, genie-ai, cypris, patseer, patently, ip-author, powerpatent, pioneerip, amplified-ai, leya) were re-verified via live ATS/API/page queries and found unchanged (or, for leya/cocounsel, re-confirmed with a method-detail note only) from the prior baseline -- no guessed diffs recorded."
+    "note": "Day-over-day open-roles snapshot for the daily research routine's hiring-signal diff. First seeded 2026-08-26; updated multiple times 2026-08-27/28. Updated 2026-08-29 (this pass): full sweep across all 41 tracked competitors via 5 parallel research passes. Notable ATS/URL fixes this pass: ip-author's real careers page is ipauthor.com/career/ (singular, not /careers which 404s) - now enumerable, 9 roles found. anaqua's real ATS is anaqua.bamboohr.com/careers (not anaqua.com/careers) - 23 roles found, now concentrated in Japan/India/France/Australia with zero US/UK postings, a materially different picture from the prior snapshot. lexisnexis-ip and cipher's shared RELX Workday JS-shell was cracked by querying the underlying relx.wd3.myworkdayjobs.com CXS JSON API directly - lexisnexis-ip is now enumerable (6 roles); cipher has no distinct hiring pipeline (rebranded to 'LexisNexis Classification', hiring folded into lexisnexis-ip). legora's real ATS is jobs.ashbyhq.com/legora (careers.legora.com/jobs does not resolve - confirmed dead). spellbook's site and Ashby board moved from spellbook.legal to spellbook.com. ironclad's real ATS is jobs.ashbyhq.com/ironcladhq (found via raw-HTML Ashby-embed grep; Glassdoor was the prior fallback source). park-ip's real ATS is the shared Welo Global Lever board filtered by department (jobs.lever.co/weloglobal?department=Park%20IP) - first capture, 3 roles. harvey and legora's Ashby boards under-render to standard page fetches; querying the Ashby posting API directly revealed far larger true role counts (harvey: 219 unique titles / 350 postings; legora: 280 postings) than the boards show via normal fetch - both recorded here as the true current baseline. clarivate-innography's IP-tagged roles collapsed from 8 to 1 (VP, Product Marketing) - the other 7 are now filled/closed (HTTP 410). patent-bots' board consolidated from 4 to 2 roles. questel and cypris entries were partially reconfirmed (some prior titles could not be re-verified this pass and were dropped rather than guessed). patentpal not re-scraped this pass (thepatentpal.com returned HTTP 503 throughout the session) - prior snapshot retained unchanged. Updated 2026-08-30 (this pass): full sweep across all tracked competitors via 7 parallel research passes. Real diffs found: solve-intelligence's Ashby board actually carries 15 live titles (not 8) though none newly posted in the last 48h, so the baseline is corrected but no Hiring highlight was added. iprally's hiring pipeline has collapsed to zero (Workable feed confirms 0 openings; ATS may be migrating to Teamtailor, which shows only a generic Open Application listing). clarivate-innography's last remaining IP-tagged role (VP, Product Marketing) is now filled - IP hiring board is at zero. legora added 4 new postings (Senior Web Designer, Engagement Manager - Strategic Accounts, Engagement Manager - Mid-Market Corporates, People Tech Manager), confirmed via the Ashby posting API's publishedAt field (2026-08-28). patseer's real careers page (patseer.com/careers/, a form-popup dropdown) was previously missed and actually lists 4 open roles. cypris's role list turned over: Senior Software Engineer and Customer Success Representative are new (via cypris.ai/about-us / Wellfound), while Business Development Representative and Associate Research Analyst no longer appear. ironclad, cocounsel, linksquares, park-ip, and patsnap's ATS/careers pages could not be reliably re-verified this pass (JS-rendered Ashby/Workday/Lever shells, or a patsnap.com/careers 404 suggesting an ATS migration) - their prior snapshots were retained unchanged rather than guessed. Updated 2026-08-31 (this pass): full sweep across all 44 tracked competitors (43 existing + newly-added pioneerip) via 7 parallel research passes, verified largely via direct ATS/API queries (Ashby posting API, Greenhouse API, Lever API, Workday CXS API, BambooHR API) rather than scraped HTML. Real diffs found: legora added 2 new Ashby postings dated 2026-08-31 itself (Senior Product Designer; Head of Legal Engineering - Mexico), bringing it to 281 postings/220 unique titles. patsnap's entire external hiring pipeline is now broken/empty across every channel checked (own site 404, Workable API zero jobs, Lever API zero jobs) - retired the stale 14-title baseline. ktmine's careers page now shows zero live listings (previously tracked at 4; could not be reconfirmed as still open). cocounsel corrected to 9 distinct live postings (not 8) via the Workday API - one mislabeled title fixed, one previously-uncounted distinct 'Principal Engineer, CoCounsel (Security & Compliance)' posting added. ip-copilot: found a new Gusto ATS board but it's Cloudflare-blocked, roles remain un-enumerated. nlpatent/Clerq: confirmed site migrated to clerq-ip.com; its Ashby board exists but the posting-API endpoint returned no data this pass. New competitor pioneerip added (first capture) - no careers page found. All other companies (solve-intelligence, iprally, clarivate-innography, anaqua, lexisnexis-ip, cipher, ipwe, deepip, junior, ankar-ai, edge, patented-ai, xlscout, amplified-ai, iprova, minesoft, questel, juristat, patent-bots, alt-legal, pqai, harvey, spellbook, robin-ai, ironclad, linksquares, draftwise, eve-legal, genie-ai, cypris, patseer, patently, ip-author, powerpatent, park-ip) were re-verified via live ATS/API queries and found unchanged from the prior baseline - no guessed diffs recorded. Updated 2026-09-01 (this pass): full sweep across all 44 tracked competitors via 7 parallel research passes (6 competitor batches + 1 industry/entrants/webinars pass), using direct ATS/API queries (Ashby posting-api, Greenhouse boards-api, Lever postings-api, BambooHR careers/list, RELX Workday CXS jobs-api, Workable widget-api, WP Job Manager AJAX) wherever available rather than scraped HTML. Real diffs found: lexisnexis-ip's LNIP-affiliated role count corrected from 6 to 16 (10 previously-missed postings surfaced by a broader Workday search, 3 of them freshly posted 08-28). ankar-ai corrected 8->11 (3 previously-missed live postings). deepip 5->6 (Head of People Associate reappeared). anaqua 23->22 (one Assistant/e Administratif/ve variant closed). ironclad 28->30 (2 new postings, 08-31). legora's Ashby board added 6 more confirmed-fresh postings (08-31/09-01) on top of its existing large baseline. xlscout's pipeline confirmed at zero (both previously-tracked roles closed, verified via its own WP Job Manager AJAX endpoint). nlpatent/Clerq: real ATS corrected to Workable (not Ashby as previously assumed) -- 1 live role found. park-ip 3->2 (French Patent Language Lead closed). questel's discrepancy between the stored snapshot and a secondary source (Built In) remains unresolved (site itself blocked automated access again) -- prior snapshot retained rather than guessed. All other companies (solve-intelligence, patsnap, iprally, clarivate-innography, cipher, ktmine, ipwe, junior, edge, patented-ai, patentpal, amplified-ai, iprova, minesoft, juristat, alt-legal, pqai, ip-copilot, harvey, spellbook, robin-ai, leya, cocounsel, linksquares, draftwise, genie-ai, eve-legal, patseer, patently, ip-author, powerpatent, cypris, pioneerip) were re-verified via live ATS/API queries and found unchanged from the prior baseline. Updated 2026-09-02 (this pass): full sweep across all 44 tracked competitors (43 existing + jupus counted as a new entrant, not a competitor) via 6 parallel competitor-batch research passes + 1 industry/entrants/webinars pass. Real diffs found: clarivate-innography's separate 'Intellectual Property Services' careers category (previously untracked) surfaced 10 live roles, correcting the 'IP hiring board at zero' framing which only reflected the narrower 'IP Laws' category. anaqua 22->21 (Consultant, IP Services CX Japan closed). ankar-ai 11->8 (Finance Partner, Product Engineer, Product Marketing Manager all closed since yesterday). nlpatent/Clerq's sole live role closed -- board now empty (1->0). cocounsel 9->7 unique titles (both Principal Engineer, CoCounsel postings closed; a second Lead Software Engineer - CoCounsel Legal Desktop App posting noticed in Eagan, MN). ironclad 30->29 (Talent and Performance Senior Manager closed). eve-legal 35->36 (Staff Designer, Growth & Monetization newly live). ip-copilot's live Gusto board URL corrected, still Cloudflare-blocked. harvey's Ashby board now 339 postings/212 titles (down from 350/219) -- one genuinely new title (Software Engineer, Security, published 09-01) confirmed live; full list not re-transcribed here per its own size, see data.js weekActivity for the diff. legora added a Malmö-based Senior Platform Engineer posting (09-02, newest on its board) -- a new location for an existing title, not a new title; full list not re-captured given board size (278 postings/217 titles). patent-bots' 'Principal Software Developer' backfilled with its confirmed live URL in data.js (no title change). All other companies (solve-intelligence, patsnap, iprally, cipher, ktmine, ipwe, deepip, junior, edge, patented-ai, xlscout, patentpal, amplified-ai, iprova, minesoft, questel, juristat, alt-legal, pqai, spellbook, robin-ai, leya, linksquares, draftwise, genie-ai, park-ip, patseer, patently, ip-author, powerpatent, cypris, pioneerip, lexisnexis-ip) were re-verified via live ATS/API queries and found unchanged from the prior baseline -- no guessed diffs recorded. Schema updated 2026-09-02: added a 'method' field per company (e.g. ashby-api, greenhouse-api, html-scrape) to detect when a company's verification method changes -- see Patty's prompt's new 'HIRING SIGNAL INTEGRITY' rules for why this matters (baseline resets on method change must not be reported as roles opened 'today'). Updated 2026-09-03 (this pass): full sweep across all 44 tracked competitors via 5 parallel competitor-batch research passes + 1 industry/entrants/webinars pass. Real diffs found: deepip 4->5->4 ('Account Executive - EU' closed). ankar-ai's board flickered back to 11 postings (Finance Partner/Product Engineer/Product Marketing Manager, recorded closed 09-02, are live again) -- treated as unstable data, not asserted either direction. lexisnexis-ip found one previously-missed 'Senior Software Engineer II' (Cape Town) posting -- 30+ days old per Workday, so recorded as newly-discovered rather than newly-opened (no opened-today item added); 'AI Architect (UK)' possibly closed, unconfirmed. harvey's Ashby board now 332 postings/209 titles (down from 350/219) -- 4 genuinely new titles added (Staff Security Software Engineer IAM; Software Engineer, Security; Director Global Benefits; Scaled Customer Success Manager EMEA), 13 stale titles removed. legora added one new title (Business Development Representative - Singapore); 6 additional NYC postings today are existing titles in a new location, not new titles -- board now 276/215 (down from 281/220). cocounsel added 2 new CoCounsel-titled postings (Frisco AI Architect FDE; Gdansk Implementation Consultant) -- 9 unique titles/10 postings, up from 7/8. ironclad added 2 new postings (Technical Adoption Architect EMEA; Customer Account Executive NYC) -- 31 live postings, up from 29. ip-author: 3 existing titles (Prompt Engineer, Customer Success Manager, HR Manager) backfilled with confirmed live per-role URLs in data.js; no title-count change. Could not be reliably re-verified this pass (asOf left unchanged, prior baseline retained): edge, amplified-ai, patentpal (503), questel (Cloudflare-blocked), ip-copilot (Cloudflare-blocked), linksquares (client-side rendered). All other 30 companies (solve-intelligence, patsnap, iprally, clarivate-innography, anaqua, cipher, ktmine, ipwe, junior, patented-ai, xlscout, nlpatent, iprova, minesoft, juristat, patent-bots, alt-legal, pqai, spellbook, robin-ai, leya, genie-ai, eve-legal, park-ip, patseer, patently, ip-author, powerpatent, cypris, pioneerip) were re-verified via live ATS/API/page queries and found unchanged from the prior baseline -- no guessed diffs recorded. Updated 2026-09-04 (this pass): full sweep across all 44 tracked competitors via 5 parallel competitor-batch research passes + 1 industry/entrants/webinars pass. Real diffs found: solve-intelligence's Ashby board narrowed to 8 live postings (down from 15). clarivate-innography baseline-reset via a direct Workday CXS API query (job-family-group \"Intellectual Property Services\") to 26 roles, up from 10 -- a scraping-method correction, not 16 roles opened today. anaqua 21->20 (Quality Management Specialist closed). lexisnexis-ip re-captured at 19 via a noisier free-text search (no isolated IP facet exists in the RELX Workday tenant) -- treated cautiously, not asserted as net-new. harvey added 3 new Enterprise AE titles (Public Sector Federal/State&Local DC, Mid Market Munich) -- 339 live postings, up from 332. legora re-confirmed at 282 postings, no specific new title identified this pass. ironclad added 1 new title (Staff Product Manager, SF) -- 32 postings, up from 31. linksquares BASELINE RESET (method change): real ATS is a Greenhouse board (token \"linksquaresinc\"), not static HTML -- role count unchanged at 5. eve-legal 36->35 (Demand Generation Specialist closed). park-ip 2->1 (Early Careers Business Development Specialist closed). ankar-ai reconfirmed at 8 (resolves the 09-03 flicker back to 11 as stale/transient). nlpatent/Clerq: confirmed correct Workable slug is \"clerq\". patentpal: site recovered from intermittent 503s, now consistently reachable (still 0 roles). questel remains Cloudflare-blocked for a third consecutive pass -- asOf intentionally left unbumped at 2026-09-02 per the no-guessed-recency rule. All other companies (patsnap, iprally, cipher, ktmine, ipwe, deepip, junior, edge, patented-ai, xlscout, iprova, minesoft, juristat, patent-bots, alt-legal, pqai, ip-copilot, spellbook, robin-ai, cocounsel, draftwise, genie-ai, cypris, patseer, patently, ip-author, powerpatent, pioneerip, amplified-ai, leya) were re-verified via live ATS/API/page queries and found unchanged (or, for leya/cocounsel, re-confirmed with a method-detail note only) from the prior baseline -- no guessed diffs recorded. Updated 2026-09-05 (this pass): full sweep across all 44 tracked competitors via 6 parallel competitor-batch research passes + 1 industry/entrants/webinars pass. Real diffs found: harvey 339->348 (4 new titles incl. Head of Mid-Market Sales, Senior Manager Product Design - Platform). legora 282->283 (new Value Engineer, Solutions Engineer Stockholm, Technical Delivery Manager Munich/Paris, plus new US city-hub Engagement Manager/Associate seats). spellbook 19->21 (Solutions Engineer, Customer Success Operations Manager, both 09-04). ironclad 32->33 (Staff IAM Engineer, Enterprise Sales Leader added; Senior Adoption Strategist EMEA closed). MAJOR CORRECTION: solve-intelligence's 2026-09-04 entry wrongly reported the board 'narrowing to 8, down from 15' -- a direct re-query today confirms all 15 postings are still live (all 7 'closed' titles carry old publishedAt timestamps, Mar-Aug 2026) -- reverted to 15, flagged as a bad fetch/stale cache on the prior pass rather than genuine churn. genie-ai's real ATS corrected to Workable (was mis-tracked as html-scrape) -- 0 roles confirmed, method-only change. xlscout's 0-roles uncertainty from 09-04 resolved via a direct WP Job Manager AJAX query (found_jobs:false) -- confirmed 0. linksquares (Greenhouse), clarivate-innography (Workday facet API degraded to HTTP 400 this pass; cross-checked via full-feed keyword match, ~24-26-role roster unchanged, not confident enough for an exact diff), ankar-ai (Ashby board flickering between 11 and 8 postings for a 3rd consecutive day on the same 3 titles -- treated as a caching artifact, not genuine churn, recorded at today's live value of 11) all reconfirmed/noted per above. Could not be reliably re-verified this pass (asOf left unchanged, prior baseline retained): patentpal (503 again), questel (Cloudflare-blocked, 6th consecutive pass), ip-copilot (Cloudflare-blocked; real Gusto board URL now on record for a future attempt), patseer (JS popup, no visible job list to a plain fetch). All other companies (patsnap, iprally, clarivate-innography [note above], anaqua, lexisnexis-ip, cipher, ktmine, ipwe, deepip, junior, edge, patented-ai, nlpatent, amplified-ai, iprova, minesoft, juristat, patent-bots, alt-legal, pqai, robin-ai, leya, cocounsel, linksquares, draftwise, eve-legal, park-ip, cypris, patently, ip-author, powerpatent, pioneerip) were re-verified via live ATS/API/page queries and found unchanged from the prior baseline -- no guessed diffs recorded."
   },
   "solve-intelligence": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Sales Development / GTM",
       "Events Lead",
@@ -12,23 +12,31 @@
       "Full-Stack Engineer (Front-End Leaning)",
       "Infrastructure Engineer",
       "AI Engineer",
-      "Motion Designer"
+      "Motion Designer",
+      "Growth Engineer",
+      "Full Stack (Back-End Leaning)",
+      "Financial Operations Lead",
+      "Legal and Product Engineer (Patent Litigator)",
+      "Customer Support Specialist",
+      "Customer Support Specialist",
+      "Legal and Product Engineer (USPTO Examiner Background)"
     ],
     "method": "ashby-api",
-    "note": "2026-09-04: Ashby posting API now shows only 8 live postings, down from 15 -- Growth Engineer, Full Stack (Back-End Leaning), Financial Operations Lead, Patent Litigator, both Customer Support Specialist variants, and the USPTO-Examiner-background Legal and Product Engineer posting have all closed since the last check."
+    "note": "2026-09-05 CORRECTION: the 2026-09-04 entry's claim that the Ashby board \"narrowed to 8 live postings, down from 15\" was WRONG -- a direct re-query of api.ashbyhq.com/posting-api/job-board/solveintelligence today returns 15 live postings, including all 7 that were reported closed (Growth Engineer, Full Stack (Back-End Leaning), Financial Operations Lead, Legal and Product Engineer (Patent Litigator), both Customer Support Specialist postings, and Legal and Product Engineer (USPTO Examiner Background)) -- all 7 carry old publishedAt timestamps (Mar-Aug 2026), confirming they never actually closed. Likely a bad fetch or stale cache on 09-04. Reverting openRoles to 15; none of these should be treated as newly-opened today."
   },
   "patsnap": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "workable-api"
   },
   "iprally": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
-    "method": "workable-api"
+    "method": "workable-api",
+    "note": "2026-09-05: re-confirmed via direct query of apply.workable.com/api/v1/widget/accounts/iprally -- jobs array empty, 0 roles. (Note: 2026-09-04 pass reported this endpoint 429-blocked and cross-checked via Teamtailor instead, which also showed 0 real listings -- both sources agree on 0.)"
   },
   "clarivate-innography": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "IP Admin Analyst (Belgrade)",
       "IP Admin Analyst (Noida) x3",
@@ -55,11 +63,11 @@
       "PCT Patent Analyst (Contract) - Mechanical/Medical Devices",
       "PCT Patent Analyst (Contract) - Computing/Electronics/Physics"
     ],
-    "note": "2026-09-04 BASELINE RESET (method nuance, not new openings): querying Clarivate's underlying Workday CXS API directly for the \"Intellectual Property Services\" job-family-group surfaces 26 currently open roles -- materially more than the 10 found by the prior page-scrape/facet approach. The prior 10-role figure reflected an incomplete capture, not 16 roles opened today; no weekActivity \"opened\" items were added for the difference.",
+    "note": "2026-09-04 BASELINE RESET (method nuance, not new openings): querying Clarivate's underlying Workday CXS API directly for the \"Intellectual Property Services\" job-family-group surfaces 26 currently open roles -- materially more than the 10 found by the prior page-scrape/facet approach. The prior 10-role figure reflected an incomplete capture, not 16 roles opened today; no weekActivity \"opened\" items were added for the difference. Updated 2026-09-05: the Workday facet-filter call for the \"Intellectual Property Services\" job-family-group (id 1e2eb6b1e5231001aab18748aba40000) returned HTTP 400 on every attempt this pass (reproducible; other facets work fine, suggesting an instability on Workday's side for this specific facet, not a request-format bug). Worked around it by paginating the full unfiltered feed (177 postings) and keyword-matching against the stored 24 titles -- all 24 were found still live, with one soft, unconfirmed possible delta (2 vs 3 instances of \"IP Admin Analyst (Noida)\", which fluctuated across repeated calls). Not confident enough to report any diff; treating the ~24-26-role roster as unchanged pending a working facet query.",
     "method": "workday-cxs-api"
   },
   "anaqua": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Senior Consultant, IP Services CX Japan",
       "Senior Sales Manager / Sales Manager",
@@ -86,7 +94,7 @@
     "method": "bamboohr-api"
   },
   "lexisnexis-ip": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Account Manager, Intellectual Property (Tokyo)",
       "Sr. Enterprise Account Manager - Intellectual Property Solutions",
@@ -112,12 +120,12 @@
     "method": "workday-cxs-api"
   },
   "cipher": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "ktmine": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
@@ -127,7 +135,7 @@
     "method": "n/a-defunct"
   },
   "deepip": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Product Marketing Manager",
       "Business Development Representative - North America",
@@ -137,7 +145,7 @@
     "method": "teamtailor-scrape"
   },
   "junior": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Solutions Engineer (Remote)",
       "AI Engineer (Remote)",
@@ -146,7 +154,7 @@
     "method": "html-scrape"
   },
   "ankar-ai": {
-    "asOf": "2026-09-03",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Senior Product Engineer",
       "Talent Partner",
@@ -160,27 +168,27 @@
       "Product Engineer",
       "Product Marketing Manager"
     ],
-    "note": "2026-09-03: a fresh Ashby posting-API pull shows all 11 postings live again, including Finance Partner/Product Engineer/Product Marketing Manager -- which yesterday's snapshot recorded as closed. Treating this as unstable/flickering data from Ankar's Ashby board rather than a confirmed close-then-reopen; not asserting either direction as a hard fact without a second same-day confirmation.",
+    "note": "2026-09-05: a fresh Ashby posting-API pull again shows all 11 postings live -- this is the third day in a row alternating between 11 and 8 (11 on 09-01/09-03/09-05, 8 on 09-02/09-04), with the same 3 titles (Finance Partner, Product Engineer, Product Marketing Manager) toggling each time. This pattern strongly suggests a caching/CDN artifact on Ankar's Ashby board rather than genuine daily opens/closes -- NOT treating any of the 3 as newly-opened or newly-closed. Recording the board's current state (11) as the snapshot baseline; a human may want to investigate the underlying cause if the flicker continues.",
     "method": "ashby-api"
   },
   "edge": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "patented-ai": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "xlscout": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
-    "note": "2026-09-04: xlscout.ai/careers/ shows a 'Find Your Dream Job' widget with a 'Load more listings' button, but returns no listings in static HTML -- likely JS/AJAX-rendered content not visible to a plain fetch. Treating as 0 confirmed via this method, flagged as a possible undercount pending a browser-based follow-up.",
+    "note": "2026-09-05: confirmed 0 open roles via direct query of xlscout.ai/wp-admin/admin-ajax.php?action=job_manager_get_listings -- response {\"found_jobs\":false}. This resolves the 2026-09-04 note's flagged uncertainty (static-HTML read was possibly incomplete); the WP Job Manager AJAX endpoint is the authoritative source and confirms 0.",
     "method": "html-scrape"
   },
   "nlpatent": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "note": "2026-09-04: confirmed the correct Workable account slug is \"clerq\" (via apply.workable.com/api/v1/widget/accounts/clerq) -- jobs array empty, 0 roles confirmed.",
     "method": "workable-api"
@@ -188,16 +196,16 @@
   "patentpal": {
     "asOf": "2026-09-04",
     "roleTitles": [],
-    "note": "2026-09-04: thepatentpal.com/patentpal.com is now consistently reachable (HTTP 200, no more intermittent 503s) -- re-verified directly, no careers/jobs link found anywhere on the site. 0 roles confirmed.",
+    "note": "2026-09-05: thepatentpal.com/jobs returned HTTP 503 again on direct fetch (curl and WebFetch both) -- back to intermittent after appearing recovered on 2026-09-04. Leaving asOf unbumped at 2026-09-04 rather than asserting an unconfirmed recheck.",
     "method": "html-scrape"
   },
   "amplified-ai": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "iprova": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Product Delivery Lead (Software Engineering)",
       "Office Manager (with Finance Skills)",
@@ -209,7 +217,7 @@
     "method": "html-scrape"
   },
   "minesoft": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
@@ -221,16 +229,16 @@
       "Key Account Manager, IP Translation & Filing",
       "Senior Patent Paralegal (Norfolk, UK)"
     ],
-    "note": "2026-09-04: questel.com and its careers path remain Cloudflare-blocked across WebFetch, curl, and a jina.ai reader proxy -- could not reliably re-verify for a third consecutive pass; prior baseline (asOf 2026-09-02) retained unconfirmed rather than guessed. Needs a browser-rendering-capable method next time.",
+    "note": "2026-09-05: questel.com and its careers path remain Cloudflare-blocked (confirmed via curl -- HTTP 403/cloudflare header -- WebFetch, and a jina.ai reader-proxy retry, which returned the Cloudflare JS challenge page) -- a 6th consecutive blocked pass. Prior baseline (asOf 2026-09-02) retained unconfirmed rather than guessed.",
     "method": "html-scrape"
   },
   "juristat": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "patent-bots": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Product Specialist",
       "Principal Software Developer"
@@ -238,7 +246,7 @@
     "method": "html-scrape"
   },
   "alt-legal": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Data Migration and Onboarding Specialist",
       "Trademark Docketing Specialist",
@@ -248,18 +256,18 @@
     "method": "breezy-api"
   },
   "pqai": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "ip-copilot": {
     "asOf": "2026-09-04",
     "roleTitles": [],
-    "note": "2026-09-04: ipcopilot.ai's root page now renders substantial content (not an empty JS shell) via WebFetch, with no careers/jobs section visible -- 0 roles confirmed via this method. Its /blog/ subsection remains JS-gated (loading-error shell) and could not be checked.",
+    "note": "2026-09-05: located the real Gusto ATS board URL for future attempts -- https://jobs.gusto.com/boards/ip-copilot-0168badc-c668-4968-9865-910619861ad0 (found via web search; ipcopilot.ai's own footer has no jobs link). Direct fetch attempts (curl with two user agents, WebFetch) all returned HTTP 403 / Cloudflare \"Just a moment...\" challenge. Leaving asOf unbumped at 2026-09-04.",
     "method": "html-scrape"
   },
   "harvey": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Account Executive, Enterprise",
       "Account Executive, Enterprise, EMEA",
@@ -469,10 +477,10 @@
       "Account Executive, Mid Market - Munich"
     ],
     "method": "ashby-api",
-    "note": "2026-09-04: Ashby posting API now shows 339 live postings (up from 332) -- three new Enterprise Account Executive titles confirmed via publishedAt (2026-09-03): Public Sector (Federal) and Public Sector (State & Local), both Washington DC, plus Mid Market - Munich. The full unique-title list above is not fully re-transcribed this pass given board size (heavy churn in Go-to-Market/Legal Engineer titles); treat the count as the more reliable signal."
+    "note": "2026-09-05: Ashby posting API now shows 348 live postings (up from 339), 215 unique titles. 35 postings published 2026-09-02 through 09-04 confirmed via publishedAt; most senior/prominent genuinely-new titles: Head of Mid-Market Sales (London, 09-04), Senior Manager Product Design - Platform (NY/SF, 09-04), Account Executive Enterprise (Public Sector - Federal) (Washington DC, 09-03), Legal Engineer (Energy or Tax) (Paris, 09-03). Full unique-title list not re-transcribed this pass given board size (215 titles, heavy GTM/Legal Engineer churn); treat the count as the more reliable signal."
   },
   "legora": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "AI Adoption Manager - Communities",
       "AI Enablement Manager",
@@ -689,15 +697,16 @@
       "Workplace Program & Resource Manager",
       "Workplace Technology Lead - Stockholm"
     ],
-    "note": "2026-09-04: re-confirmed via Ashby posting API at 282 live postings (up slightly from 276-281 in recent passes) -- no specific new title confirmed via publishedAt this pass; treating the small delta as normal churn, not a distinct new opening. Full title list not re-transcribed this pass given board size.",
+    "note": "2026-09-05: Ashby posting API now shows 283 live postings (up from 282), 212 unique titles after whitespace-normalizing. 15 postings published 09-03/09-04 confirmed via publishedAt, most notably Value Engineer (London, 09-04), Solutions Engineer (Stockholm HQ, 09-04), Technical Delivery Manager - Munich/Paris (09-03), plus new Engagement Manager/Associate seats in Denver, Houston, Mexico City, and Chicago (09-03, continuing US city-hub expansion). Title-diffing is noisy due to inconsistent whitespace in Ashby's own title strings on this board -- much of the raw unique-title delta is whitespace variants of existing titles, not genuinely new roles. Full list not re-transcribed given board size; treat the count + publishedAt-confirmed titles above as the reliable signal.",
     "method": "ashby-api"
   },
   "spellbook": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Brand Designer",
       "Customer Success Manager",
       "Customer Success Manager (UK)",
+      "Customer Success Operations Manager",
       "Director of Product",
       "Forward Deployed Engineer",
       "GTM Analytics Lead",
@@ -712,18 +721,20 @@
       "Senior Software Engineer, Platform & Infrastructure",
       "Social Media Lead",
       "Software Engineer",
+      "Solutions Engineer",
       "VP, Customer Success & Support",
       "Workplace Experience Manager & Executive Support"
     ],
-    "method": "ashby-api"
+    "method": "ashby-api",
+    "note": "2026-09-05: Ashby posting API now shows 21 live postings (up from 19). Two genuinely new roles, both remote-Canada, confirmed via publishedAt (2026-09-04): Solutions Engineer and Customer Success Operations Manager."
   },
   "robin-ai": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "cocounsel": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Lead Software Engineer – CoCounsel Legal Desktop App",
       "Manager, Software Development Engineering",
@@ -740,46 +751,47 @@
     "method": "workday-cxs-api"
   },
   "ironclad": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
-      "Adoption Strategist (Engagement Manager)",
-      "Assistant General Counsel, Product, Privacy, and IP",
-      "Demo Engineer",
-      "Director, Revenue Enablement",
-      "Executive Assistant - Engineering, Product & Design",
-      "GTM Finance Senior Manager",
-      "Head of Global GTM & G&A Talent Acquisition",
-      "Principal Engineer",
-      "Principal Product Manager, Search & Contract Understanding",
-      "Sales Development Representative, EMEA (Outbound)",
-      "Senior Adoption Strategist, EMEA (Engagement Manager)",
-      "Senior Associate Technical Adoption Architect (Implementation Consultant)",
-      "Senior Director, Total Rewards",
-      "Senior Finance Systems & AI Engineer",
-      "Senior Software Engineer, AI - Squad Team",
-      "Senior Staff Product Manager, Growth",
-      "Senior Staff Product Manager, Workflow Efficiency",
-      "Senior Staff Software Engineer",
-      "Sr. Enterprise Architect",
-      "Staff Application Security Engineer",
-      "Staff Data Scientist - Product Analytics",
-      "Staff IT Engineer",
-      "Staff Site Reliability Engineer",
       "Staff Software Engineer",
-      "Staff/Senior Staff Software Engineer, Agentic Search",
-      "Technical Adoption Architect (Implementation Consultant)",
+      "Customer Account Executive",
+      "Demo Engineer",
+      "Senior Staff Product Manager, Workflow Efficiency",
+      "Sales Development Representative, EMEA (Outbound)",
+      "Staff Data Scientist - Product Analytics",
+      "Staff IAM Engineer",
+      "Staff Application Security Engineer",
+      "GTM Finance Senior Manager",
+      "Principal Engineer",
+      "Sr. Enterprise Architect",
+      "Senior Staff Software Engineer",
+      "Head of Global GTM & G&A Talent Acquisition",
+      "Staff Site Reliability Engineer",
+      "Enterprise Sales Leader",
+      "Senior Finance Systems & AI Engineer",
+      "Senior Staff Product Manager, Growth",
+      "Senior Software Engineer, AI - Squad Team",
+      "Director, Revenue Enablement",
+      "Senior Director, Total Rewards",
       "Technical Lead Manager, AI",
+      "Principal Product Manager, Search & Contract Understanding",
+      "Executive Assistant - Engineering, Product & Design",
+      "Senior Associate Technical Adoption Architect (Implementation Consultant)",
+      "Technical Adoption Architect (Implementation Consultant)",
+      "Assistant General Counsel, Product, Privacy, and IP",
+      "Staff/Senior Staff Software Engineer, Agentic Search",
+      "Adoption Strategist (Engagement Manager)",
+      "Staff IT Engineer",
+      "Staff Product Manager",
       "Senior Director, Global Sales Strategy and Operations",
       "Director, GTM Engineering & Systems Architecture",
-      "Technical Adoption Architect, EMEA",
-      "Customer Account Executive",
-      "Staff Product Manager"
+      "Technical Adoption Architect, EMEA (Implementation Consultant)"
     ],
-    "note": "2026-09-04: new Staff Product Manager posting (San Francisco) confirmed via the Ashby posting API's publishedAt field (2026-09-03) -- 32 live postings now, up from 31.",
+    "note": "2026-09-05: Ashby posting API now shows 33 live postings (up from 32). Two genuinely new roles confirmed via publishedAt (2026-09-04): Staff IAM Engineer and Enterprise Sales Leader. One closed: Senior Adoption Strategist, EMEA (Engagement Manager) (no longer live). Note: stored title 'Technical Adoption Architect, EMEA' is the same posting as the current API title 'Technical Adoption Architect, EMEA (Implementation Consultant)' (same URL) -- a suffix formatting difference, not a real add/remove.",
     "method": "ashby-api"
   },
   "linksquares": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Accounting Associate",
       "Graphic Designer",
@@ -791,7 +803,7 @@
     "note": "2026-09-04 BASELINE RESET (method change): discovered the real ATS is a Greenhouse board (token \"linksquaresinc\", found via the site's embedded Next.js payload) rather than static HTML -- the prior html-scrape method returned no listings because content is JS-injected. Role count is unchanged at 5 under the new method; not claiming any newly-opened roles from this switch."
   },
   "draftwise": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Business Development Representative (NYC)",
       "Director, Talent Acquisition",
@@ -807,7 +819,7 @@
     "method": "html-scrape"
   },
   "eve-legal": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "AI Search & Content Growth Marketer",
       "Commercial Account Executive, Central",
@@ -849,12 +861,13 @@
     "method": "greenhouse-api"
   },
   "genie-ai": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
-    "method": "html-scrape"
+    "method": "workable-api",
+    "note": "2026-09-05 BASELINE RESET (method change): discovered the real ATS is Workable (apply.workable.com/api/v1/widget/accounts/genie-ai), not static HTML -- confirmed via direct query, jobs array empty. Role count unchanged at 0 under the new method; not claiming any newly-opened/closed roles from this switch."
   },
   "cypris": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Senior Software Engineer",
       "Customer Success Representative",
@@ -870,15 +883,16 @@
       "Graphic Designer",
       "Data Processing (Patent Background)"
     ],
-    "method": "html-scrape"
+    "method": "html-scrape",
+    "note": "2026-09-05: patseer.com/careers/ is a JS-rendered \"Job Vacancies\" dropdown inside an application-form popup with no individually deep-linkable job URLs -- re-fetch again returned only the nav shell, no job list visible to a plain fetch. Cannot reliably re-verify the 4-role count via this method; leaving asOf unbumped at 2026-09-04 rather than guessing."
   },
   "patently": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "ip-author": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Product Manager",
       "Prompt Engineer",
@@ -893,12 +907,12 @@
     "method": "html-scrape"
   },
   "powerpatent": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   },
   "park-ip": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [
       "Brazilian Portuguese Patent Language Lead"
     ],
@@ -906,13 +920,13 @@
     "method": "lever-api"
   },
   "leya": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape",
     "note": "2026-09-04: re-confirmed leya.law fully redirects (HTTP 308) to legora.com and leya.law/careers to legora.com/careers -- Leya has no independent careers presence (rebranded to Legora, February 2025); see the legora entry for its actual hiring baseline."
   },
   "pioneerip": {
-    "asOf": "2026-09-04",
+    "asOf": "2026-09-05",
     "roleTitles": [],
     "method": "html-scrape"
   }
