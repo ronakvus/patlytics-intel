@@ -1178,6 +1178,32 @@
           "sourceUrl": "https://www.g2.com/products/solve-intelligence-patent-copilot/reviews",
           "sentiment": "negative"
         }
+      ],
+      "general": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Dr. Regina Neuefeind, Partner, Maiwald",
+          "date": "2026-08-04",
+          "text": "With its intuitive usability and transparent prompting, Solve Intelligence makes the use of AI in the patent field easily accessible.",
+          "sourceUrl": "https://www.solveintelligence.com/blog/post/maiwald-chooses-solve-intelligence-for-selected-ai-supported-ip-workflows",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Richard Hodkinson, Chief Technology Officer, HGF",
+          "date": "2026-07-14",
+          "text": "At HGF, the quality of a patent is set at the drafting stage. Solve Intelligence takes the routine effort out of drafting so our attorneys can concentrate their expertise where it matters most. It lets us draft more efficiently without ever compromising the technical rigour our clients rely on us for.",
+          "sourceUrl": "https://www.solveintelligence.com/blog/post/solve-intelligence-and-hgf-partner-to-deliver-custom-ai-patent-drafting-workflows",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Kelda Style, Partner, Page White Farrer",
+          "date": "2026-08-06",
+          "text": "The focus for us as a firm when we were evaluating different AI tools was on the drafting of patent applications. We were particularly impressed by Solve's templating capabilities, which allow us to move from an initial claim set to a reviewable first draft of a patent application much more efficiently while maintaining consistency and technical accuracy. As we've continued to develop and refine our templates, we've built a library tailored to different clients and technology areas. The system is intuitive to customise and has made it easier to deploy AI-assisted drafting across attorneys with different levels of AI experience. Most importantly, by reducing the time spent producing a first draft, Solve allows our attorneys to spend more time understanding the invention, refining the patent strategy and working closely with inventors and clients to produce the strongest possible application.",
+          "sourceUrl": "https://www.solveintelligence.com/blog/post/page-white-farrer-adopts-solve-intelligence-for-ai-assisted-patent-drafting",
+          "sentiment": "positive"
+        }
       ]
     },
     "deepip": {
@@ -1433,6 +1459,13 @@
           "text": "Patsnap intelligence (primarily Patsnap analytics) is an integral part of my day to day work in IP industry -- it offers a wide variety of options like Patsnap discovery, chemical searches, along with the regular patent analytics.",
           "sourceUrl": "https://www.gartner.com/reviews/product/patsnap-patent-analytics",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Brian Kingwell, Senior Life Sciences Patent Attorney, Gowling WLG",
+          "text": "To give them good advice, we need to analyze the IP landscape and their competitors in depth -- and Patsnap lets us do that quickly and effectively.",
+          "sourceUrl": "https://www.patsnap.com/customers/gowling-wlg/",
+          "sentiment": "positive"
         }
       ],
       "prior-art-search": [
@@ -1458,6 +1491,22 @@
           "date": "2022-02-08",
           "text": "PatSnap's semantic search has been a high value-add because it allows an engineer who's not technically trained in patent processes to perform a level of initial exploration.",
           "sourceUrl": "https://www.trustpilot.com/review/www.patsnap.com",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Heather Bakalyar, Director of Intellectual Property, Vyriad",
+          "text": "With Patsnap, discovery projects that took up to 3 weeks can now be done in under 2 days, helping us quickly get to answers regarding novelty and FTO.",
+          "sourceUrl": "https://www.patsnap.com/customers/vyriad/",
+          "sentiment": "positive"
+        }
+      ],
+      "fto-analysis": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Heather Bakalyar, Director of Intellectual Property, Vyriad",
+          "text": "With Patsnap, discovery projects that took up to 3 weeks can now be done in under 2 days, helping us quickly get to answers regarding novelty and FTO.",
+          "sourceUrl": "https://www.patsnap.com/customers/vyriad/",
           "sentiment": "positive"
         }
       ]
@@ -2092,6 +2141,24 @@
           "author": "Dr. Matt Barton, Partner, Forresters IP LLP",
           "text": "Since using Clerq, we regularly find new and highly relevant prior art that proves to be very useful in attacking patents in oppositions, without having to do external searching.",
           "sourceUrl": "https://clerq-ip.com/case-studies/forresters-ip",
+          "sentiment": "positive"
+        }
+      ]
+    },
+    "park-ip": {
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "VP, Intellectual Property, Fortune 500 Company",
+          "text": "Coordinating filings across jurisdictions requires constant visibility and control. When accuracy is critical and deadlines are fixed, disciplined execution makes the difference.",
+          "sourceUrl": "https://www.parkip.com/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Legal Counsel, Global Workspace Solutions Provider",
+          "text": "Legal Studio makes getting a PCT application estimate effortless. I select the jurisdictions, and costs and deadlines are instantly available. Park IP's expertise in legal nuance continues to give us peace of mind.",
+          "sourceUrl": "https://www.parkip.com/legal-studio/",
           "sentiment": "positive"
         }
       ]
