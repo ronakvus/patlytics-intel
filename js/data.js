@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-05";
-const EARLIEST_DATE = "2026-08-15"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-06";
+const EARLIEST_DATE = "2026-08-16"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -664,7 +664,7 @@ const COMPETITORS = [
     tagline: "AI-native graph search engine for prior art and freedom-to-operate.",
     description:
       "IPRally built a graph-embedding based search engine specifically for prior-art and freedom-to-operate search, arguing traditional keyword/classification search misses semantically relevant results. Historically focused on the Nordics/EU market, now expanding into the US. Has since reorganized its product around three pillars — Search, Intelligence, and a new \"Protection\" pillar aimed at making patent drafting prior-art-aware from the first sentence — and launched \"Smart Search,\" accepting mixed text/image/PDF/Office-document input. Ranked #26 on Deloitte's Technology Fast 50 Finland list (second consecutive year) and was selected by Canada's Global Innovation Cluster for Advanced Manufacturing to power a Patent Search Adoption Tool pilot program; also holds ISO 27001 certification. Launched an \"Invalidity Agent\" (2026-08-13) — enter a granted patent, pick claims to target, and it runs a multi-pass search across 130M+ patents, charts each claim against prior art, and writes a jurisdiction-styled invalidity report (EPO problem-solution / USPTO §102-§103) with an interactive exportable feature chart.",
-    employeeCount: "~45 (est.)",
+    employeeCount: "~55 (Tracxn/Revelio Labs, as of 2026-07-31)",
     founded: "2018",
     hq: "Helsinki, Finland",
     website: "iprally.com",
@@ -2050,9 +2050,16 @@ COMPETITORS.push(
         body: "Ashby posting-API publishedAt confirms two new senior postings, alongside an Account Executive, Enterprise (Public Sector — Federal) role in Washington DC and a Legal Engineer (Energy or Tax) role in Paris. Board now at 348 live postings across 215 unique titles, up from 339.",
         url: "https://jobs.ashbyhq.com/harvey/2beb0375-9708-4ae3-bd64-9b892b8ac184",
       },
+      {
+        date: "2026-09-04",
+        tag: "Hiring",
+        title: "Opens Content Marketing Manager, Customer Experience Manager (US), and Global Operations Program Manager roles",
+        body: "Ashby posting-API publishedAt confirms three more new postings the same day as the Head of Mid-Market Sales/Product Design roles above. Board now at 346 live postings (down from 348) — 6 other titles closed since (Associate Commercial Counsel, Employee Experience Specialist, Growth Marketing Manager EMEA, Head of Customer Learning, Program Manager Customer Engagement & Community, Recruiting Coordinator (6-month Contract)).",
+        url: "https://jobs.ashbyhq.com/harvey/9cf781f8-6203-4cd7-a1c8-0c149fc2afc5",
+      },
     ],
     hiring: {
-      openRoles: 348,
+      openRoles: 346,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -3309,6 +3316,54 @@ const NEW_ENTRANTS = [
     source: "Artificial Lawyer, Founded CEO (Substack)",
     sourceUrl: "https://www.artificiallawyer.com/2026/02/04/y-combinator-picks-3-newmods-general-legal-arcline-legalos/",
   },
+  {
+    id: "stratum-industries",
+    name: "Stratum Industries",
+    threat: "low",
+    backing: "Y Combinator (S26), amount not disclosed",
+    stage: "Seed / YC-backed",
+    tagline: "AI agents that clear government-agency application backlogs, including USPTO patent examination.",
+    website: "https://stratumindustries.co",
+    linkedin: null,
+    description:
+      "New York City-based Stratum Industries builds AI agents that work through government-agency application backlogs — permits, licenses, benefits claims — with a named use case for the USPTO's roughly 777,000-application patent-examination backlog; a human officer retains final approval on every decision. Horizontal across government verticals rather than patent-specific, and not itself a drafting/prosecution tool, but included for completeness given the direct USPTO-backlog framing.",
+    foundingTeam: [
+      { name: "Raj Jagiasi", background: "Co-Founder. Previously in GTM at Deel." },
+      { name: "Vihaan Jagiasi", background: "Co-Founder. Previously a founding engineer at Cadastral/Legora." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet independently verified.",
+      hiringProfile: "Not yet independently verified.",
+    },
+    date: "2026-08-11",
+    source: "American Bazaar, Y Combinator",
+    sourceUrl: "https://www.ycombinator.com/companies/stratum-industries",
+  },
+  {
+    id: "paravo",
+    name: "Paravo",
+    threat: "low",
+    backing: "£450,000 raised",
+    stage: "Pre-seed",
+    tagline: "\"First AI revenue engine for law firms\" — lead-gen, intake, and client-reactivation automation.",
+    website: null,
+    linkedin: null,
+    description:
+      "UK-founded Paravo emerged from stealth in August 2026 pitching itself as the first AI revenue engine for law firms — automating lead generation, AI-driven intake/follow-up, and client-reactivation campaigns for flat-fee firms. Not patent-specific — a general legal-AI sales/marketing-automation entrant, included for completeness given broader legal-AI budget overlap.",
+    foundingTeam: [
+      { name: "Cesar Tapia", background: "Co-Founder & CEO." },
+      { name: "Eslam Odeh", background: "Co-Founder & CTO." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "Not yet independently verified.",
+      hiringProfile: "Not yet independently verified.",
+    },
+    date: "2026-08-06",
+    source: "LawNext, Legal IT Insider",
+    sourceUrl: "https://www.lawnext.com/2026/08/exclusive-coming-out-of-stealth-paravo-launches-what-it-calls-the-first-ai-revenue-engine-for-law-firms.html",
+  },
 ];
 
 /* ---------------- Webinars ---------------- */
@@ -3316,18 +3371,6 @@ const NEW_ENTRANTS = [
 // events-listing partner program (2026-08-25 research pass). Every entry
 // below has a real, working source URL — no placeholder/sample listings.
 const WEBINARS = [
-  {
-    id: "wb-6",
-    title: "Before the Draft — Deciding What Is Worth Patenting in the AI Era",
-    host: "IP.com",
-    date: "2026-09-03",
-    time: "12:00 PM ET",
-    format: "Live webinar",
-    relevance: "high",
-    description: "Session on patentability triage decisions in an era of AI-assisted invention and drafting.",
-    tags: ["AI Drafting", "Patentability"],
-    url: "https://ipwatchdog.com/event/webinar-ip-com-2026-09-03-before-the-draft/",
-  },
   {
     id: "wb-7",
     title: "AI in Patent Practice — Change Management for Successful Adoption",
@@ -3515,17 +3558,6 @@ const WEBINARS = [
 // "industry" for trade-press content not specific to one tracked competitor.
 const BLOGS = [
   {
-    id: "blog-1",
-    headline: "Solve Intelligence × iManage: Solve's Patent Workflows and AI Agents Seamlessly Integrated with Your Firm's Intelligence",
-    description: "Solve Intelligence launched a two-way integration with iManage that lets patent attorneys import disclosures, prior filings, and prior art directly into Solve and save finished drafts back to the firm's iManage matter.",
-    companyId: "solve-intelligence",
-    source: "Solve Intelligence",
-    date: "2026-07-21",
-    relevance: "high",
-    tags: ["Product Launch", "Integration"],
-    url: "https://www.solveintelligence.com/blog/post/solve-intelligence-imanage-integration",
-  },
-  {
     id: "blog-2",
     headline: "Maiwald Chooses Solve Intelligence for Selected AI-Supported IP Workflows",
     description: "Maiwald, one of Germany's largest IP firms, formed an enterprise partnership with Solve Intelligence for 2026 after an evaluation period, deploying the platform for selected AI-supported patent and legal workflows.",
@@ -3568,17 +3600,6 @@ const BLOGS = [
     relevance: "critical",
     tags: ["Strategy", "AI Agents"],
     url: "https://iprally.com/news/when-systems-start-talking-iprallys-journey-toward-a-virtual-ip-department",
-  },
-  {
-    id: "blog-8",
-    headline: "How AI Is Reshaping Patent Practice — Munich, July 2026",
-    description: "At a DeepIP-hosted rooftop event in Munich, patent practitioners and in-house counsel concluded AI represents an opportunity rather than a threat, while noting most firms remain silent about how they actually use AI amid unresolved questions on cost, trust, and scaling.",
-    companyId: "deepip",
-    source: "DeepIP",
-    date: "2026-07-22",
-    relevance: "high",
-    tags: ["Thought Leadership", "Industry Event"],
-    url: "https://www.deepip.ai/blog/ai-reshaping-patent-practice-munich-2026",
   },
   {
     id: "blog-9",
@@ -4228,6 +4249,61 @@ const BLOGS = [
     relevance: "low",
     tags: ["Content Marketing"],
     url: "https://xlscout.ai/patent-portfolio-monetization-strategies/",
+  },
+  {
+    id: "blog-68",
+    headline: "Reclaim Your AI Sovereignty and Your Ethical Walls",
+    description: "DraftWise argues that law firms adopting AI drafting/review tools should insist on data sovereignty and strict ethical-wall controls over how their contract data is used and isolated by vendors.",
+    companyId: "draftwise",
+    source: "DraftWise",
+    date: "2026-09-03",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Data & AI"],
+    url: "https://www.draftwise.com/blog/reclaim-your-ai-sovereignty-and-your-ethical-walls",
+  },
+  {
+    id: "blog-69",
+    headline: "Patent Landscape Analysis: A Guide to Modern Methodology",
+    description: "Cypris publishes a guide to modern patent-landscape-analysis methodology for R&D and IP teams evaluating whitespace and competitive positioning.",
+    companyId: "cypris",
+    source: "Cypris",
+    date: "2026-09-01",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Content Marketing"],
+    url: "https://www.cypris.ai/insights",
+  },
+  {
+    id: "blog-70",
+    headline: "PTAB Case Studies of AI Disclosure Requirements: Part II",
+    description: "Solve Intelligence analyzes the PTAB's Ex parte Husain decision, discussing how detailed machine-learning training methodology can satisfy §112(a) disclosure requirements without specifying exact model architectures or working examples.",
+    companyId: "solve-intelligence",
+    source: "Solve Intelligence",
+    date: "2026-08-03",
+    relevance: "high",
+    tags: ["Thought Leadership", "PTAB"],
+    url: "https://www.solveintelligence.com/blog/post/ptab-case-studies-of-ai-disclosure-requirements-part-ii",
+  },
+  {
+    id: "blog-71",
+    headline: "Thomson Reuters and Solve Intelligence Partner to Deepen AI Adoption Across Leading Patent Practices",
+    description: "Solve Intelligence's own confirmation of its Thomson Reuters partnership, under which Thomson Reuters will help distribute Solve's patent AI platform to practice groups across global and Am Law 200 firms with simplified procurement and enterprise onboarding.",
+    companyId: "solve-intelligence",
+    source: "Solve Intelligence",
+    date: "2026-08-24",
+    relevance: "critical",
+    tags: ["Partnership", "Distribution"],
+    url: "https://www.solveintelligence.com/blog/post/thomson-reuters-solve-intelligence-patent-ai-partnership",
+  },
+  {
+    id: "blog-72",
+    headline: "Solve Intelligence Brings Patent-Specific AI Capabilities to Google Cloud's Gemini Enterprise for Legal",
+    description: "Solve Intelligence detailed the patent-specific capabilities (prior-art/invalidity research, FTO, infringement analysis, SEP mapping, patent/case-law research) it contributes as a launch connector partner in Google Cloud's Gemini Enterprise for Legal via an MCP connector.",
+    companyId: "solve-intelligence",
+    source: "Solve Intelligence",
+    date: "2026-08-25",
+    relevance: "high",
+    tags: ["Partnership", "Integration"],
+    url: "https://www.solveintelligence.com/blog/post/solve-intelligence-brings-patent-specific-ai-capabilities-to-google-cloud-gemini-enterprise-for-legal",
   },
 ];
 
