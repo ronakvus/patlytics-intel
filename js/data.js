@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-06";
-const EARLIEST_DATE = "2026-08-16"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-07";
+const EARLIEST_DATE = "2026-08-17"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -596,6 +596,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-09-03",
+        tag: "Content",
+        title: "Eureka blog publishes ESC Congress 2026 cardiology competitive-landscape report series",
+        body: "PatSnap's Eureka R&D-intelligence blog published a run of AI-generated competitive-landscape analyses timed to ESC Congress 2026 (acute coronary syndrome, HFpEF, HFrEF, CARDIO-TTRansform), continuing a pattern of automated, AI-assisted patent-landscape content marketing.",
+        url: "https://eureka.patsnap.com/blog/life-science/esc-2026-cardio-ttransform-competitive-landscape-analysis/",
+      },
+      {
         date: "2026-08-31",
         tag: "Hiring",
         title: "External hiring pipeline appears broken/empty across every channel",
@@ -608,13 +615,6 @@ const COMPETITORS = [
         title: "Opened an AI Solutions Engineer – Intellectual Property role (London)",
         body: "New IP-specific solutions-engineering opening in London, signaling deepened investment in IP-specific customer-facing technical roles beyond generic AI/product engineering. (Note 2026-08-31: PatSnap's hiring pipeline has since gone dark across every channel checked — see the entry above.)",
         url: "https://www.linkedin.com/jobs/patsnap-jobs-worldwide",
-      },
-      {
-        date: "2026-08-06",
-        tag: "Partnership",
-        title: "Strategic data partnership with Evolvus",
-        body: "Expands PatSnap Bio's coverage of ADCs, peptides, protein degraders, and chemically modified nucleotide sequences via Evolvus's curated \"ConnectorBase\" dataset (modification locations, linker details, patent-family associations, structured bioactivity data) — strengthens PatSnap's biopharma-vertical data moat.",
-        url: "https://www.patsnap.com/resources/blog/press_release/patsnap-and-evolvus-announce-strategic-data-partnership-to-expand-curated-modality-intelligence-for-biopharma-rd-and-ip-teams/",
       },
       {
         date: "2026-08-24",
@@ -763,6 +763,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-09-07",
+        tag: "Hiring",
+        title: "Workday IP-services facet API still broken (8th+ consecutive day) — roster re-estimated at 27 via keyword match",
+        body: "The Workday CXS facet call for job-family-group \"Intellectual Property Services\" again returned HTTP 400 today. Worked around by paginating the full unfiltered jobs feed (172 total postings) and keyword-matching IP/Patent/Trademark/Docketing titles, yielding 27 IP-tagged postings — close to but not identical to the prior 26-role figure, so treated as continued method instability rather than a confirmed net-new opening. One unconfirmed lead: an 'IP Admin Analyst' (Noida, JREQ136235) carries a Workday 'Posted Today' flag, worth a human sanity-check.",
+        url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
+      },
+      {
         date: "2026-09-02",
         tag: "Hiring",
         title: "Correction: a separate \"Intellectual Property Services\" careers category carries 10 live roles, not zero",
@@ -784,13 +791,6 @@ const COMPETITORS = [
         url: "https://careers.clarivate.com/job/JREQ136006/Vice-President-Product-Marketing-IP",
       },
       {
-        date: "2026-08-07",
-        tag: "Corporate",
-        title: "Q2 2026 earnings call referenced AI investment across IP segment, including an \"IP-1\" unified platform",
-        body: "Leadership called out AI feature velocity in the IP Solutions segment as a retention priority for FY26 and referenced an in-development \"IP-1\" unified agentic-AI platform spanning patent and trademark intelligence; the IP segment was described as having returned to recurring flat growth. (Date corrected 2026-08-28 — the stored 8/22 dating did not match Clarivate's actual Q2 2026 earnings call date.)",
-        url: "https://www.fool.com/earnings/call-transcripts/2026/08/07/clarivate-clvt-q2-2026-earnings-call-transcript/",
-      },
-      {
         date: "2026-09-04",
         tag: "Hiring",
         title: "Baseline correction: 26 live IP-services roles found via direct Workday API query",
@@ -799,7 +799,7 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: 26,
+      openRoles: 27,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -846,6 +846,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-09-07",
+        tag: "Hiring",
+        title: "Opens Technical Support Engineer role",
+        body: "Anaqua's BambooHR careers board grew from 20 to 21 live postings, with 'Technical Support Engineer' appearing as a newly-listed title not present in the prior snapshot.",
+        url: "https://anaqua.bamboohr.com/careers/957",
+      },
+      {
         date: "2026-09-01",
         tag: "Content",
         title: "Published \"New Anaqua Report Reveals Surge in AI Semiconductor Patent Filings\"",
@@ -858,13 +865,6 @@ const COMPETITORS = [
         title: "Published annual IP department budget benchmark report",
         body: "Survey-based report widely shared organically by in-house IP counsel on LinkedIn. See General Highlights.",
         url: siteUrl("anaqua.com"),
-      },
-      {
-        date: "2026-08-04",
-        tag: "Corporate",
-        title: "Acquired Unified Patents",
-        body: "Acquired Unified Patents (financial terms undisclosed) to help IP organizations protect against rising patent-litigation risk, adding AI-enhanced claim-charting via Unified's live PEARL tool. See General Highlights.",
-        url: "https://www.anaqua.com/resource/anaqua-acquires-unified-patents-to-help-organizations-protect-against-rising-intellectual-property-litigation-risk/",
       },
       {
         date: "2026-08-29",
@@ -882,8 +882,10 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: 20,
-      newRolesToday: [],
+      openRoles: 21,
+      newRolesToday: [
+        { title: "Technical Support Engineer", count: 1, url: "https://anaqua.bamboohr.com/careers/957" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Senior Platform Engineer (Java + GCP / Infrastructure & DevOps)", count: 2 },
@@ -945,13 +947,6 @@ const COMPETITORS = [
         title: "IPlytics rolls out the \"Ultimate Owner Concept\"",
         body: "A way of mapping standard-essential-patent (SEP) ownership up through parent companies, subsidiaries, and joint ventures for licensing/negotiation purposes — a capability previously exclusive to PatentSight+ now extended to IPlytics.",
         url: "https://www.lexisnexisip.com/resources/empowering-sep-analysts-with-insights-unveiling-the-ultimate-owner-concept-in-lexisnexis-iplytics/",
-      },
-      {
-        date: "2026-08-10",
-        tag: "Market",
-        title: "LexisNexis took three products offline after suspicious third-party server activity",
-        body: "Parent company LexisNexis took three products offline after detecting unusual activity on third-party servers. Coverage does not specify whether any IP Solutions product was among the three affected — a separate incident from Questel's confirmed vishing breach. See General Highlights.",
-        url: "https://legaltechnology.com/lexisnexis-takes-three-products-offline-after-unusual-activity-on-third-party-servers/",
       },
       {
         date: "2026-08-28",
@@ -1313,13 +1308,6 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/ankar-ai",
     weekActivity: [
       {
-        date: "2026-08-05",
-        tag: "Product",
-        title: "Ships native Microsoft Word compatibility for AI drafting editor",
-        body: "Ankar announced a redesigned editor with high-fidelity Microsoft Word compatibility, letting patent teams import, edit, and export documents while preserving Word formatting and tracked changes — aimed at letting firms use Ankar's AI drafting tools without disrupting existing document workflows. (Date corrected 2026-08-31 — the blog post's own visible publish date is August 5, 2026, not August 28 as previously recorded.)",
-        url: "https://ankar.ai/blog/enhanced-drafting-in-ankar-with-native-word-compatibility",
-      },
-      {
         date: "2026-08-25",
         tag: "Hiring",
         title: "Actively hiring across product, sales, and patent engineering",
@@ -1393,15 +1381,7 @@ COMPETITORS.push(
     website: "withedge.com",
     careersUrl: "https://withedge.com",
     linkedin: "https://www.linkedin.com/company/workwithedge",
-    weekActivity: [
-      {
-        date: "2026-05-04",
-        tag: "Event",
-        title: "CEO presents Certus AI trademark agent at INTA 2026",
-        body: "Edge CEO Evan Zimmerman presented Certus (Edge's AI agent for trademark clearance search and filing) as a 2026 INTA Annual Meeting exhibitor. (Date corrected 2026-08-31 — INTA's 2026 Annual Meeting ran May 2-6 in London, not August; the exact day of the presentation within that window isn't stated by the source, so this is an approximation, not August 20 as previously recorded. Certus itself launched via press release on 2026-04-23.)",
-        url: "https://www.facebook.com/GoINTA/posts/edge-is-a-2026-annual-meeting-exhibitor-here-edge-ceo-evan-zimmerman-presents-ed/1395643495929484/",
-      },
-    ],
+    weekActivity: [],
   }),
   stubCompetitor({
     id: "patented-ai",
@@ -1454,13 +1434,6 @@ COMPETITORS.push(
         title: "Hiring pipeline drops to zero",
         body: "Confirmed directly against XLSCOUT's own backend: its WordPress \"WP Job Manager\" AJAX search endpoint now returns found_jobs:false — both previously-tracked roles (Product Lead, R&D Manager) have closed.",
         url: "https://xlscout.ai/careers/",
-      },
-      {
-        date: "2026-08-13",
-        tag: "Content",
-        title: "Jitin Talwar, Sandeep Agarwal, and Sameer Goel recognized on IAM Strategy 300",
-        body: "XLSCOUT's press-release archive confirms three of its leaders were named among the IAM Strategy 300 for 2026, a recognition list of the world's leading IP strategists.",
-        url: "https://xlscout.ai/press-release/",
       },
     ],
     hiring: { openRoles: 0, newRolesToday: [], recentHires: [], topRoles: [] },
@@ -1648,22 +1621,7 @@ COMPETITORS.push(
     website: "questel.com",
     careersUrl: "https://www.questel.com",
     linkedin: "https://www.linkedin.com/company/questel",
-    weekActivity: [
-      {
-        date: "2026-06-30",
-        tag: "Partnership",
-        title: "Partners with PioneerIP on AI-powered patent-to-product mapping",
-        body: "Combines Questel's patent-data infrastructure with PioneerIP's AI to help IP teams connect patents to commercialized products for licensing, enforcement, and portfolio-strategy workflows.",
-        url: "https://ipwatchdog.com/press/questel-and-pioneerip-partner-to-bring-ai-powered-patent-to-product-mapping-to-ip-teams/",
-      },
-      {
-        date: "2026-08-13",
-        tag: "Market",
-        title: "Confirmed data breach after vishing attack",
-        body: "Attackers accessed part of Questel's Microsoft 365 environment via a voice-phishing attack on a Sales SharePoint site; ShinyHunters claims ~21M records / 147GB exfiltrated. Questel notified France's CNIL and filed criminal complaints. See General Highlights. (Clarified 2026-08-29: reporting indicates production IP platforms/SaaS services were not accessed and Questel says the intrusion is contained with no evidence of ongoing access; no CNIL fine or lawsuit confirmed yet, investigation described as ongoing.)",
-        url: "https://www.galaxywarden.com/blog/breach/questel-sas-shinyhunters-2026-08",
-      },
-    ],
+    weekActivity: [],
     hiring: {
       openRoles: 4,
       newRolesToday: [],
@@ -1840,7 +1798,12 @@ COMPETITORS.push(
       openRoles: 4,
       newRolesToday: [],
       recentHires: [],
-      topRoles: [{ title: "Trademark Docketing Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/9fe3efd9ca1e-trademark-docketing-specialist" }],
+      topRoles: [
+        { title: "Trademark Docketing Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/9fe3efd9ca1e-trademark-docketing-specialist" },
+        { title: "Customer Success Manager", count: 1, url: "https://alt-legal.breezy.hr/p/33b788b22d82-customer-success-manager" },
+        { title: "Operations Associate", count: 1, url: "https://alt-legal.breezy.hr/p/9e8be090952c-operations-associate" },
+        { title: "Data Migration and Onboarding Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/2cc745ec3a62-data-migration-and-onboarding-specialist-at-alt-legal-remote" },
+      ],
     },
   }),
   stubCompetitor({
@@ -1903,6 +1866,20 @@ COMPETITORS.push(
     careersUrl: "https://jobs.ashbyhq.com/harvey",
     linkedin: "https://www.linkedin.com/company/harvey-ai",
     weekActivity: [
+      {
+        date: "2026-09-07",
+        tag: "Market",
+        title: "Reacts to OpenAI's GPT-6 Astra launch",
+        body: "Artificial Lawyer covers how Harvey (via Head of Applied Research Niko Grupen) is using OpenAI's newly-released GPT-6 Astra model for complex legal tasks, highlighting improved handling of unsupported assumptions and drafting positions in document review.",
+        url: "https://www.artificiallawyer.com/2026/09/07/harvey-legora-on-openais-gpt-6-astra/",
+      },
+      {
+        date: "2026-09-03",
+        tag: "Partnership",
+        title: "Partners with Everlaw to power evidence-backed legal work",
+        body: "Harvey announced a partnership with litigation/investigation platform Everlaw, using the Model Context Protocol so users can search, cite, and build case timelines from Everlaw evidence without leaving Harvey. First phase targeted for fall 2026.",
+        url: "https://www.harvey.ai/en-US/blog/harvey-everlaw-evidence-ediscovery",
+      },
       {
         date: "2026-09-01",
         tag: "Product",
@@ -2016,13 +1993,6 @@ COMPETITORS.push(
         url: "https://www.artificiallawyer.com/2026/08/18/next-gen-harvey-ii-launches-with-memory-at-its-core/",
       },
       {
-        date: "2026-08-07",
-        tag: "Funding",
-        title: "Reportedly in talks to raise ~$500M at a $15.5B valuation",
-        body: "Reported round led by Lightspeed, up from an $11B valuation in March 2026; Goldman Sachs Alternatives and J.P. Morgan Growth Equity Partners reportedly invested in late July. Not yet a confirmed closed round.",
-        url: "https://siliconangle.com/2026/08/07/legal-ai-startup-harvey-reportedly-raising-500m-15-5b-valuation/",
-      },
-      {
         date: "2026-08-29",
         tag: "Hiring",
         title: "Ashby API reveals 219 unique open roles (350 live postings) — far larger than the visible board",
@@ -2059,7 +2029,7 @@ COMPETITORS.push(
       },
     ],
     hiring: {
-      openRoles: 346,
+      openRoles: 344,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -2089,6 +2059,20 @@ COMPETITORS.push(
     careersUrl: "https://jobs.ashbyhq.com/legora",
     linkedin: "https://www.linkedin.com/company/wearelegora",
     weekActivity: [
+      {
+        date: "2026-09-07",
+        tag: "Hiring",
+        title: "Opens Head of Legal Engineering, Italy role",
+        body: "New senior regional leadership posting on Legora's Ashby board, published 2026-09-07, continuing Legora's pattern of opening country-level Head of Legal Engineering roles across Europe.",
+        url: "https://jobs.ashbyhq.com/legora/459430b9-29e6-4e79-a5ab-8261d07c585e",
+      },
+      {
+        date: "2026-09-07",
+        tag: "Market",
+        title: "Reacts to OpenAI's GPT-6 Astra launch",
+        body: "Artificial Lawyer reports Legora tested GPT-6 Astra on financial-statement tie-out across 41 documents, finding all four planted errors (including a £500,000 gap) and posting a ~40% performance improvement on that workflow, plus ~3% average gains across its Benchmark for Agentic Reasoning.",
+        url: "https://www.artificiallawyer.com/2026/09/07/harvey-legora-on-openais-gpt-6-astra/",
+      },
       {
         date: "2026-09-03",
         tag: "Hiring",
@@ -2216,13 +2200,6 @@ COMPETITORS.push(
         url: "https://www.globallegalpost.com/news/legora-announces-integration-agreement-with-content-management-intelligence-platform-box-1821553996",
       },
       {
-        date: "2026-08-13",
-        tag: "Funding",
-        title: "Reportedly in talks to raise at a $10B valuation",
-        body: "Nearly double its $5.6B Series D valuation from March 2026. Not yet a confirmed closed round. See General Highlights.",
-        url: "https://sifted.eu/articles/legora-in-talks-to-raise-at-a-10bn-valuation-according-to-reports",
-      },
-      {
         date: "2026-09-04",
         tag: "Hiring",
         title: "Opens Value Engineer (London) and Solutions Engineer (Stockholm HQ) roles",
@@ -2231,8 +2208,10 @@ COMPETITORS.push(
       },
     ],
     hiring: {
-      openRoles: 283,
-      newRolesToday: [],
+      openRoles: 282,
+      newRolesToday: [
+        { title: "Head of Legal Engineering, Italy", count: 1, url: "https://jobs.ashbyhq.com/legora/459430b9-29e6-4e79-a5ab-8261d07c585e" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Engagement Manager (various regions)", count: 15 },
@@ -2268,13 +2247,6 @@ COMPETITORS.push(
         title: "Site rebrand: spellbook.legal now redirects to spellbook.com",
         body: "Spellbook's website domain moved from spellbook.legal to spellbook.com, and its Ashby careers board moved with it (jobs.ashbyhq.com/spellbook.legal now 404s; live board is jobs.ashbyhq.com/spellbook.com). The live board now shows 19 open roles, a shorter and more engineering/CS-weighted list than the prior snapshot — several previously-tracked titles (Account Executive, Enterprise Account Executive, Product Lead, Revenue Operations Lead) are no longer posted.",
         url: "https://jobs.ashbyhq.com/spellbook.com",
-      },
-      {
-        date: "2026-08-13",
-        tag: "Product",
-        title: "Added AI Document Editor to Spellbook Associate",
-        body: "New Word-style formatting/editing surface built directly into the Associate agent product, letting lawyers redline, comment, and finalize documents without switching apps. (Date approximate — reported \"ahead of ILTACON\", exact day not independently confirmed.)",
-        url: "https://spellbook.com/blog/introducing-spellbooks-ai-document-editor",
       },
       {
         date: "2026-08-27",
@@ -2434,6 +2406,13 @@ COMPETITORS.push(
         body: "Litigation platform Everlaw announced a partnership letting CoCounsel Legal users pull Everlaw evidence and case data directly into CoCounsel's research workflow — a separate integration from the earlier four-partner Everlaw announcement (which also named Harvey, Google Gemini Enterprise, and Microsoft 365 Copilot).",
         url: "https://www.everlaw.com/blog/ai-and-law/everlaw-and-thomson-reuters-cocounsel-partnership/",
       },
+      {
+        date: "2026-09-02",
+        tag: "Product",
+        title: "Integrates HighQ legal workflow platform with CoCounsel",
+        body: "Thomson Reuters company blog post on integrating the HighQ legal workflow platform with CoCounsel Legal, extending CoCounsel's reach into HighQ's client-facing workflow and collaboration tooling.",
+        url: "https://legal.thomsonreuters.com/blog/delivering-the-future-of-legal-services-with-highq-and-cocounsel/",
+      },
     ],
     hiring: {
       openRoles: 10,
@@ -2441,7 +2420,7 @@ COMPETITORS.push(
       recentHires: [],
       topRoles: [
         { title: "Senior Software Engineer - AI, CoCounsel FDE (various)", count: 3 },
-        { title: "Product Success Manager, CoCounsel Legal", count: 1 },
+        { title: "Product Success Manager, CoCounsel Legal", count: 1, url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Eagan-Minnesota/Product-Success-Manager--CoCounsel-Legal_JREQ201575" },
       ],
     },
   }),
@@ -2464,13 +2443,6 @@ COMPETITORS.push(
     careersUrl: "https://jobs.ashbyhq.com/ironcladhq",
     linkedin: "https://www.linkedin.com/company/ironclad-inc-",
     weekActivity: [
-      {
-        date: "2026-08-05",
-        tag: "Product",
-        title: "Launched AI agents for procurement teams",
-        body: "New agents handle obligation tracking, precedent-based redlining, and enhanced SAP integration for procurement teams. See General Highlights.",
-        url: "https://www.prnewswire.com/news-releases/ironclad-launches-ai-agents-to-help-procurement-teams-save-money-move-faster-and-manage-risk-302843168.html",
-      },
       {
         date: "2026-08-29",
         tag: "Hiring",
@@ -2827,6 +2799,15 @@ COMPETITORS.push(
     website: "patently.com",
     careersUrl: "https://www.patently.com",
     linkedin: "https://www.linkedin.com/company/patently",
+    weekActivity: [
+      {
+        date: "2026-09-04",
+        tag: "Product",
+        title: "Patently Create adds support for mathematical equations in patent drafts",
+        body: "Patently Create now handles equations end-to-end in patent drafts — formatting them consistently across the description, claims, and figures, and letting the AI assistant discuss equation meaning directly.",
+        url: "https://patently.com/blog/equations-in-patent-claims",
+      },
+    ],
   }),
   stubCompetitor({
     id: "ip-author",
@@ -2849,6 +2830,13 @@ COMPETITORS.push(
     careersUrl: "https://ipauthor.com/career/",
     linkedin: "https://www.linkedin.com/company/dolcera",
     weekActivity: [
+      {
+        date: "2026-09-07",
+        tag: "Market",
+        title: "ipauthor.com appears to be compromised — live defacement pages found on the site",
+        body: "Two pages on IP Author's own domain (ipauthor.com/c7df64088201-htm/ and ipauthor.com/6498e2b87456-htm/) currently display a \"Hacked by CoupDeGrace\" defacement message overlaid on the legitimate IP Author site chrome (nav, trial signup form, SOC 2 Type II badge). Directly fetched and confirmed both URLs resolve with this content as of today; no corroborating press coverage found yet — worth monitoring for a company statement or fix.",
+        url: "https://ipauthor.com/c7df64088201-htm/",
+      },
       {
         date: "2026-09-01",
         tag: "Product",
@@ -2977,15 +2965,7 @@ COMPETITORS.push(
     website: "pioneerip.com",
     careersUrl: "https://www.pioneerip.com",
     linkedin: null,
-    weekActivity: [
-      {
-        date: "2026-06-30",
-        tag: "Partnership",
-        title: "Partners with Questel on AI-powered patent-to-product mapping",
-        body: "Combines Questel's patent-data infrastructure with PioneerIP's AI to help IP teams connect patents to commercialized products for licensing, enforcement, and portfolio-strategy workflows. (Historical context — also referenced in Questel's own profile.)",
-        url: "https://ipwatchdog.com/press/questel-and-pioneerip-partner-to-bring-ai-powered-patent-to-product-mapping-to-ip-teams/",
-      },
-    ],
+    weekActivity: [],
     hiring: {
       openRoles: 0,
       newRolesToday: [],
@@ -3589,17 +3569,6 @@ const BLOGS = [
     relevance: "medium",
     tags: ["Security", "Compliance"],
     url: "https://iprally.com/news/iprally-is-soc-2-type-ii-compliant",
-  },
-  {
-    id: "blog-5",
-    headline: "When Systems Start Talking: IPRally's Journey Toward a Virtual IP Department",
-    description: "IPRally co-founder Sakari Arvela describes the company's new API and upcoming MCP support as building blocks toward an always-on \"virtual IP department,\" arguing human expertise becomes more valuable, not less, as AI systems increasingly interoperate.",
-    companyId: "iprally",
-    source: "IPRally",
-    date: "2026-07-23",
-    relevance: "critical",
-    tags: ["Strategy", "AI Agents"],
-    url: "https://iprally.com/news/when-systems-start-talking-iprallys-journey-toward-a-virtual-ip-department",
   },
   {
     id: "blog-9",
@@ -4263,14 +4232,14 @@ const BLOGS = [
   },
   {
     id: "blog-69",
-    headline: "Patent Landscape Analysis: A Guide to Modern Methodology",
-    description: "Cypris publishes a guide to modern patent-landscape-analysis methodology for R&D and IP teams evaluating whitespace and competitive positioning.",
+    headline: "Prompts vs. Agents: Why R&D Teams Need Standardized Workflows, Not Better Prompting",
+    description: "Cypris argues that agentic, encoded workflows with defined scope/corpus/evidence standards outperform ad hoc prompting for enterprise R&D and IP teams evaluating whitespace and competitive positioning.",
     companyId: "cypris",
     source: "Cypris",
     date: "2026-09-01",
     relevance: "medium",
     tags: ["Thought Leadership", "Content Marketing"],
-    url: "https://www.cypris.ai/insights",
+    url: "https://www.cypris.ai/insights/prompts-vs-agents-why-r-d-teams-need-standardized-workflows-not-better-prompting",
   },
   {
     id: "blog-70",
@@ -4304,6 +4273,226 @@ const BLOGS = [
     relevance: "high",
     tags: ["Partnership", "Integration"],
     url: "https://www.solveintelligence.com/blog/post/solve-intelligence-brings-patent-specific-ai-capabilities-to-google-cloud-gemini-enterprise-for-legal",
+  },
+  {
+    id: "blog-73",
+    headline: "Enhanced Drafting in Ankar with Native Word Compatibility",
+    description: "Ankar shipped native Microsoft Word compatibility for its AI patent drafting editor, aimed at letting practitioners work in a familiar format while trusting AI output.",
+    companyId: "ankar-ai",
+    source: "Ankar",
+    date: "2026-08-05",
+    relevance: "medium",
+    tags: ["Product Feature", "AI Drafting"],
+    url: "https://ankar.ai/blog/enhanced-drafting-in-ankar-with-native-word-compatibility",
+  },
+  {
+    id: "blog-74",
+    headline: "From Patents to Lead Compounds: How AI-Powered LCA and SAR Reveal Competitive Chemical Space",
+    description: "PatSnap's Eureka blog on using AI-driven landscape and structure-activity-relationship analysis to identify competitive chemical space from patent data.",
+    companyId: "patsnap",
+    source: "PatSnap Eureka blog",
+    date: "2026-09-01",
+    relevance: "medium",
+    tags: ["Patent Landscape", "Life Sciences", "Analytics"],
+    url: "https://eureka.patsnap.com/blog/life-science/ai-lead-compound-analysis-sar-competitive-intelligence/",
+  },
+  {
+    id: "blog-75",
+    headline: "CARDIO-TTRansform Competitive Landscape Analysis | ESC Congress 2026",
+    description: "PatSnap Eureka competitive-landscape report on the CARDIO-TTRansform Phase 3 trial for transthyretin amyloid cardiomyopathy, covering TTR stabilizers, silencers, and gene-editing competitors.",
+    companyId: "patsnap",
+    source: "PatSnap Eureka blog",
+    date: "2026-09-03",
+    relevance: "low",
+    tags: ["Patent Landscape", "Life Sciences"],
+    url: "https://eureka.patsnap.com/blog/life-science/esc-2026-cardio-ttransform-competitive-landscape-analysis/",
+  },
+  {
+    id: "blog-76",
+    headline: "Heart Failure with Preserved Ejection Fraction (HFpEF) — Global Competitive Landscape Report 2026",
+    description: "PatSnap Eureka ESC Congress 2026-tied competitive landscape report on HFpEF treatments.",
+    companyId: "patsnap",
+    source: "PatSnap Eureka blog",
+    date: "2026-09-07",
+    relevance: "low",
+    tags: ["Patent Landscape", "Life Sciences"],
+    url: "https://eureka.patsnap.com/blog/life-science/esc-2026-heart-failure-with-preserved-ejection-fraction-hfpef-competitive-landscape-analysis/",
+  },
+  {
+    id: "blog-77",
+    headline: "Invention harvesting vs. invention disclosure: What IP teams get wrong",
+    description: "IP Copilot clarifies the difference between two commonly conflated IP-management terms and argues the confusion costs companies valuable inventions.",
+    companyId: "ip-copilot",
+    source: "IP Copilot Blog",
+    date: "2026-09-03",
+    relevance: "medium",
+    tags: ["Thought Leadership", "IP Management"],
+    url: "https://blog.ipcopilot.ai/",
+  },
+  {
+    id: "blog-78",
+    headline: "How to Draft Discovery Requests and Responses You Can Trust",
+    description: "Harvey blog post on using AI for discovery drafting in litigation workflows.",
+    companyId: "harvey",
+    source: "Harvey Blog",
+    date: "2026-09-04",
+    relevance: "low",
+    tags: ["Thought Leadership", "Litigation"],
+    url: "https://www.harvey.ai/en-US/blog/how-to-draft-discovery-requests-and-responses",
+  },
+  {
+    id: "blog-79",
+    headline: "What Goes Into an Accurate and Trusted Legal Deal Summary",
+    description: "Harvey blog post on using AI for generating trustworthy deal summaries.",
+    companyId: "harvey",
+    source: "Harvey Blog",
+    date: "2026-09-04",
+    relevance: "low",
+    tags: ["Thought Leadership", "Product"],
+    url: "https://www.harvey.ai/en-US/blog/deal-summary",
+  },
+  {
+    id: "blog-80",
+    headline: "How We Rebuilt Playbook Review as a Multi-Agent System",
+    description: "Harvey engineering post on rearchitecting its playbook-review feature as a multi-agent system.",
+    companyId: "harvey",
+    source: "Harvey Blog",
+    date: "2026-09-02",
+    relevance: "medium",
+    tags: ["Engineering", "Multi-Agent", "Product"],
+    url: "https://www.harvey.ai/en-US/blog/rebuilding-playbook-review-as-a-multi-agent-system",
+  },
+  {
+    id: "blog-81",
+    headline: "Legora AI Day at Bucerius Law School: Preparing the Next Generation of Lawyers",
+    description: "Legora recap of a Legora-hosted AI education event for law students at Bucerius Law School.",
+    companyId: "legora",
+    source: "Legora Blog",
+    date: "2026-08-19",
+    relevance: "low",
+    tags: ["Education", "Community"],
+    url: "https://legora.com/blog/legora-ai-day-at-bucerius-law-school-preparing-the-next-generation-of-lawyers",
+  },
+  {
+    id: "blog-82",
+    headline: "Delivering the future of legal services with HighQ and CoCounsel",
+    description: "Thomson Reuters company blog post on integrating the HighQ legal workflow platform with CoCounsel Legal.",
+    companyId: "cocounsel",
+    source: "Thomson Reuters (company blog)",
+    date: "2026-09-02",
+    relevance: "medium",
+    tags: ["Partnership", "Product"],
+    url: "https://legal.thomsonreuters.com/blog/delivering-the-future-of-legal-services-with-highq-and-cocounsel/",
+  },
+  {
+    id: "blog-83",
+    headline: "LinkSquares Ranks on the 2026 Inc. 5000 List of America's Fastest-Growing Private Companies for 6th Straight Year",
+    description: "LinkSquares company blog post announcing its sixth consecutive Inc. 5000 ranking.",
+    companyId: "linksquares",
+    source: "LinkSquares (company blog)",
+    date: "2026-08-11",
+    relevance: "low",
+    tags: ["Company News"],
+    url: "https://blog.linksquares.com/2026-inc.-5000-fastest-growing-companies",
+  },
+  {
+    id: "blog-84",
+    headline: "What Is Agentic CLM? A Plain-English Guide for Every Team That Touches a Contract",
+    description: "LinkSquares educational blog post explaining its framing of 'agentic CLM' for non-technical contract stakeholders.",
+    companyId: "linksquares",
+    source: "LinkSquares (company blog)",
+    date: "2026-08-06",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Agentic AI"],
+    url: "https://blog.linksquares.com/what-is-agentic-clm-guide",
+  },
+  {
+    id: "blog-85",
+    headline: "Why Your Contract Repository Is Quietly Costing You Deals",
+    description: "LinkSquares blog post arguing that poor contract repository hygiene creates hidden deal risk.",
+    companyId: "linksquares",
+    source: "LinkSquares (company blog)",
+    date: "2026-07-29",
+    relevance: "low",
+    tags: ["Thought Leadership"],
+    url: "https://blog.linksquares.com/your-contract-repository-costing-you-deals",
+  },
+  {
+    id: "blog-86",
+    headline: "I Am a Forward-Deployed CEO",
+    description: "DraftWise company blog post on its founder/CEO approach to hands-on customer deployment.",
+    companyId: "draftwise",
+    source: "DraftWise (company blog)",
+    date: "2026-08-18",
+    relevance: "low",
+    tags: ["Thought Leadership", "Company Culture"],
+    url: "https://www.draftwise.com/blog/i-am-a-forward-deployed-ceo",
+  },
+  {
+    id: "blog-87",
+    headline: "Draft legal letters, not just contracts",
+    description: "Genie AI product changelog entry: Genie expanded beyond contracts to generate structured first drafts of demand letters, notices, and correspondence.",
+    companyId: "genie-ai",
+    source: "Genie AI (company changelog)",
+    date: "2026-07-30",
+    relevance: "low",
+    tags: ["Product Update"],
+    url: "https://whatsnew.genieai.co/",
+  },
+  {
+    id: "blog-88",
+    headline: "EveOS Is Live: Up-to-date Cases, Real Numbers, Better Decisions",
+    description: "Eve's own recap of the EveOS general-availability launch.",
+    companyId: "eve-legal",
+    source: "Eve (company blog - Tort Report)",
+    date: "2026-08-25",
+    relevance: "medium",
+    tags: ["Product Launch"],
+    url: "https://www.eve.legal/tort-report/eveos-is-live-real-numbers-better-decisions",
+  },
+  {
+    id: "blog-89",
+    headline: "Claims with math",
+    description: "Patently Create now handles equations end-to-end in patent drafts — formatting them consistently across the description, claims, and figures, and letting the AI assistant discuss equation meaning directly.",
+    companyId: "patently",
+    source: "patently.com",
+    date: "2026-09-04",
+    relevance: "high",
+    tags: ["Product Feature", "AI Drafting"],
+    url: "https://patently.com/blog/equations-in-patent-claims",
+  },
+  {
+    id: "blog-90",
+    headline: "IP Author for Claude — Patent Search, Analysis, and Drafting",
+    description: "IP Author announced an MCP connector plugging its patent search, invalidity/FTO analysis, and drafting tools directly into Claude.ai.",
+    companyId: "ip-author",
+    source: "ipauthor.com",
+    date: "2026-09-01",
+    relevance: "high",
+    tags: ["Product Launch", "MCP", "AI Integration"],
+    url: "https://ipauthor.com/ip-author-for-claude-mcp-connector/",
+  },
+  {
+    id: "blog-91",
+    headline: "DOJ sides with OpenAI, calls broad AI-training copyright liability a national security risk",
+    description: "The Department of Justice filed a Statement of Interest arguing that training LLMs on copyrighted works is transformative fair use, criticizing the 2025 Kadrey v. Meta reasoning and framing restrictive copyright rulings as a competitiveness and national-security threat.",
+    companyId: "industry",
+    source: "IPWatchdog",
+    date: "2026-09-03",
+    relevance: "medium",
+    tags: ["Industry Trend", "Copyright", "AI Policy"],
+    url: "https://ipwatchdog.com/2026/09/03/doj-sides-with-openai-warns-obstacles-to-ai-development-threaten-national-security/",
+  },
+  {
+    id: "blog-92",
+    headline: "House IP Subcommittee hearing turns contentious over USPTO fee-setting authority renewal",
+    description: "Chairman Darrell Issa and former USPTO Director David Kappos sparred over PTAB's role during a hearing on renewing USPTO's fee-setting authority, with witnesses split on whether policy riders should accompany a multi-year extension.",
+    companyId: "industry",
+    source: "Patently-O",
+    date: "2026-09-02",
+    relevance: "high",
+    tags: ["Industry Trend", "USPTO Funding", "Policy"],
+    url: "https://patentlyo.com/patent/2026/09/strings-attached-the-house-hearing-on-renewing-uspto-fee-setting-authority.html",
   },
 ];
 
