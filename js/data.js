@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-07";
-const EARLIEST_DATE = "2026-08-17"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-08";
+const EARLIEST_DATE = "2026-08-18"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -434,6 +434,36 @@ const HIGHLIGHTS = [
     sourceType: "regulatory",
     url: "https://patentlyo.com/patent/2026/09/strings-attached-the-house-hearing-on-renewing-uspto-fee-setting-authority.html",
   },
+  {
+    id: "hl-42",
+    date: "2026-09-07",
+    priority: "high",
+    category: "Market",
+    title: "OpenAI ships GPT-6 Astra; Harvey and Legora report major legal-accuracy gains from day one",
+    summary:
+      "OpenAI began a limited rollout of GPT-6 Astra on 2026-09-03, its new flagship model combining 'advances in computer use with targeted training for professional environments' (59.3% on the Agents' Last Exam benchmark, up from GPT-5.6 Sol's 53.6%). Harvey's Head of Applied Research said the model 'approaches legal work the way a discerning lawyer does,' distinguishing documents and surfacing unsupported assumptions. Legora's own testing on financial-statement tie-out review found the model caught all four planted errors (including a £500,000 discrepancy) across 41 documents in minutes, a ~40% improvement over the prior model on that task and a ~3% average gain across Legora's internal benchmark for agentic reasoning.",
+    whyItMatters:
+      "A step-change in a frontier foundation model's professional/legal reasoning immediately raises the baseline for every AI-native patent and legal tool built on top of general-purpose LLMs, Patlytics included. It's also a reminder that two of the best-funded generalist legal-AI players (Harvey, Legora) get near-immediate access and public validation from OpenAI, while patent-specific vendors must prove the same gains hold for claim drafting, prior-art analysis, and prosecution-specific reasoning rather than generic document review.",
+    companies: ["Harvey", "Legora"],
+    source: "Artificial Lawyer",
+    sourceType: "news",
+    url: "https://www.artificiallawyer.com/2026/09/07/harvey-legora-on-openais-gpt-6-astra/",
+  },
+  {
+    id: "hl-43",
+    date: "2026-09-01",
+    priority: "high",
+    category: "Funding",
+    title: "Genie AI raises £70M Series B from Google Ventures and Khosla Ventures, taking total funding to £83M",
+    summary:
+      "Genie AI's own company blog announced a £70M Series B led by the same two investors as its Series A — Google Ventures (GV) and Khosla Ventures — bringing total funding to £83M (up from ~£15M/$20M). No valuation was disclosed. CEO Rafie Faruq frames the raise around three initiatives: 'encoded standards' (automating a company's own contract positions across agreements), 'review by exception' (only non-standard terms escalate to human reviewers), and an 'organizational brain' knowledge graph of negotiation precedent. As of this writing the raise had not yet been picked up by general/VC trade press indexed in search (TechCrunch, Sifted, standard funding trackers) — Genie AI's own blog post is the only source found, independently confirmed live and dated.",
+    whyItMatters:
+      "This more than quadruples Genie AI's known capital base and had gone unnoticed in prior daily sweeps. A well-funded, GV/Khosla-backed legal-AI contract-drafting player scaling up 'encoded standards' and knowledge-graph precedent capabilities is directly adjacent to Patlytics' own AI-drafting and knowledge-reuse positioning, and the fresh capital likely funds further product build-out and go-to-market expansion.",
+    companies: ["Genie AI"],
+    source: "GenieAI (company blog)",
+    sourceType: "funding",
+    url: "https://www.genieai.co/blog/genie-ai-raises-70-million-series-b",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -541,15 +571,22 @@ const COMPETITORS = [
         body: "A re-query of the Ashby posting API shows the 2026-09-04 entry reporting the board 'narrowing to 8, down from 15' was mistaken — all 15 postings (including the 7 previously reported closed: Growth Engineer, Full Stack (Back-End Leaning), Financial Operations Lead, Legal and Product Engineer (Patent Litigator), two Customer Support Specialist roles, and Legal and Product Engineer (USPTO Examiner Background)) carry old publishedAt timestamps (March–August 2026), confirming they never closed. Likely a bad fetch or stale cache on the prior pass.",
         url: "https://jobs.ashbyhq.com/solveintelligence",
       },
+      {
+        date: "2026-09-07",
+        tag: "Hiring",
+        title: "Opened a Legal Counsel role (New York)",
+        body: "New York-based, on-site Legal Counsel opening newly surfaced vs. the prior careers-snapshot baseline (publishedAt 2026-09-07T18:03:31Z) — Solve Intelligence's first tracked in-house legal hire, a notable senior/strategic signal alongside its continued GTM and engineering hiring. Board now shows 16 live postings, up from 15. The previously-tracked \"Legal and Product Engineer\" title now appears as \"Legal and Product Engineer (Patent Prosecution)\" with the same original publish timestamp (2026-01-05) — a title clarification on an existing posting, not a new opening.",
+        url: "https://jobs.ashbyhq.com/solveintelligence/07c9b5d3-5bd1-4f75-8741-04b076c32dd9",
+      },
     ],
     hiring: {
-      openRoles: 15,
+      openRoles: 16,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
+        { title: "Legal Counsel", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/07c9b5d3-5bd1-4f75-8741-04b076c32dd9" },
         { title: "Account Executive / GTM", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/510cafb8-922a-45fd-8340-6aa89191ea47" },
         { title: "AI Engineer", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/972bab7a-a285-4d22-af00-9ff9d3e41776" },
-        { title: "Full-Stack Engineer (Front-End Leaning)", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/6afb92df-d600-4f59-b679-f026bbdc9e37" },
       ],
     },
     marketing: [
@@ -636,6 +673,13 @@ const COMPETITORS = [
         title: "Exhibited at INTA Annual Meeting",
         body: "Large booth presence with live product demos of the new copilot feature.",
         url: siteUrl("patsnap.com"),
+      },
+      {
+        date: "2026-09-08",
+        tag: "Content",
+        title: "Eureka blog publishes six more ESC Congress 2026 cardiology/nephrology competitive-landscape reports",
+        body: "Continuing the pattern flagged 2026-09-03, PatSnap's Eureka blog published six additional AI-generated competitive-landscape reports today timed to ESC Congress 2026 (American Heart Association, American College of Cardiology, European Society of Cardiology, World Heart Federation, Direct Oral Anticoagulants, and Kidney Function/eGFR-albuminuria) — continuing PatSnap's high-cadence, AI-assisted patent-landscape content-marketing pattern.",
+        url: "https://eureka.patsnap.com/blog/life-science/esc-2026-american-heart-association-aha-competitive-landscape-analysis/",
       },
     ],
     hiring: {
@@ -797,17 +841,25 @@ const COMPETITORS = [
         body: "Querying Clarivate's underlying Workday CXS API directly (job-family-group \"Intellectual Property Services\") — rather than page-scraping the Phenom-hosted careers site, which under-rendered the true count — surfaces 26 currently open roles spanning Noida, Belgrade, Ann Arbor, Seoul, and Tokyo. This is a scraping-method correction, not a claim that 16 roles opened today; the prior 10-role figure reflected an incomplete capture.",
         url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
       },
+      {
+        date: "2026-09-08",
+        tag: "Hiring",
+        title: "Workday IP-services facet API recovers after 9 days broken — clean 21-role roster confirmed",
+        body: "The Workday CXS facet call for job-family-group \"Intellectual Property Services\" succeeded today (HTTP 200, re-queried 3x with identical results) for the first time since it broke ~9 days ago, returning a clean, title-level roster of 21 open roles — a materially more precise source than the unfiltered-feed keyword-match workaround (~24-27 estimated) used since 2026-08-31. Treated as a baseline reset rather than a claim that roles closed since yesterday, since the prior figure was never a precise title-level capture. Separately resolves the previously-flagged unconfirmed lead: 'IP Admin Analyst' (Noida, JREQ136235) is confirmed genuinely live.",
+        url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
+      },
     ],
     hiring: {
-      openRoles: 27,
+      openRoles: 21,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "IP Admin Senior Analyst / Analyst (Noida, Belgrade)", count: 6 },
+        { title: "IP Admin Analyst / Senior Analyst / Lead / SME (Noida, Belgrade, Ann Arbor)", count: 9 },
+        { title: "Patent Classifier (Ann Arbor)", count: 2 },
         { title: "PCT Patent Analyst (Contract)", count: 2 },
-        { title: "Patent Classifier", count: 1, url: "https://careers.clarivate.com/job/JREQ136336" },
-        { title: "IP Renewals SME (Korea)", count: 1, url: "https://careers.clarivate.com/job/JREQ136256" },
-        { title: "Senior Director, IP Service Operations", count: 1, url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/Senior-Director--IP--Service-Operations_JREQ135705-1" },
+        { title: "Associate Trademark Search Analyst (Belgrade, Noida)", count: 2 },
+        { title: "IP Renewals SME (Seoul)", count: 1, url: "https://clarivate.wd3.myworkdayjobs.com/en-US/Clarivate_Careers/job/South-Korea---Seoul/IP-Renewals-SME_JREQ136256-1" },
+        { title: "Senior Director, IP Service Operations (Noida)", count: 1, url: "https://clarivate.wd3.myworkdayjobs.com/en-US/Clarivate_Careers/job/R271--Noida/Senior-Director--IP--Service-Operations_JREQ135705-1" },
       ],
     },
     marketing: [
@@ -828,7 +880,7 @@ const COMPETITORS = [
     initials: "AQ",
     tagline: "End-to-end IP management software for corporate and law-firm IP departments.",
     description:
-      "Anaqua provides IP lifecycle management software — docketing, portfolio management, renewals, and increasingly analytics — for corporate IP departments and law firms. Overlaps with Patlytics primarily where IP operations and analytics intersect rather than on core AI search/drafting. Acquired Unified Patents on 2026-08-04 (financial terms undisclosed), adding AI-enhanced claim-charting/litigation-risk capability via Unified's PEARL tool — Unified's own materials describe it continuing to operate with independent decision-making post-acquisition. Post-acquisition, Unified Patents co-founder/CEO Kevin Jakel took on a newly created \"Chief Intellectual Property Strategist\" role at Anaqua. Also recently announced Innomotics (a Siemens spin-off) as a new enterprise customer for global IP management.",
+      "Anaqua provides IP lifecycle management software — docketing, portfolio management, renewals, and increasingly analytics — for corporate IP departments and law firms. Overlaps with Patlytics primarily where IP operations and analytics intersect rather than on core AI search/drafting. Acquired Patrix (maker of the Patricia® IP-management platform, serving ~400 law-firm/corporate customers) on 2026-04-28, expanding its European footprint and law-firm base, then acquired Unified Patents on 2026-08-04 (financial terms undisclosed), adding AI-enhanced claim-charting/litigation-risk capability via Unified's PEARL tool — Unified's own materials describe it continuing to operate with independent decision-making post-acquisition. Post-acquisition, Unified Patents co-founder/CEO Kevin Jakel took on a newly created \"Chief Intellectual Property Strategist\" role at Anaqua. Also recently announced Innomotics (a Siemens spin-off) as a new enterprise customer for global IP management.",
     employeeCount: "~700 (est.)",
     founded: "2004",
     hq: "Boston, MA",
@@ -976,9 +1028,16 @@ const COMPETITORS = [
         body: "LexisNexis IP has no isolated job-family facet in the underlying RELX Workday CXS API; a free-text \"Intellectual Property\" search across the whole LexisNexis Legal & Professional tenant returns 19 results (up from 16-17), though some (e.g. general Legal Counsel or Scrum Master postings) appear only loosely IP-affiliated. Treating this as a noisier re-capture of the same board rather than confirmed net-new openings.",
         url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal",
       },
+      {
+        date: "2026-09-08",
+        tag: "Hiring",
+        title: "LNIP-affiliated role count drops to 18, down from 19 — Senior Product Marketing Manager (Bonn) closed",
+        body: "Re-running the same free-text 'Intellectual Property' search against the RELX Workday CXS API (no isolated IP job-family facet exists in this shared tenant) returns 18 results today, down from 19 — 'Senior Product Marketing Manager (m/f/d, Bonn)' no longer appears among live postings; all other 18 previously-tracked titles remain live with unchanged locations.",
+        url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal",
+      },
     ],
     hiring: {
-      openRoles: 19,
+      openRoles: 18,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -1247,14 +1306,20 @@ COMPETITORS.push(
         body: "DeepIP's Teamtailor board (careers.deepip.ai/jobs.json) no longer lists the Account Executive - EU posting as of today, dropping the open-roles count from 5 to 4; the remaining live roles are Founding Account Executive - DACH, Head of Marketing - US, Product Marketing Manager, and Business Development Representative - North America.",
         url: "https://careers.deepip.ai",
       },
+      {
+        date: "2026-09-08",
+        tag: "Hiring",
+        title: "\"Business Development Representative - North America\" role closed",
+        body: "A direct re-fetch of DeepIP's Teamtailor feed (careers.deepip.ai/jobs.json) today no longer lists the Business Development Representative - North America posting. Live board now shows 3 open roles (Product Marketing Manager, Head of Marketing - US, Founding Account Executive - DACH), down from 4.",
+        url: "https://careers.deepip.ai/jobs.json",
+      },
     ],
     hiring: {
-      openRoles: 4,
+      openRoles: 3,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Founding Account Executive - DACH", count: 1, url: "https://careers.deepip.ai/jobs/7323608-founding-account-executive-dach" },
-        { title: "Business Development Representative - North America", count: 1, url: "https://careers.deepip.ai/jobs/7655432-business-development-representative-north-america" },
       ],
     },
   }),
@@ -1570,7 +1635,7 @@ COMPETITORS.push(
         tag: "Hiring",
         title: "Opened Product Delivery Lead, DevOps & Security Engineer, and Office Manager roles",
         body: "Significant careers-page turnover vs. the prior snapshot: three new titles appeared (Product Delivery Lead, DevOps & Security Engineer, Office Manager with Finance Skills) while several prior postings (Senior Front End Developer, Lead Full Stack Engineer, Senior Invention Developer, AI Product Engineer, Digital Marketing and Growth Manager) no longer show live.",
-        url: "https://www.iprova.com/career/product-delivery-lead/",
+        url: "https://www.iprova.com/career/product-delivery-lead-software-engineering/",
       },
     ],
     hiring: {
@@ -1578,6 +1643,9 @@ COMPETITORS.push(
       newRolesToday: [],
       recentHires: [],
       topRoles: [
+        { title: "Product Delivery Lead (Software Engineering)", count: 1, url: "https://www.iprova.com/career/product-delivery-lead-software-engineering/" },
+        { title: "Office Manager (with Finance Skills)", count: 1, url: "https://www.iprova.com/career/office-manager-with-finance-skills-2/" },
+        { title: "DevOps & Security Engineer", count: 1, url: "https://www.iprova.com/career/devops-security-engineer/" },
         { title: "Senior Full Stack Engineer", count: 1, url: "https://www.iprova.com/career/senior-full-stack-engineer/" },
         { title: "Invention Engineer", count: 1, url: "https://www.iprova.com/career/invention-engineer/" },
         { title: "Business Development Manager", count: 1, url: "https://www.iprova.com/career/business-development-manager/" },
@@ -1855,7 +1923,7 @@ COMPETITORS.push(
     initials: "HV",
     tagline: "Domain-specific generative AI for law firms and professional services.",
     description: "Harvey provides generalist domain-specific AI for AmLaw firms and professional services. Internally, Patlytics reps treat Harvey as a 'generalist AI' wedge competitor — the pitch being that Patlytics offers real IP-specific depth where Harvey is broad but shallow on patents.",
-        employeeCount: "~1,561 (mid-2026)",
+        employeeCount: "~1,561 (Tracxn, mid-2026) to ~1,705 (Crustdata, Aug 2026) — third-party estimates diverge, neither company-disclosed",
     founded: "2022",
     hq: "San Francisco, CA",
     founders: [
@@ -2027,9 +2095,23 @@ COMPETITORS.push(
         body: "Ashby posting-API publishedAt confirms three more new postings the same day as the Head of Mid-Market Sales/Product Design roles above. Board now at 346 live postings (down from 348) — 6 other titles closed since (Associate Commercial Counsel, Employee Experience Specialist, Growth Marketing Manager EMEA, Head of Customer Learning, Program Manager Customer Engagement & Community, Recruiting Coordinator (6-month Contract)).",
         url: "https://jobs.ashbyhq.com/harvey/9cf781f8-6203-4cd7-a1c8-0c149fc2afc5",
       },
+      {
+        date: "2026-09-07",
+        tag: "Sales",
+        title: "Grupo Financiero Inbursa deploys Harvey across its legal department",
+        body: "Harvey's own newsroom/blog announced that Grupo Financiero Inbursa, one of Mexico's largest financial institutions, has deployed Harvey across its legal department — the litigation team is using it to manage thousands of court/regulatory notices annually and prepare for oral proceedings, with M&A due diligence, regulatory analysis, and contract review planned next. Harvey says it expanded its Mexico City team as part of a broader Latin America growth push.",
+        url: "https://www.harvey.ai/en-US/blog/grupo-financiero-inbursa-deploys-harvey",
+      },
+      {
+        date: "2026-09-08",
+        tag: "Hiring",
+        title: "Board settles at 342 live postings, down from 344",
+        body: "Ashby posting API re-queried directly — 342 live postings (down from 344 on 09-07). No new Head of/VP/Director-level titles confirmed this pass; a few smaller titles present in the last full transcription no longer appear live, but exact closure dates aren't confirmed since the full title list isn't re-transcribed every pass given board size.",
+        url: "https://jobs.ashbyhq.com/harvey",
+      },
     ],
     hiring: {
-      openRoles: 344,
+      openRoles: 342,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -2193,24 +2275,24 @@ COMPETITORS.push(
         url: "https://jobs.ashbyhq.com/legora/eff6b912-3662-4c92-8417-77587b1baf49",
       },
       {
-        date: "2026-08-17",
-        tag: "Product",
-        title: "Announced integration with Box",
-        body: "Integration agreement with content-management platform Box, in beta this quarter.",
-        url: "https://www.globallegalpost.com/news/legora-announces-integration-agreement-with-content-management-intelligence-platform-box-1821553996",
-      },
-      {
         date: "2026-09-04",
         tag: "Hiring",
         title: "Opens Value Engineer (London) and Solutions Engineer (Stockholm HQ) roles",
         body: "New postings confirmed via Ashby posting-API publishedAt (2026-09-04), alongside Technical Delivery Manager roles for Munich and Paris (2026-09-03) and continued new Engagement Manager/Associate seats in Denver, Houston, Mexico City, and Chicago — Legora's US city-hub expansion continues. Board now at 283 live postings.",
         url: "https://jobs.ashbyhq.com/legora/6fd09c92-f78e-49d5-8f06-1f93799b20a3",
       },
+      {
+        date: "2026-09-07",
+        tag: "Hiring",
+        title: "Opens first Enterprise Account Executive seat in Japan",
+        body: "New posting confirmed via the Ashby posting API's publishedAt field (2026-09-07T23:05 UTC). Legora already has an Engagement Manager - Japan and a Senior Legal Engineer - Japan on its board, but this is the first dedicated Enterprise AE seat spotted for the Japan market — continuing Legora's APAC GTM build-out alongside its existing Korea and Singapore postings. Board now at 281 live postings (down from 282).",
+        url: "https://jobs.ashbyhq.com/legora/42f62bc1-edef-4406-ab82-2dc8a09de327",
+      },
     ],
     hiring: {
-      openRoles: 282,
+      openRoles: 281,
       newRolesToday: [
-        { title: "Head of Legal Engineering, Italy", count: 1, url: "https://jobs.ashbyhq.com/legora/459430b9-29e6-4e79-a5ab-8261d07c585e" },
+        { title: "Enterprise Account Executive - Japan", count: 1, url: "https://jobs.ashbyhq.com/legora/42f62bc1-edef-4406-ab82-2dc8a09de327" },
       ],
       recentHires: [],
       topRoles: [
@@ -2540,6 +2622,9 @@ COMPETITORS.push(
       topRoles: [
         { title: "Senior Customer Success Manager", count: 1, url: "https://linksquares.com/careers/open-positions/?gh_jid=4718008005" },
         { title: "Senior GTM Data Analyst", count: 1, url: "https://linksquares.com/careers/open-positions/?gh_jid=4724820005" },
+        { title: "Sr. Director, Demand Gen & Field Marketing", count: 1, url: "https://linksquares.com/careers/open-positions/?gh_jid=4724000005" },
+        { title: "Accounting Associate", count: 1, url: "https://linksquares.com/careers/open-positions/?gh_jid=4721147005" },
+        { title: "Graphic Designer", count: 1, url: "https://linksquares.com/careers/open-positions/?gh_jid=4725023005" },
       ],
     },
   }),
@@ -2618,7 +2703,7 @@ COMPETITORS.push(
     tier: "Tier 3 — Adjacent",
     initials: "GA",
     tagline: "AI legal contract drafting and templates.",
-    description: "Genie AI provides AI-assisted legal contract drafting and template generation for a broad legal audience. Raised a $17.8M Series A led by GV (Google Ventures) with Khosla Ventures participating (announced 2024-10-23 — corrected 2026-09-02; a prior pass had mis-dated this as 2026-08-31 based on a misread of the source article's own byline), taking total funding above $20M (£15M); prior backing was government grants and a seed round led by Connect Ventures.",
+    description: "Genie AI provides AI-assisted legal contract drafting and template generation for a broad legal audience. Raised a $17.8M Series A led by GV (Google Ventures) with Khosla Ventures participating (announced 2024-10-23 — corrected 2026-09-02; a prior pass had mis-dated this as 2026-08-31 based on a misread of the source article's own byline), taking total funding above $20M (£15M) at the time; prior backing was government grants and a seed round led by Connect Ventures. Raised a further £70M Series B (announced 2026-09-01 on its own company blog) led by the same two investors, GV and Khosla Ventures, bringing total funding to £83M — no valuation disclosed. CEO Rafie Faruq frames the raise around three initiatives: \"encoded standards\" (automating a company's own contract positions across agreements), \"review by exception\" (only non-standard terms escalate to human reviewers), and an \"organizational brain\" knowledge graph of negotiation precedent.",
         employeeCount: "11-50",
     founded: "2017",
     hq: "Cambridge / London, England",
@@ -2627,10 +2712,34 @@ COMPETITORS.push(
       { name: "Nitish Mutha", title: "Co-Founder & CTO", note: "Met Faruq as UCL machine-learning master's classmates." },
     ],
     website: "genieai.co",
-    careersUrl: "https://genieai.co/careers",
+    careersUrl: "https://careers.genieai.co",
     linkedin: "https://www.linkedin.com/company/genie-ai",
-    weekActivity: [],
-    hiring: { openRoles: 0, newRolesToday: [], recentHires: [], topRoles: [] },
+    weekActivity: [
+      {
+        date: "2026-09-01",
+        tag: "Funding",
+        title: "Raises £70M Series B from Google Ventures and Khosla Ventures",
+        body: "Genie AI's own company blog announced a £70M Series B led by the same two investors as its Series A — Google Ventures (GV) and Khosla Ventures — bringing total funding to £83M (up from ~£15M/$20M). No valuation disclosed. As of this writing the raise had not yet been picked up by general/VC trade press indexed in search (TechCrunch, Sifted, standard funding trackers) — Genie AI's own blog post is the source, independently confirmed live. See General Highlights.",
+        url: "https://www.genieai.co/blog/genie-ai-raises-70-million-series-b",
+      },
+      {
+        date: "2026-09-08",
+        tag: "Hiring",
+        title: "Real ATS identified: Teamtailor board (careers.genieai.co) — opens Senior Agentic Engineer role",
+        body: "The previously-tracked Workable widget (apply.workable.com/api/v1/widget/accounts/genie-ai) still returns an empty jobs array — but genieai.co/careers links out to a separate, actively-used Teamtailor board at careers.genieai.co that Workable was not capturing. That board currently lists exactly one live posting, Senior Agentic Engineer (London, hybrid/remote-friendly), with a Teamtailor-stamped publish time of 2026-09-08T10:21:02+01:00 — a genuine same-day opening, not a preexisting item merely uncovered by the method fix. Correcting careersUrl to the real board.",
+        url: "https://careers.genieai.co/jobs/8339092-senior-agentic-engineer",
+      },
+    ],
+    hiring: {
+      openRoles: 1,
+      newRolesToday: [
+        { title: "Senior Agentic Engineer", count: 1, url: "https://careers.genieai.co/jobs/8339092-senior-agentic-engineer" },
+      ],
+      recentHires: [],
+      topRoles: [
+        { title: "Senior Agentic Engineer", count: 1, url: "https://careers.genieai.co/jobs/8339092-senior-agentic-engineer" },
+      ],
+    },
   }),
   stubCompetitor({
     id: "eve-legal",
@@ -2831,11 +2940,18 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/dolcera",
     weekActivity: [
       {
+        date: "2026-09-08",
+        tag: "Market",
+        title: "ipauthor.com defacement appears fixed — both hacked pages now return normal 404s",
+        body: "The two pages found defaced yesterday (ipauthor.com/c7df64088201-htm/ and ipauthor.com/6498e2b87456-htm/) now return the site's standard WordPress \"Page not found\" 404 response with no defacement content, and the homepage/careers pages resolve normally with the expected IP Author branding intact. No public statement about the incident was found from Dolcera/IP Author or in press coverage — the fix appears to have been a quiet cleanup rather than an announced remediation.",
+        url: "https://ipauthor.com/",
+      },
+      {
         date: "2026-09-07",
         tag: "Market",
         title: "ipauthor.com appears to be compromised — live defacement pages found on the site",
         body: "Two pages on IP Author's own domain (ipauthor.com/c7df64088201-htm/ and ipauthor.com/6498e2b87456-htm/) currently display a \"Hacked by CoupDeGrace\" defacement message overlaid on the legitimate IP Author site chrome (nav, trial signup form, SOC 2 Type II badge). Directly fetched and confirmed both URLs resolve with this content as of today; no corroborating press coverage found yet — worth monitoring for a company statement or fix.",
-        url: "https://ipauthor.com/c7df64088201-htm/",
+        url: "https://ipauthor.com/",
       },
       {
         date: "2026-09-01",
@@ -4493,6 +4609,39 @@ const BLOGS = [
     relevance: "high",
     tags: ["Industry Trend", "USPTO Funding", "Policy"],
     url: "https://patentlyo.com/patent/2026/09/strings-attached-the-house-hearing-on-renewing-uspto-fee-setting-authority.html",
+  },
+  {
+    id: "blog-93",
+    headline: "USPTO Issues First AI-Predicated Discipline Order Over Hallucinated Citations to a Patent's Own Record",
+    description: "The USPTO's Office of Enrollment and Discipline publicly reprimanded patent attorney Brian E. Mitchell (In re Mitchell, Proceeding No. D2026-16) after two different generative-AI tools he used to draft and review claim-construction language fabricated citations to the patent's own specification, figures, and prosecution history — the first USPTO discipline order in which generative-AI use is itself the predicate for the ethics violations, and the first to treat hallucinated citations to a patent's own intrinsic record (not just external case law) as an ethical offense.",
+    companyId: "industry",
+    source: "IPWatchdog",
+    date: "2026-08-28",
+    relevance: "high",
+    tags: ["AI Ethics", "USPTO", "AI Hallucination"],
+    url: "https://ipwatchdog.com/2026/08/28/uspto-issues-its-first-ai-predicated-discipline-order-involving-hallucinated-cites-to-intrinsic-record/",
+  },
+  {
+    id: "blog-94",
+    headline: "American Heart Association (AHA) Competitive Landscape Analysis 2026 | ESC Congress 2026",
+    description: "PatSnap Eureka's AI-generated patent/competitive-landscape report on the AHA space, part of a six-report batch timed to ESC Congress 2026 (also covering ACC, ESC, WHF, DOACs, and kidney function/eGFR-albuminuria).",
+    companyId: "patsnap",
+    source: "PatSnap Eureka blog",
+    date: "2026-09-08",
+    relevance: "low",
+    tags: ["Content", "Life Sciences", "AI"],
+    url: "https://eureka.patsnap.com/blog/life-science/esc-2026-american-heart-association-aha-competitive-landscape-analysis/",
+  },
+  {
+    id: "blog-95",
+    headline: "Grupo Financiero Inbursa Deploys Harvey",
+    description: "Harvey announces a new legal-department deployment at Grupo Financiero Inbursa, one of Mexico's largest financial institutions, as part of its Latin America expansion.",
+    companyId: "harvey",
+    source: "Harvey (company blog)",
+    date: "2026-09-07",
+    relevance: "low",
+    tags: ["Sales", "LatAm"],
+    url: "https://www.harvey.ai/en-US/blog/grupo-financiero-inbursa-deploys-harvey",
   },
 ];
 
