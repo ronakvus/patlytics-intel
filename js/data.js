@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-08";
-const EARLIEST_DATE = "2026-08-18"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-09";
+const EARLIEST_DATE = "2026-08-19"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -75,21 +75,6 @@ const HIGHLIGHTS = [
     url: "https://www.prnewswire.com/news-releases/fearn-raises-5-5-million-seed-to-end-the-two-tier-patent-system-302796012.html",
   },
   {
-    id: "hl-10",
-    date: "2026-08-18",
-    priority: "high",
-    category: "Product",
-    title: "NLPatent rebrands to Clerq, launches agentic end-to-end patent-work platform",
-    summary:
-      "NLPatent rebranded to Clerq and unveiled a new agentic AI platform spanning triage assessments through full patentability reports, alongside new partnerships with RPX Corporation and Park IP and a newly hired Director of IP Strategy.",
-    whyItMatters:
-      "A direct Tier 2 overlap competitor just repositioned itself as an end-to-end agentic patent workflow platform rather than a narrower semantic-search tool — worth re-evaluating how it's pitched against Patlytics going forward.",
-    companies: ["NLPatent"],
-    source: "IPWatchdog, Law360 Pulse, SiliconANGLE, BetaKit",
-    sourceType: "product",
-    url: "https://ipwatchdog.com/press/nlpatent-rebrands-to-clerq-unveils-the-next-generation-of-ip-intelligence-built-to-execute-patent-work-end-to-end/",
-  },
-  {
     id: "hl-13",
     date: "2026-08-20",
     priority: "medium",
@@ -103,21 +88,6 @@ const HIGHLIGHTS = [
     source: "Thomson Reuters press release",
     sourceType: "product",
     url: "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-launches-next-generation-of-cocounsel-legal-the-ai-ecosystem-built-for-legal-professionals",
-  },
-  {
-    id: "hl-14",
-    date: "2026-08-18",
-    priority: "low",
-    category: "Product",
-    title: "Harvey launches 'Harvey II' with persistent cross-app Memory",
-    summary:
-      "Harvey launched its next-generation platform centered on a persistent 'Memory' feature that learns individual lawyer/client preferences across Harvey, Word, Outlook, and its agents.",
-    whyItMatters:
-      "Harvey remains the generalist-AI comparison point sales reps hear most often; this keeps its platform story current even though it stays shallow on patent-specific depth.",
-    companies: ["Harvey"],
-    source: "Artificial Lawyer",
-    sourceType: "product",
-    url: "https://www.artificiallawyer.com/2026/08/18/next-gen-harvey-ii-launches-with-memory-at-its-core/",
   },
   {
     id: "hl-17",
@@ -456,13 +426,43 @@ const HIGHLIGHTS = [
     category: "Funding",
     title: "Genie AI raises £70M Series B from Google Ventures and Khosla Ventures, taking total funding to £83M",
     summary:
-      "Genie AI's own company blog announced a £70M Series B led by the same two investors as its Series A — Google Ventures (GV) and Khosla Ventures — bringing total funding to £83M (up from ~£15M/$20M). No valuation was disclosed. CEO Rafie Faruq frames the raise around three initiatives: 'encoded standards' (automating a company's own contract positions across agreements), 'review by exception' (only non-standard terms escalate to human reviewers), and an 'organizational brain' knowledge graph of negotiation precedent. As of this writing the raise had not yet been picked up by general/VC trade press indexed in search (TechCrunch, Sifted, standard funding trackers) — Genie AI's own blog post is the only source found, independently confirmed live and dated.",
+      "Genie AI's own site lists in its 'moments that moved the world forward' timeline: 'Sep 2026 — Genie announces £70m Series B round. From Google Ventures and Khosla Ventures, taking total funding to £83m' — the same two investors as its Series A. No valuation was disclosed and no dedicated press release/blog post for the round could be found (a previously-recorded blog-post URL for it was confirmed dead on 2026-09-09 and has been corrected to the homepage). As of this writing the raise had not yet been picked up by general/VC trade press indexed in search (TechCrunch, Sifted, standard funding trackers) — Genie AI's own site is the only source found.",
     whyItMatters:
       "This more than quadruples Genie AI's known capital base and had gone unnoticed in prior daily sweeps. A well-funded, GV/Khosla-backed legal-AI contract-drafting player scaling up 'encoded standards' and knowledge-graph precedent capabilities is directly adjacent to Patlytics' own AI-drafting and knowledge-reuse positioning, and the fresh capital likely funds further product build-out and go-to-market expansion.",
     companies: ["Genie AI"],
-    source: "GenieAI (company blog)",
+    source: "GenieAI (company site)",
     sourceType: "funding",
-    url: "https://www.genieai.co/blog/genie-ai-raises-70-million-series-b",
+    url: "https://www.genieai.co/",
+  },
+  {
+    id: "hl-44",
+    date: "2026-09-09",
+    priority: "critical",
+    category: "Funding",
+    title: "Harvey raises $550M at a $15.5-15.6B valuation, explicitly to reduce reliance on third-party model providers",
+    summary:
+      "Bloomberg reported Harvey closed a $550M round co-led by Lightspeed Venture Partners and Diffusion (a new fund co-founded by longtime Harvey backer Kris Fredrickson), with Sapphire Ventures and Whale Rock Capital Management also participating — up from an $11B valuation on a $200M round closed in March 2026. Harvey's annualized revenue reportedly crossed $350M, up from ~$190M at the start of the year. Harvey's own homepage banners the raise, linking directly to the Bloomberg article as its source. The round is explicitly earmarked to fund building Harvey's own AI models rather than remaining solely reliant on third-party providers like OpenAI/Anthropic.",
+    whyItMatters:
+      "The single best-funded generalist legal-AI comparison point Patlytics competes against in sales conversations just roughly tripled its valuation off a March 2026 raise and nearly doubled revenue YoY — and is now moving to reduce foundation-model dependency, directly relevant to how Patlytics thinks about its own model strategy and to how 'Harvey-level' capital advantages get discussed by prospects.",
+    companies: ["Harvey"],
+    source: "Bloomberg / Techmeme",
+    sourceType: "funding",
+    url: "https://www.bloomberg.com/news/articles/2026-09-09/legal-ai-startup-harvey-hits-15-6-billion-value-with-550-million-round",
+  },
+  {
+    id: "hl-45",
+    date: "2026-09-08",
+    priority: "low",
+    category: "Product",
+    title: "Chamelio launches 'Always On' AI Agent Hub for in-house legal teams",
+    summary:
+      "Chamelio, a New York-based in-house legal intelligence platform, launched Agent Hub, letting in-house counsel run a suite of always-on AI agents that monitor business activity and act without being manually invoked per task. CEO Alex Zilberman said the goal is to let teams 'delegate a responsibility and expect the system to keep it moving.'",
+    whyItMatters:
+      "Another data point in the broader 'agentic, always-on' pattern spreading through legal AI (echoing Harvey's Horizon Scanning and LexisNexis's Legal Intelligence Engine, both already tracked) — not patent-specific, but it raises the baseline bar for what 'AI monitoring/automation' is expected to look like across legal-adjacent tooling.",
+    companies: ["Chamelio"],
+    source: "Artificial Lawyer",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/09/08/chamelio-launches-always-on-ai-agent-hub/",
   },
 ];
 
@@ -577,6 +577,13 @@ const COMPETITORS = [
         title: "Opened a Legal Counsel role (New York)",
         body: "New York-based, on-site Legal Counsel opening newly surfaced vs. the prior careers-snapshot baseline (publishedAt 2026-09-07T18:03:31Z) — Solve Intelligence's first tracked in-house legal hire, a notable senior/strategic signal alongside its continued GTM and engineering hiring. Board now shows 16 live postings, up from 15. The previously-tracked \"Legal and Product Engineer\" title now appears as \"Legal and Product Engineer (Patent Prosecution)\" with the same original publish timestamp (2026-01-05) — a title clarification on an existing posting, not a new opening.",
         url: "https://jobs.ashbyhq.com/solveintelligence/07c9b5d3-5bd1-4f75-8741-04b076c32dd9",
+      },
+      {
+        date: "2026-09-08",
+        tag: "Content",
+        title: "Published \"Dental Monitoring Requires Written Description Support for Provisional Prior Art Dates\"",
+        body: "New blog post analyzing the Federal Circuit's Dental Monitoring SAS v. Align Technology ruling, holding a provisional filing date only counts as prior art if the provisional provides written-description support for at least one of the reference's published claims.",
+        url: "https://www.solveintelligence.com/blog/post/dental-monitoring-align-provisional-prior-art-date",
       },
     ],
     hiring: {
@@ -1407,10 +1414,19 @@ COMPETITORS.push(
         body: "The same 3 titles (Finance Partner, Product Engineer, Product Marketing Manager) have now toggled live/closed on 3 consecutive checks (11 on 09-01/09-03/09-05, 8 on 09-02/09-04) — this pattern looks like a caching/CDN artifact on Ankar's Ashby board rather than genuine daily opens/closes. Not treating either state as a confirmed new opening or closing; recording today's live count (11) as the current baseline.",
         url: "https://jobs.ashbyhq.com/ankar",
       },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Opened a Field Marketing Manager role (London)",
+        body: "New Sales & Business Development opening confirmed via the Ashby posting API's own publish timestamp (2026-09-09) — board grows to 12 live postings, up from 11.",
+        url: "https://jobs.ashbyhq.com/ankar/5cb73ad0-e12e-4406-90d0-382e308216db",
+      },
     ],
     hiring: {
-      openRoles: 11,
-      newRolesToday: [],
+      openRoles: 12,
+      newRolesToday: [
+        { title: "Field Marketing Manager", dept: "Sales & Business Development", location: "London", url: "https://jobs.ashbyhq.com/ankar/5cb73ad0-e12e-4406-90d0-382e308216db" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Senior Product Engineer", count: 1, url: "https://jobs.ashbyhq.com/ankar/9bccbebb-3a1a-480a-a71a-03d08d0c714d" },
@@ -1861,6 +1877,13 @@ COMPETITORS.push(
         body: "Regular weekly trademark-industry newsletter covering third-party trademark case news; routine recurring content rather than an Alt Legal product/business announcement.",
         url: "https://www.altlegal.com/blog/i-%E2%99%A1-trademarks-newsletter-issue-494/",
       },
+      {
+        date: "2026-09-08",
+        tag: "Content",
+        title: "Published \"I ♥ Trademarks\" newsletter, Issue #495",
+        body: "Regular weekly trademark-industry newsletter covering third-party trademark case news; routine recurring content rather than an Alt Legal product/business announcement.",
+        url: "https://www.altlegal.com/blog/i-%E2%99%A1-trademarks-newsletter-issue-495/",
+      },
     ],
     hiring: {
       openRoles: 4,
@@ -2005,13 +2028,6 @@ COMPETITORS.push(
         url: "https://www.harvey.ai/en-US/blog/harvey-partners-with-pacerpro-to-bring-real-time-docket-intelligence-to-litigators",
       },
       {
-        date: "2026-08-18",
-        tag: "Partnership",
-        title: "Davis Wright Tremaine expands firmwide AI with Harvey + Microsoft AI Frontier Suite",
-        body: "DWT announced an expansion of its firmwide AI capabilities combining Harvey with Microsoft's AI Frontier Suite — announced the same day as the \"Harvey II\"/Memory launch.",
-        url: "https://www.dwt.com/about/news/2026/08/dwt-expands-firmwide-ai-capabilities-with-harvey",
-      },
-      {
         date: "2026-08-25",
         tag: "Partnership",
         title: "Named launch software-connector partner for Google Cloud's Gemini Enterprise for Legal",
@@ -2052,13 +2068,6 @@ COMPETITORS.push(
         title: "Opens Senior Privacy and AI Counsel and Business Development Lead, Cloud & AI roles",
         body: "New senior roles surfaced beyond the prior careers snapshot, alongside a Sr. AI Enablement Engineer opening — part of a large (~363 role) Ashby board.",
         url: "https://jobs.ashbyhq.com/harvey/42f38d0c-b931-4edb-b988-a6c6e89f7701",
-      },
-      {
-        date: "2026-08-18",
-        tag: "Product",
-        title: "Launched 'Harvey II' with persistent cross-app Memory",
-        body: "New platform centered on a Memory feature that learns individual lawyer/client preferences across Harvey, Word, Outlook, and its agents. See General Highlights.",
-        url: "https://www.artificiallawyer.com/2026/08/18/next-gen-harvey-ii-launches-with-memory-at-its-core/",
       },
       {
         date: "2026-08-29",
@@ -2109,10 +2118,28 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — 342 live postings (down from 344 on 09-07). No new Head of/VP/Director-level titles confirmed this pass; a few smaller titles present in the last full transcription no longer appear live, but exact closure dates aren't confirmed since the full title list isn't re-transcribed every pass given board size.",
         url: "https://jobs.ashbyhq.com/harvey",
       },
+      {
+        date: "2026-09-09",
+        tag: "Funding",
+        title: "Raises $550M at a $15.5-15.6B valuation to reduce reliance on third-party model providers",
+        body: "Bloomberg reported Harvey closed a $550M round co-led by Lightspeed Venture Partners and Diffusion (a new fund co-founded by longtime Harvey backer Kris Fredrickson), with Sapphire Ventures and Whale Rock Capital also participating — up from an $11B valuation on a $200M round in March 2026. Annualized revenue reportedly crossed $350M, up from ~$190M at the start of the year. The round is explicitly earmarked to help Harvey build its own AI models rather than remain solely reliant on third-party providers. See General Highlights.",
+        url: "https://www.bloomberg.com/news/articles/2026-09-09/legal-ai-startup-harvey-hits-15-6-billion-value-with-550-million-round",
+      },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Opens Privacy and AI Counsel, EMEA roles (London, Dublin) and an Onboarding Specialist, EMEA role",
+        body: "Three new EMEA postings confirmed via the Ashby posting API's own publishedAt field — two Privacy and AI Counsel, EMEA openings (London and Dublin) and an Onboarding Specialist, EMEA role (London), a notable counsel-level legal hiring signal alongside continued regional GTM build-out. Board now at 341 live postings, down 1 net from 342 after other closures.",
+        url: "https://jobs.ashbyhq.com/harvey/a204e458-463f-4399-8bf1-2f013590c116",
+      },
     ],
     hiring: {
-      openRoles: 342,
-      newRolesToday: [],
+      openRoles: 341,
+      newRolesToday: [
+        { title: "Privacy and AI Counsel, EMEA", dept: "Legal", location: "London", url: "https://jobs.ashbyhq.com/harvey/a204e458-463f-4399-8bf1-2f013590c116" },
+        { title: "Privacy and AI Counsel, EMEA", dept: "Legal", location: "Dublin", url: "https://jobs.ashbyhq.com/harvey/7ef2c12e-dd17-4d8c-a445-bd4ebf559484" },
+        { title: "Onboarding Specialist, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/harvey/f6489daf-695f-4f3e-9e22-a0e8798afb55" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Legal Engineer (various specialties)", count: 12 },
@@ -2212,13 +2239,6 @@ COMPETITORS.push(
         url: "https://legora.com/newsroom/legora-and-avvoka-integrate-to-deliver-every-first-draft-inside-the-agentic-operating-system-for-legal-work",
       },
       {
-        date: "2026-08-18",
-        tag: "Partnership",
-        title: "Forms bidirectional integration partnership with DeepJudge",
-        body: "New two-way integration brings DeepJudge's institutional-knowledge search into Legora's collaborative legal-work platform.",
-        url: "https://legora.com/newsroom/deepjudge-and-legora-partner-on-a-bidirectional-integration-to-bring-institutional-intelligence-to-collaborative-legal-work",
-      },
-      {
         date: "2026-08-28",
         tag: "Hiring",
         title: "Ashby board adds four new postings, including a People Tech Manager role",
@@ -2288,11 +2308,26 @@ COMPETITORS.push(
         body: "New posting confirmed via the Ashby posting API's publishedAt field (2026-09-07T23:05 UTC). Legora already has an Engagement Manager - Japan and a Senior Legal Engineer - Japan on its board, but this is the first dedicated Enterprise AE seat spotted for the Japan market — continuing Legora's APAC GTM build-out alongside its existing Korea and Singapore postings. Board now at 281 live postings (down from 282).",
         url: "https://jobs.ashbyhq.com/legora/42f62bc1-edef-4406-ab82-2dc8a09de327",
       },
+      {
+        date: "2026-09-09",
+        tag: "Partnership",
+        title: "Singapore Management University joins Legora's Legal AI Scholars Program",
+        body: "SMU's Yong Pung How School of Law is the first Asian institution to join the program (alongside Northwestern, University of Chicago, Cornell, UT Austin, Boston University, and University of San Francisco) — faculty get platform licenses/training, with student/course access expanding over time. Continues Legora's aggressive push into new academic/geographic markets beyond its core law-firm GTM.",
+        url: "https://legora.com/newsroom/singapore-management-university-partners-with-legora-to-bring-agentic-ai-to-its-law-school",
+      },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Opens first dedicated Detection & Response Engineer and an SMB Team Lead EMEA role",
+        body: "New postings confirmed via the Ashby posting API's publishedAt field: a (Senior/Staff) Detection & Response Engineer seat in New York City — Legora's first dedicated security detection/response engineering role spotted — and an SMB Team Lead EMEA role in Stockholm. Board now at 279 live postings, down 2 net from 281.",
+        url: "https://jobs.ashbyhq.com/legora/e30a83fd-f911-4564-bbfa-68c98c68d08f",
+      },
     ],
     hiring: {
-      openRoles: 281,
+      openRoles: 279,
       newRolesToday: [
-        { title: "Enterprise Account Executive - Japan", count: 1, url: "https://jobs.ashbyhq.com/legora/42f62bc1-edef-4406-ab82-2dc8a09de327" },
+        { title: "Detection & Response Engineer", dept: "Security", location: "New York City", url: "https://jobs.ashbyhq.com/legora/e30a83fd-f911-4564-bbfa-68c98c68d08f" },
+        { title: "SMB Team Lead EMEA", dept: "GTM", location: "Stockholm", url: "https://jobs.ashbyhq.com/legora/b2ab9e82-a008-4f9e-a4fe-05b3e4e83cd3" },
       ],
       recentHires: [],
       topRoles: [
@@ -2719,8 +2754,8 @@ COMPETITORS.push(
         date: "2026-09-01",
         tag: "Funding",
         title: "Raises £70M Series B from Google Ventures and Khosla Ventures",
-        body: "Genie AI's own company blog announced a £70M Series B led by the same two investors as its Series A — Google Ventures (GV) and Khosla Ventures — bringing total funding to £83M (up from ~£15M/$20M). No valuation disclosed. As of this writing the raise had not yet been picked up by general/VC trade press indexed in search (TechCrunch, Sifted, standard funding trackers) — Genie AI's own blog post is the source, independently confirmed live. See General Highlights.",
-        url: "https://www.genieai.co/blog/genie-ai-raises-70-million-series-b",
+        body: "Genie AI's own site timeline lists a £70M Series B led by the same two investors as its Series A — Google Ventures (GV) and Khosla Ventures — bringing total funding to £83M (up from ~£15M/$20M). No valuation disclosed, and no dedicated press release/blog post found (a previously-recorded blog URL for it was confirmed dead 2026-09-09; corrected to the homepage). See General Highlights.",
+        url: "https://www.genieai.co/",
       },
       {
         date: "2026-09-08",
@@ -2789,14 +2824,21 @@ COMPETITORS.push(
         body: "Newly-posted title (San Mateo, CA, hybrid) beyond the existing Staff Designer posting — board now at 36 live postings, up from 35.",
         url: "https://job-boards.greenhouse.io/eve/jobs/4374633009",
       },
+      {
+        date: "2026-09-08",
+        tag: "Hiring",
+        title: "Opens Director of Video Storytelling role",
+        body: "New Marketing posting (San Francisco/San Mateo, hybrid) confirmed via the Greenhouse API. Board now at 33 live postings, down net from 36 after 3 closures (Enterprise Account Executive, Strategic Sales Development Rep, VP of Sales Large Accounts) offset by this one opening.",
+        url: "https://job-boards.greenhouse.io/eve/jobs/4397782009",
+      },
     ],
     hiring: {
-      openRoles: 35,
+      openRoles: 33,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "Sales (Account Executive / SDR / leadership mix)", count: 11 },
-        { title: "Marketing", count: 5 },
+        { title: "Sales (Account Executive / SDR / leadership mix)", count: 8 },
+        { title: "Marketing", count: 6 },
         { title: "Engineering", count: 6 },
       ],
     },
@@ -2841,13 +2883,21 @@ COMPETITORS.push(
         body: "Re-confirmed via the Lever board: the previously-tracked Early Careers Business Development Specialist posting no longer resolves (HTTP 404). Only the Brazilian Portuguese Patent Language Lead role remains live — open roles drop from 2 to 1.",
         url: "https://jobs.lever.co/weloglobal?department=Park%20IP",
       },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Baseline correction: a 2nd long-standing open role found (Business Development Director - Legal)",
+        body: "A department-filtered Lever API query (prior sweeps used an unfiltered query that appears to have been truncated before reaching Park IP's postings deep in Welo Global's combined list) surfaced a second live posting, Business Development Director - Legal (UK), live since 2022 per its Lever timestamp — a long-standing posting missed by prior sweeps, not a new opening. Open-role count corrected from 1 to 2.",
+        url: "https://jobs.lever.co/weloglobal/6cfc80ba-e367-472a-a6f3-1a966caa9411",
+      },
     ],
     hiring: {
-      openRoles: 1,
+      openRoles: 2,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Brazilian Portuguese Patent Language Lead", count: 1, url: "https://jobs.lever.co/weloglobal/41e24db7-d93a-4b83-b551-9daa47c75155" },
+        { title: "Business Development Director - Legal", count: 1, url: "https://jobs.lever.co/weloglobal/6cfc80ba-e367-472a-a6f3-1a966caa9411" },
       ],
     },
   }),
@@ -4642,6 +4692,61 @@ const BLOGS = [
     relevance: "low",
     tags: ["Sales", "LatAm"],
     url: "https://www.harvey.ai/en-US/blog/grupo-financiero-inbursa-deploys-harvey",
+  },
+  {
+    id: "blog-96",
+    headline: "Dental Monitoring Requires Written Description Support for Provisional Prior Art Dates",
+    description: "Solve Intelligence analyzes the Federal Circuit's Dental Monitoring SAS v. Align Technology ruling, which held that a provisional filing date only counts as prior art if the provisional provides written-description support for at least one of the reference's published claims.",
+    companyId: "solve-intelligence",
+    source: "Solve Intelligence (company blog)",
+    date: "2026-09-08",
+    relevance: "high",
+    tags: ["Thought Leadership", "Case Law"],
+    url: "https://www.solveintelligence.com/blog/post/dental-monitoring-align-provisional-prior-art-date",
+  },
+  {
+    id: "blog-97",
+    headline: "Singapore Management University Partners with Legora to Bring Agentic AI to Its Law School",
+    description: "SMU's Yong Pung How School of Law becomes the first Asian institution to join Legora's Legal AI Scholars Program, giving faculty platform licenses and training with student/course access expanding over time.",
+    companyId: "legora",
+    source: "Legora (newsroom)",
+    date: "2026-09-09",
+    relevance: "medium",
+    tags: ["Partnership", "Industry Trend"],
+    url: "https://legora.com/newsroom/singapore-management-university-partners-with-legora-to-bring-agentic-ai-to-its-law-school",
+  },
+  {
+    id: "blog-98",
+    headline: "Correcting the Uncorrectable: AI-Assisted Inventorship and Section 256",
+    description: "Paul Atamewan argues that AI-assisted invention is producing development records with plenty of human activity but no clear trail of who actually conceived the claimed invention, making Section 256 inventorship-correction unusable in a growing category of cases, tying the argument to the Federal Circuit's April 2026 Fortress Iron, LP v. Digger Specialties ruling.",
+    companyId: "industry",
+    source: "IPWatchdog",
+    date: "2026-09-08",
+    relevance: "high",
+    tags: ["AI Inventorship", "Patent Validity", "Policy"],
+    url: "https://ipwatchdog.com/2026/09/08/correcting-uncorrectable-ai-assisted-inventorship-section-256/",
+  },
+  {
+    id: "blog-99",
+    headline: "OpenAI Sued Over AI Patents Covering Retrieval, Personalization and Content Generation",
+    description: "Many Worlds 2T Innovations LLC sued OpenAI OpCo, LLC in the Eastern District of Texas (filed Aug 31, 2026), alleging ChatGPT's vector-store/retrieval features infringe five patents on personalized search, vector-based retrieval, recommendation systems, and probabilistic content generation.",
+    companyId: "industry",
+    source: "IPWatchdog",
+    date: "2026-09-02",
+    relevance: "medium",
+    tags: ["Patent Litigation", "AI", "NPE"],
+    url: "https://ipwatchdog.com/2026/09/02/openai-sued-over-ai-patents-covering-retrieval-personalization-content-generation/",
+  },
+  {
+    id: "blog-100",
+    headline: "Lawyer Preference for AI Grounded in Legal Sources Rises to 81%",
+    description: "LexisNexis's 2026 survey of 543 legal professionals finds 81% feel more comfortable with AI grounded in verifiable legal sources (up from 70% a year earlier), even as 94% now use AI for legal work and 83% worry about inaccurate or fabricated output.",
+    companyId: "industry",
+    source: "GlobeNewswire (LexisNexis)",
+    date: "2026-09-01",
+    relevance: "high",
+    tags: ["Trust", "AI Adoption", "Survey"],
+    url: "https://www.globenewswire.com/news-release/2026/09/02/3354769/0/en/lawyer-preference-for-ai-grounded-in-legal-sources-rises-to-81.html",
   },
 ];
 
