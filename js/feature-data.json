@@ -1335,6 +1335,13 @@
           "text": "With improvements in AI technology and other analytics platforms like LexisNexis Cipher, today we are able to understand the numbers of patents that are relevant to certain technology areas at a push of a button.",
           "sourceUrl": "https://www.lexisnexisip.com/solutions/ip-analytics-and-intelligence/cipher-classification/cipher-platform/",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jared Engstrom, Head of Patent Development, Red Hat",
+          "text": "LexisNexis Classification's way of approaching classification is particularly useful because it's customized to the way Red Hat views the world in terms of technological taxonomy.",
+          "sourceUrl": "https://www.lexisnexisip.com/solutions/ip-analytics-and-intelligence/cipher-classification/why-cipher/",
+          "sentiment": "positive"
         }
       ]
     },
@@ -1361,6 +1368,15 @@
           "author": "Joe Kucera, Director of IP Strategy, Pure Storage",
           "text": "Derwent Patent Analytics and IPfolio allow us to take business insights and competitive intelligence, feed that into our IP management tool, and allow us to make very strategic decisions on how we manage our patent portfolio.",
           "sourceUrl": "https://clarivate.com/intellectual-property/derwent/patent-analytics/",
+          "sentiment": "positive"
+        }
+      ],
+      "fto-analysis": [
+        {
+          "platform": "Software Finder",
+          "author": "Sahil G., Patent Analyst, 500+ employees",
+          "text": "My main use for Derwent Innovation is hunting down patent records for different needs, like checking patentability or freedom to operate. Overall its smart search is the standout feature as it automatically pulls up the most relevant patents just from the keywords I type in.",
+          "sourceUrl": "https://softwarefinder.com/legal/derwent-innovation/reviews",
           "sentiment": "positive"
         }
       ]
@@ -1573,6 +1589,22 @@
           "text": "I have a good experience. The database is complete, data is quickly found. The different charts and visualization options are really a plus. The accuracy of the information (statuses, families) and ease of data access stand out.",
           "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "S\u00e9bastien R., R&D Director, Packaging and Containers",
+          "date": "2021-06-11",
+          "text": "very useful for competitors patent monitoring and detect how active is the competition",
+          "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Capterra",
+          "author": "Juan Jesus G., Manager, Management Consulting",
+          "date": "2022-10-09",
+          "text": "Satisfecho por la inversi\u00f3n, como herramienta de inteligencia de propiedad intelectual de las mejores que he usado. De las bases de patentes m\u00e1s completas, tiene muy buenas herramientas de visualizaci\u00f3n y opciones de an\u00e1lisis por asociaci\u00f3n que no se ven en otras herramientas. Ahorra mucho tiempo de trabajo de escritorio",
+          "sourceUrl": "https://www.capterra.com/p/188422/Orbit-Intelligence/reviews/",
+          "sentiment": "positive"
         }
       ],
       "fto-analysis": [
@@ -1595,6 +1627,20 @@
           "text": "User-friendly platform providing invaluable information for firm marketing efforts. The ability to filter results in several areas, including filing and disposition date as well as art unit, is really helpful in evaluating performance metrics. Quick and accurate compilation and display of prosecution results.",
           "sourceUrl": "https://www.g2.com/products/juristat/reviews",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "David Simon, Former Senior Vice President, Intellectual Property, Salesforce",
+          "text": "We can look at our portfolio across a wide variety of metrics and Juristat helps guide us to make decisions.",
+          "sourceUrl": "https://juristat.com/pricing",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Gavin J. O'Keefe, Partner, McDonnell Boehnen Hulbert & Berghoff LLP",
+          "text": "Using Juristat Analytics in our decision-making process helps us obtain the most valuable claim scope for our clients in the most efficient way.",
+          "sourceUrl": "https://juristat.com/pricing",
+          "sentiment": "positive"
         }
       ],
       "office-action-response": [
@@ -1603,6 +1649,27 @@
           "author": "Ray Millien, CEO, Harness IP",
           "text": "It's definitely saved from 30 to 60 minutes on average, per case. That time savings definitely is easily quantifiable and evident from the beginning.",
           "sourceUrl": "https://juristat.com/products/office-action-response",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jack Cook, Partner, Quarles",
+          "text": "I would definitely recommend it to other firms. For firms like ours, Juristat OAR works well.",
+          "sourceUrl": "https://juristat.com/pricing",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Jeffrey Schox, Partner, Schox PLC",
+          "text": "[It] allows us to be prepared to effectively plan an office action response. We would definitely recommend Juristat for any patent practitioners.",
+          "sourceUrl": "https://juristat.com/pricing",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Katrina Braden Wilkins, Director of Prosecution Support Services, Sterne Kessler",
+          "text": "Juristat OAR has proved incredibly effective in streamlining the processing of a large volume of office actions.",
+          "sourceUrl": "https://juristat.com/pricing",
           "sentiment": "positive"
         }
       ]
@@ -1766,6 +1833,13 @@
           "text": "Our firm has seen a 40% reduction in time spent on Office Action responses. The collaboration features make it easy for partners to review associate work, and clients love the faster turnaround times.",
           "sourceUrl": "https://powerpatent.com/office-action",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Sarah Johnson, Patent Agent, Johnson IP Services",
+          "text": "As a solo practitioner, OfficeAction AI has been a game-changer. I can handle more cases without sacrificing quality, and the deadline management features ensure I never miss a filing date.",
+          "sourceUrl": "https://powerpatent.com/office-action",
+          "sentiment": "positive"
         }
       ]
     },
@@ -1785,6 +1859,27 @@
           "date": "2021-11",
           "text": "It offers a lot of customizability for creating reports and the layout is really good, it helps me review large portfolios quickly.",
           "sourceUrl": "https://softwarefinder.com/legal/anaqua/reviews",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Stephen Reid, Senior IP Counsel, Imperial Brands",
+          "text": "We needed a system that would allow us to access and analyze our portfolio more easily and at the same time support close collaboration with our law firms.",
+          "sourceUrl": "https://www.anaqua.com/client-reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Bernie Graves, Chief Patent Counsel, Eastman Chemical Company",
+          "text": "By integrating patent and portfolio management data in ANAQUA, the businesses are much better served with increased visibility of real-time portfolio information, efficiencies in portfolio reviews, and more accurate forecasting capability.",
+          "sourceUrl": "https://www.anaqua.com/client-reviews/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Geo Vernon, IP Docketing Specialist, Techtronic Industries North America, Inc.",
+          "text": "AQX is a user-friendly IP Management Software that has helped Techtronic Industries obtain a high-level overview into their patent portfolio.",
+          "sourceUrl": "https://www.anaqua.com/client-reviews/",
           "sentiment": "positive"
         }
       ]
@@ -1814,6 +1909,13 @@
           "author": "Fumihiko Matsumoto, Patent Attorney, Matsumoto Patent Office",
           "text": "Amplified is easy to use for attorneys and engineers. In under an hour we can find prior art.",
           "sourceUrl": "https://www.amplified.ai/how-it-works/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "LinkedIn",
+          "author": "Jeff Lindsay, Patent Agent, Planet Lindsay LLC",
+          "text": "When I enter a summary of an invention, it seems to grasp the concepts and the elements of the invention, not just the words i choose, and then shows me documents from around the world that discuss those concepts. ... Best patent searching tool I've used, I would say. Really a delight that really fits my needs.",
+          "sourceUrl": "https://www.linkedin.com/posts/jefflindsay_ai-patents-activity-7050525820854956032-op-V",
           "sentiment": "positive"
         }
       ]
@@ -2026,6 +2128,13 @@
           "text": "Response times are really good, and the API has a nice developer experience.",
           "sourceUrl": "https://projectpq.ai/",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Akshay Harlalka, AI Fellow at R42 Group",
+          "text": "As an AI Fellow at R42 Group, I spearheaded the development of a cutting-edge patent search tool tailored for the life sciences industry. Leveraging PQAI's robust API as the backend system, I was able to create an innovative solution that significantly enhances patent search capabilities. The swift and expert support from the PQAI team played a crucial role in the success of this project, enabling seamless integration and rapid development.",
+          "sourceUrl": "https://projectpq.ai/",
+          "sentiment": "positive"
         }
       ]
     },
@@ -2037,6 +2146,27 @@
           "text": "Your system found competitors I wasn't aware of. If something is out there, it will find it.",
           "sourceUrl": "https://www.pioneerip.com/news/claim-charts-keep-getting-better",
           "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Steven Colby, Partner at Rimon Law",
+          "text": "Thanks to PioneerIP I have a very, very happy client. My client was considering not paying a maintenance fee for a US patent in a relatively obscure technology area. We gave PioneerIP a try, and they found several potential licensees. Needless to say, my client now thinks I'm (even more) wonderful.",
+          "sourceUrl": "https://www.pioneerip.com/solutions/validity-search",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Eric Morehouse, Founder at AiPi",
+          "text": "PioneerIP gives us a completely new way to approach patent enforcement. Instead of sifting through endless data, we get a prioritized list of potential infringers in minutes. It's not just about speed - it's about confidence in knowing where to focus our efforts.",
+          "sourceUrl": "https://www.pioneerip.com/solutions/validity-search",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Taylor G, IP Counsel",
+          "text": "The Similarity Analysis provided me with the much-needed decision-making tool for fast reviews of Infringement Search results.",
+          "sourceUrl": "https://www.pioneerip.com/solutions/patent-infringement-search",
+          "sentiment": "positive"
         }
       ],
       "portfolio-analytics": [
@@ -2045,6 +2175,29 @@
           "author": "Guy Levi, Founder, The IP Law Office of Guy Levi LLC",
           "text": "At last, a market evidence based tool to make decisions on IP portfolio management.",
           "sourceUrl": "https://www.pioneerip.com/",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Mulham Jabaly, CFO at Alpha Omega",
+          "text": "PioneerIP, provides us with a practical way to monitor our portfolio for potential infringement. It offered helpful insights for decision making around patent maintenance and CON filings.",
+          "sourceUrl": "https://www.pioneerip.com/solutions/validity-search",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Dr. B. Yankovskiy, Ph.D., Former Staff Engineer, Fortune 500 Company",
+          "text": "Having worked inside a global tech company, I've seen how hard it is to monitor a large patent portfolio effectively. PioneerIP solves that pain. It spots red flags early and gives you a clear path to act - without spending months and a fortune on manual reviews.",
+          "sourceUrl": "https://www.pioneerip.com/solutions/validity-search",
+          "sentiment": "positive"
+        }
+      ],
+      "claim-charting": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Robert Plotkin, Patent Attorney & Co-Founder, Blueshift IP",
+          "text": "PioneerIP's AI-powered platform has dramatically reduced this bottleneck, turning what used to be weeks of uncertain manual analysis into data-driven intelligence delivered in minutes. The automated claim charts and evidence collection have accelerated my licensing negotiations and enforcement decisions, directly impacting my clients' ability to monetize their IP portfolios.",
+          "sourceUrl": "https://www.pioneerip.com/solutions/validity-search",
           "sentiment": "positive"
         }
       ]
@@ -2141,6 +2294,41 @@
           "author": "Dr. Matt Barton, Partner, Forresters IP LLP",
           "text": "Since using Clerq, we regularly find new and highly relevant prior art that proves to be very useful in attacking patents in oppositions, without having to do external searching.",
           "sourceUrl": "https://clerq-ip.com/case-studies/forresters-ip",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Shahram Pourazadi, Intellectual Property and Technology Manager, Twelvivo",
+          "text": "Clerq allows us to effortlessly conduct patentability searches and further consult our early-stage clients on their IP strategy, sometimes resulting in recommendations for further analysis, such as FTO. Clerq is quick and affordable, allowing us to service clients in a cost effective manner, which is essential for companies at this stage of their business.",
+          "sourceUrl": "https://www.clerq-ip.com/case-studies/twelvivo",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Peter Finnie, Partner, Potter Clarkson",
+          "text": "With Clerq, there's no delay. I can start looking at the results immediately, with more detail and precision.",
+          "sourceUrl": "https://www.clerq-ip.com/case-studies/potter-clarkson",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Kevin Rieffel, Counsel, Haley Guiliano LLP",
+          "text": "Using Clerq allows transactional attorneys to have full command over the timing and quality of a patent search, in order to keep IP due diligence swiftly moving in the right direction.",
+          "sourceUrl": "https://www.clerq-ip.com/case-studies/haley-guiliano",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "John Holley, Partner, Boies Schiller Flexner",
+          "text": "Search firms usually identify relevant references that teach most of the elements in the patent in question, but there's often one key feature missing from their results list that can end up turning a case.",
+          "sourceUrl": "https://www.clerq-ip.com/case-studies/boies-schiller-flexner",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Christopher Palermo, Partner, Baker Botts",
+          "text": "In the intricate landscape of software patents, Clerq's grasp of nuanced terminologies has proven indispensable in our decision-making process.",
+          "sourceUrl": "https://www.clerq-ip.com/case-studies/baker-botts",
           "sentiment": "positive"
         }
       ]
