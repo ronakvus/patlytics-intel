@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-09";
-const EARLIEST_DATE = "2026-08-19"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-10";
+const EARLIEST_DATE = "2026-08-20"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -58,21 +58,6 @@ const HIGHLIGHTS = [
     source: "USPTO.gov",
     sourceType: "regulatory",
     url: "https://www.uspto.gov/about-us/news-updates",
-  },
-  {
-    id: "hl-9",
-    date: "2026-08-19",
-    priority: "high",
-    category: "Funding",
-    title: "Fearn raises $5.5M seed led by Kindred Ventures for AI-native patent drafting",
-    summary:
-      "San Francisco-based Fearn, founded by Han Kim (ex-Morrison Foerster, Caltech) and Angela Gao (Caltech PhD, ex-Google Research), raised a $5.5M seed round with participation from a16z speedrun to build a purpose-built patent drafting model targeting a ~20 minute first-draft turnaround.",
-    whyItMatters:
-      "Direct overlap with Patlytics' and Solve Intelligence's drafting use case, aimed initially at solo inventors and startups rather than enterprise IP departments — worth watching for upmarket movement.",
-    companies: ["Fearn"],
-    source: "PR Newswire",
-    sourceType: "funding",
-    url: "https://www.prnewswire.com/news-releases/fearn-raises-5-5-million-seed-to-end-the-two-tier-patent-system-302796012.html",
   },
   {
     id: "hl-13",
@@ -463,6 +448,21 @@ const HIGHLIGHTS = [
     source: "Artificial Lawyer",
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/09/08/chamelio-launches-always-on-ai-agent-hub/",
+  },
+  {
+    id: "hl-46",
+    date: "2026-09-09",
+    priority: "medium",
+    category: "Partnership",
+    title: "Harvey acquires Guardrails AI, its fourth acquisition of 2026",
+    summary:
+      "Announced the same day as its $550M raise, Harvey acquired San Francisco-based Guardrails AI, whose co-founders (Shreya Rajpal and Zayd Simjee) and team join Harvey's product/engineering org. Guardrails built early open-source tooling for specifying, simulating, and evaluating AI agent behavior and flagging where agents stray from intended limits. Terms undisclosed; Harvey's own blog post frames it as accelerating agent-reliability work across the platform.",
+    whyItMatters:
+      "A well-funded generalist competitor bolting on dedicated agent-safety/evaluation tooling (its fourth deal this year) is a data point on where 'trustworthy AI agent' investment is heading industry-wide — directly relevant to how Patlytics thinks about its own guardrails/evaluation story for AI-drafted patent work, not just a funding-size comparison.",
+    companies: ["Harvey"],
+    source: "Harvey (company blog), Artificial Lawyer, Unite.AI",
+    sourceType: "product",
+    url: "https://www.harvey.ai/blog/guardrails-ai-joins-harvey",
   },
 ];
 
@@ -2132,13 +2132,27 @@ COMPETITORS.push(
         body: "Three new EMEA postings confirmed via the Ashby posting API's own publishedAt field — two Privacy and AI Counsel, EMEA openings (London and Dublin) and an Onboarding Specialist, EMEA role (London), a notable counsel-level legal hiring signal alongside continued regional GTM build-out. Board now at 341 live postings, down 1 net from 342 after other closures.",
         url: "https://jobs.ashbyhq.com/harvey/a204e458-463f-4399-8bf1-2f013590c116",
       },
+      {
+        date: "2026-09-09",
+        tag: "Corporate",
+        title: "Acquires Guardrails AI, its fourth acquisition of 2026",
+        body: "Announced alongside the $550M raise: Harvey acquired San Francisco-based Guardrails AI (co-founders Shreya Rajpal and Zayd Simjee join Harvey's product/engineering org), whose open-source tooling helps teams specify, simulate, and evaluate AI agent behavior. Terms undisclosed. See General Highlights.",
+        url: "https://www.harvey.ai/blog/guardrails-ai-joins-harvey",
+      },
+      {
+        date: "2026-09-10",
+        tag: "Hiring",
+        title: "Opens Head of Global Recruiting Operations (SF + NY) and two engineering/product roles",
+        body: "Ashby posting-API publishedAt confirms a new Head of Global Recruiting Operations opening in both San Francisco and New York (published 2026-09-10), alongside a Staff/Sr. Staff Software Engineer, Product Engineering role (SF + NY) and a Senior/Staff Product Manager, Spaces role (SF), both published late 2026-09-09. Board now at 330 live postings across 206 unique titles (down from 341/209 — a number of older postings closed since the last capture alongside these new ones).",
+        url: "https://jobs.ashbyhq.com/harvey/c3709b39-8517-4301-be38-cca1105146e7",
+      },
     ],
     hiring: {
-      openRoles: 341,
+      openRoles: 330,
       newRolesToday: [
-        { title: "Privacy and AI Counsel, EMEA", dept: "Legal", location: "London", url: "https://jobs.ashbyhq.com/harvey/a204e458-463f-4399-8bf1-2f013590c116" },
-        { title: "Privacy and AI Counsel, EMEA", dept: "Legal", location: "Dublin", url: "https://jobs.ashbyhq.com/harvey/7ef2c12e-dd17-4d8c-a445-bd4ebf559484" },
-        { title: "Onboarding Specialist, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/harvey/f6489daf-695f-4f3e-9e22-a0e8798afb55" },
+        { title: "Head of Global Recruiting Operations", dept: "People", location: "New York", url: "https://jobs.ashbyhq.com/harvey/c3709b39-8517-4301-be38-cca1105146e7" },
+        { title: "Head of Global Recruiting Operations", dept: "People", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/e3d380e5-e376-44a2-93cd-e4f9983cd4d6" },
+        { title: "Senior/Staff Product Manager, Spaces", dept: "Product", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/4a7a598a-2dff-4c13-96e4-be39ec32bbd1" },
       ],
       recentHires: [],
       topRoles: [
@@ -2322,12 +2336,19 @@ COMPETITORS.push(
         body: "New postings confirmed via the Ashby posting API's publishedAt field: a (Senior/Staff) Detection & Response Engineer seat in New York City — Legora's first dedicated security detection/response engineering role spotted — and an SMB Team Lead EMEA role in Stockholm. Board now at 279 live postings, down 2 net from 281.",
         url: "https://jobs.ashbyhq.com/legora/e30a83fd-f911-4564-bbfa-68c98c68d08f",
       },
+      {
+        date: "2026-09-10",
+        tag: "Hiring",
+        title: "Opens Director of Partnerships APJ (Sydney), plus Executive Recruiter and Performance Marketing Manager in New York",
+        body: "Ashby posting-API publishedAt confirms a new Director of Partnerships APJ opening in Sydney (published 2026-09-10) — Legora's first dedicated APJ partnerships seat — alongside an Executive Recruiter and a Performance Marketing Manager, both New York City, published 2026-09-09. Board now at 281 live postings, up from 279.",
+        url: "https://jobs.ashbyhq.com/legora/ee5271ac-8205-4f44-983a-f8a4f2385d37",
+      },
     ],
     hiring: {
-      openRoles: 279,
+      openRoles: 281,
       newRolesToday: [
-        { title: "Detection & Response Engineer", dept: "Security", location: "New York City", url: "https://jobs.ashbyhq.com/legora/e30a83fd-f911-4564-bbfa-68c98c68d08f" },
-        { title: "SMB Team Lead EMEA", dept: "GTM", location: "Stockholm", url: "https://jobs.ashbyhq.com/legora/b2ab9e82-a008-4f9e-a4fe-05b3e4e83cd3" },
+        { title: "Director of Partnerships APJ", dept: "Partnerships", location: "Sydney", url: "https://jobs.ashbyhq.com/legora/ee5271ac-8205-4f44-983a-f8a4f2385d37" },
+        { title: "Executive Recruiter", dept: "People", location: "New York City", url: "https://jobs.ashbyhq.com/legora/0a423d64-0e10-4bc6-b873-a4bfdbe571c4" },
       ],
       recentHires: [],
       topRoles: [
@@ -2602,12 +2623,19 @@ COMPETITORS.push(
         body: "Two new postings confirmed via the Ashby posting API's publishedAt field; one previously-tracked role (Senior Adoption Strategist, EMEA (Engagement Manager)) has closed. Board now at 33 live postings, up from 32.",
         url: "https://jobs.ashbyhq.com/ironcladhq/f55e6b4f-6b18-44c4-b8e3-30814365c1c0",
       },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Opens Staff Product Manager, AI Data Experience and Technical Support Engineer, EMEA roles",
+        body: "Two new postings confirmed via the Ashby posting API's publishedAt field: Staff Product Manager, AI Data Experience (San Francisco) and Technical Support Engineer, EMEA (London). Board now at 34 live postings, up from 33. (Note: the prior title \"Enterprise Sales Leader\" now carries the same posting URL under the title \"AVP, Enterprise Sales Leader\" — a title edit on an existing posting, not a new opening.)",
+        url: "https://jobs.ashbyhq.com/ironcladhq/50b0adf4-9d9b-42f6-a62b-587eb20ced74",
+      },
     ],
     hiring: {
-      openRoles: 33,
+      openRoles: 34,
       newRolesToday: [
-        { title: "Staff IAM Engineer", dept: "Engineering", location: "San Francisco, CA", url: "https://jobs.ashbyhq.com/ironcladhq/f55e6b4f-6b18-44c4-b8e3-30814365c1c0" },
-        { title: "Enterprise Sales Leader", dept: "Sales", location: "San Francisco, CA", url: "https://jobs.ashbyhq.com/ironcladhq/0911a8d8-dc51-49e5-95e1-f01246a59370" },
+        { title: "Staff Product Manager, AI Data Experience", dept: "Product", location: "San Francisco, CA", url: "https://jobs.ashbyhq.com/ironcladhq/50b0adf4-9d9b-42f6-a62b-587eb20ced74" },
+        { title: "Technical Support Engineer, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/ironcladhq/16b8ba8a-3611-4ab0-afff-95a47b0945ff" },
       ],
       recentHires: [],
       topRoles: [
@@ -2831,14 +2859,23 @@ COMPETITORS.push(
         body: "New Marketing posting (San Francisco/San Mateo, hybrid) confirmed via the Greenhouse API. Board now at 33 live postings, down net from 36 after 3 closures (Enterprise Account Executive, Strategic Sales Development Rep, VP of Sales Large Accounts) offset by this one opening.",
         url: "https://job-boards.greenhouse.io/eve/jobs/4397782009",
       },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Opens Paid Media Strategist role; 3 marketing roles close",
+        body: "New remote-US Marketing posting confirmed via the Greenhouse API (updated 2026-09-09). Three previously-tracked postings (Growth & Monetization Analyst, Performance Marketing Manager, Senior Growth Product Manager) no longer appear live. Board now at 30 live postings, down from 33.",
+        url: "https://job-boards.greenhouse.io/eve/jobs/4341646009",
+      },
     ],
     hiring: {
-      openRoles: 33,
-      newRolesToday: [],
+      openRoles: 30,
+      newRolesToday: [
+        { title: "Paid Media Strategist", dept: "Marketing", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4341646009" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Sales (Account Executive / SDR / leadership mix)", count: 8 },
-        { title: "Marketing", count: 6 },
+        { title: "Marketing", count: 3 },
         { title: "Engineering", count: 6 },
       ],
     },
