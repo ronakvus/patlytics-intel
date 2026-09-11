@@ -739,16 +739,57 @@ const LINKEDIN_MAP = {"angus-parsonson": "https://www.linkedin.com/in/angus-pars
     been:1,being:1,it:1,he:1,she:1,they:1,we:1,you:1,who:1,which:1,what:1,how:1,why:1,all:1,any:1,many:1,
     few:1,little:1,much:1,own:1,same:1,other:1,another:1};
 
+  var COMPANY_HL_GENERIC_NOUNS = {University:1,College:1,School:1,Center:1,Institute:1,Office:1,Department:1,
+    Team:1,Foundation:1,Group:1,Board:1,Committee:1,Society:1,Organization:1,Agency:1,Bank:1,Company:1,Firm:1,
+    Corporation:1};
+  var COMPANY_HL_ROLE_WORDS = ["investor","litigator","representative","management","sales","observer","account",
+    "director","officer","counsel","engineer","designer","analyst","consultant","partner","associate","attorney",
+    "advisor","manager","lead","staff","board","chair","president","executive","specialist","coordinator",
+    "strategist","founder"];
+  var COMPANY_HL_TECH_SIGNAL = ["tooling","infrastructure","integration","stack","technologies","tools",
+    "framework","apis"," api ","systems","platform","software","languages","libraries"];
+  var COMPANY_HL_MONTHS = {jan:1,feb:1,mar:1,apr:1,may:1,jun:1,jul:1,aug:1,sep:1,oct:1,nov:1,dec:1};
+
   function highlightCompanies(text){
     if(!text) return text;
-    return text.replace(/\b(?:at|Joined|joined)\s+([^\s,;:()]+(?:\s+[A-Z0-9&][^\s,;:()]*)*)/g, function(match, phrase){
+    var out = text.replace(/\b(?:at|Joined|joined|[Ff]ounder of|[Cc]o-[Ff]ounder of|[Cc]ofounder of)\s+([^\s,;:()]+(?:\s+[A-Z0-9&][^\s,;:()]*)*)/g, function(match, phrase){
       var words = phrase.split(' ');
       var first = words[0];
-      if(COMPANY_HL_STOPWORDS[first.toLowerCase()]) return match;
-      if(words.length === 1 && /^[0-9]+$/.test(first)) return match;
+      var firstLower = first.toLowerCase();
+      if(firstLower === 'the'){
+        if(words.length < 2) return match;
+        if(words.length === 2 && COMPANY_HL_GENERIC_NOUNS[words[1]]) return match;
+      } else if(COMPANY_HL_STOPWORDS[firstLower]){
+        return match;
+      } else if(words.length === 1 && /^[0-9]+$/.test(first)){
+        return match;
+      }
       var trigger = match.slice(0, match.length - phrase.length);
       return trigger + '<b class="exp-co">' + phrase + '</b>';
     });
+
+    out = out.replace(/\(([^()]*)\)/g, function(full, inner, offset, wholeString){
+      var parts = inner.split(',').map(function(s){ return s.trim(); }).filter(Boolean);
+      if(parts.length < 2) return full;
+      for(var i=0;i<parts.length;i++){
+        var p = parts[i];
+        if(/\b\d{4}\b/.test(p)) return full;
+        var pFirst = p.split(' ')[0].toLowerCase().replace(/-$/,'');
+        if(COMPANY_HL_MONTHS[pFirst]) return full;
+        if(!/^[A-Z][^\s,()]*(?:\s+[A-Z0-9&][^\s,()]*)*$/.test(p)) return full;
+      }
+      var joinedLower = parts.join(' ').toLowerCase();
+      for(var j=0;j<COMPANY_HL_ROLE_WORDS.length;j++){
+        if(joinedLower.indexOf(COMPANY_HL_ROLE_WORDS[j]) !== -1) return full;
+      }
+      var preceding = wholeString.slice(Math.max(0, offset-50), offset).toLowerCase();
+      for(var k=0;k<COMPANY_HL_TECH_SIGNAL.length;k++){
+        if(preceding.indexOf(COMPANY_HL_TECH_SIGNAL[k]) !== -1) return full;
+      }
+      return '(' + parts.map(function(p){ return '<b class="exp-co">'+p+'</b>'; }).join(', ') + ')';
+    });
+
+    return out;
   }
 
   function splitList(text){
