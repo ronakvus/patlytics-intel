@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-10";
-const EARLIEST_DATE = "2026-08-20"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-11";
+const EARLIEST_DATE = "2026-08-21"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -58,21 +58,6 @@ const HIGHLIGHTS = [
     source: "USPTO.gov",
     sourceType: "regulatory",
     url: "https://www.uspto.gov/about-us/news-updates",
-  },
-  {
-    id: "hl-13",
-    date: "2026-08-20",
-    priority: "medium",
-    category: "Product",
-    title: "Thomson Reuters launches next-generation agentic CoCounsel Legal",
-    summary:
-      "Thomson Reuters shipped general availability of a 'next generation' agentic CoCounsel Legal (Westlaw Brief Builder, Workspaces, a Word-integrated Drafting Agent, Tabular Analysis), alongside its own proprietary LLM ('Thomson') and an expanded CoCounsel Legal MCP integration with Anthropic's Claude.",
-    whyItMatters:
-      "Directly relevant given Thomson Reuters' reported partnership push with Solve Intelligence (see above) — TR is visibly accelerating agentic AI investment across its legal/IP stack, reinforcing the distribution threat.",
-    companies: ["Casetext (CoCounsel)"],
-    source: "Thomson Reuters press release",
-    sourceType: "product",
-    url: "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-launches-next-generation-of-cocounsel-legal-the-ai-ecosystem-built-for-legal-professionals",
   },
   {
     id: "hl-17",
@@ -463,6 +448,36 @@ const HIGHLIGHTS = [
     source: "Harvey (company blog), Artificial Lawyer, Unite.AI",
     sourceType: "product",
     url: "https://www.harvey.ai/blog/guardrails-ai-joins-harvey",
+  },
+  {
+    id: "hl-47",
+    date: "2026-09-09",
+    priority: "high",
+    category: "Market",
+    title: "Patently-O: randomized trial finds AI patent drafting boosts quality, but junior attorneys don't retain the skill gains",
+    summary:
+      "Dennis Crouch's Patently-O reported on a randomized controlled trial giving 133 patent attorneys at eleven firms access to an AI drafting assistant (Google's internal 'InFlow' tool) for 90 days, with blinded outside-firm attorneys scoring the resulting applications on enforceability, technical accuracy, completeness, and clarity. Drafts improved with AI mostly by avoiding weak work rather than reaching top-tier quality, and junior attorneys gained more than senior ones during the trial — but after the tool was removed, junior attorneys showed no retained improvement in their own unassisted skill, while experienced attorneys retained gains on some tasks (like editing).",
+    whyItMatters:
+      "A rare controlled, cross-firm data point on what AI patent-drafting tools actually do to output quality and attorney skill development — directly on point for Patlytics' core value proposition, and a preview of the 'does AI atrophy junior associate skill' argument buyers and firm leadership will increasingly raise in sales conversations.",
+    companies: ["Industry-wide"],
+    source: "Patently-O",
+    sourceType: "news",
+    url: "https://patentlyo.com/patent/2026/09/who-keeps-the-skill-a-randomized-trial-of-ai-patent-drafting-at-eleven-firms.html",
+  },
+  {
+    id: "hl-48",
+    date: "2026-09-09",
+    priority: "medium",
+    category: "Market",
+    title: "IPWatchdog: AI data centers emerging as the next major patent litigation battleground",
+    summary:
+      "IPWatchdog Unleashed's Gene Quinn examines how AI data-center buildout — power/energy systems, cooling technology, and infrastructure equipment — is generating a new wave of patent disputes, noting at least four patent cases filed over the summer involving data-center power/energy technologies and consolidated litigation over cooling systems. The piece also flags live tension between Federal Circuit skepticism of AI-related patent eligibility under Section 101 and the USPTO's increasing allowance rates, plus Section 112 disclosure challenges for partially opaque AI systems.",
+    whyItMatters:
+      "A new, fast-growing category of AI-adjacent patent litigation (infrastructure/data-center IP) forming outside the software-patent-eligibility debate Patlytics customers usually focus on — useful context for prosecution and portfolio-strategy conversations with clients building or supplying AI infrastructure.",
+    companies: ["Industry-wide"],
+    source: "IPWatchdog",
+    sourceType: "news",
+    url: "https://ipwatchdog.com/2026/09/09/will-ai-data-centers-become-the-next-patent-battleground-ipwatchdog-unleashed/",
   },
 ];
 
@@ -2146,13 +2161,26 @@ COMPETITORS.push(
         body: "Ashby posting-API publishedAt confirms a new Head of Global Recruiting Operations opening in both San Francisco and New York (published 2026-09-10), alongside a Staff/Sr. Staff Software Engineer, Product Engineering role (SF + NY) and a Senior/Staff Product Manager, Spaces role (SF), both published late 2026-09-09. Board now at 330 live postings across 206 unique titles (down from 341/209 — a number of older postings closed since the last capture alongside these new ones).",
         url: "https://jobs.ashbyhq.com/harvey/c3709b39-8517-4301-be38-cca1105146e7",
       },
+      {
+        date: "2026-09-10",
+        tag: "Sales",
+        title: "ARNECKE SIBETH DABELSTEIN expands its AI strategy with Harvey",
+        body: "German commercial law firm ARNECKE SIBETH DABELSTEIN is integrating Harvey firm-wide with a gradual rollout across all practice groups, citing Harvey's long-term agentic-AI roadmap (not just current capability) as a key factor in its selection.",
+        url: "https://www.harvey.ai/en-US/blog/arnecke-sibeth-dabelstein-expands-ai-strategy-with-harvey",
+      },
+      {
+        date: "2026-09-10",
+        tag: "Hiring",
+        title: "Opens Head of AMER Legal Engineering (In-House) and Senior Marketing Counsel roles",
+        body: "Ashby posting-API publishedAt confirms two new titles, each posted across multiple cities. Board now at 331 live postings across 203 unique titles (down from 330/206) — 5 other titles closed since (CX Vendor Manager; Customer Success, Enterprise; Head of EA Operations; Law Schools Founding CSM; Senior Product Operations Manager, Evaluation).",
+        url: "https://jobs.ashbyhq.com/harvey/f7ec0066-2b12-491c-978f-e411a834e1fd",
+      },
     ],
     hiring: {
-      openRoles: 330,
+      openRoles: 331,
       newRolesToday: [
-        { title: "Head of Global Recruiting Operations", dept: "People", location: "New York", url: "https://jobs.ashbyhq.com/harvey/c3709b39-8517-4301-be38-cca1105146e7" },
-        { title: "Head of Global Recruiting Operations", dept: "People", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/e3d380e5-e376-44a2-93cd-e4f9983cd4d6" },
-        { title: "Senior/Staff Product Manager, Spaces", dept: "Product", location: "San Francisco", url: "https://jobs.ashbyhq.com/harvey/4a7a598a-2dff-4c13-96e4-be39ec32bbd1" },
+        { title: "Head of AMER Legal Engineering (In-House)", dept: "Legal Engineering", location: "Multiple US cities", url: "https://jobs.ashbyhq.com/harvey/f7ec0066-2b12-491c-978f-e411a834e1fd" },
+        { title: "Senior Marketing Counsel", dept: "Legal", location: "Multiple US cities", url: "https://jobs.ashbyhq.com/harvey/e45ecdab-c619-4918-acd9-5706734bd001" },
       ],
       recentHires: [],
       topRoles: [
@@ -2343,12 +2371,32 @@ COMPETITORS.push(
         body: "Ashby posting-API publishedAt confirms a new Director of Partnerships APJ opening in Sydney (published 2026-09-10) — Legora's first dedicated APJ partnerships seat — alongside an Executive Recruiter and a Performance Marketing Manager, both New York City, published 2026-09-09. Board now at 281 live postings, up from 279.",
         url: "https://jobs.ashbyhq.com/legora/ee5271ac-8205-4f44-983a-f8a4f2385d37",
       },
+      {
+        date: "2026-09-11",
+        tag: "Sales",
+        title: "Edwin Coe rolls out Legora firm-wide across all 14 practice groups",
+        body: "Independent London firm Edwin Coe LLP (founded 1913, 250+ staff, £44M FY2025/26 revenue) completed a firm-wide Legora rollout across all 14 practice groups following a five-week pilot, with per-team customized training.",
+        url: "https://legora.com/newsroom/edwin-coe-rolls-out-legora-firm-wide-across-all-14-practice-groups",
+      },
+      {
+        date: "2026-09-09",
+        tag: "Market",
+        title: "Report: Legora said to be seeking ~$10B valuation in a new round (unconfirmed)",
+        body: "Artificial Lawyer reports Legora is \"understood to be hoping to raise another major round at a $10 billion valuation\" — explicitly flagged by the source itself as unconfirmed — contrasted against Harvey's newly-closed $550M raise at a $15.5B valuation.",
+        url: "https://www.artificiallawyer.com/2026/09/09/harvey-vs-legora-the-valuation-race/",
+      },
+      {
+        date: "2026-09-10",
+        tag: "Hiring",
+        title: "Opens Strategic Programs Manager role in New York City",
+        body: "New posting confirmed via the Ashby posting API's publishedAt field (2026-09-10, NYC). Board now at 282 live postings across 211 unique titles (up from 281/210). No closures identified this pass.",
+        url: "https://jobs.ashbyhq.com/legora/776af495-52b1-4071-950e-83dbfb84773c",
+      },
     ],
     hiring: {
-      openRoles: 281,
+      openRoles: 282,
       newRolesToday: [
-        { title: "Director of Partnerships APJ", dept: "Partnerships", location: "Sydney", url: "https://jobs.ashbyhq.com/legora/ee5271ac-8205-4f44-983a-f8a4f2385d37" },
-        { title: "Executive Recruiter", dept: "People", location: "New York City", url: "https://jobs.ashbyhq.com/legora/0a423d64-0e10-4bc6-b873-a4bfdbe571c4" },
+        { title: "Strategic Programs Manager", dept: "Operations", location: "New York City", url: "https://jobs.ashbyhq.com/legora/776af495-52b1-4071-950e-83dbfb84773c" },
       ],
       recentHires: [],
       topRoles: [
@@ -2551,13 +2599,20 @@ COMPETITORS.push(
         body: "Thomson Reuters company blog post on integrating the HighQ legal workflow platform with CoCounsel Legal, extending CoCounsel's reach into HighQ's client-facing workflow and collaboration tooling.",
         url: "https://legal.thomsonreuters.com/blog/delivering-the-future-of-legal-services-with-highq-and-cocounsel/",
       },
+      {
+        date: "2026-09-11",
+        tag: "Hiring",
+        title: "\"Senior Software Engineer - AI, CoCounsel International\" role appears closed",
+        body: "A re-query of Thomson Reuters' Workday CXS API (searchText 'CoCounsel') no longer surfaces this posting — 9 of the prior 10 CoCounsel-titled postings reconfirmed live. Not independently double-confirmed given the API's relevance-ranked (not exact-match) search behavior.",
+        url: "https://careers.thomsonreuters.com/",
+      },
     ],
     hiring: {
-      openRoles: 10,
+      openRoles: 9,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "Senior Software Engineer - AI, CoCounsel FDE (various)", count: 3 },
+        { title: "Senior Software Engineer - AI, CoCounsel FDE (various)", count: 2 },
         { title: "Product Success Manager, CoCounsel Legal", count: 1, url: "https://thomsonreuters.wd5.myworkdayjobs.com/en-US/External_Career_Site/job/United-States-of-America-Eagan-Minnesota/Product-Success-Manager--CoCounsel-Legal_JREQ201575" },
       ],
     },
@@ -2747,6 +2802,13 @@ COMPETITORS.push(
         body: "Three roles newly surfaced on DraftWise's careers page vs. the prior snapshot; \"Director of Sales – Mid Law\" and \"Senior Enterprise Solutions Architect\" no longer appear live (likely filled, or the Architect title was renamed).",
         url: "https://www.draftwise.com/careers",
       },
+      {
+        date: "2026-09-10",
+        tag: "Content",
+        title: "Publishes \"Token-Based Pricing in Legal AI: What It Gets Right, and Where It Gets Risky\"",
+        body: "New blog post argues rising legal-AI costs stem from vendors shifting to token-based consumption pricing combined with pricier models and inefficient multi-step agentic workflows, and that the real fix is smarter workflow design — routing simple tasks to cheaper models and building around legal ontologies that can look up prior answers rather than re-reasoning each time. Does not disclose DraftWise's own pricing model.",
+        url: "https://www.draftwise.com/blog/token-based-pricing-in-legal-ai-what-it-gets-right-and-where-it-gets-risky",
+      },
     ],
     hiring: {
       openRoles: 10,
@@ -2866,11 +2928,19 @@ COMPETITORS.push(
         body: "New remote-US Marketing posting confirmed via the Greenhouse API (updated 2026-09-09). Three previously-tracked postings (Growth & Monetization Analyst, Performance Marketing Manager, Senior Growth Product Manager) no longer appear live. Board now at 30 live postings, down from 33.",
         url: "https://job-boards.greenhouse.io/eve/jobs/4341646009",
       },
+      {
+        date: "2026-09-10",
+        tag: "Hiring",
+        title: "Opens Renewals Manager, Senior Full Stack Engineer (AI & Growth Systems), and Senior Manager, Lifecycle & Retention roles",
+        body: "Three new postings confirmed via the Greenhouse API (each updated 2026-09-10). Three prior postings no longer appear live (Growth Account Executive, East Coast; Senior Product Marketing Manager - Core; Software Engineer, Full Stack - GTM). Board remains at 30 live postings — a turnover, not net growth.",
+        url: "https://job-boards.greenhouse.io/eve/jobs/4243070009",
+      },
     ],
     hiring: {
       openRoles: 30,
       newRolesToday: [
-        { title: "Paid Media Strategist", dept: "Marketing", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4341646009" },
+        { title: "Renewals Manager", dept: "Sales", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4243070009" },
+        { title: "Senior Full Stack Engineer, AI & Growth Systems", dept: "Engineering", location: "San Mateo, CA", url: "https://job-boards.greenhouse.io/eve/jobs/4284404009" },
       ],
       recentHires: [],
       topRoles: [
@@ -3547,6 +3617,30 @@ const NEW_ENTRANTS = [
     source: "LawNext, Legal IT Insider",
     sourceUrl: "https://www.lawnext.com/2026/08/exclusive-coming-out-of-stealth-paravo-launches-what-it-calls-the-first-ai-revenue-engine-for-law-firms.html",
   },
+  {
+    id: "keyora",
+    name: "Keyora",
+    threat: "medium",
+    backing: "Backed by Khosla Ventures (amount undisclosed); ~17 months in stealth before publicly launching its first product",
+    stage: "Seed (amount undisclosed)",
+    tagline: "\"Attorney-grade AI for legal work\" — starting with end-to-end patent drafting via its product, Patented.",
+    website: "https://www.keyora.ai",
+    linkedin: null,
+    description:
+      "Keyora builds AI for patent drafting under the product name \"Patented,\" which ingests invention-disclosure materials and, after a few strategic touchpoints for the practitioner, generates a complete draft patent application in minutes rather than the dozens of hours typical of manual drafting. Founded by a patent attorney (ex-Wilson Sonsini) and an ML/vision-science PhD; frames itself as run by \"counselors & coders.\" Not to be confused with the separately-tracked competitor Patented.ai — Keyora's product is also named \"Patented\" but is a distinct company.",
+    foundingTeam: [
+      { name: "Uri Greenwald", background: "Co-Founder & CEO. JD, UC Berkeley School of Law; MD, NYU School of Medicine; previously a patent attorney at Wilson Sonsini Goodrich & Rosati drafting/prosecuting US/foreign patents and advising on portfolio strategy and IP diligence, focused on medical device/pharma/life-science clients." },
+      { name: "Aryaman Taore", background: "Co-Founder & CTO. PhD in vision science; prior roles/research at Stanford University (2024-2025 visiting scholar), the University of Auckland, and Beckhoff Automation." },
+    ],
+    hiring: {
+      openRoles: 0,
+      focus: "No specific open roles posted on keyora.ai/careers as of 2026-09-11 — page invites inquiries via careers@keyora.ai only.",
+      hiringProfile: "Not visibly hiring publicly as of 2026-09-11.",
+    },
+    date: "2026-09-11",
+    source: "Stealth Startup Spy, Keyora (company site)",
+    sourceUrl: "https://stealthstartupspy.substack.com/p/stealth-startup-spy-363",
+  },
 ];
 
 /* ---------------- Webinars ---------------- */
@@ -3566,18 +3660,6 @@ const WEBINARS = [
       "Direct Tier 1 competitor-hosted session on change management for AI adoption in patent prosecution and portfolio workflows.",
     tags: ["Competitor-hosted", "AI Adoption"],
     url: "https://ipwatchdog.com/ankar-ai-september-10-2026/",
-  },
-  {
-    id: "wb-9",
-    title: "AI-Assisted Patent Pruning – Deciding What to Keep with Precision",
-    host: "IP Copilot",
-    date: "2026-09-08",
-    time: "12:00 PM ET",
-    format: "Live webinar",
-    relevance: "medium",
-    description: "IPWatchdog-hosted session, now with a published topic: how AI-powered analysis can help organizations evaluate patent portfolios systematically — assessing assets by legal status, maintenance cost, and business alignment to make defensible keep/abandon decisions.",
-    tags: ["Competitor-hosted"],
-    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-09-08-ai-assisted-patent-pruning/",
   },
   {
     id: "wb-10",
@@ -3664,18 +3746,6 @@ const WEBINARS = [
     url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-10-13/",
   },
   {
-    id: "wb-16",
-    title: "Practical AI for Chemical Patent Practice: New Legal Developments, New Tools, New Techniques",
-    host: "SLW (Schwegman Lundberg & Woessner)",
-    date: "2026-09-08",
-    time: "1:00 PM ET",
-    format: "Live webinar (Zoom), CLE credit (MN, CA, TX, WA)",
-    relevance: "medium",
-    description: "Law firm-hosted session on practical AI techniques for chemical patent drafting, prosecution, and searching, presented by Dr. Nicholas P. Lanzatella (patent attorney, PhD Organic Chemistry) and Ryan Connell — also covers AI-inventorship questions and privilege/confidentiality issues in counsel's AI use.",
-    tags: ["AI Drafting", "Chemical Patents"],
-    url: "https://ipwatchdog.com/event/webinar-practical-ai-for-chemical-patent-practice-new-legal-developments-new-tools-new-techniques/",
-  },
-  {
     id: "wb-17",
     title: "How I Prompt AI (CLE Webinar) — repeat session",
     host: "Junior",
@@ -3734,6 +3804,18 @@ const WEBINARS = [
     description: "Examines why legal-tech spend rarely maps to demonstrated business impact, and how to reframe ROI metrics for AI-enabled legal workflows.",
     tags: ["Legal AI", "ROI"],
     url: "https://luma.com/z6cgvcfj",
+  },
+  {
+    id: "wb-22",
+    title: "AI for Patent Licensing – Beyond Statistical Triage to Evidence-Grounded Product Analysis",
+    host: "ClaimHit",
+    date: "2026-10-01",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "high",
+    description: "IPWatchdog-hosted session sponsored by ClaimHit on using AI for patent licensing — critiquing general-purpose-LLM approaches that produce \"confident but unverifiable\" infringement conclusions, and covering statistical indicators vs. actual product-claim matching, portfolio-wide licensee mapping, evidence verification, and standard-essential-patent-specific issues.",
+    tags: ["Competitor-hosted", "Patent Licensing"],
+    url: "https://ipwatchdog.com/event/webinar-claimhit-2026-10-01-ai-for-patent-licensing/",
   },
 ];
 
@@ -4784,6 +4866,28 @@ const BLOGS = [
     relevance: "high",
     tags: ["Trust", "AI Adoption", "Survey"],
     url: "https://www.globenewswire.com/news-release/2026/09/02/3354769/0/en/lawyer-preference-for-ai-grounded-in-legal-sources-rises-to-81.html",
+  },
+  {
+    id: "blog-101",
+    headline: "Edwin Coe rolls out Legora firm-wide across all 14 practice groups",
+    description: "UK law firm Edwin Coe completed a firm-wide deployment of Legora's AI platform across all 14 of its practice groups following a five-week pilot, using it for research, document review, and drafting with outputs sourced back to originating documents.",
+    companyId: "legora",
+    source: "Legora (company newsroom)",
+    date: "2026-09-11",
+    relevance: "medium",
+    tags: ["Partnership", "Product Adoption"],
+    url: "https://legora.com/newsroom/edwin-coe-rolls-out-legora-firm-wide-across-all-14-practice-groups",
+  },
+  {
+    id: "blog-102",
+    headline: "Token-Based Pricing in Legal AI: What It Gets Right, and Where It Gets Risky",
+    description: "DraftWise argues that rising legal-AI costs stem from vendors shifting to token-based consumption pricing combined with pricier models and inefficient multi-step agentic workflows, and that the fix is smarter workflow design — routing simple tasks to cheaper models and building around legal ontologies that can look up answers rather than re-reasoning each time.",
+    companyId: "draftwise",
+    source: "DraftWise (company blog)",
+    date: "2026-09-10",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Industry Trend"],
+    url: "https://www.draftwise.com/blog/token-based-pricing-in-legal-ai-what-it-gets-right-and-where-it-gets-risky",
   },
 ];
 
