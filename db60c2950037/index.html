@@ -299,6 +299,8 @@
   .compare-card-inner .m-block .h{ font-size:10px; margin-bottom:4px; }
   .compare-card-inner .m-block .content{ font-size:12px; line-height:1.42; }
   .compare-card-inner .m-block .content ul{ gap:3px; padding-left:15px; }
+  .compare-card.company-solve .exp-co{ color:#8ecbff; font-weight:700; }
+  .compare-card.company-patlytics .exp-co{ color:#6fe0a8; font-weight:700; }
   @media (max-width: 760px){
     .compare-cards{ flex-direction:column; }
     .compare-vs{ margin-top:0; align-self:center; }
@@ -723,6 +725,30 @@ const LINKEDIN_MAP = {"angus-parsonson": "https://www.linkedin.com/in/angus-pars
       'onclick="event.stopPropagation()" aria-label="Open '+person.name+'\'s LinkedIn profile" title="LinkedIn">' +
       '<svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.114 20.452H3.558V9h3.556v11.452z"/></svg>' +
       '</a>';
+  }
+
+  var COMPANY_HL_STOPWORDS = {a:1,an:1,the:1,and:1,or:1,to:1,in:1,on:1,of:1,its:1,his:1,her:1,their:1,both:1,this:1,
+    that:1,then:1,from:1,also:1,earlier:1,later:1,now:1,currently:1,as:1,just:1,still:1,so:1,soon:1,briefly:1,
+    initially:1,quickly:1,immediately:1,shortly:1,eventually:1,finally:1,recently:1,before:1,after:1,since:1,
+    during:1,while:1,when:1,where:1,several:1,various:1,multiple:1,each:1,every:1,no:1,not:1,more:1,most:1,
+    some:1,such:1,only:1,well:1,first:1,last:1,next:1,previously:1,formerly:1,originally:1,essentially:1,
+    effectively:1,primarily:1,mainly:1,largely:1,partly:1,together:1,alongside:1,across:1,within:1,without:1,
+    until:1,unlike:1,like:1,near:1,around:1,about:1,over:1,under:1,through:1,throughout:1,per:1,via:1,among:1,
+    amid:1,despite:1,though:1,although:1,because:1,given:1,plus:1,minus:1,home:1,times:1,present:1,once:1,
+    scale:1,one:1,two:1,three:1,four:1,five:1,six:1,seven:1,eight:1,nine:1,ten:1,is:1,was:1,were:1,are:1,be:1,
+    been:1,being:1,it:1,he:1,she:1,they:1,we:1,you:1,who:1,which:1,what:1,how:1,why:1,all:1,any:1,many:1,
+    few:1,little:1,much:1,own:1,same:1,other:1,another:1};
+
+  function highlightCompanies(text){
+    if(!text) return text;
+    return text.replace(/\b(?:at|Joined|joined)\s+([^\s,;:()]+(?:\s+[A-Z0-9&][^\s,;:()]*)*)/g, function(match, phrase){
+      var words = phrase.split(' ');
+      var first = words[0];
+      if(COMPANY_HL_STOPWORDS[first.toLowerCase()]) return match;
+      if(words.length === 1 && /^[0-9]+$/.test(first)) return match;
+      var trigger = match.slice(0, match.length - phrase.length);
+      return trigger + '<b class="exp-co">' + phrase + '</b>';
+    });
   }
 
   function splitList(text){
@@ -1194,7 +1220,7 @@ const LINKEDIN_MAP = {"angus-parsonson": "https://www.linkedin.com/in/angus-pars
     return (
       blockHtml('Location', iconPin(), '<div class="content">'+person.location+'</div>') +
       blockHtml('Education', iconCap(), '<div class="content"><ul>'+eduItems.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>') +
-      blockHtml(expLabel, iconBriefcase(), '<div class="content"><ul>'+expItems.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul></div>')
+      blockHtml(expLabel, iconBriefcase(), '<div class="content"><ul>'+expItems.map(function(x){return '<li>'+highlightCompanies(x)+'</li>';}).join('')+'</ul></div>')
     );
   }
 
