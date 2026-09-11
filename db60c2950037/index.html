@@ -752,7 +752,7 @@ const LINKEDIN_MAP = {"angus-parsonson": "https://www.linkedin.com/in/angus-pars
 
   function highlightCompanies(text){
     if(!text) return text;
-    var out = text.replace(/\b(?:at|Joined|joined|[Ff]ounder of|[Cc]o-[Ff]ounder of|[Cc]ofounder of)\s+([^\s,;:()]+(?:\s+[A-Z0-9&][^\s,;:()]*)*)/g, function(match, phrase){
+    var out = text.replace(/\b(?:at|Joined|joined|[Ff]ounder of|[Cc]o-[Ff]ounder of|[Cc]ofounder of|[Cc]o-founded|[Cc]ofounded|[Ff]ounded)\s+([^\s,;:()]+(?:\s+[A-Z0-9&][^\s,;:()]*)*)/g, function(match, phrase){
       var words = phrase.split(' ');
       var first = words[0];
       var firstLower = first.toLowerCase();
