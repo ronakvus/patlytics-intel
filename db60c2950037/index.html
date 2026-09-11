@@ -154,7 +154,6 @@
   }
   .brand .titles .sub .dot{ width:5px; height:5px; border-radius:50%; background:#5be08a; box-shadow:0 0 8px #5be08a; }
 
-  .hero-summary{ font-size:13px; color:var(--text-2); font-weight:500; letter-spacing:0.01em; white-space:nowrap; }
 
   /* ---------- tabs ---------- */
   .tab-bar{
@@ -464,7 +463,6 @@
 
   @media (max-width: 640px){
     header.hero{ padding:32px 5vw 26px; }
-    .hero-summary{ display:none; }
     main{ padding:24px 4vw 60px; }
     .chart-wrap-box{ height:460px; }
   }
@@ -495,7 +493,6 @@
             <div class="sub"><span class="dot"></span> Competitive intel &middot; compiled by Patlytics</div>
           </div>
         </div>
-        <div class="hero-summary" id="hero-summary">61 people tracked across 9 functions</div>
       </div>
       <div class="tab-bar">
         <button class="tab-btn active" data-tab="solve">Solve Intelligence</button>
@@ -1203,8 +1200,6 @@ const PHOTO_MAP = {"milo-moerkerke": "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBA
   function initDashboard(){
     if(didInit) return;
     didInit = true;
-
-    document.getElementById('hero-summary').textContent = PEOPLE.length + ' people tracked across ' + DEPT_ORDER.length + ' functions';
 
     SolveRoster = makeRoster({
       prefix: 'solve', people: PEOPLE, deptOrder: DEPT_ORDER, deptMeta: DEPT_META, headcounts: HEADCOUNTS,
