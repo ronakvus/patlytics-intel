@@ -129,10 +129,9 @@
 
   header.hero{
     position:relative;
-    padding:46px 5vw 34px;
+    padding:46px 5vw 0;
     overflow:hidden;
     background:var(--bg-0);
-    border-bottom:1px solid var(--border);
   }
   header.hero::before{
     content:"";
@@ -155,24 +154,30 @@
   .brand .titles .sub .dot{ width:5px; height:5px; border-radius:50%; background:#5be08a; box-shadow:0 0 8px #5be08a; }
 
 
-  /* ---------- tabs ---------- */
+  /* ---------- tabs (Chrome-style, attached to the content below) ---------- */
   .tab-bar{
-    position:relative; display:inline-flex; gap:5px; margin-top:26px; padding:5px;
-    background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:13px;
+    position:relative; display:flex; gap:3px; margin-top:28px;
+    border-bottom:1px solid var(--border);
   }
   .tab-btn{
-    font-family:inherit; font-size:13px; font-weight:600; color:var(--text-2);
-    background:rgba(255,255,255,0.02); border:1px solid var(--border);
-    padding:9px 20px; border-radius:9px; cursor:pointer; transition:all .15s;
+    position:relative; font-family:inherit; font-size:13.5px; font-weight:600; color:var(--text-2);
+    background:rgba(255,255,255,0.025); border:1px solid var(--border); border-bottom:none;
+    padding:10px 22px; border-radius:10px 10px 0 0; cursor:pointer; transition:background .15s, color .15s;
   }
-  .tab-btn:hover{ color:var(--text-0); background:rgba(255,255,255,0.06); border-color:var(--border-strong); }
+  .tab-btn:hover{ color:var(--text-0); background:rgba(255,255,255,0.06); }
   .tab-btn.active{
-    color:var(--text-0); background:rgba(255,255,255,0.07); border-color:var(--border-strong);
-    box-shadow:0 3px 12px -2px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+    color:var(--text-0); background:var(--bg-0); border-color:var(--border);
+    margin-bottom:-1px; padding-bottom:11px; z-index:2;
   }
-  .tab-btn[data-tab="solve"].active{ border-color:rgba(127,168,255,0.55); background:rgba(127,168,255,0.1); color:#b9cfff; }
-  .tab-btn[data-tab="patlytics"].active{ border-color:rgba(91,201,163,0.55); background:rgba(91,201,163,0.1); color:#a9ecd4; }
-  .tab-btn[data-tab="versus"].active{ border-color:rgba(224,168,50,0.55); background:rgba(224,168,50,0.1); color:#f0d28f; }
+  .tab-btn.active::before{
+    content:""; position:absolute; top:-1px; left:10px; right:10px; height:2.5px; border-radius:3px 3px 0 0;
+  }
+  .tab-btn[data-tab="solve"].active{ color:#b9cfff; }
+  .tab-btn[data-tab="solve"].active::before{ background:#7fa8ff; box-shadow:0 0 10px rgba(127,168,255,0.8); }
+  .tab-btn[data-tab="patlytics"].active{ color:#a9ecd4; }
+  .tab-btn[data-tab="patlytics"].active::before{ background:#5bc9a3; box-shadow:0 0 10px rgba(91,201,163,0.8); }
+  .tab-btn[data-tab="versus"].active{ color:#f0d28f; }
+  .tab-btn[data-tab="versus"].active::before{ background:#e0a832; box-shadow:0 0 10px rgba(224,168,50,0.8); }
   .tab-panel{ display:none; }
   .tab-panel.active{ display:block; }
 
@@ -462,7 +467,7 @@
   footer{ text-align:center; padding:26px 20px 40px; color:var(--text-3); font-size:11.5px; }
 
   @media (max-width: 640px){
-    header.hero{ padding:32px 5vw 26px; }
+    header.hero{ padding:32px 5vw 0; }
     main{ padding:24px 4vw 60px; }
     .chart-wrap-box{ height:460px; }
   }
