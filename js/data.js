@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-11";
-const EARLIEST_DATE = "2026-08-21"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-12";
+const EARLIEST_DATE = "2026-08-23"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -479,6 +479,51 @@ const HIGHLIGHTS = [
     sourceType: "news",
     url: "https://ipwatchdog.com/2026/09/09/will-ai-data-centers-become-the-next-patent-battleground-ipwatchdog-unleashed/",
   },
+  {
+    id: "hl-49",
+    date: "2026-09-10",
+    priority: "medium",
+    category: "Funding",
+    title: "White & Case makes strategic investment in Saudi legal-AI startup Clauze.AI",
+    summary:
+      "AmLaw firm White & Case made a strategic investment in Clauze.AI, an Arabic/English AI contract-review, governance, and due-diligence platform founded by its former Riyadh executive partner Waad Alkurini, built with full Saudi data residency and on-prem deployment.",
+    whyItMatters:
+      "A BigLaw firm moving from customer to investor in a legal-AI point solution is a channel dynamic worth watching as firms increasingly invest in tools adjacent to (though not yet inside) patent workflows.",
+    companies: ["Industry-wide"],
+    source: "Artificial Lawyer, Legal IT Insider",
+    sourceType: "funding",
+    url: "https://www.artificiallawyer.com/2026/09/10/white-case-invests-in-saudi-startup-clauze/",
+  },
+  {
+    id: "hl-50",
+    date: "2026-09-11",
+    priority: "medium",
+    category: "Market",
+    title: "Latham & Watkins buys Nvidia GPU servers to build and fine-tune its own in-house AI models",
+    summary:
+      "The Financial Times reported Latham & Watkins (the second-largest US law firm by revenue) purchased Nvidia GPU servers and is fine-tuning Nvidia's open-weight Nemotron 3 models in-house, citing a need to keep highly sensitive client data off third-party clouds.",
+    whyItMatters:
+      "The first major law firm publicly known to own AI infrastructure rather than rent it is a leading indicator that large IP/patent departments and firms may eventually push for on-prem/private-model deployment options — relevant to Patlytics' own deployment and data-sovereignty story.",
+    companies: ["Industry-wide"],
+    source: "Financial Times (via Legal IT Insider)",
+    sourceType: "news",
+    url: "https://legaltechnology.com/latham-builds-its-own-ai-models-with-nvidia-gpu-server-investment/",
+  },
+  {
+    id: "hl-51",
+    date: "2026-09-11",
+    priority: "medium",
+    category: "Market",
+    title: "Association of Corporate Counsel sues legal-AI vendor The L Suite over chatbot \"Lloyd\"",
+    summary:
+      "ACC, a 48,000-member in-house-counsel nonprofit, filed suit in Delaware federal court against The L Suite, alleging its Lloyd chatbot was trained on ACC's proprietary reports without permission and that The L Suite's marketing slogan infringes ACC's trademarked tagline.",
+    whyItMatters:
+      "A concrete, precedent-setting training-data/copyright dispute against a legal-AI vendor is directly relevant to how every AI-drafting/AI-analytics vendor, Patlytics included, should think about provenance and licensing of training and reference material.",
+    companies: ["Industry-wide"],
+    source: "Law360",
+    sourceType: "news",
+    url: "https://www.law360.com/delaware/articles/2523859",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -703,6 +748,13 @@ const COMPETITORS = [
         body: "Continuing the pattern flagged 2026-09-03, PatSnap's Eureka blog published six additional AI-generated competitive-landscape reports today timed to ESC Congress 2026 (American Heart Association, American College of Cardiology, European Society of Cardiology, World Heart Federation, Direct Oral Anticoagulants, and Kidney Function/eGFR-albuminuria) — continuing PatSnap's high-cadence, AI-assisted patent-landscape content-marketing pattern.",
         url: "https://eureka.patsnap.com/blog/life-science/esc-2026-american-heart-association-aha-competitive-landscape-analysis/",
       },
+      {
+        date: "2026-09-11",
+        tag: "Content",
+        title: "Eureka blog publishes seven more WCLC 2026 oncology competitive-landscape reports",
+        body: "Continuing its high-cadence AI-generated landscape-analysis pattern (flagged 09-03 and 09-08), PatSnap's Eureka blog published seven additional competitive-landscape/evidence-review reports today, pivoting from cardiology to lung-cancer/oncology targets timed to WCLC 2026 (CDCP1, CTLA-4, ROS1, PRMT5, BRAF V600E, TP53) plus an ESC Congress 2026 clinical-trials evidence review.",
+        url: "https://eureka.patsnap.com/blog/life-science/wclc-2026-tp53-competitive-landscape-analysis/",
+      },
     ],
     hiring: {
       openRoles: null,
@@ -870,18 +922,24 @@ const COMPETITORS = [
         body: "The Workday CXS facet call for job-family-group \"Intellectual Property Services\" succeeded today (HTTP 200, re-queried 3x with identical results) for the first time since it broke ~9 days ago, returning a clean, title-level roster of 21 open roles — a materially more precise source than the unfiltered-feed keyword-match workaround (~24-27 estimated) used since 2026-08-31. Treated as a baseline reset rather than a claim that roles closed since yesterday, since the prior figure was never a precise title-level capture. Separately resolves the previously-flagged unconfirmed lead: 'IP Admin Analyst' (Noida, JREQ136235) is confirmed genuinely live.",
         url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
       },
+      {
+        date: "2026-09-12",
+        tag: "Hiring",
+        title: "Baseline reset: 27 live IP-services roles found via a free-text Workday query (facet API still broken)",
+        body: "The Workday CXS job-family-group facet call for \"Intellectual Property Services\" again returned HTTP 400 (4th+ consecutive fail), so this pass used a free-text searchText query against the same Workday CXS API instead — a different method than the prior facet-based baseline (21 roles, stale since 2026-09-08). This returns 27 total live postings today, verified via two paginated calls. Treated as a method-change baseline reset, not a claim that 6 roles opened today.",
+        url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
+      },
     ],
     hiring: {
-      openRoles: 21,
+      openRoles: 27,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
-        { title: "IP Admin Analyst / Senior Analyst / Lead / SME (Noida, Belgrade, Ann Arbor)", count: 9 },
+        { title: "IP Admin Analyst / Senior Analyst / Lead (Noida, Belgrade, Ann Arbor, multiple locations)", count: 8 },
+        { title: "Renewals Account Manager - IP (London, Ann Arbor, remote France)", count: 3 },
         { title: "Patent Classifier (Ann Arbor)", count: 2 },
         { title: "PCT Patent Analyst (Contract)", count: 2 },
-        { title: "Associate Trademark Search Analyst (Belgrade, Noida)", count: 2 },
-        { title: "IP Renewals SME (Seoul)", count: 1, url: "https://clarivate.wd3.myworkdayjobs.com/en-US/Clarivate_Careers/job/South-Korea---Seoul/IP-Renewals-SME_JREQ136256-1" },
-        { title: "Senior Director, IP Service Operations (Noida)", count: 1, url: "https://clarivate.wd3.myworkdayjobs.com/en-US/Clarivate_Careers/job/R271--Noida/Senior-Director--IP--Service-Operations_JREQ135705-1" },
+        { title: "Vice President, Product Marketing (IP, remote US)", count: 1, url: "https://careers.clarivate.com/c/intellectual-property-services-jobs" },
       ],
     },
     marketing: [
@@ -954,11 +1012,18 @@ const COMPETITORS = [
         body: "Re-confirmed via anaqua.bamboohr.com/careers/list — one previously-tracked posting is no longer live; the rest of the roster (concentrated in Tokyo, Gurugram/Hyderabad, Pau, and Perth) is unchanged.",
         url: "https://anaqua.bamboohr.com/careers",
       },
+      {
+        date: "2026-09-11",
+        tag: "Hiring",
+        title: "Board turns over: adds HR Associate (Gurugram), drops two prior roles",
+        body: "Anaqua's BambooHR careers board dropped from 21 to 20 live postings — \"Product Support Engineer - Integration AQX\" and \"IP Law Specialist\" no longer appear live, while a new \"HR Associate\" posting (Gurugram, India) is now live.",
+        url: "https://anaqua.bamboohr.com/careers/958",
+      },
     ],
     hiring: {
-      openRoles: 21,
+      openRoles: 20,
       newRolesToday: [
-        { title: "Technical Support Engineer", count: 1, url: "https://anaqua.bamboohr.com/careers/957" },
+        { title: "HR Associate", dept: "Human Resources", location: "Gurugram, India", url: "https://anaqua.bamboohr.com/careers/958" },
       ],
       recentHires: [],
       topRoles: [
@@ -1436,11 +1501,18 @@ COMPETITORS.push(
         body: "New Sales & Business Development opening confirmed via the Ashby posting API's own publish timestamp (2026-09-09) — board grows to 12 live postings, up from 11.",
         url: "https://jobs.ashbyhq.com/ankar/5cb73ad0-e12e-4406-90d0-382e308216db",
       },
+      {
+        date: "2026-09-11",
+        tag: "Hiring",
+        title: "Opened first Patent Engineer (Life Sciences) role",
+        body: "New Go-to-Market & Customer Innovation opening (London) confirmed via the Ashby posting API's publish timestamp (2026-09-11) — Ankar's first life-sciences-specific patent-engineering opening seen to date. Board now at 13 live postings, up from 12.",
+        url: "https://jobs.ashbyhq.com/ankar/54caf642-96c3-4d20-858a-6f7d2d2993c7",
+      },
     ],
     hiring: {
-      openRoles: 12,
+      openRoles: 13,
       newRolesToday: [
-        { title: "Field Marketing Manager", dept: "Sales & Business Development", location: "London", url: "https://jobs.ashbyhq.com/ankar/5cb73ad0-e12e-4406-90d0-382e308216db" },
+        { title: "Patent Engineer (Life Sciences)", dept: "Go-to-Market & Customer Innovation", location: "London", url: "https://jobs.ashbyhq.com/ankar/54caf642-96c3-4d20-858a-6f7d2d2993c7" },
       ],
       recentHires: [],
       topRoles: [
@@ -1668,9 +1740,16 @@ COMPETITORS.push(
         body: "Significant careers-page turnover vs. the prior snapshot: three new titles appeared (Product Delivery Lead, DevOps & Security Engineer, Office Manager with Finance Skills) while several prior postings (Senior Front End Developer, Lead Full Stack Engineer, Senior Invention Developer, AI Product Engineer, Digital Marketing and Growth Manager) no longer show live.",
         url: "https://www.iprova.com/career/product-delivery-lead-software-engineering/",
       },
+      {
+        date: "2026-09-12",
+        tag: "Hiring",
+        title: "\"Invention Engineer\" posting closes",
+        body: "Direct fetch of the posting's own URL now 301-redirects to a 404 on iprova.com's careers CMS, confirming the role has closed. Board drops from 6 to 5 open roles; the other 5 stored titles remain live with unchanged URLs.",
+        url: "https://www.iprova.com/careers/",
+      },
     ],
     hiring: {
-      openRoles: 6,
+      openRoles: 5,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -1678,7 +1757,6 @@ COMPETITORS.push(
         { title: "Office Manager (with Finance Skills)", count: 1, url: "https://www.iprova.com/career/office-manager-with-finance-skills-2/" },
         { title: "DevOps & Security Engineer", count: 1, url: "https://www.iprova.com/career/devops-security-engineer/" },
         { title: "Senior Full Stack Engineer", count: 1, url: "https://www.iprova.com/career/senior-full-stack-engineer/" },
-        { title: "Invention Engineer", count: 1, url: "https://www.iprova.com/career/invention-engineer/" },
         { title: "Business Development Manager", count: 1, url: "https://www.iprova.com/career/business-development-manager/" },
       ],
     },
@@ -1765,6 +1843,13 @@ COMPETITORS.push(
         title: "Shipped Claims Analyzer classification-prediction upgrade",
         body: "Juristat's Claims Analyzer now uses a language model trained on recent filings to predict patent classification (Tech Center/art unit/CPC), improving accuracy from 66.3% to 77.4% overall (some categories over 96%); the tool now integrates into drafting workflows via an MCP connector or API so classification can be checked while drafting claims, not just after filing.",
         url: "https://blog.juristat.com/claims-analyzer-update-in-juristat-a-classification-prediction-you-can-actually-trust",
+      },
+      {
+        date: "2026-09-11",
+        tag: "Marketing",
+        title: "IPWatchdog press-release pickup of reexamination-data feature",
+        body: "IPWatchdog picked up Juristat's ex parte reexamination-data feature (originally announced on Juristat's own blog 2026-09-01) as a press item, noting ex parte reexamination has overtaken IPR as the leading post-grant tool (filings up 53% YoY in 2025, ~870 projected for 2026) and that Juristat built its USPTO dataset ahead of the agency's rate limits.",
+        url: "https://ipwatchdog.com/press/juristat-adds-ex-parte-reexamination-data-connecting-post-grant-challenge-outcomes-to-the-prosecution-record-behind-them/",
       },
     ],
   }),
@@ -2175,13 +2260,17 @@ COMPETITORS.push(
         body: "Ashby posting-API publishedAt confirms two new titles, each posted across multiple cities. Board now at 331 live postings across 203 unique titles (down from 330/206) — 5 other titles closed since (CX Vendor Manager; Customer Success, Enterprise; Head of EA Operations; Law Schools Founding CSM; Senior Product Operations Manager, Evaluation).",
         url: "https://jobs.ashbyhq.com/harvey/f7ec0066-2b12-491c-978f-e411a834e1fd",
       },
+      {
+        date: "2026-09-11",
+        tag: "Hiring",
+        title: "Board turns over again; net change looks like renames, not new roles",
+        body: "Re-queried the Ashby posting API directly — 325 live postings across 198 unique titles (down from 331/203). The apparent churn looks mostly like renames/reposts of already-existing postings (e.g. \"Onboarding Specialist, EMEA\" → \"People Ops Onboarding Specialist, EMEA\"; \"Senior or Staff Design Engineer, Design Systems\" → \"Senior or Staff Product Designer, Design Systems\") rather than genuinely new roles — no new Head-of/VP/Director-level titles found this pass.",
+        url: "https://jobs.ashbyhq.com/harvey",
+      },
     ],
     hiring: {
-      openRoles: 331,
-      newRolesToday: [
-        { title: "Head of AMER Legal Engineering (In-House)", dept: "Legal Engineering", location: "Multiple US cities", url: "https://jobs.ashbyhq.com/harvey/f7ec0066-2b12-491c-978f-e411a834e1fd" },
-        { title: "Senior Marketing Counsel", dept: "Legal", location: "Multiple US cities", url: "https://jobs.ashbyhq.com/harvey/e45ecdab-c619-4918-acd9-5706734bd001" },
-      ],
+      openRoles: 325,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Legal Engineer (various specialties)", count: 12 },
@@ -2392,11 +2481,19 @@ COMPETITORS.push(
         body: "New posting confirmed via the Ashby posting API's publishedAt field (2026-09-10, NYC). Board now at 282 live postings across 211 unique titles (up from 281/210). No closures identified this pass.",
         url: "https://jobs.ashbyhq.com/legora/776af495-52b1-4071-950e-83dbfb84773c",
       },
+      {
+        date: "2026-09-11",
+        tag: "Hiring",
+        title: "Opens Senior Forward Deployed Engineer (NYC) and Engineering Manager - Foundations (Stockholm) roles",
+        body: "Two new postings confirmed via the Ashby posting API's publishedAt field. Board now at 286 live postings across 214 unique titles (up from 282/211). One closure: Legal Counsel - Commercial.",
+        url: "https://jobs.ashbyhq.com/legora/f76a3939-895d-4203-9322-927bae45f533",
+      },
     ],
     hiring: {
-      openRoles: 282,
+      openRoles: 286,
       newRolesToday: [
-        { title: "Strategic Programs Manager", dept: "Operations", location: "New York City", url: "https://jobs.ashbyhq.com/legora/776af495-52b1-4071-950e-83dbfb84773c" },
+        { title: "Senior Forward Deployed Engineer", dept: "Engineering", location: "New York City", url: "https://jobs.ashbyhq.com/legora/f76a3939-895d-4203-9322-927bae45f533" },
+        { title: "Engineering Manager - Foundations", dept: "Engineering", location: "Stockholm", url: "https://jobs.ashbyhq.com/legora/1d340497-7dcc-4ed7-ac01-49695d880de0" },
       ],
       recentHires: [],
       topRoles: [
@@ -2606,6 +2703,13 @@ COMPETITORS.push(
         body: "A re-query of Thomson Reuters' Workday CXS API (searchText 'CoCounsel') no longer surfaces this posting — 9 of the prior 10 CoCounsel-titled postings reconfirmed live. Not independently double-confirmed given the API's relevance-ranked (not exact-match) search behavior.",
         url: "https://careers.thomsonreuters.com/",
       },
+      {
+        date: "2026-09-12",
+        tag: "Hiring",
+        title: "\"Senior Software Engineer - AI, CoCounsel International\" reappears under a new requisition suffix",
+        body: "A fresh Workday CXS API query reconfirms all 9 previously-tracked CoCounsel-titled postings live, including this one (now under requisition suffix JREQ203612-1, Eagan, MN) — treated as a reopening/repost rather than a genuine closure, resolving the ambiguity flagged 09-11. No net title-count change.",
+        url: "https://careers.thomsonreuters.com/",
+      },
     ],
     hiring: {
       openRoles: 9,
@@ -2685,17 +2789,24 @@ COMPETITORS.push(
         body: "Two new postings confirmed via the Ashby posting API's publishedAt field: Staff Product Manager, AI Data Experience (San Francisco) and Technical Support Engineer, EMEA (London). Board now at 34 live postings, up from 33. (Note: the prior title \"Enterprise Sales Leader\" now carries the same posting URL under the title \"AVP, Enterprise Sales Leader\" — a title edit on an existing posting, not a new opening.)",
         url: "https://jobs.ashbyhq.com/ironcladhq/50b0adf4-9d9b-42f6-a62b-587eb20ced74",
       },
+      {
+        date: "2026-09-11",
+        tag: "Hiring",
+        title: "Opens Lead Counsel, Employment and Litigation and two adoption-strategy roles",
+        body: "Three new postings confirmed via the Ashby posting API's publishedAt field: Lead Counsel, Employment and Litigation (a notable senior in-house legal hire, San Francisco), Director, Adoption Strategy (Engagement Manager), and Manager, Technical Adoption Architecture (Professional Services). One prior posting (Staff/Senior Staff Software Engineer, Agentic Search) has closed. Board now at 36 live postings, up from 34.",
+        url: "https://jobs.ashbyhq.com/ironcladhq/e323b789-8bd4-4051-a8c0-b22096bdd51e",
+      },
     ],
     hiring: {
-      openRoles: 34,
+      openRoles: 36,
       newRolesToday: [
-        { title: "Staff Product Manager, AI Data Experience", dept: "Product", location: "San Francisco, CA", url: "https://jobs.ashbyhq.com/ironcladhq/50b0adf4-9d9b-42f6-a62b-587eb20ced74" },
-        { title: "Technical Support Engineer, EMEA", dept: "Customer Success", location: "London", url: "https://jobs.ashbyhq.com/ironcladhq/16b8ba8a-3611-4ab0-afff-95a47b0945ff" },
+        { title: "Lead Counsel, Employment and Litigation", dept: "Legal", location: "San Francisco, CA", url: "https://jobs.ashbyhq.com/ironcladhq/e323b789-8bd4-4051-a8c0-b22096bdd51e" },
       ],
       recentHires: [],
       topRoles: [
         { title: "Staff Software Engineer (various)", count: 4 },
         { title: "Technical Adoption Architect / Implementation Consultant", count: 2 },
+        { title: "Lead Counsel, Employment and Litigation", count: 1, url: "https://jobs.ashbyhq.com/ironcladhq/e323b789-8bd4-4051-a8c0-b22096bdd51e" },
       ],
     },
   }),
@@ -4888,6 +4999,39 @@ const BLOGS = [
     relevance: "medium",
     tags: ["Thought Leadership", "Industry Trend"],
     url: "https://www.draftwise.com/blog/token-based-pricing-in-legal-ai-what-it-gets-right-and-where-it-gets-risky",
+  },
+  {
+    id: "blog-103",
+    headline: "Correcting the Uncorrectable: AI-Assisted Inventorship and Section 256",
+    description: "IPWatchdog contributor Paul Atamewan examines how AI-assisted invention breaks the corrigibility assumption behind 35 U.S.C. §256, citing Fortress Iron, LP v. Digger Specialties (Fed. Cir., April 2026), because AI-assisted development records often show no identifiable human who actually \"conceived\" the invention, risking outright invalidity if inventorship can't later be corrected.",
+    companyId: "industry",
+    source: "IPWatchdog",
+    date: "2026-09-08",
+    relevance: "high",
+    tags: ["Inventorship", "Policy"],
+    url: "https://ipwatchdog.com/2026/09/08/correcting-uncorrectable-ai-assisted-inventorship-section-256/",
+  },
+  {
+    id: "blog-104",
+    headline: "China Outshines U.S. With More Top Innovation Clusters in WIPO Global Innovation Index",
+    description: "IPWatchdog reports the Shenzhen-Hong Kong-Guangzhou cluster topped WIPO's 2026 Global Innovation Index for a second straight year (2,259 PCT filings per million inhabitants over five years, Huawei alone filing 31,000+), with China and the US together hosting nearly half of the world's 100 largest innovation clusters.",
+    companyId: "industry",
+    source: "IPWatchdog (citing WIPO)",
+    date: "2026-09-09",
+    relevance: "medium",
+    tags: ["Patent Filings", "Global Trends"],
+    url: "https://ipwatchdog.com/2026/09/09/china-outshines-us-more-top-innovation-clusters-wipo-global-innovation-index/",
+  },
+  {
+    id: "blog-105",
+    headline: "Latham Builds Its Own AI Models With Nvidia GPU Server Investment",
+    description: "Legal IT Insider reports (via the Financial Times) that Latham & Watkins purchased Nvidia GPU servers and is fine-tuning open-weight models in-house to keep sensitive client data off third-party clouds — the first publicly known instance of a major law firm owning rather than renting AI infrastructure.",
+    companyId: "industry",
+    source: "Legal IT Insider (Financial Times)",
+    date: "2026-09-11",
+    relevance: "medium",
+    tags: ["AI Infrastructure", "Law Firm Tech"],
+    url: "https://legaltechnology.com/latham-builds-its-own-ai-models-with-nvidia-gpu-server-investment/",
   },
 ];
 
