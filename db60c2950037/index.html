@@ -927,6 +927,12 @@ const LINKEDIN_MAP = {"angus-parsonson": "https://www.linkedin.com/in/angus-pars
 
     function render(){
       var filtered = cfg.people.filter(personMatches);
+      filtered = filtered.map(function(p, i){ return {p: p, i: i}; }).sort(function(a, b){
+        var da = cfg.deptOrder.indexOf(primaryDept(a.p));
+        var db = cfg.deptOrder.indexOf(primaryDept(b.p));
+        if(da !== db) return da - db;
+        return a.i - b.i;
+      }).map(function(x){ return x.p; });
       var grid = el('grid');
       if(!grid) return;
       if(filtered.length === 0){
