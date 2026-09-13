@@ -2350,6 +2350,31 @@
           "sentiment": "positive"
         }
       ]
+    },
+    "patent-bots": {
+      "portfolio-analytics": [
+        {
+          "platform": "Vendor Testimonial",
+          "author": "John Monocello, Principal, GTC Law Group P.C.",
+          "text": "PatentPlex gives me a birds-eye view of the portfolio and gets me to where I need to be faster by clicking on specific assets.",
+          "sourceUrl": "https://www.patentbots.com/case-study-gtc-law-group",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "John Monocello, Principal, GTC Law Group P.C.",
+          "text": "During a due diligence project, I have PatentPlex open on my screen the entire time.",
+          "sourceUrl": "https://www.patentbots.com/case-study-gtc-law-group",
+          "sentiment": "positive"
+        },
+        {
+          "platform": "Vendor Testimonial",
+          "author": "Melanie Grover, Principal, Brake Hughes Bellermann LLP",
+          "text": "PatentPlex makes patent prosecution much more efficient.",
+          "sourceUrl": "https://www.patentbots.com/case-study-brake-hughes-bellermann",
+          "sentiment": "positive"
+        }
+      ]
     }
   }
 }
