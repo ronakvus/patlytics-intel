@@ -14,7 +14,7 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-13";
+const ANCHOR_DATE = "2026-09-14";
 const EARLIEST_DATE = "2026-08-24"; // rolling ~21-day archive window
 
 function d(offsetDays) {
@@ -524,6 +524,21 @@ const HIGHLIGHTS = [
     sourceType: "press-release",
     url: "https://www.artificiallawyer.com/2026/09/11/2x-webinars-juro-consilio-legal-innovators/",
   },
+  {
+    id: "hl-53",
+    date: "2026-09-14",
+    priority: "high",
+    category: "Product",
+    title: "Legora launches an AI-native legal Ontology and Citator, moving into legal-research infrastructure",
+    summary:
+      "Legora announced it is rebuilding legal research on top of comprehensive legal data, a full 'ontology of law,' and an AI-native citator built from its earlier Qura and Wexler acquisitions — designed to catch failure modes like miscited amendments, dissents treated as holdings, and stale case law. The ontology/citator layer is in limited beta now with general availability targeted for Q4 2026.",
+    whyItMatters:
+      "A well-funded Tier 3 competitor building proprietary legal-data/citation infrastructure — not just a drafting UI — is a direct parallel to the trust/grounding problem Patlytics addresses for patent drafting, and signals Legora investing in defensible data assets rather than only model orchestration.",
+    companies: ["Legora"],
+    source: "Artificial Lawyer, Legora Newsroom",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/09/14/legora-to-launch-ontology-ai-native-citator/",
+  },
 ];
 
 /* ---------------- Competitors ---------------- */
@@ -645,6 +660,13 @@ const COMPETITORS = [
         body: "New blog post analyzing the Federal Circuit's Dental Monitoring SAS v. Align Technology ruling, holding a provisional filing date only counts as prior art if the provisional provides written-description support for at least one of the reference's published claims.",
         url: "https://www.solveintelligence.com/blog/post/dental-monitoring-align-provisional-prior-art-date",
       },
+      {
+        date: "2026-09-11",
+        tag: "Content",
+        title: "Published ILTACON 2026 recap arguing patent-AI adoption is going firm-wide",
+        body: "Blog recap of ILTACON 2026 arguing patent AI adoption is shifting from isolated pilots to firm-wide rollout, referencing the Thomson Reuters partnership as part of that shift.",
+        url: "https://www.solveintelligence.com/blog/post/iltacon-2026-patent-ai-adoption-recap",
+      },
     ],
     hiring: {
       openRoles: 16,
@@ -754,6 +776,20 @@ const COMPETITORS = [
         title: "Eureka blog publishes seven more WCLC 2026 oncology competitive-landscape reports",
         body: "Continuing its high-cadence AI-generated landscape-analysis pattern (flagged 09-03 and 09-08), PatSnap's Eureka blog published seven additional competitive-landscape/evidence-review reports today, pivoting from cardiology to lung-cancer/oncology targets timed to WCLC 2026 (CDCP1, CTLA-4, ROS1, PRMT5, BRAF V600E, TP53) plus an ESC Congress 2026 clinical-trials evidence review.",
         url: "https://eureka.patsnap.com/blog/life-science/wclc-2026-tp53-competitive-landscape-analysis/",
+      },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Appoints European patent attorney Matthew Birch to lead AI drafting products",
+        body: "Birch, a European patent attorney with 15+ years' IP experience, joins as AI Solutions Lead overseeing the product roadmap for PatSnap's agentic patent-drafting tools — an executive-level hire directly into the AI-patent-drafting category Patlytics competes in.",
+        url: "https://www.patsnap.com/resources/blog/press_release/patsnap-appoints-european-patent-attorney-matthew-birch-to-lead-ai-drafting-products/",
+      },
+      {
+        date: "2026-09-09",
+        tag: "Content",
+        title: "Publishes oligonucleotide patent-cliff research report",
+        body: "New PatSnap Research report maps the oligonucleotide-drug patent landscape, finding one delivery patent expires six years before the drugs it supports — continuing PatSnap's pattern of research-report content marketing.",
+        url: "https://www.biospace.com/press-releases/new-patsnap-research-maps-the-oligonucleotide-landscape-and-patent-cliff-finding-one-delivery-patent-expires-six-years-before-the-drugs-it-supports",
       },
     ],
     hiring: {
@@ -936,10 +972,19 @@ const COMPETITORS = [
         body: "The job-family-group facet call succeeded again today (HTTP 200) against the correct Workday tenant (clarivate.wd3.myworkdayjobs.com/Clarivate_Careers — distinct from the free-text query's tenant used the past several passes), returning a clean, title-level roster of 18 open IP-services roles. Treated as a baseline reset (method changed back from free-text to facet), not a claim that 9 roles closed since yesterday. Most senior title on the reset roster: Senior Director, IP Service Operations (Noida).",
         url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/Senior-Director--IP--Service-Operations_JREQ135705-1",
       },
+      {
+        date: "2026-09-14",
+        tag: "Hiring",
+        title: "Board grows to 20 IP-services roles; two new Workday postings dated \"Today\"",
+        body: "Same Workday CXS facet API/tenant as yesterday's 18-role reset, re-queried directly — now shows 20 live roles. Two postings carry Workday's own \"Today\" relative-post-date flag: IP Admin Senior Analyst/SME (Noida) and IP Admin Analyst, Patents team (Belgrade); the rest were already open as of the 09-13 reset.",
+        url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/IP-Admin-Senior-Analyst-SME_JREQ136417",
+      },
     ],
     hiring: {
-      openRoles: 18,
-      newRolesToday: [],
+      openRoles: 20,
+      newRolesToday: [
+        { title: "IP Admin Senior Analyst/SME", dept: "Intellectual Property Services", location: "Noida", url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/IP-Admin-Senior-Analyst-SME_JREQ136417" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "IP Admin Senior Analyst / Lead / SME (Noida, Ann Arbor, multiple locations)", count: 7 },
@@ -1027,12 +1072,17 @@ const COMPETITORS = [
         body: "Anaqua's BambooHR careers board dropped from 21 to 20 live postings — \"Product Support Engineer - Integration AQX\" and \"IP Law Specialist\" no longer appear live, while a new \"HR Associate\" posting (Gurugram, India) is now live.",
         url: "https://anaqua.bamboohr.com/careers/958",
       },
+      {
+        date: "2026-09-14",
+        tag: "Hiring",
+        title: "Board narrows to 18 open roles, down from 20",
+        body: "Re-confirmed via the BambooHR careers API (two independent fetches, consistent count) — down 2 net since the 09-11 snapshot; no new senior/strategic titles among the remaining roster.",
+        url: "https://anaqua.bamboohr.com/careers",
+      },
     ],
     hiring: {
-      openRoles: 20,
-      newRolesToday: [
-        { title: "HR Associate", dept: "Human Resources", location: "Gurugram, India", url: "https://anaqua.bamboohr.com/careers/958" },
-      ],
+      openRoles: 18,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Platform Engineer (Java + GCP / Infrastructure & DevOps)", count: 2 },
@@ -1829,7 +1879,7 @@ COMPETITORS.push(
     description: "Juristat provides AI-driven analytics on patent prosecution, including examiner-level statistics, to help attorneys plan prosecution strategy.",
         employeeCount: "28-41 depending on source",
     founded: "2012",
-    hq: "Webster Groves / St. Louis, MO (may be transitioning to a New Haven, CT HQ per a Nov 2025 Advantage Capital growth investment announcement, which included expansion plans; a Connecticut corporate address was registered as of April 2026 alongside the original St. Louis address, which also remains active — treated as a dual/transitioning HQ pending clearer confirmation)",
+    hq: "New Haven, CT (confirmed via the dateline on Juristat's own 2026-09-11 IPWatchdog press release; originally St. Louis/Webster Groves, MO, transitioning since a Nov 2025 Advantage Capital growth investment)",
     founders: [
       { name: "Robert Ward", title: "Co-Founder", note: "Previously a Computer Engineer at Beck Automation (industrial controls, real-time C/C++)." },
       { name: "Drew Winship", title: "Co-Founder", note: "JD, Washington University in St. Louis School of Law (2009); BA Economics/Political Science, University of Washington (2006); four years as a corporate litigator in St. Louis (incl. Brown & James, P.C.) before co-founding Juristat in 2012 out of a St. Louis Startup Weekend; also co-founded the GlobalHack hackathon nonprofit. (Verified via Crunchbase, Silicon Prairie News, 2026-08-28.)" },
@@ -2289,6 +2339,13 @@ COMPETITORS.push(
         body: "Re-queried the Ashby posting API directly — 325 live postings, same total as 09-11. Title-level diff confirms 4 closures since 09-12 (Global Manager, Recruiting Operations and Coordination; Head of Technical Accounting and Reporting; Strategic Account Executive, Nordics; Technical Revenue Accounting Lead) and no genuinely new titles — two apparent \"new\" postings were confirmed as already-known renames flagged on 09-11.",
         url: "https://jobs.ashbyhq.com/harvey",
       },
+      {
+        date: "2026-09-14",
+        tag: "Sales",
+        title: "GESSEL deploys Harvey firmwide",
+        body: "Polish law firm GESSEL is integrating Harvey across all practice areas; the firm's Managing Partner frames the move as part of a broader operational rethink of how legal work is organized. Continues Harvey's international firmwide-adoption pattern alongside the ARNECKE SIBETH DABELSTEIN rollout (09-10).",
+        url: "https://www.harvey.ai/blog/gessel-deploys-harvey-firmwide",
+      },
     ],
     hiring: {
       openRoles: 325,
@@ -2517,13 +2574,17 @@ COMPETITORS.push(
         body: "Consilio, a global legal-services/eDiscovery firm, will provide workflow design, governance, training, and change-management services around Legora deployments — formalizing over a year of prior joint client work. Hiring board re-verified same day via the Ashby posting API: unchanged at 286 postings/214 unique titles, no new/closed titles.",
         url: "https://www.artificiallawyer.com/2026/09/11/2x-webinars-juro-consilio-legal-innovators/",
       },
+      {
+        date: "2026-09-14",
+        tag: "Product",
+        title: "Launches AI-native legal Ontology and Citator",
+        body: "New legal-research foundation combining comprehensive legal data, a full 'ontology of law,' and an AI-native citator (built on the Qura and Wexler acquisitions) to catch citation failure modes — miscited amendments, dissents treated as holdings, stale case law. Limited beta now, GA targeted Q4 2026. Ashby board re-queried same day: 281 live postings, down from 286.",
+        url: "https://legora.com/newsroom/legora-rebuilds-legal-research-with-comprehensive-data-a-full-ontology-of-law-and-an-ai-native-citator",
+      },
     ],
     hiring: {
-      openRoles: 286,
-      newRolesToday: [
-        { title: "Senior Forward Deployed Engineer", dept: "Engineering", location: "New York City", url: "https://jobs.ashbyhq.com/legora/f76a3939-895d-4203-9322-927bae45f533" },
-        { title: "Engineering Manager - Foundations", dept: "Engineering", location: "Stockholm", url: "https://jobs.ashbyhq.com/legora/1d340497-7dcc-4ed7-ac01-49695d880de0" },
-      ],
+      openRoles: 281,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Engagement Manager (various regions)", count: 15 },
@@ -4537,17 +4598,6 @@ const BLOGS = [
     url: "https://www.globenewswire.com/news-release/2026/09/01/3354190/0/en/new-anaqua-report-reveals-surge-in-ai-semiconductor-patent-filings.html",
   },
   {
-    id: "blog-56",
-    headline: "Best Patent MCP Servers in 2026: A Guide for IP and R&D Teams",
-    description: "Minesoft's own guide compares patent MCP (Model Context Protocol) servers for IP/R&D teams — Minesoft MCP, USPTO MCP, Patent Connector, and KIPRIS MCP — arguing curated, normalized data is the real differentiator for enterprise patent work.",
-    companyId: "minesoft",
-    source: "Minesoft",
-    date: "2026-07-30",
-    relevance: "medium",
-    tags: ["MCP", "Product Comparison", "Thought Leadership"],
-    url: "https://minesoft.com/best-patent-mcp-servers-in-2026-a-guide-for-ip-and-rd-teams/",
-  },
-  {
     id: "blog-57",
     headline: "The rise of agentic AI in IP: What patent and trademark teams need to know about AI agents",
     description: "Clarivate explains agentic-AI concepts for IP teams and how they apply to patent and trademark workflows via its IPOne platform.",
@@ -4865,17 +4915,6 @@ const BLOGS = [
     relevance: "low",
     tags: ["Thought Leadership", "Company Culture"],
     url: "https://www.draftwise.com/blog/i-am-a-forward-deployed-ceo",
-  },
-  {
-    id: "blog-87",
-    headline: "Draft legal letters, not just contracts",
-    description: "Genie AI product changelog entry: Genie expanded beyond contracts to generate structured first drafts of demand letters, notices, and correspondence.",
-    companyId: "genie-ai",
-    source: "Genie AI (company changelog)",
-    date: "2026-07-30",
-    relevance: "low",
-    tags: ["Product Update"],
-    url: "https://whatsnew.genieai.co/",
   },
   {
     id: "blog-88",
@@ -5208,15 +5247,15 @@ const BLOGS = [
     url: "https://www.iprova.com/news/",
   },
   {
-    id: "blog-119",
-    headline: "Best Patent MCP Servers in 2026: A Guide for IP and R&D Teams",
-    description: "Minesoft blog guide covering Model Context Protocol (MCP) servers for patent/IP and R&D use cases.",
-    companyId: "minesoft",
-    source: "Minesoft",
-    date: "2026-07-30",
-    relevance: "medium",
-    tags: ["Content", "MCP"],
-    url: "https://minesoft.com/best-patent-mcp-servers-in-2026-a-guide-for-ip-and-rd-teams/",
+    id: "blog-120",
+    headline: "Legora Rebuilds Legal Research with Comprehensive Data, a Full Ontology of Law, and an AI-Native Citator",
+    description: "Legora announced a new legal-research foundation built on its Qura and Wexler acquisitions — a full 'ontology of law' plus an AI-native citator designed to catch failure modes like miscited amendments and stale case law. Limited beta now; GA targeted for Q4 2026.",
+    companyId: "legora",
+    source: "Legora Newsroom / Artificial Lawyer",
+    date: "2026-09-14",
+    relevance: "high",
+    tags: ["Product Launch", "Legal Research"],
+    url: "https://www.artificiallawyer.com/2026/09/14/legora-to-launch-ontology-ai-native-citator/",
   },
 ];
 
