@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-14";
-const EARLIEST_DATE = "2026-08-24"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-15";
+const EARLIEST_DATE = "2026-08-25"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -30,36 +30,6 @@ function siteUrl(domain) {
 /* ---------------- General Daily Highlights ---------------- */
 const HIGHLIGHTS = [
   {
-    id: "hl-1",
-    date: "2026-08-24",
-    priority: "critical",
-    category: "Partnership",
-    title: "Solve Intelligence and Thomson Reuters partnership now confirmed by both companies",
-    summary:
-      "Solve Intelligence co-founder Chris Parsonson and the company's own LinkedIn page have publicly confirmed a partnership with Thomson Reuters. Thomson Reuters Ventures is also a confirmed investor in Solve Intelligence (Series A April 2025; increased its stake in Solve's ~$40M Series B, Dec 2025). Exact commercial terms/scope of the partnership are not yet detailed in public sources.",
-    whyItMatters:
-      "This upgrades what was previously an unconfirmed rumor to a real, company-confirmed relationship. It gives a direct, well-funded competitor an enterprise distribution/investor relationship with exactly the legal-data incumbent whose law-firm and corporate IP-counsel channels Patlytics competes for. Expect Solve to lean on this in enterprise sales conversations.",
-    companies: ["Solve Intelligence"],
-    source: "Solve Intelligence / Chris Parsonson (LinkedIn)",
-    sourceType: "press-release",
-    url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-is-partnering-with-activity-7497654008715661312-sC4_",
-  },
-  {
-    id: "hl-17",
-    date: "2026-08-24",
-    priority: "low",
-    category: "Funding",
-    title: "Newcode raises $13.5M Series A for in-house law-firm AI deployment",
-    summary:
-      "Newcode (Oslo/Dublin) raised a $13.5M Series A led by OnDean Forward (Relativity founder Andrew Sieja's fund), with participation from Relativity's Rel Labs and The LegalTech Fund, for its configurable AI harness for law-firm document analysis, review, and enterprise search.",
-    whyItMatters:
-      "A newly funded, general legal-AI entrant — not patent-specific, but worth tracking for budget overlap. See New Market Entrants for the full profile.",
-    companies: ["Newcode"],
-    source: "Law.com Legaltech News, Artificial Lawyer",
-    sourceType: "funding",
-    url: "https://www.law.com/legaltechnews/2026/08/24/legal-ai-startup-newcode-announces-135m-series-a-round-with-investment-from-relativity/",
-  },
-  {
     id: "hl-20",
     date: "2026-08-25",
     priority: "high",
@@ -73,36 +43,6 @@ const HIGHLIGHTS = [
     source: "Artificial Lawyer, Law.com (American Lawyer / Legaltech News), Google Cloud, Legora newsroom",
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
-  },
-  {
-    id: "hl-21",
-    date: "2026-08-24",
-    priority: "high",
-    category: "Product",
-    title: "Thomson Reuters debuts its own proprietary LLM, \"Thomson,\" inside CoCounsel",
-    summary:
-      "Thomson Reuters announced \"Thomson,\" its first proprietary large language model, trained in-house (reportedly a ~$40M investment) on Westlaw, Practical Law, and other proprietary content. It initially powers CoCounsel Legal's tabular-analysis feature, with Thomson Reuters claiming frontier-comparable performance at lower cost and full ownership rather than dependence on a third-party model provider.",
-    whyItMatters:
-      "A major incumbent moving to reduce dependence on third-party foundation models is directly relevant to every vendor in this space, including how Patlytics thinks about its own model-sourcing strategy — and reinforces Thomson Reuters' broader push (see the Solve Intelligence partnership above) to control more of the legal-AI stack itself.",
-    companies: ["Casetext (CoCounsel)"],
-    source: "PR Newswire, Artificial Lawyer",
-    sourceType: "product",
-    url: "https://www.prnewswire.com/news-releases/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model-302857499.html",
-  },
-  {
-    id: "hl-22",
-    date: "2026-08-24",
-    priority: "medium",
-    category: "Product",
-    title: "DraftWise launches \"Legal Ontology\" to structure firm-wide legal judgment",
-    summary:
-      "DraftWise announced a \"Legal Ontology\" capability that structures the knowledge and lawyer judgment embedded in the relationships across a law firm's documents, positioned as an accessible alternative to firms building bespoke in-house infrastructure. DraftWise frames the move as a response to client demand following Kirkland & Ellis's reported in-house AI build with Palantir.",
-    whyItMatters:
-      "A direct AI-legal-drafting competitor differentiating on a knowledge/judgment layer rather than pure document generation — a positioning angle worth watching as Patlytics considers its own data-model story.",
-    companies: ["DraftWise"],
-    source: "Artificial Lawyer",
-    sourceType: "product",
-    url: "https://www.artificiallawyer.com/2026/08/24/draftwise-launches-legal-ontology-to-capture-the-judgment-layer/",
   },
   {
     id: "hl-23",
@@ -133,21 +73,6 @@ const HIGHLIGHTS = [
     source: "PR Newswire, Bloomberg Law Pro",
     sourceType: "product",
     url: "https://www.prnewswire.com/news-releases/bloomberg-law-unveils-new-ai-powered-legal-intelligence-experience-at-iltacon-2026-302856497.html",
-  },
-  {
-    id: "hl-27",
-    date: "2026-08-24",
-    priority: "high",
-    category: "Product",
-    title: "LexisNexis unveils \"Legal Intelligence Engine,\" rebuilding Lexis+ AI around dynamic agentic orchestration",
-    summary:
-      "LexisNexis announced a new orchestration \"harness\" — the Legal Intelligence Engine — underlying Lexis+ with Protégé, which dynamically selects and coordinates AI models, agents, skills, and content sources from a plain-language task description rather than routing through predefined workflows, aiming to carry context from early strategy through research, drafting, and review in one session.",
-    whyItMatters:
-      "A third major incumbent (after Thomson Reuters' agentic CoCounsel push and Google's Gemini Enterprise for Legal, both already tracked) converging on the same 'one agentic harness, many skills' architecture in the same week — a structural pattern worth flagging to product/strategy, and directly relevant to LexisNexis IP Solutions and Cipher, both tracked competitors under the same parent.",
-    companies: ["LexisNexis IP Solutions", "Cipher"],
-    source: "Artificial Lawyer, LawNext, GlobeNewswire",
-    sourceType: "product",
-    url: "https://www.artificiallawyer.com/2026/08/24/lexis-rolls-out-legal-intelligence-engine-agentic-capabilities/",
   },
   {
     id: "hl-28",
@@ -538,6 +463,21 @@ const HIGHLIGHTS = [
     source: "Artificial Lawyer, Legora Newsroom",
     sourceType: "product",
     url: "https://www.artificiallawyer.com/2026/09/14/legora-to-launch-ontology-ai-native-citator/",
+  },
+  {
+    id: "hl-54",
+    date: "2026-09-14",
+    priority: "high",
+    category: "Corporate",
+    title: "Morgan & Morgan commits $1B+ over 10 years to legal tech/AI, unveils \"MX2\" platform",
+    summary:
+      "Morgan & Morgan — the largest US plaintiff-side law firm — announced a 10-year, $1B+ ($100M/year) commitment to legal tech/AI, formally unveiling its proprietary MX2 platform: Agent (case-insight/agentic workflows embedded in Litify), First Draft (case-aware document generation), Medical (medical-record extraction), and Search (semantic case-data queries). This builds on ~$300M already spent over the past 5 years; the firm reports 5,000 monthly internal users and 2M+ Agent interactions.",
+    whyItMatters:
+      "Extends the pattern already tracked at Latham & Watkins and Kirkland & Ellis/Palantir of large firms building AI infrastructure in-house rather than buying point solutions — even at a plaintiff/litigation-heavy firm outside Big Law's usual AI-adoption headlines. A useful data point on how much budget and appetite exists for in-house AI build, relevant to Patlytics' build-vs-buy conversations with large IP departments and firms.",
+    companies: ["Industry-wide"],
+    source: "Legal IT Insider (Legaltechnology.com)",
+    sourceType: "product",
+    url: "https://legaltechnology.com/morgan-morgan-pledges-1bn-tech-spend-over-10-years/",
   },
 ];
 
@@ -979,17 +919,22 @@ const COMPETITORS = [
         body: "Same Workday CXS facet API/tenant as yesterday's 18-role reset, re-queried directly — now shows 20 live roles. Two postings carry Workday's own \"Today\" relative-post-date flag: IP Admin Senior Analyst/SME (Noida) and IP Admin Analyst, Patents team (Belgrade); the rest were already open as of the 09-13 reset.",
         url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/IP-Admin-Senior-Analyst-SME_JREQ136417",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Board narrows to 19 IP-services roles",
+        body: "Same Workday CXS facet API/tenant re-queried directly — the \"Patent Classifier (Mechanical/Aeronautical/Civil Engineering) (5 Locations)\" posting tracked yesterday no longer appears; all other 19 roles remain live.",
+        url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
+      },
     ],
     hiring: {
-      openRoles: 20,
-      newRolesToday: [
-        { title: "IP Admin Senior Analyst/SME", dept: "Intellectual Property Services", location: "Noida", url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/IP-Admin-Senior-Analyst-SME_JREQ136417" },
-      ],
+      openRoles: 19,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "IP Admin Senior Analyst / Lead / SME (Noida, Ann Arbor, multiple locations)", count: 7 },
         { title: "Other IP specialist roles (Trademark Search, Patent Search Lead, Patent Illustration, Senior IP Product Analyst)", count: 4 },
-        { title: "Patent Classifier (Ann Arbor, multiple disciplines)", count: 2 },
+        { title: "Patent Classifier (Ann Arbor, multiple disciplines)", count: 1 },
         { title: "PCT Patent Analyst (Contract)", count: 2 },
         { title: "IP Renewals Analyst / SME (Belgrade, Seoul)", count: 2 },
         { title: "Senior Director, IP Service Operations", count: 1, url: "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers/job/R271--Noida/Senior-Director--IP--Service-Operations_JREQ135705-1" },
@@ -1079,14 +1024,23 @@ const COMPETITORS = [
         body: "Re-confirmed via the BambooHR careers API (two independent fetches, consistent count) — down 2 net since the 09-11 snapshot; no new senior/strategic titles among the remaining roster.",
         url: "https://anaqua.bamboohr.com/careers",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Opens Consultant, IP Services CX Japan role",
+        body: "Anaqua's BambooHR careers board grew from 18 to 19 live postings, with 'Consultant, IP Services CX Japan' (Tokyo) appearing as a newly-listed title not present in the prior snapshot.",
+        url: "https://anaqua.bamboohr.com/careers/919",
+      },
     ],
     hiring: {
-      openRoles: 18,
-      newRolesToday: [],
+      openRoles: 19,
+      newRolesToday: [
+        { title: "Consultant, IP Services CX Japan", dept: "IP Services", location: "Tokyo, Japan", url: "https://anaqua.bamboohr.com/careers/919" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Senior Platform Engineer (Java + GCP / Infrastructure & DevOps)", count: 2 },
-        { title: "IP Services CX Consultant (Japan)", count: 2 },
+        { title: "IP Services CX Consultant (Japan)", count: 3 },
       ],
     },
     marketing: [
@@ -1180,14 +1134,20 @@ const COMPETITORS = [
         body: "Re-running the same free-text 'Intellectual Property' search against the RELX Workday CXS API (no isolated IP job-family facet exists in this shared tenant) returns 18 results today, down from 19 — 'Senior Product Marketing Manager (m/f/d, Bonn)' no longer appears among live postings; all other 18 previously-tracked titles remain live with unchanged locations.",
         url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "LNIP-affiliated role count drops to 16, down from 18",
+        body: "Re-running the same free-text 'Intellectual Property' search against the RELX Workday CXS API — 'Senior Data Scientist I (UK)' and 'Data Scientist III (UK)' no longer appear among live postings; all other 16 previously-tracked titles remain live.",
+        url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal",
+      },
     ],
     hiring: {
-      openRoles: 18,
+      openRoles: 16,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Enterprise Account Manager, Intellectual Property Solutions", count: 2 },
-        { title: "Data Scientist III (Protégé / PatentSight+)", count: 1, url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/United-Kingdom/Data-Scientist-III_R114916-2" },
       ],
     },
     marketing: [],
@@ -1805,6 +1765,13 @@ COMPETITORS.push(
         body: "Direct fetch of the posting's own URL now 301-redirects to a 404 on iprova.com's careers CMS, confirming the role has closed. Board drops from 6 to 5 open roles; the other 5 stored titles remain live with unchanged URLs.",
         url: "https://www.iprova.com/careers/",
       },
+      {
+        date: "2026-09-14",
+        tag: "Content",
+        title: "Promotes \"Are We Inventing the Right Things?\" webinar",
+        body: "News post promoting a Sept 17, 2026 webinar (CEO Julian Nolan, Capgemini Invent's Monty Barlow, Sir Hossein Yassaie) on directing invention effort as AI expands the space of possibilities, including a live human+AI invention demo.",
+        url: "https://www.iprova.com/news/are-we-inventing-the-right-things/",
+      },
     ],
     hiring: {
       openRoles: 5,
@@ -2092,7 +2059,7 @@ COMPETITORS.push(
       { name: "Grant Eden", title: "Founding Senior Software Engineer", note: "Listed on IPWatchdog's IP Copilot partner page as a founding team member. (Verified 2026-08-31.)" },
     ],
     website: "ipcopilot.ai",
-    careersUrl: "https://ipcopilot.ai",
+    careersUrl: "https://jobs.gusto.com/boards/ip-copilot-0168badc-c668-4968-9865-910619861ad0",
     linkedin: "https://www.linkedin.com/company/ip-copilot",
   }),
   stubCompetitor({
@@ -2346,9 +2313,16 @@ COMPETITORS.push(
         body: "Polish law firm GESSEL is integrating Harvey across all practice areas; the firm's Managing Partner frames the move as part of a broader operational rethink of how legal work is organized. Continues Harvey's international firmwide-adoption pattern alongside the ARNECKE SIBETH DABELSTEIN rollout (09-10).",
         url: "https://www.harvey.ai/blog/gessel-deploys-harvey-firmwide",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Board settles at 319 live postings, down from 325",
+        body: "Ashby posting API re-queried directly — 319 live postings, 203 unique titles (unchanged title count despite churn). 7 new titles surfaced (Customer Success Manager, Enterprise; Customer Success Manager, Mid-Market; Manager or Senior Manager, Product Design, Platform; People Ops Onboarding Specialist, EMEA; Senior Motion Designer; Senior or Staff Product Designer, Design Systems; Technical CX Specialist) but cross-checked against renames of already-tracked postings — no genuinely new Head-of/VP/Director-level title found, so no opened-today item added. 13 other titles closed since 09-13.",
+        url: "https://jobs.ashbyhq.com/harvey",
+      },
     ],
     hiring: {
-      openRoles: 325,
+      openRoles: 319,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -2581,9 +2555,16 @@ COMPETITORS.push(
         body: "New legal-research foundation combining comprehensive legal data, a full 'ontology of law,' and an AI-native citator (built on the Qura and Wexler acquisitions) to catch citation failure modes — miscited amendments, dissents treated as holdings, stale case law. Limited beta now, GA targeted Q4 2026. Ashby board re-queried same day: 281 live postings, down from 286.",
         url: "https://legora.com/newsroom/legora-rebuilds-legal-research-with-comprehensive-data-a-full-ontology-of-law-and-an-ai-native-citator",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Board grows to 282 live postings, up from 281",
+        body: "Ashby posting API re-queried directly — 282 live postings. 6 new titles surfaced (Account Executive - Enterprise; Engineering Manager - Product Engineering; GTM Associate; IT Automation Engineer; Legal Engineer - Applied AI Knowledge; Senior Marketing Manager) against 9 closures — none of the new titles are Head-of/VP/Director-level, so no opened-today item added.",
+        url: "https://jobs.ashbyhq.com/legora",
+      },
     ],
     hiring: {
-      openRoles: 281,
+      openRoles: 282,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -2800,6 +2781,13 @@ COMPETITORS.push(
         body: "A fresh Workday CXS API query reconfirms all 9 previously-tracked CoCounsel-titled postings live, including this one (now under requisition suffix JREQ203612-1, Eagan, MN) — treated as a reopening/repost rather than a genuine closure, resolving the ambiguity flagged 09-11. No net title-count change.",
         url: "https://careers.thomsonreuters.com/",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Full-scan re-query suggests possible closures, not independently confirmed",
+        body: "A broader paginated scan of Thomson Reuters' Workday CXS API (searchText 'CoCounsel', 71 total tenant-wide hits) found only 6 of the 9 previously-tracked CoCounsel-titled postings on this pass (3 could not be re-surfaced: Sr Manager, AI Migration – CoCounsel Legal; Staff Software Engineer/Architect - AI, CoCounsel FDE; Implementation Consultant - Legal AI Solutions). Given this API's known relevance-ranked, non-exact-match search behavior (see 09-11/09-12 notes), this is treated as a probable-but-unconfirmed signal rather than a confirmed closure — prior 9-role baseline retained rather than guessed.",
+        url: "https://careers.thomsonreuters.com/",
+      },
     ],
     hiring: {
       openRoles: 9,
@@ -2886,16 +2874,21 @@ COMPETITORS.push(
         body: "Three new postings confirmed via the Ashby posting API's publishedAt field: Lead Counsel, Employment and Litigation (a notable senior in-house legal hire, San Francisco), Director, Adoption Strategy (Engagement Manager), and Manager, Technical Adoption Architecture (Professional Services). One prior posting (Staff/Senior Staff Software Engineer, Agentic Search) has closed. Board now at 36 live postings, up from 34.",
         url: "https://jobs.ashbyhq.com/ironcladhq/e323b789-8bd4-4051-a8c0-b22096bdd51e",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Board narrows to 35 live postings, down from 36",
+        body: "Ashby posting API re-queried directly — \"Senior Associate Technical Adoption Architect (Implementation Consultant)\" no longer appears live. A few other postings carry updated titles with the same publishedAt timestamps (cosmetic edits, not new/closed roles): \"Senior Software Engineer, AI - Squad Team\" → \"Senior Software Engineer, AI\"; \"Director, Adoption Strategy (Engagement Manager)\" → \"Director, Adoption Strategy (Professional Services)\"; \"Technical Support Engineer, EMEA\" → \"Technical Platform Expert, Support, EMEA\". No new titles.",
+        url: "https://jobs.ashbyhq.com/ironcladhq",
+      },
     ],
     hiring: {
-      openRoles: 36,
-      newRolesToday: [
-        { title: "Lead Counsel, Employment and Litigation", dept: "Legal", location: "San Francisco, CA", url: "https://jobs.ashbyhq.com/ironcladhq/e323b789-8bd4-4051-a8c0-b22096bdd51e" },
-      ],
+      openRoles: 35,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Staff Software Engineer (various)", count: 4 },
-        { title: "Technical Adoption Architect / Implementation Consultant", count: 2 },
+        { title: "Technical Adoption Architect / Implementation Consultant", count: 1 },
         { title: "Lead Counsel, Employment and Litigation", count: 1, url: "https://jobs.ashbyhq.com/ironcladhq/e323b789-8bd4-4051-a8c0-b22096bdd51e" },
       ],
     },
@@ -3947,15 +3940,15 @@ const WEBINARS = [
   },
   {
     id: "wb-15",
-    title: "IP Copilot webinar (topic TBD)",
+    title: "Protecting the Product – Mapping Features to Patent Claims and Closing Coverage Gaps",
     host: "IP Copilot",
     date: "2026-10-13",
     time: "12:00 PM ET",
     format: "Live webinar",
-    relevance: "medium",
-    description: "Competitor-hosted IPWatchdog session; topic details not yet published by the listing.",
-    tags: ["Competitor-hosted"],
-    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-10-13/",
+    relevance: "high",
+    description: "Direct Tier 2 competitor-hosted IPWatchdog session on mapping product features to patent claims and identifying/closing coverage gaps — topic now published (previously listed as TBD).",
+    tags: ["Competitor-hosted", "Claim Mapping"],
+    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-10-13-protecting-the-produc/",
   },
   {
     id: "wb-17",
@@ -4052,6 +4045,30 @@ const WEBINARS = [
     description: "Virtual conference on PTAB practice; full agenda not yet published.",
     tags: ["Conference", "Industry Event"],
     url: "https://ipwatchdog.com/event/virtual-ptab-masters-2027/",
+  },
+  {
+    id: "wb-25",
+    title: "AI and IP Europe 2026",
+    host: "World IP Review / Newton Media",
+    date: "2026-11-17",
+    time: "In-person, Brussels",
+    format: "Conference",
+    relevance: "medium",
+    description: "European sibling event to Newton Media's \"AI & IP USA\" conference, covering the EU AI Act, diverging global AI-inventorship positions, patent strategy, and GenAI copyright issues.",
+    tags: ["Conference", "Industry Event"],
+    url: "https://events.newton.media/AI-and-IP-EU",
+  },
+  {
+    id: "wb-26",
+    title: "The Looming Legal Tidal Wave",
+    host: "LegalOn & Artificial Lawyer",
+    date: "2026-09-15",
+    time: "12:00 PM ET",
+    format: "Live webinar",
+    relevance: "low",
+    description: "LegalOn CEO Daniel Lewis, Artificial Lawyer founder Richard Tromans, and Rippling's Vanessa Wu discuss whether wider AI use creates a surge in in-house legal demand rather than shrinking it. Not patent-specific.",
+    tags: ["Legal AI", "In-House"],
+    url: "https://www.legalontech.com/events/legal-tidal-wave",
   },
 ];
 
@@ -4169,17 +4186,6 @@ const BLOGS = [
     url: "https://www.altlegal.com/blog/2026gtlds/",
   },
   {
-    id: "blog-16",
-    headline: "Prior Art, Issue No. 001 | July 2026",
-    description: "Park IP's inaugural \"Prior Art\" newsletter covers Japan's tightened inventive-step standard for AI-assisted patent applications, the USPTO's new mandatory foreign-representation rule, and a new AI working group formed by the five largest patent offices.",
-    companyId: "park-ip",
-    source: "Park IP",
-    date: "2026-07-31",
-    relevance: "medium",
-    tags: ["Industry Trend", "Policy"],
-    url: "https://www.parkip.com/insights/prior-art-newsletter-vol-1-july-2026/",
-  },
-  {
     id: "blog-18",
     headline: "AI Won't Replace Patent Lawyers—But It Is Coming for Commodity Patent Work",
     description: "IPWatchdog's Gene Quinn argues AI will raise patent work quality rather than replace experienced attorneys, but will expose practitioners who offer only commodity drafting and search services.",
@@ -4211,17 +4217,6 @@ const BLOGS = [
     relevance: "high",
     tags: ["Patent Strategy", "Podcast"],
     url: "https://ipwatchdog.com/2026/08/11/patent-count-patent-value-strategy/",
-  },
-  {
-    id: "blog-21",
-    headline: "The Next Legal AI Boom Might Involve IP And Patent Tools",
-    description: "Law360 Pulse reports that established legal-AI vendors are pursuing partnerships and acquisitions of IP and patent-tech startups, noting IP-focused startups raised over $600 million in the first half of 2026 amid growing consolidation.",
-    companyId: "industry",
-    source: "Law360 Pulse",
-    date: "2026-07-31",
-    relevance: "high",
-    tags: ["Funding", "M&A", "Industry Trend"],
-    url: "https://www.law360.com/pulse/articles/2508007/the-next-legal-ai-boom-might-involve-ip-and-patent-tools",
   },
   {
     id: "blog-22",
@@ -4596,17 +4591,6 @@ const BLOGS = [
     relevance: "high",
     tags: ["Patent Landscape", "AI Patents", "Analytics"],
     url: "https://www.globenewswire.com/news-release/2026/09/01/3354190/0/en/new-anaqua-report-reveals-surge-in-ai-semiconductor-patent-filings.html",
-  },
-  {
-    id: "blog-57",
-    headline: "The rise of agentic AI in IP: What patent and trademark teams need to know about AI agents",
-    description: "Clarivate explains agentic-AI concepts for IP teams and how they apply to patent and trademark workflows via its IPOne platform.",
-    companyId: "clarivate-innography",
-    source: "Clarivate",
-    date: "2026-07-31",
-    relevance: "medium",
-    tags: ["AI Agents", "Thought Leadership"],
-    url: "https://clarivate.com/intellectual-property/blog/the-rise-of-agentic-ai-in-ip/",
   },
   {
     id: "blog-58",
@@ -5256,6 +5240,28 @@ const BLOGS = [
     relevance: "high",
     tags: ["Product Launch", "Legal Research"],
     url: "https://www.artificiallawyer.com/2026/09/14/legora-to-launch-ontology-ai-native-citator/",
+  },
+  {
+    id: "blog-121",
+    headline: "The Guide to Intellectual Property (IP) Litigation",
+    description: "Harvey blog post on using its AI to accelerate early IP-complaint review (patents, trademarks, copyrights, trade secrets) — summarizing complaints, pulling asserted claims/allegations, and drafting counterarguments for attorney review, with human sign-off before filing.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-14",
+    relevance: "high",
+    tags: ["IP Litigation", "Thought Leadership"],
+    url: "https://www.harvey.ai/blog/ip-litigation",
+  },
+  {
+    id: "blog-122",
+    headline: "Legal AI Needs An Escalation Layer",
+    description: "Above the Law argues legal-AI agents need structured escalation protocols weighing authority, consequence, novelty, and policy deviation — not just model confidence — to decide when to act independently versus hand off to a human.",
+    companyId: "industry",
+    source: "Above the Law",
+    date: "2026-09-14",
+    relevance: "medium",
+    tags: ["AI Governance", "Agentic AI"],
+    url: "https://abovethelaw.com/2026/09/legal-ai-needs-an-escalation-layer/",
   },
 ];
 
