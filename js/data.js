@@ -30,6 +30,21 @@ function siteUrl(domain) {
 /* ---------------- General Daily Highlights ---------------- */
 const HIGHLIGHTS = [
   {
+    id: "hl-55",
+    date: "2026-09-15",
+    priority: "high",
+    category: "Partnership",
+    title: "Solve Intelligence integrates Juristat's patent-examiner analytics data",
+    summary:
+      "Solve Intelligence co-founder Chris Parsonson announced the company has integrated Juristat's proprietary examiner-analytics data into its AI patent platform, giving practitioners examiner-level statistics to inform prosecution strategy directly within Solve's drafting workflow.",
+    whyItMatters:
+      "A Tier 1 direct competitor deepening its prosecution-strategy data moat via a partnership with a specialized examiner-analytics provider rather than building that data in-house — worth watching whether Patlytics needs a comparable data partnership or an in-house equivalent.",
+    companies: ["Solve Intelligence", "Juristat"],
+    source: "Chris Parsonson (LinkedIn)",
+    sourceType: "product",
+    url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-has-integrated-ugcPost-7505621523920142337-9LWL/",
+  },
+  {
     id: "hl-20",
     date: "2026-08-25",
     priority: "high",
@@ -523,6 +538,13 @@ const COMPETITORS = [
     ],
     todayActivity: [],
     weekActivity: [
+      {
+        date: "2026-09-15",
+        tag: "Partnership",
+        title: "Integrates Juristat's examiner analytics data",
+        body: "Solve Intelligence co-founder Chris Parsonson announced (LinkedIn) that Solve has integrated Juristat's proprietary patent-examiner analytics data into its platform, giving practitioners examiner-level statistics to inform prosecution strategy directly inside Solve's drafting workflow.",
+        url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-has-integrated-ugcPost-7505621523920142337-9LWL/",
+      },
       {
         date: "2026-09-01",
         tag: "Content",
