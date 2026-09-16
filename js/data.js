@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-15";
-const EARLIEST_DATE = "2026-08-25"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-16";
+const EARLIEST_DATE = "2026-08-26"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -30,6 +30,51 @@ function siteUrl(domain) {
 /* ---------------- General Daily Highlights ---------------- */
 const HIGHLIGHTS = [
   {
+    id: "hl-58",
+    date: "2026-09-16",
+    priority: "low",
+    category: "Market",
+    title: "BigHand survey: 31% of law firms say AI has measurably improved matter profitability",
+    summary:
+      "A BigHand pricing survey found 31% of law firms that analyzed their own data saw AI improve per-matter profitability, 30% saw increased matter throughput, and 27% saw reduced billable hours on certain tasks — but 35% of partners said they're still uncomfortable discussing AI use with clients. The piece concludes AI-driven profitability gains mainly favor firms that have already moved toward fixed-fee/alternative billing models.",
+    whyItMatters:
+      "A concrete (if modest) data point on where AI is and isn't yet translating into law-firm P&L impact — useful context for how Patlytics' own ROI narrative should be framed for firm buyers still on billable-hour models.",
+    companies: ["Industry-wide"],
+    source: "Artificial Lawyer",
+    sourceType: "news",
+    url: "https://www.artificiallawyer.com/2026/09/16/31-of-law-firms-say-ai-improves-profitability/",
+  },
+  {
+    id: "hl-57",
+    date: "2026-09-15",
+    priority: "low",
+    category: "Market",
+    title: "White & Case partner warns an AI slowdown could trigger an investor \"collision\"",
+    summary:
+      "Daniel Turgel, White & Case's co-head of its Global Technology Industry Group, warned that any perceived slowdown in frontier AI development could put AI-linked companies \"on a collision course with investors\" whose expectations were built around continuous rapid advances, given how much of current market/economic growth is now tied to AI and adjacent infrastructure (chips, energy, data centers).",
+    whyItMatters:
+      "A macro AI-investment-sentiment warning from a top law firm's tech-industry group is relevant context for how legal-AI valuations (Harvey's recent $15.5B raise, Legora's reported ~$10B ask) could be exposed if broader AI investor sentiment cools — worth watching for its indirect effect on the capital available to Patlytics' best-funded generalist competitors.",
+    companies: ["Industry-wide"],
+    source: "Artificial Lawyer",
+    sourceType: "news",
+    url: "https://www.artificiallawyer.com/2026/09/15/white-case-partner-ai-slowdown-risks-investor-collision/",
+  },
+  {
+    id: "hl-56",
+    date: "2026-09-14",
+    priority: "medium",
+    category: "Market",
+    title: "ILTA's 2026 Tech Survey: Microsoft 365 Copilot outranks Harvey, Legora and CoCounsel as law firms' most-used AI tool",
+    summary:
+      "ILTA's 2026 Technology Survey (500+ member firms, ~140,000 lawyers across a dozen countries) found 94% of firms now use or are exploring generative AI (up from 80% last year). By usage, Microsoft 365 Copilot leads at 76%, followed by Claude and Thomson Reuters CoCounsel (44% each) and Harvey (43%); for full deployment specifically, Microsoft Copilot (52%) and Westlaw Advantage (50%) lead. GenAI risk appeared for the first time on the survey's top security-concerns list, second only to user behavior.",
+    whyItMatters:
+      "No patent-specific tool appears anywhere in ILTA's top rankings — the AI budget and mindshare at law firms is currently being captured by horizontal, general-purpose tools (Copilot, Claude, CoCounsel) rather than domain-specific ones, which is both a warning (Patlytics competes for attention against horizontal incumbents, not just other patent-AI vendors) and a whitespace signal (no patent-specific tool has yet won broad law-firm mindshare the way Copilot has generally).",
+    companies: ["Industry-wide"],
+    source: "LawNext (LawSites)",
+    sourceType: "news",
+    url: "https://www.lawnext.com/2026/09/which-ai-product-is-most-popular-among-law-firms-findings-of-iltas-tech-survey-may-surprise-you.html",
+  },
+  {
     id: "hl-55",
     date: "2026-09-15",
     priority: "high",
@@ -43,51 +88,6 @@ const HIGHLIGHTS = [
     source: "Chris Parsonson (LinkedIn)",
     sourceType: "product",
     url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-has-integrated-ugcPost-7505621523920142337-9LWL/",
-  },
-  {
-    id: "hl-20",
-    date: "2026-08-25",
-    priority: "high",
-    category: "Product",
-    title: "Google Cloud launches \"Gemini Enterprise for Legal\"",
-    summary:
-      "Google Cloud unveiled a purpose-built, industry-specific version of Gemini Enterprise for law firms and corporate legal departments, in preview, with legal-specific \"skills\" (citation verification, contract lifecycle management, brief drafting, DSAR execution, regulation monitoring) and connectors into existing DMS/e-discovery/research systems. Cleary Gottlieb, Freshfields, Weil, and Williams & Connolly are named launch firms, with Harvey, Legora, Solve Intelligence, Thomson Reuters, iManage, RelativityOne, Everlaw, and NetDocuments named as launch software-connector partners.",
-    whyItMatters:
-      "A hyperscaler entering legal AI natively at the platform level — not as a point solution — is a structural signal for every legal/IP AI vendor, including patent-specific tools that may eventually need to interoperate with (or compete against) Gemini Enterprise's legal skills. Notably, Solve Intelligence — a Tier 1 direct competitor — is itself named as a launch connector partner alongside Harvey and Legora.",
-    companies: ["Industry-wide", "Harvey", "Legora", "Solve Intelligence"],
-    source: "Artificial Lawyer, Law.com (American Lawyer / Legaltech News), Google Cloud, Legora newsroom",
-    sourceType: "product",
-    url: "https://www.artificiallawyer.com/2026/08/25/google-launches-gemini-enterprise-for-legal/",
-  },
-  {
-    id: "hl-23",
-    date: "2026-08-25",
-    priority: "medium",
-    category: "Partnership",
-    title: "Cypris launches \"Cypris Q for Microsoft Copilot\"",
-    summary:
-      "Cypris announced Cypris Q for Microsoft Copilot, giving enterprise R&D and innovation teams direct access to Cypris's intelligence and research agents (prior art research, technology scouting, landscape analysis, competitive intelligence) from inside Microsoft Copilot, using an agent-to-agent architecture over MCP.",
-    whyItMatters:
-      "A distribution move that puts a patent/innovation-intelligence competitor directly inside a ubiquitous enterprise workflow tool — worth tracking as a go-to-market pattern other search/analytics competitors may follow.",
-    companies: ["Cypris"],
-    source: "PR Newswire",
-    sourceType: "product",
-    url: "https://www.prnewswire.com/news-releases/cypris-brings-rd-intelligence-directly-into-microsoft-copilot-302859445.html",
-  },
-  {
-    id: "hl-26",
-    date: "2026-08-25",
-    priority: "medium",
-    category: "Product",
-    title: "Bloomberg Law unveils \"BLAW AI\" and new Workspaces/agents at ILTACON 2026",
-    summary:
-      "Bloomberg Law introduced BLAW AI, a conversational AI experience delivering cited, grounded analysis from Bloomberg Law content, plus collaborative \"Workspaces,\" guided AI agents for repeatable tasks, and AI-powered \"Watchlists\" for monitoring clients/matters/industries — announced at ILTACON 2026 (Nashville).",
-    whyItMatters:
-      "Not patent-specific, but another large legal-data incumbent shipping AI-native research and monitoring tooling raises the baseline expectation for what \"AI-powered IP/legal monitoring\" looks like — relevant context alongside Thomson Reuters' and Google's moves this same week.",
-    companies: ["Industry-wide"],
-    source: "PR Newswire, Bloomberg Law Pro",
-    sourceType: "product",
-    url: "https://www.prnewswire.com/news-releases/bloomberg-law-unveils-new-ai-powered-legal-intelligence-experience-at-iltacon-2026-302856497.html",
   },
   {
     id: "hl-28",
@@ -539,6 +539,20 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Opens Data Engineer role (London)",
+        body: "New Ashby posting confirmed via the posting API's publishedAt field (2026-09-16T08:29:52Z). Board now at 17 live postings, up from 16 — all previously-tracked titles remain live.",
+        url: "https://jobs.ashbyhq.com/solveintelligence/7e42954a-cb4a-4aa4-a317-fb0a23ded383",
+      },
+      {
+        date: "2026-09-16",
+        tag: "Content",
+        title: "Publishes \"Inside Our IPWatchdog AI Webinar for Life Sciences Patents\"",
+        body: "New company-blog recap of the 08-27 IPWatchdog webinar (already tracked below), summarizing panel discussion on AI handling chemical structures, antibody sequences, and messy inventor data in life-sciences patent practice, and where human review remains essential.",
+        url: "https://www.solveintelligence.com/blog/post/ai-life-sciences-patent-practice-webinar-takeaways",
+      },
+      {
         date: "2026-09-15",
         tag: "Partnership",
         title: "Integrates Juristat's examiner analytics data",
@@ -631,13 +645,16 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: 16,
-      newRolesToday: [],
+      openRoles: 17,
+      newRolesToday: [
+        { title: "Data Engineer", dept: "Engineering", location: "London", url: "https://jobs.ashbyhq.com/solveintelligence/7e42954a-cb4a-4aa4-a317-fb0a23ded383" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Legal Counsel", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/07c9b5d3-5bd1-4f75-8741-04b076c32dd9" },
         { title: "Account Executive / GTM", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/510cafb8-922a-45fd-8340-6aa89191ea47" },
         { title: "AI Engineer", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/972bab7a-a285-4d22-af00-9ff9d3e41776" },
+        { title: "Data Engineer", count: 1, url: "https://jobs.ashbyhq.com/solveintelligence/7e42954a-cb4a-4aa4-a317-fb0a23ded383" },
       ],
     },
     marketing: [
@@ -672,7 +689,7 @@ const COMPETITORS = [
     hq: "Singapore / London",
     website: "patsnap.com",
     websiteUrl: siteUrl("patsnap.com"),
-    careersUrl: siteUrl("patsnap.com") + "/careers",
+    careersUrl: "https://careers.patsnap.com/",
     linkedin: "https://www.linkedin.com/company/patsnap",
     founders: [
       {
@@ -683,6 +700,13 @@ const COMPETITORS = [
     ],
     todayActivity: [],
     weekActivity: [
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Hiring pipeline recovers on a new ATS — 38 live roles found",
+        body: "PatSnap's hiring pipeline (previously fully empty/broken since 08-31) is back, but under a new ATS and URL: patsnap.com/careers now 301-redirects to careers.patsnap.com, running on Recruitee. 38 live postings found, spanning Singapore, Farringdon (UK), Shanghai/Suzhou (China), Toronto, and the US, including Senior SDR Manager, Senior Legal Counsel, PR & Communications Manager, and a Site Reliability Engineering (SRE) Leader. Because both the ATS and URL changed from the stale baseline, these are not being reported as roles opened today — just as the corrected current picture. The previously-tracked AI Solutions Engineer – Intellectual Property (London) posting is present in the new roster, confirming continuity through the migration.",
+        url: "https://careers.patsnap.com/",
+      },
       {
         date: "2026-09-03",
         tag: "Content",
@@ -755,10 +779,15 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: null,
+      openRoles: 38,
       newRolesToday: [],
       recentHires: [],
-      topRoles: [],
+      topRoles: [
+        { title: "Senior SDR Manager", count: 1 },
+        { title: "Senior Legal Counsel", count: 1 },
+        { title: "PR & Communications Manager", count: 1 },
+        { title: "Site Reliability Engineering (SRE) Leader", count: 1 },
+      ],
     },
     marketing: [
       {
@@ -879,6 +908,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Facet API broken again — noisy free-text fallback shows 26 roles, not treated as a confirmed diff",
+        body: "The Workday CXS facet call for job-family-group \"Intellectual Property Services\" returned HTTP 400 again today. A free-text fallback query against the same tenant returns 26 live postings, but this re-surfaced \"Vice President, Product Marketing (IP)\" — a role independently confirmed filled/closed back on 2026-08-30 — confirming the free-text method is noisy/imprecise, as flagged in prior passes. Treated as an unresolved baseline reset rather than a clean diff off yesterday's 19-role facet-based count.",
+        url: "https://careers.clarivate.com/c/intellectual-property-services-jobs",
+      },
+      {
         date: "2026-09-07",
         tag: "Hiring",
         title: "Workday IP-services facet API still broken (8th+ consecutive day) — roster re-estimated at 27 via keyword match",
@@ -950,7 +986,7 @@ const COMPETITORS = [
       },
     ],
     hiring: {
-      openRoles: 19,
+      openRoles: 26,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -1163,9 +1199,16 @@ const COMPETITORS = [
         body: "Re-running the same free-text 'Intellectual Property' search against the RELX Workday CXS API — 'Senior Data Scientist I (UK)' and 'Data Scientist III (UK)' no longer appear among live postings; all other 16 previously-tracked titles remain live.",
         url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal",
       },
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "LNIP-affiliated role count rises to 17, up from 16 — new Sr. Product Manager (Horsham, PA)",
+        body: "Re-running the same free-text 'Intellectual Property' search against the RELX Workday CXS API — new posting: Sr. Product Manager (Horsham, PA, 5 locations total), Workday-flagged 'Posted Yesterday' (~2026-09-15). All 16 previously-tracked titles remain live.",
+        url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/Horsham-PA/Sr-Product-Manager_R110080-2",
+      },
     ],
     hiring: {
-      openRoles: 16,
+      openRoles: 17,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -1643,6 +1686,34 @@ COMPETITORS.push(
         body: "Confirmed directly against XLSCOUT's own backend: its WordPress \"WP Job Manager\" AJAX search endpoint now returns found_jobs:false — both previously-tracked roles (Product Lead, R&D Manager) have closed.",
         url: "https://xlscout.ai/careers/",
       },
+      {
+        date: "2026-09-14",
+        tag: "Content",
+        title: "Publishes \"Best AI Patent Drafting Software in 2026: Comparison Guide\"",
+        body: "New comparison-guide blog post positioning XLSCOUT among AI patent drafting tools.",
+        url: "https://xlscout.ai/best-ai-patent-drafting-software-in-2026-comparison-guide/",
+      },
+      {
+        date: "2026-09-14",
+        tag: "Content",
+        title: "Publishes \"Competitive Intelligence in Patents: The Complete Framework\"",
+        body: "New blog post on competitive-intelligence methodology for patent teams.",
+        url: "https://xlscout.ai/competitive-intelligence-in-patents-the-complete-framework/",
+      },
+      {
+        date: "2026-09-14",
+        tag: "Content",
+        title: "Publishes \"What Does Patentable Mean? The Complete Guide to Patentability\"",
+        body: "New explainer blog post on patentability criteria, authored by Puneet Tiwari.",
+        url: "https://xlscout.ai/what-does-patentable-mean-the-complete-guide-to-patentability/",
+      },
+      {
+        date: "2026-09-15",
+        tag: "Content",
+        title: "Publishes \"Patent Claim Charts Explained: The Complete Guide to Infringement Analysis\"",
+        body: "New educational/SEO blog post on claim-chart methodology for infringement analysis, authored by Sumit Choudhary.",
+        url: "https://xlscout.ai/patent-claim-charts-explained-the-complete-guide-to-infringement-analysis/",
+      },
     ],
     hiring: { openRoles: 0, newRolesToday: [], recentHires: [], topRoles: [] },
   }),
@@ -2031,9 +2102,23 @@ COMPETITORS.push(
         body: "Regular weekly trademark-industry newsletter covering third-party trademark case news; routine recurring content rather than an Alt Legal product/business announcement.",
         url: "https://www.altlegal.com/blog/i-%E2%99%A1-trademarks-newsletter-issue-495/",
       },
+      {
+        date: "2026-09-15",
+        tag: "Content",
+        title: "Published \"I ♥ Trademarks\" newsletter, Issue #496",
+        body: "Regular weekly trademark-industry newsletter covering third-party trademark case news; routine recurring content rather than an Alt Legal product/business announcement.",
+        url: "https://www.altlegal.com/blog/i-%e2%99%a1-trademarks-newsletter-issue-496/",
+      },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Opened Senior Customer Support Specialist role",
+        body: "New posting on Alt Legal's Breezy HR board (Success dept, US/remote), published 2026-09-15T16:57:50Z. Open roles now 5, up from 4; all 4 previously-tracked roles remain live.",
+        url: "https://alt-legal.breezy.hr/p/3fb558e06e8b-senior-customer-support-specialist",
+      },
     ],
     hiring: {
-      openRoles: 4,
+      openRoles: 5,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -2041,6 +2126,7 @@ COMPETITORS.push(
         { title: "Customer Success Manager", count: 1, url: "https://alt-legal.breezy.hr/p/33b788b22d82-customer-success-manager" },
         { title: "Operations Associate", count: 1, url: "https://alt-legal.breezy.hr/p/9e8be090952c-operations-associate" },
         { title: "Data Migration and Onboarding Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/2cc745ec3a62-data-migration-and-onboarding-specialist-at-alt-legal-remote" },
+        { title: "Senior Customer Support Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/3fb558e06e8b-senior-customer-support-specialist" },
       ],
     },
   }),
@@ -2342,9 +2428,23 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — 319 live postings, 203 unique titles (unchanged title count despite churn). 7 new titles surfaced (Customer Success Manager, Enterprise; Customer Success Manager, Mid-Market; Manager or Senior Manager, Product Design, Platform; People Ops Onboarding Specialist, EMEA; Senior Motion Designer; Senior or Staff Product Designer, Design Systems; Technical CX Specialist) but cross-checked against renames of already-tracked postings — no genuinely new Head-of/VP/Director-level title found, so no opened-today item added. 13 other titles closed since 09-13.",
         url: "https://jobs.ashbyhq.com/harvey",
       },
+      {
+        date: "2026-09-15",
+        tag: "Content",
+        title: "Publishes two new Insights blog posts",
+        body: "\"How to Write a Motion for Summary Judgement\" and \"What Makes an AI Contract Summary Decision-Ready?\" — educational/SEO-style content, part of Harvey's ongoing legal-practice content marketing.",
+        url: "https://www.harvey.ai/blog/how-to-write-a-motion-for-summary-judgement",
+      },
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Board settles at 313 live postings, down from 319",
+        body: "Ashby posting API re-queried directly — 313 live postings, 199 unique titles (down from 203). 7 titles that looked \"new\" via a naive diff were independently confirmed via publishedAt to be pre-existing renames/reposts, not genuinely new — no new Head-of/VP/Director-level title found.",
+        url: "https://jobs.ashbyhq.com/harvey",
+      },
     ],
     hiring: {
-      openRoles: 319,
+      openRoles: 313,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -2584,15 +2684,33 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — 282 live postings. 6 new titles surfaced (Account Executive - Enterprise; Engineering Manager - Product Engineering; GTM Associate; IT Automation Engineer; Legal Engineer - Applied AI Knowledge; Senior Marketing Manager) against 9 closures — none of the new titles are Head-of/VP/Director-level, so no opened-today item added.",
         url: "https://jobs.ashbyhq.com/legora",
       },
+      {
+        date: "2026-09-16",
+        tag: "Sales",
+        title: "Salesforce selects Legora to support its global legal team operations",
+        body: "Legora's own newsroom announced Salesforce has adopted Legora's agentic operating system across its in-house legal organization spanning North America, EMEA, and APAC for research, drafting, and workflow.",
+        url: "https://legora.com/newsroom/salesforce-selects-legora-to-further-support-its-global-legal-team-operations",
+      },
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Opens a dedicated 10-role \"Platform Engineering\" team build-out",
+        body: "Ashby posting API re-queried directly — 282 live postings (unchanged total), 214 unique titles (up from 213). New dedicated Platform Engineering team spanning Stockholm HQ and Malmö, Sweden: 10 postings all published today across Senior Platform Engineer, Software Engineer, Staff Software Engineer, Staff Platform Engineer, Senior Backend Engineer, Senior Site Reliability Engineer, and Site Reliability Engineer — a notable new-initiative signal suggesting a newly-formed dedicated platform/infra group. Only \"Staff Platform Engineer\" is a genuinely new unique title; the rest are new postings of already-tracked titles in new locations.",
+        url: "https://jobs.ashbyhq.com/legora/f835b884-d93b-473c-bf12-e754166f854d",
+      },
     ],
     hiring: {
       openRoles: 282,
-      newRolesToday: [],
+      newRolesToday: [
+        { title: "Staff Platform Engineer", dept: "Engineering", location: "Malmö, Sweden", url: "https://jobs.ashbyhq.com/legora/f835b884-d93b-473c-bf12-e754166f854d" },
+        { title: "Senior Platform Engineer", dept: "Engineering", location: "Stockholm HQ", url: "https://jobs.ashbyhq.com/legora/8f04eacb-b330-4166-8c88-a77c9cc4f46f" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Engagement Manager (various regions)", count: 15 },
         { title: "Legal Engineer (various specialties)", count: 12 },
         { title: "Account Executive (various regions)", count: 10 },
+        { title: "Platform Engineering team (Stockholm/Malmö)", count: 10 },
       ],
     },
   }),
@@ -2903,9 +3021,16 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — \"Senior Associate Technical Adoption Architect (Implementation Consultant)\" no longer appears live. A few other postings carry updated titles with the same publishedAt timestamps (cosmetic edits, not new/closed roles): \"Senior Software Engineer, AI - Squad Team\" → \"Senior Software Engineer, AI\"; \"Director, Adoption Strategy (Engagement Manager)\" → \"Director, Adoption Strategy (Professional Services)\"; \"Technical Support Engineer, EMEA\" → \"Technical Platform Expert, Support, EMEA\". No new titles.",
         url: "https://jobs.ashbyhq.com/ironcladhq",
       },
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Board narrows to 34 live postings, down from 35",
+        body: "Ashby posting API re-queried directly — \"Sr. Enterprise Architect\" no longer appears live. No other titles missing, no new titles found.",
+        url: "https://jobs.ashbyhq.com/ironcladhq",
+      },
     ],
     hiring: {
-      openRoles: 35,
+      openRoles: 34,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -3151,18 +3276,26 @@ COMPETITORS.push(
         body: "Three new postings confirmed via the Greenhouse API (each updated 2026-09-10). Three prior postings no longer appear live (Growth Account Executive, East Coast; Senior Product Marketing Manager - Core; Software Engineer, Full Stack - GTM). Board remains at 30 live postings — a turnover, not net growth.",
         url: "https://job-boards.greenhouse.io/eve/jobs/4243070009",
       },
+      {
+        date: "2026-09-15",
+        tag: "Hiring",
+        title: "Opens 5 new roles across Marketing and Engineering; one closure",
+        body: "Greenhouse API queried directly — board grows to 34 live postings, up from 30. Five new (all published 2026-09-15): Field Marketing Manager, Senior Analytics Engineer, Senior Data Engineer, Staff Analytics Engineer, Staff Data Engineer (all Remote - US). One closure: Engineering Leader - Product Engineering.",
+        url: "https://job-boards.greenhouse.io/eve/jobs/4407285009",
+      },
     ],
     hiring: {
-      openRoles: 30,
+      openRoles: 34,
       newRolesToday: [
-        { title: "Renewals Manager", dept: "Sales", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4243070009" },
-        { title: "Senior Full Stack Engineer, AI & Growth Systems", dept: "Engineering", location: "San Mateo, CA", url: "https://job-boards.greenhouse.io/eve/jobs/4284404009" },
+        { title: "Staff Data Engineer", dept: "Engineering", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4406949009" },
+        { title: "Staff Analytics Engineer", dept: "Engineering", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4406926009" },
+        { title: "Field Marketing Manager", dept: "Marketing", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4407285009" },
       ],
       recentHires: [],
       topRoles: [
         { title: "Sales (Account Executive / SDR / leadership mix)", count: 8 },
-        { title: "Marketing", count: 3 },
-        { title: "Engineering", count: 6 },
+        { title: "Marketing", count: 4 },
+        { title: "Engineering", count: 9 },
       ],
     },
   }),
@@ -3288,6 +3421,13 @@ COMPETITORS.push(
         title: "Patently Create adds support for mathematical equations in patent drafts",
         body: "Patently Create now handles equations end-to-end in patent drafts — formatting them consistently across the description, claims, and figures, and letting the AI assistant discuss equation meaning directly. (Corrected 2026-09-13: this post's real publish date is 2026-09-10, not 09-04 as previously recorded.)",
         url: "https://patently.com/blog/equations-in-patent-claims",
+      },
+      {
+        date: "2026-09-15",
+        tag: "Content",
+        title: "Publishes \"The equation was a screenshot pasted into the claim...\"",
+        body: "A distinct follow-up post from a different angle on the same equations feature covered 09-10: equations now persist as real data (not screenshots) across draft/claims/figures, and the Onardo AI assistant can discuss/refine the surrounding claim language.",
+        url: "https://patently.com/blog/native-equations-in-patent-drafting",
       },
     ],
   }),
@@ -3940,13 +4080,13 @@ const WEBINARS = [
     id: "wb-13",
     title: "The Invisible Checklist – What Makes IP Teams Say Yes to AI",
     host: "Patently",
-    date: "2026-09-17",
+    date: "2026-09-22",
     time: "12:00 PM ET",
     format: "Live webinar",
     relevance: "high",
-    description: "Direct Tier 1 competitor-hosted session on the adoption criteria (trust, liability, auditability) IP teams use to say yes to an AI tool, including a Patently platform demo.",
+    description: "Direct Tier 1 competitor-hosted session on the adoption criteria (trust, liability, auditability) IP teams use to say yes to an AI tool, including a Patently platform demo. Rescheduled from 2026-09-17 to 2026-09-22 (confirmed via IPWatchdog's live event page, 2026-09-16).",
     tags: ["Competitor-hosted", "AI Adoption"],
-    url: "https://ipwatchdog.com/event/webinar-patently-2026-09-17-the-invisible-checklist/",
+    url: "https://ipwatchdog.com/event/webinar-patently-2026-09-22-the-invisible-checklist/",
   },
   {
     id: "wb-14",
@@ -3970,7 +4110,7 @@ const WEBINARS = [
     relevance: "high",
     description: "Direct Tier 2 competitor-hosted IPWatchdog session on mapping product features to patent claims and identifying/closing coverage gaps — topic now published (previously listed as TBD).",
     tags: ["Competitor-hosted", "Claim Mapping"],
-    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-10-13-protecting-the-produc/",
+    url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-10-13-protecting-the-product/",
   },
   {
     id: "wb-17",
@@ -5284,6 +5424,149 @@ const BLOGS = [
     relevance: "medium",
     tags: ["AI Governance", "Agentic AI"],
     url: "https://abovethelaw.com/2026/09/legal-ai-needs-an-escalation-layer/",
+  },
+  {
+    id: "blog-123",
+    headline: "What AI Really Asks of IP Leaders",
+    description: "Managing IP piece (featuring Clarivate's IP president Simon Webster) arguing that successful AI adoption inside corporate IP departments depends primarily on data quality, workflow design, and organizational readiness rather than on the AI technology itself.",
+    companyId: "industry",
+    source: "Managing IP",
+    date: "2026-09-02",
+    relevance: "medium",
+    tags: ["IP Management", "AI Adoption"],
+    url: "https://www.managingip.com/article/2guc1r2t3gbwbaldky3uo/patents/what-ai-really-asks-of-ip-leaders",
+  },
+  {
+    id: "blog-124",
+    headline: "Surviving the New AI Prosecution Gauntlet",
+    description: "World IP Review analysis arguing that AI-patent prosecution strategy has moved past Section 101 eligibility as the main hurdle — federal courts now expect exhaustive Section 112(a) enablement disclosure (neural-network architecture, training-data structure, intermediate computational steps) even as the USPTO discourages aggressive 101 rejections.",
+    companyId: "industry",
+    source: "World IP Review",
+    date: "2026-09-11",
+    relevance: "high",
+    tags: ["Patent Prosecution", "Section 112", "AI Patents"],
+    url: "https://www.worldipreview.com/patent/surviving-the-new-ai-prosecution-gauntlet",
+  },
+  {
+    id: "blog-125",
+    headline: "Lawyers Are Burning Out, Can AI Help?",
+    description: "Artificial Lawyer piece citing an ABA survey of 37,000 U.S. lawyers (47.4% screening positive for high burnout, 42% showing risky drinking patterns) and arguing AI's wellbeing benefit depends on firms restructuring workflows and culture, not just adding productivity tools.",
+    companyId: "industry",
+    source: "Artificial Lawyer",
+    date: "2026-09-15",
+    relevance: "low",
+    tags: ["Lawyer Wellbeing", "AI Adoption"],
+    url: "https://www.artificiallawyer.com/2026/09/15/lawyers-are-burning-out-can-ai-help/",
+  },
+  {
+    id: "blog-126",
+    headline: "Inside Our IPWatchdog AI Webinar for Life Sciences Patents",
+    description: "Solve Intelligence company-blog recap of its 08-27 IPWatchdog webinar, summarizing panel discussion on AI handling chemical structures, antibody sequences, and messy inventor data in life-sciences patent practice, and where human review remains essential.",
+    companyId: "solve-intelligence",
+    source: "Solve Intelligence",
+    date: "2026-09-16",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Life Sciences"],
+    url: "https://www.solveintelligence.com/blog/post/ai-life-sciences-patent-practice-webinar-takeaways",
+  },
+  {
+    id: "blog-127",
+    headline: "Best AI Patent Drafting Software in 2026: Comparison Guide",
+    description: "XLSCOUT comparison-guide blog post positioning itself among AI patent drafting tools.",
+    companyId: "xlscout",
+    source: "XLSCOUT",
+    date: "2026-09-14",
+    relevance: "low",
+    tags: ["Content Marketing", "AI Drafting"],
+    url: "https://xlscout.ai/best-ai-patent-drafting-software-in-2026-comparison-guide/",
+  },
+  {
+    id: "blog-128",
+    headline: "Competitive Intelligence in Patents: The Complete Framework",
+    description: "XLSCOUT blog post on competitive-intelligence methodology for patent teams.",
+    companyId: "xlscout",
+    source: "XLSCOUT",
+    date: "2026-09-14",
+    relevance: "low",
+    tags: ["Content Marketing", "Competitive Intelligence"],
+    url: "https://xlscout.ai/competitive-intelligence-in-patents-the-complete-framework/",
+  },
+  {
+    id: "blog-129",
+    headline: "What Does Patentable Mean? The Complete Guide to Patentability",
+    description: "XLSCOUT explainer blog post on patentability criteria, authored by Puneet Tiwari.",
+    companyId: "xlscout",
+    source: "XLSCOUT",
+    date: "2026-09-14",
+    relevance: "low",
+    tags: ["Content Marketing", "Patentability"],
+    url: "https://xlscout.ai/what-does-patentable-mean-the-complete-guide-to-patentability/",
+  },
+  {
+    id: "blog-130",
+    headline: "Patent Claim Charts Explained: The Complete Guide to Infringement Analysis",
+    description: "XLSCOUT educational/SEO blog post on claim-chart methodology for infringement analysis, authored by Sumit Choudhary.",
+    companyId: "xlscout",
+    source: "XLSCOUT",
+    date: "2026-09-15",
+    relevance: "medium",
+    tags: ["Content Marketing", "Claim Charting"],
+    url: "https://xlscout.ai/patent-claim-charts-explained-the-complete-guide-to-infringement-analysis/",
+  },
+  {
+    id: "blog-131",
+    headline: "The equation was a screenshot pasted into the claim. Nobody could edit it without breaking the layout",
+    description: "Patently blog post on its Create feature's native-equations handling — equations now persist as real data (not screenshots) across draft/claims/figures, with its Onardo AI assistant able to discuss/refine the surrounding claim language.",
+    companyId: "patently",
+    source: "Patently",
+    date: "2026-09-15",
+    relevance: "medium",
+    tags: ["Product Launch", "AI Drafting"],
+    url: "https://patently.com/blog/native-equations-in-patent-drafting",
+  },
+  {
+    id: "blog-132",
+    headline: "I ♥ Trademarks Newsletter: Issue #496",
+    description: "Alt Legal's latest weekly installment of its recurring trademark-industry newsletter covering third-party trademark case news.",
+    companyId: "alt-legal",
+    source: "Alt Legal",
+    date: "2026-09-15",
+    relevance: "low",
+    tags: ["Newsletter"],
+    url: "https://www.altlegal.com/blog/i-%e2%99%a1-trademarks-newsletter-issue-496/",
+  },
+  {
+    id: "blog-133",
+    headline: "How to Write a Motion for Summary Judgement",
+    description: "Harvey Insights blog post, part of its ongoing legal-practice content marketing.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-15",
+    relevance: "low",
+    tags: ["Thought Leadership"],
+    url: "https://www.harvey.ai/blog/how-to-write-a-motion-for-summary-judgement",
+  },
+  {
+    id: "blog-134",
+    headline: "What Makes an AI Contract Summary Decision-Ready?",
+    description: "Harvey Insights blog post on AI contract summarization.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-15",
+    relevance: "low",
+    tags: ["Thought Leadership"],
+    url: "https://www.harvey.ai/blog/ai-contract-summary",
+  },
+  {
+    id: "blog-135",
+    headline: "Salesforce Selects Legora to Further Support its Global Legal Team Operations",
+    description: "Legora newsroom announcement that Salesforce has adopted Legora's agentic operating system across its in-house legal organization spanning North America, EMEA, and APAC for research, drafting, and workflow.",
+    companyId: "legora",
+    source: "Legora",
+    date: "2026-09-16",
+    relevance: "high",
+    tags: ["Customer Win", "Enterprise"],
+    url: "https://legora.com/newsroom/salesforce-selects-legora-to-further-support-its-global-legal-team-operations",
   },
 ];
 
