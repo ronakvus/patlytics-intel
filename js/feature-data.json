@@ -1345,6 +1345,26 @@
         }
       ]
     },
+    "cypris": {
+      "prior-art-search": [
+        {
+          "platform": "G2",
+          "author": "Verified G2 Reviewer, Cypris Platform",
+          "text": "it's great for pulling scientific information and finding detailed patents and research papers to support references.",
+          "sourceUrl": "https://www.g2.com/products/cypris-platform/reviews",
+          "sentiment": "positive"
+        }
+      ],
+      "fto-analysis": [
+        {
+          "platform": "G2",
+          "author": "Verified G2 Reviewer, Cypris Platform",
+          "text": "In the past, finding our FTO or doing white space analysis took quite a long time, and users would always have to go through some middleman whether it be a lawyer or a professional that understands intellectual property. However, with Cypris having an intuitive UI, simple outputs and semantic search, users spend much less time in research and coordination and much more time making data-driven decisions.",
+          "sourceUrl": "https://www.g2.com/products/cypris-platform/reviews",
+          "sentiment": "positive"
+        }
+      ]
+    },
     "clarivate-innography": {
       "prior-art-search": [
         {
