@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-16";
-const EARLIEST_DATE = "2026-08-26"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-17";
+const EARLIEST_DATE = "2026-08-27"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -29,6 +29,21 @@ function siteUrl(domain) {
 
 /* ---------------- General Daily Highlights ---------------- */
 const HIGHLIGHTS = [
+  {
+    id: "hl-59",
+    date: "2026-09-17",
+    priority: "medium",
+    category: "Product",
+    title: "Google demos Gemini Enterprise legal AI helpers live at Harvey, Freshfields, Inspira",
+    summary:
+      "Google Cloud legal counsel Xavier Polidoro publicly demoed Gemini Enterprise's legal capabilities — general contract summarization/risk-flagging, NotebookLM document chat across up to 300 sources/500K words each, and custom \"Legal AI Helper\" agents for redlining and brief-writing in Pro and Flash tiers — citing Harvey, Freshfields, and Inspira as live users, and reiterating Google does not train on customer legal data.",
+    whyItMatters:
+      "A concrete follow-up to the Aug 25/27 Gemini Enterprise for Legal launch (see hl-29/30) with named live adopters, confirming Google is positioning itself as horizontal AI infrastructure that legal point-solutions plug into — sharpens the build-vs-plug-in question Patlytics faces as this ecosystem matures.",
+    companies: ["Industry-wide", "Harvey"],
+    source: "Artificial Lawyer",
+    sourceType: "product",
+    url: "https://www.artificiallawyer.com/2026/09/17/google-shows-off-cloud-legal-ai-helpers-more/",
+  },
   {
     id: "hl-58",
     date: "2026-09-16",
@@ -1206,9 +1221,16 @@ const COMPETITORS = [
         body: "Re-running the same free-text 'Intellectual Property' search against the RELX Workday CXS API — new posting: Sr. Product Manager (Horsham, PA, 5 locations total), Workday-flagged 'Posted Yesterday' (~2026-09-15). All 16 previously-tracked titles remain live.",
         url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal/job/Horsham-PA/Sr-Product-Manager_R110080-2",
       },
+      {
+        date: "2026-09-17",
+        tag: "Hiring",
+        title: "LNIP-affiliated role count drops to 16, down from 17 — Enterprise Account Manager (Bonn) closed",
+        body: "Re-running the same free-text 'Intellectual Property' search against the RELX Workday CXS API — 'Enterprise Account Manager (m/f/x, Bonn)' no longer appears among live postings; all other 16 previously-tracked titles remain live.",
+        url: "https://relx.wd3.myworkdayjobs.com/LexisNexisLegal",
+      },
     ],
     hiring: {
-      openRoles: 17,
+      openRoles: 16,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
@@ -1415,7 +1437,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "DI",
     tagline: "AI patent drafting and prosecution platform.",
-    description: "Repeatedly identified inside Patlytics' own competitive-analysis tracking as the closest direct competitor — an AI drafting and prosecution platform with significant product overlap. Highest-priority watch-list entry. Acquired German AI patent-drafting tool PatentMaker in June 2026 to build out European coverage, and exhibited at PATINFO 2026 (Ilmenau, June 10-12, 2026) on prior art search, Markush drafting, and office-action response.",
+    description: "Repeatedly identified inside Patlytics' own competitive-analysis tracking as the closest direct competitor — an AI drafting and prosecution platform with significant product overlap. Highest-priority watch-list entry. Raised a $25M Series B in March 2026 (announced 2026-03-03), bringing total funding to $40M; says it works with 400+ law firms/corporate IP teams across 25 jurisdictions/5 continents, with named clients including Greenberg Traurig, Mewburn Ellis, Dexcom, and Philips (Artificial Lawyer, verified 2026-09-17). Acquired German AI patent-drafting tool PatentMaker in June 2026 to build out European coverage, and exhibited at PATINFO 2026 (Ilmenau, June 10-12, 2026) on prior art search, Markush drafting, and office-action response.",
         employeeCount: "~71 (PitchBook/Tracxn, as of 2026-05-31)",
     founded: "2023",
     hq: "Brooklyn, NY (also maintains a Paris office)",
@@ -1482,6 +1504,13 @@ COMPETITORS.push(
         title: "\"Business Development Representative - North America\" role closed",
         body: "A direct re-fetch of DeepIP's Teamtailor feed (careers.deepip.ai/jobs.json) today no longer lists the Business Development Representative - North America posting. Live board now shows 3 open roles (Product Marketing Manager, Head of Marketing - US, Founding Account Executive - DACH), down from 4.",
         url: "https://careers.deepip.ai/jobs.json",
+      },
+      {
+        date: "2026-09-17",
+        tag: "Content",
+        title: "Publishes \"Why a successful AI pilot is not an adopted practice\"",
+        body: "Third post in DeepIP's Munich-panel blog series (following earlier entries on AI trust between in-house/outside counsel and who captures drafting-time value). Argues AI-pilot-to-adoption failures are organizational rather than technical (unmotivated staff, stale data, unrevised process), citing survey data showing senior attorneys adopted AI faster than juniors because they could recognize quality output immediately.",
+        url: "https://www.deepip.ai/blog/ai-adoption-patent-firms-munich-panel-3",
       },
     ],
     hiring: {
@@ -1659,7 +1688,7 @@ COMPETITORS.push(
     tier: "Tier 1 — Direct Competitor",
     initials: "XL",
     tagline: "AI patent search, drafting-assist, and monetization platform.",
-    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group, a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up (exact dates not independently pinned down in this pass). Released \"ParaEmbed 2.0,\" a follow-up proprietary patent/technology-data embedding model, via a Hugging Face Expert Support collaboration in mid-2024 (corrected 2026-09-03 — an earlier pass had misdated this release to 2026-01-28; the Hugging Face case-study post is dated June 25, 2024).",
+    description: "XLSCOUT offers AI-driven patent search, drafting assistance, and monetization/valuation tooling. Named directly in a real Patlytics customer call as running a parallel evaluation trial alongside PatSnap against Patlytics. Background partnerships/collaborations referenced in press include AL FAHIM Group (strategic partnership on AI digitalization in the Middle East, announced 2026-02-13, per XLSCOUT's own press-release page), a Hugging Face \"Para Embed\" model collaboration, and a MaRS Innovation Hub tie-up. Released \"ParaEmbed 2.0,\" a follow-up proprietary patent/technology-data embedding model, via a Hugging Face Expert Support collaboration in mid-2024 (corrected 2026-09-03 — an earlier pass had misdated this release to 2026-01-28; the Hugging Face case-study post is dated June 25, 2024).",
         employeeCount: "~51-200 per LinkedIn",
     founded: "Legal entity (originally \"Xlpat Tt Consultants Private Limited\") incorporated 2012-06-26 in Chandigarh, India (CIN U74140CH2012PTC033885); platform reportedly relaunched under the XLSCOUT name around 2020 — exact rebrand year not independently confirmed",
     hq: "Toronto, Ontario, Canada (primary); also maintains a Chandigarh, India office",
@@ -1916,7 +1945,15 @@ COMPETITORS.push(
     website: "questel.com",
     careersUrl: "https://www.questel.com",
     linkedin: "https://www.linkedin.com/company/questel",
-    weekActivity: [],
+    weekActivity: [
+      {
+        date: "2026-09-16",
+        tag: "Product",
+        title: "Extends ISO/IEC 27001 certification to Equinox IPMS SaaS offerings",
+        body: "Questel announced it has maintained and expanded its ISO/IEC 27001 information-security certification to cover additional SaaS offerings, including its Equinox IP management system, spanning physical premises, cloud infrastructure, and product-development/operations teams — notable given the company's confirmed August 2026 data-breach claim.",
+        url: "https://www.openpr.com/news/4633543/questel-reinforces-iso-27001-compliance-extending-security",
+      },
+    ],
     hiring: {
       openRoles: 4,
       newRolesToday: [],
@@ -1968,6 +2005,20 @@ COMPETITORS.push(
         title: "IPWatchdog press-release pickup of reexamination-data feature",
         body: "IPWatchdog picked up Juristat's ex parte reexamination-data feature (originally announced on Juristat's own blog 2026-09-01) as a press item, noting ex parte reexamination has overtaken IPR as the leading post-grant tool (filings up 53% YoY in 2025, ~870 projected for 2026) and that Juristat built its USPTO dataset ahead of the agency's rate limits.",
         url: "https://ipwatchdog.com/press/juristat-adds-ex-parte-reexamination-data-connecting-post-grant-challenge-outcomes-to-the-prosecution-record-behind-them/",
+      },
+      {
+        date: "2026-09-15",
+        tag: "Partnership",
+        title: "Solve Intelligence partners with Juristat on examiner analytics",
+        body: "Solve Intelligence and Juristat integrated platforms so patent professionals get Juristat's examiner/art-unit statistics and USPTO prosecution history directly inside Solve Intelligence's AI patent-prosecution workflow.",
+        url: "https://www.solveintelligence.com/blog/post/solve-intelligence-and-juristat-partner-on-prosecution-data",
+      },
+      {
+        date: "2026-09-16",
+        tag: "Content",
+        title: "Publishes Sterne Kessler customer case study on patent white-space analysis",
+        body: "New blog post: patent law firm Sterne Kessler used Juristat's Data Layer (via Claude) to cut competitive patent white-space analysis from hours to ~10 minutes, driving firm-wide adoption with a ~70-user pilot — a customer-story follow-up to the recent MCP/API-focused Claims Analyzer and reexamination-data feature launches.",
+        url: "https://blog.juristat.com/how-sterne-kessler-uses-patent-white-space-analysis-to-strengthen-business-development",
       },
     ],
   }),
@@ -2442,10 +2493,27 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — 313 live postings, 199 unique titles (down from 203). 7 titles that looked \"new\" via a naive diff were independently confirmed via publishedAt to be pre-existing renames/reposts, not genuinely new — no new Head-of/VP/Director-level title found.",
         url: "https://jobs.ashbyhq.com/harvey",
       },
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Opens Head of Legal Engineering EMEA, Director Commercial Legal EMEA, and Global Operations Lead roles",
+        body: "Ashby posting-API publishedAt confirms three genuinely new senior titles (London/NY/SF/Remote), cross-checked by job ID against existing postings to rule out renames. Board now at 299 live postings, 193 unique titles (down from 313/199 amid continued churn).",
+        url: "https://jobs.ashbyhq.com/harvey/b0570329-6c45-4446-9314-146c9dead90b",
+      },
+      {
+        date: "2026-09-16",
+        tag: "Content",
+        title: "Publishes \"The Brief: September 2026\" and \"The Builder Shift\" AI-fluency research",
+        body: "Monthly product-update roundup (memory/template personalization, agentic search and review-table improvements, 150+ new legal sources, an iManage search integration) alongside a research piece proposing a five-level AI-fluency framework for lawyers.",
+        url: "https://www.harvey.ai/blog/the-brief-september-2026",
+      },
     ],
     hiring: {
-      openRoles: 313,
-      newRolesToday: [],
+      openRoles: 299,
+      newRolesToday: [
+        { title: "Head of Legal Engineering, EMEA", dept: "Legal Engineering", location: "London", url: "https://jobs.ashbyhq.com/harvey/b0570329-6c45-4446-9314-146c9dead90b" },
+        { title: "Director, Commercial Legal, EMEA", dept: "Legal", location: "London", url: "https://jobs.ashbyhq.com/harvey/01ec0473-7d06-4e96-829f-20e6af004ce9" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Legal Engineer (various specialties)", count: 12 },
@@ -2698,12 +2766,18 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — 282 live postings (unchanged total), 214 unique titles (up from 213). New dedicated Platform Engineering team spanning Stockholm HQ and Malmö, Sweden: 10 postings all published today across Senior Platform Engineer, Software Engineer, Staff Software Engineer, Staff Platform Engineer, Senior Backend Engineer, Senior Site Reliability Engineer, and Site Reliability Engineer — a notable new-initiative signal suggesting a newly-formed dedicated platform/infra group. Only \"Staff Platform Engineer\" is a genuinely new unique title; the rest are new postings of already-tracked titles in new locations.",
         url: "https://jobs.ashbyhq.com/legora/f835b884-d93b-473c-bf12-e754166f854d",
       },
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Opens GTM Manager - Strategic Accounts and Senior Talent Acquisition Partner, GTM roles",
+        body: "Ashby posting-API publishedAt confirms two genuinely new titles, verified by job ID against similarly-named existing postings (\"Engagement Manager - Strategic Accounts\" and \"Talent Acquisition Partner, GTM\" remain separate, still-live postings) — not renames. Board at 277 live postings.",
+        url: "https://jobs.ashbyhq.com/legora/54ffa82a-f093-4a62-a092-9752f5031524",
+      },
     ],
     hiring: {
-      openRoles: 282,
+      openRoles: 277,
       newRolesToday: [
-        { title: "Staff Platform Engineer", dept: "Engineering", location: "Malmö, Sweden", url: "https://jobs.ashbyhq.com/legora/f835b884-d93b-473c-bf12-e754166f854d" },
-        { title: "Senior Platform Engineer", dept: "Engineering", location: "Stockholm HQ", url: "https://jobs.ashbyhq.com/legora/8f04eacb-b330-4166-8c88-a77c9cc4f46f" },
+        { title: "GTM Manager - Strategic Accounts", dept: "GTM", location: "Various", url: "https://jobs.ashbyhq.com/legora/54ffa82a-f093-4a62-a092-9752f5031524" },
       ],
       recentHires: [],
       topRoles: [
@@ -3028,10 +3102,19 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — \"Sr. Enterprise Architect\" no longer appears live. No other titles missing, no new titles found.",
         url: "https://jobs.ashbyhq.com/ironcladhq",
       },
+      {
+        date: "2026-09-16",
+        tag: "Hiring",
+        title: "Opens Senior Software Engineer role",
+        body: "New posting (San Francisco) confirmed via the Ashby posting API's publishedAt field — board now at 35 live postings, up from 34.",
+        url: "https://jobs.ashbyhq.com/ironcladhq/b640b3f3-4dd4-47eb-ab3c-1911535e3573",
+      },
     ],
     hiring: {
-      openRoles: 34,
-      newRolesToday: [],
+      openRoles: 35,
+      newRolesToday: [
+        { title: "Senior Software Engineer", dept: "Engineering", location: "San Francisco", url: "https://jobs.ashbyhq.com/ironcladhq/b640b3f3-4dd4-47eb-ab3c-1911535e3573" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Staff Software Engineer (various)", count: 4 },
@@ -3072,6 +3155,13 @@ COMPETITORS.push(
         title: "Real ATS identified: Greenhouse board (token \"linksquaresinc\"), still 5 open roles",
         body: "linksquares.com/careers/open-positions renders its listings via an embedded Greenhouse job board (token \"linksquaresinc\", not \"linksquares\") rather than static HTML — confirmed by querying boards-api.greenhouse.io directly. Role count is unchanged at 5; treating this as a scraping-method fix, not new openings.",
         url: "https://linksquares.com/careers/open-positions/",
+      },
+      {
+        date: "2026-09-16",
+        tag: "Product",
+        title: "Launches Workflow Builder Agent and Workflow Blueprints",
+        body: "New agentic-CLM capabilities let legal/business teams describe a contract workflow in plain English and have LinkSquares translate it into automated steps, sequencing, dependencies, and routing inside a governed environment where teams review/refine before publishing; Workflow Blueprints add ready-to-customize templates for buy-side/sell-side processes. CPO Andrew Leverone: \"Legal teams shouldn't have to become workflow configuration experts to automate them. AI does the building, while the legal team maintains oversight.\"",
+        url: "https://www.prnewswire.com/news-releases/linksquares-transforms-enterprise-wide-contract-workflow-302880644.html",
       },
     ],
     hiring: {
@@ -3150,15 +3240,23 @@ COMPETITORS.push(
         body: "New blog post argues rising legal-AI costs stem from vendors shifting to token-based consumption pricing combined with pricier models and inefficient multi-step agentic workflows, and that the real fix is smarter workflow design — routing simple tasks to cheaper models and building around legal ontologies that can look up prior answers rather than re-reasoning each time. Does not disclose DraftWise's own pricing model.",
         url: "https://www.draftwise.com/blog/token-based-pricing-in-legal-ai-what-it-gets-right-and-where-it-gets-risky",
       },
+      {
+        date: "2026-09-17",
+        tag: "Hiring",
+        title: "Careers page adds two Deployment Strategist and two Forward-Deployed AI Engineer roles; London CSM role closes",
+        body: "Direct fetch of draftwise.com/careers (today's fetch succeeded, unlike the prior day's JS-shell failure) shows 4 titles not present in the last confirmed baseline: Deployment Strategist (London), Deployment Strategist (New York), Forward-Deployed AI Engineer, Backend – New York, and Forward-Deployed AI Engineer, Backend – West Palm Beach. \"Senior Customer Success Manager (London, UK)\" no longer appears live (the NY-based Senior CSM posting remains). The page has no per-role deep-link URLs (accordion-style listing), so only the careers page itself is linkable. Because the prior day's check could not be independently re-verified, these are reported with slightly lower day-over-day confidence than a clean 24h diff.",
+        url: "https://www.draftwise.com/careers",
+      },
     ],
     hiring: {
-      openRoles: 10,
+      openRoles: 13,
       newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Back End Software Engineer", count: 2 },
         { title: "Senior Front End Software Engineer", count: 2 },
-        { title: "Senior Customer Success Manager", count: 2 },
+        { title: "Deployment Strategist", count: 2 },
+        { title: "Forward-Deployed AI Engineer, Backend", count: 2 },
       ],
     },
   }),
@@ -4021,6 +4119,29 @@ const NEW_ENTRANTS = [
     source: "Global Legal Post, Y Combinator, Artificial Lawyer",
     sourceUrl: "https://www.globallegalpost.com/news/ai-native-law-firm-start-up-moritz-secures-9m-in-seed-funding-round-533457054",
   },
+  {
+    id: "enforceshield",
+    name: "EnforceShield",
+    threat: "low",
+    backing: "€1.7M seed led by Vendep Capital, w/ FIRSTPICK VC",
+    stage: "Seed",
+    tagline: "Autonomous AI-powered IP infringement detection and takedown, with attorney expertise built in.",
+    website: "https://www.enforceshield.com",
+    linkedin: null,
+    description:
+      "Vilnius, Lithuania-based EnforceShield (with a Brentwood, TN subsidiary) detects, validates, and removes IP infringement — counterfeits, unauthorized sellers, fake listings, brand abuse — across marketplaces, social media, search, ad platforms, and websites. Founded 2024 by Rytis Rudzinskas (also a partner at CEE Attorneys), self-funded until this seed round; plans to expand into broader IP-lifecycle management per the announcement. Trademark/brand-enforcement focused rather than patent-specific — included for completeness in the same category as Newcode/Moritz/Sandstone already tracked here.",
+    foundingTeam: [
+      { name: "Rytis Rudzinskas", background: "Founder. Also a partner at CEE Attorneys." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "No public careers page found as of 2026-09-17.",
+      hiringProfile: "Not visibly hiring publicly as of 2026-09-17.",
+    },
+    date: "2026-09-15",
+    source: "Law.com Legaltech News",
+    sourceUrl: "https://www.law.com/legaltechnews/2026/09/15/lithuanian-ip-startup-enforceshield-announces-17-million-seed-funding-round-/",
+  },
 ];
 
 /* ---------------- Webinars ---------------- */
@@ -4028,18 +4149,6 @@ const NEW_ENTRANTS = [
 // events-listing partner program (2026-08-25 research pass). Every entry
 // below has a real, working source URL — no placeholder/sample listings.
 const WEBINARS = [
-  {
-    id: "wb-10",
-    title: "Reducing AI Hallucinations – Why Reliable IP Workflows Begin with Better Data",
-    host: "Lighthouse IP",
-    date: "2026-09-15",
-    time: "12:00 PM ET",
-    format: "Live webinar",
-    relevance: "low",
-    description: "IPWatchdog-hosted session sponsored by Lighthouse IP, a global patent/trademark/design data provider, now with a published topic: combining general-purpose LLMs with curated datasets, plus data infrastructure/governance, to reduce hallucinations in AI-assisted IP analysis.",
-    tags: ["Data Provider"],
-    url: "https://ipwatchdog.com/event/webinar-lighthouse-ip-2026-09-15-reducing-ai-hallucinations/",
-  },
   {
     id: "wb-11",
     title: "Women's IP Forum 2026 (Third Annual)",
@@ -4063,18 +4172,6 @@ const WEBINARS = [
     description: "Two-day industry conference on AI's impact across IP strategy, prosecution, and enforcement.",
     tags: ["Conference", "Industry Event"],
     url: "https://events.newton.media/AI-and-IP-USA/home",
-  },
-  {
-    id: "wb-12",
-    title: "AI for Patent Litigation – Connecting Assertion Intelligence with Prior Art Analysis",
-    host: "Clerq (formerly NLPatent) & RPX",
-    date: "2026-09-16",
-    time: "12:00 PM ET",
-    format: "Live webinar",
-    relevance: "high",
-    description: "Panel with RPX, Clerq, and outside counsel from Finnegan on connecting litigation-assertion intelligence (RPX Empower) with prior-art analysis (Clerq) workflows.",
-    tags: ["Competitor-hosted", "Litigation"],
-    url: "https://ipwatchdog.com/event/webinar-clerq-rpx-2026-09-16-ai-for-patent-litigation/",
   },
   {
     id: "wb-13",
@@ -4113,18 +4210,6 @@ const WEBINARS = [
     url: "https://ipwatchdog.com/event/webinar-ip-copilot-2026-10-13-protecting-the-product/",
   },
   {
-    id: "wb-17",
-    title: "How I Prompt AI (CLE Webinar) — repeat session",
-    host: "Junior",
-    date: "2026-10-15",
-    time: "12:00 PM ET",
-    format: "Live CLE webinar",
-    relevance: "high",
-    description: "Second run of Junior's CLE session on AI prompting technique for patent practice (see wb-14 for the original 2026-09-29 session).",
-    tags: ["Competitor-hosted"],
-    url: "https://ipwatchdog.com/event/webinar-junior-2026-10-15/",
-  },
-  {
     id: "wb-18",
     title: "How I Prompt AI (CLE Webinar) — third session",
     host: "Junior",
@@ -4132,7 +4217,7 @@ const WEBINARS = [
     time: "12:00 PM EST",
     format: "Live CLE webinar",
     relevance: "high",
-    description: "Third run of Junior's CLE session on AI prompting technique for patent practice, same topic/format as wb-14 and wb-17.",
+    description: "Third run of Junior's CLE session on AI prompting technique for patent practice, same topic/format as wb-14. A previously-tracked '2026-10-15 second run' entry (wb-17) was removed 2026-09-17: no such session was found on IPWatchdog's event calendar or in search results, and its URL 404s — likely an erroneous/fabricated duplicate from an earlier pass.",
     tags: ["Competitor-hosted"],
     url: "https://ipwatchdog.com/event/webinar-junior-2026-11-12/",
   },
@@ -4221,16 +4306,28 @@ const WEBINARS = [
     url: "https://events.newton.media/AI-and-IP-EU",
   },
   {
-    id: "wb-26",
-    title: "The Looming Legal Tidal Wave",
-    host: "LegalOn & Artificial Lawyer",
-    date: "2026-09-15",
-    time: "12:00 PM ET",
-    format: "Live webinar",
+    id: "wb-27",
+    title: "IPWatchdog LIVE 2027",
+    host: "IPWatchdog",
+    date: "2027-04-04",
+    time: "In-person, Arlington, VA (Renaissance Arlington Capital View), through Apr 6",
+    format: "Conference",
     relevance: "low",
-    description: "LegalOn CEO Daniel Lewis, Artificial Lawyer founder Richard Tromans, and Rippling's Vanessa Wu discuss whether wider AI use creates a surge in in-house legal demand rather than shrinking it. Not patent-specific.",
-    tags: ["Legal AI", "In-House"],
-    url: "https://www.legalontech.com/events/legal-tidal-wave",
+    description: "Seventh annual IPWatchdog flagship conference bringing together IP professionals, federal/district judges, current/former USPTO leadership, and in-house counsel; full agenda not yet published.",
+    tags: ["Conference", "Industry Event"],
+    url: "https://ipwatchdog.com/event/ipwatchdog-live-2027-at-the-renaissance-arlington-capital-view/",
+  },
+  {
+    id: "wb-28",
+    title: "Virtual SEP Masters 2027",
+    host: "IPWatchdog",
+    date: "2027-05-17",
+    time: "Virtual, Mon/Wed/Fri through May 21",
+    format: "Virtual conference",
+    relevance: "low",
+    description: "Fifth annual Standard Essential Patents virtual conference; full agenda not yet published.",
+    tags: ["Conference", "Industry Event"],
+    url: "https://ipwatchdog.com/event/virtual-sep-masters-2027/",
   },
 ];
 
@@ -5567,6 +5664,50 @@ const BLOGS = [
     relevance: "high",
     tags: ["Customer Win", "Enterprise"],
     url: "https://legora.com/newsroom/salesforce-selects-legora-to-further-support-its-global-legal-team-operations",
+  },
+  {
+    id: "blog-136",
+    headline: "Why a successful AI pilot is not an adopted practice",
+    description: "DeepIP argues AI-pilot-to-adoption failures at law firms are organizational rather than technical (unmotivated staff, stale data, unrevised process), citing survey data on senior vs. junior attorney adoption speed.",
+    companyId: "deepip",
+    source: "DeepIP",
+    date: "2026-09-17",
+    relevance: "high",
+    tags: ["Thought Leadership", "AI Adoption"],
+    url: "https://www.deepip.ai/blog/ai-adoption-patent-firms-munich-panel-3",
+  },
+  {
+    id: "blog-137",
+    headline: "LinkSquares Transforms Enterprise-Wide Contract Workflow",
+    description: "LinkSquares launched Workflow Builder Agent and Workflow Blueprints, letting legal/business teams describe a contract workflow in plain English and have it translated into automated, governed steps with templates for common buy-side/sell-side processes.",
+    companyId: "linksquares",
+    source: "PR Newswire",
+    date: "2026-09-16",
+    relevance: "medium",
+    tags: ["Product Launch", "Agentic AI"],
+    url: "https://www.prnewswire.com/news-releases/linksquares-transforms-enterprise-wide-contract-workflow-302880644.html",
+  },
+  {
+    id: "blog-138",
+    headline: "The Brief: September 2026",
+    description: "Harvey's monthly product-update roundup covering memory/template personalization, agentic search and review-table improvements, 150+ new legal sources, and an iManage search integration, alongside a research piece proposing a five-level AI-fluency framework for lawyers.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-16",
+    relevance: "high",
+    tags: ["Product Update"],
+    url: "https://www.harvey.ai/blog/the-brief-september-2026",
+  },
+  {
+    id: "blog-139",
+    headline: "How Sterne Kessler Uses Patent White-Space Analysis to Strengthen Business Development",
+    description: "Customer case study: patent law firm Sterne Kessler used Juristat's Data Layer (via Claude) to cut competitive patent white-space analysis from hours to roughly 10 minutes, driving a firm-wide pilot with about 70 users.",
+    companyId: "juristat",
+    source: "Juristat",
+    date: "2026-09-16",
+    relevance: "high",
+    tags: ["Customer Story", "AI Analytics"],
+    url: "https://blog.juristat.com/how-sterne-kessler-uses-patent-white-space-analysis-to-strengthen-business-development",
   },
 ];
 
