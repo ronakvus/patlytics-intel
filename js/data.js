@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-17";
-const EARLIEST_DATE = "2026-08-27"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-18";
+const EARLIEST_DATE = "2026-08-28"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -29,6 +29,21 @@ function siteUrl(domain) {
 
 /* ---------------- General Daily Highlights ---------------- */
 const HIGHLIGHTS = [
+  {
+    id: "hl-60",
+    date: "2026-09-17",
+    priority: "high",
+    category: "Product",
+    title: "OpenAI launches \"Astra for Law\" — a GPT-6 Astra config with its own legal search index",
+    summary:
+      "OpenAI introduced Astra for Law, a GPT-6 Astra configuration paired with a 230M+ URL legal search index (US case law, statutes, regulations, court rules, and administrative decisions — case law sourced largely via the Free Law Project/CourtListener, covering 99.9%+ of published US precedential case law) plus access controls and workflow tools for law firms. Harvey and Legora were named as API customers building their own products on top of it; 26 partner-built plugins shipped at launch (including Ironclad Contracts, Clio, Relativity, iManage, DeepJudge, Docusign), alongside custom tools built with Sullivan & Cromwell, Ropes & Gray, Cooley, Latham & Watkins, and Wachtell Lipton. On a 200-question Vals AI legal-research benchmark, OpenAI reports Astra for Law scored 54.0% correctness vs. 38.7% for base GPT-6 Astra with web search.",
+    whyItMatters:
+      "The single biggest horizontal-AI-infrastructure move yet for legal AI — OpenAI is now building its own legal-specific search index and named Harvey and Legora as build-on-top partners rather than just customers, directly sharpening the 'build vs. plug into a platform' question every domain-specific AI vendor (including Patlytics) has to answer as foundation labs move down-stack into vertical data/search.",
+    companies: ["Industry-wide", "Harvey", "Legora", "Ironclad"],
+    source: "Unite.AI, Artificial Lawyer, LawNext",
+    sourceType: "product",
+    url: "https://www.unite.ai/openai-introduces-astra-for-law-with-legal-search-and-trusted-access/",
+  },
   {
     id: "hl-59",
     date: "2026-09-17",
@@ -118,51 +133,6 @@ const HIGHLIGHTS = [
     source: "IPWatchdog",
     sourceType: "news",
     url: "https://ipwatchdog.com/2026/08/28/uspto-issues-its-first-ai-predicated-discipline-order-involving-hallucinated-cites-to-intrinsic-record/",
-  },
-  {
-    id: "hl-29",
-    date: "2026-08-27",
-    priority: "high",
-    category: "Product",
-    title: "Google, Weil detail early build-out on Gemini Enterprise for Legal",
-    summary:
-      "Following Google Cloud's Aug 25 launch of Gemini Enterprise for Legal, Weil's Chief AI & Innovation Officer Andrew Simon detailed the firm's role building two initial use cases — parallel research agents and NDA drafting — plus an internal judge-analytics tool ('BenchMark') built on the new stack. Simon framed Google's offering as an integration layer letting lawyers stay inside Microsoft Word while mixing in tools like Harvey, Legora, and Thomson Reuters.",
-    whyItMatters:
-      "Google is positioning Gemini Enterprise as horizontal infrastructure that legal AI point-solutions plug into rather than compete with — Solve Intelligence's patent workflows are already integrated into this same ecosystem (see Aug 25 highlight above), so Patlytics needs a clear point of view on whether to plug into (vs. stay independent of) the Google/Microsoft legal AI stacks now forming around Big Law.",
-    companies: ["Industry-wide", "Solve Intelligence"],
-    source: "Artificial Lawyer",
-    sourceType: "product",
-    url: "https://www.artificiallawyer.com/2026/08/27/google-weil-gemini-enterprise-for-legal/",
-  },
-  {
-    id: "hl-30",
-    date: "2026-08-27",
-    priority: "medium",
-    category: "Market",
-    title: "IPWatchdog: \"Not Every AI Output Belongs in an IDS\"",
-    summary:
-      "Commentary (by Lana Akopyan) argues that using an AI tool during prosecution does not, by itself, trigger an Information Disclosure Statement obligation — the duty under Rule 56(b) turns on whether the information surfaced is material, not on whether AI generated it, consistent with USPTO's 2024 guidance.",
-    whyItMatters:
-      "This is exactly the kind of practitioner guidance question Patlytics customers (patent attorneys and in-house counsel) will ask about AI-assisted prosecution workflows; getting ahead of it in product messaging and being able to point to authoritative commentary reduces adoption friction.",
-    companies: ["Industry-wide"],
-    source: "IPWatchdog",
-    sourceType: "news",
-    url: "https://ipwatchdog.com/2026/08/27/not-every-ai-output-belongs-in-an-ids/",
-  },
-  {
-    id: "hl-31",
-    date: "2026-08-27",
-    priority: "medium",
-    category: "Partnership",
-    title: "iManage builds new AI capabilities on Google Cloud's Gemini Enterprise for Legal",
-    summary:
-      "iManage announced new industry-specific AI capabilities built on Google Cloud's newly launched Gemini Enterprise for Legal, deepening the document-management incumbent's integration with Google's legal AI stack, alongside iManage's own general-availability release of its next-generation platform.",
-    whyItMatters:
-      "Document-management incumbents like iManage are becoming AI distribution channels into law firms and corporate legal departments; Patlytics should track whether IP-specific workflow players get similar first-class integration slots as this ecosystem consolidates.",
-    companies: ["Industry-wide"],
-    source: "LawSites (LawNext)",
-    sourceType: "product",
-    url: "https://www.lawnext.com/2026/08/imanage-accelerates-enterprise-ai-transformation-with-google-clouds-gemini-enterprise-for-legal.html",
   },
   {
     id: "hl-32",
@@ -955,7 +925,7 @@ const COMPETITORS = [
         tag: "Hiring",
         title: "IP hiring board narrows to a single open role (VP, Product Marketing)",
         body: "Re-checking each of the 8 IP-tagged roles tracked in the prior snapshot (VP AI Product Strategy, both Patent Classification Specialist roles, Patent Classifier (Life Sciences), all three IP Admin Senior Analyst variants, and the PCT Patent Analyst contract role) individually via careers.clarivate.com, all 8 now return 'filled' or HTTP 410 Gone. Only one IP-tagged role remains confirmed live: Vice President, Product Marketing (IP), remote US, posted 2026-07-10.",
-        url: "https://careers.clarivate.com/job/JREQ136006/Vice-President-Product-Marketing-IP",
+        url: "https://careers.clarivate.com/c/ip-laws-jobs",
       },
       {
         date: "2026-09-04",
@@ -2167,17 +2137,26 @@ COMPETITORS.push(
         body: "New posting on Alt Legal's Breezy HR board (Success dept, US/remote), published 2026-09-15T16:57:50Z. Open roles now 5, up from 4; all 4 previously-tracked roles remain live.",
         url: "https://alt-legal.breezy.hr/p/3fb558e06e8b-senior-customer-support-specialist",
       },
+      {
+        date: "2026-09-17",
+        tag: "Hiring",
+        title: "Opens a second Senior Customer Support Specialist posting",
+        body: "A direct Breezy HR API query (alt-legal.breezy.hr/json) found a second, distinct \"Senior Customer Support Specialist\" posting live (publishedAt 2026-09-17T13:52:25Z) alongside the one opened 09-15 — board now at 6 live postings, up from 5.",
+        url: "https://alt-legal.breezy.hr/p/d5542b801158-senior-customer-support-specialist",
+      },
     ],
     hiring: {
-      openRoles: 5,
-      newRolesToday: [],
+      openRoles: 6,
+      newRolesToday: [
+        { title: "Senior Customer Support Specialist", dept: "Success", location: "US / Remote", url: "https://alt-legal.breezy.hr/p/d5542b801158-senior-customer-support-specialist" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Trademark Docketing Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/9fe3efd9ca1e-trademark-docketing-specialist" },
         { title: "Customer Success Manager", count: 1, url: "https://alt-legal.breezy.hr/p/33b788b22d82-customer-success-manager" },
         { title: "Operations Associate", count: 1, url: "https://alt-legal.breezy.hr/p/9e8be090952c-operations-associate" },
         { title: "Data Migration and Onboarding Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/2cc745ec3a62-data-migration-and-onboarding-specialist-at-alt-legal-remote" },
-        { title: "Senior Customer Support Specialist", count: 1, url: "https://alt-legal.breezy.hr/p/3fb558e06e8b-senior-customer-support-specialist" },
+        { title: "Senior Customer Support Specialist", count: 2 },
       ],
     },
   }),
@@ -2507,13 +2486,24 @@ COMPETITORS.push(
         body: "Monthly product-update roundup (memory/template personalization, agentic search and review-table improvements, 150+ new legal sources, an iManage search integration) alongside a research piece proposing a five-level AI-fluency framework for lawyers.",
         url: "https://www.harvey.ai/blog/the-brief-september-2026",
       },
+      {
+        date: "2026-09-17",
+        tag: "Partnership",
+        title: "Named an API/build partner for OpenAI's new \"Astra for Law\"",
+        body: "OpenAI launched Astra for Law (a GPT-6 Astra configuration with a 230M+ URL legal search index) and named Harvey and Legora as API customers building their own AI products on top of it, alongside 26 partner-built plugins (Ironclad Contracts among them) and custom tools for Sullivan & Cromwell, Ropes & Gray, Cooley, Latham & Watkins, and Wachtell. See General Highlights.",
+        url: "https://www.unite.ai/openai-introduces-astra-for-law-with-legal-search-and-trusted-access/",
+      },
+      {
+        date: "2026-09-17",
+        tag: "Hiring",
+        title: "Ashby board continues heavy title churn -- no new senior role confirmed",
+        body: "A direct posting-API re-query found 299 live postings / 189 unique titles (down from 193). 8 titles that looked \"new\" via a naive diff (e.g. Technical CX Specialist, two Sydney Customer Success Manager titles, Senior Motion Designer, Field Marketing Manager) were checked against publishedAt and location and are lower-level/regional postings, not Head-of/VP/Director-level -- not reported as a hiring highlight per this routine's senior/strategic threshold.",
+        url: "https://jobs.ashbyhq.com/harvey",
+      },
     ],
     hiring: {
       openRoles: 299,
-      newRolesToday: [
-        { title: "Head of Legal Engineering, EMEA", dept: "Legal Engineering", location: "London", url: "https://jobs.ashbyhq.com/harvey/b0570329-6c45-4446-9314-146c9dead90b" },
-        { title: "Director, Commercial Legal, EMEA", dept: "Legal", location: "London", url: "https://jobs.ashbyhq.com/harvey/01ec0473-7d06-4e96-829f-20e6af004ce9" },
-      ],
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Legal Engineer (various specialties)", count: 12 },
@@ -2773,12 +2763,24 @@ COMPETITORS.push(
         body: "Ashby posting-API publishedAt confirms two genuinely new titles, verified by job ID against similarly-named existing postings (\"Engagement Manager - Strategic Accounts\" and \"Talent Acquisition Partner, GTM\" remain separate, still-live postings) — not renames. Board at 277 live postings.",
         url: "https://jobs.ashbyhq.com/legora/54ffa82a-f093-4a62-a092-9752f5031524",
       },
+      {
+        date: "2026-09-17",
+        tag: "Partnership",
+        title: "Named an API/build partner for OpenAI's new \"Astra for Law\"",
+        body: "OpenAI launched Astra for Law (a GPT-6 Astra configuration with a 230M+ URL legal search index) and named Legora and Harvey as API customers building their own AI products on top of it, alongside 26 partner-built plugins and custom law-firm tools. See General Highlights.",
+        url: "https://www.unite.ai/openai-introduces-astra-for-law-with-legal-search-and-trusted-access/",
+      },
+      {
+        date: "2026-09-17",
+        tag: "Hiring",
+        title: "Board settles at 275 postings, 209 unique titles -- no new senior role confirmed",
+        body: "A direct posting-API re-query found 275 live postings (down from 277), 209 unique titles. Most apparent \"new\" titles (e.g. the Platform Engineering team's postings gaining a \"- Platform Team\" suffix) cross-checked as cosmetic renames of already-tracked roles rather than genuine new openings -- not reported as a hiring highlight.",
+        url: "https://jobs.ashbyhq.com/legora",
+      },
     ],
     hiring: {
-      openRoles: 277,
-      newRolesToday: [
-        { title: "GTM Manager - Strategic Accounts", dept: "GTM", location: "Various", url: "https://jobs.ashbyhq.com/legora/54ffa82a-f093-4a62-a092-9752f5031524" },
-      ],
+      openRoles: 275,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Engagement Manager (various regions)", count: 15 },
@@ -2830,13 +2832,17 @@ COMPETITORS.push(
         body: "Two new remote-Canada postings confirmed via Ashby posting-API publishedAt (2026-09-04) — board now at 21 live postings, up from 19.",
         url: "https://jobs.ashbyhq.com/spellbook.com/4204685f-f4e8-404f-9900-e951bb8dbf96",
       },
+      {
+        date: "2026-09-17",
+        tag: "Hiring",
+        title: "Senior Customer Success Manager (AUS) role closes",
+        body: "Ashby posting API re-queried directly — the Senior Customer Success Manager (AUS) posting no longer appears live; all other 20 previously-tracked titles remain. Board now at 20 live postings, down from 21.",
+        url: "https://jobs.ashbyhq.com/spellbook.com",
+      },
     ],
     hiring: {
-      openRoles: 21,
-      newRolesToday: [
-        { title: "Solutions Engineer", dept: "GTM", location: "Remote, Canada", url: "https://jobs.ashbyhq.com/spellbook.com/4204685f-f4e8-404f-9900-e951bb8dbf96" },
-        { title: "Customer Success Operations Manager", dept: "Customer Success", location: "Remote, Canada", url: "https://jobs.ashbyhq.com/spellbook.com/4b0deab9-5fd3-445b-bbe8-d3d70db8ec48" },
-      ],
+      openRoles: 20,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Software Engineer, Platform & Infrastructure", count: 1, url: "https://jobs.ashbyhq.com/spellbook.com/22a80c7b-2e4d-4f89-834d-db7d3387a5c8" },
@@ -3109,12 +3115,24 @@ COMPETITORS.push(
         body: "New posting (San Francisco) confirmed via the Ashby posting API's publishedAt field — board now at 35 live postings, up from 34.",
         url: "https://jobs.ashbyhq.com/ironcladhq/b640b3f3-4dd4-47eb-ab3c-1911535e3573",
       },
+      {
+        date: "2026-09-17",
+        tag: "Partnership",
+        title: "\"Ironclad Contracts\" listed among OpenAI's 26 Astra for Law launch plugins",
+        body: "OpenAI's newly-launched Astra for Law (a GPT-6 Astra configuration with a legal-specific search index) shipped with 26 partner-built plugins at launch, including \"Ironclad Contracts\" (plain-language contract search). Ironclad's own co-founder and former CEO Jason Boehmig now leads OpenAI's legal-vertical product effort. See General Highlights.",
+        url: "https://www.artificiallawyer.com/2026/09/18/astra-for-laws-26-legal-tech-plugins/",
+      },
+      {
+        date: "2026-09-17",
+        tag: "Hiring",
+        title: "Board narrows to 34 live postings, down from 35",
+        body: "Ashby posting API re-queried directly — \"Senior Software Engineer, AI - Squad Team\" no longer appears live; several other titles show cosmetic wording edits only (e.g. \"Director, Adoption Strategy (Engagement Manager)\" -> \"(Professional Services)\"), not counted as opens/closes.",
+        url: "https://jobs.ashbyhq.com/ironcladhq",
+      },
     ],
     hiring: {
-      openRoles: 35,
-      newRolesToday: [
-        { title: "Senior Software Engineer", dept: "Engineering", location: "San Francisco", url: "https://jobs.ashbyhq.com/ironcladhq/b640b3f3-4dd4-47eb-ab3c-1911535e3573" },
-      ],
+      openRoles: 34,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Staff Software Engineer (various)", count: 4 },
@@ -5708,6 +5726,17 @@ const BLOGS = [
     relevance: "high",
     tags: ["Customer Story", "AI Analytics"],
     url: "https://blog.juristat.com/how-sterne-kessler-uses-patent-white-space-analysis-to-strengthen-business-development",
+  },
+  {
+    id: "blog-140",
+    headline: "Astra for Law + The Battle for Centrality",
+    description: "Artificial Lawyer op-ed on OpenAI's Astra for Law launch, arguing foundation labs (OpenAI, Anthropic, Google) and legal-AI platforms (Harvey, Legora) are competing to become the 'central' hub lawyers work from, and questioning whether any single player can win that lock-in given lawyers' preference for independence.",
+    companyId: "industry",
+    source: "Artificial Lawyer",
+    date: "2026-09-18",
+    relevance: "high",
+    tags: ["Analysis", "AI Infrastructure"],
+    url: "https://www.artificiallawyer.com/2026/09/18/astra-for-law-the-battle-for-centrality/",
   },
 ];
 
