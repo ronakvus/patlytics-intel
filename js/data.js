@@ -14,8 +14,8 @@
 
 // Fixed "as of" anchor so the demo dataset stays coherent no matter
 // when the static preview is actually opened.
-const ANCHOR_DATE = "2026-09-18";
-const EARLIEST_DATE = "2026-08-28"; // rolling ~21-day archive window
+const ANCHOR_DATE = "2026-09-19";
+const EARLIEST_DATE = "2026-08-29"; // rolling ~21-day archive window
 
 function d(offsetDays) {
   const base = new Date(ANCHOR_DATE + "T12:00:00Z");
@@ -29,6 +29,21 @@ function siteUrl(domain) {
 
 /* ---------------- General Daily Highlights ---------------- */
 const HIGHLIGHTS = [
+  {
+    id: "hl-61",
+    date: "2026-09-17",
+    priority: "low",
+    category: "Market",
+    title: "Morgan & Morgan plans to spend $1B on its in-house AI platform over the next decade",
+    summary:
+      "Morgan & Morgan founder John Morgan announced the 1,100+ lawyer plaintiff's firm will spend $1 billion over the next decade on AI/legal-tech, on top of $300M already invested in its in-house \"MX2\" system, which extracts medical information, finds police reports, generates case documents/demand letters, tracks patterns, and preps for trial. MX2 has roughly 5,000 regular users inside the firm, and Morgan & Morgan plans to eventually market it externally to other firms.",
+    whyItMatters:
+      "A concrete, very large-dollar AI investment commitment from the buy side (a law firm) rather than a vendor — signals how deep AI capex is running inside large firms even outside patent/IP practice, and previews a build-then-sell dynamic (a firm's internal tool becoming an external product) similar in shape to Harvey's own build-your-own-model rationale.",
+    companies: ["Industry-wide"],
+    source: "Insurance Journal",
+    sourceType: "news",
+    url: "https://www.insurancejournal.com/news/southeast/2026/09/17/885474.htm",
+  },
   {
     id: "hl-60",
     date: "2026-09-17",
@@ -118,36 +133,6 @@ const HIGHLIGHTS = [
     source: "Chris Parsonson (LinkedIn)",
     sourceType: "product",
     url: "https://www.linkedin.com/posts/chris-parsonson_today-solve-intelligence-has-integrated-ugcPost-7505621523920142337-9LWL/",
-  },
-  {
-    id: "hl-28",
-    date: "2026-08-28",
-    priority: "medium",
-    category: "Market",
-    title: "USPTO issues its first AI-hallucination discipline order involving citations to a patent's own intrinsic record",
-    summary:
-      "The USPTO's Office of Enrollment and Discipline publicly reprimanded patent attorney Brian E. Mitchell for submitting a generative-AI-drafted joint claim construction chart (in Magpul Industries Corp. v. Mission First Tactical Group, Inc.) containing citations to the specification, figures, and prosecution history that were fabricated or misattributed. The order found violations of four professional-conduct rules and is the first time OED has treated hallucinated citations to a patent's own intrinsic evidence — not just case law — as an ethics violation.",
-    whyItMatters:
-      "A direct regulatory-enforcement signal for every AI-assisted patent drafting/analysis vendor, including Patlytics — it establishes hallucinated intrinsic-record citations as explicit USPTO discipline bait, reinforcing citation-verifiable, source-grounded output as a compliance requirement rather than a nice-to-have. Directly relevant alongside the Aug 23 USPTO AI-inventorship-disclosure guidance item above.",
-    companies: ["Industry-wide"],
-    source: "IPWatchdog",
-    sourceType: "news",
-    url: "https://ipwatchdog.com/2026/08/28/uspto-issues-its-first-ai-predicated-discipline-order-involving-hallucinated-cites-to-intrinsic-record/",
-  },
-  {
-    id: "hl-32",
-    date: "2026-08-28",
-    priority: "low",
-    category: "Market",
-    title: "\"Have We Reached 'Peak Legal Tech?'\" — sentiment from ILTACON 2026",
-    summary:
-      "Coverage from ILTACON 2026 (Nashville, Aug 23-27, ~5,300 attendees) captures a veteran legal-tech CEO's observation that the market feels saturated, given the density of AI product launches and vendor announcements crowding the exhibit hall and agenda this year.",
-    whyItMatters:
-      "A read on overall market saturation and buyer fatigue in legal AI tooling is useful context for how crowded Patlytics' broader competitive landscape (well beyond direct patent-AI rivals) has become heading into next year's budget cycles.",
-    companies: ["Industry-wide"],
-    source: "LawNext",
-    sourceType: "news",
-    url: "https://www.lawnext.com/2026/08/have-we-reached-peak-legal-tech-sure-felt-that-way-at-iltacon-this-week.html",
   },
   {
     id: "hl-33",
@@ -524,6 +509,13 @@ const COMPETITORS = [
     todayActivity: [],
     weekActivity: [
       {
+        date: "2026-09-18",
+        tag: "Partnership",
+        title: "Juristat and Solve Intelligence formalize USPTO prosecution-data partnership",
+        body: "Joint press release: Juristat's 20+ years of USPTO examiner/art-unit data is now accessible inside Solve's AI drafting workflows via a single MCP connector, letting drafters optimize claims and office-action responses using real examiner behavior. Fuller, formal follow-up to the 2026-09-15 announcement below.",
+        url: "https://ipwatchdog.com/press/juristat-and-solve-intelligence-partner-to-bring-real-uspto-prosecution-data-into-ai-patent-workflows/",
+      },
+      {
         date: "2026-09-16",
         tag: "Hiring",
         title: "Opens Data Engineer role (London)",
@@ -685,6 +677,13 @@ const COMPETITORS = [
     ],
     todayActivity: [],
     weekActivity: [
+      {
+        date: "2026-09-18",
+        tag: "Content",
+        title: "Eureka blog publishes WCLC 2026 lung-cancer evidence review",
+        body: "New Eureka AI-generated evidence review covering nine pivotal lung-cancer studies from the World Conference on Lung Cancer (WCLC) 2026, cautioning that topline announcements, mature RCT data, and exploratory cohorts shouldn't be treated as equivalent evidence — continuing the same conference-timed landscape/evidence-review content pattern as PatSnap's earlier ESC 2026 series.",
+        url: "https://eureka.patsnap.com/blog/life-science/wclc-2026-lung-cancer-clinical-evidence-review/",
+      },
       {
         date: "2026-09-16",
         tag: "Hiring",
@@ -1318,7 +1317,7 @@ const COMPETITORS = [
     initials: "IW",
     tagline: "AI and blockchain-based patent data and marketplace platform. DEFUNCT — see note.",
     description:
-      "IPwe combined AI-driven patent data normalization with a blockchain-based patent registry and marketplace concept, targeting patent monetization and portfolio valuation use cases. IPwe filed for Chapter 11 bankruptcy in Delaware in January 2024 and later converted to Chapter 7 liquidation after its bankruptcy financing fell through — the company is confirmed no longer operating (verified 2026-08-25, see General Highlights).",
+      "IPwe combined AI-driven patent data normalization with a blockchain-based patent registry and marketplace concept, targeting patent monetization and portfolio valuation use cases. IPwe filed for Chapter 11 bankruptcy in Delaware in January 2024 and later converted to Chapter 7 liquidation after its bankruptcy financing fell through — the company is confirmed no longer operating (verified 2026-08-25, see General Highlights). UPDATE (2026-09-19): ipwe.com itself now fails to resolve at the DNS level (confirmed on repeated direct fetches of both the root domain and /careers) — the domain is now fully dead, not just showing a stale/parked page, consistent with the Chapter 7 liquidation. No replacement domain found; websiteUrl/careersUrl below are left pointing at the last-known (now dead) domain rather than a fabricated substitute.",
     employeeCount: "0 — company liquidated (Chapter 7, 2024)",
     founded: "2017 (ceased operations 2024)",
     hq: "New York, NY",
@@ -1542,60 +1541,30 @@ COMPETITORS.push(
     linkedin: "https://www.linkedin.com/company/ankar-ai",
     weekActivity: [
       {
-        date: "2026-08-25",
-        tag: "Hiring",
-        title: "Actively hiring across product, sales, and patent engineering",
-        body: "Live openings observed today via public job postings, including Senior Product Engineer, Product Manager, Account Executive, Patent Product Engineer, and a Founder's Associate (Growth, Hiring & Ops) role — consistent with post-Series A scale-up.",
-        url: "https://uk.linkedin.com/jobs/view/senior-product-engineer-at-ankar-4411350945",
-      },
-      {
-        date: "2026-08-27",
-        tag: "Hiring",
-        title: "Opened a Talent Partner role (People & Operations, London)",
-        body: "New People/Ops posting confirmed via the Ashby posting API's publish timestamp (2026-08-27) — continued post-Series A team-building on the ops/talent side alongside the GTM hiring push.",
-        url: "https://jobs.ashbyhq.com/ankar/0b0a4fcd-b80f-48e1-b6c6-aba31a144d25",
-      },
-      {
-        date: "2026-09-01",
-        tag: "Hiring",
-        title: "Broader Ashby query surfaces 3 more previously-missed live postings",
-        body: "A broader Ashby posting-API query found Finance Partner, Product Engineer, and Product Marketing Manager already live (publishedAt 2026-05-18 through 2026-08-06) but missed by the prior narrower capture — a baseline correction, not new-this-week openings. Board now shows 11 live postings, up from 8.",
-        url: "https://jobs.ashbyhq.com/ankar/66c712ef-8391-4935-af41-103c8e203321",
-      },
-      {
-        date: "2026-09-02",
-        tag: "Hiring",
-        title: "Finance Partner, Product Engineer, and Product Marketing Manager postings close",
-        body: "All three postings surfaced in yesterday's broader Ashby query are no longer present in a fresh Ashby posting-API fetch — closed or filled since yesterday. Live board drops from 11 back to 8 postings.",
-        url: "https://jobs.ashbyhq.com/ankar",
-      },
-      {
-        date: "2026-09-05",
-        tag: "Hiring",
-        title: "Ashby board appears to be flickering between 11 and 8 live postings",
-        body: "The same 3 titles (Finance Partner, Product Engineer, Product Marketing Manager) have now toggled live/closed on 3 consecutive checks (11 on 09-01/09-03/09-05, 8 on 09-02/09-04) — this pattern looks like a caching/CDN artifact on Ankar's Ashby board rather than genuine daily opens/closes. Not treating either state as a confirmed new opening or closing; recording today's live count (11) as the current baseline.",
-        url: "https://jobs.ashbyhq.com/ankar",
-      },
-      {
-        date: "2026-09-09",
-        tag: "Hiring",
-        title: "Opened a Field Marketing Manager role (London)",
-        body: "New Sales & Business Development opening confirmed via the Ashby posting API's own publish timestamp (2026-09-09) — board grows to 12 live postings, up from 11.",
-        url: "https://jobs.ashbyhq.com/ankar/5cb73ad0-e12e-4406-90d0-382e308216db",
+        date: "2026-09-17",
+        tag: "Product",
+        title: "Publishes \"Enhanced Drafting in Ankar with Native Word compatibility\"",
+        body: "New company blog post announcing a redesigned editing experience with high-fidelity Microsoft Word compatibility, preserving formatting and enabling round-trip editing between Ankar and Word for patent drafting.",
+        url: "https://ankar.ai/blog/enhanced-drafting-in-ankar-with-native-word-compatibility",
       },
       {
         date: "2026-09-11",
         tag: "Hiring",
         title: "Opened first Patent Engineer (Life Sciences) role",
-        body: "New Go-to-Market & Customer Innovation opening (London) confirmed via the Ashby posting API's publish timestamp (2026-09-11) — Ankar's first life-sciences-specific patent-engineering opening seen to date. Board now at 13 live postings, up from 12.",
+        body: "New Go-to-Market & Customer Innovation opening (London) confirmed via the Ashby posting API's publish timestamp (2026-09-11) — Ankar's first life-sciences-specific patent-engineering opening seen to date. Board now at 13 live postings, up from 12. UPDATE (2026-09-19): this posting and the 2026-09-09 Field Marketing Manager role below have since closed — live board now shows 8 postings (Senior Product Engineer, Talent Partner, Patent Product Engineer, GTM Strategy & Delivery, Account Executive, Product Manager, US Sales Lead, Founding Account Executive - US), confirmed via a direct re-query of the Ashby posting API.",
         url: "https://jobs.ashbyhq.com/ankar/54caf642-96c3-4d20-858a-6f7d2d2993c7",
+      },
+      {
+        date: "2026-09-09",
+        tag: "Hiring",
+        title: "Opened a Field Marketing Manager role (London)",
+        body: "New Sales & Business Development opening confirmed via the Ashby posting API's own publish timestamp (2026-09-09) — board grows to 12 live postings, up from 11. Closed as of 2026-09-19 (see note above).",
+        url: "https://jobs.ashbyhq.com/ankar/5cb73ad0-e12e-4406-90d0-382e308216db",
       },
     ],
     hiring: {
-      openRoles: 13,
-      newRolesToday: [
-        { title: "Patent Engineer (Life Sciences)", dept: "Go-to-Market & Customer Innovation", location: "London", url: "https://jobs.ashbyhq.com/ankar/54caf642-96c3-4d20-858a-6f7d2d2993c7" },
-      ],
+      openRoles: 8,
+      newRolesToday: [],
       recentHires: [],
       topRoles: [
         { title: "Senior Product Engineer", count: 1, url: "https://jobs.ashbyhq.com/ankar/9bccbebb-3a1a-480a-a71a-03d08d0c714d" },
@@ -1736,6 +1705,13 @@ COMPETITORS.push(
     careersUrl: "https://clerq-ip.com/careers",
     linkedin: "https://www.linkedin.com/company/nlpatent",
     weekActivity: [
+      {
+        date: "2026-09-17",
+        tag: "Content",
+        title: "Publishes \"What Should Clients Be Paying For?\" white paper",
+        body: "New white paper (subtitled \"Pricing Judgment in AI-Powered Patent Practice\") arguing client billing/value models for patent work should shift toward pricing judgment and outcomes rather than time spent, as AI automates routine drafting tasks.",
+        url: "https://www.clerq-ip.com/white-papers/value-billing-for-high-judgment-tasks-white-paper",
+      },
       {
         date: "2026-08-31",
         tag: "Corporate",
@@ -2487,6 +2463,13 @@ COMPETITORS.push(
         url: "https://www.harvey.ai/blog/the-brief-september-2026",
       },
       {
+        date: "2026-09-16",
+        tag: "Corporate",
+        title: "Appoints Adam Sadovsky as Chief Research Officer",
+        body: "Sadovsky joins from Microsoft AI, where he was CVP of AI and led post-training for MAI-Thinking-1, after 17+ years at Google/DeepMind in Gemini engineering leadership and LLM post-training. The hire comes days after Harvey's $550M raise, reinforcing its stated plan to build more of its own models rather than rely solely on third-party providers.",
+        url: "https://www.harvey.ai/blog/harvey-appoints-adam-sadovsky-as-chief-research-officer",
+      },
+      {
         date: "2026-09-17",
         tag: "Partnership",
         title: "Named an API/build partner for OpenAI's new \"Astra for Law\"",
@@ -2819,13 +2802,6 @@ COMPETITORS.push(
         url: "https://jobs.ashbyhq.com/spellbook.com",
       },
       {
-        date: "2026-08-27",
-        tag: "Hiring",
-        title: "Hiring mix shifts toward engineering/product roles",
-        body: "New Ashby-board titles (Senior Data Engineer, Backend/AI Systems Engineer, Senior Product Manager - Enterprise) surfaced alongside the previously-known sales/CS roles — signaling platform build-out, not just GTM scaling. (Link corrected 2026-08-29: the original job-specific permalink was on the now-retired spellbook.legal Ashby board; replaced with the live spellbook.com board since the specific posting's new permalink wasn't reconfirmed.)",
-        url: "https://jobs.ashbyhq.com/spellbook.com",
-      },
-      {
         date: "2026-09-04",
         tag: "Hiring",
         title: "Opens Solutions Engineer and Customer Success Operations Manager roles",
@@ -2839,10 +2815,19 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — the Senior Customer Success Manager (AUS) posting no longer appears live; all other 20 previously-tracked titles remain. Board now at 20 live postings, down from 21.",
         url: "https://jobs.ashbyhq.com/spellbook.com",
       },
+      {
+        date: "2026-09-19",
+        tag: "Hiring",
+        title: "Opens Software Engineering Manager role",
+        body: "New posting confirmed via the Ashby posting API's own publishedAt timestamp (2026-09-19T00:26:11Z) — board now at 21 live postings, up from 20.",
+        url: "https://jobs.ashbyhq.com/spellbook.com/67c64bff-ba31-4c04-b5b8-5db5f06b3837",
+      },
     ],
     hiring: {
-      openRoles: 20,
-      newRolesToday: [],
+      openRoles: 21,
+      newRolesToday: [
+        { title: "Software Engineering Manager", dept: "Engineering", url: "https://jobs.ashbyhq.com/spellbook.com/67c64bff-ba31-4c04-b5b8-5db5f06b3837" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Senior Software Engineer, Platform & Infrastructure", count: 1, url: "https://jobs.ashbyhq.com/spellbook.com/22a80c7b-2e4d-4f89-834d-db7d3387a5c8" },
@@ -3129,10 +3114,20 @@ COMPETITORS.push(
         body: "Ashby posting API re-queried directly — \"Senior Software Engineer, AI - Squad Team\" no longer appears live; several other titles show cosmetic wording edits only (e.g. \"Director, Adoption Strategy (Engagement Manager)\" -> \"(Professional Services)\"), not counted as opens/closes.",
         url: "https://jobs.ashbyhq.com/ironcladhq",
       },
+      {
+        date: "2026-09-18",
+        tag: "Hiring",
+        title: "Opens Technical Lead Manager (AI Platform), Senior Manager (Revenue Enablement), and a Senior Software Engineer (Agentic Search) role",
+        body: "Three new postings confirmed via the Ashby posting API's publishedAt field. Note: a similarly-titled Agentic Search engineering role had closed per the 09-11 entry above, so this may be a reopened/refreshed posting rather than a brand-new title. Board now at 35 live postings, up from 34.",
+        url: "https://jobs.ashbyhq.com/ironcladhq/d8ab34e8-fddb-426d-8cda-da32b64bc366",
+      },
     ],
     hiring: {
-      openRoles: 34,
-      newRolesToday: [],
+      openRoles: 35,
+      newRolesToday: [
+        { title: "Technical Lead Manager, AI Platform", dept: "Engineering", url: "https://jobs.ashbyhq.com/ironcladhq/d8ab34e8-fddb-426d-8cda-da32b64bc366" },
+        { title: "Senior Manager, Revenue Enablement", dept: "GTM", url: "https://jobs.ashbyhq.com/ironcladhq/64a71cb6-dc95-49b3-bcaf-11f7b6fbf8a7" },
+      ],
       recentHires: [],
       topRoles: [
         { title: "Staff Software Engineer (various)", count: 4 },
@@ -3399,19 +3394,24 @@ COMPETITORS.push(
         body: "Greenhouse API queried directly — board grows to 34 live postings, up from 30. Five new (all published 2026-09-15): Field Marketing Manager, Senior Analytics Engineer, Senior Data Engineer, Staff Analytics Engineer, Staff Data Engineer (all Remote - US). One closure: Engineering Leader - Product Engineering.",
         url: "https://job-boards.greenhouse.io/eve/jobs/4407285009",
       },
+      {
+        date: "2026-09-18",
+        tag: "Hiring",
+        title: "Opens Manager, Legal Operations role — first Legal-department posting",
+        body: "New San Francisco (hybrid) posting confirmed via the Greenhouse API's updated_at field (2026-09-18) — the first role tracked under a distinct \"Legal\" department on Eve's board. All four 09-15 Data/Analytics Engineering postings have since closed. Board now at 31 live postings, down net from 34.",
+        url: "https://job-boards.greenhouse.io/eve/jobs/4411750009",
+      },
     ],
     hiring: {
-      openRoles: 34,
+      openRoles: 31,
       newRolesToday: [
-        { title: "Staff Data Engineer", dept: "Engineering", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4406949009" },
-        { title: "Staff Analytics Engineer", dept: "Engineering", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4406926009" },
-        { title: "Field Marketing Manager", dept: "Marketing", location: "Remote - US", url: "https://job-boards.greenhouse.io/eve/jobs/4407285009" },
+        { title: "Manager, Legal Operations", dept: "Legal", location: "San Francisco, CA (Hybrid)", url: "https://job-boards.greenhouse.io/eve/jobs/4411750009" },
       ],
       recentHires: [],
       topRoles: [
         { title: "Sales (Account Executive / SDR / leadership mix)", count: 8 },
         { title: "Marketing", count: 4 },
-        { title: "Engineering", count: 9 },
+        { title: "Engineering", count: 5 },
       ],
     },
   }),
@@ -3655,6 +3655,13 @@ COMPETITORS.push(
       {
         date: "2026-09-01",
         tag: "Content",
+        title: "Published \"How to Conduct a Patent Landscape Analysis: A Complete Guide for R&D Teams\"",
+        body: "Companion guide (same day as the \"Prompts vs. Agents\" post below) arguing patent landscape analysis should draw on multi-dataset corpora (patents plus literature, regulatory filings, and grants) rather than patents alone, and should run via scoped AI agents rather than ad-hoc prompting.",
+        url: "https://www.cypris.ai/insights/how-to-conduct-a-patent-landscape-analysis-a-complete-guide-for-r-d-teams",
+      },
+      {
+        date: "2026-09-01",
+        tag: "Content",
         title: "Published \"Prompts vs. Agents: Why R&D Teams Need Standardized Workflows, Not Better Prompting\"",
         body: "Content piece arguing ad-hoc prompting is inferior to standardized AI agents for recurring R&D/IP analysis, restating that Cypris Q runs patent landscape analysis, whitespace mapping, FTO, technology scouting, and competitive intelligence as \"domain workflows,\" and that Agentic Monitoring (launched June 2026) runs continuously across patent offices, literature, chemical databases, regulators, and corporate news.",
         url: "https://www.cypris.ai/insights/prompts-vs-agents-why-r-d-teams-need-standardized-workflows-not-better-prompting",
@@ -3709,7 +3716,7 @@ COMPETITORS.push(
     ],
     website: "pioneerip.com",
     careersUrl: "https://www.pioneerip.com",
-    linkedin: null,
+    linkedin: "https://www.linkedin.com/company/pioneerip/",
     weekActivity: [],
     hiring: {
       openRoles: 0,
@@ -4160,6 +4167,31 @@ const NEW_ENTRANTS = [
     source: "Law.com Legaltech News",
     sourceUrl: "https://www.law.com/legaltechnews/2026/09/15/lithuanian-ip-startup-enforceshield-announces-17-million-seed-funding-round-/",
   },
+  {
+    id: "erinys",
+    name: "Erinys",
+    threat: "low",
+    backing: "Y Combinator (Summer 2026 batch)",
+    stage: "Seed",
+    tagline: "AI-native law firm infrastructure letting attorneys launch and scale their own firms.",
+    website: "https://erinys.ai",
+    linkedin: null,
+    description:
+      "Erinys builds tech, intake, back-office, and working-capital infrastructure that lets attorneys launch and scale their own AI-native law firms with equity ownership. General legal-services infrastructure, not patent-specific — included for completeness in the same category as Moritz/Sandstone/EnforceShield already tracked here. Funding amount not disclosed in public sources found.",
+    foundingTeam: [
+      { name: "Jason Guo", background: "Co-Founder." },
+      { name: "Matthew Pallan", background: "Co-Founder." },
+      { name: "Sasha Zyuzin", background: "Co-Founder." },
+    ],
+    hiring: {
+      openRoles: null,
+      focus: "No public careers page found as of 2026-09-19.",
+      hiringProfile: "Not visibly hiring publicly as of 2026-09-19.",
+    },
+    date: "2026-08-10",
+    source: "Y Combinator, Artificial Lawyer",
+    sourceUrl: "https://www.artificiallawyer.com/2026/08/10/4-legal-techs-join-y-combinator-summer-26/",
+  },
 ];
 
 /* ---------------- Webinars ---------------- */
@@ -4262,18 +4294,6 @@ const WEBINARS = [
     description: "Fireside chat with report author Prof. Jonathan Barnett (moderated by Safi Bahcall), plus a panel with economist Kirti Gupta, former USPTO Director Andrei Iancu, and C4IP President Coke Morgan Stewart, on how IP rights sustain technology ecosystems.",
     tags: ["Policy", "Innovation Economy"],
     url: "https://ipwatchdog.com/event/idea-factories-the-engine-behind-americas-innovation-economy/",
-  },
-  {
-    id: "wb-21",
-    title: "Why is the Legal AI ROI Conversation Still Broken?",
-    host: "Chamelio & Artificial Lawyer",
-    date: "2026-09-16",
-    time: "4:00 PM BST",
-    format: "Live webinar",
-    relevance: "low",
-    description: "Examines why legal-tech spend rarely maps to demonstrated business impact, and how to reframe ROI metrics for AI-enabled legal workflows.",
-    tags: ["Legal AI", "ROI"],
-    url: "https://luma.com/z6cgvcfj",
   },
   {
     id: "wb-22",
@@ -5002,17 +5022,6 @@ const BLOGS = [
     url: "https://www.cypris.ai/insights/prompts-vs-agents-why-r-d-teams-need-standardized-workflows-not-better-prompting",
   },
   {
-    id: "blog-70",
-    headline: "PTAB Case Studies of AI Disclosure Requirements: Part II",
-    description: "Solve Intelligence analyzes the PTAB's Ex parte Husain decision, discussing how detailed machine-learning training methodology can satisfy §112(a) disclosure requirements without specifying exact model architectures or working examples.",
-    companyId: "solve-intelligence",
-    source: "Solve Intelligence",
-    date: "2026-08-03",
-    relevance: "high",
-    tags: ["Thought Leadership", "PTAB"],
-    url: "https://www.solveintelligence.com/blog/post/ptab-case-studies-of-ai-disclosure-requirements-part-ii",
-  },
-  {
     id: "blog-71",
     headline: "Thomson Reuters and Solve Intelligence Partner to Deepen AI Adoption Across Leading Patent Practices",
     description: "Solve Intelligence's own confirmation of its Thomson Reuters partnership, under which Thomson Reuters will help distribute Solve's patent AI platform to practice groups across global and Am Law 200 firms with simplified procurement and enterprise onboarding.",
@@ -5737,6 +5746,94 @@ const BLOGS = [
     relevance: "high",
     tags: ["Analysis", "AI Infrastructure"],
     url: "https://www.artificiallawyer.com/2026/09/18/astra-for-law-the-battle-for-centrality/",
+  },
+  {
+    id: "blog-141",
+    headline: "Juristat and Solve Intelligence Partner to Bring Real USPTO Prosecution Data Into AI Patent Workflows",
+    description: "Formal joint press release: Juristat's 20+ years of USPTO examiner/art-unit data is now accessible inside Solve Intelligence's AI drafting workflows via a single MCP connector, letting drafters optimize claims and office-action responses using real examiner behavior.",
+    companyId: "solve-intelligence",
+    source: "IPWatchdog",
+    date: "2026-09-18",
+    relevance: "critical",
+    tags: ["Partnership", "Product"],
+    url: "https://ipwatchdog.com/press/juristat-and-solve-intelligence-partner-to-bring-real-uspto-prosecution-data-into-ai-patent-workflows/",
+  },
+  {
+    id: "blog-142",
+    headline: "Enhanced Drafting in Ankar with Native Word Compatibility",
+    description: "Ankar AI company blog post announcing a redesigned editing experience with high-fidelity Microsoft Word compatibility, preserving formatting and enabling round-trip editing between Ankar and Word for patent drafting.",
+    companyId: "ankar-ai",
+    source: "Ankar AI",
+    date: "2026-09-17",
+    relevance: "critical",
+    tags: ["Product Launch"],
+    url: "https://ankar.ai/blog/enhanced-drafting-in-ankar-with-native-word-compatibility",
+  },
+  {
+    id: "blog-143",
+    headline: "What Should Clients Be Paying For? Pricing Judgment in AI-Powered Patent Practice",
+    description: "Clerq (formerly NLPatent) white paper arguing client billing/value models for patent work should shift toward pricing judgment and outcomes rather than time spent, as AI automates routine drafting tasks.",
+    companyId: "nlpatent",
+    source: "Clerq",
+    date: "2026-09-17",
+    relevance: "medium",
+    tags: ["Thought Leadership"],
+    url: "https://www.clerq-ip.com/white-papers/value-billing-for-high-judgment-tasks-white-paper",
+  },
+  {
+    id: "blog-144",
+    headline: "Harvey Appoints Adam Sadovsky as Chief Research Officer",
+    description: "Harvey announced Adam Sadovsky, formerly CVP of AI at Microsoft AI and a 17-year Google/DeepMind veteran, as Chief Research Officer — days after Harvey's $550M raise explicitly earmarked to build more of its own models.",
+    companyId: "harvey",
+    source: "Harvey",
+    date: "2026-09-16",
+    relevance: "medium",
+    tags: ["Personnel", "Funding Follow-Up"],
+    url: "https://www.harvey.ai/blog/harvey-appoints-adam-sadovsky-as-chief-research-officer",
+  },
+  {
+    id: "blog-145",
+    headline: "What AI Really Asks of IP Leaders",
+    description: "Managing IP piece featuring Clarivate IP-segment president Simon Webster arguing AI success in corporate IP departments hinges more on data quality, workflow design, and organizational readiness than on the underlying technology itself.",
+    companyId: "clarivate-innography",
+    source: "Managing IP",
+    date: "2026-09-02",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Industry Trend"],
+    url: "https://www.managingip.com/article/2guc1r2t3gbwbaldky3uo/patents/what-ai-really-asks-of-ip-leaders",
+  },
+  {
+    id: "blog-146",
+    headline: "Reclaim Your AI Sovereignty and Your Ethical Walls",
+    description: "DraftWise blog post arguing law firms shouldn't have to trade AI adoption for data-security control, and should maintain a single source of truth for access/ethical-wall permissions that AI systems respect in real time.",
+    companyId: "draftwise",
+    source: "DraftWise",
+    date: "2026-09-03",
+    relevance: "medium",
+    tags: ["Thought Leadership", "Security"],
+    url: "https://www.draftwise.com/blog/reclaim-your-ai-sovereignty-and-your-ethical-walls",
+  },
+  {
+    id: "blog-147",
+    headline: "Yesterday Came OpenAI's Launch Into Legal, Now Come the Litany of Vendor Integrations",
+    description: "LawNext/LawSites analysis of the vendor response to OpenAI's Astra for Law / ChatGPT Enterprise legal plugin launch, noting only four vendors were named directly at launch: Harvey, iManage, Legora, and Thomson Reuters.",
+    companyId: "industry",
+    source: "LawNext",
+    date: "2026-09-18",
+    relevance: "high",
+    tags: ["Analysis", "AI Infrastructure"],
+    url: "https://www.lawnext.com/2026/09/yesterday-came-openais-launch-into-legal-now-come-the-litany-of-vendor-integrations.html",
+  },
+  {
+    id: "blog-148",
+    headline: "How to Conduct a Patent Landscape Analysis: A Complete Guide for R&D Teams",
+    description: "Cypris guide arguing patent landscape analysis should draw on multi-dataset corpora (patents plus literature, regulatory filings, and grants) rather than patents alone, and should run via scoped AI agents rather than ad-hoc prompting.",
+    companyId: "cypris",
+    source: "Cypris",
+    date: "2026-09-01",
+    relevance: "medium",
+    tags: ["Thought Leadership"],
+    url: "https://www.cypris.ai/insights/how-to-conduct-a-patent-landscape-analysis-a-complete-guide-for-r-d-teams",
   },
 ];
 
